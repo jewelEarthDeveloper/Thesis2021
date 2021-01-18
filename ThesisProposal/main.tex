@@ -1,98 +1,14 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage{graphicx}
-\title{Master Project Proposal Template}
-\author{Paul Spencer: 11721677\\University of Amsterdam\\paul.spencer@student.uva.nl}
-% \and{University of Amsterdam}
-\date{January 2021}
+\input{preamble}
 
 \begin{document}
-
-\maketitle
-
-\section*{Project details}
-\begin{itemize}
-    \item \textbf{Project title:} Projecting Drools
-    \item \textbf{Host organization:} Khonraad Software Engineering B.V.
-    \item \textbf{Contact Person:} Toine Khonraad, MD, a.khonraad@khonraad.nl\\ +31 (0)6 51 61 47 55
-\end{itemize}
-
-\section{Project summary}
-Drools is an open source production rule system for complex event processing, using an implementation of the Rete algorithm.
-It has it's own Domain Specific Language, which are written in drools files.
-When there are many rule in an environment it can be difficult to reason about the rules and how they interact.
-Although Drools is nearly 20 years old and has wide use, it does not have strong IDE support.
-
-Give a short (at most 1 page) description of the project. Make sure that the following issues are covered:
-\begin{itemize}
-    \item The global context of the project,
-    \item The relevancy of your research,
-    \item The specific research questions to be answered in the project.
-\end{itemize}
-
-
-\section{Problem analysis}
-
-Here you present your analysis of the problem that your research will address. Also summarize existing scientific insight into the problem (result of your literature survey, see below). You may also touch on how this problem manifests itself at your host organization.
-
-\section{Research method} 
-Present how you are going to find the answers to your research question. This section should cover:
-\begin{itemize}
-    \item What will make the research difficult?
-    \item What is the input you expect from the literature survey
-    \item What sources will you use and how will you use / document them?
-    \item What experiments / research will you do? What proof of concept will you make?
-	\item What method will you use?
-	\item Which hypothesis do you have?
-    \item Present a time line
-	\item How will you validate your research?
-\end{itemize}
-	
-\section{Expected results of the project} 
-Give an explicit list of all the results that are expected from the project. 
-
-\section{Required expertise for this project}
-Give a list of the expertise that is needed for the successful completion of this project. Next to each expertise, give your current level of proficiency. Examples are:
-\begin{itemize}
-    \item Java programming
-	\item	  Make and Makefiles
-	\item	  Configuration management
-	\item	  Testing
-\end{itemize}
-
-
-\section{Timeline}
-An overview of what activity will take place when, and what milestones/deadlines the project has.
-You may want to illustrate the timeline using Gantt charts and/or PERT diagrams.
-
-\section{Risks} 
-Give an assessment of the risks for this project and present contingency measures. These may include:
-\begin{itemize}
-    \item Project goals are too ambitious.
-	\item	  Project goals are too vague.
-	\item	  The information about the project is unavailable/incomplete/too difficult.
-	\item	  The gap between your expertise and the required expertise is too large 
-\end{itemize}
-		  
-
-\section{Literature survey}
-Describe the following regarding the scientific literature related to your topic:
-\begin{itemize}
-    \item 	Brief summary of contents: how did you organize the gathering of related literature? which method/sources did you use?
-	\item	Relation to your topic: how does the work described in the reference differ from your approach, what results have they obtained, what open questions are still left?
-\end{itemize}
-Aim for a "matrix" structure of the literature survey: What are the features desired from the outcome of your research? How are these features delivered by existing work? Are there gaps unanswered by existing work? 
-
-A guideline is to include between 10 and 20 papers on your topic in the survey. The exact number depends on the topic and available literature.
-
-\section{Bibliography}
-List the references to literature included in your literature survey. A common style is:
-
-[1] K. Beck, E. Gamma, Test infected: Programmers love writing tests, Java Report 3 (7) (1998) 51–56.
-
-[2] K. Beck, eXtreme Programming eXplained, Addison-Wesley, Reading, Massachusetts, 1999.
-
-[3] ISO, International standard ISO/IEC 9126. information technology: Software product evaluation: Quality characteristics and guidelines for their use (1991).
-
-You should use numbers (e.g., [1]) to refer to literature from your text. An example is: “XP is an agile methodology that was introduced by Beck et. al. [1].” You can use tools like BibTeX to help you manage the numbering.
+    \maketitle
+    \input{sections/ProjectDetails}
+    \input{sections/ProjectSummary}
+    \input{sections/ProblemAnalysis}
+    \input{sections/ResearchMethod}
+    \input{sections/ExpectedResults}
+    \input{sections/RequiredExpertise}
+    \input{sections/TimeLine}
+    \input{sections/Risks}
+    \printbibliography
 \end{document}
