@@ -1,0 +1,9 @@
+@startgantt
+printscale weekly
+Project starts the 10th of february 2021
+[Implementing Drools in MPS] lasts 10 weeks
+Then [Building Alternative Projections] lasts 9 weeks
+Then [Finalize project] lasts 4 weeks
+
+[Defend project] happens 25th july 2021
+@endgantt

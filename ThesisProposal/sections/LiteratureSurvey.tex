@@ -1,9 +1,52 @@
 \section{Literature survey}
-Describe the following regarding the scientific literature related to your topic:
-\begin{itemize}
-    \item 	Brief summary of contents: how did you organize the gathering of related literature? which method/sources did you use?
-	\item	Relation to your topic: how does the work described in the reference differ from your approach, what results have they obtained, what open questions are still left?
-\end{itemize}
-Aim for a "matrix" structure of the literature survey: What are the features desired from the outcome of your research? How are these features delivered by existing work? Are there gaps unanswered by existing work? 
 
-A guideline is to include between 10 and 20 papers on your topic in the survey. The exact number depends on the topic and available literature.
+To get an overview of the field we mainly looked at MPS and Drools based papers.  
+For MPS we started with an expert recommendation and did some forward and backward snowballing.
+For Drools we were limited by a lack of access to papers behind paywalls, so we used a google scholar search and chose those that were open access.
+The Drools papers did not present any work on code visualization. 
+The MPS papers and associated DSL papers covered some aspects of visual projectional editing, especially the papers relating to the produce mbeddr.
+
+During our research we will keep a document database, using the Zotero Personal research assistant software \cite{Zotero_product_page}.
+Also we will create an annotated bibliography of the most relevant papers.
+
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{l || c | c | c | c | c} 
+        \hline
+                    & \multicolumn{5}{c}{Papers}\\
+        \hline
+		\rotatebox[origin=c]{90}{ citations }   & \rotatebox[origin=c]{90}{ Creating DSLs } & \rotatebox[origin=c]{90}{ How Drools works } & \rotatebox[origin=c]{90}{ Comparing Workbenches } & \rotatebox[origin=c]{90}{ How MPS works }  & \rotatebox[origin=c]{90}{ Projectional Editing } \\
+        \hline
+        \hline
+		\cite{de2011rules}               &          & $\oplus$ &          &          &          \\
+        \cite{erdweg2015evaluating}      &          &          & $\oplus$ & $\oplus$ &          \\
+        \cite{erdweg2013state}           &          &          & $\oplus$ &          &          \\ 
+		\cite{guttormsen2017consistent}  &          &          &          &          & $\oplus$ \\
+        \cite{kumar2011rule}             &          & $\oplus$ &          &          &          \\
+        \cite{meacham2020classification} &          &          & $\oplus$ & $\oplus$ &          \\
+        \cite{morovatbusiness}           &          & $\oplus$ &          &          &          \\
+        \cite{pavletic2013extensible}    &          &          &          & $\oplus$ &          \\
+        \cite{pech2013jetbrains}         &          &          &          & $\oplus$ &          \\
+        \cite{prinz2016multi}            &          &          &          & $\oplus$ &          \\
+        \cite{proctor2011drools}         &          & $\oplus$ &          &          &          \\
+        \cite{ratiu2017experiences}      &          &          &          & $\oplus$ &          \\
+        \cite{ratiu2018automated}        & $\oplus$ &          &          & $\oplus$ &          \\
+        \cite{schmidt2008blending}       &          & $\oplus$ &          &          &          \\
+        \cite{voelter2018fusing}         &          &          &          & $\oplus$ &          \\
+        \cite{voelter2014generic}        & $\oplus$ &          & $\oplus$ & $\oplus$ &          \\
+        \cite{voelter2013dsl}            & $\oplus$ &          &          &          &          \\
+        \cite{voelter2019lessons}        &          &          &          & $\oplus$ & $\oplus$ \\
+        \cite{voelter2019shadow}         &          &          &          & $\oplus$ &          \\
+        \cite{voelter2014towards}        &          &          &          &          & $\oplus$ \\
+        \cite{voelter2015using}          &          &          &          & $\oplus$ & $\oplus$ \\
+        \cite{voelter2019using}          & $\oplus$ &          & $\oplus$ & $\oplus$ & $\oplus$ \\
+        \cite{vysoky2016grammar}         &          &          &          & $\oplus$ &          \\
+        \cite{wortmann2016domain}        & $\oplus$ &          &          & $\oplus$ &          \\
+        
+
+    \end{tabular}
+	\caption{Papers about the Drools, MPS and Language workbenches}
+    \label{table:literature_review_drools}
+\end{table}
+

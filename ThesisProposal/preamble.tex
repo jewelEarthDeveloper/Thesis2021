@@ -3,9 +3,23 @@
 \usepackage{graphicx}
 \usepackage{biblatex}
 \usepackage{hyperref}
+\usepackage{float}
+\usepackage{amssymb}
+
 \addbibresource{main.bib}
 
 \title{Master Project Proposal Template}
 \author{Paul Spencer: 11721677\\University of Amsterdam\\paul.spencer@student.uva.nl}
 \date{January 2021}
 
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+\newcommand{\Stars}[2][fill=yellow,draw=orange]{\begin{tikzpicture}[baseline=-0.35em,#1]
+\foreach \X in {1,...,5}
+{\pgfmathsetmacro{\xfill}{min(1,max(1+#2-\X,0))}
+\path (\X*1.1em,0) 
+node[star,draw,star point height=0.25em,minimum size=1em,inner sep=0pt,
+path picture={\fill (path picture bounding box.south west) 
+rectangle  ([xshift=\xfill*1em]path picture bounding box.north west);}]{};
+}
+\end{tikzpicture}}
