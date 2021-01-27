@@ -1,19 +1,22 @@
 \section{Problem analysis}
 
-The mental health care and coercion laws (Wvggz, Wzd, Wth) provides agencies the ability to intervene in domestic violence, psychiatric disorders and illnesses.
+The mental health care and coercion laws in the Netherlands, Wvggz, Wzd, and Wth, provides agencies the ability to intervene in domestic violence, psychiatric disorders, and illnesses.
 Khonraad's system facilitates reporting and communication between municipalities, police, judiciary, lawyers, mental health care, and countless social care institutions.
 The system has 15,000 users and is available 24/7. Configuration and administration use complex matrices of compliance mechanisms, access user rights and communication settings.
-Because of the sensitivity of the personal data (medical, criminal), the security against data loss, preventing unlawful disclosure and guaranteeing availability (also in crisis situations) are crucial.
-Demonstration of the correctness of the, often changing, configuration is a major concern. 
+The sensitivity of the personal data, being medical and criminal, means security is of utmost importance.
+The security against data loss, preventing unlawful disclosure and guaranteeing availability, especially during a crisis situations, are crucial.
+Demonstration of the correctness of the, often changing, configuration is a major concern in the company. 
 
-In the current situation, configuration is done in a business rule system (in a DSL from JBoss Drools).
-The DSL is a textual representation of the abstractions of the nested settings and must be compiled to see if it works.
-Projectional editors are editors in which a user edits the abstract syntax tree directly without using a parser.
+In the current situation, configuration is done in a business rule system. This is Drools, a a DSL from JBoss, a part of RedHat.
+Drools is a framework for Rule-Based development.
+The DSL is a textual representation of the abstractions of the rules and must be compiled to see if it is valid and works.
+Editing programs in a text editor means that you must match the syntax for the parsers to transform the text into an AST.
+Projectional editors are editors in which a user edits the abstract syntax tree directly without using a parser\cite{voelter2014generic}.
 This potentially allows for an almost unlimited language composition and flexible notations.
+Like the MVC Pattern, changes in one projection of the AST will instantly be visible and editable in another projection\cite{guttormsen2017consistent}.
 
-
-{\LARGE TO REMOVE}
-
-Here you present your analysis of the problem that your research will address. 
-Also summarize existing scientific insight into the problem (result of your literature survey, see below). 
-You may also touch on how this problem manifests itself at your host organization.
+The problem of a lack of useful visualization for Drools has been known as far back as 2011.
+Kaczor, et al\cite{kaczor2011visual} proposed a method of visualising Drools. 
+There have also been a few commercial tools to help.
+However, these all suffer from the parsing issue and lack of immediate feedback. 
+We are of the opinion that our approach will lend itself to a superior experience.
