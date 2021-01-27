@@ -1,21 +1,25 @@
 \section{Project summary}
 
 Drools\cite{browne2009jboss} is an open-source production rule system for complex event processing, using an implementation of the Rete algorithm\cite{forgy1989rete}.
-It has its own Domain Specific Language, in which rules are described which are written in Drools (.drl) files.
-When there are many rules in a collection of drools files it can be difficult to reason about the rules and how they interact.
+It has its own Domain Specific Language (DSL), in which rules are described.
+These are stored in Drools (.drl) files.
+When there are many rules in a collection of Drools files it can be difficult to reason about them and how they interact.
 
 Although Drools is nearly 20 years old and has wide use, it does not have strong IDE support.
-This masters project will approach fixing this by creating a projectional editor available in an IDE.
-We will recreate this DSL using a language workbench on top of which we will add different projections of the code.
-Editing in language workbenches comes in two forms: free-form text editing and less frequently projectional editing\cite{erdweg2013state}.
+This masters project will approach fixing this deficit by creating a projectional editor available in IntelliJ, currently the most used IDE\cite{Java_usage_report}.
+
+We will recreate this DSL using a language workbench capable of creating projectional editors.  
+On top of this newly modelled DSL, we will create new and different projections of the code. 
+Editing in language workbenches comes in two forms, either free-form text editing or, less frequently, projectional editing\cite{erdweg2013state}.
 Projectional editing is a method of bypassing the parser and programming directly into projections of the Abstract Syntax Tree.
+
 In this project we will use the open-source language workbench Meta Programming System (MPS) from JetBrains\cite{MPS_ProductPage}.
+MPS is built around the projectional editing paradigm.
 There is no existing implementation of the Drools language in MPS.
 
-Khonraad Software Engineering's product, Khonraad, is a SaaS used by the Dutch local governments, implementing the Wvggz, Wzd, and Wth laws. 
-These laws deal with sensitive details about mental health and domestic violence.
-It goes without saying that this data must not be accessed by the wrong people.
-Drools is the technology choice Khonraad made to govern this critical function.
+Khonraad's product is a SaaS service that serves municipalities in the field of mental health and domestic violence.
+It goes without saying that its data must not be accessed by the wrong people.
+Drools is the technology choice Khonraad made to govern this critical function of data access.
 Thus, they would like to improve the reasonability of this code.
 
 This project will attempt to answer the following research questions:
