@@ -1,7 +1,7 @@
 @startuml
 skinparam linetype polyline
 
-rectangle "<b>Main Research Question</b>\nHow do we improve the reasonability of\nDrools rules using projectional Editing?"  as MainQuestion #white
+rectangle "<b>Main Research Question</b>\nHow do we improve the reasonability of\nDrools rules using projectional editing?"  as MainQuestion #white
 rectangle "<b>RQ1</b> How do you measure\nreasonability of code?" as RQ1 #white
 rectangle "<b>RQ2</b> How does projectional\nediting improve reasonability?" as RQ2 #white
 rectangle "<b>RQ3</b> Which projections can help\ndevelopers to reason about rules?" as RQ3 #white
