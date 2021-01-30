@@ -1,0 +1,27 @@
+@startuml
+skinparam linetype polyline
+
+rectangle "<b>Main Research Question</b>\nHow do we improve the reasonability of\nDrools rules using projectional Editing?"  as MainQuestion #white
+rectangle "<b>RQ1</b> How do you measure\nreasonability of code?" as RQ1 #white
+rectangle "<b>RQ2</b> How does projectional\nediting improve reasonability?" as RQ2 #white
+rectangle "<b>RQ3</b> Which projections can help\ndevelopers to reason about rules?" as RQ3 #white
+rectangle "<b>Research Method</b>\nLiterature Mapping" as RM1 #lightgreen
+rectangle "<b>Research Method</b>\nDesk and interview\nresearch" as RM2 #lightgreen
+rectangle "<b>Research Method</b>\nPrototype" as RM3 #lightgreen
+
+MainQuestion *-down- RQ1
+MainQuestion *-down- RQ2
+MainQuestion *-down- RQ3
+
+RQ1 -down-> RM1
+RQ2 -down-> RM2
+RQ3 -down-> RM3
+
+RQ1 -[hidden]right- RQ2
+RQ2 -[hidden]right- RQ3
+
+RM1 .up..> RQ2  : informs
+RM2 .up..> RQ3  : informs
+RM3 ..up..> MainQuestion : contributes to\ndeciding on
+
+@enduml

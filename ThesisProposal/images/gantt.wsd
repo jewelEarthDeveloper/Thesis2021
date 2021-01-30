@@ -1,9 +1,15 @@
 @startgantt
 printscale weekly
 Project starts the 10th of february 2021
-[Implementing Drools in MPS] lasts 10 weeks
-Then [Building Alternative Projections] lasts 9 weeks
+[Resonability mapping] lasts 35 days
+Then [projectional interviews] lasts 35 days
+
+[Implementing Drools in MPS] lasts 67 days
+Then [Building Alternative Projections] lasts 61 days
 Then [Finalize project] lasts 4 weeks
 
+[projectional interviews] -> [Building Alternative Projections]
+
 [Defend project] happens 25th july 2021
+
 @endgantt
