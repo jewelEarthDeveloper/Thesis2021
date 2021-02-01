@@ -1,0 +1,21 @@
+@startuml
+
+rectangle "<b>Legend</b>              " {
+    rectangle "     " as rq #white 
+    rectangle "     " as rm #LightGreen
+    rq -[hidden]down- rm
+}
+
+rectangle " " as x1
+rectangle " " as x2
+x1 *-right- x2
+
+
+rectangle " " as x11
+rectangle " " as x22
+x11 -right-> x22
+
+rectangle " " as x111
+rectangle " " as x222
+x111 .right.> x222
+@enduml
