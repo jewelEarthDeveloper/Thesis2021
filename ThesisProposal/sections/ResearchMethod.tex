@@ -1,24 +1,23 @@
 \section{Research method} 
 
-Research question 1, "How do you measure reasonability of code?", will be answered by the method of conducting a literature mapping of the field of what makes code reasonable and how is this measured. 
-This will follow the prescriptions of Kitchenham et al.\cite{kitchenham2015evidence}.
+Research question 1, ``How do you measure reasonability of code?'', will be answered by the method of conducting a literature mapping of the field of code reasonability measurement. 
+This research method will follow the prescriptions of Kitchenham et al.\cite{kitchenham2015evidence}.
 
-Research question 2, "How does projectional editing improve reasonability?", will be answered by interviews with experts in the field of projectional editing, following the prescriptions of Mathers et al.\cite{mathers1998using}.
+Research question 2, ``How does projectional editing improve reasonability?'', will be answered by interviews with experts in the field of projectional editing, following the prescriptions of Mathers et al.\cite{mathers1998using}.
 
-Gregor\cite{gregor2006nature}, gives “A Taxonomy of Theory Types in Information Systems Research”. 
-For research question 3, "Which projections can help developers to reason about rules?", we will conduct what Gregor calls “Type V: Theory for Design and Action”. 
-The criteria for success of Type V research is that the prototype should “include utility to a community of users, the novelty of the artefact, and the persuasiveness of claims that it is effective”.
+Gregor\cite{gregor2006nature}, gives ``A Taxonomy of Theory Types in Information Systems Research''. 
+For research question 3, ``Which projections can help developers to reason about rules?'', we will conduct what Gregor calls ``Type V: Theory for Design and Action''. 
+The criteria for success of Type V research is that the prototype should ``include utility to a community of users, the novelty of the artefact, and the persuasiveness of claims that it is effective''.
 We intend for our prototype to meet these criteria.
 
 We have observed the difficulty that developers have trying to reason about and edit collections of Drools files.
 We hypothesize that developers can be presented with different views on their code that will allow them to better understand the code.
-The problem we wish to solve - how to improve the ability to reason about large collections of Drools rules - it appears to us, lends itself to the technique of projectional editing.
+The problem we wish to solve - how to improve the ability to reason about large collections of Drools rules - appears to us to lend itself to the technique of projectional editing.
 Thus, we will apply projectional editing techniques, through the MPS language workbench to the Drools language.
 The novelty of our approach will be to create new view types specific to the needs of a Drools programmer.
 
 We will be relying on MPS as well as other open-source components.
 The reason we chose MPS is that it is the most developed of the free and open source projectional editing language workbenches, found in a study of the state of the art in Language workbenches\cite{erdweg2013state}.
-MPS uses the Java graphics framework Swing for the creation of graphical, as opposed to textual, projections.
 
 Our designs of the projections, which will run in parallel to the Drools language modelling, will depend in part on the outcome of research carried out in the first period.
 Whether our design is appropriate with regards to performance and functionality is a risk. 
@@ -27,11 +26,12 @@ We hope to mitigate this risk through literature review and academic supervision
 
 The prototype will consist of a of the Drools language, re-defined in the MPS language.  
 The prototype will further consist of a set of projections of the DSL's AST.
+MPS uses the Java graphics framework Swing for the creation of graphical, as opposed to textual, projections.
 During the building of the prototype we will decide upon which projections we will create. Some potential examples include:
 \begin{itemize}
     \item Visualization of order of rule execution.
     \item Spreadsheet-like decision tables.
-    \item "Group-by" fact, query or function usage.
+    \item ``Group-by'' fact, query or function usage.
 \end{itemize}
 
 
@@ -42,5 +42,5 @@ The major tasks in this prototype development will be:
 \end{itemize}
 
 The prototype itself will be validated by working.
-However, if time permits, the hypothesis of the usefulness of the projections will be validated through developer use surveys.
+However, if time permits, the hypothesis of the usefulness of the projections will be further validated through developer use surveys.
 

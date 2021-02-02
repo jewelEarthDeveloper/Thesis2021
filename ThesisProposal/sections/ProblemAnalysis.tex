@@ -1,7 +1,7 @@
 \section{Problem analysis}
 
 The mental health care and coercion laws in the Netherlands, Wvggz, Wzd, and Wth, provides agencies the ability to intervene in domestic violence, psychiatric disorders, and illnesses.
-Khonraad's system facilitates reporting and communication between municipalities, police, judiciary, lawyers, mental health care, and countless social care institutions.
+Khonraad's system facilitates reporting and communication between municipalities, police, judiciary, lawyers, mental health care, and many social care institutions.
 The system has 15,000 users and is available 24/7. Configuration and administration use complex matrices of compliance mechanisms, access user rights and communication settings.
 The sensitivity of the personal data, being medical and criminal, means security is of utmost importance.
 The security against data loss, preventing unlawful disclosure and guaranteeing availability, especially during crisis situations, are crucial.
@@ -9,15 +9,15 @@ Demonstration of the correctness of the, often changing, configuration is a majo
 
 In the current situation, configuration is done in a business rule system. This is Drools, a DSL from JBoss, a subsidiary of RedHat.
 Drools is a framework for Rule-Based development.
-The DSL is a textual representation of the abstractions of the rules and must be compiled to see if it is valid and works.
+The DSL is a textual representation of the abstractions of the rules.
+Currently it must be compiled to see if a set of rules are valid.
 
 Editing programs in a text editor means that you must match the syntax for the parsers to transform the text into an AST.
 Projectional editors are editors in which a user edits the abstract syntax tree directly without using a parser\cite{voelter2014generic}.
 This potentially allows for an almost unlimited language composition and flexible notations.
 Similar to the MVC Pattern, changes in one projection of the AST will instantly be visible and editable in another projection\cite{guttormsen2017consistent}.
 
-The problem of a lack of useful visualization for Drools has been known as far back as 2011.
-Kaczor, et al\cite{kaczor2011visual} proposed a method of visualising Drools. 
+The problem of a lack of useful visualization for Drools has been known as far back as 2011, when Kaczor, et al\cite{kaczor2011visual} proposed a method of visualising Drools. 
 There have also been a few commercial tools to help.
 However, these all suffer from the parsing issue and lack of immediate feedback. 
 We are of the opinion that our approach will lend itself to a superior experience.
