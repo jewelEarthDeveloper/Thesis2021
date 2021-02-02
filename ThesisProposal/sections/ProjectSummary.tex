@@ -9,13 +9,21 @@ In this project we will attempt to answer the research questions shown in figure
 \end{figure}
 
 
+A business rules engine execute rules at runtime. 
+``Rules specify conditions to be monitored and operations that should be executed when certain conditions are detected.
+Rather than continuously monitoring the simulation, experts can define and deploy appropriate rules that are automatically evaluated at runtime''\cite{liu2003dios++}. 
+
+In our research we will be using the Drools rule Engine.
 Drools\cite{browne2009jboss} is an open-source production rule system for complex event processing, using an implementation of the Rete algorithm\cite{forgy1989rete}.
 It has a Domain Specific Language (DSL), in which rules are described.
 These are stored in Drools (.drl) files. 
 Reasoning over a small number of rules is already surprisingly hard.
 Our host organization has many rules and, thus, reasoning about them is particularly challenging.
-This master's project will attempt to improve how one can reason about Drools rules.
+This master's project will attempt to improve feedback whilst coding.
+This can reduce the representation impedance mismatch that hampers developer's reasoning.
 
+A language workbench supports the efficient development of languages. 
+The term caught on after a 2005 article by Martin Fowler\cite{Fowler_lwb}. 
 Editing in language workbenches has two predominant editing forms - free-form text editing and projectional editing\cite{erdweg2013state}.
 Free-form text editing is the more popular of these two.
 Projectional editing is a method of bypassing the need for a parser and programming directly into projections of the Abstract Syntax Tree.
