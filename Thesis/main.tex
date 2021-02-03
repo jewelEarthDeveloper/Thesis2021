@@ -1,0 +1,38 @@
+\input{preable}
+\input{document_variables}
+
+
+\makeglossaries
+
+\begin{document}
+    \pagenumbering{roman}
+    \frontmatter 
+    \pagestyle{plain} 
+    \input{Sections/title_page}
+    \input{Sections/declaration_page}
+    \input{Sections/abstract_page}
+    \input{Sections/acknowledgements_page}
+    \tableofcontents 
+    \listoffigures 
+    \listoftables 
+    
+    \mainmatter 
+    
+    \pagestyle{thesis}
+    
+    \input{Sections/Introduction}
+    \input{Sections/Method}
+    \input{Sections/Results}
+    \input{Sections/Discussion}
+    \input{Sections/Implications}
+    \input{Sections/Conclusion}
+
+
+    \appendix 
+    \input{Appendices/InterviewTranscripts}
+
+
+    \printbibliography[heading=bibintoc] 
+
+    \printglossary[nonumberlist] 
+\end{document}   
