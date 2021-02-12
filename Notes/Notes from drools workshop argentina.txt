@@ -1,0 +1,47 @@
+note Drools introduction video: july 17th 2011 https://vimeo.com/27153793 Drools Workshop Argentina - Expert System Introduction (Mark Proctor)
+slides -https://www.slideshare.net/MarkProctor/rules-events-and-workflow
+https://www.slideshare.net/MarkProctor/presentations/2
+
+what are rule engines used - where are they not used?
+market share 
+expert systems - 2 bibles: 1 by peter jackson and one by gary riley
+drools books - (publisher)packet - drools Jboss rules 5.0 Developers guide
+
+rule engine - is a broad term, expert system, automate complex decision
+ - came out of the medical industry to help diagnostics
+ - drendal, mysing(misin?) centaur, gravida, wheeze , clot
+  - research died out in the 80's when ran out of money, no scalability, hardware support wasn't good enough
+  - in 1979 chales forgey came out with the rete algorythm, 
+	- haley, art, clips (free from nasa)
+  - there has been no comercial move forward in the rule engines themselves since 1993
+  - taking advantage of this Drools has become the market leader
+  - drools 4 added declaritiveness and functional paradigm
+  - drools 5 integrated platform - complex event processing, workflow, new rete algorithm
+  - x droolsflow/jpm5 workflow
+  - x droolcomplex - complex editor
+  - semantics and ontologies
+
+Terminolgy
+ - expert systems
+ - reasoning systems
+	- production rules system (forward chaining - reactive) when something happens do this - reactive like a trigger on a database
+	- logic programming (backwards chaining) like prolog queries - is mary a decendent of jane
+	- functional - operating on lists (maping or folding)
+ - description logic = ontologies, taxonomies, vocabularies, like a class model with a relationship
+ 
+ - what are guided editors?
+ - can I make views for decision tables, decision trees, (scorecards?), templates?
+ - a rule is a superset of sql
+ - object type, binding (:),
+ - constraints + object type = pattern
+ - when = lhs
+ - then = rhs = action = consequence
+ - a rule (when?) is like a (sql) view on your data 
+ - a then is like a trigger on that view
+ 
+ object type + patterns is propositional logic
+ first order logic = sets
+ 
+ - plugin own aggregation - how to in mps
+
+check out this blog, around 2011 https://salaboy.com/page/88/

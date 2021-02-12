@@ -1,0 +1,44 @@
+ a production rule system
+ 
+ 
+ . The event pattern must be detected from one or
+more streams of events and the condition pattern must be matched from among
+business objects (facts) pertaining to the application state.
+
+Data-driven and eventdriven execution.
+
+ Considering an
+application as a state machine, events represent transitions, cf. [7]. When an
+event is detected, the appropriate transition is taken. The event may then be
+discarded. Facts, on the other hand, represent state. A rule condition determines
+a state to be held before a transition may be taken. Facts remain valid and must
+be retained until they are explicitly removed in a state change
+
+The analogy of
+a state machine provides a usable guide to distinguish between events and facts.
+
+Facts, on the other hand, are persistent and must explicitly be deleted. 
+ facts may be changed.
+ facts fetched via pull
+Facts have a potentially indefinite lifetime. They are only removed
+if they are explicitly retracted. 
+ection 1) the modify-operation of the working memory is not applicable. 
+
+In fact, Walzer marks events as immutable facts (cf. [15]) in her implementation
+for the rule engine Drools
+
+
+I should add a distinction in my nodes as to whether or not they are relying on events or pseudo/events such as temporal factors .
+
+
+15 Michael Neale. Drools 5.0 m1 - new and noteworthy. Online Article. http://blog.athico.com/2008/07/drools-50-m1-new-and-noteworthy.html, July 2008.
+
+16 Mark Proctor. Relational declarative programming with jboss drools. In SYNASC
+’07: Proceedings of the Ninth International Symposium on Symbolic and Numeric
+Algorithms for Scientific Computing, page 5, Washington, DC, USA, 2007. IEEE
+Computer Society.
+
+17. Mark Proctor, Michael Neale, Bob McWhirter, Kris Verlaenen, Edson Tirelli,
+Alexander Bagerman, Michael Frandsen, Fernando Meyer, Geoffrey De Smet, Toni
+Rikkola, Steven Williams, and Ben Truit. Drools, 2007.
+

@@ -1,0 +1,116 @@
+Nesrine Khouzami - Germany
+Federico Tomaassetti - federico@strumenta.comvmas
+Michiel Fortuin - NL
+Daniel Raitu - Munich
+Alexander Yu Vlasov
+Klaus Birken - Stutrgart
+Noli San Jose -  Philippines
+MAtifash - Greece
+Mikhail Barash - Norway, bergen
+sergio Ribeiro - porto/portugal
+Pedro J. Molina - Spain
+Mark Christensen - Toronto Canada
+Meinte Boersma - NL   meinte.boersma@gmail.com
+David Bakin - Seattle WA
+Noel Hoo - london ul
+Wladimir Safonov
+omegataupodcast
+shiva Praanth Kesavarapu (beginner)
+Robert Walter - Koln Germany
+Luis Miguel Serrano - portugal
+Oscar Frernandez Sierra = Spain - Gijon
+perdita Stevens - UK edinburg
+Anotonio Bucciarone - Italy Trento
+Jack Kandelaars = NL Venlo
+Hilario Cuhna - portugalMordechai Sanders - isreal
+
+Markus Voelker - DE
+MArcel riedel - DE (Datev)
+
+Tom Beadman - uk (Icon Solutions) tom01b
+Herman Peeren - NL  herman@yepr.nl
+Kemal Soysal - Turkey
+Thomas Godfrey
+K KABI KHANGANBA - delhi
+Jennek Geels - dutch
+Thomas Godfrey
+Jur Bartels - NL Eindhoven
+Archie Webb - london
+Ronald Noble 
+Micky Kale - london
+sigfinnur - scotland
+Miloš Milivojević
+j cowe
+Mike Vogel
+Philip Nagler-Frank
+Antonio Bucchiarone
+Julian Hudson
+Krishnanshu Dey -india
+Eugen Schindler
+Ian Ramsay
+Alessio Stalla
+Ayan Ayan
+mashinki ei
+Zemtseva Ekaterina
+elena zimena
+Oli Frnt
+Jennek Geels
+Alessio Stalla
+Andréa Wauthia
+Julien H
+carlo gambucci
+Sophia Tsasakou
+Romit Karmakar
+
+
+Sascha Lisson
+Vaclav Pech
+
+from strumenta
+---------------
+
+mike vogel
+michiel fortuin
+jos warmer
+mike Cargal
+Alessio Stalla
+Philip Nagler Frank
+Randy Hall
+Steffen Zschaler
+Pedro J Molina
+Sacha Lisson
+Oscar Fernandez
+Thiago Silva
+Mikhail Barash
+Marco Rolappe
+Ian Ramsay
+Stanislav Ignatiev
+Nico Stotz
+Mac Shah
+Ed Seidewitz
+Shaul Fridman
+jordi Cabot
+Jonas Rodrigues
+Martin Clausen
+Daniel Ratiu
+eelco Visser
+Stefan Wagner
+Majd Yafi
+
+
+
+
+
+com.dslfoundry.langvis 
+plaintextgen tutorial on DSLFoundry com 
+
+would this make it easy to build a vs code plugin?
+If someone created a new language would it be possible to use it for generation?
+where is the model server - is it a SaaS run by Jetbrains or would each organization seet up their own server, or can the server sit on your own machine (like a node server)?
+how heavyweight is the server - could it be used to build an MPS vs code addin?
+
+does it work the other way? can I make a language locally and run reference it in the web?
+do you have navigations (like ctrl+B)
+
+can it handle graphical, tables and notation projections
+
