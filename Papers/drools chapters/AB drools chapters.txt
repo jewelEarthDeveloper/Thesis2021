@@ -1,1 +1,18 @@
- 
+ A business rule is any bit of knowledge that can be expressed in the following format:
+When 'something' is true, Then do 'this'.
+
+Is it Drools or JBoss
+Rules? Officially it is now the latter, although it started out as 'Drools' and
+the name is still in common usage. This book tends to use 'Drools' as it is
+shorter to type and read. Both terms refer to the same thing—the business
+rules product from Red Hat and JBoss.
+
+How To Ask Questions The Smart Way at http://catb.org/~esr/faqs/smart-questions.html
+
+The description of the information we need and the
+format it is stored in is known as the fact model.
+
+Remember that a rule engine will not run in isolation, but be embedded in a wider
+system. What the 'rest of the system' will be will depend on your project, but the
+rules will pass data back and forward to it by means of the fact classes
+

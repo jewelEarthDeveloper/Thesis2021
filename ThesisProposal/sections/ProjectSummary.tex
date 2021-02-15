@@ -13,10 +13,11 @@ A business rules engine execute rules at runtime.
 ``Rules specify conditions to be monitored and operations that should be executed when certain conditions are detected.
 Rather than continuously monitoring the simulation, experts can define and deploy appropriate rules that are automatically evaluated at runtime''\cite{liu2003dios++}. 
 
-In our research we will be using the Drools rule Engine.
-Drools\cite{browne2009jboss} is an open-source production rule system for complex event processing, using an implementation of the Rete algorithm\cite{forgy1989rete}.
+In our research we will be using the JBoss Rules, more commonly known as Drools, rule Engine\cite{browne2009jboss}.
+Drools is an open-source production rule system for complex event processing, using the ReteOO and Phreak implementations of the Rete algorithm\cite{forgy1989rete}.
 It has a Domain Specific Language (DSL), in which rules are described.
 These are stored in Drools (.drl) files. 
+
 Reasoning over a small number of rules is already surprisingly hard.
 Our host organization has many rules and, thus, reasoning about them is particularly challenging.
 This master's project will attempt to improve feedback whilst coding.
@@ -29,12 +30,13 @@ Free-form text editing is the more popular of these two.
 Projectional editing is a method of bypassing the need for a parser and programming directly into projections of the Abstract Syntax Tree.
 
 We will create such an editor for the Drools DSL using a language workbench capable of creating projectional editors.  
-On top of this newly modelled DSL, we will create new and different projections of the code for the purpose of increasing the reasonability of the code. 
-To be clear, by reasonability we mean having the ability to reason.
+On top of this newly modelled DSL, we will create new and different projections of the code for the purpose of increasing the ability to reason about the code and speed of feedback. 
 
 For this project we will use the open-source language workbench Meta Programming System (MPS) from JetBrains\cite{MPS_ProductPage}.
 MPS is built around the projectional editing paradigm.
 There is no existing implementation of the Drools language in MPS.
 
 Although Drools is nearly 20 years old and has wide use, it does not have strong IDE support.
+The cofounder and platform architect of Drools, Mark Proctor, even said ``for rule engines to have a future drl has to die''\cite{Proctor_happenings}.
+We believe this is a business user centric view and disregards the needs of the developers also benefit from the Drools language.
 One artefact of this master's project will be a prototype projectional editor, that will give much stronger editor support in IntelliJ, currently the most used Java IDE\cite{Java_usage_report}.
