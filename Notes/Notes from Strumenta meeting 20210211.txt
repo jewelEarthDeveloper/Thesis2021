@@ -1,1 +1,28 @@
+ strumenta forum
+ 
+ knowledge 
+ 
+ 
+ The Limit of my language is the limit of my world
+ 
+ mps meetup 2018 - reflections on teaching MPS within a university course
+ 
+ how to motivate it
+ - no parsing needed
+ non-textual notations
+ allows languages to evolve
+ languages can be combined with each other
+ no ambiguities in the ast
+ 
+ start by explaining abstract syntax ( structure + behaviour + constraints)
+ then (several) concrete syntax ( editor + formatting + actions)
+ then type system
+ then intentions
+ then code generation (model to text then model to model)
+ 
+ a dsl for each of the above aspects
+ 
+ language != its syntax (MPS allows multiple syntaxes)
+ sourcecode != text (notations, textual, tabular, mathematical, graphical)
+ program == model at the right level of abstraction
  

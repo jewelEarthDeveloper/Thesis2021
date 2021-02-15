@@ -1,0 +1,50 @@
+https://www.youtube.com/watch?v=Kz7a3COtj1A 
+ 
+ Kie = knowledge is everything
+ 
+ submit rukes to a rule execution server
+ 
+ DataSet configuration- can we use this?
+ 
+ rule Execution server - provision and tooled
+ 
+ Decision model notation specification
+ what are decision requirement diagrams (DRDs?)
+ 
+ Decision tables
+ 
+ phreak algorythm is an evolution of rete algorythm
+ ReteOO Drools 3,4&5
+ * node sharing
+ * alpha indexing
+ * beta indexing
+ * tree based graphs
+ * modify-in-place
+ * property reactive
+ * sub-networks
+ * backward chaining
+ * lazy truth Maintenance
+ * Heap based agenda tool
+ * Dynamic rules
+ 
+ Phreak
+ * lazy Evaluation
+ * Isolated rule evaluation
+ * Increamental Goal ORientated Evaluations
+ * Set Orientated Propogations
+ * Stack based evaluations with pause and resume
+ 
+ theres no evaluation when inserting the data
+ what scheduling means is that it goes onto hte adgenda the adgenda has a list of all the links and rule and it puts them in order of priority, the priority is based on position in file (salience is obayed but advise to not use it)
+ rete algorithms means that you don't want to reevaluate matches that you've made
+ 
+ internal core state machine - it was ambigious with thread safety issues
+ only one point that is synced (propogation queue) the engine is now isolated from ations
+ it's not deterministic but it's understandable
+ lots of thread saftey issues around timers
+ 
+ for rule engines to have a future drl has to die!
+ 
+ 
+ 
+ 
