@@ -97,7 +97,43 @@ eelco Visser
 Stefan Wagner
 Majd Yafi
 
+oscar fernandez sierra
+sybille Ebert
+Alberto Margarindo
+Alessio Stalla
+Bill Eisner
+Hilaro Cunha
+Jaime Chavarriaga
+Krzysztof Klein
+Nico Stotz
+rene Couture
+Riberio Sergio
+Stefan wagner
+luca de santis
+stanislav Ignatiev
 
+http://mps-community.nl/
+MPS day eindhoven 2019 
+
+Joris van Aart,Gert Veldhuijzen - Belastingdienst
+Eugen Schindler, Hristina Moneva - Océ
+Yuri Durodié, Jan Richter, Sanjit Mishra - Siemens PLM Software
+
+Klemens Schindler (Sioux) 
+Wim Bast (Modeling Value Group)
+Holger Nehls
+Arne Norman
+Norman Köster
+Nat Peterson (Workday)
+Oscar Rodriguez, Alexander Shatalin, and Semen Alperovich (MPS)
+Pavel Bažant 
+Kemal Soysal
+Andreas Wortmann (OHB System AG)
+Sanjit Kumar, Jan Richter, and Dinesh Kumar Rajamani
+Felix Vollmer
+Diederik Dulfer - belastingdienst
+Daniel Stieger: modellwerkstatt
+Tamás Szabó and Justin Horton (workday)
 
 
 

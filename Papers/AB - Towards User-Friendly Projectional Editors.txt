@@ -1,0 +1,244 @@
+ 
+ Traditionally, languages use either textual or graphical notations. Each kind
+of notation comes with its own editor architecture. Textual notations are typically
+edited with text buffers, grammars and parsers
+
+many real-world languages
+require a mix of graphical, textual, tabular and symbolic/mathematical notations.
+Projectional editors (ProjEs) support this approach. 
+
+They generalize the approach
+used in graphical editors to arbitrary notations. Editing gestures directly change
+the abstract syntax tree (AST). Users see and interact with a rendering of the
+AST called a projection. There is no transformation (that is, parsing) from the
+concrete syntax to the AST.
+
+This allows non-textual notations, as demonstrated
+by intentional programming [2,3], which relies on projectional editing. ProjEs also
+avoid the problems with compositionality known from grammar-based systems:
+ambiguities cannot arise since no grammars are used.
+
+However, ProjEs have traditionally had two problems. First, for notations
+that look textual, users expect that the editing behavior resembles classical text
+editing as much as possible
+
+Second, ProjEs cannot store programs in the concrete
+syntax – otherwise, this syntax would have to be parsed when programs are
+loaded into the editor. Instead, programs are stored as a serialized AST, often as
+XML. 
+
+In parser-based editors (ParEs), users type characters into a text buffer. The
+buffer is then parsed to check whether a sequence of characters conforms to a
+grammar. The parser builds a parse tree, and ultimately, an abstract syntax tree
+(AST), which contains the relevant structure of the program, but omits syntactic
+details. Subsequent processing (such as linking, type checks, and transformation)
+is based on the AST.
+
+A ProjE does not rely on parsers. As a user edits a program, the AST is modified directly. A projection engine uses projection rules to create a representation
+of the AST with which the user interacts, and which reflects the resulting changes.
+No parser-based transformation from concrete to abstract syntax involved here
+
+Once a node is created, it is never ambiguous what
+it represents, irrespective of its syntax : every node points to its defining concept.
+Every program node has a unique ID, and references between program elements
+are represented as references to the ID.
+
+This is in contrast to ParEs, where a reference
+is expressed as a string in the source text, and a separate name resolution phase
+resolves the target AST element after the text has been parsed.
+
+
+An early example of a ProjE is the Incremental Programming Environment
+(IPE) [4].
+Another early
+example is GANDALF [5], which generates a ProjE from a language specification.
+
+The Synthesizer
+Generator [7] is also a ProjE. However, at the fine-grained expression level, textual
+input and parsing is used. While this improves usability, it destroys many of the
+advantages of projectional editing in the first place, because language composition
+at the expression level is limited. In fact, extension of expressions is particularly
+important to tightly integrate an embedded language with its host language [8].
+
+The Intentional Programming [2,3] project has gained widespread visibility
+and has popularized projectional editing; the Intentional Domain Workbench
+(IDW) is the contemporary implementation of the approach. IDW supports
+diverse notations [9,10].
+
+
+Language boxes [11] rely on explicitly delineating the boundaries between
+different languages used in a single program (e.g., the user could change the box
+with Ctrl-Space). Each language box may use parsing or projection.
+
+JetBrains MPS (http://jetbrains.com/mps) is an open-source language workbench that uses projectional editing. It is a comprehensive environment for
+language engineering, supporting language aspects such as concrete and abstract
+syntax, type systems and transformations, as well as IDE aspects, such as syntax highlighting, code-completion, find-usages, diff and merge, refactoring, and
+debugging. It also supports language modularization and composition [8].
+We have chosen MPS as our case study for three reasons. (1) MPS is currently
+the most widely used ProjE
+
+MPS relies on a meta meta model very similar to EMOF and EMF Ecore [14].
+
+efficiently entering (textual) code
+(EE), selecting and modifying code (SM), as well as infrastructure integration
+(II). 
+
+
+In ProjEs, since no grammars are used, language composition is unlimited (discussed
+systematically in [8])
+
+Coordinate grammars [24]
+have been proposed to parse two-dimensional mathematics structures. Parsers for
+visual notations have been proposed as well; for example, [25] discusses parsing
+of hand-inputted shapes on tablet computers based on a formalism called set
+grammars. More general discussions on parsing visual languages are provided
+in [26] and [27]. However, these grammars use different formalisms and so do
+not easily integrate with traditional grammars for linear text. None of these
+approaches has found its way into industry-strength language tooling
+
+Since ProjEs never parse the concrete syntax, they can use notations that are
+not parseable, or use two-dimensional layout. Examples include tables, mathematical symbols (fraction bars, superscript or P) or diagrams. This is discussed
+for IDW in[9,10] and for MPS/mbeddr in [15].
+
+ProjEs can also mix different
+notational styles. For example, tables can contain textual expressions and mathematical symbols (as in mbeddr’s decision tables), and textual programs can embed
+graphics.
+
+This notational flexibility leads to drawbacks. In a ParE, a program can always
+be typed exactly the way it looks by typing the sequence of characters one by one.
+In a ProjE, it is possible to project program nodes in arbitrary ways, including
+tables or mathematical symbols; these cannot just be typed. For example, the P
+is not available on the keyboard.
+
+Many ProjEs support the definition of multiple editable notations for the
+same language structure.
+
+. In a ProjE, selection is based on the tree structure (SM.1): nodes,
+parent nodes, or siblings in lists can be selected. This also makes it hard to
+perform cross-tree modifications (SM.2), i.e., editing structures that are
+not aligned with the tree.
+
+ProjE has no
+support for free-floating comments (SM.4).
+
+In a ParE, code that is temporarily not needed can be commented out. It is
+then ignored by the compiler, type checker, and other IDE services; it is treated
+as plain text. When the code is needed again, it can be uncommented: the parser
+parses the text and (re-)creates the AST. In a ProjE, commenting is not so easy,
+since the commented code must retain its structure so it can be uncommented
+later when it is needed again. Hence, dedicated support for commenting
+code is required (SM.5)
+
+ ProjE does not support custom layout (SM.6) – the
+representation is determined completely by the projection rules.
+
+nfrastructure is geared towards text files, and ParEs
+integrate seamlessly. The diff/merge facilities of VCS rely on showing the file
+contents. This works well for concrete syntax storage, but it does not work for
+AST-based storage. Special tool support for diff/merge is needed (II.1).
+
+. A ProjE
+will typically support searching on the projected syntax, but the ProjE must be
+used for the purpose; generic text-search tools are not enough
+
+
+
+EE.1 Requires manual, user-based disambiguation Disambiguation in
+MPS relies on the user selecting the correct language concept from the codecompletion menu, whose contents are driven by the language structure. Language
+concepts define an alias, the string used to pick the concept from the codecompletion menu. By making the alias the same as the leading keyword (e.g. if
+for an IfStatement), users can “just type” the code.
+
+EE.2: Cannot establish references to non-existing nodes MPS supports
+intentions to create the missing targets in a context-dependent way. For example,
+if a user enters a global variable in mbeddr C as int32 global = someName,
+where someName does not exist, MPS provides two intentions: one to create a
+global variable someName, and one to create a global constant
+
+Consider an expression 2 that
+should be changed to 2 + 3. MPS supports side transforms to allow users to
+simply type + on the right side of the 2. The transform replaces the 2 with the
++, puts the 2 in the left slot, and then puts the cursor into the right slot so the
+user can enter the second argument. Side transforms also reshuffle the tree to
+ensure it reflects operator precedence: higher precedence means the operator is
+further down in the tree.
+
+Delete actions are used for a similar effect when elements
+are deleted.
+
+Free-floating comments
+remain unsupported in MPS
+
+Unfortunately,
+MPS provides no generic support for (temporarily) commenting out code.
+
+
+I.3: Requires tool support to export/import textual syntax By default,
+all textual notations can be copy-pasted to a text editor. The other way, from
+text to MPS, requires integrating a parser that creates the MPS tree from the
+textual source. MPS provides hooks to integrate such parsers.
+
+cn I get a list of participants from the survey in 2014 and the survey
+
+five-point Likert [31] scale
+ Nielsen’s heuristic
+ 
+ By replicating our study, these threats can be reduced further. construct
+validity, i.e, to ensure that our survey measures usability correctly, we consulted
+the usability heuristics by Nielsen [32] before creating the questionnaire.
+
+
+, the surveyed professional developers confirm the effectiveness
+of these mitigations in their every-day work, while the learning curve is high,
+requiring additional training. Further, our industrial experiences indicate MPS’
+usefulness for large-scale development projects. Thus, we believe that projectional
+editing can be efficient in projects that benefit from language composition and
+diverse syntax – outweighing the remaining usability issues
+
+
+12. Simi, M., Campagne, F.: Composable Languages for Bioinformatics: The NYoSh
+experiment. PeerJ PrePrints 1:e112v2 (2013)
+16. Voelter, M.: Preliminary experience of using mbeddr. In: 10th Dagstuhl Workshop
+on Model-based Development of Embedded Systems. (2014) 10
+20. Heering, J., Hendriks, P.R.H., Klint, P., Rekers, J.: The syntax definition formalism
+SDF - reference manual. SIGPLAN 24(11) (1989)
+28. van Rest, O., Wachsmuth, G., Steel, J.R.H., Suß, J.G., Visser, E.: Robust real-time ¨
+synchronization between textual and graphical editors. In: Proceedings of ICMT
+2013. Volume 7909 of LNCS., Springer (2013)
+29. Voelter, M.: Integrating prose as first-class citizens with models and code. In: 7th
+International Workshop on Multi-Paradigm Modeling MPM 2013. (2013) 17
+
+
+24. Anderson, R.: Two-dimensional mathematical notation. In Fu, K., ed.: Syntactic
+Pattern Recognition, Applications. Volume 14 of Communication and Cybernetics.
+Springer (1977)
+25. Helm, R., Marriott, K., Odersky, M.: Building visual language parsers. In: Proc.
+ACM SIGCHI Conf. on Human Factors in Computing Systems. (1991) 105–112
+26. Giammarresi, D., Restivo, A.: Two-dimensional languages. In Rozenberg, G.,
+Salomaa, A., eds.: Handbook of Formal Languages. Springer (1997)
+27. Pruˇsa, D.: Two-dimensional context-free grammars. ITAT 2001 (2001) 27–40
+31. Likert, R.: A technique for the measurement of attitudes. Archives of psychology
+(1932)
+32. Nielsen, J.: Usability Engineering. Morgan Kaufmann Publishers (1994)
+2. Simonyi, C.: The death of computer languages, the birth of intentional programming.
+In: NATO Science Committee Conference. (1995)
+3. Czarnecki, K., Ulrich, E.: Generative Programming: Methods, Tools, and Applications. Addison-Wesley, Reading, MA, USA (2000)
+4. Medina-Mora, R., Feiler, P.H.: An Incremental Programming Environment. IEEE
+Trans. Software Eng. 7(5) (1981)
+5. Notkin, D.: The GANDALF project. Journal of Systems and Software 5(2) (1985)
+language). Master’s thesis, Naval Postgraduate School, Monterey, CA, USA (1988)
+7. Reps, T.W., Teitelbaum, T.: The Synthesizer Generator. In: First ACM SIGSOFT-
+/SIGPLAN software engineering symposium on Practical software development
+environments, ACM (1984)
+8. Voelter, M.: Language and IDE Development, Modularization and Composition
+with MPS. In: GTTSE 2011. LNCS. Springer (2011)
+9. Simonyi, C., Christerson, M., Clifford, S.: Intentional Software. In: OOPSLA 2006,
+ACM (2006)
+10. Christerson, M., Kolk, H.: Domain expert DSLs (2009) talk at
+QCon London 2009, available at http://www.infoq.com/presentations/
+DSL-Magnus-Christerson-Henk-Kolk.
+11. Diekmann, L., Tratt, L.: Parsing composed grammars with language boxes. In:
+Workshop on Scalable Language Specifications. (2013)
+14. Steinberg, D., Budinsky, F., Merks, E., Paternostro, M.: EMF: eclipse modeling
+framework. Pearson Education (2008)
+15. Voelter, M., Ratiu, D., Kolb, B., Schaetz, B.: mbeddr: instantiating a language
+workbench in the embedded software domain. Automated Software Engineering
