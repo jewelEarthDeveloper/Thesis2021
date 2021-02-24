@@ -1,6 +1,6 @@
 \section{Research method}
 
-Figure \ref{fig:Research_Questions} summarizes how the questions are are related and the methods used to answer them.
+Figure \ref{fig:Research_Questions} summarizes how the questions are related and the methods used to answer them.
 \begin{figure}[H]
     \centering
     \fbox{\includegraphics[width=0.95\textwidth]{images/ResearchQuestion_Legend.png}}
@@ -9,15 +9,15 @@ Figure \ref{fig:Research_Questions} summarizes how the questions are are related
 \end{figure}
 
 As seen in figure \ref{fig:Research_Questions}, question 1 - ``What is the current state of language workbenches supporting projectional editing?'', will be answered by the method of conducting a literature review of the field of language workbenches, specifically regarding those that support projectional editing. 
-This research method will follow the prescriptions of Kitchenham et al.\cite{kitchenham2015evidence}.
+This research method will follow the recommendations of Kitchenham et al.\cite{kitchenham2015evidence}.
 To be clear on what we are investigating some terms should be defined first.
 A language workbench supports the efficient development of languages. 
 The term caught on after a 2005 article by Martin Fowler\cite{Fowler_lwb}. 
 Editing in language workbenches has two predominant editing forms - free-form text editing and projectional editing\cite{erdweg2013state}.
 Projectional editing is a method of bypassing the need for a parser and programming directly into projections of the Abstract Syntax Tree.
 
-Question 2, ``How does projectional editing improve feedback in practice?'', will be answered by interviews with experts in the field of projectional editing, following the prescriptions of Mathers et al.\cite{mathers1998using}.
-In order to improve my ability to get enough interviews and other feedback, We have actively joined language engineering communities with a focus on projectional editing and networked at projectional editing conferences.
+Question 2, ``How does projectional editing improve feedback in practice?'', will be answered by interviews with experts in the field of projectional editing, following the guidelines of Mathers et al.\cite{mathers1998using}.
+To improve our ability to get enough interviews and other feedback, we have joined a language engineering community with a focus on projectional editing and networked at a projectional editing conference.
 We expect through the contacts we have made to be able to snowball to a statistically significant number of respondents.
 
 Gregor\cite{gregor2006nature}, gives ``A Taxonomy of Theory Types in Information Systems Research''. 
@@ -31,7 +31,8 @@ There is no existing implementation of the Drools language in MPS.
 Drools is nearly 20 years old and, according to awesomeopensource\cite{awesomeopensource}, it is the most appreciated opensource rules engine.
 Despite this, it does not have strong IDE support.
 The cofounder and platform architect of Drools, Mark Proctor, even said ``for rule engines to have a future drl has to die''\cite{Proctor_happenings}.
-We believe this is a business user centric view and disregards the needs of the developers also benefit from the Drools language and prefer working in an IDE.
+We believe this is a business user centric view and disregards the needs of the developers, who also benefit from the Drools language.
+Developers, in general, prefer working in an IDE.
 
 Thus, we will apply projectional editing techniques, through the MPS language workbench to the Drools language.
 The novelty of our approach will be to create new view types specific to the needs of a Drools programmer.
@@ -39,22 +40,22 @@ The novelty of our approach will be to create new view types specific to the nee
 We will be relying on MPS as well as other open-source components.
 The reason we chose MPS is that it is the most developed of the free and open source projectional editing language workbenches, found in a study of the state of the art in Language workbenches\cite{erdweg2013state}.
 
-An artefact of this master's project will be a prototype projectional editor, that will give much stronger editor support in IntelliJ, currently the most used Java IDE\cite{Java_usage_report}.
+An artefact of this master's project will be a prototype projectional editor, that will give much stronger editor support in JetBrain's IntelliJ, currently the most used Java IDE\cite{Java_usage_report}.
 The prototype will consist of a of the Drools language, re-defined in the MPS language.  
 The prototype will further consist of a set of projections of the DSL's AST.
 MPS uses the Java graphics framework Swing for the creation of graphical, as opposed to textual, projections.
-During the building of the prototype we will decide upon which projections we will create. 
+During the building of the prototype, we will decide upon which projections we will create. 
 Some potential examples include:
 \begin{itemize}
-    \item Visualization of order of rule execution.
-    \item Spreadsheet-like decision tables.
-    \item ``Group-by'' fact, query or function usage.
+    \item Visualization of order of rule execution;
+    \item spreadsheet-like decision tables;
+    \item or a ``group-by'' display on fact, query or function usage.
 \end{itemize}
 
 The major tasks in this prototype development will be: 
 \begin{itemize}
-    \item Modelling the Drools language.
-    \item Developing the alternative projections.
+    \item Modelling the Drools language;
+    \item and developing the alternative projections.
 \end{itemize}
 
 The prototype itself will be validated by working.

@@ -137,16 +137,6 @@ Tamás Szabó and Justin Horton (workday)
 
 
 
-com.dslfoundry.langvis 
-plaintextgen tutorial on DSLFoundry com 
-
-would this make it easy to build a vs code plugin?
-If someone created a new language would it be possible to use it for generation?
-where is the model server - is it a SaaS run by Jetbrains or would each organization seet up their own server, or can the server sit on your own machine (like a node server)?
-how heavyweight is the server - could it be used to build an MPS vs code addin?
-
-does it work the other way? can I make a language locally and run reference it in the web?
-do you have navigations (like ctrl+B)
-
-can it handle graphical, tables and notation projections
-
+papers 
+Sofia Meacham - BT
+Detlef Nauck - BT

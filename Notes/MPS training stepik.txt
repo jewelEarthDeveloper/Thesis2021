@@ -1,1 +1,131 @@
- 
+ MPS is an open-source language workbench that focuses on Domain-specific languages. The project started in 2003 as an experiment to try innovative concepts, such as projectional editor and code generation, on the Java platform. It has gradually evolved into a regular tool that is ready for use in the industry. The open-source license permits users to use MPS in commercial as well as open-source and academic projects without fees or any liabilities to JetBrains. JetBrains offers consultancy, training and commercial support to the customers to fund further development of the tool.
+
+ https://www.youtube.com/watch?v=7jck5QBLQeQ
+
+ create an html of the rules so that they can be inspected by our security person and put into the isms!
+
+ Language workbenches are universal, domain-agnostic meta-modling tools
+ - create single-purpsoe modeling tools- assist in designing all aspects of a languageEnable both modelling and programming languages
+
+ Charateristics of Language Workbenches:
+ IDE Support
+  - efficient keyboard entry
+  - refactoring
+  - type system checks
+  - code analysis
+  - Tests
+ Code generation
+ Integrates with General Purpose Language (GPL) codease and tooling
+ integrates with CI and VCS
+
+ others - Xtext, Intentional, spoofax
+
+ capabilities
+  - create new languages
+  - extend existing languages
+  - Combine multiple languages in the code
+
+ Applicable domains
+	automate repetitive domains
+	 - product lines
+	 - bad framworks
+	 - models for multiple domains
+
+	get semantically closer to the domain
+	 - capture structure/behaviour of domain formally
+	 - communicate
+	 - easier analysis
+	 - prove correctness
+	 - customized ide to support dsl
+
+
+
+MPS is a universal language workbench.
+
+
+Projects in MPS consist of modules. Modules are independent reusable collections of code. There are four types of modules in MPS:
+
+Solution - represents a piece of user code and is equivalent to how code is structured in traditional IDE's.
+Language - represents language definition.
+Generator - represents a transformation of code that is written one language into code written in another one. Each generator belongs to exactly one Language module. A Language module contains exactly one Generator module.
+DevKit - groups modules (Solutions and Languages) for easy reference, does not add any new code or functionality. A module can be part of multiple DevKits.
+
+Internally, modules are structured into models. Models are a language-agnostic equivalent of Java's packages, Ruby's modules or JavaScript folders. Models hold root nodes, which you may think of as an equivalent of files. Root nodes "are" the code. Technically, they represent the roots of trees (aka Abstract Syntax Tree) and hold other nodes organized into a tree-like hierarchy.
+
+There are three main benefits of using Language Engineering:
+Productivity
+Quality
+Leveraging expertise
+
+Main gains in productivity come from removing repetition from code and from raising the abstraction level closer to the problem domain. Higher levels of abstraction support programmer's focus and reduce the abstraction gap between the domain and the language. This also applies to the maintenance phase. Reading and understanding code can be greatly improved by raising the level of abstraction.
+
+comes at a price of higher initial costs - the languages must first be designed and implemented.
+
+Quality
+Code written using domain-specific languages tends to contain fewer defects, mainly due to these reasons:
+
+The code is shorter than when written using a GPL.
+The code is easier to analyze by tools and reviewed by humans.
+The language can forbid dangerous or suspicious code constructs, e.g. pointer manipulation or null values
+Error messages that the IDE shows to the user can be also domain-specific, e.g. "Symbol is not available on a phone keyboard".
+The generator generates code with consistent quality - new features (aka business rules, menus, etc.)  have the same quality as the old ones, since the generator used to generate runnable code for them is the same.
+
+Language engineering separates the concerns of the problem domain and the implementation domain.
+
+Problem domain - is covered by the user models using the DSLs. Domain experts understand this domain and so they benefit from being able to read or write code that targets the problem domain. The domain experts' expertise is encoded in the user models.
+
+Implementation domain - is covered by the generator and the generator run-time frameworks.
+
+The separation of the two concerns enables business to evolve each domain at its own pace and react to challenges in either of them.
+
+Domain experts that join the team can understand the business rules covered by the models from reading the user models, since the problem domain is not cluttered with alien implementation logic.
+
+Switching the implementation technology should ideally only mean to define a new generator. The user models, which hold the essential business logic, remain valid and usable even when the implementation technology changes dramatically.
+
+Compilers, interpreters as well as IDEs need to manipulate code that the user provides. Code is typically provided in text files and the extension of the file indicates the language used by that file. Computer programs, in order to represent the code in memory, need to read the files and process them with a special tool, called parser. Parser uses the known grammar of the language to distinguish individual tokens in the text file and to assign meaning to them. As the parser reads the file it gradually builds a data structure that is known as Abstract Syntax Tree. The structure represents the code fully and unambiguously. Abstract Syntax Trees (AST for short) serve the IDE to provide assistance to the user as well as they serve the compiler to perform transformations that gradually convert the tree into runnable binary code.
+
+languages are sets of concepts
+
+programs/models are represented in memory as a tree (graph) data structure known as abstract syntax tree it consists of nodes in parent child relationships with possible references and these nodes are of certain concepts and concepts come from a certain language that you use in your programmer
+
+
+People who participate on a project that involves designing languages and tooling for them frequently find themselves in one or more of the following roles:
+Domain expert - a professional with a specific domain of expertise
+DSL user - a domain-aware person using the designed languages to implement the domain-specific logic
+Language designer - designs the individual aspects of a languag
+Ergonomist - optimizes the notations and the visual side
+Generator author - implements the transformation rules
+Generator framework author - a professional programmer who creates frameworks and libraries
+Tooling designer - a professional programer that writes extensions to the IDE
+
+The chosen notation directly influences the success of a language.
+notation should be simple and concise and provide sensible defaults. If a preferred notation exists already in the domain, it is advisable to reuse or adapt it in the new language.
+
+the support that the IDE provides (code-completion, scoping, intentions, refactorings, navigation, error detection, etc.) adds to the usability of the notation itself.
+
+Tools like MPS that build on the principles of projectional (sometimes called structured) editing can offer a wider range of notations.
+
+
+Symbols - notations that combine text with non-textual symbols. Math, for example, has been using symbols for centuries and there are good reasons to support these symbols in languages used in math-heavy computations.
+
+State machines - some domainsuse state machines to model systems that react to external events and change their internal state following some pre-defined set of rules. To express the transitions in individual states after arrival of certain events a table can be used with good success.
+
+Diagrams - numerous problems are best solved in graphics - electrical circuits, organizational charts, workflows, etc.
+
+Forms - rich text editors are also frequently utilized for encoding rules of various sorts.
+
+ notations can be optimized towards easy readability or towards writability
+
+ Since MPS enables language designers to provide multiple notations for a language, which the users can easily switch when editing code, the trade off between learnability and effectivity as well as between readability and writability does not need to be made in MPS languages.
+
+
+ The generator will be used to generate runnable code from the DSL code. There can possibly be several generators for the same DSL, each generating different implementation code.
+
+ A generator must not influence the design of the language
+
+ A generator consists of stable and variable parts. Stable parts is the code that is always generated unchanged, no matter how the user implements the logic in the DSL. Large portions of the stable parts are frequently extracted away from the generator and implemented as a library that bundles with the generated code at run-time.
+
+
+
+ When you write code in MPS, you do not manipulate code on character level. Instead you obey the rules of structured editing
+
