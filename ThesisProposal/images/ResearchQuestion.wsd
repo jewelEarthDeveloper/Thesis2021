@@ -3,25 +3,19 @@
 
 rectangle "<b>Main Research Question</b>\nHow can projectional editors and DSLs be combined to\naddress feedback mechanisms for developers in the context\nof reasoning about rules in a rule-based business engine?"  as MainQuestion #white
 rectangle "<b>RQ1</b> What is the current state of\nlanguage workbenches supporting\nprojectional editing?" as RQ1 #white
-rectangle "<b>RQ2</b> How does projectional\nediting improve feedback in\npractice?" as RQ2 #white
-rectangle "<b>RQ3</b> Which projections can\nhelp developers to get appropriate\nfeedback about rules?" as RQ3 #white
+rectangle "<b>RQ2</b> Which projections can\nhelp developers to get appropriate\nfeedback about rules?" as RQ2 #white
 rectangle "<b>Research Method</b>\nLiterature Mapping\n" as RM1 #lightgreen
-rectangle "<b>Research Method</b>\nDesk and interview\nresearch" as RM2 #lightgreen
-rectangle "<b>Research Method</b>\nPrototype\n" as RM3 #lightgreen
+rectangle "<b>Research Method</b>\nPrototype\n" as RM2 #lightgreen
 
 MainQuestion *-down- RQ1
 MainQuestion *-down- RQ2
-MainQuestion *-down- RQ3
 
 RQ1 -down-> RM1
 RQ2 -down-> RM2
-RQ3 -down-> RM3
 
 RQ1 -[hidden]right- RQ2
-RQ2 -[hidden]right- RQ3
 
 RM1 .up..> RQ2  : informs
-RM2 .up..> RQ3  : informs
-RM3 ..up..> MainQuestion : contributes to\ndeciding on
+RM2 ..up..> MainQuestion : contributes to\ndeciding on
 
 @enduml

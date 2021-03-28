@@ -16,10 +16,6 @@ The term caught on after a 2005 article by Martin Fowler\cite{Fowler_lwb}.
 Editing in language workbenches has two predominant editing forms - free-form text editing and projectional editing\cite{erdweg2013state}.
 Projectional editing is a method of bypassing the need for a parser and programming directly into projections of the Abstract Syntax Tree.
 
-Question 2, ``How does projectional editing improve feedback in practice?'', will be answered by interviews with experts in the field of projectional editing, following the guidelines of Mathers et al.\cite{mathers1998using}.
-To improve our ability to get enough interviews and other feedback, we have joined a language engineering community with a focus on projectional editing and networked at a projectional editing conference.
-We expect through the contacts we have made to be able to snowball to a statistically significant number of respondents.
-
 Gregor\cite{gregor2006nature}, gives ``A Taxonomy of Theory Types in Information Systems Research''. 
 For Question 3, ``Which projections can help developers to get appropriate feedback about rules?'', we will conduct what Gregor calls ``Type V: Theory for Design and Action''. 
 The criteria for success of Type V research is that the prototype should ``include utility to a community of users, the novelty of the artefact, and the persuasiveness of claims that it is effective''.
@@ -30,9 +26,10 @@ There is no existing implementation of the Drools language in MPS.
 
 Drools is nearly 20 years old and, according to awesomeopensource\cite{awesomeopensource}, it is the most appreciated opensource rules engine.
 Despite this, it does not have strong IDE support.
-The cofounder and platform architect of Drools, Mark Proctor, even said ``for rule engines to have a future drl has to die''\cite{Proctor_happenings}.
-We believe this is a business user centric view and disregards the needs of the developers, who also benefit from the Drools language.
-Developers, in general, prefer working in an IDE.
+Mark Proctor said ``for rule engines to have a future drl has to die''\cite{Proctor_happenings}.
+As the cofounder and platform architect of Drools his statement could be considered the conventional view of the state of the Drools ecosystem.
+We believe that this statement was motivated by the complexity of large rules files.
+In this project, we reject this hypothesis and instead we attempt to give the drl file a reprieve, through the use of projectional editing.
 
 Thus, we will apply projectional editing techniques, through the MPS language workbench to the Drools language.
 The novelty of our approach will be to create new view types specific to the needs of a Drools programmer.

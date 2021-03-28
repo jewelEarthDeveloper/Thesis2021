@@ -1,17 +1,17 @@
 @startgantt
 printscale weekly
 Project starts the 10th of february 2021
-[Projectional LWB mapping] lasts 35 days
-Then [projectional interviews] lasts 35 days
-[Design projections] lasts 28 days and starts 1 week after [projectional interviews]'s start
+[Projectional LWB mapping] lasts 80 days
 
-[Implementing Drools in MPS] lasts 67 days
-Then [Building Alternative Projections] lasts 61 days
+[Implementing Drools in MPS] lasts 80 days
+Then [Building Alternative Projections] lasts 63 days
 Then [Finalize project] lasts 4 weeks
 
-[projectional interviews] -> [Building Alternative Projections]
+[Implementing Drools in MPS] -> [Building Alternative Projections]
 
+[Design projections] lasts 28 days and starts 8 weeks after [Implementing Drools in MPS]'s start
+[Design projections] -> [Building Alternative Projections]
 
-[Defend project] happens 25th july 2021
+[Defend project] happens 5th August 2021
 
 @endgantt
