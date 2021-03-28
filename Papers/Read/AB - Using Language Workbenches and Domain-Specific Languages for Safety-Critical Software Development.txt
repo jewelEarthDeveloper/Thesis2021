@@ -1,0 +1,122 @@
+AB - Using Language Workbenches and Domain-Specific Languages for Safety-Critical Software Development
+
+We argue that models created with domain-specific languages are easier to validate, and that the additional risk resulting from the transformation to code can be mitigated by
+a suitably designed transformation and verification architecture.
+
+Domain-Specific Languages DSLs are computer languages optimized for expressing programs in a particular
+domain [62]. They may have different degrees of expressivity – from simple structure languages to Turing complete
+languages – and use a wide variety of notations such as text,
+tables, symbols, math, diagrams [67]. Importantly, the abstractions and notations used in the DSL are aligned with the
+particular domain at which the DSL is targeted; this is the
+core difference to general-purpose programming languages,
+whose abstractions are generic. Many DSLs are used by people who are competent in the domain, but who are not necessarily developers. For those DSLs, notations that reflect
+the domain are especially important, even if those might not
+resemble popular syntax from general purpose languages.
+
+
+Language Workbenches A language workbench is a tool
+that efficiently supports the development of languages, often, but not necessarily, DSLs; the report from the language
+workbench challenge [17] provides a good overview. They
+typically provide a set of DSLs to define various aspects
+of languages, such as structure, syntax, static semantics, dynamic semantics (usually through interpreters or generators)
+as well as various aspects relating to IDEs (code completion,
+syntax coloring, goto definition, find usages, refactorings).
+
+Jetbrains MPS MPS2
+is an open source language workbench developed by Jetbrains over the last 15 years. While
+not used as widely as some other language workbenches,
+it is used to implement interesting languages for real-world
+use. Its distinguishing feature is its projectional editor, which
+supports practically unlimited language extension and composition [65] as well as a flexible mix of a wide range of textual, tabular, mathematical and graphical notations [67]. The
+experience of using MPS for implementing a large set of C
+extensions in the context of mbeddr [71] is discussed in [73];
+the paper provides a detailed assessment of the strengths and
+limitations of MPS for large-scale language development.
+
+
+Our argument relies on the claim that it is desirable to perform as many development activities as possible on a suitably abstract model. While we provide some backing in this
+section, we assume that the reader accepts this claim, based
+on their own experience and the extensively documented
+productivity benefits of modeling, DSLs, code generation
+and tools [6, 7, 25, 29, 30, 32, 43, 44, 72]. We include this
+chapter in this paper even though it is not a contribution,
+because we refer to the benefits from the case study in Section 6, which also confirms many of these benefits.
+
+
+Implementation Effort A DSL can reduce the implemenation effort as a consequence of its more appropriate,
+higher level abstractions. DSL code is typically more concise and requires less boiler-plate than functionally equivalent programming language code [72]. Targeting multiple
+platforms amplifies this benefit. Low-level mistakes (for example, faulty pointer arithmetics in C) are prevented. IDE
+support can also be better because the domain-related semantics of the DSL can be known by the IDE.
+
+Verification and Test Models expressed with a suitable
+DSL avoid the need to “reverse-engineer” domain semantics
+from low-level implementation code, simplifying verification and test. For example, if state machines are represented
+first-class as opposed to, for example, switch-statements in
+C, an automated analysis to detect dead or unreachable states
+is much simpler to perform and hence, to implement [74].
+
+Another example is the use of decision tables instead of
+nested if statements. The semantics of the decision table
+imply that it has to be complete (all combinations of inputs
+must be covered) and overlap-free (for every input, only one
+branch is valid). A solver can be used to check for these
+properties [56, 74]. A structure composed from if statements cannot be assumed to imply these semantics.
+
+
+Validation Models can be used to front load [47] validation, reducing the cost of errors [5]. Models can be simulated
+and tested to ensure that they behave correctly; this approach
+is called model-in-the-loop testing (in systems engineering)
+or quality-by-design (in the pharmaceutical industry). Validation also involves reviews by other developers or by a
+separate QA team. Models that use appropriate abstractions
+and notations make reviews more efficient because they are
+easier to comprehend and easier to relate to requirements
+because the semantic gap is narrower; Kosar et al. confirm
+empirically that program comprehension is improved with
+DSLs [35]. For validation at the model level to work, the
+semantics of the DSL must be clear to everybody involved:
+we briefly address this at the beginning of Section 5.4.
+
+
+Work
+on language testing includes execution semantics [81], static
+semantics [18], grammars and concrete syntax [39] as well
+as multi-aspect testing frameworks [31, 55]. Ratiu and Voelter specifically discusses language testing in MPS [55], using
+manually written type system tests, automatically generated
+test cases for language structure and syntax, and measuring
+transformation coverage.
+
+The core approach to establishing safety does
+not depend on MPS; for example, it could be implemented
+with Xtext and Xtend instead [4]. However, based on our
+experience with Xtext, we expect the language development
+effort to be higher. However, other factors might be more
+important. For example, the ability to reuse an existing, reliable expression language such as KernelF requires support
+for modular language composition. It is available in MPS,
+but Xtext supports only a much more limited form; many
+other language workbenches do not support it at all. Similarly, MPS’ support for non-textual notations is crucial for a
+language that faciltates efficient validation (for example, the
+decision tables and decision trees)
+
+
+
+
+
+
+
+
+[25]	F. Hermans, M. Pinzger, and A. Van Deursen. Domain-specific languages in practice: A user study on the success factors. In International Conference on Model Driven Engineering Languages and Systems, pages 423–437. Springer, 2009.
+
+[31]	L. C. Kats, R. Vermaas, and E. Visser. Integrated language definition testing: enabling test-driven language development. In ACM SIGPLAN Notices, volume 46, pages 139–154. ACM, 2011.
+
+
+
+
+[57]	D. Ratiu, M. Zeller, and L. Killian. Safety.lab: Model-based domain specific tooling for safety argumentation. In International Conference on Computer Safety, Reliability, and Security, pages 72–82. Springer, 2014.
+
+[64]	E. Visser, G. Wachsmuth, A. Tolmach, P. Neron, V. Vergu, A. Passalaqua, and G. Konat. A language designer’s workbench: A onestop-shop for implementation and verification of language designs. In Proc. of the 2014 ACM International Symposium on New Ideas, New Paradigms, and Reflections on Programming & Software. ACM, 2014.
+
+[68]	M. Voelter, Z. Molotnikov, and B. Kolb. Towards improving software security using language engineering and mbeddr c.
+
+
+
+

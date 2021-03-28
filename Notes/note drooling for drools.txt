@@ -1,0 +1,7 @@
+drooling for drools
+https://developers.redhat.com/videos/vimeo/15989685
+
+check out drools flow in Eclipse 
+
+drools is a production rule system (forward chaining)
+

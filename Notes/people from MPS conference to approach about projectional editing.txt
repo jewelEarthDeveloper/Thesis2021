@@ -112,6 +112,64 @@ Stefan wagner
 luca de santis
 stanislav Ignatiev
 
+maarten steen
+eugen schindler 
+Vincent Aranega
+alessio stalla
+rene Couture
+Horacio Hoyos 
+Marco Oetken
+
+Apurvanand Sahay
+Denis Kuniss
+Juan Manuel vara mesa
+philip nagler frank
+sanyaade adekoya
+Sascha Lisson
+Stanislav Ignatiev
+Velu mani
+Eugen Schindler
+Ian Ramsay
+martin schornig
+matteo moritari
+sebastian Zarnekow
+igor dejanovic
+
+shaul fridman
+Skander Turki
+Andrey Efanov
+Greg Jarmiolowski
+Yasmine Assioua
+patricj Viry
+
+
+stefan Wagner
+bill eisner
+christian Dietricht
+david akehurst
+Dmitry Tsitelov
+edmundi lopez
+gianmarco Leone
+Glenn Roberts
+jonas rodrigues
+maarten steen
+magnus Wiklund
+marco rolappe
+martin schoernig
+matteo marati
+pedro j molina
+rene Couture
+Riccardo Solmi
+Sascha Lisson
+Shaul Fridman
+skander turki
+tomasoberg
+velu Mani
+yutong fu
+Oscar fernandez Sierra
+
+
+
 http://mps-community.nl/
 MPS day eindhoven 2019 
 
@@ -140,3 +198,15 @@ Tamás Szabó and Justin Horton (workday)
 papers 
 Sofia Meacham - BT
 Detlef Nauck - BT
+
+
+Strumenta again
+andrey Efanov
+Magnus Wiklund
+andrzej Blikle
+dmitry Ponyatov
+edmundo lopez
+jahan Zinedine
+marianne bellotti
+patrick viry
+yasmine Assioua

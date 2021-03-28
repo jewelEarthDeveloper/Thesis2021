@@ -1,0 +1,153 @@
+package  . ;
+
+import  . . . ;
+import  . . . ;
+import  . . . . ;
+import  . . . . ;
+import  . . . ;
+import  . . . ; 
+import  . . . . ;
+import  . . . . . ;
+import  . . . . ;
+import  . . . . ;
+import  . . . ;
+
+global  . .Type global;
+global Type	global;
+
+multiline comment
+
+rule string 
+    salience integer
+    when
+    	variable: Fact(  )    	
+    comment
+    then
+        drools.method( variable.method() );
+    comment
+end 
+
+rule string 
+	salience integer
+	when
+	comment
+		variable: Fact()
+	then
+	    for ( Type variable : variable.method() ) {
+    		for ( Type variable : variable.method() ) {
+	   		  drools.method( variable );
+	   		}
+		}
+	comment
+end 
+
+rule string 
+	salience integer
+	when
+	comment
+		variable: Fact( property != null, property.property.property == imported.property  )
+		variable: Fact( property.property == imported.property )
+	then
+		global.add( variable );
+	comment
+end 
+
+rule string 
+    salience integer
+    when
+    comment
+        variable: Fact( property == null )
+        variable: Fact( property.property == imported.property )
+    then
+        global.add( variable );
+    comment
+end 
+
+rule string 
+	salience integer
+	when
+	comment
+		variable: Fact( property != null, property.property.property != imported.property )
+		variable: Fact( property != imported.property && property != imported.property )
+	then
+		global.add( variable );
+	comment
+end
+
+rule string
+	salience integer 
+	when
+	comment
+		variable: Fact( )
+		variable: Fact( property.property == imported.property, property == imported.property )
+	then
+		global.method( variable );
+	comment
+end
+
+rule string
+	salience integer 
+	when
+	comment
+		variable: Fact( property != null, property.property.id != imported.property )
+		variable: Fact( property.id == imported.property )
+	then
+		global.method( variable );
+	comment
+end
+
+rule string
+	salience integer 
+	when
+	comment
+		variable: Fact( property != null, property.property.id != imported.property )
+		variable: Fact( property.id == imported.property )
+	then
+		global.method( variable );
+	comment
+end
+
+rule string
+	salience integer 
+	when
+	comment
+		variable: Fact( property != null, property.property.property != imported.property )
+		variable: Fact( property.property == imported.property )
+	then
+		global.method( variable );
+	comment
+end
+
+rule string
+    salience integer 
+    when
+    comment
+        variable: Fact( property != null,  \property.property.property != string, property.property.property != string, property.property.property != string )
+        variable: Fact( property.property == string, property.property.property == imported.property )
+    then
+        global.method( variable );
+    comment
+end
+
+rule string
+    salience integer 
+    when
+    comment
+        variable: Fact( property != null, property.property.property != string, property.property.property != string, property.property.property != string )
+        variable: Fact( property.property == imported.property )
+    then
+        global.method( variable );
+    comment
+end
+
+rule string
+    salience integer 
+    when
+    comment
+        variable: Fact( property != null, property.property.property != string, property.property.property != string, property.property.property != string )
+        variable: Fact( property.property in ( imported.property, imported.property, imported.property ) )
+    then
+        global.method( variable );
+    comment
+end
+

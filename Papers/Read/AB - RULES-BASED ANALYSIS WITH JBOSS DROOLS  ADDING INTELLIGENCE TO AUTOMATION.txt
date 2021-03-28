@@ -1,0 +1,124 @@
+AB - RULES-BASED ANALYSIS WITH JBOSS DROOLS  ADDING INTELLIGENCE TO AUTOMATION 
+
+Rules engines are less-known as software technology
+than the traditional procedural, object-oriented, scripting
+or dynamic development languages. T
+
+
+Some example uses of enriching automated processes
+with analysis and decision logic are:
+• What to do next? Complex and/or dynamic
+routing or filtering logic based on previously
+obtained information
+• Is what we did OK? automated analysis or
+validation of results obtained in previous steps
+• Just wake me up when you need me. Intelligent
+monitoring systems, integrated in the same
+platform to automate basic control processes and
+business processes
+• Wait a moment, how did we get in this mess?
+Software technology evolution
+analysis results to obtain a final diagnosis on a
+problem situation
+• Oops, how can we get this resolved? Automated
+advises for corrective actions in case of problems
+• Don't bother me any more for this. Automating
+simple recurring decision processes
+
+Automated diagnosis or decision management can be
+decomposed in the following stages :
+• Autonomous monitoring or discovery
+Continuously track some important performance
+indicators and generate an alarm when a value
+becomes suspect.
+• Context-sensitive analysis of raised alarms
+Typically involves looking at many different
+datasets and measurements.
+Uses thresholding, trending etc. to identify
+exceptions (e.g. taking your fever)
+• Consolidation of obtained information and
+analysis results towards a diagnosis or decision
+(e.g. “you've got a simple flue”). This may
+optionally include advises for problem resolution
+or repair.
+
+RULE ENGINES
+To cater for the above needs, the software system must
+be able to handle large volumes of data and to apply
+complex reasoning logic on it. An easy-to-understand
+reasoning approach uses conditional actions, also known
+as “if-then” logic. Such constructs are frequently used in
+traditional programming, but for representing complex
+context-dependent logic they quickly become a nightmare
+to understand or maintain since :
+• it quickly becomes tricky to correctly represent
+all combinatorial possibilities of the conditions
+with nested if-then-else statements
+• the logic is spread out across different parts of
+the code base
+• the result becomes more and more fragile with
+each incremental adaptation
+Rule engines are specialized software systems for
+applying conditional actions (if/then rules) on data. The
+use of a rule engine brings following benefits :
+• business logic, expressed as rules, can be
+externalized from the application code. The
+business logic can then be maintained in a
+centralized way with dedicated tools.
+• rules can be defined in human-readable form in
+text files, spreadsheets etc.
+• rules are often defined in a declarative way.
+Starting from facts that you know are true, the
+desired outcome or action is defined.
+• rule engines are optimized to evaluate large rule
+bases, find matching conditions and trigger the
+corresponding rules.
+
+
+The term “rule engine” is used in different ways. The
+ones which interest us are also known as “production rule
+systems”. The central part of such a system is an
+inference engine that is able to match rules against facts
+or data to infer conclusions which result in new facts or in
+actions. Through optimized matching algorithms such
+engines are able to scale to high volumes of rules and
+facts.
+
+Drools[1] is the leading open-source rules engine
+written in Java. It was started in 2001 and became a
+prominent Java rules engine with its 2.0 release. In 2005
+the Drools project became part of the JBoss group and
+since then Drools also became known as JBoss Rules. In
+2006 JBoss was acquired by Red Hat
+
+
+Drools Engine
+The core of the Drools suite is an advanced Inference
+Engine using an improved Rete algorithm[2] for pattern
+matching, adapted for object oriented systems, and for
+Java in particular. Rules are stored in the production
+memory, while facts are maintained in the working
+memory.
+
+The production memory remains unchanged during an
+analysis session, i.e. no rules are added or removed or
+changed. The contents of the working memory on the
+other hand can change. Facts may be modified, removed
+or added, by executing rules or from external sources.
+After a change in the working memory, the inference
+engine is triggered and it determines which rules become
+“true” for the given facts. If there are multiple selected
+rules, their execution order will be managed via the
+Agenda, using a conflict resolution strategy
+
+When a selected rule has been executed, and one or
+more changes were done in the working memory, the
+inference engine goes to work again, adapting the agenda
+and executing the rule that has now reached the highest
+priority. This iterative process continues until the agenda
+is empty. Then the analysis session terminates and results
+can be queried from the working memory or through the
+usage of global variables.
+
+[2]	Charles Forgy, "On the efficient implementation of production systems." Ph.D. Thesis, Carnegie-Mellon University, 1979. 
+[

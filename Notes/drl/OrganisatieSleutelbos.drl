@@ -1,0 +1,64 @@
+package  . ;
+
+import  . . . ;
+import  . . . . ;
+import  . . . ;
+
+global  . .Type global;
+global Type global;
+
+rule string
+	when
+		variable: Fact()
+	then 
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+end
+
+rule string
+	when
+		variable: Fact(property != null && property == imported.property)
+	then
+		global.method( imported.property );
+end
+ 
+rule string
+	when
+		variable: Fact(property != null && property == imported.property)
+	then
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+end
+
+ 
+rule string
+	when
+		variable: Fact(property != null && property == imported.property)
+	then
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+end
+
+rule string  
+	when
+		variable: Fact(property != null && (property == imported.property || property == imported.property))
+	then
+		global.method( imported.property );
+end
+

@@ -1,0 +1,100 @@
+package  . ;
+
+import  . . . ;
+import  . . . . ;
+import  . . . . ;
+import  . . . ;
+import  . . . ; 
+import  . . . ;
+import  . . ;
+
+
+global  . .Type global;
+global Type global;
+     
+rule string 
+	when
+		variable: Fact()
+	then
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+end
+
+rule string
+	when 
+		variable: Fact( property != imported.property )
+	then
+		global.method( imported.property );
+		global.method( imported.property );
+end
+ 
+rule string
+	when
+		variable: Fact( property >= integer || property == boolean )
+	then
+		global.method( imported.property );
+end
+
+rule string
+	when
+		variable: Fact( property != imported.property, (property == null || < 3), property != boolean  )
+	then
+		global.method( imported.property );
+end
+
+rule string  
+	when
+		variable: Fact( imported.property  != boolean, property != imported.property )
+	then 
+		global.method( imported.property );
+end
+
+rule string
+	when
+		variable: Fact( imported.property  == boolean, authenticated != boolean )
+	then 
+		global.method( imported.property );
+end
+
+rule string
+	when
+		variable: Fact( imported.property  == boolean, handtekeningAanwezig  == boolean )
+	then 
+		global.method( imported.property );
+		global.method( imported.property );
+end
+
+rule string
+	when
+		variable: Fact( imported.property  == boolean )
+	then 
+		global.method( imported.property );
+end
+
+rule string
+	when
+		variable: Fact( property != imported.property , property == null )
+	then
+		global.method( imported.property );
+end
+
+rule string
+	when
+		variable: Fact(  )
+		variable: Fact( property != imported.property,  property != null && property < variable.property  )
+	then
+		global.method( imported.property );
+end
+ 
+rule string
+	when
+		variable: Fact(  )
+		variable: Fact( property != imported.property , property != null &&  property > variable.property  )
+	then
+		global.method( imported.property );
+end
+

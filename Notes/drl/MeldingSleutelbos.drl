@@ -1,0 +1,87 @@
+package  . ;
+import  . . . ;
+import  . . . . ;
+import  . . . ;
+import  . . . ;
+import  . . . . ;
+import  . . . . ;
+import  . . . ;
+import  . . . . . . ;
+import  . . . . . ;
+import  . . . . ;
+import  . . . . ;
+
+global  . .Type global;
+global Type global;
+
+rule string
+	no-loop
+	salience integer
+	when
+		comment
+		variable: Fact()
+		variable: Fact(  )
+	then
+		comment
+		drools.method( variable.method() );
+
+        Type variable = variable.method();
+
+        if ( variable != null ) {
+			drools.method( variable );
+
+            comment
+            if ( variable.method() != null ) {
+                for( Type variable : variable.method() ) {
+                    drools.method( variable );
+                }
+            }
+        }
+
+        Type variable = variable.method();
+        drools.insert( variable );
+end
+
+rule string
+	when
+		variable: Fact()
+	then
+    	global.method( imported.property );
+end
+
+rule string
+	when
+		variable: Fact( eval( variable.method() ) )
+		Fact( ( property == imported.property.property || property == imported.property.property ), property == string )
+	then
+    	global.method( imported.property );
+end
+
+rule string
+	when
+		variable: Fact()
+		variable: Fact( variable.property == imported.property, variable.property == variable.property ||  variable.property.property == variable.property )
+		Fact( property == imported.property.property, property in ( string ) )
+		Fact( property == imported.property.property, property in ( string, string, string ) )
+	then
+    	global.method( imported.property );
+end
+
+rule string
+	when
+		variable: Fact()
+		variable: Fact( variable.property == imported.property, variable.property == variable.property ||  variable.property.property == variable.property, variable.property == null || eval( global.method( variable.method() ) ) )
+	then
+    	global.method( imported.property );
+end
+
+
+
+rule string
+	when
+		variable: Fact()
+		variable: Fact( variable.property == imported.property, variable.property != null && variable.property.method(variable), variable.property != variable )
+
+	then
+    	global.method( imported.property );
+end

@@ -1,0 +1,78 @@
+AB - Towards Improving Software Security using Language Engineering and mbeddr C
+
+
+Language Engineering and MPS Language engineering
+refers to building, extending and composing languages. The
+field encompasses general-purpose programming languages
+and domain-specific languages (DSLs) [4]. Language workbenches [5, 6] are tools for efficiently designing and implementing languages. JetBrains Meta Programming System
+(MPS) [7] is an open-source language workbench that provides comprehensive support for many aspects of language
+definition, including structure, syntax, type systems, transformation and generation, debugging and integrated development environment (IDE) support.
+
+MPS relies on a projectional editor which avoids parsing the concrete syntax
+of a language to construct the abstract syntax tree (AST);
+instead, editing gestures directly change the AST, and the
+concrete syntax is rendered (“projected”) from the changing
+AST. This means that MPS can work with a wide variety of
+(unparsable) notations such as mathematical symbols, tables
+and diagrams [8]. Since a projectional editor never encounters grammar ambiguities, they can support language composition [9]. Traditionally, projectional editors were hard to
+use and were not adopted much in practice. MPS, in contrast, makes editing in a projectional editor as close to “normal text editing” as possible and also supports diff/merge on
+the level of the projected concrete syntax; the study in [10]
+shows that users are mostly agreeable with the editor after a
+short while of getting used to it.
+
+The benefits of
+projectional editors relative to notational flexibility and language composition have been explored in the context of embedded software engineering in the mbeddr projec
+
+Second, we argue that the MLEs make C generally a better language according to Green’s Cognitive Dimensions of
+Notations [28], a set of established language evaluation criteria2
+
+
+ Even though it is called Cognitive Dimensions of Notations, some of the
+dimensions actually apply to the language and its abstractions, not just the
+notation (concrete syntax).
+
+Abstraction Gradient What are the minimum and maximum
+levels of abstraction exposed by
+the notation? Encapsulation?
+Closeness of Mapping How closely does the notation
+correspond to the problem world?
+Diffuseness/Terseness How many symbols or how much space
+does the notation require to produce
+a certain result or express a meaning?
+Error-proneness To what extent does the notation
+influence the likelihood of mistakes?
+
+
+ Incrementally adding MLEs to C is a
+direct implementation of the Abstraction Gradient: the abstraction level can be increased incrementally if and when it
+makes sense. The user is not forced to encode everything in
+2 Even though it is called Cognitive Dimensions of Notations, some of the
+dimensions actually apply to the language and its abstractions, not just the
+notation (concrete syntax).
+Abstraction Gradient What are the minimum and maximum
+levels of abstraction exposed by
+the notation? Encapsulation?
+Closeness of Mapping How closely does the notation
+correspond to the problem world?
+Diffuseness/Terseness How many symbols or how much space
+does the notation require to produce
+a certain result or express a meaning?
+Error-proneness To what extent does the notation
+influence the likelihood of mistakes?
+Figure 7. Relevant Cognitive Dimensions of Notations.
+either a (too) low- or a (too) high-level language. A suitable
+MLE can be used (or developed) for each particular case.
+Adding domain-specific abstractions and notations increases
+the Closeness of Mapping between the program and the
+domain. The traces also help bring the prose requirements
+closer to the implementation code. The additional abstractions and notations are also a way of adjusting the Diffuseness/terseness of a language (or a specific program). Generally, a more terse program is better, since it exhibits lower
+complexity [29], assuming the language constructs used to
+achieve the terseness are known to all involved parties. Finally, as we have discussed above, using the right abstractions reduces the Error-proneness of programs because programmers do not have to deal with low-level details irrelevant for the problem at hand. 
+
+
+[28]	T. R. Green, “Cognitive dimensions of notations,” People and computers V, pp. 443–460, 1989.
+
+[31]	G. L. Steele, “Growing a language,” Higher-Order and Symbolic Computation, vol. 12, no. 3, pp. 221–236, 1999.
+
+[33]	E. Visser, G. Wachsmuth, A. Tolmach, P. Neron, V. Vergu, A. Passalaqua, and G. Konat, “A language designer’s workbench. a one-stop-shop for implementation and verification of language designs,” in Proceedings of SPLASH 2014, Onward, 2014.
+

@@ -1,0 +1,102 @@
+AB - Language Composition Untangled
+
+Domain-specific languages (DSLs) are a prominent candidate for bridging the gap between domain concepts and
+software developers.
+
+To implement a DSL, a language developer can, for example,
+write a parser and interpreter, apply an attribute grammar
+system [8, 30], use a language workbench [6, 17], write a
+compiler plug-in for an extensible compiler [8, 19], or provide
+a library for domain primitives using regular functions [15],
+macros [28, 27], or sugar libraries [11].
+
+"language extension, language
+restriction, language unification, self-extension, and
+extension composition"
+
+A language designer composes a base
+language with a language extension. A language extension
+is itself a language fragment, which typically makes little
+sense when regarded independent of the base language. This
+dependency of the language extension on the base language is
+the main characteristic of this form of language composition.
+
+
+Definition 1. A language-development system supports
+language extension of a base language if the implementation
+of the base language can be reused unchanged to implement
+a language extension.
+
+Language restriction. Especially in education, it sometimes makes sense to restrict an existing programming language. 
+
+
+
+Language unification
+Accordingly, we want to compose languages in an unbiased
+manner. Furthermore, the language composition should be
+deep and bidirectional, that is, program fragments from either
+language should be able to interact with program fragments
+from the other language
+
+. A language designer composes two
+independent languages by unification. Like in mathematical
+unification, language unification requires that parts of the
+languages are equalized. For example, deep integration often
+requires sharing of primitive data types such as numbers or
+strings
+
+Definition 2. A language-development system supports
+language unification of two languages if the implementation
+of both languages can be reused unchanged by adding glue
+code only.
+
+
+ Self-extension
+ Traditionally, this form of language composition is called
+language embedding: A domain-specific language is embedded into a host language by providing a host-language program that encapsulates the domain-specific concepts and
+functionality [15
+
+To compose a host language with an embedded language, a
+language implementer develops, in the host language itself,
+a program which defines the embedded language
+
+Definition 3. A language supports self-extension if the
+language can be extended by programs of the language itself
+while reusing the language’s implementation unchanged.
+
+
+Extension composition
+
+The projectional language workbench MPS [33] rejects
+parsing and applies intentional programming instead. Essentially, MPS maintains a central program representation,
+which can be thought of as an AST, and displays projections
+of the AST to the programmer. To edit a program, a programmer sends edit directives to MPS, which applies the
+edits to the central AST and updates the projection. This
+way MPS provides IDE support and creates a user experience close to usual programming environments. Furthermore,
+MPS supports extensibility: The central program representation can be extended by new concepts, which can integrate
+into existing projections, validations, and code generation.
+As in the other systems, once defined, the behavior of an
+extension is fixed [32]
+ 
+
+
+
+
+
+[6]	S. Efftinge and M. Voelter. oAW xText: A framework for textual DSLs. In Workshop on Modeling Symposium at Eclipse Summit, 2006.
+
+
+
+
+
+[13]	J. Heering, P. R. H. Hendriks, P. Klint, and J. Rekers. The syntax definition formalism SDF – reference manual. SIGPLAN Notices, 24(11):43–75, 1989.
+
+[14]	C. Hofer, K. Ostermann, T. Rendel, and A. Moors. Polymorphic embedding of DSLs. In Proceedings of
+Conference on Generative Programming and Component Engineering (GPCE), pages 137–148. ACM, 2008.
+
+[15]	P. Hudak. Modular domain specific languages and tools. In Proceedings of International Conference on Software Reuse (ICSR), pages 134–142. IEEE, 1998.
+
+
+[17]	L. C. L. Kats and E. Visser. The Spoofax language workbench: Rules for declarative specification of languages and IDEs. In Proceedings of Conference on Object-Oriented Programming, Systems, Languages, and Applications (OOPSLA), pages 444–463. ACM, 2010.
+
+

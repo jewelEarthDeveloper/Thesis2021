@@ -1,0 +1,71 @@
+AB - Robust Projectional Editing
+
+Projectional editing means editing the internal representation
+of a program via projection to one or more surface notations
+which may, but need not be, textual) [36]
+
+For textual languages, it does not rely on a standard text processor, but
+rather on a structure editor based on templates which are
+dened as part of the language specication, and which the
+user needs to ll in
+
+Robust editing as dened in this paper means editing that
+leaves a well-formed program well-formed
+
+While our implementation of robust editing draws on
+insights gained from our works on constraint-based refactoring and repair [22, 26–29],
+
+
+one of the most criticized (among
+members of our group) oddities of MPS, its reliance on three
+dierent mechanisms for enforcing scope rules, type rules,
+and other rules of well-formedness (each coming with its
+own DSL), while at the same time allowing us to evaluate
+scope rules “reversely”, for computing legal locations for
+newly added program elements.
+
+Standard MPS already comes with a notion of intentions
+as atomic actions initiated by the user to modify an existing
+program in a predened way. However, these intentions are
+programmed imperatively, and make no guarantees with
+respect to well-formedness.
+
+Although still not widely used by programmers, projectional
+editors are helpful for non-programmers writing programs
+in DSLs [37].
+
+. In fact, their support for exible and mixed
+syntax facilitates replicating a domain’s inherent notations,
+and their support for language modularity helps with the
+ecient development of DSLs [35]
+
+For programmers using
+GPLs, these advantages may be outweighed by a clumsier
+editing process (cf. Footnote 2); yet, projectional editors
+are increasingly being recognized as ideal launch pads for
+advanced language services (see [14] and also Section 9), and
+indeed, building tool support for robust editing without the
+aid of projectional (or structure) editors seems hard [14].
+
+
+MPS, on which we have implemented RPE, has native
+mechanisms for enforcing scope rules, type rules, and other
+conditions of well-formedness
+called scope constraints in MPS, compute the set of available targets for a given reference (that is, those program
+elements that are “in scope”), allowing the editor to enforce
+“well-scopedness” in addition to pre-structuredness as described in Section 3.1.
+
+
+By contrast, type rules do not constrain the construction of
+the program10; instead, they are evaluated as part of static
+checking, agging errors “aer the fact
+
+name binding is not an
+issue in the context of projectional editing
+
+
+
+
+[21] Charles Simonyi, Magnus Christerson, and Shane Cliord. 2006. Intentional Soware. In OOPSLA 2006. ACM.
+
+[36] Markus Voelter and Sascha Lisson. 2014. Supporting Diverse Notations in MPS’Projectional Editor.. In GEMOC@ MoDELS. 7–16.

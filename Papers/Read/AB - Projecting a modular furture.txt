@@ -1,0 +1,105 @@
+ 
+ g. Language modularity refers to the ability
+to combine independently developed languages without changing their respective definitions. 
+
+ Projectional
+editing refers to a technique of building editors and IDEs that avoid the
+need for parsers. They support a wide range of tightly integrated notations including textual, symbolic, tabular and graphical. In addition,
+by avoiding parsers, the well-known limitations of grammar composition
+are avoided as well.
+
+
+In modular languages, the abstractions provided by the language are not fixed.
+Users can pick language extensions from a library and include them into their
+programs without changing the host language definition or the IDE. Multiple
+independently developed extensions can be used together, and new extensions
+can be developed and used at any time.
+
+A promising approach to developing modular languages is to use language
+workbenches. LWBs are environments that support the efficient implementation
+of languages and associated tools such as type checkers, compilers, interpreters
+and IDEs. The term LWB has been introduced by Martin Fowler [2] in 2004,
+even though such tools can already be found in the 80s and 90s (examples include the Synthesizer Generator [3] or the Meta Environment [4]).
+
+JetBrains MPS4
+is a open source LWB licensed under Apache 2.0. It has been
+developed by JetBrains over the last 10 years, based on the initiative of Sergey
+Dmitriev
+
+Languages typically use either textual and graphical notations; e
+
+In textual languages, users interact with the concrete
+syntax, entering characters into a text buffer. A parser then matches the sequence of characters to the grammar that defines the syntax of the language,
+and constructs an abstract syntax tree (AST) of the program. The AST contains much more structure than the flat textual notation. Even though modern
+IDEs construct the AST in realtime as the user edits the program (maintaining
+an always-up-to-date AST), users interact with the textual source. 
+
+
+Graphical
+editors are different. If a user, for example, drops a UML class from the palette
+onto the diagram, the underlying tool directly modifies the AST (aka the model
+in graphical editors). A rendering or projection engine then creates a visual
+representation of the AST. This approach can be generalized beyond graphical
+notations: the result is called a projectional editor (PE).
+
+ Relative to textuallooking notations, it is important to understand that every single text string is
+immediately recognized as it is entered, so there is never any ”extraction” of the
+AST from the concrete syntax by a parser.
+
+This has a number of advantages. Since there is no need to extract the structure of the program from a flat (textual) source, a wide variety of notations can
+be used. MPS, for example, supports textual notations, symbols (such as fraction bars or P), tables as well as graphical diagrams;
+
+
+Traditionally, PEs also have drawbacks, which is why they have not seen
+much adoption despite their advantages. What distinguishes MPS from earlier
+PEs is that it addresses these drawbacks to a degree that makes its use feasible.
+The following two drawbacks are the most important. First, for languages that
+use a textual syntax, users expect the editor to behave like regular, characteroriented text editors. Since PEs do not work with sequences of characters, this
+can be a challenge. 
+
+ MPS
+supports linear editing of expressions such as 2+3 instead of requiring to first
+enter + and then the two arguments. Even though no parser is used because every
+token is bound immediately when entered, precedence, specified declaratively as
+a number for each operator, is taken into account.
+
+The second challenge of PEs is infrastructure integration. PEs do not store
+programs as text, because this would re-introduce parsing and hence negate
+the advantages. Instead, the AST is persisted, typically as XML. For use in
+practice, the integration of these XML files with version control systems must
+be addressed: diff/merge must be supported using the concrete, projected syntax.
+MPS supports this, and is used routinely with git or svn.
+
+
+
+mbeddr consists of 74 tightly integrated languages, most of them extensions to C. This modularity has several advantages.
+From a language developer’s perspective the complexity of the individual languages is reduced, allowing relatively independent evolution of the languages.
+Users can choose which extensions to use in a program so they are not overwhelmed by a huge, monolithic language.
+MPS’ projectional editor allows mbeddr to show the same model in different
+ways. For example, a state machine can alternatively be edited as a table, with
+events as the column header and states as row headers. The content cells contain
+the transitions for a given state/event combination.
+
+
+Based on our experience and feedback from users in domains as diverse as embedded software engineering, requirements management and insurance software,
+we conclude that the support for non-textual notations and wide-ranging modularity provided by projectional editing has significant advantages compared to
+”classical” languages.
+
+
+
+1.	Erdweg, S., Giarrusso, P.G., Rendel, T.: Language composition untangled. In: Proceedings of the Twelfth Workshop on Language Descriptions, Tools, and Applications, ACM (2012) 7
+2.	Reps, T.W., Teitelbaum, T.: The Synthesizer Generator. In: First ACM SIGSOFT/SIGPLAN software engineering symposium on Practical software development environments, ACM (1984)
+4.	Klint, P.: A Meta-Environment for Generating Programming Environments. ACM Transactions on Software Engineering Methodology 2(2) (1993)
+5.	Klint, P., Van Der Storm, T., Vinju, J.: Easy meta-programming with rascal. In: Generative and Transformational Techniques in Software Engineering III. Springer (2011) 222–289
+6.	Kats, L.C., Visser, E.: The spoofax language workbench: rules for declarative specification of languages and ides. In: ACM Sigplan Notices. Volume 45., ACM (2010) 444–463
+
+
+8.	Simi, M., Campagne, F.: Composable Languages for Bioinformatics: The NYoSh experiment. PeerJ PrePrints 1:e112v2 (2013)
+
+9.	Kats, L.C.L., Visser, E., Wachsmuth, G.: Pure and declarative syntax definition: paradise lost and regained. In: Proceedings of the 25th Annual ACM SIGPLAN Conference on Object-Oriented Programming, Systems, Languages, and Applications, OOPSLA 2010, Reno/Tahoe, Nevada, ACM (2010)
+
+11.	Voelter, M.: Preliminary experience of using mbeddr for developing embedded software. In: Proceedings of the 10th Dagstuhl Workshop on Model-based Development of Embedded Systems. (2014) 10
+1
+2.	Voelter, M., Ratiu, D., Tomassetti, F.: Requirements as First-Class Citizens: Integrating Requirements closely with Implementation Artifacts. In: ACESMB@MoDELS. (2013)
+
+

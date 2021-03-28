@@ -1,0 +1,126 @@
+AB - Projecting Textual Languages
+
+There are two types of DSLs, internal and
+external [3] . The first one reuses the concrete syntax of the host language and its
+parser. In contrast, an external DSL does not rely on the host syntax nor its parser;
+instead, a language engineer must implement these two language components.
+
+Language Workbenches (LWBs [1]) are IDEs that support engineers in the design
+and development of software languages [2]. These tools are aimed to improve and
+increase the adoption of Language-Oriented Programming (LOP). LOP is a technique
+for solving domain problems by defining a single or multiple languages [3] (e.g., as in
+the Unix tradition of little languages [4]), also known as Domain-Specific Languages
+(DSLs)
+
+. A DSL is often a small and simple language tailored to solve problems in
+a particular application domain [5].
+
+A projectional editor is a representation
+and editor for the direct manipulation of Abstract Syntax Trees (ASTs), without the
+need for parsing text. An AST is a data structure often used by compilers to represent
+language elements.
+
+can I use this to generate Drools
+
+ Languages are often
+divided into three main components namely, syntax, semantics, and pragmatics [2, 9].
+The syntax of a language is a set of rules that define valid language constructs –
+for example, defining a group of rules that captures expressions or statements. The
+language’s syntax can be expressed in a concrete and abstract way. Concrete syntax
+is designed as the user interface for end-users to read and write programs; whereas
+abstract syntax is the interface to language implementation. The semantics of a language represents a mapping between language constructs defined in the syntax and
+their meaning depending on the domain. Such mapping can be defined in different
+manners such as operational semantics or model-to-model transformations [2]. Language pragmatics describes the purpose of the language constructs, and
+
+
+Language Workbench To help language engineers in the development of software
+languages they can rely on metaprogramming tools called LWBs. These tools simplify and decrease the development cost of software languages and their tooling [3].
+A LWB offers two main features: a specialized set of metalanguages for defining the
+syntax and semantics of DSLs, and affordances to define various IDE services such
+as syntax highlighting, error marking, and auto-completion. 
+
+* should I correct him on the textual = syntax directed
+
+
+MPS uses a node concept
+hierarchy [10] to define the language’s structure, and MPS implements a projectional
+editor for manipulating programs. A projectional editor is a user interface (UI) for
+creating, editing, and manipulating ASTs.
+
+As mentioned before, the syntax of a software language is the notation. Usually, it
+is divided into two, namely, concrete syntax and abstract syntax.
+
+In textual LWBs, the concrete syntax of a language is usually specified using
+Context-Free Grammars (CFGs); while in projectional LWBs the concrete syntax is
+expressed as AST projections. 
+
+I should definatly use set notation in my theory
+
+In a projectional LWB, the syntax is also divided into its concrete and abstract
+representation. The concrete syntax corresponds to an editor definition, whereas the
+abstract syntax is defined in a concept hierarchy.
+Projectional editors do not share a common formalism for defining abstract syntax;
+therefore, each platform is provides its own formalism. MPS uses a node concept
+hierarchy [10]. 
+
+A DSL offers a programming abstractions that are closer to domain requirements
+than general programming languages [13]. Likewise, DSLs offer syntax closer to the
+domain expert’s knowledge. DSLs have been around for a couple of decades, but
+they have not been widely adopted in the industry yet [14, 15]. The limited adoption
+of DSLs in the industry is partly due to the lack of mature tools for their adoption,
+as described in [16, 17].
+Nowadays, language engineers have different tools and metalanguages to choose
+from when they require to implement a new language. The right selection of such
+tools is essential for the language’s success. Likewise, this means that companies
+end-up with diverse ecosystems of languages and tools. These tools are continuously
+changing to support diverse business requirements, depending on what they want to
+achieve or the organization’s needs
+
+* invite verano to talk about this paper?
+* talk to him - can I move antlr to mps?
+* we could create hundreds of "base" languges using this.
+* can we automate the sanitization?
+
+
+The goal of the Ingrid [18] project quite similar ours: bridging the gap between
+the textual and projectional language workbenches. In their case, they chose the
+same projectional language workbench, Jetbrains MPS, but a different textual metalanguage in ANTLRv4[19]. Ingrid has an implementation of their solution as a
+hybrid Java/MPS project.
+
+* should defintatly quote a bunch of github repos!
+
+** However, there is also a major downside to this approach which is why we
+ultimately decided against this it. [the word "this" is extra]
+
+** problems:(i) [needs a space]
+
+** We consider that a mechanism for maintaining both versions is worth to investigate as future work to be able to keep a bidirectional mapping. [is worth to does not sound right]
+
+
+2.	Ralf Lämmel. The Notion of a Software Language, pages 1–49. Springer International Publishing, Cham, 2018.
+
+
+6.	J.G.M. Mengerink, B. van der Sanden, B.C.M. Cappers, A. Serebrenik, R.R.H. Schiffelers, and M.G.J. van den Brand. Exploring dsl evolutionary patterns in practice: a study of dsl evolution in a large-scale industrial dsl repository. In Proceedings of the 6th International Conference on Model-Driven Engineering and Software Development, pages 446–453. SCITEPRESSScience and Technology Publications, Lda., 2018.
+
+7.	Jur Bartels. Bridging the worlds oftextual and projectionallanguage workbenches. Master’s thesis, Eindhoven University of Technology, 1 2020.
+
+
+9.	Maurizio Gabbrielli and Simone Martini. How to Describe a Programming Language, pages 27–55. Springer London, London, 2010.
+
+
+
+12.	Véronique Donzeau-Gouge, Gérard Huet, Bernard Lang, and Gilles Kahn. Programming environments based on structured editors : the mentor experience. Interact Program Environ, 01 1984.
+
+13.	A. J. Mooij, J. Hooman, and R. Albers. Gaining industrial confidence for the introduction of domain-specific languages. In 2013 IEEE 37th Annual Computer Software and Applications Conference Workshops, pages 662–667, 2013.
+
+
+
+
+
+
+20.	Manuel Wimmer and Gerhard Kramler. Bridging grammarware and modelware. In International Conference on Model Driven Engineering Languages and Systems, pages 159–168. Springer, 2005.
+
+
+22.	Michael L. Van de Vanter, Marat Boshernitsan, and San Antonio Avenue. Displaying and editing source code in software engineering environments. 2000.
+
+

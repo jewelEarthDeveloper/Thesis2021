@@ -1,0 +1,75 @@
+ These editors implement the MVC pattern and provide a direct connection to the underlying model
+ 
+ Editing a program in a textual programming language means editing text and making sure that it follows the syntactical rules of the language. 
+ These rules are specified by a formal grammar and form the concrete syntax of the language. The program then gets parsed and transformed into an abstract syntax tree: a representation of the program in memory as a tree structure. This tree structure can then be analyzed or transformed further.
+
+Projectional editors (Völter et al., 2014) avoid the parsing of concrete syntax and instead allow editing the abstract syntax tree directly. 
+This is enabled by the model-view-controller pattern (MVC), where the editor shows a view of the model and changes the model based on user input. This way, the concrete syntax is just a projection of an already-existing abstract syntax tree.
+
+
+With access to the abstract syntax tree, projectional editors can easily analyze programs as they are written (similar to earlier syntax-directed editors (Lunney and Perrott, 1988)).
+
+
+ The projection can take on many forms and it is even possible to combine different types of projections, such as including tables inside a textual presentation.
+
+There is no room for ambiguous or conflicting grammars because there is no need for grammars or parsers at all.
+
+However, a projection can still be ambiguous or confusing to the user.
+Some projections are really bad and should be rejected, which this paper advocates.
+
+
+; language composition is one of the benefits that comes easy with projectional editors (Völter, 2011; Völter and Solomatov, 2010)
+
+ with projectional editing it is natural to combine projections because there is no requirement stating that the syntax should be unambiguous
+
+
+The freedom in defining the concrete syntax is not problematic for the computer, but it can cause problems for the language user
+
+Ambiguous syntax is not only a problem for parsers, but a problem that affects humans as well. 
+
+To handle graphical languages, meta-modelling was introduced which started with the abstract syntax (called meta-model), and attached the concrete syntax to the abstract syntax. 
+
+In MPS, for instance, (textual) editor definitions of an element consist of a number of cells.
+Cells can contain keywords, collections of cells, references to properties of the element, etc. 
+A cell that references a property in the abstract syntax means that user input on this cell is entered as the property value in the model. 
+These references ensure a direct connection between the concrete and abstract syntax, leaving no room for ambiguity in parsing (from a machine’s point of view)
+
+
+And so it is up to the language designer to create reasonable editors so there is no doubt about which element is edited
+
+The following rules should allow basic unambiguity for such graphical grammars:
+
+The graphical base symbols should be unambiguous, i.e. no two of them should be equal.
+• In order to have a proper presentation of contains, it is important that symbols do not overlap otherwise, only when they are contained.
+• The two relationships is followed by and is connected to are given by explicit connection symbols, so they do not pose problems.
+• The relationship is attached to is exactly the problematic implicit connection, and should be represented by an explicit connector.
+
+
+In the past, the development of different grammar classes was geared by the need to facilicate humanmachine interaction. 
+Then along came graphical languages, and with them projectional editors. Projectional editors avoid parsing concrete syntax and instead work directly with the abstract syntax. 
+The concrete syntax is defined as projections of the abstract syntax (like views from the MVC pattern). 
+This allows for much more flexible concrete syntax definitions, but there are also downsides to this
+
+syntax ambiguities do not only affect parsers, but humans as well
+
+Before projectional editors, technology was the limiting factor requiring unambiguous grammars.
+Now, humans are more limiting, needing unambiguous concrete syntax for communicating with other humans.
+
+
+
+
+Karsai, G., Krahn, H., Pinkernell, C., Rumpe, B., Schindler,
+M., and Völkel, S. (2014). Design guidelines for domain specific languages. Computing Research Repository.
+
+Moody, D. (2009). The physics; of notations: Toward
+a scientific basis for constructing visual notations
+in software engineering. IEEE Trans. Softw. Eng.,
+35(6):756–779.
+
+
+Völter, M., Siegmund, J., Berger, T., and Kolb, B. (2014).
+Towards user-friendly projectional editors. In 
+Combemale, B., Pearce, D. J., Barais, O., and Vinju, J. J., editors, Software Language Engineering, volume 8706
+of Lecture Notes in Computer Science, pages 41–61.
+Springer International Publishing.
+E

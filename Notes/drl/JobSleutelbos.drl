@@ -1,0 +1,37 @@
+import . . . ;
+global . .Type global ;
+
+rule string 
+	when 
+		Fact ( property == imported.property, property in ( string, string, string ) )
+	then
+		global.method( imported.property );
+end
+
+rule string
+	when 
+	then
+		global.method( imported.property );
+end
+
+rule string
+	when    
+		Fact( property == imported.property, state in ( string, string, string ) )
+	then 
+		global.method( imported.property );
+end
+
+rule string  
+	when 
+		Fact( soort == imported.property, state in ( string, string ) )
+	then
+		global.method( imported.property );
+end
+
+rule string
+	when 
+		Fact ( soort == imported.property ) 
+	then 
+		global.method( imported.property );
+end 
+   

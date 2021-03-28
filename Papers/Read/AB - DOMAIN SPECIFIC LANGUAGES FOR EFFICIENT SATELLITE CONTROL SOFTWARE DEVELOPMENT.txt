@@ -1,0 +1,88 @@
+AB - DOMAIN SPECIFIC LANGUAGES FOR EFFICIENT SATELLITE CONTROL SOFTWARE DEVELOPMENT
+
+
+Separation of
+concerns is achieved by introduction of various
+(composable) DSLs, each focusing on independent
+concerns. 
+
+This is combined with the idea of model
+based development, where a model serves as (single)
+source of information for many derived artifacts
+including the executable, the documentation and
+analyses etc. With the tools used the boundary between
+the model and the implementation becomes increasingly
+fuzzy. Analysis and visualization techniques that are
+usually applied to the model become applicable to the
+entire implementation. Additionally, implementationlevel code refers directly to elements usually regarded
+as part of the model.
+
+
+Well-considered structuring and
+writing and a large share of auto-generation is needed in
+order to obtain high-quality documents. Maintaining
+significant parts of the documentation as close to the
+actual implementation as possible and generating
+figures and tables directly from the implementation
+code supports this process
+
+
+The emerging technology of Domain Specific
+Languages (DSL) and their development environments,
+so called language workbenches, has great potential to
+mitigate many of the listed inefficiencies and effectively
+fulfill the essential needs outlined above. The essential
+idea is to concentrate on the specific needs of a
+particular domain and provide efficient means for
+expressing the solution of a problem in a language (or
+more generally: by some distinct notation) known to the
+domains professionals
+
+
+ This is achieved by shifting more
+knowledge about the applications domain (which is how
+to operate a satellite) into the language semantics.
+
+Jetbrains' Meta Programming System (MPS) [1] is a
+language workbench [13] (DSL Development
+Environment) that is open source and freely available. It
+applies projectional editing. This overcomes the limits
+of language parsers and allows editors to include tables,
+mathematical symbols and graphical diagrams. The user
+directly modifies the abstract syntax tree (AST),
+respectively the implementation model, which is
+projected onto the screen, see Fig. 2.
+
+
+Different visualizations can be selected, depending on
+the current needs, all representing (parts of) the same
+model. Since a parser is not engaged, languages are
+composable by construction and can be arbitrarily
+mixed in an implementation
+
+
+Languages in MPS consist of an abstract syntax (the
+structure), a type system, a set of constraint rules,
+(multiple) editors and model-to-model as well as modelto-text transformations, compare Fig.3. As the MPS
+framework is open for extension, it can be easily
+augmented to interface with various external tools. For
+example, analysis tools are directly integrated and their
+results are reported in the editor.
+
+The AST is the
+implementation model which is transformed via a
+number of (model-to-model) transformation steps into a
+textual representation
+
+During the transformation process
+available MPS languages can be used and the entire
+model is available for queries for efficient
+transformation results
+
+The
+projectional editing and introduction of higher level
+abstractions cause the concepts of modeling and
+implementing to become somewhat blurred, taking
+advantages from both.
+
+

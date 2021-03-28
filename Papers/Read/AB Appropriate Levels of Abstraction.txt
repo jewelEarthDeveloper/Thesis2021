@@ -1,0 +1,26 @@
+ 
+ The software engineering community often aspires to "higher levels of abstraction". 
+ Many believe that is the solution to defeat complexity and to increase our productivity.
+
+But “raising the levels of abstraction” does not describe what should be the real aspiration in software development.
+Taken to the extreme, at a very high level of abstraction, we could simply draw a box and say that is our system.
+
+
+Instead of aspiring to higher levels of abstraction, we should instead seek to work at the appropriate level of abstraction for the problem at hand. 
+The appropriate level is sometimes very high and sometimes very low.
+
+It is not only for programming itself that we benefit from working at the appropriate level of abstraction. 
+Other participants in software projects, like subject matter experts, most certainly work at a level of abstraction dierent from the programmer
+
+“how can we work at the appropriate level of abstraction at all times”? 
+
+
+Unambiguous bi-directional mapping is required to make round trip engineering work. 
+Since by denition each level of abstraction is different from each other, extra annotations are often required to map correctly and completely. 
+To allow any change at more than one level one needs to be able to map each level of abstraction to elements in the other levels.
+Since that leads to redundant information across models and code, all types of synchronization issues can creep in. 
+You need to be really careful or have really good tool support to avoid messing up.
+
+
+So to be able to work at the appropriate level of abstraction for each problem, we have to be able to mix multiple levels of abstraction in an eective way, while minimizing or removing the overhead. 
+Each programming language gives us a fixed level of abstraction that we can not typically change.

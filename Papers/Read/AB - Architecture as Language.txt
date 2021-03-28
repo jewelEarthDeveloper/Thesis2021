@@ -1,0 +1,37 @@
+ Architecture...we usually don’t have ways to express a system’s architectural abstractions precisely and concisely.
+
+As we all know, if we don’t have a language to express something, we have a hard time grasping it. 
+
+ software architecture is all those aspects of a system that we want to be consistent throughout the system for reasons ranging from meeting nonfunctional requirements to technology best practices to maintainability to developer training.
+
+Benefits
+All involved will have clear understanding of the concepts used to describe the system, there is an unambiguous vocabulary to describe applications. 
+Models can be analyzed and used as a basis for code generation (see below). 
+The architecture is freed from implementation details, or in other words: conceptual architecture and technology decisions are decoupled, making both easier to evolve. 
+We can define a clear programming model based on the conceptual architecture. 
+Last but not least, the architect(s) can contribute directly to the project, by building (or helping to build) the languages and related tools – an artifact that the rest of the team can actually use. 
+In a very real sense, this could be called executable architecture. 
+
+Why textual?
+Textual DSLs have several advantages. Here are some of them:
+• Languages as well as editors are easier to build compared to custom graphical editors (although the validity of this statement depends on the tooling used)
+• Textual artifacts integrate much better with existing developer tooling than repository-based models. You can use well-known diff/merge tools, and it is much easier to version/tag/branch
+models and code together. Generally, the tooling is more lightweight.
+• Model evolution (i.e. adaptation of models when the DSL evolves over time) is much simpler. While you can use the standard approach – a model-to-model transformation from the old to the new version – you can always use search/replace or grep as a fallback, technologies familiar to everybody. 
+
+Where a graphical notation is useful to see relationships between architectural elements, you can use tools like Graphviz [GV] or Prefuse [PF]. 
+Since the model contains all the relevant data, you can easily transform the model into a format those tools can process.
+
+make sure the developers who define the language can “think meta”; for some people this can be a challenge
+
+References
+[GV] Graphviz Visualozation Toolkit, http://graphviz.net
+[PF] Prefuse Visualozation Toolkit, http://prefuse.org
+[FAM] Markus Voelter, A family of Languages for Architecture Description, DSM Workshop, OOPSLA 2008, and http://www.voelter.de/data/pub/DSM2008.pdf
+[oAW] openArchitectureWare, http://openarchitectureware.org
+[OSLO] Microsoft, Oslo Initiative, http://msdn.microsoft.com/en-us/oslo/default.aspx
+[MPS] Jetbrains MPS, http://jetbrains.com/MPS
+[ME] Metacase, MetaEdit+, http://www.metacase.com
+[CRC] Beck, Cunningham, A Laboratory For Teaching Object-Oriented Thinking, http://c2.com/doc/oopsla89/paper.html
+[IDW] Intentional Software, Intentional Domain Workbench, http://www.intentsoft.com
+

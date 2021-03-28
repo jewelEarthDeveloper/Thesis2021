@@ -1,0 +1,272 @@
+ Nowadays, the need for new languages for various growing domains is strongly increasing.
+ 
+ 
+ In the following we present general guidelines to be considered for both textual and graphical DSLs with main focus is
+on the former.
+
+
+Depending on the concrete language and the domain these guidelines
+have to be weighted differently as there might be different
+purposes, complexity, and number of users of the resulting
+language
+
+
+General principles for
+modeling language design were introduced in [14]. These
+include simplicity, uniqueness, consistency, and scalability,
+on which we will rely later
+
+More practical guidelines for implementing DSLs are given in [10]
+
+[20]
+explains 12 lessons learned from DSL experiments that can
+help to improve a DSL
+
+
+identified the following categories:
+* Language Purpose discusses design guidelines for the early
+activities of the language development process.
+* Language Realization introduces guidelines which discuss
+how to implement the language.
+* Language Content contains guidelines which focus on the
+elements of a language.
+* Concrete Syntax concentrates on design guidelines for the
+readable (external) representation of a language.
+* Abstract Syntax concentrates on design guidelines for the
+internal representation of a language.
+
+Language design is not only influenced by the question of
+what it needs to describe, but equally important what to do
+with the language. Therefore, one of the first activities in
+language design is to analyze the aim of the language.
+
+“Identify language uses early.” The language
+defined will be used for at least one task. Most common
+uses are: documentation of knowledge (only) and code generation. However, there are a lot more forms of usage:
+definition or generation of tests, formal verification, automatic analysis of various kinds, configuration of the system
+at deployment- or run-time, and last but increasingly important, simulation.
+
+An early identification of the language uses have strong influence on the concepts the language will allow to offer
+
+
+Who is going to model in the DSL? Who is going to review
+the models? When? Who is using the models for which
+purpose?
+
+“Make your language consistent.” [14]
+
+Decide carefully whether to use graphical or
+textual realization.” Nowadays, it is common to use tools
+supporting the design of graphical DSLs such as the Eclipse
+Modeling Framework (EMF) or MetaEdit+
+
+As described
+in [6], there are a number of advantages and disadvantages
+for both approaches. Textual representations for example
+usually have the advantage of faster development and are
+platform and tool independent whereas graphical models
+provide a better overview and ease the understanding of
+models. Therefore, advantages and disadvantages have to
+be weighted and matched against end users’ preferences in
+order to make a substantiated decision for one of the realizations. 
+
+
+Comparisons can be found in [21] or [3].
+
+“Compose existing languages where possible.”
+
+r. Additionally, when composing languages care
+must be exercised to avoid confusion: similar constructs with
+different semantics should be avoided.
+
+“Reuse existing language definitions.” If the
+language cannot be simply composed from some given language parts, e.g., by language embedding as proposed in
+guideline 5, it is still a good idea to reuse existing language
+definitions as much as possible.
+
+
+Looking at the abstract syntax of existing languages, one can identify “language pattern” (quite similar
+to design pattern), which are good guidelines for language
+design.
+
+
+“Reuse existing type systems.” 
+an unconventional type system would be
+hard for users to adopt
+
+Therefore, a language designer should reuse existing type systems to improve comprehensibility and to avoid errors that are caused by misinterpretations in an implementation. Furthermore, it is far
+more economical to use an existing type system, than developing a new one as this is a labor intensive and error-prone
+task.
+
+
+One main activity in language development is the task of
+defining the different elements of the language
+
+“Reflect only the necessary domain concepts.”
+Any language shall capture a certain set of domain artifacts.
+These domain artifacts and their essential properties need
+to be reflected appropriately in the language in a way that
+the language user is able to express all necessary domain
+concepts. 
+
+However, when designing a language
+not all domain concepts need to be reflected, but only those
+that contribute to the tasks the language shall be used for.
+
+“Keep it simple.”
+ The demand for simplicity has several reasons. First, introducing a new language in a domain produces work in developing new tools and adapting existing
+processes. If the language itself is complex, it is usually
+harder to understand and thus raises the barrier of introducing the language. Second, even when such a language is
+successfully introduced in a domain, unnecessary complexity
+still minimizes the benefit the language should have yielded.
+
+“Avoid unnecessary generality.” 
+
+“design only what is
+necessary”.
+
+
+“Limit the number of language elements.” A
+language which has several hundreds of elements is obviously
+hard to understand.
+
+“Avoid conceptual redundancy.”
+Redundancy is a constant source of problems. 
+
+: “Avoid inefficient language elements.” One
+main target of domain specific modeling is to raise the level
+of abstraction. Therefore, the main artifacts users deal with
+are the input models and not the generated code.
+
+Concrete syntax has to be chosen well in order to have an
+understandable, well structured language
+
+Guideline 14: “Adopt existing notations domain experts
+use.” As [20] says, it is generally useful to adopt whatever formal notation the domain experts already have, rather
+than inventing a new one.
+
+“Use descriptive notations.” 
+ This applies to keywords with
+a widely-accepted meaning as well. Furthermore, keywords
+should be easily identifiable. It is helpful to restrict the number of keywords to a few memorizable ones and of course, to
+have a keyword-sensitive editor.
+
+“Make elements distinguishable.” Easily distinguishable representations of language elements are a basic requirement to support understandability. In graphical
+DSLs, different model elements should have representations
+that exhibit enough syntactic differences to be easily distinguishable. Different colors as the only criteria may be
+counterproductive, e.g., when printed in black and white. I
+
+models are much more often read than written and therefore
+to be designed from a readers point of view.
+
+“Use syntactic sugar appropriately.”
+. Generally,
+if an efficient parser cannot be implemented, the language
+is probably also hard to understand for human readers.
+However, an overuse of the addition of syntactic sugar distracts, because verbosity hinders to see the important content directly. Furthermore, it should be kept in mind that
+several forms of syntactic sugar for one concept may hinder
+communication as different persons might prefer different
+elements for expressing the same idea.
+Nevertheless the introduction of syntactic sugar can also
+improve a language, 
+
+“Permit comments.” Comments on model
+elements are essential for explaining design decisions made
+for other developers
+
+text boxes and tooltips for graphical languages
+should be embedded.
+
+“Provide organizational structures for models.” Especially for complex systems the separation of models in separate artifacts (files) is inevitable but often not
+enough as the number of files would lead to an overflowed
+model directory. Therefore, it is desirable to allow users
+to arrange their models in hierarchies
+
+
+“Balance compactness and comprehensibility.” As stated above, usually a document is written only
+once but read many times. Therefore, the comprehensibility
+of a notation is very important, without too much verbosity.
+On the other hand, the compactness of a language is still
+a worthwhile and important target in order to achieve effectiveness and productivity while writing in the language.
+
+
+“Use the same style everywhere.” DSLs are
+typically developed for a clearly defined task or viewpoint.
+Therefore, it is often necessary to use several languages to
+specify all aspects of a system. In order to increase understandability the same look-and-feel should be used for all
+sublanguages and especially for the elements within a language. In this way the user can obtain some kind of intuition
+for a new language due to his knowledge of other ones.
+
+
+“Identify usage conventions.” Preferably
+not every single aspect should be defined within the language
+definition itself to keep it simple and comprehensible
+
+A good example for code conventions for a
+programming language can be found in [9].
+
+“Align abstract and concrete syntax.” Given
+the concrete syntax, the abstract syntax and especially its
+structure should follow closely to the concrete syntax to ease
+automated processing, internal transformations and also presentation (pretty printing) of the model.
+
+
+“Prefer layout which does not affect translation from concrete to abstract syntax.”
+
+For graphical languages
+a well-known bad example is the twelve o’clock semantics in
+Stateflow [7] where the order of the placement of transitions
+can change the behavior of the Statechart. To simplify the
+usage of DSLs, we recommend that the layout of programs
+doesn’t affect their semantics.
+
+“Enable modularity.” 
+ One main technique to tackle complexity is modularization [15] which leads to a managerial, flexible, comprehensible, and understandable infrastructure
+
+: “Introduce interfaces.” Interfaces in programming languages provide means for a modular development of parts of the system. This is especially important
+for complex systems as developers may define interfaces between their parts to be able to exchange one implementation of an interface with another which significantly increases
+flexibility
+
+. Another common example are ports, e.g., in
+composite structure diagrams, which explicitly define interaction points and specify services they provide or need, thus
+declaring a more detailed interface of a part of a system.
+
+
+, a decision whether to reuse existing languages
+or to implement a new one is one of the most important and
+critical decisions to be made
+
+In general, a guideline should not be followed closely, but
+many of them are proposals as to what a language designer
+should consider during development. 
+
+5.	REFERENCES
+
+
+[5]	H. Gronniger, J. Hartmann, H. Krahn, S. Kriebel, and¨
+B. Rumpe. View-based modeling of function nets. In
+Proceedings of the Object-oriented Modelling of Embedded Real-Time Systems (OMER4) Workshop, Paderborn,, October 2007.
+
+
+
+[8]	C. A. R. Hoare. Hints on programming language design. Technical report, Stanford University, Stanford, CA, USA, 1973.
+
+
+[10]	S. Kelly and J.-P. Tolvanen. Domain-Specific Modeling: Enabling Full Code Generation. Wiley, 2008.
+
+
+[12]	M. Mernik, J. Heering, and A. M. Sloane. When and how to develop domain-specific languages. Technical Report SEN-E0309, Centrum voor Wiskunde en Informatica, Amsterdam, 2005.
+
+
+[14]	R. Paige, J. Ostroff, and P. Brooke. Principles for Modeling Language Design. Technical Report CS-1999-08, York University, December 1999.
+
+
+[16]	P. Pfahler and U. Kastens. Language Design and Implementation by Selection. In Proc. 1st
+ACM-SIGPLAN Workshop on
+Domain-Specific-Languages, DSL ’97, pages 97–108, Paris, France, January 1997. Technical Report, University of Illinois at Urbana-Champaign.
+
+[18]	D. Spinellis. Notable Design Patterns for Domain Specific Languages. Journal of Systems and Software, 56(1):91–99, Feb. 2001.
+
+[21]	D. S. Wile. Supporting the DSL Spectrum. Computing and Information Technology, 4:263–287, 2001.
+
+

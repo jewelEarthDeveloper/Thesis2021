@@ -1,0 +1,79 @@
+package  . ;
+
+
+import . . . . ;
+import . . . . . ;
+import . . . . . ;
+import . . . . . ;
+import . . . . . ;
+
+import . . . . ;
+import . . . . . ;
+
+import . . . . . ;
+import . . . . . ;
+import . . . . . ;
+import . . . . ;
+import . . . . ;
+import . . . . ;
+import . . . . .;
+import . . . . .;
+import . . . . .;
+import . . . . .;
+import . . . . .;
+import . . . . .;
+import . . . . .;
+import . . . . .;
+import . . . . .;
+import . . . . .;
+import . . . . .;
+import . . . . .;
+import . . . . .;
+import . . . . .;
+import . . . . . . ;
+import . . . . . . ;
+import . . . . . . ;
+import . . . . . . ;
+import . . . . . . ;
+import . . . . . . ;
+import . . . . . . ;
+import . . . . . ;
+import . . . . . ;
+
+global . .Type global;
+global Type	global;
+
+rule string 
+    salience integer
+    when
+    comment
+        variable: Fact()
+    then
+        for ( Type variable : variable.method() ) {
+            for ( Type variable : variable.method() ) {
+                 drools.method( variable );
+            }
+        }
+    comment
+end 
+
+rule string 
+    salience integer
+    when
+    comment
+        variable: Fact()
+    then
+        global.method( variable );
+    comment
+end 
+
+rule string
+    salience integer 
+    when
+    comment
+        variable: Fact( property in ( string, string, string, string ) ) 
+        variable: Fact( property.property.property == imported.property ) 
+    then
+        global.method( variable );
+    comment
+end

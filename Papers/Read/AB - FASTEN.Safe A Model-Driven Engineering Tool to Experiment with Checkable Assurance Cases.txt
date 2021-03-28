@@ -1,0 +1,10 @@
+AB FASTEN.Safe A Model-Driven Engineering Tool to Experiment with Checkable Assurance Cases
+
+uses mps to create a textual/graphical GSN language for assurance
+
+. These extensions sufficy to express three patterns from the literature [7], [10]. The language workbench MPS allows easy implementation
+of extensions in a modular fashion. 
+
+Another distinguishing characteristic of FASTEN.Safe, that allows us to
+implement the checks, is that it features language extensions of GSN that raise
+the abstraction level at which assurance cases are modeled.

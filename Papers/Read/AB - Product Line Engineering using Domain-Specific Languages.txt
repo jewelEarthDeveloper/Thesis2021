@@ -1,0 +1,155 @@
+AB - Product Line Engineering using Domain-Specific Languages
+
+The goal of product line engineering (PLE) is to efficiently
+manage a range of products by factoring out commonalities
+such that definitions of products can be reduced to a specification of their variable aspects
+
+being exposed to implementation details.
+DSLs are a good fit when instances of concepts need to be
+created, when relationships between these instances must be
+established, or when algorithmic behavior has to be described,
+e.g. in business rules, calculations, or events. Examples of
+the application of DSLs include calculating the VAT and
+other taxes in an invoicing product line, specifying families
+of pension contracts, and defining communication protocols
+in embedded systems.
+
+n embedded systems.
+In general, a domain-specific language (DSL) is a software
+language specialized for a particular problem domain. DSLs
+can use graphical, textual or tabular concrete syntax, or any
+combination thereof. Like programming languages, DSLs can
+either be compiled — typically through code generation to
+a programming language — or interpreted by an interpreter
+running on the target environment.
+
+A DSL’s concrete and abstract syntax are tailored closely
+to the domain at hand. Using DSLs only requires knowledge
+about the problem domain, not about the solution domain.
+This improves productivity, quality and maintainability. Productivity is improved because a higher level notation is provided, avoiding dealing with implementation details. Quality
+is improved because transformations or interpreters execute
+the programs consistently. Maintainability is improved because
+changes to the program can be done on the level of the DSL
+program, or by changing the generator or interpreter.
+
+A note on terminology: we use the terms DSL program,
+DSL code and model interchangably. Strictly speaking, the
+DSL code is a textual representation of a model, but this
+distinction is not relevant in this paper. While we focus
+primarily on textual DSLs in this paper, the discussion is
+equally valid for DSLs using other notations, as long as the
+underlying expressivity is not reduced, as for example in
+purely tabular notations. However, expression-like models can
+best be expressed using a textual notation.
+Supplying convenient editors and other tools along with
+the DSL increases the usability of the language significantly.
+The term language workbench has been introduced by Martin
+Fowler in 2004 [11], referring to tools that support the efficient definition, composition and use of DSLs. Open Source
+examples include Eclipse Xtext (http://eclipse.org/xtext),
+Spoofax (http://strategoxt.org/Spoofax) and JetBrains MPS
+(http://www.jetbrains.com/mps/).
+
+
+MPS’ capability to combine independently developed languages makes the composition of an
+overall product configuration from program/model fragments
+expressed in various languages almost trivial. Language composition in MPS and the annotation mechanism is explained
+in detail in [20]
+
+C. Architecture DSLs
+Many product lines are built on a common software architecture, while the application functionality varies from product
+to product. Architecture DSLs [21], [12] can be used very
+effectively in these cases. An architecture DSL is a DSL,
+in which the abstractions of the language correspond to the
+architectural concepts of the execution platform. They are
+defined by architects, and used by developers as they develop applications. When developing products in challenging
+environments such as distributed real-time embedded systems,
+architecture DSLs can provide the benefit of simulation and
+automatic optimization as described by Balasubramanian and
+Schmidt in [3].
+
+
+ Core Assets designate reusable artifacts that are used
+in more than one product. As a consequence of their
+strategic relevance, they are usually high quality and
+maintained over time. Some of the core assets might have
+variation points.
+• A Variation Point is a well-defined location in a core asset
+where products differ from one another.
+• Kind of Variability classifies the degrees of freedom one
+has when binding the variation point. This ranges from
+setting a simple Boolean flag over specifying a database
+URL to a DSL program to a Java class hooked into a
+platform framework.
+• Binding Time denotes the point in time when the decision
+is made as to which alternative should be used for a
+variation point. Typical binding times include source time
+(changes to the source code are required), load time
+(bound when the system starts up) and runtime (the
+decision is made while the program is running).
+• The Platform are those core assets that actually form a
+part of the running system. Examples include libraries,
+frameworks or middleware.
+• Production Tools are core assets that are not part of
+the platform, but are used during the possibly automated
+development of products.
+• Domain Engineering refers to activities in which the core
+assets are created. An important part of domain engineering is domain analysis, during which a fundamental
+understanding of the domain and its commonalities and
+variability is established.
+• Application Engineering is the phase in which the domain
+engineering artifacts are used to create products. Unless
+variation points use runtime binding, they are bound
+during this phase.
+• The Problem Space refers to the application domain
+in which the product line resides. The concepts found
+in the problem space are typically meaningful to nonprogrammers as well.
+• The Solution Space refers to the technical space that is
+used to implement the products. In case of software product line engineering, this space is software development.
+The platform lives in the solution space. The production
+tools create or adapt artifacts in the solution space based
+on a specification of a product in the problem space.
+
+e. Language embedding is not yet mainstream.
+It supported for example by Spoofax [14] and MPS [20].
+
+C. Problem Space and Solution Space
+DSLs can represent any domain. They can be technical,
+inspired by a library, framework or middleware, expected
+to be used by programmers and architects. DSLs can also
+cover application domains, inspired by the application logic
+for which the application is built. In this case they are expected
+to be used by application domain experts. In the case of
+application DSLs, the DSL resides in the problem space.
+For execution they are mapped to the solution space by the
+production tools. Technical DSL can, however, also be part of
+the solution space. In this case, DSL programs are possibly
+created by the mapping of an application domain DSL to the
+solution space. This is an example of cascading [18], [7]: one
+DSL is executed by mapping it to another DSL. It is also
+possible that technical DSLs are used by developers as an
+annotation for the application domain DSLs, controlling the
+mapping to the solution space or configuring some technical
+aspect of the solution directly [18]
+
+
+DSLs can be executed in two ways. Transformation maps a
+DSL program to another formalism for which an execution
+infrastructure already exists. If this formalism is another
+DSL, we speak of model-to-model transformation, or simply
+transformation. If the target is a programming language, we
+speak of code generation. 
+
+
+
+
+
+
+
+
+
+
+
+
+[18]	M. Voelter. Best practices for dsls and model-driven development. JOT, 2009.
+[19]	M. Voelter and I. Groher. Handling variability in model transformations and generators. In Proceedings of the 7th OOPSLA Workshop on Domain-Specific Modeling (DSM’07), Computer Science and Information System Reports, 2007.
+

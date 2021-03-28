@@ -1,0 +1,14 @@
+package . ;
+
+import . . . ;
+
+global Type global;
+
+rule string
+	when
+	then
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+end
+      

@@ -1,0 +1,30 @@
+mark Proctor 
+DevNation 2015 - Mark Proctor - Practical rules & working with drools
+https://developers.redhat.com/videos/youtube/rgH7-BEXkjc
+
+the session holds your data like an in memory database
+
+reactive systems - when I have changes I react to them
+declarative systems
+
+rule engine is like a trigger on a views
+
+which rule should you fire first?
+it should not matter, but salience. (drools 6 also has implied order in file)
+
+init rule has no lhs/when, which means it is always true
+
+rule chaining - data drives the rules
+
+i need to work out what logical insert is
+
+look for coupling, monlithic, leaky - information exposed, 
+
+policy rule : e.g. isChild, isAdult
+
+de-couple knowledge responsibilities
+encapsulate knowledge
+provide semantic abstraction for encapsulation
+integrity robustness - truth maintenance
+
+

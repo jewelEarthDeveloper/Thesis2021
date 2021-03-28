@@ -1,0 +1,189 @@
+AB - 
+
+The two main terms I'm specically coining for this article are 'Language
+Oriented Programming' and 'Language Workbench'. I use Language Oriented
+Programming to mean the general style of development which operates about
+the idea of building software around a set of domain specic languages. I use
+Language Workbench as a generic term for this new breed of tools. So a
+language workbench is one way to do language oriented programming. You
+may also be unfamiliar with the term Domain Specic Language (usually
+abbreviated to DSL). It is a limited form of computer language designed for a
+specic class of problems. Some communities like to use DSL only for problem
+domain languages, but I'm following the usage that uses DSL for any limited
+domain.
+
+
+The concrete syntax of a language is its syntax in its representation
+syntaxes. However both share the same basic structure: you have multiple
+mappings, each with a code, a target class name, and a set of elds. This basic
+structure is the abstract syntax. When most developers think about
+programming language syntax they don't make this separation, but it's an
+important one when you use DSLs. You can think of this in two ways. You can
+either say we have one language with two concrete syntaxes, or two languages
+that share the same abstract syntax
+
+
+got up to page 18 "Internal DSL"
+
+Software Factories - microsoft
+
+
+The software factories team has a background in Model Driven Development.
+They include people who have been active in CASE tool development and also
+many leading lights of the OO community in the UK. So it's no surprise that
+their DSLs tend to a more graphical approach. Unlike most CASE tool people,
+however, they take a serious interest in semantics and control over code
+generation.
+
+Elements of a Language Workbench
+
+One of the strongest qualities of language workbenches is that they alter the
+relationship between editing and compiling the program. Essentially they shift
+from editing text les to editing the abstract representation of the program.
+
+
+For the purposes of this discussion we can break the
+compilation process into two steps. The rst step takes the text from the le
+this tree generating CLR byte codes that it puts into an assembly (an exe le).
+
+We can think of the program having a number of representations where the
+compiler translates between the representations. The source le is the
+editable representation - that is this is the representation that we manipulate
+when we want to change the program. It's also the storage representation -
+the one that's kept in source code control and used should we want to get at
+the program again. When we run the compiler the rst phase maps the
+editable representation to the abstract representation (the abstract syntax
+tree), and then the code generator turns that into the executable
+representation (the CLR byte code).
+(There are more translations on the executable code before it's really the nal
+executable. But once we have the byte code the compiler's work is done and all
+that's left remains with later stages outside its scope.)
+The abstract representation is very transient - it only exists while the compiler
+is running and serves only to separate the compilation into two logical steps.
+This transience is, of course, a large part of why it's so hard to get symbolic
+integration between external DSLs. Each language runs through a separate
+compilation, so there's no linking between the abstract representation. Things
+only come together with the generated code, at which point key abstractions
+are lost
+
+
+shows how this process works with a language workbench. The key
+difference here is that the 'source' is no longer the editable textual les. The
+key source that you manipulate is the abstract representation itself. In order to
+edit it, the language workbench projects the abstract representation into some
+form of editable representation. But this editable representation is purely
+transient - it's only there to help the human. The true source is the persistent
+abstract representation.
+
+
+The fact that the editable representation is merely a projection of the abstract
+representation leads to a few points. Perhaps the most important is that there
+is no need for the editable representation to be complete - some aspects of
+Contents
+24/02/2021 Language Workbenches: The Killer-App for Domain Specific Languages?
+https://www.martinfowler.com/articles/languageWorkbench.html 28/39
+the abstract representation can be missing if they aren't important to the task
+at hand. Furthermore you can have multiple projections - each showing
+different aspects of the abstract representation. Since the projection is inside
+the language workbench the editable representation is much more active than
+a text le. This projecting editor is tightly bound up with the language itself.
+As a result in thinking about your editable representations you actively think
+about how an editor works with them. This leads to different ideas than you
+would get from a purely passive editable representation such as text.
+
+A language workbench separates the storage representation from the editable
+representation. The storage representation is now a serialization of the
+abstract representation. A common way to do this is XML - but this XML isn't
+designed for human editing
+
+One non-obvious, yet important feature, for a language workbench is that the
+abstract representation has to be comfortable with errors and ambiguities.
+Traditionally people have felt that if you are to have an abstract representation
+it needs to be kept correct - you shouldn't be able to put incorrect information
+into it. This assumption, however, led to lousy usability. Post-IntelliJ IDEs
+realized this and react gracefully to erroneous states. For example you can
+perform refactorings on programs that have compilation errors (very
+necessary for good usability.)
+This becomes even more important if you want to capture complex
+information from multiple sources. You can't keep everything consistent and
+correct all the time. So you have to deal with ambiguous and erroneous states
+- highlighting errors rather than refusing input. You should also allow people
+Contents
+24/02/2021 Language Workbenches: The Killer-App for Domain Specific Languages?
+https://www.martinfowler.com/articles/languageWorkbench.html 29/39
+to easily enter non-computable information (such as documentation) into the
+model. This way scanned napkins can be linked directly to the resulting DSL
+code
+
+
+Dening a new DSL
+With this kind of setup in place, there are three main parts to dening a new
+DSL:
+Dene the abstract syntax, that is the schema of the abstract
+representation.
+Dene an editor to let people manipulate the abstract representation
+through a projection.
+Dene a generator. This describes how to translate the abstract
+representation into an executable representation. In practice the generator
+denes the semantics of the DSL.
+
+
+This is the main trio, but there will be variations. As I indicated earlier, there is
+no reason why you can't have multiple editors or generators for a DSL.
+Multiple editors could be common. Different people may like different editing
+experiences
+
+Multiple generators might appear for several reasons. You may want them to
+bind against different frameworks that do similar things. A good example of
+this would be the irritatingly multiple dialects of SQL. Another reason is for
+different implementation trade-offs with different performance
+characteristics or library dependencies. A third reason would be to generate
+different languages: allowing a single DSL to generate either Java or C#, for
+example.
+
+
+Dening a Language Workbench
+Users can freely dene new languages which are fully integrated with each
+other.
+The primary source of information is a persistent abstract representation.
+Language designers dene a DSL in three main parts: schema, editor(s), and
+generator(s).
+Language users manipulate a DSL through a projectional editor
+Language users manipulate a DSL through a projectional editor.
+Contents
+24/02/2021 Language Workbenches: The Killer-App for Domain Specific Languages?
+https://www.martinfowler.com/articles/languageWorkbench.html 31/39
+A language workbench can persist incomplete or contradictory information
+in its abstract representation.
+
+
+Most programmers don't think of spreadsheets as a programming
+environment. Yet many lay programmers create sophisticated systems using
+them. Spreadsheets are a fascinating programming environment that suggest
+characteristics for a lay programming tool might need:
+Immediate feedback - including showing the results of example
+calculations right away.
+Deep integration of tool and language
+No textual source
+No need to show all information all the time - formulae are only visible
+when you edit the cell containing them, otherwise the value is shown.
+Spreadsheets are also very frustrating. Their lack of structure encourages
+experimentation, but often I feel a touch more structure could make certain
+problems much easier to deal with.
+So when we think of the DSLs in a language workbench, we should be thinking
+less of the kinds of languages I've shown here - or of the graphical languages
+beloved by modelers. Instead we should be thinking of things like the next
+generation of spreadsheets
+
+
+What I do believe is that language workbenches are one of
+the most interesting ideas that's out there on the edge of our vision. If they do
+realize their potential, they'll certainly have a huge effect on our profession.
+Even if not, I suspect they'll lead to plenty of interesting ideas.
+So I suggest you keep an eye on this space. It's an interesting eld and one
+with enough life to stay interesting for many years. I've been fortunate to have
+Contents
+24/02/2021 Language Workbenches: The Killer-App for Domain Specific Languages?
+https://www.martinfowler.com/articles/languageWorkbench.html 37/39
+a good view of it in recent months, and I intend to continue my interest for a
+while yet

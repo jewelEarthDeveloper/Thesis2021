@@ -1,0 +1,25 @@
+AB - Gaining Industrial Confidence for the Introduction of Domain-Specific Languages
+
+In general, the introduction of DSLs in product development is not for free. For instance, [14] observes that “DSL
+development is hard, requiring both domain knowledge and
+language development expertise. Few people have both. Not
+surprisingly, the decision to develop a DSL is often postponed
+indefinitely.”
+
+
+When starting to develop a DSL in practice, one of the first
+questions is what tools to use. This concerns tools for both
+Authorized licensed use limited to: Universiteit van Amsterdam. Downloaded on March 05,2021 at 20:18:30 UTC from IEEE Xplore. Restrictions apply. 
+the users and the developers of the DSL, as is also indicated
+by the guideline “Tooling Matters!” from [23].
+
+There are two typical kinds of languages, namely, textual
+and graphical. The guideline “Adopt existing notations domain
+experts use” from [10] advocates to reuse notation from the
+domain itself. The guidelines “Decide carefully whether to
+use graphical or textual realization” from [10] and “Graphical
+vs. Textual Notation” from [23] compare these main types of
+languages. An important observation is that textual languages
+and their editors are faster to develop
+
+

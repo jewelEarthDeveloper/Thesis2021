@@ -1,0 +1,75 @@
+AB - Requirements for Domain-Specific Languages
+
+As such, a DSL has its own lifecycle, which in turn may
+encapsulate the lifecycles of many other system development projects. Understanding
+the requirements for DSLs in general, and in specific project contexts, is critical in
+order to improve DSL quality and ensure a direct correspondence between the
+requirements for system engineering projects and the functionality provided by the
+language
+
+The quality attributes of a DSL – and its supporting environment (e.g.,
+virtual machines, debuggers, integrated environments) – will have an impact on the
+quality attributes of the overall systems development process, and the resulting
+products.
+
+We therefore
+refer to descriptions as the construct produced by using a DSL. Specific instances of
+descriptions may be models or programs.
+
+There are three typical DSL stakeholders:
+• System/software engineers, who are responsible for choosing or implementing
+an appropriate DSL.
+• Customers (e.g., business analysts), who are responsible for providing
+feedback on descriptions (models, programs) produced using a DSL.
+• Developers, who are responsible for constructing and managing DSL
+descriptions.
+A current trend towards end-user programming suggests that in some contexts the
+roles of customer and developer may be combined [8]
+
+
+As a result, a DSL will more accurately represent domain 
+practices and will more accurately support domain analyses (e.g., fault propagation
+for safety critical systems [9]).
+
+
+When we design and use a DSL, we lose generality, and typically lose the ability to
+apply general-purpose tool support. We also can lose the ability to exploit widespread
+expertise
+
+
+The core requirements for a DSL are as follows:
+• Conformity: the language constructs must correspond to important domain
+concepts.
+• Orthogonality: each construct in the language is used to represent exactly one
+distinct concept in the domain.
+• Supportability: it is feasible to provide DSL support via tools, for typical
+model and program management, e.g., creating, deleting, editing, debugging,
+transforming.
+• Integrability: the language, and its tools, can be used in concert with other
+languages and tools with minimal effort. This is essential to integrate the DSL
+with other facilities used in the engineering process. An alternative
+requirement for DSLs is extensibility, i.e., that the DSL (and its tools) can be
+extended to support additional constructs and concepts. However, we suggest
+that integrability is to be preferred as a requirement for DSLs as it preserves
+semantic coherence of the DSL, as well as the desirable requirements of
+conformity and orthogonality.
+• Longevity: the DSL should be used and useful for a non-trivial period of time
+in order to ensure tool support, and to make it possible to quantify to the DSL
+stakeholders the payoff obtained from using the DSL. There is, of course, an
+assumption with this requirement (and with the use of DSLs in general) that
+the domain under consideration persists for a sufficiently lengthy period of
+time to justify the cost of building a DSL and supporting tools.
+• Simplicity: this is a generally desirable language requirement: a language
+should be as simple as possible in order to express the concepts of interest and
+to support its users and stakeholders in their preferred ways of working. 
+Quality: the language shall provide general mechanisms for building quality
+systems. This may include (but is not limited to) language constructs for
+improving reliability (e.g., pre- and postconditions), security, safety, etc.
+There are additional requirements that, while useful and desirable, need not be
+necessary for building all DSLs. These are as follows:
+• Scalability: the language provides constructs to help manage large-scale
+descriptions. Of course, some DSLs will only be used to build small systems.
+• Usability: this includes requirements such as space economy, accessibility,
+understandability – characteristics that are desirable, and which may be partly
+covered by the core requirements (e.g., simplicity can help promote
+understandability)

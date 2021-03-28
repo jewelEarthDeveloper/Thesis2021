@@ -1,0 +1,1158 @@
+package  . ;
+
+import  . . . ;
+import  . . . ;
+import  . . . ;
+import  . . . ;
+import  . . . ;
+import  . . . ;
+import  . . . ;
+import  . . . ;
+import  . .*;
+
+global Type global;
+global Type global;
+
+rule string
+    salience integer
+    when
+        variable: Fact()
+    comment
+    then
+        drools.method( variable.method() );
+        
+    comment
+end 
+
+
+
+rule string
+    when
+    comment
+		Fact( property.property == boolean )
+        
+    then
+    comment
+        global.method( imported.property ); 
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property.property == imported.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        Fact( property.property == boolean )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property);
+
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, property.property == boolean )
+    then
+    comment
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean,  property.property == boolean, property.property == boolean )
+    then
+    comment
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, property.property == string )
+    then
+    comment
+            global.method( imported.property );
+                    
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ),  property == property.property, ( property.property == string ||   property.property == string || property.property == string ))
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property in ( property.property, property.property, property.property ),property.property == string )
+    then
+    comment
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property,( property.property == string || property.property == string ) )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property,( property.property == string ||  property.property == string || property.property == string || property.property == string ) )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property && property.property != string )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property && property.property != string comment )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ),(  property == property.property || property == property.property || property == property.property ) )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.remove( imported.property );
+        global.remove( imported.property );
+        global.remove( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property, property.property == null  )
+    then
+    comment
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property ||  property == property.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property, property.property == string )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ),(  property == property.property ||  property == property.property ), method() == boolean )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ),(  property == property.property ||  property == property.property ) )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+                        
+        global.method( imported.property );
+
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ),(  property == property.property ||  property == property.property ) )
+    then
+    comment
+	    global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property )
+    then
+    comment
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property.property == imported.property ,property == boolean, eval( global.method(property) ), property == property.property )
+    then
+    comment
+        global.method( imported.property );
+
+        global.method( imported.property );
+
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+
+        global.method( imported.property );
+
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+
+        global.method( imported.property );
+
+
+        global.method( imported.property );
+        global.method( imported.property );
+
+        global.method( imported.property );
+        global.method( imported.property );
+
+
+        global.method( imported.property );
+        global.method( imported.property );
+
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+
+end
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property )
+    then
+    comment
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ),(  property ==  property.property || property == property.property || property == property.property ) )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+        global.method( imported.property );
+
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property.property == imported.property ,property == boolean, eval( global.method(property) ),( property == property.property ) )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+        global.method( imported.property );
+        global.method( imported.property );
+
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+        global.method( imported.property );
+
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+        global.method( imported.property );
+        global.method( imported.property );
+
+        global.method( imported.property );
+        global.method( imported.property );
+
+        global.method( imported.property );
+
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+        global.method( imported.property );
+        global.method( imported.property );
+
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ),( property == property.property || property == property.property || property == imported.property || property == imported.property ) )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ),(  property == property.property || property == property.property ) )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ),(  property == property.property || property == property.property ),property.property != imported.property )
+    then
+    comment
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property ,property.property == imported.property )
+    then
+    comment
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property )
+    then
+    comment
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method( property ) ), property == property.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ),(  property == property.property || property == property.property ) )
+    then
+    comment
+        global.method( imported.property );
+
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+        comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property || property == property.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+
+		comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property || property == property.property || property == property.property || property == property.property || property == property.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+		
+        global.method( imported.property );
+		
+        global.method( imported.property );
+        global.method( imported.property );
+		
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+		
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable:  Fact( property == boolean, property == property.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property,( property.property != imported.property && property.property != imported.property && property.property != imported.property ) )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+
+end
+
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property);
+end
+
+rule string
+    when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property, property.property == imported.property )
+    then
+        global.method( imported.property );
+end
+
+multiline comment
+
+rule string
+    comment
+	when
+    comment
+        variable:  Fact( property == imported.property )
+    then
+    comment
+       global.method( imported.property );
+       global.method( imported.property );
+       global.method( imported.property );
+       global.method( imported.property );
+end
+
+rule string
+    comment
+	when
+    comment
+        variable:  Fact( property == imported.property )
+    then
+    comment
+		global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+
+rule string
+    comment
+	when
+    comment
+        variable:  Fact( property == imported.property || property == imported.property || property == imported.property)
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    comment
+	when
+    comment
+        variable:  Fact( property == imported.property )
+    then
+    comment
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+    comment
+	when
+    comment
+        variable: Fact( property == boolean, eval( global.method(property) ), property == property.property )
+    then
+    comment
+        global.method( imported.method() );
+end

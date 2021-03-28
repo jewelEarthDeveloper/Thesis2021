@@ -1,0 +1,168 @@
+AB - Experiences with Teaching MPS in Industry
+
+nce
+domain models are expressed in semantically rich languages,
+then advanced analyses (e.g. consistency checks), higher automation (e.g. generation of other artifacts) and support for
+authoring models (e.g. meaningful auto-completion and smart
+editor actions) become possibl
+
+
+Language development requires a good understanding of
+concepts related to programming languages such as abstract
+syntax, concrete syntax, type systems, or generators. Furthermore, classical topics like processes, quality assurance, maintenance and evolution must be applied also when languages
+are developed.
+
+
+JetBrains is a company which provides the
+MPS technology – the main know-how is about developing the
+language engineering technology (meta-meta level). itemis is a
+company specialized in providing solutions, which use model
+based development – the main focus is on building languages
+and tooling for customers (meta-level). Siemens is a large
+company active in many business domains and a typical targeted end-user of language engineering technologies (modellevel). 
+
+
+Jetbrains’ Meta-Programming System2
+is a language workbench which offers comprehensive support for all concerns of
+the development of DSLs and associated tooling. In MPS, a
+language implementation consists of several language aspects.
+MPS ships with a dedicated DSL for implementing each
+language aspect. For reasons of brevity, we will not describe
+any of the aspect-specific languages in detail; we refer the
+reader to [3] and [4].
+
+A. The Structure Definition Aspect
+The structure aspect uses a declarative DSL to describe the
+AST of a language. Each AST element is called a concept,
+and concepts can have children (that constitute the tree),
+references (cross-references through the tree), and properties
+(primitive-typed values). In addition, a concept can extend
+another concept and implement several concept interfaces.
+Like any framework, MPS provides several interfaces and base
+concepts which have special meaning and need to be known by
+language developers. In order to build domain specific tooling,
+1
+https://confluence.jetbrains.com/display/MPSD20171/Fast+Track+to+MPS
+2https://www.jetbrains.com/mps/
+language developers also need to read or modify the models.
+To this end, MPS supports a rich API wrapped in the ”smodel”
+language
+
+B. The Editor Definition Aspect.
+MPS features at its core a projectional editor to display
+the models. Projectional editors do not use parsers; instead,
+they render, or project, a program’s AST in a notation defined
+by the language developer. MPS’ editor aspect defines this
+notation – it is made up of cells arranged in a hierarchy.
+Language engineers can extend the editors and define their
+specific notations appropriate for the DSLs they build –
+e.g. tabular, diagrams, mathematics or trees. Each of these
+notations is supported by a special DSL which lower the
+complexity of writing editors.
+
+MPS supports the definition of several editors for a single
+concept that can be switched at runtime. In addition, editor
+definitions can contain logic to project the same concepts
+in different ways (i.e. possibly using different notations),
+depending on context or user preference
+
+Being a projectional editor, MPS does not feel like text
+editors when users edit their models. In order to increase
+the fluency of models creation and modification, MPS allows
+advanced customization of editors actions – e.g. what happens
+when the user presses ”backspace” in a certain editor cell, or
+how are linear sequences of lexical items transformed into
+models.
+
+C. The Type System Definition Aspect.
+Type systems are specified using declarative typing equations; MPS processes them using a solver. Various different
+kinds of equations are supported, the most important one is
+the type inference rule. It acts as type inference, but also acts
+as a type checker if several equations require different types
+for the same AST nodes.
+
+MPS also supports checking of context sensitive constraints
+with the help of checking rules; these are essentially ifstatements that check some property of the AST and report
+errors if invalid code is detected. The analyses performed
+by checking rules can be arbitrarily complex. Once an error
+is identified, language engineers have also the possibility to
+implement support for the language users to fix these errors
+via IDE automation – known as quick-fixes.
+
+D.	The Constraints Definition Aspect.
+Typing and checking rules inspect an AST and report errors if invalid structures or types are found. In contrast, scopes and constraints prevent the user of a language from constructing invalid models up front. Remember that in a projectional editor, users can only enter code that is proposed through the code completion menu. The structure of a language determines the concept that can be used in a child or reference link. Scopes and constraints further constrain the valid nodes, beyond the concept. This is the main means of MPS to support building of only meaningful models in a pure constructive manner.
+
+
+E.	The Generators Definition Aspects.
+MPS supports two kinds of transformations. Like many other tools it support text generation from an AST. The DSL to achieve this essentially lets developers add text to a buffer and helps with indentation. However, most of MPS’ transformation work is done by mapping one AST to another one (model-tomodel); only at the very end are text generators used to output text files for downstream compilation.
+Each language used to create a particular model can contribute its specific generators to the generation stack. The (partial) ordering of generation steps in the generation stack is statically defined before the generation starts based on pair-wise priorities between different generators. The set of generation steps along with partial ordering among them form the generation plan. Generators are built with a set of expressive DSLs. For building more complex generators, MPS also exposes a rich API which can be used to implement the transformations.
+F. IDE Extensions
+MPS also allows the definition of IDE extensions such as new menus or views; laguage engineers use these extensions extensively for building domain specific tooling or to integrate external tools and present their output in a window inside MPS. The IDE extensions are implemented via regular Java/Swing programs and a couple of MPS-specific extension points.
+G. Other Aspects
+MPS ships with a few more standard language definition aspects for implementing automation via intentions, data flow analyses, refactorings of models and migration of models when languages evolve. The standard aspects are covered in our trainings, we refrain here from further details due to space limitations. The set of language definition aspects can be further extended in a modular manner by language engineers in order to fulfill recurrent language development needs 
+
+
+b) Choosing the Adequate Notation: Choosing the set
+of notations (concrete syntax) and making editors look appropriate to the domain experts is highly important for acceptance of the built DSLs by domain experts. MPS allows
+language developers to define and combine multiple notations
+(e.g. textual, tabular, graphical or diagramatic) for the same
+language. Making use of this MPS feature at its full potential
+is very important to increase the readability of domain specific
+models or lower the learning effort required from new users.
+Furthermore, depending on a concrete use-case of the language
+user, one notation or the other might be preferable (e.g.
+graphics for overview, textual for rapid development of codelike models). Thereby we are constantly making aware the
+trainees about different options they have in order to choose
+an appropriate notation.
+
+
+. For example,
+language developers need to be aware of the two means
+of supporting users in building correct models: constraints,
+which up-front prevent entering wrong models, and on-the-fly
+checks, which give users feedback whenever context sensitive
+constraints are violated. The first solution might feel strange
+to the language users when they try to enter a model fragment
+which is incorrect – MPS will simply not allow to enter
+the model at all without any explanation and this might feel
+frustrating to users – many situations perceived as bugs – ”it
+does not work”. The on-the-fly checks and errors reporting in
+IDE allows users to enter the wrong models, but then marks
+the wrong parts as erroneous with a sensible error message –
+the user has more support to understand what is wrong and
+correct the model.
+
+
+
+j) Languages Design Idioms: Like any software, there
+are specific idioms and best practices when developing languages. Some of the idioms are generic, other idioms are specific to the base technologies behind MPS – e.g. projectional
+editors. We make trainees aware continuously about language
+design idioms.
+
+
+
+d) Particularities of MPS: All our trainings are around
+the MPS technology. MPS is a highly mature language workbench, but has some strong particularities. One of the most
+important particulaties of MPS is that it features a projectional
+editor. Thereby, parsing techniques, which are large topics
+classical in language engineering and which require considerable effort in teaching, are not relevant for MPS. Instead, we
+put a lot of effort in teaching the building of editors such that
+the editing experience of users is improved. Furthermore, the
+projectional editor is an enabler for multiple notations and for
+implementing modular and extensible languages. Large parts
+of our trainings are focused on these technical topics which
+are central to the MPS way of building DSLs.
+
+
+[6]	J.-L. Sierra, “Language-Driven Software Development (Invited talk),” in 3rd Symposium on Languages, Applications and Technologies, ser. OpenAccess Series in Informatics (OASIcs), Dagstuhl, Germany, 2014.
+
+
+[10]	D. S. Kolovos, R. F. Paige, T. Kelly, and F. A. Polack, “Requirements for domain-specific languages,” in Workshop on Domain-Specific Program Development (DSPD), 2006.
+
+
+[12]	A. Pescador, A. Garmendia, E. Guerra, J. S. Cuadrado, and J. de Lara, “Pattern-based development of domain-specific modelling languages,” in Model Driven Engineering Languages and Systems (MODELS), 2015.
+
+
+[19]	M. Strembeck and U. Zdun, “An approach for the systematic development of domain-specific languages,” Software: Practice and Experience, 2009.
+
+

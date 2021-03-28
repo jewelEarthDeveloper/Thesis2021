@@ -1,0 +1,92 @@
+AB - Rete A Fast Algorithm for the Many Pattern/Many Object Pattern Match Problem
+
+In many pattern/many object pattern matching, a collection of patterns is
+compared to a collection of objects, and all the matches are determined. That
+is, the pattern matcher finds every object that matches each pattern. 
+
+For instance, it is a basic component of production system interpreters.
+The interpreters use it to determine ~vhich productions have satisfied condition
+parts. Unfortunately, it can be slow when large numbers of patterns or objects
+are involved. Some systems have been observed to spend more than ninetenths of their total run time performing this kind of pattern matching [5]. 
+
+A production system program consists of an unordered collection of If-Then
+statements called productions. The data operated on by the productions is held
+in a global data base called working memory. By convention, the If part of a
+production is called its LHS (left-hand side), and its Then part is called its RHS
+(right-hand side). The interpreter executes a production system by performing
+the following operations. 
+
+(1) Match. Evaluate the LHSs of the productions to determine which are
+satisfied given the current contents of working memory.
+(2) Conflict resolution. Select one production with a satisfied LHS; if no
+productions have satisfied LHSs, halt the interpreter.
+(3) Act. Perform the actions in the RHS of the selected production.
+(4) Goto 1.
+The algorithm that will be presented here, the Rete Match Algorithm, can be
+described as an indexing scheme that does not require the interpretive step.
+The indexing function is represented as a network of simple feature recognizers. This representation is related to the graph representations for so-called
+structured patterns.
+
+The Rete algorithm was first
+described in 1974 [3]. A 1977 paper [4] described some rather complex
+interpreters for the networks of feature recognizers, including parallel interpreters and interpreters which delayed evaluation of patterns as long as
+possible. (Delaying evaluation is useful because it makes it less likely that
+patterns will be evaluated unnecessarily.) A 1979 paper [5] discussed simple but
+very fast interpreters for the networks. This article is based in large part on the
+1979 paper. 
+
+
+s. The
+algorithm can efficiently process large sets because it does not iterate over the
+sets. 
+
+The iteration can be avoided by storing, with each
+pattern, a list of the elements that it matches. The lists are updated when
+working memory changes. When an element enters working memory, the
+interpreter finds all the patterns that match it and adds it to their lists. When an 
+element leaves working memory, the interpreter again finds all the patterns
+that match it and deletes it from their lists
+
+The Rete algorithm avoids iterating over the set of productions by using a
+tree-structured sorting network or index for the productions.
+
+
+The Rete Match Algorithm is a method for comparing a set of patterns to a set
+of objects in order to determine all the possible matches. It was described in
+detail in this article because enough evidence has been accumulated since its
+development in 1974 to make it clear that it is an efficient algorithm which has
+many possible applications
+
+
+The algorithm is efficient even when it processes large sets of patterns and
+objects, because it does not iterate over the sets. In this algorithm, the patterns
+are compiled into a program to perform the match process. The program does
+not have to iterate over the patterns because it contains a tree-structured
+sorting network or index for the patterns. It does not have to iterate over the
+data because it maintains state information: the program computes the matches
+and partial matches for each object when it enters the data memory, and it
+stores the information as long as the object remains in the memory. 
+
+If there is anything
+unusual about the pattern matching of production systems, it is only that the
+pattern matching takes place on an unusually large scale. Production systems
+contain rather ordinary patterns and data objects, but they contain large
+numbers of them, and invocations of the pattern matcher occur very frequently
+during execution. If programs of other kinds begin to use pattern matching
+more heavily, they could have the same efficiency problems as production
+systems, and it could be necessary to use methods like the Rete Match
+Algorithm in their interpreters as well.
+
+Certainly the algorithm should not be
+used for all match problems; its use is indicated only if the following three
+conditions are satisfied.
+-The patterns must be compilable. It must be possible to examine them and
+determine a list of features like the lists in Section 2.2.1.
+-The objects must be constant. They cannot contain variables or other
+non-constants as patterns can.
+- The set of objects must change relatively slowly. Since the algorithm maintains
+state between cycles, it is inefficient in situations where most of the data changes
+on each cycle. 
+
+
+

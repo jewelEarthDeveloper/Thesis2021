@@ -1,0 +1,186 @@
+A business rule is any bit of knowledge that can be expressed in the following format:
+    When 'something' is true, Then do 'this'.
+
+Is it Drools or JBoss
+Rules? Officially it is now the latter, although it started out as 'Drools' and the name is still in common usage. This book tends to use 'Drools' as it is shorter to type and read. Both terms refer to the same thing—the business rules product from Red Hat and JBoss.
+
+How To Ask Questions The Smart Way at http://catb.org/~esr/faqs/smart-questions.html
+
+The description of the information we need and the format it is stored in is known as the fact model.
+
+Remember that a rule engine will not run in isolation, but be embedded in a wider system. What the 'rest of the system' will be will depend on your project, but the rules will pass data back and forward to it by means of the fact classes
+
+Guvnor = BRMS
+
+assets = rules, data model, packages
+datamodels = get information to and from rules
+packages = organize rules into folders
+
+A repository is useless without being able to import and export information. 
+
+do I need to add categories, statuses
+Categories are important—every rule and every asset must have a least one of them. 
+
+can a projection be a guided editor?
+
+can I make a natural language projection like 
+	when
+	 $driver : Driver ( driverID : id )
+	 $supple : SupplementalInfo ( driverId == driverID,
+	 glassCoverage == true)
+	then
+	 $driver.updateInsuranceFactor( 1.05 );
+	 System.out.println("Driver wants glass coverage: " +
+	 $driver.getInsuranceFactor());
+=
+	When
+	 There is a Driver
+	 And that Driver has requested glass coverage
+	Then
+	 Update the driver's insurance factor
+	 Print a message saying that the driver wants coverage
+	 
+concepts (business rules, technical rules, DSL, models, rule flows, and test scenarios)	 
+Functions and Enumerations.
+We might want to call Functions, which are useful for calculations and the like, from the rules. Enumerations are lists of values that we can use in our rules.
+
+Drools provides a component (called the RuleAgent) that we can deploy into our production system. The RuleAgent can check for updates to the package (via the URL) and deploy them to production automatically.
+
+how to catch gaps? like the analysis page
+
+fact model
+
+If you're familiar with Java, models are just normal JavaBeans deployed into Guvnor/JBoss rules in a JAR (ZIP-like) file; nothing more, nothing less. In fact, a lot of the time you can use the JavaBeans that already exist in your system.
+
+rule attributes to provide extra information about our rules
+
+1. We put our sales object into the working memory (that is, passed it to JBoss Rules), with a total sales of 200.
+2. Our discount sales rule kicks in.
+3. The sales value is now updated by this rule to 190 dollars.
+4. Drools detects that our sales object has been modified, and sees if any rule
+can be applied.
+5. The same discount sales rule is found (as the sales value is still greater
+than 100).
+6. The sales value is discounted by a further 10 dollars.
+7. Repeat the last two steps until the sales value finally drops below 100 dollars.
+8. No more rules fire and JBoss Rules exits
+
+What exactly is this working memory? Working memory is like a scratchpad. All of the information that we pass to Drools is stored here. 
+When rules fire, the information in the working memory gets updated.
+And when Drools is finished, a copy of the working memory is passed to the rest of the program.
+The important thing to remember is that Drools only knows about and fires its rules according the information that we explicitly place in the working memory.
+
+The no-loop attribute will stop the rule from being called; or rather it will stop a rule from changing a fact in working memory, which could otherwise cause the same rule to fire again.
+
+What no-loop will not prevent is the looping of two (or more) rules;
+for example, Rule A causing Rule B to fire, which then causes Rule A to fire, and so on. Well-written business rules with appropriate restrictions (in the When part) will avoid this situation. For example, we can add a 'discount amount' column in our fact model. 
+
+what's soundslike?
+whats matches?
+
+* Set the values of a field on: If we set a variable in the When part, we can update that value here.
+* Modify a fact: This is the same as setting the values, except that we notify the rule engine that the values have changed (which may cause another set of rules to fire, as in the last example).
+* Retract a fact: Remove an item from working memory (which is akin to deleting a line from our spreadsheet). This may cause other rules to fire.
+* Insert a new fact: This will create a new line on our spreadsheet (and may cause other rules to fire). This is the option that we used in the last chapter, in our first sales discount rule.
+* Logically insert a new fact: This is the same as Insert a new fact, but the fact is removed again, as soon as this rule stops being true.
+* Call a method on: This allows you to call a Java method (advanced). In this way, you can pretty much use the full power of Java to send messages, link to other systems, and so on, from your rules.
+
+*salience: In general, you can't control the order in which multiple rules will be fired; either something is true, or it isn't. (Remember that this in one of the big differences from traditional programming languages.) However, we can give hints to the rule engine as to which rule we consider should be fired first. All other things being equal, the higher the salience for a rule, the more likely it is that this rule will be fired first.
+
+Our rule file can contain the
+following elements:
+1. package: Package-name is the name of the folder in which a rule file lives. This is useful for organising our rules (especially when you build up hundreds of them).
+2. import: This pulls in any Java class files (including fact models) that we use in our rules.
+3. global: This defines the global variables that we use. Remember variables (boxes that hold values)? Earlier, they were emptied as soon as our rule had fired and only changes to the facts lived on. Compared to 'normal' variables, global variables live longer, and allow us to pass information into and out of our rules
+4. function: Sometimes you may need to perform the same calculation in many rules. Defining a function allows you to perform the same calculation again and again. Note that it's often easier to call a normal Java function to carry out the same task.
+5. rule: This is the 'when…then' structure that we've spent most of this book is the 'when…then' structure that we've spent most of this book talking about.
+6. comments: These are pieces of text ignored by the rule engine, which explain what is going on with us. They can be on a single line (anything after '//' until the end of the line) or split over multiple lines (everything between the /* and */ Comments split over many lines).
+
+
+Passing information into and out of our rules via a global variable is almost the same as passing a fact into the rules. The difference is that the rule engine does not match (or fire) against global variables.
+This makes the rule engine more suitable for passing in items that change slowly, such as the current date, counter, and so on, and giving rules access to external resources (such as log files).
+
+If we have an error (that is, because of incorrect decision table format), it normally gets flagged here. Often, it can help to look at the rule format that is printed out, to help you identify the error.
+
+Remember that your rules will fire if something is true. So if you find yourself writing rules that are sequence-dependant, think again.
+ 
+ and make sure that you don't keep your chocolate-output.xls file open (or you'll get the Java FileNotFoundException error that we highlighted earlier).
+
+can I make a khonraad specific dsl for drools like the hospital one rule "Check Patient for Heart Attack" 
+when
+ There is a Patient
+ - appears not to be breathing
+ - has no pulse
+ - is white or blue in the face
+ then
+ Call for Assistance
+ Start CPR
+end
+
+could group by ruleflow group
+
+Remember that the difference between facts and globals is that facts are designed to be updated as a result of business rules firing (and will cause other rules to fire in turn). Globals, on the other hand, are more for 'reference' data that may or may not change.
+
+*	@param rules - array of rule files that we need to load
+*	@param dslFileName - optional DSL file name (can be null)
+*	@param ruleFlowFileName - optional (can be null)
+*	@param facts - JavaBeans to pass to the rule engine
+*	@param globals - global variables to pass to the rule engine
+*	@param logger - handle to a logging object
+
+Facts or objects
+Facts are pretty straightforward. They're the container that we use to transport information into (and out of) the rule engine. You'll remember that because facts are standard JavaBeans (we compared them to Lego blocks), a lot of the code already in your organisation can be used for this purpose. Or, you can write your own—such as the CustomerOrder and ChocolateShipment.
+An 'object' is just another term for a fact (it's where the term Object Orientated Programming or OOP comes from). Earlier, we saw how we can insert, update, and retract (remove) facts or objects from the rule engine, and how the rules would react as a result.
+Or rather, we inserted, updated, and retracted the facts from the Working Memory, and saw the Agenda and Activations change as a result. All three of these are parts of the Drools Rule Engine, and are a critical part of what happens 'under the covers'.
+
+Working memory
+The solution is to give everybody their own workspace, or working memory.
+
+
+If you're used to working with web servers, you will notice a similar problem and a similar solution—each user who is interacting with the server has his or her own unique session, which is isolated from any other user's session.
+
+We touched upon working memory when we used stateful sessions as a part of the ruleflow, but working memory is also behind the stateless session. Both stateless and stateful sessions are types of working memory. In both cases, working memory acts as a scratchpad, unique to each user, which contains all of the knowledge (facts) that Drools has been told about the case. When we insert, update, or retract a fact, it's the working memory that changes. Likewise, when a rule inserts, updates, or retract a fact, it's the working memory that changes.
+
+
+In real life we would insert facts to the rule engine (or rather, to working memory), telling the rule engine that all those candy bars have been sold. As soon as we did so, the rule engine would identify the relevant rules via pattern matching. These rules would become 'active' or ready to fire. So, Activations are rules that are ready to fire, and Agenda is the list of all of these activations.
+
+Conflict resolution
+Note that we didn't say Activations 'are rules that fire' but 'rules that are ready to fire'. Just because there are facts in the working memory that match a rule (that is, a rule could fire) doesn't mean that the rule will fire. The first question, which might not be obvious from the chocolate factory sample, is which rule amongst the six highlighted ones will fire first?
+
+
+Strictly speaking, more than one rule can fire at a time, especially if you have multiple working memories. Within the working memory, the Rete algorithm optimises the matching and firing process.
+
+As soon as the 'when' part of the rule it satisfied, it is added to the Agenda as an Activation. This creates a list of rules that are available to fire. If there is only one rule Activation on the agenda, there is no need for conflict resolution—it is fired straight away. If there are two or more rules, conflict resolution is used to put an order to the list.
+
+
+1. Salience: Back in Chapter 5, we came across salience as a rule attribute that we could add via Guvnor (or the other rule editors). Under this conflict resolution method, a rule with a higher salience value will be closer to the top of the agenda, and thus more likely to fire. Remember that salience only changes the order of rules whose 'if' part matches the current facts. If this
+doesn't happen, you can increase the salience if you wish.
+2. Recency: If salience doesn't resolve the rule agenda order, then Drools looks at Recency, or how many times a rule has fired previously. The more the rule has fired, the higher it will be on the agenda.
+3. Complexity: A rule with more conditions in the 'when' part will be more specific, that is, it will be fussier when it fires. On the other hand, when it does fire, it is likely to be more relevant to the current situation. Therefore, the more complex rules tend to move toward the top of the agenda.
+4. LoadOrder: If none of the first three strategies work, then the fallback situation is to use the LoadOrder of the rules—that is, rules that got loaded first get fired first. Because we can load rules from many different files, we can implicitly state which blocks of rules are more important than others. If you need to refresh your memory, look at emory, look at RuleRunner.Java, from the previous chapter.
+
+A more dynamic Agenda
+The order in which rules/Activations appear on the Agenda is critical. This is because only the first rule on the Agenda is guaranteed to fire, even though all of the other rules on the Agenda match the current set of facts in the working memory.
+The other rules may fire in turn, but only if an earlier rule hasn't changed the facts in the working memory. This means that rules can be dropped from the Agenda before they get a chance to fire, because there are no longer valid.
+
+
+If you're a programmer, truth maintenance is a fundamental difference rogrammer, truth maintenance is a fundamental difference to any language you may have used before. With those languages, you
+(the programmer) have to ensure that your code gives the correct results. 
+With Drools, the rule engine ensures that the result is always consistent with the business rules that you have given it. e given it.
+
+
+Rete makes rules run incredibly fast by sorting the rules in such a way that when facts change, the rule engine knows instantly which rules need to fire.
+
+
+Dr Charles Forgy 1974 to 1979 original papers, where he first outlined Rete—just do a Google search for Charles Forgy Rete Algorithm. 
+
+
+InsertLogical is similar to insert, except that the object will automatically be removed if the 'when' part is no longer true.
+
+You use forward and backward chaining in real life—except that you don't know it yet.
+* Forward chaining is where you have the instructions, but you don't know rward chaining is where you have the instructions, but you don't know the end goal of where the instructions are taking you. For example, it's like following the driving instructions on your SatNav or GPS where somebody
+else has entered the end coordinates.
+* Backward chaining is where you have an end goal in mind, and need to work out how you get there. For example, if you need to go to the supermarket and work out the best way to drive there, then the way you work out the route is an example of backward chaining.
+
+
+the current order of conflict revolvers is based on salience (number), last fired, rule simplicity, and then rule order

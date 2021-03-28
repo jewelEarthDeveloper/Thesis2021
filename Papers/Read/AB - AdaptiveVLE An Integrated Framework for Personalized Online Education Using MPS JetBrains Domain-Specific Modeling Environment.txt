@@ -1,0 +1,89 @@
+AB - AdaptiveVLE: An Integrated Framework for Personalized Online Education Using MPS JetBrains Domain-Specific Modeling Environment
+
+
+n. Second, an integrated
+environment for collecting, processing and adapting was
+developed using MPS JetBrains as opposed to processing the
+data using a separate environment (weka libraries).
+
+As a basis for creating adaptive VLEs in our proposed solution, the development of a new set of languages to solve the
+specific problem has been utilised. Specifically, external and
+textual DSLs with code generation that produced XML and
+Java were developed.
+
+The two
+environments (MPS and web2py) communicate through
+XML files. Specifically, XML output for configuring the
+implementation of AdaptiveVLE is produced automatically
+from the AdaptiveVLE DSL and is used as an input to
+the web2py AdaptiveVLE software implementation
+
+However, we significantly improved and integrated our
+previous adaptive VLE DSL [3] using the MPS JetBrains
+development environment [24] to facilitate the language creation, code generation and user interface
+
+he data processing and the corresponding
+learning path adaptation were performed with two other interfaces in the same MPS JetBrains development environment.
+
+MPS JetBrain’s allows the composition of more than
+one language into the same solution. This enables language
+reusability and modular system design which are very important for complex systems. Through MPS JetBrains’s strong
+language composition feature [26], we used two DSLs to
+address the adaptive VLE design and development: the main
+AdaptiveVLE DSL for the collection and the adaptation
+stages and the CAF DSL for the data processing part. The
+two DSLs: AdaptiveVLE and CAF are ‘‘composed’’ through
+using the same data files 
+
+
+Domain-specific languages developed through the MPS Projectional editing environment [24] consist of several main
+parts: structure, behaviour, constraints, actions, editor
+
+
+ The DSLs are superior to the traditional UML
+code generation and tooling. The main reason behind it is
+the fundamental shift in the focus that differentiates the two
+approaches. The domain-specific languages focus on providing an interface for the domain expert that solves the domain
+problem and leaves the software implementation/tooling to be
+provided by the DSL development environment
+. The result
+is a language for the domain expert that can be used and
+maintained by the domain experts without the need of mixing
+software implementation information. 
+
+The
+MPS JetBrains generator is providing powerful automation
+that is very compact and efficient (see Fig. 5)
+
+
+the actual interface with the
+domain user is a textual form with all the advantages that projectional editing is offering such as validation, correctnessby-construction etc. [28].
+
+First of all, the advantages of Projectional
+editing versus the traditional text-based editing are applicable
+as is detailed in [3]. Projectional editing enables the educator
+with restrictions and guidance through the fact that ‘‘coding
+behind the scenes’’ allows only the correct notation to be
+permitted and the user can edit only the parts that require
+input from him/her. This is ‘‘code behind the scenes’’ contains
+validation, language composition, domain focus and quality
+of the generated code produced that are a few of the unique
+elements of domain-specific languages that differentiate them
+from other automatic code generation tools as stated by
+Markus Voelter in his book [4] at page 40
+
+In Fig. 4, an improved user interface has been designed
+according to the previous feedback. Important usability rules
+such as using checkboxes instead of asking the user to type
+‘‘true’’ or ‘‘false’’ were utilized.
+
+To create a copy of a part of a model, in MPS it is as trivial
+as invoking the ‘‘copy’’ operation on a node:
+node<> deepCopy = course.weeklyContent.copy;
+student.learningPath.add(deepCopy);
+This code was used inside the action that was called from
+the editor when the educator presses CLICK on a particular
+part of the screen
+
+
+[26]	M. Voelter and V. Pech, ‘‘Language modularity with the MPS language workbench,’’ in Proc. 34th Int. Conf. Softw. Eng. (ICSE), Jun. 2012, pp. 1449–1450.

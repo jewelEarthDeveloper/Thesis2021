@@ -1,0 +1,247 @@
+AB - Intentional Software 
+
+Intentional Software simplifies software creation by separating
+the software contents in terms of their various domains from the
+implementation of the software and by enabling automatic regeneration of the software as the contents change
+
+domain experts can work in parallel with programmers in their
+respective areas of expertise
+
+
+The goal of software is to implement a solution to a problem that
+is defined by human intent alone. Some people have expertise in
+the problem domain - they are domain experts. Some people have
+expertise in software creation – they are programmers. Together
+they create software, perhaps with some people in both roles
+
+e Domain
+Workbench that allows the combination of multiple domains
+that can be viewed and edited in multiple projections. 
+
+For the creation of any software, two kinds of contributions need
+to be combined even though they are not at all similar: those of
+the domain providing the problem statement and those of software
+engineering providing the implementation.
+
+
+When extending or otherwise maintaining a program, the
+programmer must mentally unweave the implementation  reason about the part in
+question, solve the problem and reweave the result. This repeated
+unweaving and reweaving is an added burden on the programmers
+that introduces many programming errors into the software and
+can increase costs disproportionate to the size of the problem. 
+
+If we want to guarantee a high degree of intentionality, we have
+to express the problem in domain terms. Since by itself the
+expression won’t necessarily constitute an executable program we
+have to rely on an additional transformational step: program
+generation. 
+
+
+Generative programming (Figure 2) is a technique where instead
+of focusing on the final program, the programmers focus on a
+generator program that takes domain code as its input and outputs
+the target code which is the final program. The domain code is
+expressed in a Domain Specific Language [4].
+
+By using a generator, the concerns of the domain experts and of
+the programmers can be separated.
+
+The domain code is maintained by the domain experts. The need
+for a fixed language is eliminated by the Domain Workbench’s
+ability to project contents from multiple interrelated domains in
+multiple views
+
+How do the domain schema and domain code differ from classes
+and objects? The main difference is the complete lack of a priori
+semantics. The domain expert need not make a decision whether
+the domain concept is an object, a quality, an action, a goal, or
+anything else. T
+
+The Domain Workbench is used to define, create, edit, transform
+and integrate multiple domains. The Domain Workbench is an
+instance of the Language Workbench class of tools as described
+by Fowler [
+
+
+Display and editing is
+performed by projecting the tree on a display by a number of
+reversible transformations–some of which may be domain
+specific. All are sensitive to user options that select from the
+many available views to project. 
+
+We realize that in the program text notation the
+unambiguousness of programming languages presupposes that we
+have perfect knowledge of possibly obscure language details,
+such as the relative precedence of “&&” to “||”. When we lack
+this knowledge, the theoretically unambiguous notation is in fact
+ambiguous for us
+By projecting using a different notation (that
+may also be ambiguous but along a different axis) we can easily
+resolve the ambiguity. 
+
+
+Especially when applied to program code, there are two major
+kinds of structured editors:
+* A syntax directed editor is an editor that knows about a
+language syntax that is used ostensibly to help the user.
+Syntax directed editors [12] operate well within the
+constraints of the syntax with many of the advantages
+and disadvantages thereof that are outside of the
+purview of this paper.
+* A projecting editor transforms, or projects, the
+underlying representation into one or more notations
+and may be able to invert the transformation to effect
+changes to the representation. CAD systems and
+modeling tools are typically projecting editors. 
+
+
+In contrast with the above goals, Intentional Software uses
+structured source code and a projecting editor not to help with
+enforcing a syntax but so that domains are not limited by syntax.
+Definition of new domains and arbitrary extension of existing
+domains, can be difficult to accomplish if a parsable and
+unambiguous syntax also has to be designed. 
+
+
+The difference between notations and syntax is subtle but
+important. Notations need not be parsable, so they can be quite
+freely chosen on the basis of qualities other than parsability. For
+example, we can pick notations that simply look good, or are
+traditional in the domain, or otherwise please the users. Even
+ambiguity need not be an obstacle
+
+The difference between notations and syntax is subtle but
+important. Notations need not be parsable, so they can be quite
+freely chosen on the basis of qualities other than parsability. For
+example, we can pick notations that simply look good, or are
+traditional in the domain, or otherwise please the users. Even
+ambiguity need not be an obstacle
+
+y when most
+other application programs have abandoned text based
+representation and introduced more effective editing models
+
+Domain code and domain schemas are just data. They have no
+behavior on their own. Transformations add behavior, and a
+special type of transformation is the projection for editing in the
+Domain Workbench. But how can arbitrary editing work
+consistently across various notations? 
+
+The simplicity of editing text-based languages comes at a high
+cost. In effect, the user is continually expected to manually
+project the underlying intention into the text representation, just
+so the system can claim simplicity for its editing model!
+
+The use of common terms, such as
+“Concatenate,” will not limit use of these productions when
+mixed with other domains that also use the same term. Since
+names are used only to communicate with the user, name
+overloading affects only the user, not the system. In everyday life
+we are well equipped to handle occasional name ambiguity. For
+example, we would not otherwise use first names. 
+
+Enhancing expressiveness of a domain can improve
+intentionality of the domain. 
+
+This further reduces the clutter and
+separates essential information ... from the
+stylistic 
+
+
+language oriented development (where the
+notations, the schemas, and the generator closely mirror and
+extend existing general purpose languages) and domain oriented
+development (where a business domain is the starting point and
+the generator is built to create a domain specific solution.)
+
+Code copying and aspect fragmentation cause many of the most
+common maintenance problems
+
+Programmers’ ability to improve testing suffers greatly from lack
+of support to express and process test intentions beyond Asserts.
+The main needs are:
+a. The ability to associate test code (including asserts,
+pre and post conditions, white-box test and test data)
+with the code being tested without any permanent visual
+or other impact.
+b. The ability to refer to parts of the algorithm being
+tested and affect their behaviors for testing without
+disturbing the source code.
+c. Access to meta-data and other descriptions of the
+problem.
+
+Variants of generative programming have been tried in the past
+with generally positive results. One important bottleneck has been
+the need to specify the input to the generator in the form of a DSL
+typically including a syntax and parser. Even with automatic
+parser generators, just the design costs of a syntax can be
+Figure 11. Integrating dynamically evaluated tests into source.
+461
+daunting. In addition, most DSLs retain a programming language
+flavor that hinders more direct involvement of non-programmers
+such as domain experts. For domain experts to be efficient, the
+domain descriptions need to mirror the domain intentions [6].
+
+Code generators work fine as long as the output of the generator
+does not have to edited. When the output of the generator is
+edited, problems can arise the next time the generator runs–the
+edits may be overwritten. Editing the output challenges the code
+generator to invert the encoding function. Most generators cannot
+perform the inversion, and even if they were helped they could
+not represent the inverse without an enhancement of the input.
+Round trip engineering, two-way wizards, and synchronization
+were all developed to solve the problem of allowing modification
+of generated code and still allow reconciliation with the domain
+specific model. These remain standard features of many model
+driven tools. 
+
+In a round trip the same data persists in two places, in the model
+and in the code. That makes it difficult to maintain consistency.
+Typical approaches designate one copy as master and either pull
+on demand or push on change from the master to the redundant
+copies.
+Another way around the problems is to separate the code that is
+generated into two parts: one that is editable by the programmer
+and one that is not. But this forces the programmers into whatever
+artificial separation is prescribed by the tool. 
+
+
+Furthermore, DSLs suffer from the
+same problems as General Purpose Languages: good languages
+are difficult to design, their syntax is limited both in the notation
+and expressiveness, they are difficult to evolve, and it has been
+difficult to combine multiple languages. 
+
+While past experience with structured editors has been generally
+negative, the need in this new context should cause us to reexamine the problems and implement pragmatic solutions. Most
+application software other than programming has already moved
+ahead toward recognizing more structure in documents. 
+
+
+
+
+
+
+[4]	van Deursen, Arie, Paul Klint and Joost Visser  DomainSpecific Languages: An Annotated Bibliography, 2000 http://homepages.cwi.nl/~arie/papers/dslbib/  An updated list published here http://catamaran.labs.cs.uu.nl/twiki/pt/bin/view/Transform/DSLBibliographyAdditions  
+
+[5]	Dmitriev, Sergey. Language Oriented Programming: The Next Programming Paradigm, 2004. http://www.onboard.jetbrains.com/articles/04/10/lop/ 
+
+
+
+
+
+
+
+[15]	Mernik, M, Heering, J, Sloane, A, When and How to Develop Domain Specific Languages, ACM Computing 
+Surveys, vol 37, no 4, December 2005 
+
+
+[17]	Naur, Peter, A Synapse-State Theory of Mental Life, 2004, www.naur.com/synapse-state.pdf  
+
+
+[18]	Simonyi, Charles. Intentional Programming – An Ecology for Abstraction. 1997, Invited Talk USENIX Conference on Domain-Specific Languages 
+
+
+[20]	Wilson, Gregory V., Extensible Programming for the 21st Century, ACM Queue, Vol 2, No 9, Dec/Jan 2004/2005. 
+ 

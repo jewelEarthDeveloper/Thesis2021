@@ -1,0 +1,1798 @@
+package  . ;
+
+import  . . ;
+
+import  . . . ;
+
+import  . . . . . ; 
+import  . . . . ; 
+import  . . . . . . ; 
+global  . .Type global;
+global Type	global;
+
+rule string  
+	salience integer
+	no-loop 
+	when 
+		comment
+		variable: Fact( )
+		variable: Fact( )
+	then
+		comment
+		global.variable.method() );
+		global.method( variable.method( ) );
+			
+		Type variable = variable.method( );
+		comment
+		if ( variable != null ) {
+		
+			comment
+			global.method ( variable );
+
+			comment
+			if ( variable.method( ) != null ) {
+				for( Type variable : variable.method( )) {
+					global.method( variable );
+				}
+			}
+			
+			comment
+			global.method( variable.method( ) );
+			global.method( variable.method( ) );
+			global.method( variable.method( ) );
+			global.method( variable.method( ) );
+			method( variable.method( ) );
+			method( variable.method( ) );
+			method( variable.method( ) );
+			method( variable.method( ) );
+			method( variable.method( ) );
+			method( variable.method( ) );
+			method( variable.method( ) );
+			method( variable.method( ) );
+			method( variable.method( ) );
+			method( variable.method( ) );
+			method( variable.method( ) );
+			method( variable.method( ) );
+			method( variable.method( ) );
+			method( variable.method( ) );
+			method( variable.method( ) );
+			
+			method( variable.method( ) );
+			method( variable.method( ) );
+			method( variable.method( ) );
+			method( variable.method( ) );
+			method( variable.method( ) );
+			method( variable.method( ) );
+			method( variable.method( ) );
+			method( variable.method( ) );
+			method( variable.method( ) );
+			method( variable.method( ) );
+			
+			method( variable.method( ) );
+		}
+end
+
+rule string
+	when
+		comment
+	then
+		comment
+		method( imported.property );
+end
+
+rule string
+	when
+		comment
+	then
+		comment
+		method( imported.property );
+		method( imported.property );
+end
+
+rule string
+	when
+		comment
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		not Fact( )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property == null )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property != boolean, property != null, eval( global.method( property ) ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( property == imported.property, property == boolean, property != null, eval( global.method( property ) ) )
+	then
+		comment
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property.property, property in ( string, string, string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property.property, property in ( string, string, string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( property == null || ( property.property != null && eval ( global.method( property.method( ) ) ) ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( property == null || (property.property != null && eval( global.method( property.method( ) ) ) ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( property != imported.property )
+		variable: Fact( property == imported.property, variable.property == variable.property || variable.property.property == variable.property )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( property == imported.property )
+		variable: Fact( property == imported.property, variable.property == variable.property || variable.property.property == variable.property )
+		Fact( property == imported.property.property, property in (string, string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( property == imported.property && ( property == null || ( property.property != null && eval( global.method( property.method( ) ) ) ) ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+        global.method( imported.property );
+end
+
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property in ( string ) )
+		not Fact( property == imported.property.property, property in ( string ) )
+	then
+		comment
+        global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		global.method( imported.property );
+
+end
+
+rule string
+	when
+		comment
+		variable: Fact( property == imported.property )
+        variable: Fact( )
+        variable: Fact( eval( variable.method( variable ) ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property in ( string ) )
+		Fact( property == imported.property.property, property in ( string, string, string ) )
+		Fact( property == imported.property.property, property in ( string, string, string ) )
+		Fact( property == imported.property.property, property in ( string, string, string ) )
+	then
+		comment
+        global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+        Fact( property == imported.property.property, property in ( string, string, string ) )
+	then
+		comment
+		global.method( imported.property );
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+        global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property in ( string ) )
+		Fact( property == imported.property.property, property in ( string, string, string ) )
+	then
+		comment
+        global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		global.method( imported.property );
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property.property == boolean )
+		Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property in ( string ) )
+		Fact( property == imported.property.property, property in ( string, string, string ) )
+	then
+		comment
+        global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property in ( string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, ( property.property == null || property.property == boolean ) )
+		Fact( property == imported.property.property, property in ( string ) )
+		Fact( property == boolean && property == boolean )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property in (string, string ))
+		Fact( property != boolean ) comment
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property in ( string ) )
+	then
+		comment
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		global.method( imported.property );
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property == null )
+		Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		global.method( imported.property );
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property in ( string, string ) )
+		Fact( property == string )
+		not Fact( )
+	then
+		comment
+		global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property in ( string, string ) )
+		Fact( property == string )
+	then
+		comment
+		global.method( imported.property );
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property in ( string, string ) )
+		Fact( property == boolean )
+	then
+		comment
+		global.method( imported.property );
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property in ( string ) )
+	then
+		comment
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact(property == imported.property, property == imported.property )
+		Fact( property == imported.property.property, property in ( string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( )
+		Fact( property == imported.property, property == null )
+		Fact( property == imported.property.property, property in ( string, string, string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( variable.property == imported.property )
+		variable: Fact(property == imported.property, property == null )
+	then
+		comment
+		global.method( imported.property );
+end
+
+comment
+comment
+comment
+
+rule string
+	when
+		comment
+		Fact( property == imported.property && ( property == null || ( property.property != null && eval( global.method( property.method( ) ) ) ) ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		variable: Fact( variable.property == imported.property, variable.property != boolean, variable.property == variable.property ||  variable.property.property == variable.property )
+        Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		variable: Fact( variable.property == imported.property, variable.property != boolean, variable.property == variable.property ||  variable.property.property == variable.property )        
+		Fact( property == imported.property.property, property in ( string ) )
+        Fact( property == imported.property.property, property in ( string, string, string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		variable: Fact( property == imported.property, property != boolean, variable.property == variable.property || variable.property.property == variable.property )
+		Fact( property == imported.property.property, property in ( string, string, string ) )
+		
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		variable: Fact( variable.property == imported.property, variable.property == null || ( variable.property != null && eval( global.method( variable.property ))), variable.property == variable.property || variable.property.property == variable.property )
+	    Fact( property == imported.property.property, property in ( string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		variable: Fact( variable.property == imported.property, variable.property != boolean, variable.property == variable.property || variable.property.property == variable.property )
+        Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		variable: Fact( variable.property == imported.property, variable.property != boolean, variable.property == variable.property || variable.property.property == variable.property )
+        variable: Fact( eval( variable.method( variable ) ) )
+	then
+		comment
+		global.method( imported.imported );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property != boolean )
+		Fact( property == imported.property.property, property in ( string ) )
+		Fact( property == imported.property.property, property in ( string, string, string ) )
+		Fact( property == imported.property.property, property in ( string, string, string ) )
+	then
+		comment
+        global.method( imported.property);
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		variable: Fact( variable.property == imported.property, variable.property != boolean, variable.property == variable.property || variable.property.property == variable.property )
+        Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+        variable: Fact( )
+		variable: Fact( variable.property == imported.property, variable.property != boolean, variable.property == variable.property || variable.property.property == variable.property )
+        variable: Fact( eval( variable.method( variable ) ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		variable: Fact( variable.property == imported.property, variable.property != boolean, variable.property == variable.property || variable.property.property == variable.property )
+        Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		variable: Fact( variable.property == imported.property, variable.property != boolean, variable.property == variable.property || variable.property.property == variable.property )
+        Fact( property == imported.property.property, property in ( string ) )
+        Fact( property == imported.property.property, property in ( string ) )
+		Fact( property == imported.property.property, property in (string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		variable: Fact( variable.property == imported.property, variable.property == imported.property || variable.property == imported.property, variable.property == variable.property || variable.property.property == variable.property )
+		not Fact( property == imported.property.property, property in ( string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+        variable: Fact( )
+		variable: Fact( variable.property == imported.property, variable.property == imported.property || variable.property == imported.property, variable.property == variable.property || variable.property.property == variable.property )
+        variable: Fact( eval( variable.method( variable ) ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		variable: Fact( variable.property == imported.property, variable.property == imported.property, variable.property == variable.property || variable.property.property == variable.property )		 
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact(property == imported.property || property == imported.property )
+        Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		comment
+		global.method( imported.property );
+
+end
+
+rule string
+	when
+		comment
+		variable: Fact(property == imported.property || property == imported.property )
+        Fact( property == imported.property.property, property in ( string, string ) )
+        eval( !imported.property || ( variable.method( ) && !imported.property ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		variable: Fact( variable.property == imported.property || variable.property == imported.property, variable.property == variable.property || variable.property.property == variable.property )
+        Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		variable: Fact(	variable.property == imported.property,	variable.property == variable.property || variable.property.property == variable.property )
+        Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		global.method( imported.property );
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		variable: Fact( variable.property == imported.property, variable.property == imported.property, variable.property != null && eval( global.method( variable.method( ) ) ), variable.property == variable.property || variable.property.property == variable.property )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+        variable: Fact( )
+		variable: Fact( variable.property == imported.property, variable.property == imported.property, variable.property != null && eval(global.method( variable.method( ) )), variable.property == variable.property || variable.property.property == variable.property )
+		variable: Fact( eval( variable.method( variable ) ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact(property == imported.property || property == imported.property )
+        Fact( property == imported.property.property, property in ( string, string ) )
+        eval( variable.method( ) && !imported.property )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		variable: Fact( variable.property == imported.property || variable.property == imported.property, variable.property == variable.property || variable.property.property == variable.property )
+        Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		global.method( imported.property );
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		variable: Fact(property == imported.property, property == null )
+	then
+		comment
+		global.method( imported.property );
+end
+
+comment
+comment
+comment
+
+rule string
+	when
+		comment
+        variable: Fact( property == imported.property && (property == null || ( property.property != null && eval( global.method( property.method( ) ) ) ) ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+        Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+        Fact( property == imported.property.property, property in ( string ) )
+        Fact( property == imported.property.property, property in ( string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property == imported.property || property == imported.property )
+		not Fact( property == imported.property.property, property in ( string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+        variable: Fact( )
+		variable: Fact( variable.property == imported.property, variable.property == imported.property || variable.property == imported.property )
+        variable: Fact( eval( variable.method( variable ) ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property == imported.property )		 
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+        Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+        Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		global.method( imported.property );
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property == imported.property, property != null && eval( global.method( property ) ))
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+        variable: Fact( )
+		variable: Fact( variable.property == imported.property, variable.property == imported.property, variable.property != null && eval(global.method( variable.method( ) )))
+		variable: Fact( eval( variable.method( variable ) ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		variable: Fact( variable.property == imported.property )
+        Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		global.method( imported.property );
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		variable: Fact( property == imported.property, property == null )
+	then
+		comment
+		global.method( imported.property );
+end
+
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property != boolean )
+		Fact( property == imported.property.property, property == string )
+	then
+		comment
+		global.method( imported.property );
+end 
+
+rule string
+	when
+		comment
+		Fact( property == imported.property ) 
+		Fact( property == imported.property.property, property != string )
+	then
+		comment
+		global.method( imported.property );
+end
+
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property == boolean, property == boolean )
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property in ( string, string ) ) 
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( property == imported.property, property == boolean, property == boolean )
+		variable: Fact( property == imported.property ) 
+		variable: Fact( property == imported.property.property, property in ( string, string ) )  
+		variable: Fact( property == imported.property, eval ( variable.method( variable ) ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property == string )
+		Fact( property == imported.property.property, property in ( string, string, string ) ) 
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( rol in (imported.property, imported.property, imported.property ) )
+		Fact( property == imported.property, property == boolean, property == boolean )
+		Fact( property == imported.property.property, property in ( string, string ) )
+		Fact( property == imported.property.property, property == string ) 
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property == boolean, property == boolean )
+		variable: Fact( rol in (imported.property, imported.property, imported.property ) )
+		Fact( property == imported.property.property, property in ( string, string ) )
+		Fact( property == imported.property.property, property == string ) 
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( property == imported.property )
+		Fact( property == imported.property, property == boolean, property == boolean )
+		Fact( property == imported.property.property, property in ( string, string ) )
+		Fact( property == imported.property.property, property == string ) 
+	then
+		comment
+		global.method( imported.property );
+end
+rule string
+	when
+		comment
+		variable: Fact( property == imported.property )
+		Fact( property == imported.property, property == boolean, property == boolean )
+		Fact( property == imported.property.property, property in ( string, string ) )
+		Fact( property == imported.property.property, property == string ) 
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property == boolean, property == boolean )
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property in ( string, string ) ) 
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( property == imported.property, property == boolean, property == boolean )
+		variable: Fact( property == imported.property ) 		
+		variable: Fact( property == imported.property.property, property in ( string, string ) )  
+		variable: Fact( property == imported.property, eval ( variable.method( variable ) ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property == string )
+		Fact( property == imported.property.property, property in ( string, string, string ) ) 
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property == boolean, property == boolean )
+		Fact( property == imported.property || property == imported.property, property.property == imported.property )
+		Fact( property == imported.property.property, property in ( string, string ) )
+		Fact( property == imported.property.property, property == string )
+		Fact( property == imported.property.property, property == string )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property == boolean, property == boolean )
+		Fact( property == imported.property || property == imported.property, property.property == imported.property || property.property == imported.property )
+		Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property == boolean, property == boolean )
+		Fact( property == imported.property || property == imported.property, property.property == imported.property )
+		Fact( property == imported.property.property, property in ( string, string ) )
+		Fact( property == imported.property.property, property == string )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( property == imported.property, property == boolean, property == boolean )
+		variable: Fact( property == imported.property || property == imported.property )
+		variable: Fact( property == imported.property.property, property in ( string, string ) )  
+		variable: Fact( property == imported.property, eval ( variable.method( variable ) ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property == boolean, property == boolean )
+		variable: Fact( property == imported.property || property == imported.property, property.property == imported.property )
+		Fact( property == imported.property.property, property in ( string, string ) )  
+		Fact( property == imported.property.property, property == string )
+		variable: Fact( property == imported.property, eval ( variable.method( variable ) ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property == string )
+		Fact( property == imported.property.property, property in ( string, string ) ) 
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		Fact( property == imported.property, property == boolean, property == boolean, ( variable.property == imported.property || variable.property == imported.property ) ||  ( property != null && property.property == imported.property ))
+		Fact( property == imported.property.property, property == string )  
+		Fact( property == imported.property.property, property in ( string, string ) )
+		 
+	then
+		comment
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		Fact( property == imported.property, property == boolean, property == boolean, ( variable.property == imported.property || variable.property == imported.property ) || ( property != null && property.property == imported.property ))
+		Fact( property == imported.property.property, property == string )  
+		Fact( property == imported.property.property, property == string ) 
+		
+	then
+		comment
+		global.method( imported.property );
+		global.method( imported.property );
+end
+
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		Fact( property == imported.property, property == boolean, property == boolean, property != null && property.property == imported.property )
+		Fact( property == imported.property.property, property == string, property == imported.property )  
+		Fact( property == imported.property.property, property in ( string, string ) )
+		 
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property != boolean, property != null )
+		Fact( property == imported.property.property, property == string )
+		Fact( property == imported.property.property, property in ( string, string, string ) ) 
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property != boolean, property != null, eval( global.method( property ) ) )
+		Fact( property == imported.property || property == imported.property )
+		Fact( property == imported.property.property, property == string )
+		Fact( property == imported.property.property, property in ( string, string ) )  
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( property == imported.property, property != boolean, property != null, eval( global.method( property ) ) )
+		variable: Fact( property == imported.property || property == imported.property )
+		variable: Fact( eval( variable.method( variable ) ) )  
+		variable: Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property != boolean, property != null, eval( global.method( property ) ), property == null )
+		Fact( property == imported.property.property, property == string )
+		Fact( property == imported.property.property, property in ( string, string ) ) 
+	then
+		comment
+		global.method( imported.property );
+end
+
+
+rule string
+	when
+		comment
+		Fact(  property == imported.property, property != boolean, property != null, eval( global.method( property ) ) )
+		Fact( property == imported.property.property, property == string )
+		Fact( property == imported.property.property, property == string )
+		Fact( property == imported.property.property, property in ( string, string ) )  
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact(  property == imported.property, property != boolean, property != null, eval( global.method( property ) ) )
+		variable: Fact( )
+		variable: Fact( eval( variable.method( variable ) ) )
+		variable: Fact( property == imported.property.property, property in ( string, string ) )  
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+    when
+        comment
+        Fact(  property == imported.property, property != boolean, property != null, eval( global.method( property ) ) )
+		variable: Fact( property == imported.property.property, property in ( string, string ) )  
+    then
+        comment
+        global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property != boolean, property != null, eval( global.method( property ) ) )
+		Fact( property == imported.property.property, property == string )
+		Fact( property == imported.property.property, property in ( string, string ) ) 
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string 
+	when
+		comment
+		Fact(  property == imported.property, property != boolean, property != null, eval( global.method( property ) ) )
+		Fact( property == imported.property.property, property == string )
+		Fact( property == imported.property.property, property in ( string, string ) )  
+		
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact(  property == imported.property, property != boolean, property != null, eval( global.method( property ) ) )
+		variable: Fact( property.property == imported.property ) 
+		variable: Fact( eval( variable.method( variable ) ), ( variable.property == null || variable.property == imported.property ) )
+		Fact( property == imported.property.property, property == ( string ) )
+		Fact( property == imported.property.property, property in ( string, string ) )  
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact(  property == imported.property, property != boolean, property != null, eval( global.method( property ) ) )
+		variable: Fact( ) 
+		variable: Fact( eval( variable.method( variable ) ) ) 
+		Fact( property == imported.property.property, property == ( string ) )
+		Fact( property == imported.property.property, property in ( string, string ) )  
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property != boolean, property != null, eval( global.method( property ) ) )
+		Fact( property == imported.property.property, property == string )
+		Fact( property == imported.property.property, property in ( string, string ) ) 
+	then
+		comment
+		global.method( imported.property );
+end
+ 
+rule string
+	when
+		comment
+		variable: Fact( )
+		Fact( property == imported.property, property != boolean, property != null, eval( global.method( property ) ) )
+		Fact( property == imported.property.property, property == string )  
+		Fact( property == imported.property.property, property in ( string, string ) )
+		
+	then
+		comment
+		global.method( imported.property );
+		global.method( imported.property );
+		
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property != boolean, property != null )
+		Fact( property == imported.property.property, property == string )
+		Fact( property == imported.property.property, property in ( string, string, string ) ) 
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property == string )  
+		Fact( property == imported.property.property, property == string )
+		
+	then
+		comment
+	
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		Fact( property == imported.property, property != null, eval( global.method( property ) ) )
+		Fact( property == imported.property.property, property == string )  and ( Fact( property == imported.property.property, property == string )  or Fact( property == imported.property.property, property == string ) )
+		 
+	then
+		comment
+		global.method( imported.property );
+		global.method( imported.property );
+		
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		
+end 
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property == string )
+		
+	then
+		comment
+		global.method( imported.property );
+		global.method( imported.property );
+		
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property == string )
+		
+	then
+		comment
+		global.method( imported.property );
+	
+		global.method( imported.property );
+		
+end 
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property == string )
+		Fact( property == imported.property.property, property in ( string, string ) )  
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( property == imported.property )
+		variable: Fact( )
+		variable: Fact( eval( variable.method( variable ) ) )
+		variable: Fact( property == imported.property.property, property in ( string, string ) )  
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string 
+	when
+		comment
+		Fact( property == imported.property ) 
+		Fact( property == imported.property.property, property == string )
+		Fact( property == imported.property.property, property in ( string, string ) )  
+		
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( property == imported.property )
+		variable: Fact( )
+		variable: Fact( eval( variable.method( variable ) ) ) 
+		variable: Fact( property == imported.property.property, property in ( string, string ) )  
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+    when
+        comment
+        Fact( property == imported.property, ( property == null || eval( global.method( property ) ) ), ( property == null || property.property == boolean) )
+        Fact( property.property in ( imported.property, imported.property ) )  
+    then
+        comment
+        global.method( property );
+end
+
+rule string
+    when
+        comment
+        Fact( property == imported.property, ( property == null || eval( global.method( property ) ) ) )
+        variable: Fact( )
+        variable: Fact( eval( variable.method( variable ) ) )
+        Fact( property.property in ( imported.property, imported.property ) )  
+    then
+        comment
+        global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property != boolean, property != null, eval( global.method( property ) ) )
+		Fact( property == imported.property.property, property == string )
+		not Fact( )
+		  
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property != null, eval( global.method( property ) ) )
+		Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		global.method( imported.property );
+		global.method( imported.property );
+		
+		global.method( imported.property );
+		global.method( imported.property );
+		
+		global.method( imported.property );
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property == null )
+		Fact( property == imported.property.property, property == string )
+		Fact( property == imported.property.property, property == string )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property, property != null && property.property != null && property == null )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( property == imported.property, property != boolean && property != null && property.property != null && property == null ) 
+		variable: Fact( property == variable.property )
+ 	then
+		comment
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		variable: Fact( property == imported.property || property == imported.property, property == null )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		variable: Fact( property == imported.property , property == null && ( variable.property.property == imported.property || variable.property.property == imported.property || ( property != null && property.property == variable ) ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property != string )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property != string )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property in ( string, string, string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+        variable: Fact( property == imported.property && ( property == null || ( property.property != null && eval( global.method( property.method( ) ) ) ) ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( property == imported.property )
+		variable: Fact( )
+        variable: Fact( eval( variable.method( variable ) ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property in ( string ) )
+		Fact( property == imported.property.property, property in ( string, string, string ) )
+		Fact( property == imported.property.property, property in ( string, string, string ) )
+	then
+		comment
+        global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( property == imported.property )
+		Fact( property == imported.property.property, property in ( string, string, string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( property == imported.property )
+		Fact( property == imported.property.property, property in ( string, string ) )
+		Fact( property == variable.property )
+	then
+		comment
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+        global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		Fact( property == imported.property )
+		Fact( property == imported.property.property, property in ( string ) )
+	then
+		comment
+		global.method( imported.property );
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		variable: Fact( property == imported.property, property != boolean, variable.property == variable.property || variable.property.property == variable.property )
+		Fact( property == imported.property.property, property in ( string, string, string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( property == imported.property, property == boolean, ( property != null && global.method( property ) ) )
+    	variable: Fact( property == boolean, eval( global.method( property ) ), ( property == imported.property || property == imported.property || property == imported.property ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+        variable: Fact( property == imported.property && ( property == null || ( property.property != null && eval( global.method( property.method( ) ) ) ) ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+        variable: Fact( )
+        variable: Fact( property == imported.property, property != boolean )
+        Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+        variable: Fact( )
+        variable: Fact( property == imported.property, property != boolean )
+        Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( property == imported.property )
+        variable: Fact( )
+        variable: Fact( eval( variable.method( variable ) ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+        Fact( )
+        Fact( property == imported.property, property != boolean )
+        Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+        variable: Fact( )
+        variable: Fact( property == imported.property, property != boolean )
+        Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+        variable: Fact( )
+        variable: Fact( property == imported.property, property != boolean )
+        Fact( property == imported.property.property, property in ( string, string ) )
+	then
+		comment
+		global.method( imported.property );
+end
+
+rule string
+	when
+		comment
+		variable: Fact( )
+		variable: Fact( property == imported.property, property == boolean, ( property == null || global.method( variable.method( ) ) ), variable.property == variable.property || variable.property.property == variable.property )
+	then
+		comment
+		comment
+		global.method;
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+		global.method( imported.property );
+        global.method( imported.property );
+end

@@ -129,3 +129,67 @@ Forms - rich text editors are also frequently utilized for encoding rules of var
 
  When you write code in MPS, you do not manipulate code on character level. Instead you obey the rules of structured editing
 
+3 benefits of projectional editors
+1) richness of the notations you can use in your languages
+2) change notations on the fly, so you can choose the notation that best suits the problem at hand
+3) combine languages easily
+
+The languages used for defining languages are also defined in MPS, so MPS languages are fully bootstrapped. In other words, defining languages is also a modelling activity, modelling with DSLs in the domain of language engineering.
+
+
+Structure - defines the abstract syntax that consists of concepts
+Editor - defines the visualizations of concepts and the way users interact with code
+Actions - defines node factories and copy-paste handlers
+Constraints - further constrains the structure - what values properties can have, where references can point and what children or parents nodes can have
+Behavior - defines functionality associated with concepts and nodes
+Typesystem - for languages with values and expressions defines typing rules that help detect typing errors in code
+Intentions - enable context-aware suggestions for automated code manipulation
+DataFlow - defines flow of data and control through code so that analyzers can be built to detect flow-related issues, such as unreachable code or potential null-pointer exception
+Generator - defines semantics of the code, i.e. transformation rules for translating the code into a language with semantics, like Java, C, XML and others
+
+and there are many more that can be specified on demand
+
+structure - is most important, without this the language cannot do anything.
+contains the concepts out of which the programmers build their programs
+
+object orientated
+
+
+The editor aspect lets us define projections of the concept on the screen that enable the user to interact with the code. During the user interacting with the code properties, children and references of the concepts get set or changed. All properties, child nodes or collection of children as well as references are represented in the editor by editor cells.
+
+These cells are bound to the properties, nodes or references in the AST, display their current value and propagate any user changes to the corresponding properties, nodes and references in the AST.
+
+An editor definition is effectively a tree of editor cells - it can be a single cell or multiple cells contained in a single parent cell.
+
+----
+(from https://www.youtube.com/watch?v=uvCc0DFxG1s)
+the editor ultimately is a big swing panel
+----
+
+ a generator converts an input model into an output model, which can then be processed by another generator. So generators form a pipeline that takes user code on one end and gradually transforms it into a final model that is then converted to text using TextGen definitions of the concepts in the final model.
+ 
+ These macros are attached to elements of the template and ensure that during generation the annotated elements of the template get replaced with values specified by the macro.
+ 
+ 
+ With MPS you not only create languages but also tooling that assists the developers when they use the languages. This includes:
+*new menus, contextual menus and sub-menus
+new entries in the menus
+*intentions to suggest the users automatic changes and improvements to the code
+*quick-fixes to automatically fix discovered errors in code
+*language migrations to automatically upgrade user models to the most recent version of a language
+*refactorings to automatically modify the structure of the code
+*tool windows to show additional information to the user in a separate panel
+*preferences to provide additional configuration options
+
+In MPS language designers not only define the abstract and concrete syntax of languages, the semantics, type-system, constraints and other essential traits of languages, but also the IDE support for the languages - refactorings, configuration screens, menus, tool windows and Intentions.
+
+structure - the definition of concepts that specify the shape of the model (abstract syntax tree) and relationships between nodes
+editor - the definition of visual representation of the code and the way users interact with the code
+generator - the definition of semantics, i.e. the meaning of the code through rules that translate the code into another language
+
+
+Generator macros allow replacing properties, child nodes and references in templates with properties, nodes and references coming from the input model.
+
+Scopes in MPS define the set of possible targets for references. By default, a reference can point to any target node that exists in the current model, as well as in all the models imported into the current model. The Transition concept in our project defines two references - trigger and target.
+
+

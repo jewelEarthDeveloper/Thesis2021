@@ -1,0 +1,171 @@
+AB - Efficiency of Projectional Editing A Controlled Experiment
+
+Projectional editors are editors where a user’s editing actions
+directly change the abstract syntax tree without using a
+parser
+
+They promise essentially unrestricted language composition as well as flexible notations, which supports aligning
+languages with their respective domain and constitutes an essential ingredient of model-driven development. Such editors
+have existed since the 1980s and gained widespread attention
+with the Intentional Programming paradigm, which used
+projectional editing at its core.
+
+
+Projectional editor describes a type of editor where users work
+on a projection of a program’s abstract syntax tree (AST)
+and directly change the AST with their editing gestures.
+
+This
+concept is different from parser-based editing, where users
+change the concrete syntax (characters in a text buffer), and a
+parser then matches the syntax against a grammar definition
+
+
+Projectional editing, also known as
+structured editing or syntax-directed editing, is not a new
+idea; early references go back to the 1980s and include the
+Incremental Programming Environment [32], GANDALF [35],
+and the Synthesizer Generator [39]. Work on projectional
+editors continues today: Intentional Programming [44, 18, 45,
+14] is its most well-known incarnation. Other contemporary
+tools [20] are the Whole Platform [9], M´as [3], Onion, and
+MPS [4]
+
+Projectional editors have two main advantages, both resulting from the absence of parsing. First, they support notations
+that cannot easily be parsed, such as tables, diagrams or
+mathematical formulas—each of which can be mixed with
+the others and with textual notations [45, 52]
+
+Second, they
+support various ways of language composition [19], typically
+including modular language extension as well as embedding
+of unrelated languages into a host language [44, 51]
+
+
+ Domain
+specificity, in turn, is a major contributor to model-driven
+development as well as productivity in software engineering
+in general, as reported for domains as diverse as language
+and compiler implementation [22, 25], embedded software [13,
+27, 29, 30, 57], and web applications [49]. In fact, developers
+commonly appreciate the ability for language composition
+and notational flexibility [24, 41, 56].
+
+
+ Thus, it is crucial
+that projectional editors do not negatively impact editing
+efficiency for textual notations. This is their weak spot: for
+textual notations, projectional editors behave differently from
+what developers know from traditional text editors in terms
+of the granularity and restrictions of code edits and code
+selections.
+
+on the qualitative results of a survey we conducted before with professional developers who are familiar
+with projectional editing [56].
+
+
+Projectional Editing and MPS. Projectional editors avoid
+parsing the concrete syntax to build a program’s AST. Instead, editing activities by a user directly change the AST.
+The user sees and interacts with a representation of the program rendered by projection rules that reflect the AST as it
+changes
+
+This approach is fundamentally similar to graphical
+editors (e.g., UML tools), but projectional editors generalize
+the approach to arbitrary notations, including textual ones.
+
+Parsing is avoided, because every single
+next string is recognized as it is entered, no token structure
+has to be recognized in a token stream. Disambiguation is
+performed by the user at the time of picking a concept from
+the code-completion menu and not by a parser (based on
+a potentially complex structure).
+
+After a user has picked
+a language construct and it has been instantiated in the
+AST, a program is never ambiguous: every node points to its
+defining concept. This is important, because independently
+developed languages can be composed in a single program
+and never lead to structural or syntactic problems, irrespective of the concrete syntax of the participating languages.
+For instance, two languages could have overlapping keywords,
+which parser-based tools could not easily disambiguate (without the need for writing dedicated disambiguation code for
+the combination of the two languages).
+
+
+The JetBrains Meta Programming System (MPS) [4] is an
+open-source language workbench [20], that is, a system for
+defining, composing, and using languages and their IDEs.
+It relies on a projectional editor and supports concrete and
+abstract syntax, type systems, and transformations, as well
+as IDE aspects, such as syntax highlighting, code completion,
+find-usages, diff/merge, refactoring, and debugging. MPS’
+projectional editor enables the aforementioned flexible notations and language composition.
+
+mbeddr
+also supports languages for cross-cutting concerns, such as
+documentation, requirements management, and traceability,
+as well as product-line engineering.
+
+
+. We suggest that future research should
+focus on making expression editing more efficient. Hybrid
+editors are one possible approach to address this challenge:
+they rely on on-demand linearization of (expression) tree
+structures. 
+
+References are based on pointers to the target
+node’s ID. Despite some advantages (e.g., robust refactorings)
+of this approach, we observe problems with the tradeoff that
+the reference target has to exist at the time the reference is
+created. A more robust and intuitive handling of references
+is desirable. While some problems can be solved by language
+developers (e.g., quick fixes to create reference targets), there
+should be a better way to support references by the IDE
+itself. 
+
+
+Projectional Editors from the 1980s. GANDALF [35]
+and the Incremental Programming Environment (IPE) [32] do
+not attempt to make editing textual notations efficient; for example, they lack support for linear editing of tree-structured
+expressions. The Synthesizer Generator [39] avoids the use
+of projectional editing at the fine-grained expression level,
+where textual input and parsing is used. While this may improve editing efficiency, it risks the advantages of projectional
+editing, because language composition at the expression level
+is limited. Another work that implements and uses a DSL
+within the Synthesizer Generator [37] concludes: “Program
+editing will be considerably slower than normal keyboard
+entry, although actual time spent programming non-trivial
+programs should be reduced due to reduced error rates.”
+
+
+Contemporary Projectional Editors. For all of the following projectional editors, our results can be used to improve
+their efficiency. The Intentional Domain Workbench (IDW)
+is the most recent implementation of the Intentional Programming paradigm [44, 18], supporting diverse notations [45,
+14]. Since it is a commercial, closed-source project without
+widespread adoption yet, we cannot easily study it or survey
+its users. Clark describes a projectional editor [15] that uses
+term rewriting to create the concrete from the abstract syntax. It supports graphical and textual notations, but is in
+an early stage and lacks support for efficient editing of text.
+
+
+
+
+
+[32]	R. Medina-Mora and P. H. Feiler. An Incremental Programming Environment. IEEE Trans. Softw. Eng., 7(5):472–482, Sept. 1981.
+
+
+[34]	Z. Molotnikov, M. Volter, and D. Ratiu. Automated¨ domain-specific C verification with mbeddr. In Proc. ASE, 2014.
+
+
+[35]	D. Notkin. The GANDALF Project. J. Syst. Softw., 5(2):91–105, May 1985.
+
+
+[37]	S. W. Porter. Design of a Syntax Directed Editor for PSDL (Prototype Systems Design Language). Master’s thesis, Naval Postgraduate School, Monterey, CA, USA, 1988.
+
+[39]	T. W. Reps and T. Teitelbaum. The Synthesizer Generator. In Proc. SDE, 1984.
+
+
+[41]	B. Selic. The Pragmatics of Model-Driven Development. IEEE Softw., 20(5):19–25, Sept. 2003.
+
+
+[49]	E. Visser. WebDSL: A Case Study in Domain-Specific Language Engineering. In R. Lammel, J. Visser, and¨
+J. a. Saraiva, editors, Generative and Transformational Techniques in Software Engineering II, pages 291–373. Springer, 2008.

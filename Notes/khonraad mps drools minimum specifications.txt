@@ -1,0 +1,158 @@
+
+need to support:
+
+dools file:
+-----------
+package
+ - must support dots in name
+ - should be unique in solution
+
+import
+ - must support fully qualified name with up to 7 dots
+ - must exist in an referenced library
+ - must support *
+ 
+ 
+global
+ - creates variable
+ - must have type
+   - type can be an imported type
+   - type can be an Fully qualified type
+
+multiline comment
+
+rule
+----
+name
+ - should be unique in file
+
+attributes
+ - supports dialect "mvel"  (do we really need this, as it is only used once and opens a whole can of worms
+ - supports no-loop
+ - supports salience integer
+
+when
+----
+comment
+
+eval at statement level
+ - should only return boolean
+ - supports in parameter !
+ - supports in parameter imported.property
+ - supports in parameter ||
+ - supports in parameter brackets
+ - supports in parameter rule variable.method
+ - supports in parameter &&
+ 
+eval in Fact parameter
+ - supports in parameter global.method ( fact property.method ) 
+ - supports in parameter global.method ( fact property ) 
+ - supports in parameter rule variable.method ( rule variable ) 
+ - supports in parameter brackets
+ - supports in parameter ,
+ - supports in parameter ||
+ - supports in parameter ==
+ - supports in parameter rule variable.property on lhs
+ - supports in parameter rule variable.property.property on lhs
+ - supports in parameter rule variable.property on rhs
+ - supports in parameter null on rhs
+ - supports in parameter imported.property on rhs
+ - supports in parameter boolean on rhs
+ - supports in parameter !=
+ - supports in parameter fact property on lhs
+ - supports in parameter &&
+ - supports in parameter string on rhs
+ - supports in parameter fact property.property on rhs
+ - supports in parameter fact property.property on lhs
+ - supports in parameter fact property in ()
+ - supports in parameter rule variable.property on lhs
+ - supports in parameter global.method on lhs
+ - supports in parameter global.method (fact property) on lhs
+ - supports in parameter global.method (fact property.method ) 
+ - supports in parameter global.method (rule variable.method ) 
+ 
+in () in Fact parameter
+ - supports single string
+ - supports multiple string
+ - supports single imported.property
+ - supports multiple imported.property
+ 
+in () in eval parameter
+ - supports multiple fact property.propety
+
+and
+ - allowed between Facts
+
+Fact
+ - must support not prefix
+ - must be of an imported type
+ - property is a property of the Fact
+ - supports empty parameter
+ - supports in parameter fact property on lhs
+ - supports in parameter fact property.property on lhs
+ - supports in parameter fact property.property.property on lhs
+ - supports in parameter rule variable.property on lhs
+ - supports in parameter rule variable.property.property on lhs
+	- possible if the variable is the same as the fact it is in - check!!
+ - supports in parameter !=
+ - supports in parameter ==
+ - supports in parameter &&
+ - supports in parameter ||
+ - supports in parameter ,
+ - supports in parameter <
+ - supports in parameter >=
+ - supports in parameter brackets
+ - supports in parameter null on rhs
+ - supports in parameter boolean on rhs
+ - supports in parameter string on rhs
+ - supports in parameter brackets around rhs
+ - supports in parameter imported.property on rhs
+ - supports in parameter imported.property.property on rhs
+ - supports in parameter rule variable.property on rhs
+ - supports in parameter fact property.property on rhs
+ - supports in parameter null || < integer on rhs 
+	- only in brackets
+ - supports in parameter eval
+ - supports in parameter fact property in ( ) 
+ - supports in parameter global.method( rule variable.method )
+	- only in brackets
+ - supports in parameter variable.property.method( rule variable )
+ - supports in parameter !=
+ - supports in parameter !=
+ - supports in parameter !=
+
+	
+	
+
+ 
+then
+----
+drools specific method 
+ - with or without drools. prefix
+ - parameter can be rule variable
+ - parameter can be rhs variable
+ - parameter can be result of method call in variable
+ - parameter can be imported.property
+comment
+for command
+ - Type must be imported
+ - supports rule variable as enumerator provider
+ - loop variable is only available in scope
+ - body can contain more statements
+globals
+ - call void methods
+ - supports in parameter imported.method
+ - supports in parameter imported.property
+ - supports in parameter rule variable
+ - supports in parameter rule variable.method
+
+if statement
+ - condition supports rule variable on lhs
+ - condition supports null on rhs
+ - condition supports rule variable.method on lhs
+ 
+then variable
+ - have an imported type
+ - have a name
+ - valid in scope after creation
+ - can be assigned from rule variable.method

@@ -1,0 +1,32 @@
+AB - Integrating Prose as First-Class Citizens with Models and Code
+
+ MPS uses a projectional editor, which means
+that, although a syntax may look textual, it is not represented as a sequence of
+characters which are transformed into an abstract syntax tree (AST) by a parser.
+Instead, a user’s editing actions lead directly to changes in the AST. Projection
+rules render a concrete syntax from the AST. Consequently, MPS supports nontextual notations such as tables, and it also supports unconstrained language
+composition and extension – no parser ambiguities can ever result from combining languages (see [6] for details).
+
+In MPS, language elements (called
+concepts) have children, references and properties. They can also inherit from
+other concepts and implement concept interfaces such as IWord. The multiline
+prose editor widget works with instances of IWord, and by implementing this
+interface we can ”plug in” new language concepts into the multiline editor.
+
+I thank the mbeddr and MPS development teams for
+creating an incredibly powerful platform that can easily accommodate the features described in this paper
+
+
+
+
+
+
+5. D. Ratiu, M. Voelter, B. Schaetz, and B. Kolb. Language Engineering as Enabler
+for Incrementally Defined Formal Analyses. In FORMSERA’12, 2012.
+
+
+
+8. M. Voelter, D. Ratiu, B. Schaetz, and B. Kolb. mbeddr: an extensible c-based
+programming language and ide for embedded systems. In Proc. of the 3rd conf.
+on Systems, programming, and applications: software for humanity, SPLASH ’12,
+pages 121–140, New York, NY, USA, 2012. ACM.

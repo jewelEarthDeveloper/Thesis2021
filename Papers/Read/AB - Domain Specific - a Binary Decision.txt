@@ -1,0 +1,188 @@
+AB - Domain Specific - a Binary Decision
+
+In many methodologies that proclaim to use domain specific
+modeling, there is still the need to write code in general purpose
+programming languages to express certain aspects of the system.
+
+In this paper we argue that it is useful to be able to mix
+domain-specific and general purpose aspects in a cojoint
+environment. Specifically DSLs and GPLs can be seen as
+collaborating languages in one tool called language workbench.
+
+programming and modeling should not be considered
+different. 
+
+To be able to discuss about the domain specificity of something,
+we should first define what a domain is. We have taken the
+following definitions:
+
+• Domain (software engineering): a field of study that defines a
+set of common requirements, terminology, and functionality
+for any software program constructed to solve a problem in
+that field
+
+• Domain engineering: the reusing of domain knowledge in the
+production of new software
+
+• Domain knowledge: a specific expert knowledge valid for a
+pre-selected area of activity, such as surgery
+
+As programmers we often distinguish between business
+domains and technical domains, with the rough distinction being
+that business domains are what non-programmers care about and
+technical domains are what programmers care about. However, if
+you consider electrical engineers or scientists as nonprogrammers, then the distinction blurs: in embedded systems for
+example, state machines and block diagrams are what these
+"domain experts" use for designing their systems, although
+developers probably would not consider these languages to be
+business-domain specific
+
+
+So let us consider a domain to be anything for which a specific
+set of abstractions and notations is advantageous when describing
+structure or behavior in that domain. It can be wide, narrow, deep,
+shallow, business-oriented or technical. 
+
+Domains can also be hierarchical in that one domain is a
+specialized (or: narrower) variant of another one. For example,
+robot control is specialized compared to embedded systems in
+general. The abstractions from embedded systems are also useful
+in robot control, but there are more specialized abstractions that
+make sense in addition. This is an important observation, because
+this kind of relationship between domains should be represented
+by the DSLs for domains. 
+
+Historically there is (still) a somewhat "clear" distinction between
+modeling and programming. Modeling is often associated with
+graphical languages, domain specific (Entity-Relational for DBs) 
+or general purpose (e.g. UML). A code generator then produces
+most of the artifacts automatically, yet the developer often has
+also to manually implement certain artifacts. Sometimes he even
+has to extend or complete the generated code, e.g. because the
+modeling language does not support the concepts the developer
+needs.
+
+With the advent of textual DSLs [11] and the associated IDE
+support via textual language workbenches [10], the modeling
+community is increasingly becoming aware of the benefits of
+textual modeling. However the gap between modeling and
+programming still exists in practice, especially regarding the tools
+used for the two activities. 
+
+We do not think that it is really necessary (or even useful) to
+distinguish between modeling and programming in the end.
+Essentially modeling and programming should be the same. One
+could even come up with the provoking statement that "we don't
+want to model; we want to program"…
+• at various levels of abstraction
+• from different viewpoints
+• all of these integrated
+• with different degrees of domain specificity
+• with suitable notations
+• and with suitable expressiveness
+• and always precise, tool processable and with IDE
+support
+
+4. MODULAR LANGUAGES
+Modular languages are languages that can be incrementally
+extended. They integrate with other modules in the following
+ways:
+• referencing: language concepts from module A can refer to
+language concepts from module B. Languages come with
+their own notations and the programs written in these
+languages are stored in their own partitions/models/diagrams.
+However, references to program elements expressed with
+other languages are possible and tool supported. 
+
+• cascading: concepts from module A are translated into
+concepts from module B as a means of implementing A's
+concepts. This way, more abstract languages can be cascaded
+on top of more general languages, supporting incremental
+addition of domain specific abstractions. An interesting base
+case is where things are cascaded on top of existing
+programming languages -- this is conceptually similar to
+what's today typically called code generation. 
+
+• extension: module B extends module A in the sense that it
+provides additional language concepts. B is a superset of A.
+
+• embedding: concepts from module A can be embedded in
+concepts from module B. Notations defined in A and B are
+reused, even if the language modules are embedded. To make
+this feasible, it must be possible to extend the languages as
+well, since additional concepts that connect the embedded
+concepts to the surrounding modules are required.
+
+• annotation: language A contributes additional properties to
+existing concepts of a language B without invasively
+modifying B. This is similar to introductions in AOP.
+
+• cross-cutting by translation: this last kind of integration is a
+little bit different in that it does not add any language
+concepts. Instead a module A (transparently) changes the
+translation of concepts defined in a language B without
+invasively changing B. 
+
+JetBrains’ Meta Programming System is an open source
+projectional language workbench [4]. This means that users don't
+edit ASCII text that is then parsed, but each editing operation
+directly changes the tree structure of the underlying program.
+Since we deal with a projectional editor there is no parser
+involved and different projections (textual, graphical, and tabular)
+are possible. Lastly the generator is defined to emit text (for a
+low-level language) or it transforms higher-level code into code
+expressed in lower level languages..
+
+Editing the tree as opposed to “real text” needs some getting
+used to. Without specific adaptations, every program element has
+to be selected from a drop-down list and "instantiated". However,
+MPS provides editor customizations to enable editing that
+resembles modern IDEs that use automatically expanding code
+templates. 
+
+We now briefly illustrate how a language is defined in MPS. A
+more extensive description can be found in [5]. MPS, like other
+language workbenches, comes with a set of DSLs for language
+definition, a separate DSL for each language aspect. Language
+aspects include structure, editor, type system, generator as well as
+support for features such as quick fixes or refactorings. 
+
+Defining a new language starts with the language structure
+(aka meta model). This is very much like object oriented
+programming since language elements are represented as concepts
+that have properties, children and references to other concepts.
+The second step is the editor for the language concepts. An editor
+defines how the syntax for the concepts should look like - it
+constitutes the projection rules. Figure 1 is an example.
+Next is the definition of the type system. For example, the type
+property of a LocalVariableDeclaration must be compatible with
+the type of its init expression. For the type system definition as
+well as further customization the reader is referred to [5].
+We already alluded to the relationship between object oriented
+programming and language definition in MPS. This analogy also
+holds for language extension and specialization. Concepts can
+extend other concepts, and subconcepts can be used
+polymorphically.
+Languages also define translation rules to lower-level
+languages or to text. MPS includes an incremental translation
+engine that reduces program code as long as translation rules are
+available for the program elements. At the end, text generators
+output regular program text that can be fed into a compiler
+
+Like JetBrains, Intentional also uses a projectional approach. It
+is similar in concept, but quite different in detail. The layouting
+and rendering engine it more powerful than the one used by MPS.
+The authors have seen examples where for example circuit
+diagrams or fraction bars are used as part of (otherwise normal) C
+programs. Other examples include insurance mathematics mixed
+with "normal" programs. So the ability to mix and match notations
+seems to be quite sophisticated. 
+
+
+The
+discussion about "domain specific or not" becomes irrelevant,
+we'll just talk about suitable and not-so-suitable abstractions and
+notations. If abstractions are not suitable, we can build and
+integrate additional language abstractions. We can build our own,
+or use languages from a library. Finally domain experts can be
+integrated into the process where it makes sense. 
