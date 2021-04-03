@@ -1,0 +1,156 @@
+AB - Domain-specific languages with JetBrains MPS: A comparison with AToM3
+
+ new
+concept of software development environment implementing the Language
+Oriented Programming paradigm, which is a style of computer programming in which, rather than solving problems in general-purpose programming languages, the programmer creates one or more domain-specific languages for the problem first and then solves the problem in those languages
+
+A domain-specific language (DSL) on the other hand lets us think more
+in terms of concepts. This way, it is much easier for the programmer to
+build his solution. But the strength of DSLs, domain specificity, is also their
+weakness. What we really want are different languages for every specific part
+of the program that can work together. To achieve this kind of freedom we
+need to create, reuse and modify languages. This is where language oriented
+programming comes in
+
+Terms like model-driven architecture, generative programming and intentional programming all specify a specific part of the model-driven engineering
+domain but in this paper we are going to unit them all under one name, language oriented programming
+
+In other words: everything starts by developing a high-level, domainoriented, language. The development process then splits into two independent stages: (1) Implement the system using this ’middle level’ language,
+and (2) Implement a compiler or translator or interpreter for the language,
+using existing technology.
+
+The first one is
+the time delay to implement ideas. There is always a long gap between the
+idea of a solution and the solution itself in the form of a program.
+
+ Even if the code is written by yourself, the problem stays the same. Since for general-purpose language the high-level idea
+is converted to low-level features of the language, the big picture is lost after the implementation step. Trying to reconstruct the main idea from the
+3
+low-level code requires a lot of effort and time. The third issue is due to the
+domain learning curve. With the OOD, extending the language is done by
+using class libraries. The problem is that those libraries are not expressed
+in terms of domain concepts, but in low-level general-purpose features
+
+
+The first one is the separation of concerns between design issues,
+which are addresses in a domain-specific language and implementation issues,
+which are addressed in the implementation of the language and are separated
+from the design of the system
+
+Language oriented programming improves
+the maintainability of the design. With traditional programming it becomes
+very difficult for maintainers to determine all the impacts of a particular design decision, or conversely, to determine which design decisions led to this
+particular piece of code being written in this way
+
+
+Another advantage of language oriented programming
+is a highly portable design. Porting to a new operating system or programming language becomes greatly simplified: only the middle language needs
+to be reimplemented on the new machine, the implementation of the system
+(written in that language) can then be copied across without change
+
+The languages encapsulate a great deal of domain knowledge:
+including knowledge of which data types, operations and execution methods are important in this domain, and what are the best ways to implement
+them.
+
+What is a language in Language Oriented Programming?
+Before we can introduce JetBrains MPS, we first have to answer a very important question: ”What is a language in language oriented programming?”.
+To answer this question we refer to Dmitriev (2004), which states that a
+language is defined by 3 main components: structure, editor and semantics.
+The structure defines its abstract syntax (what concepts are defined and how
+they are arranged). The editor defines its concrete syntax (how it should be
+presented). Finally the semantics describe how it should be interpreted and
+how it should be transformed into executable code.
+
+The Meta Programming System (MPS) of JetBrains implements this new
+paradigm of language oriented programming. To start we will explain why
+MPS is not just another text editor. Normally programs are all stored as
+text and edited by a text editor. But why should we do this if the most
+important part of a language is its grammar. When we compile a program,
+the code written as text is first parsed into a abstract syntax tree (AST)
+during compilation. The major drawback of storing text like this is the loss
+of extensibility. Since we cannot easily make changes to a language’s grammar, the language cannot be extended by programmers itself. Also adding
+new features can make the language ambiguous. For this reason JetBrains
+MPS separates the representation and the storage of the program from the
+program itself. To make creating languages easy, the program and all language concepts are directly stored in a structured graph and not as plain
+text. So MPS differentiates itself from many other language workbenches by
+avoiding the text form. Your programs are always represented by an AST.
+You edit the code as an AST, you save it as an AST and you compile it as
+an AST. Due to this feature of MPS it is possible to easily extend languages.
+It is also possible to mix languages. When one wants to use a concept of an
+already existing language, you can just import this concept without making
+the existing or the new language ambiguous.
+
+The basic notions of JetBrains MPS are nodes, concepts and languages.
+Nodes form a tree. Each node has a parent node (except for root nodes),
+child nodes, properties, and references to other nodes.
+Nodes can be very different from one another. Each node stores a reference to its declaration, its concept. A concept sets a ”type” of connected
+nodes. It defines the class of nodes and coins the structure of nodes in that
+class. It specifies which children, properties, and references an instance of a
+node can have. Concept declarations form an inheritance hierarchy. If one
+concept extends another, it inherits all children, properties, and references
+from its parent
+
+A language in MPS is a set of concepts with some additional information.
+The additional information includes details on editors, completion menu, intentions, typesystem, generator, etc. associated with the language. This
+information forms several language aspects. Obviously, a language can extend another language. An extending language can use any concepts defined
+in the extended language as types for its children or references, and its concepts can inherit from any concept of the extended language.
+
+A project is the main organizational unit in MPS. Projects consist of one
+or more modules, which themselves consist of models. A model is the smallest
+unit for generation/compilation. To give your code some structure, programs
+in MPS are organized into models. Think of models as somewhat similar to
+compilation units in text based languages. Models typically consist of root
+nodes, which represent top level declarations, and non-root nodes. Models
+themselves are the most fine-grained grouping elements
+
+Modules organize models into higher level entities. A module typically
+consists of several models accompanied with meta information describing
+module’s properties and dependencies. MPS distinguishes several types of
+modules: solutions, languages, devkits, and generators.
+
+A solution is the simplest possible kind of module in MPS. It is just a set
+of models unified under a common name.
+A language is a module that is more complex than a solution and represents a reusable language. It consists of several models, each defining a
+certain aspect of the language: structure, editor, actions, typesystem, etc.
+
+The structure aspect of the language defines the ’structure’ of a new language. To define a language’s abstract syntax you should enumerate all the
+types in the language. The types simply represent the features, or concepts,
+that the language supports. Each concept should be defined by its name, the
+internal properties of its instances, and the relationships (basically links) its
+instances can have with other nodes.
+
+The editor language aspect helps you define the layout of cells for each
+concept in the language. You can define which parts are constant, like braces
+or other decorations, and which parts are variable and need the user to define
+them. The editor language also helps you add powerful features to your
+own editors, like auto-complete, refactoring, browsing, syntax highlighting,
+error highlighting, and anything else you can think of. Since it completely
+works with an AST and the editor aspect of the language lets us specify its
+presentation in a very detailed way, we can conclude that JetBrains MPS is
+not a purely textual tool, it is in the middle of textual and graphical.
+
+Generators define possible transformations of a language into something
+else, typically into another languages. Generators may depend on other generators. Since the order in which generators are applied to code is important,
+ordering constraints can be set on generators.
+
+We have already mentioned that a basic notion of JetBrains MPS is a
+node. A concept, specified in the structure aspect of the language, is itself a
+node and its instances are all nodes to. Even the components of the language
+aspects (structure, editor, actions, typesystem, ...) are nodes. This is because
+the language aspects are languages them selfs. The structure language, that
+is part of MPS, for example, specifies every structure language aspect of a
+language you create. In terms of model-driven engineering, you can see an
+instance of your language as a model, the language itself as an meta-model
+and the languages of the structure, editor, actions, ... aspects of the your
+language as meta-meta-models.
+
+We conclude that MPS has all features that describe a language, like
+we discussed in section 2.3. An abstract syntax presented by the structure
+language aspect, a concrete syntax presented by the editor aspect of the
+language and semantics by using a generator.
+
+m. In
+JetBrains MPS the abstract syntax is specified by all the created concepts in
+the structure aspect of the language.
+
+Finally we compare the two tools based on user-friendliness. Here JetBrains MPS is the indisputable winner.

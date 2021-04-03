@@ -1,0 +1,151 @@
+AB - Supporting Diverse Notations in MPS’ Projectional Editor
+
+To be able to build effective DSLs, these DSLs must not just
+use language concepts that are aligned with their respective domain, but
+also use notations that correspond closely to established domain notations
+– and those are often not purely textual or graphical. The underlying language workbench must support these notations, and combining different
+notations in a single editor must be supported as well in order to support
+the coherent definitions of systems that use several DSLs. In this paper
+we provide an overview over the notations supported by JetBrains MPS.
+MPS is a language workbench that uses a projectional editor, which, by
+its very nature, can deal with many different notational styles, including
+text, prose, math tables and graphics
+
+JetBrains MPS is one of the leading projectional
+editors, and this paper describes its capabilities in terms of notational flexibi
+
+Availability of the Code JetBrains MPS is open source software available
+from http://jetbrains.com/mps. A
+
+2 Projectional Editing in MPS
+What is Projectional Editing? In parser-based editors users type sequences
+of characters into a text buffer. The buffer is parsed to check whether the sequence
+of characters conforms to a grammar. The parser ultimately builds an abstract
+syntax tree (AST), which contains the relevant structure of the program, but omits
+syntactic details
+
+s. Subsequent processing (linking, type checks, transformation) is
+based on the AST. Modern IDEs (re-)parse the concrete syntax while the user
+edits the code, continuously maintaining an up-to-date AST in the background
+that reflects the code in the editor’s text buffer. However, even in this case, this
+AST is created by a parser-driven transformation from the source text.
+
+A projectional editor does not rely on parsers. As a user edits a program, the
+AST is modified directly. Projection rules are used to create a representation of
+the AST with which the user interacts, and which reflects the resulting changes.
+No parser-based transformation from concrete to abstract syntax is involved.
+
+The projectional approach can be generalized to work with any notation,
+including textual. A code-completion menu lets users create instances based on
+a text string entered in the editor called the alias. The aliases allowed in any
+given location depend on the language definition. Importantly, every next text
+string is recognized as it is entered, so there is never any parsing of a sequence
+of text strings. In contrast to parser-based editors, where disambiguation is
+performed by the parser after a (potentially) complete program has been entered,
+in projectional editors disambiguation is performed by the user as he selects
+a concept from the code-completion menu
+
+Once a node is created, it is never
+ambiguous, irrespective of its syntax : every node points to its defining concept.
+Every program node has a unique ID, and references between program elements
+are represented as references to the ID. These references are established during
+program editing by directly selecting reference targets from the code-completion
+menu; the references are persistent. This is in contrast to parser-based editors,
+where a reference is expressed as a string in the source text, and a separate name
+resolution phase resolves the target AST element after the text has been parsed.
+
+Projectional editing has two advantages. First, it supports flexible composition
+of languages because the ambiguities associated with parsers cannot happen
+in projectional editors. We do not discuss this aspect in this paper and refer
+the reader to [2]. The other advantage of projectional editors is that, since no
+parsing is used, the program notation does not have to be parseable and a wide
+range of notations can be used.
+
+Traditionally,
+projectional editors have also had disadvantages relative to editor usability and
+infrastructure integration; those are discussed in [3].
+
+Defining a Simple Editor In order for the reader to better understand the
+explanations in Sections 3 and 4, this section briefly introduces the MPS structure
+and editor definitions. MPS’ meta model is similar to EMF Ecore [4]. Language
+concepts (aka meta classes) declare children (single or lists), references and
+primitive properties. Concepts can extend other concepts or implement concept
+interfaces; subtype polymorphism is supported. Programs are represented as
+instances of concepts, called nodes. Each concept also defines one or more editors.
+These are the projection rules that determine the notation of instance nodes in
+the program. Editor definitions consist of cells arranged in various layouts. A cell
+can be seen as an atomic element of an editor definition.
+
+Textual Notations The first notation supported by MPS has been textual
+notations. Notations used by programming languages such as Java, C or HTML
+can be represented easily
+
+Mathematical Symbols A plugin [5] supports mathematical notations. The
+plugin comes with a set of new layout primitives (cell types) that enable typical
+mathematical notations such as fraction bars, big symbols (sum or product),
+roots and all kinds of side decorations (as used in abs or floor).
+
+Tables Tables can be used to represent collections of structured data or to
+represent two-dimensional concerns. 
+Tables come in several flavors. For example, a row-oriented table has a fixed
+set of columns and a variable list of rows. Users can add rows, but the columns
+are prescribed by the language definition
+
+Prose with Embedded Code One characteristic of projectional editors is
+that the language structure strictly determines the structure of the code that
+can be written in the editor. While this is useful for code, it does not work for
+prose. Hence, an MPS plugin [7] supports ”free text editing” in MPS: all the
+usual selection and editing actions known from text editors are supported. The
+resulting text is stored as a sequence of IWord nodes
+
+Graphics MPS supports editable graphical notations as shown in Fig. 7. They
+can be embedded into any other editor
+
+Custom Cells MPS supports embedding custom cells. This means that the user
+can plug in their own subclass of CellProvider and implement specific layout
+and paint methods. This way, any notation can be drawn in a low-level way. The
+cell provider can be parameterized, and ultimately, it can become a new, reusable
+primitive.
+
+
+4 Other Features of the MPS Editor
+As a language workbench, MPS supports the features known from traditional
+IDEs for custom languages. These include code completion, quick fixes, syntax
+coloring, code folding, goto definition, find references and refactorings. In this
+section we describe editor features that are specific to MPS’ projectional editor
+
+Mixed Notations The various notations discussed in the previous section can
+all be mixed arbitrarily (with the aforementioned exception of embedding things
+into graphical editors). Since all editors use the same projectional architecture
+this works seamlessly. In particular, non-textual notations can be used inside
+textual notations. Examples include:
+– mathematical symbols embedded in textual programs
+– tables that contain text or math symbols
+– tables embedded in textual programs
+– mathematical symbols embedded in prose
+– lines, progress bar other other shapes embedded arbitrarily
+
+Multiple Editors A single concept can define several editors, and a given
+program can be edited using any of them. Each of the multiple editors has a tag,
+and by setting tags in an editor window (either by the user or programmatically),
+the editors corresponding to these tags can be selected. For example, state
+machines can be edited in a textual version 
+
+
+Partial Syntax Editors can also be partial in the sense that they do not
+project all contents stored in the AST. Of course the non-projected aspects of the
+program cannot be edited with this particular editor.
+
+Conditional editors essentially support aspect orientation
+for editor cells. A conditional editor defines a decoration for existing editors as
+well as a pointcut that determines to which existing editor cells the decoration
+is applied
+
+Annotations Annotations are similar to conditional editors in that they can
+render additional syntax around (or next to) existing syntax without the original
+syntax definition being aware of this.
+
+Read-Only Contents Especially in DSLs for non-programmers it is often
+useful to be able to project rigid, predefined, non-deletable skeletons of the to-bewritten program in order to guide the user. F
+
+
