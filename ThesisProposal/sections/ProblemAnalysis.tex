@@ -8,7 +8,7 @@ The system has 15,000 users and is available 24/7.
 
 Configuration and administration use complex matrices of compliance mechanisms, access user rights and communication settings.
 The sensitivity of the personal data, being both medical and criminal, means security is of utmost importance.
-The security against data loss, preventing unlawful disclosure and guaranteeing availability, especially during crisis situations, are crucial.
+The security against data loss, preventing unlawful disclosure and guaranteeing availability, especially during crisis situations, is crucial.
 Demonstration of the correctness of the, often changing, configuration is a major concern in the company. 
 
 This configuration is done in a business rule system. 
@@ -21,14 +21,80 @@ Drools is a framework for Rule-Based development.
 It is an open-source production rule system for complex event processing, using the ReteOO and Phreak implementations of the pattern matching Rete algorithm\cite{forgy1989rete}.
 The rules are described in a Domain Specific Language (DSL).
 These are stored in Drools (.drl) files. 
-An example of a DRL file can be seen in figure \ref{fig:drl_file}. 
+An example of a DRL file can be seen in listing \ref{listing:drl_file}. 
 
-\begin{figure}[h]
-    \centering
-    \fbox{\includegraphics[width=0.80\textwidth]{images/droolsExample.png}}
-    \caption{Example drools file}
-    \label{fig:drl_file}
-\end{figure}
+\begin{lstlisting}[language={[drl]Drools}, caption=Example Drools file., captionpos=b, label=listing:drl_file]
+    package org.drools.examples.honestpolitician
+ 
+    import org.drools.examples.honestpolitician.Politician;
+    import org.drools.examples.honestpolitician.Hope;
+     
+    rule "We have an honest Politician"
+        salience 10
+        when
+            // hello
+            exists( Politician( honest == true ) )
+        then
+            insertLogical( new Hope() );
+    end
+    
+    rule "Hope Lives"
+        salience 10
+        when
+            exists( Hope() )
+        then
+            System.out.println("Hurrah!!! Democracy Lives");
+    end
+    
+    rule "Hope is Dead"
+        when
+            not( Hope() )
+        then
+            System.out.println( "We are all Doomed!!! Democracy is Dead" );
+    end
+    
+    rule "Corrupt the Honest"
+        when
+            $p : Politician( honest == true )   
+            exists( Hope() )
+        then
+            System.out.println( "I'm an evil corporation and I have corrupted " + $p.getName() );
+            modify( $p ) { 
+                setHonest( false ) 
+            }
+    end
+\end{lstlisting}
+
+Listing \ref{listing:drl_file} gives the Drools engine instructions on what actions to take when something changes in the working memory.
+What this toy example does is reacts to when an honest politician is added to the working memory, prints a message celebrating the existence of said politician, corrupts her, gloats in a message and then prints a message of dispair.
+The code in listing \ref{listing:drl_file} does the following: 
+\begin{enumerate}[topsep=2pt,itemsep=2pt,partopsep=2pt, parsep=2pt]
+    \item on line 1 the package statement identifies the rule file
+    \item on lines 3 and 4 the import statements describes which facts can be used
+    \item the ``We have an honest Politician'' rule on line 6 does the following:
+    \begin{enumerate}[topsep=2pt,itemsep=2pt,partopsep=2pt, parsep=2pt]
+        \item using salience on line 7 it sets that this rule is to be run before rules with a lower salience
+        \item on line 10 it checks the working memory for Politician facts with the honest property equal to true
+        \item on line 12, if found then Hope facts will be inserted into the working memory
+    \end{enumerate}
+    \item the ``Hope Lives'' rule on line 15 does the following:
+    \begin{enumerate}[topsep=2pt,itemsep=2pt,partopsep=2pt, parsep=2pt]
+        \item line 18 check if any Hope facts exist
+        \item on line 20, if found, it prints a message
+    \end{enumerate}
+    \item the ``Hope is Dead'' rule on line 23 does the following:
+    \begin{enumerate}[topsep=2pt,itemsep=2pt,partopsep=2pt, parsep=2pt]
+        \item checks if no Hope facts exist on line 25
+        \item if none are found, on line 27, it prints a message 
+    \end{enumerate}
+    \item the ``Corrupt the Honest'' rule on line 30 does the following:
+    \begin{enumerate}[topsep=2pt,itemsep=2pt,partopsep=2pt, parsep=2pt]
+        \item line 32 checks for any Politician facts with the honest property equal to true, and sets them to the variable \$p
+        \item line 33 checks if any Hope facts exist
+        \item if both hope and politicians are found on line 35 it prints a message including the \$p variables name
+        \item on line 36 to 38 it modifies the fact in working memory represented by \$p to change it's honest property 
+    \end{enumerate}
+\end{enumerate}
 
 Reasoning over a small number of rules is already surprisingly hard.
 Our host organization has many rules and, thus, reasoning about them is particularly challenging.

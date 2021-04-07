@@ -6,16 +6,65 @@
 \usepackage{float}
 \usepackage{amssymb}
 \usepackage[all]{hypcap}
+\usepackage{enumitem}
+
+\usepackage{listings}
+\lstset{morekeywords={},
+    showstringspaces=false}
+\usepackage[dvipsnames,svgnames,x11names]{xcolor}
+
+\definecolor{commentGreen}{RGB}{128,127,41}
+\definecolor{stringGreen}{RGB}{0,127,38}
+\definecolor{keywordRed}{RGB}{151,0,11}
+\definecolor{typePurple}{RGB}{128,3,82}
+\definecolor{variableBlue}{RGB}{0,0,255}
+\definecolor{annotationRed}{RGB}{198,4,38}
+\definecolor{annotationBlue}{RGB}{32,21,223}
+
+\lstdefinelanguage[drl]{Drools}{
+    sensitive=true,
+    keywordsprefix=\$,
+    alsoletter={:, },
+    morekeywords=[2]{long,int,boolean,double,float,enum},
+    morekeywords=[3]{package,import,declare,end,extends,from,insert,modify,not,new,no loop,query,retract,rule,salience,then,this,when, eval},
+    morekeywords=[4]{after,before,during,over window:length,over window:time,overlaps},
+    morekeywords=[5]{{no loop},over window:length,over window:time},
+    morecomment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    moredelim=[s][\color{annotationRed}\itshape]{@}{)},
+    moredelim=[s][\color{annotationBlue}\itshape]{@[}{]},
+    morestring=[b]",
+    morestring=[d]',
+%%% default style
+    basicstyle=\footnotesize\ttfamily,
+    numbers=left,
+    stepnumber=1,
+    showstringspaces=false,
+    tabsize=1,
+    breaklines=true,
+    breakatwhitespace=false,
+    % identifierstyle=\normalfont,
+    commentstyle=\color{commentGreen}\itshape,
+    keywordstyle=\color{keywordRed}\bfseries,
+    keywordstyle=[1]\color{variableBlue}\itshape,
+    keywordstyle=[2]\color{typePurple}\bfseries,
+    keywordstyle=[3]\color{keywordRed}\bfseries,
+    keywordstyle=[4]\color{keywordRed}\bfseries,
+    keywordstyle=[5]\color{stringGreen}\bfseries,
+    stringstyle=\color{stringGreen}
+}[comments,keywords,strings]
+
+
+
 
 \addbibresource{main.bib}
 
 \title{Master Project Proposal}
-\author{Paul Spencer: 11721677\\University of Amsterdam\\paul.spencer@student.uva.nl}
-\date{January 2021}
+
 
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric}
-\newcommand{\Stars}[2][fill=yellow,draw=orange]{\begin{tikzpicture}[baseline=-0.35em,#1]
+\newcommand{\Stars}[2][fill=black,draw=darkgray]{\begin{tikzpicture}[baseline=-0.35em,#1]
 \foreach \X in {1,...,5}
 {\pgfmathsetmacro{\xfill}{min(1,max(1+#2-\X,0))}
 \path (\X*1.1em,0) 

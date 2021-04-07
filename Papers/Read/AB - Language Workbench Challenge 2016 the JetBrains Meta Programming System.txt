@@ -1,0 +1,163 @@
+AB - Language Workbench Challenge 2016: the JetBrains Meta Programming System
+
+JetBrains MPS has evolved into a powerful and flexible
+tool that can be used to address most of the language engineering challenges in the LWC.
+
+The feature-richness, and the
+scale of practical applicability of Jetbrains MPS increases
+even more when using the mbeddr platform extensions and
+other plugins developed by the MPS community
+
+The JetBrains Meta Programming System (MPS) is a
+language workbench based on projectional editing. While
+other language workbenches are based on projectional editing (e.g. the Whole Platform [3], MetaEdit+ [4], Intentional
+Domain Workbench [2]), MPS is arguably one of the most
+feature-rich, with a fast growing user base
+
+By using a powerful and flexible language workbench
+such as MPS, language engineers can provide languages and
+IDEs for programmers and non-programmers that support a
+significant redesign of the processes of an organization. It is
+frequently the case that such processes involve various kinds
+of users with various backgrounds, experiences, and needs
+
+Therefore a complete solution could potentially encompass
+different aspects of the internal processes, providing different views and a variety of tools such as simulators, debuggers, code-generators, and more. For example, in MPS we
+could create a text-like DSL to be used by developers. The
+same code could be projected using a graphical representation, to support discussion with domain experts. Testers
+could use a simulator to verify the correct behavior of the
+applications and documentation including graphs and tables
+could be generated for other stakeholders.
+
+Considering the comparison of language workbench features presented by Erdweg et al. [1] we can see that MPS
+is among the most complete language workbenches. A language workbench with a comparable level of completeness
+is the Whole Platform. With respect to the feature model presented in [1], the only features missing in MPS are Free-form
+editing and Live translation (the second of which is currently
+being looked into by the mbeddr team).
+
+ Notations are particularly
+relevant because they are the most visible aspect of languages
+
+ In many cases, language workbenches are used to
+create domain specific languages. Each such language is
+intended for domain specific developers who already have
+their own preferred notations. Such notations are not necessarily textual. By adapting the tooling to the notations that
+are used daily by developers, the mental overhead of expressing their specifications and designs is significantly reduced, which increases their productivity and satisfaction in
+using the tooling
+
+The second challenge considers Evolution and Reuse.
+These are characteristics which are important for the maintenance of a solution in the long run. Any mature engineering
+approach should consider the whole life cycle of the proposed solution. The evolution is particularly important for
+languages because they are tools used to represent knowledge, probably the most valuable asset for many companies.
+By being able to evolve languages we can preserve the investment in building models using those languages. Reuse
+is another key element because it permits to significantly reduce the cost of developing complex solutions
+
+Finally, the third challenge is about Editing. This aspect
+is particularly relevant for projectional editors because they
+usually require users to part from the traditional textual editing experience. This transition requires significant training
+and it can be a cause of resistance. By improving the editing experience we can reduce this risk. While the usability
+of the MPS editors have been previously deemed positive by
+users [9] we believe is still an aspect which needs to be emphasized. 
+
+The notation part of MPS is arguably one of its most powerful features. That is so, because almost any notation can be
+rendered in an editor, from textual, tabular and graphical to
+a mixture of these. Moreover, one can define an arbitrary UI
+component as a cell in the editor (the editor in MPS is made
+of cells4
+).
+On the other hand, writing textual notations seamlessly
+requires more effort from the language designer because of
+the projectional nature of MPS. The classical example of
+writing a sum of two numbers in the editor by first writing
+the left-hand side number followed by the plus sign and the
+right-hand side number requires additional functions to be
+implemented in MPS.
+
+There can be multiple projections associated to models
+of a language because MPS permits an arbitrary number of
+editors to be defined for the same language. For instance,
+the tabular notation for the Statemachine concept is defined
+in a separate editor component where the columns, rows and
+cells of the concept are filled in with the adequate properties,
+children and references of the Statemachine concept
+
+Annotations are called attributes in JetBrains MPS. For
+defining attributes of nodes in MPS, there exists the NodeAttribute concept that can be attached to almost any model
+node by default. Thus, when declaring generic metadata annotations, one needs to extend the NodeAttribute concept
+and define its contents.
+
+Switching between notations can be accomplished not
+only through context hints, but with different user actions
+as well. In the state machine language, one can switch between different projections by using the Projection tab and
+selecting the desired projection. Details on this can be found
+in our documentation model on GitHub, in the Notation section. In the implementation in mbeddr, there is a plugin that
+introduces this tab and that triggers the projection selected.
+
+One other variant that can be used as an example to
+showcase the power of MPS is the notation in the form of
+a PlantUML5 diagram of the state machine languages. MPS
+allows to incorporate viewers in the editor that project a
+model in a language written in MPS.
+
+The effort to make the notations as usable as possible goes
+to the language designer. The drawbacks of the projectional
+editors are well-known, but MPS goes a long way to provide
+tools to the language designer that help in creating a userfriendly editor [10].
+
+Syntax migration: support migrating programs
+when concrete syntax changes
+Concrete syntax changes are supported by default with projectional editing without requiring any migration. Since only
+the AST is stored in the model, all concrete syntax elements
+purely exist in the editor. Therefore, updating an MPS editor, immediately changes the presentation (concrete syntax)
+without requiring a change in the stored model (AST).
+
+Structure migration: support migrating
+programs when abstract syntax changes
+Unfortunately, we didn’t have enough time to work out a
+brief example inline of this document.
+Migrations in structure are handled in MPS by means of
+migration scripts. Whenever a metamodel for a language
+in the field needs to change, you can write a migration
+script to migrate models in order to comply with the updated
+metamodel. MPS automatically handles versioning of your
+language and detects when a model needs to be migrated
+
+Language composition is well supported in MPS. It is very
+natural and it does not require any particular technique.
+The only possible issues could be caused by semantic conflicts: suppose an expression language defines only statically
+evaluable expressions such as literals and basic mathematical expressions. Furthermore, suppose a first extension is
+based on this consideration and adds the possibility to display the result of such expressions. Now, if a second extension would introduce non-statically evaluable expressions,
+the two extensions would not interact well together. This
+problem could be avoided by planning for extensibility in the
+original language: for example we could have required each
+Expression concept to declare if it was statically evaluable
+or not.
+
+The only limitation we see is with migrations, because
+they are not reversible. This is an issue when different members of a team want to use different versions of MPS because
+each version comes with specific versions of the BaseLanguage: when a project is open with a new version, migrations
+have to be performed and these migrations make the project
+incompatible with previous versions. Effectively this forces
+everyone to use the same version of the language workbench.
+
+
+It is possible to edit and persist an incomplete model, however there are some restrictions to this. A node, for example
+an if statement, must have a complete skeleton. It is possible to leave content out such as the guard and body in an if
+statement. The result can be considered syntactically incorrect since the guard is missing from the if statement. However, the construction is still structurally sound since it is a
+valid tree node, albeit with some gaps to be filled in
+
+MPS does not parse text and try to reconstruct a structure.
+Instead, every tree node creation binds a type to a node. In
+case of ambiguity the user can choose which type to create.
+For this reason, no disambiguation is needed for the type of
+a node and no special demarcation markers are needed.
+Similarly, reference disambiguation is ensured by default
+since every node has a unique ID. Although the presentation
+of the reference can show a human readable name/identifier,
+the reference refers to the node with the given ID.
+
+
+
+
+[5]	F. Tomassetti, A. Vetro, M. Torchiano, M. Voelter, and` B. Kolb. A model-based approach to language integration. In Proceedings of the 5th International Workshop on Modeling in Software Engineering, MiSE ’13, pages 76–81, Piscataway, NJ, USA, 2013. IEEE Press. ISBN 978-1-46736447-8. URL http://dl.acm.org/citation.cfm?id= 2662737.2662755.
+

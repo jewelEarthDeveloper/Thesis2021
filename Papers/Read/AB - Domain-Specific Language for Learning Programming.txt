@@ -1,0 +1,205 @@
+Domain-Specific Language for Learning Programming
+
+MPS is based on technology of projectional editor. A projectional editor directly
+manipulates with abstract syntax tree (AST). An MPS language is called projectional
+language. Each projectional language has three main parts: language structure, a
+projectional editor, and a generator. Language structure defines the structure of AST,
+the editor defines language syntax and how can users edit the AST, and the generator
+defines how is the created code of DSL transformed to some textual output or
+another projectional language
+
+Traditional languages environment uses a lexer and a parser to convert input source
+code in plain text form to AST. The lexer gets text as a sequence of characters and
+produces sequence of tokens – words used in the language such as keywords and
+identifiers. The parser then reads the sequence of tokens and creates AST. 
+
+A projectional editor does not work with text, but it creates and modifies AST. AST
+is projected into projectional editor in the way that it looks like textual source code.
+A user can write only things that are valid in AST. Projectional editor provides
+intelligent code completion out of the box and MPS contains various mechanisms to
+allow edit the language like in common text editor.
+
+There are three types of modules:
+language, solution, and DevKit. The language module contains language definition.
+The solution module can be either a run-time module or a sandbox module. Run-time
+solutions are sometimes called libraries and contain arbitrary code written in some
+MPS language or stubs that allow using some Java classes or libraries. Sandbox
+solutions contain user programs. DevKit modules allow packing more languages and
+solutions together so they are easier to use. Modules may depend on other modules
+and use their code. A language can extend other language
+
+Modules consists of models. Language models are called aspects. There is a set of
+aspects in MPS and every aspect has different role in language definition. 
+
+The main parts are: Structure
+aspect, Editor aspect, and Generator or TextGen aspect. At first, a Concept must be
+defined in Structure aspect. On the right side of Figure 3.2, there is a definition of the
+concept. AST of a program is built from nodes and each node is an instance of some
+concept
+
+Projectional languages code is usually transformed to either text (e.g. XML, Java) or
+to some other projectional language. Projectional language transformation to other
+projectional language is done by Generator aspect and it offers more options than
+transformation into textual language, which is done by TextGen aspect
+
+For the 
+purpose of transformation into a projectional language, MPS provides
+BaseLanguage, which is a clone of Java, and it is finally generated into textual Java
+code
+
+
+Structure aspect defines which nodes can be part of AST and how they can be
+structured. Structure aspect has 5 concepts:
+z Concept
+z Interface concept
+z Enum Data Type
+z Constrained Data Type
+z Primitive Data Type Declaration
+Concepts define base build blocks of the language. Instances of concepts are nodes in
+AST.
+
+ A
+concept can have properties, children, and references. Properties contain simple
+literals, children define concepts of child nodes in AST, and references point to some
+existing nodes in language AST. Concept has an alias and short description. Alias is
+used to refer to the concept in an editor. Both alias and short description are used as
+labels in a code completion menu. Concepts have inheritance hierarchy. A concept
+can extend another single concept and can implement multiple interface concepts. A
+concept can be marked as abstract; abstract concepts cannot be instantiated. There is
+a special sort of concepts called root concepts. Only instances of root concepts can
+be created as a new node in the Logical View.
+
+Interface concepts represent independent traits. They define some functionality that
+can be reused in more concepts and one concept can implement multiple interface
+concepts. Same as concepts, they can have properties, children, and references.
+
+The other three concepts Enum Data Type, Primitive Data Type Declaration, and
+Constrained Data Type allow defining data type for literals as enumeration type,
+string-based type constrained with some regular expression, or as a new primitive
+type. Defined types can be used as types of properties.
+
+Other editor nodes allow defining actions that can manipulate with AST or editor
+when some events are triggered. The events are for example node deletion, pasting
+node from clipboard, or pressing key. It is possible to define more editors for one
+concept and then switch between these editors in IDE.
+
+In Behavior aspect there can be defined a Behavior node for each Concept or
+Interface Concept. Behaviour node contains node constructor, and instance and static
+methods. Static methods can be called through Concept. Instance methods can be
+called on nodes that are created as instance of Concepts. Methods can be marked as
+virtual and then be overridden. Methods in Behavior node of abstract Concept can be
+abstract
+
+Constraints aspect can introduce some constraints on concept child nodes, properties,
+and references. In structure aspect there is defined type of each child or reference
+node. Constraint aspect allows creating some more complex checks based on current
+context.
+
+Actions aspect helps to improve editor usability. It allows defining node
+transformations. The main nodes are: Node Factories, Transform Menu Actions, and
+Node Substitution Actions. Node Factories defines how a new instance of node is
+created based on enclosing node or when it is created to replace some other node. 
+
+Node Substitute Action allows substituting a node or wrapping a node with some
+other node. When MPS creates items for code completion menu, it searches also for
+these Node Substitute Actions. 
+
+Typesystem aspect allows to compute types and to check them. The main concepts
+are: Inference Rule that allows to define types for concepts, Subtyping Rule to define
+a type hierarchy, and Non-Typesystem Rule to define a custom validation for any
+node.
+
+Dataflow aspect defines rules for a static analysis. For each concept, a language
+execution flow can be defined using jumps, conditional jumps, variable reading and
+writing, and evaluation of dataflow of child nodes. 
+
+
+Intentions aspect is concept used in IntelliJ IDEA platform. It is contextual menu
+invoked by specific keyboard shortcut with some actions connected to the current
+cursor position in the code. In MPS, it allows to create custom AST node transformations
+
+Generator aspect allows transforming code from defined language to some other
+projectional language, typically into BaseLanguage – a projectional clone of Java.
+Generation is done using templates and mapping configuration. 
+
+
+TextGen aspect serves to transform language AST into a text. If the output text is
+source code in some language, it can be then compiled or interpreted with standard
+tools
+
+Source code of DSLs designed in MPS can be build and distributed as a language
+plugin. Languages can be built as a plugin for MPS, a plugin for IntelliJ IDEA, or a
+Standalone IDE. The plugin for MPS is the simplest solution how to use language.
+Languages can be imported into other MPS projects and they can be used there. A
+language that is packed as the plugin for IntelliJ IDEA can be used in IntelliJ IDEA
+40
+projects. It requires installing MPS plugin for IntelliJ IDEA. The last option is to
+create a standalone MPS distribution customized to edit particular languages.
+
+Tools can provide any functionality GUI component implemented in Java using
+Swing. These custom Tools can be packed and distributed together with MPS
+languages in a custom MPS distribution. 
+
+The first advantage of MPS is that projectional languages have defined editors with
+rigid syntax, which may guide the novice programmers. An intelligent code
+completion can be sophisticated and larger parts of code can be inserted
+automatically, so syntax can be more explanatory without the need of writing more.
+Users do not need to take care about inserting special characters such as parenthesis
+or semicolons. Editor has also pre-defined layout, which takes care about spacing
+and indentation.
+
+Syntax highlighting can reflect also relations between nodes, not only their syntax.
+Additional text can be added to the editor and it can vary as user is changing the
+code, e.g. when some node is missing, a textual hint can be added there to help user
+to correct it, once the code is correct, the hint disappears. Projectional code does not
+have to be parsed, so language syntax can have much more options and languages
+can be freely combined together. There is also support for visual elements such as
+tables or diagrams.
+The fact that projectional editor manipulates directly with AST allows to implement
+some editor features that are common in mature IDEs with much less effort. MPS
+provides an intelligent code completion out of the box. Thanks to typesystem and
+dataflow aspects, it is easier to implement some checks, so some errors can be
+reported immediately when they are made and it is harder to write invalid code.
+
+3.6 Limitations
+Most of the limitations come from the fact that MPS language code is not plain text,
+but each single MPS model, which can contain more root nodes, is stored in a single
+XML document. Projectional language code can be read and write only in MPS, in
+IntelliJ IDEA with MPS plugin, or in custom MPS IDE. The language must be also
+packed as a language plugin and imported into the IDE. Code from MPS editor can
+be copied as text, but when it is necessary to insert plain text code back into MPS
+editor, it requires extra effort to implement a parser for the language.
+It is also impossible to do version control without the MPS VCS plugin, which
+understands AST XML representation. A programmer cannot do manual merge and
+even small changes that does not influence code appearance in editor, can broke
+some references in AST and make the code invalid. Therefore, a change in
+implementation can break existing code. In order to allow language evolution MPS
+provides Migration aspect to transform code between different versions of language.
+MPS developers plan to provide MPS as web application in futures versions, but it is
+not certain that MPS will develop in this direction and it could take years. This
+prevents us from providing the language online with a customized and simplified
+user interface.
+
+4.4.1 Roots
+Every code must be written in some kind of document. An instance of root concept
+represents a single file in Logical View in MPS.
+
+The main parts of MPS
+are the projectional editor and the build system.
+
+When users write some code in Eddie, it must be somehow executed. There are two
+possible approaches how to execute created code. First option is to use Generator
+aspect. Generator defines how code in Eddie is transformed into BaseLanguage and
+the result can be executed as Java. The second option is to create an interpreter that
+would interpret Eddie
+
+MPS provides Open
+API [11] that allows accessing AST of models,
+
+The limitations of generator approach are that it runs in different JVM, so it can
+communicate with Eddie Studio only over the network. It has also different Java
+classpath, so it is not possible to create parameters for network communication at
+runtime and pass them in a file in shared classpath. As a result of this, it would be
+difficult to run more instances of Eddie Panel in the same time, e.g. in Eddie Studio 
+and in MPS, because a port and a service name must be hardcoded in common
+libraries or stored in a configuration file in user home directory

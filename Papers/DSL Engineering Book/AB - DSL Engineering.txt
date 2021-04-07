@@ -1,0 +1,91 @@
+DSL Engineering
+
+1.10.2 JetBrains MPS
+The Meta Programming System (MPS) is a projectional lan- jetbrains.com/mps
+guage workbench, which means that no grammar and parser is
+involved. Instead, editor gestures change the underlying AST
+directly, which is projected in a way that looks like text. As
+a consequence, MPS supports mixed notations (textual, symbolic, tabular, graphical) and a wide range of language composition features. MPS is open source under the Apache 2.0
+license, and is developed by JetBrains. It is not as widely used
+as Xtext, but supports many advanced features
+
+Language designers define a DSL in three main parts: schema, editor(s) and generator(s). I agree that ideally a language should
+be defined "meta model first", i.e. you first define a schema
+(aka the meta model or AST), and then the concrete syntax
+(editor or grammar), based on the schema: MPS does it this
+way. However, I think it is also ok to start with the grammar, and have the meta model derived. This is the typical
+workflow with Xtext, although it can do both. From the language user’s point of view, it does not make a big difference
+in most cases.
+
+
+ A Vision of Programming For me, this is the vision of programming I am working towards. The distinction between
+modeling and programming vanishes. People can develop code
+using a language directly suitable to the task at hand and aligned
+with their role in the overall development project. They can
+40 dslbook.org
+also build their own languages or language extensions, if that
+makes their work easier. Most of these languages will be relatively small, since they only address one aspect of a system,
+and typically extend existing languages (Fig. 3.13 shows an example of extensions to C). They are not general-purpose: they
+are DSLs.
+Tools for this implementing this approach exist. Of course MPS is one of them, which is why
+I focus a lot on MPS in this book.
+Intentional’s Domain Workbench is
+another one. Various Eclipse-based
+solutions (with Xtext/ Xbase/Xtend at
+the core) are getting there as well.
+they can become even better, for example in the development
+of debuggers or integration of graphical and textual languages,
+but we are clearly getting there.
+
+
+
+Parsing versus Projection
+This part of the book is not about implementation techniques.
+However, the decision of whether to build a DSL using a projectional editor instead of the more traditional parser-based approach can have some consequences for the design of the DSL.
+So we have to provide some level of detail on the two at this
+point
+
+In the parser-based approach, a grammar specifies the sequence of tokens and words that make up a structurally valid
+program. A parser is generated from this grammar. A parser is
+a program that recognizes valid programs in their textual form
+and creates an abstract syntax tree or graph. Analysis tools
+or generators work with this abstract syntax tree. Users enter
+programs using the concrete syntax (i.e. character sequences)
+and programs are also stored in this way. Example tools in this
+category include Spoofax and Xtext
+
+Projectional editors (also known as structured editors) work
+without grammars and parsers. A language is specified by
+defining the abstract syntax tree, then defining projection rules
+that render the concrete syntax of the language concepts defined by the abstract syntax. Editing actions directly modify
+the abstract syntax tree. Projection rules then render a textual
+(or other) representation of the program. Users read and write
+programs through this projected notation. Programs are stored
+as abstract syntax trees, usually as XML. As in parser-based
+systems, backend tools operate on the abstract syntax tree
+
+Projectional editing is well known from graphical editors;
+virtually all of them use this approach13. However, they can
+also be used for textual syntax. Example tools in this cat
+egory include the Intentional Domain Workbench15 and Jet
+Brains MPS.
+
+MPS also provides annotations, allowing additional model data to be
+"attached" to any model element, and
+shown optionally.
+
+MPS has a nice way of automatically
+executing a quick fix for a constraint
+violation. If the constraint detects an
+inconsistency between viewpoints, the
+quick fix can automatically correct the
+problem. This also solves the whole
+world problem neatly, since every
+dependent fragment is "corrected" as
+soon as it is opened in the editor
+
+Projection In the projectional approach, the abstract syntax tree
+is built directly by editor actions, and the concrete syntax
+is rendered from the AST via projection rules. MPS is an
+example of a tool that uses projectional editing
+

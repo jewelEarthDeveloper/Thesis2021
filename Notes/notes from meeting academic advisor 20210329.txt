@@ -1,0 +1,39 @@
+notes from meeting academic advisor 20210329
+
+* get correct template
+* make a link between the title and text/synopsis - make it representitive
+
+project summary
+1) analyze a problem (what is drools not good enough for)
+2) sketch out a methodology
+* we want to analyze whether MPS can be helpful in solving this problem
+
+take out Mark Procter quote.
+
+use Mark proctor history in my thesis proper
+
+* document/track my time
+* progress report
+* look out for my boundries / block out time in my diary
+* try to avoid working on weekends
+* learn to say no
+* explain benefit of me having finished the work - e.g. then I can engage full time with khonraad
+
+send iteration and put in datanose
+
+* souce code on white background
+* explain code
+
+* research questions - make the terminology of the question naming consistent
+* remove question 3 reference
+
+* reread beginning to end before handing in.
+
+* take a little more formal check of my language (e.g. use of play) 
+
+* set date on the thesis proposal
+* on the thesis put DRAFT+date, so progress can be tracked.
+
+* finish the document earlier than last time (prefereably this week)
+
+* add urls
