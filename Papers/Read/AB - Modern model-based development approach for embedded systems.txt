@@ -1,0 +1,58 @@
+AB - Modern model-based development approach for embedded systems 
+
+On the other side, models are not new in software
+development anymore. Over the past few decades, the software
+industry has seen numerous analysis and design methods, each
+with its own modeling approaches and notations. Better
+integration of such models and code should significantly
+increase the opportunity to perform changes via models, rather
+than simply modifying the code directly [1]. Furthermore,
+using appropriate modeling abstractions is an enabler for
+higher reuse and more manageable complexity. The use of
+adequate modeling approaches prevent common errors and
+ensure a high quality. 
+
+Mbeddr provides an
+implementation of the C language and a set of language
+extensions specific to embedded systems like state machines,
+components, decision tables, mathematical notations. These
+extensions can be seamlessly combined with C code whenever
+needed [2].
+
+In addition to code development, the tool provides other
+domain specific languages like for example for the definition of
+requirements, product-lines or writing code documentation.
+
+“mbeddr” itself is built on top of the Meta
+Programming System (MPS) from JetBrains. The open
+architecture of MPS allows the set of languages which come
+with mbeddr to be further extended according to the domain
+specific needs of its users. 
+
+Using projectional editors. Changing mind from the
+traditional way of coding using plain text to the projectional
+editing approach of mbeddr took around two weeks. After that
+it became easier to use this new way of editing. One found
+drawback was the restrictions imposed on the copy-paste of
+code. Using the automation provided by mbeddr, the coding
+speed and cleanness of the code were increased. 
+
+ Adaptation and introduction period will be required both
+by control engineers familiar with CFC diagrams and
+traditional software developers as mbeddr offer the editing
+approach differing from both of those. It is also restrictive in
+terms of used IDE – since everything in mbeddr is considered
+as a model (even though it looks like c-code or plain text) and
+stored in specific format it is not possible to use your favorite
+text editor, you must stick to projectional editor in mbeddr
+environment. 
+
+As a result, the identified advantages of the undertaken
+approach are a) modeling spans from requirements down to
+code generation and validation; b) available rich set of
+expressive domain-specific languages; c) seamless integration
+with versioning control system.
+At the same time, we found several drawbacks pointing to
+significant efforts from practitioners to apply the described
+approach: a) new languages (totally different from CFCdiagrams) to learn; b) more efforts to support separate
+development cycle and integration

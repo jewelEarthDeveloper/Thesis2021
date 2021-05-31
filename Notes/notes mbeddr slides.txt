@@ -1,1 +1,38 @@
 notes mbeddr slides
+
+Abstraction
+without
+Runtime Cost
+ Abstractions are important to write
+maintainable and analyzable software;
+however,
+ Abstractions should not incur runtime
+overhead (or at least as little as possible) 
+
+Program
+Annotations
+ Things like physical units, value ranges,
+or access patterns to data structures are
+often defined outside the code program in
+some kind of XML
+ The C type checker doesn‘t know about them,
+a separate checker is used --- cumbersome! 
+
+
+Product Lines
+and
+Requirement
+Traces
+ Trace links from code (or other
+implementation artifacts) back to
+requirements must be supported
+ Product Line Variability must be
+handled in a more maintainable way
+than #ifdefs
+
+
+Domains can be seen as
+specializations of
+others. Each may require
+specialized language
+ support 

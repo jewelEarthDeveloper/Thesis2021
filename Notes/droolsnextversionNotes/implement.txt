@@ -1,0 +1,22 @@
+package zichtbaar.documenten
+
+import nl.khonraad.domain.dossier.Dossier
+import nl.khonraad.drools.DroolsContext
+import nl.khonraad.domain.dossier.episode.Episode
+import nl.khonraad.domain.document.Document
+import nl.khonraad.domain.professional.Professional;
+
+rule "0 - voeg alle documenten van het dossier toe aan knowledge base" 
+    salience 1000
+    when
+        d:      Dossier()
+        u:      DroolsContext()
+    then
+        drools.insert( u.getUser() );
+
+        for ( Episode episode : d.getEpisodes() ) {
+            for ( Document document : episode.getDocumenten() ) {
+                drools.insert( document );
+            }
+        }
+end 

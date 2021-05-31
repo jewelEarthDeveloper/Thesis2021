@@ -1,0 +1,61 @@
+AB - Language Engineering as an Enabler for Incrementally Defined Formal Analyses
+
+
+First, more abstract and thus more analyzable
+domain specific languages can be defined, avoiding the
+need for abstraction recovery from programs written
+in general purpose languages. Second, restrictions
+on the use of existing languages can be imposed
+and thereby more analyzable code can be obtained
+and analyses can be incrementally defined. Third, by
+expressing verification conditions and the verification
+results at the domain level, they are easier to define
+and the results of analyses are easier to interpret by
+end users.
+
+The transfer of [formal verification techniques] from
+research to practice has been much slower for software.
+One reason for this is the model construction problem: the
+semantic gap between the artifacts produced by software
+developers and those accepted by current verification
+tools.
+
+In addition to
+language extension, the approach also supports language
+restriction, in order to create subsets of existing languages. 
+
+Decision tables exploit MPS’ projectional editor in order to represent two-level nested if statements as a
+table. Figure 3 shows an example. Decision tables [9]
+let users describe different actions that can be taken for
+different combinations of input conditions. The rationale
+for tabular expressions is to let developers define the
+conditions more easily and to allow reviewers to directly
+gain an overview of varied sets of input conditions.
+
+Analyzing Decision Tables: For a two-dimensional
+decision table, there are two obvious possible analyses:
+• Completeness: requires that every behavior of the
+system is explicitly modeled and no case is omitted: this enforces explicitly listing all the possible
+combinations of the input conditions in the table.
+• Consistency: check whether there are input conditions overlap, meaning that several cases are applicable for a single input value (non-determinism).
+
+Feature models are a well-known formalism for expressing product line variability at the domain level, i.e.
+independent of implementation artifacts (in the problem
+space as opposed to the solution space) [10]. A feature
+is essentially a configuration option. A feature model
+is a hierarchical collection of features, with constraints
+among them. Constraints include mandatory (a feature
+must be in each product configuration), optional (it may
+be in a product), or (one or more features of a set of
+features must be in a product) and xor (exactly one from
+a set of features must be in a product). In addition,
+there may be arbitrary cross-constraints between any
+two features (requires-also and conflicts-with). Feature
+models are often expressed via feature diagrams.
+
+The mbeddr technology stack can be seen as a pragmatic operationalization of the correct-by-construction
+approach where the analyzable language fragments are
+incrementally extended
+
+
+[8]	E. K. Jackson and J. Sztipanovits. Correct-ed through construction: A model-based approach to embedded systems reality. In ECBS, pages 164–176, 2006.

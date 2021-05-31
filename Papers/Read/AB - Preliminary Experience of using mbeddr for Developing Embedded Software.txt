@@ -1,0 +1,17 @@
+AB - Preliminary Experience of using mbeddr for Developing Embedded Software
+
+mbeddr builds on the JetBrains MPS language
+workbench2
+, a tool that supports the definition, composition and integrated use of general
+purpose or domain-specific languages. MPS uses a projectional editor, which means that,
+although a syntax may look textual, it is not represented as a sequence of characters which
+are transformed into an abstract syntax tree (AST) by a parser. Instead, a user’s editing actions lead directly to changes in the AST. Projection rules render a concrete syntax from the
+AST. Consequently, MPS supports non-textual notations such as tables or mathematical
+symbols, and it also supports wide-ranging language composition and extension [Voe11]
+– no parser ambiguities can ever occur when combining languages.
+
+As part of mbeddr’s tutorials, an example extension has been built that annotates data
+structures with information about which layer of the system is allowed to write and read
+these values. By annotation program modules with layer information, the IDE can now
+check basic architectural constraints, such as whether a data element is allowed to be
+written from a given program location

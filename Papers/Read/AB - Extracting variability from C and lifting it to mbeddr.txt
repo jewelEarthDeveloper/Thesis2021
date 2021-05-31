@@ -1,0 +1,6 @@
+AB - Extracting variability from C and lifting it to mbeddr
+
+Due to the projectional
+editing capabilities of MPS, programs can be displayed as
+the entire product line or as individual variants. 
+

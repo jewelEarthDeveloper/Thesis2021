@@ -1,0 +1,87 @@
+AB - Taming the Software Development Complexity with Domain Specific Languages
+
+2.1 Jetbrain’s MPS
+Jetbrains’ Meta-Programming System6 is an open-source language workbench which offers
+comprehensive support for all concerns of the development of DSLs and associated tooling.
+In MPS, a language implementation consists of several language aspects – e.g. structure,
+concrete syntax, constraints, type system, transformations, interpreters, or debuggers. MPS
+ships with a set of dedicated DSLs for implementing each language aspect.
+
+Editors. MPS, at its core, features a projectional editor to display models. Projectional
+editors do not use parsers; instead, they render, or project, a program’s abstract syntax tree
+(AST) in a notation defined by the language developer. Language engineers can choose to
+use specific notations appropriate for the business domain they address – e.g. plain text,
+forms, tables, diagrams, mathematical formula or trees.
+
+Context Sensitive Constraints. MPS guides the language users (i.e. domain experts)
+towards building models in two ways: 1) constructively by preventing the definition of
+invalid models up-front using an advanced set of scopes and constraints; and 2) analytically
+by allowing the definition of advanced checks in the IDE. The constructive way is using
+the projectional nature of MPS directly – the users are allowed to enter only valid content.
+Further constraints are essentially implemented as if-statements that check some property
+of the AST and report errors if invalid code is detected.
+
+Generators. MPS generators usually work as a chain of model-to-model transformations
+where domain-specific ASTs get enriched by platform-specific information with each
+transformation step. Eventually, a chain reaches the target language and a model-to-text
+transformation produces an output text file. Whilst MPS generators are not bound to this
+design, it is the most common use case since it allows for a very modular approach to
+combine and interchange transformation steps.
+
+Tooling via IDE Extensions MPS also allows the definition of IDE extensions such as
+new menus or views; language engineers use these extensions extensively for building
+domain specific tooling or to integrate external tools. The IDE extensions are implemented
+via regular Java/Swing programs and a couple of MPS-specific extension points.
+
+Foundational Support for Model-driven Development MPS offers comprehensive
+support for the entire life-cycle of model based development with domain specific languages:
+integrating with different version control systems, merging and diffing at model level,
+testing of different aspects of the language definition, refactorings of languages and models,
+migration of models when languages evolve.
+
+On Projectional Editing One of the most important distinguishing feature of MPS is the
+projectional editing. Being a projectional editor, MPS does not feel like text editors when
+users edit their models. In order to increase the fluency of models’ creation and modification,
+MPS allows advanced customization of editor actions – e.g. what happens when the user
+presses ”backspace” in a certain editor cell, or how are linear sequences of lexical items are
+transformed into models. We have invested some effort to make the editing experience as
+intuitive as possible. At the same time this means that the users, who know and sometimes
+expect fundamental features of Excel or Word, need to understand that the focus of the new
+tool (from their point of view) is not to mirror known textual editor features, but to model
+the semantics of the computed tomography scanner data. The initial feedback from our users
+with respect to the usability of the editor is positive – the users immediately understood
+that they are not editing ”simple” text but rich models and thereby they calibrated their
+expectations.
+
+On MPS’s Extensibility The seamless extension capabilities of MPS with additional
+language definition aspects is a key feature which we made use of in our project. Besides
+the standard aspects shipped with MPS, as presented in Section 2, we have intensively used
+the ”mbeddr-platform” libraries featured as part of mbeddr. Dependencies among different
+extensions need to be managed appropriately such that the deployed Rich Client Platform
+(RCP) can be built in a meaningful manner.
+
+On Language Evolution and Models Migration on Multiple Branches MPS provides
+out-of-the-box advanced support for evolving DSLs and migrate the models to the new
+versions of the DSLs. We have used these features intensively to perform agile language
+development. However, if the models are built on different branches then they also need to
+be migrated to new language versions individually. Comparing (or merging) these branches
+after migrations have been performed on them proves to be challenging.
+
+DSL Development and Domain Engineering go Hand-in-hand. In addition to the
+DSL development itself, substantial effort has been involved in domain engineering. The
+knowledge of domain experts (i.e. domain concepts, their relations and constraints on valid
+combinations) at a certain point in time was formalized in the DSL. The DSLs help us
+better understand, manage and consolidate the knowledge in our organization. Once initial
+versions of the DSL was built, it was subsequently piloted to model different aspects of the
+scanner domain and by doing this we identified improvements of DSL.
+Along with the development of DSLs the team went through a learning process about the
+domain – we continuously got feedback from domain experts – and ca. 10-15 persons are
+aware about different details of our DSLs and continuously validate what we are developing.
+
+MPS Enables Highly Efficient Development of DSLs The infrastructure provided by
+MPS and mbeddr-platform allowed us to develop the languages in a highly efficient manner.
+After a few hours of development, we could get a baseline for languages and tooling which
+can be used as input to engage in discussions with domain experts. This baseline is then
+subject to iterative improvements, each iteration consisting often only of several hours of
+development.
+

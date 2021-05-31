@@ -1,0 +1,43 @@
+file: 
+	name : string [1]
+	factTypes : Type [0..n]
+	rules : rule [0..n]
+
+rule	
+	name : string [1]
+	attributes : AttributeCollection [1]
+	lhs : lhsStatement [0..n]
+	rhs : rhsStatment [0..n]
+	
+	
+AttributeCollection
+	salience : salienceAttribute [0..1]
+	
+SalienceAttribute
+	value : intger [1]
+	
+lhsStatement: 
+	conditions : ConditionalElement [0..n]
+	
+ConditionalElement
+	patterns : Pattern [0..n]
+	
+Pattern
+	patternBindings : PatternBinding [0..1]
+
+PatternBinding
+	var : RuleVarDeclaration [0..1]
+	fact : FactType [1]
+	
+rhsStatement
+	ExtendedExpression [1]
+
+ExtendedExpression
+	Expression [0..1]
+	ruleVarRef [0..n]
+	droolsCommands [0..1]
+	
+	
+To Do:
+Type of Expression in DroolsInsertCommand must be the same as one of the imported Facts
+Type of Expression in SalienceAttribute must be integer

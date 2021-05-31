@@ -1,0 +1,105 @@
+AB - VODRE: Visualisation of Drools Rules Execution
+
+—Knowledge-based Systems and Expert Systems, in
+particular, are expensive to build and difficult to validate and
+debug because of their complexity and dynamism. Therefore,
+it is not easy for knowledge engineer and domain expert to
+identify the gaps and mistakes in knowledge base
+
+. A
+wide range of testing frameworks is available for developers
+of conventional system, but only a few of them are suitable for
+ES testing, validation and debugging
+
+Correctness of an expert system assumes that both the
+right system was built and the system was built right [5].
+These stages are referred to as validation and verification,
+respectively
+Proper validation of an expert system must
+ensure that both code base and knowledge base produce correct
+solution. n. Domain rules and reasoning processes are to be
+tested, as well.
+
+ This often includes a careful
+analysis of large blocks of hard-to-display-on-the-screen data.
+Scrolling distracts the attention of the expert from investigation. Furthermore, a domain expert is not necessarily supposed
+to be familiar with the system and specialised software
+
+Baumeister[5] suggests DDTree (derivation/dialog tree) - a
+powerful tool for ES validation and visualisation of reasoning.
+DDTrees are able to present both final and intermediate
+solutions in an easy-to-read intuitive way. Successful test cases
+are coloured in green, erroneous cases are red. New test cases
+are shadowed until test is launched. Tree-like diagram may be
+printed and inspected by an expert in subject area. Branched
+structure of chart allows analysing the reason of failure based
+on incoming findings.
+
+
+Another visualisation method is proposed by Tavana[10].
+He offers PNs (Petri Nets) for dynamic system representation
+and rule derivation. It overcomes the drawback of derivation
+trees and allows analysing system in dynamics.
+
+that engineers use testing tools as well as visualisation tools
+(CHECKA and PIKA, respectively, in their case).
+
+Drools production rule system, using an enhanced implementation of the Rete algorithm, was chosen as a rule
+engine. Drools supports the JSR-94 standard for its business
+rule engine and enterprise framework for the construction,
+maintenance, and enforcement of business policies in an organisation, application, or service. Drools is considered to be
+one of the most developed and supported platforms. It has a
+number of knowledge representation ways. The main and the
+most wide-spread of them is a decision representation language
+(DRL), which is used in production system development.
+DRL is tightly integrated with Java language. Furthermore,
+the platform enables to write DSL constructions to make
+rules more vivid and easy-to-understand for domain experts.
+A detailed description of Drools is redundant as the platform
+is well-documented, thus, only features significant for the
+OSYST system are stated below
+
+Drools has an advanced decision engine that supports both
+forward and backward chaining that allows wider range of
+abilities at design stage (a forward chaining is used in our
+expert system as it is acceptable when an object is to be synthesised based on the facts). The last but not the least, Drools
+platform has database design toolkit referred to as Guvnor,
+which is not included in most of other platforms. Guvnor
+combines all essential tools for knowledge-based engineering,
+such as rule editor, rule storage, test tools, decision tables
+and so forth. Furthermore, the described platform has a userfriendly web-interface. Drools is cross-platform, its installation
+process is not time-consuming, knowledge bases can be easily
+exported and imported, which results in better portability. All
+facts considered, Drools platform has many advantages over
+the other platforms and meets our needs
+
+can this rule work? rule F1
+when
+class : Classif ication()
+Requirements(focalLength > 50 < 100)
+then
+$cla
+
+
+Data about facts inserted and rules
+executed is collected by AgendaEventListener and Working
+MemoryEventListener from Knowledge API7. Collected logs
+are received by client, then analysed and represented in debug
+(before this investigation) and in visualisation (now) windows,
+
+Two types of identities are used in reasoning process of the
+synthesis: these are rules and facts. Both rules and facts can
+be added to working memory, removed from it or changed
+(updated). A fact (or a set of facts) make rules to be fired
+
+Expert systems are complex artifacts that are difficult to
+develop and test.
+
+
+
+
+[7]	R. Knauf, A. J. Gonzalez, K. P. Jantke, “Validating rule-based systems: a complete methodology“, in Proc. IEEE SMC’99 Conf., 1999, pp. 744749
+[9]	A. Preece, Evaluating Verification and Validation Methods in Knowledge Engineering, in R Roy (ed), Micro-Level Knowledge Management, Morgan-Kaufman, 2001, pp. 123-145
+[10]	M. Tavana, “Knowledge-Based Expert System Development and Validation with Petri Nets“, Journal of Information & Knowledge Management, vol.7(1), 2008, pp. 3746
+[11]	J. Baumeister, J. Reutelshoefer, F. Puppe, “KnowWe: a Semantic Wiki for knowledge engineering“, Applied Intelligence, vol.35(3), 2011, pp. 323-344
+[13]	N. Prat, J. Akoka, I. Comyn-Wattiau, “An MDA approach to knowledge engineering“, Expert Systems with Applications: An International Journal, vol.39(12), 2012, pp. 10420-10437

@@ -27,7 +27,7 @@ name
  - should be unique in file
 
 attributes
- - supports dialect "mvel"  (do we really need this, as it is only used once and opens a whole can of worms
+ - supports dialect "mvel"  (do we really need this, as it is only used once and opens a whole can of worms)
  - supports no-loop
  - supports salience integer
 
