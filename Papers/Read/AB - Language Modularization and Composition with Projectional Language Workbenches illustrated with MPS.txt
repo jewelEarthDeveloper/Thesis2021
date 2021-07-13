@@ -1,185 +1,127 @@
 AB - Language Modularization and Composition with Projectional Language Workbenches illustrated with MPS
 
-With the advent of projectional
-language workbenches a new class of language becomes possible that can
-combine the best of both approaches: modular languages.
+With the advent of projectional language workbenches a new class of language becomes possible that can combine the best of both approaches: modular languages.
 
- Modular Languages
-use a relatively small general-purpose core and can be extended with more
-(domain specific) concepts as needed. Projectional language workbenches
-support this approach by alleviating the problems of language composition for
-parser-based languages by not using grammars and parsers at all
+Modular Languages use a relatively small general-purpose core and can be extended with more (domain specific) concepts as needed.
+Projectional language workbenches support this approach by alleviating the problems of language composition for parser-based languages by not using grammars and parsers at all 
+However, traditionally, modular languages have been hard to achieve because of the inherent problems in grammar composition and modular IDE construction [1, 20].
+Projectional language workbenches [2] do away with these problems and make modular languages and IDEs easily possible. 
 
-However, traditionally, modular
-languages have been hard to achieve because of the inherent problems in grammar
-composition and modular IDE construction [1, 20]. Projectional language
-workbenches [2] do away with these problems and make modular languages and IDEs
-easily possible. 
-
-Modular languages are flexible because users can use only those language concepts
-in a program they really need. They are extendable because a module can be custom
-built. Modular languages are productive because the scope of applicability of the
-module can vary from general-purpose to domain-specific. They are also simple to
-use because users don't have to learn (or expressly ignore parts of) huge monolithic
-languages, they only have to deal with those language modules they really use.
-Modular languages are convenient because, if the right tools are used, they come with
-their own IDE just like traditional languages.
+Modular languages are flexible because users can use only those language concepts in a program they really need.
+They are extendable because a module can be custom built.
+Modular languages are productive because the scope of applicability of the module can vary from general-purpose to domain-specific.
+They are also simple to use because users don't have to learn (or expressly ignore parts of) huge monolithic languages, they only have to deal with those language modules they really use.
+Modular languages are convenient because, if the right tools are used, they come with their own IDE just like traditional languages.
 
 
-The term Language Workbench has been coined by Martin Fowler in 2005 [2]. In his
-article he defines it as a tool with the following characteristics:
+The term Language Workbench has been coined by Martin Fowler in 2005 [2].
+In his article he defines it as a tool with the following characteristics:
 1. Users can freely define languages which are fully integrated with each other.
 2. The primary source of information is a persistent abstract representation.
 3. A DSL is defined in three main parts: schema, editor(s), and generator(s).
 4. Language users manipulate a DSL through a projectional editor.
 5. A language workbench can persist incomplete or contradictory information.
 
-Note how points 2, 3 and 4 imply projectional editing. In the meantime, Martin
-Fowler, and the community as a whole uses the term language workbench also for
-tools that use (modern) parsing techniques. 
+Note how points 2, 3 and 4 imply projectional editing.
+In the meantime, Martin Fowler, and the community as a whole uses the term language workbench also for tools that use (modern) parsing techniques. 
 
-Projectional editing is well-known from graphical
-modeling tools (UML, ER, State Charts). The model is stored independent of its
-concrete syntax, only the model structure is persisted, often using XML or a database.
-For editing purposes this abstract syntax is projected using graphical shapes. Users
-use mouse gestures and keyboard actions tailored to graphical editing to modify the
-abstract model structure directly. While the concrete syntax of the model does not
-have to be stored because it is specified as part of language definition and hence
-known by the projection engine, graphical modeling tools usually also store
-information about the visual layout
-
-Projectional editing can also be used for textual syntax. However, since the
-projection looks like text, users expect interaction patterns and gestures known from
-"real text" to work. For a projectional editor to be useful, it has to "simulate"
-interaction patterns known from real text.
+Projectional editing is well-known from graphical modeling tools (UML, ER, State Charts).
+The model is stored independent of its concrete syntax, only the model structure is persisted, often using XML or a database.
+For editing purposes this abstract syntax is projected using graphical shapes.
+Users use mouse gestures and keyboard actions tailored to graphical editing to modify the abstract model structure directly.
+While the concrete syntax of the model does not have to be stored because it is specified as part of language definition and hence known by the projection engine, graphical modeling tools usually also store information about the visual layout 
+Projectional editing can also be used for textual syntax.
+However, since the projection looks like text, users expect interaction patterns and gestures known from "real text" to work.
+For a projectional editor to be useful, it has to "simulate" interaction patterns known from real text.
 
 The following is a list of benefits of projectional editing:
- No grammar or parser is required. Editing directly changes the underlying
-structure. Projectional editors can handle unparseable code. Language composition
-is easily possible, because languages composition cannot result in ambiguous
-grammars [1, 19, 20].
- Notations are more flexible than ASCII/ANSI/Unicode. Graphical, semi-graphical
-and textual notations can be mixed and combined. For example, a graphical tool
-for editing state machines can embed a textual expression language for editing the
-guard conditions on transitions.
- Because projectional languages by definition need an IDE for editing (it has to do
-the projection!), language definition and extension always implies IDE definition
-and extension. The IDE will provide code completion, error checking and syntax
-highlighting for all languages, even when they are combined.
- Because the model is stored independent of its concrete notation, it is possible to
-represent the same model in different ways simply by providing several
-projections. Different viewpoints [11] of the overall program can be stored in one
-model, but editing can still be viewpoint specific. It is also possible to store out-ofband data, i.e. annotations on the core model/program. Examples of this include
-documentation, pointers to requirements (traceability) [12] or feature dependencies
-in the context of product lines [13].
+ No grammar or parser is required.
+Editing directly changes the underlying structure.
+Projectional editors can handle unparseable code.
+Language composition is easily possible, because languages composition cannot result in ambiguous grammars [1, 19, 20].
+ Notations are more flexible than ASCII/ANSI/Unicode.
+Graphical, semi-graphical and textual notations can be mixed and combined.
+For example, a graphical tool for editing state machines can embed a textual expression language for editing the guard conditions on transitions.
+ Because projectional languages by definition need an IDE for editing (it has to do the projection!), language definition and extension always implies IDE definition and extension.
+The IDE will provide code completion, error checking and syntax highlighting for all languages, even when they are combined.
+ Because the model is stored independent of its concrete notation, it is possible to represent the same model in different ways simply by providing several projections.
+Different viewpoints [11] of the overall program can be stored in one model, but editing can still be viewpoint specific.
+It is also possible to store out-ofband data, i.e. annotations on the core model/program.
+Examples of this include documentation, pointers to requirements (traceability) [12] or feature dependencies in the context of product lines [13].
 
 
-As a side effect, language workbenches deliver on the promise of removing the
-difference between what is traditionally called programming and what is traditionally
-called modeling. This distinction is arbitrary anyway: as software developers we want
-to express different concerns of software systems with abstractions and notations
-suitable to that particular concern (graphical, textual, symbolic), formally enough for
-automatic processing or translation, and with good IDE support. Projectional
-language workbenches deliver on this goal.
+As a side effect, language workbenches deliver on the promise of removing the difference between what is traditionally called programming and what is traditionally called modeling.
+This distinction is arbitrary anyway: as software developers we want to express different concerns of software systems with abstractions and notations suitable to that particular concern (graphical, textual, symbolic), formally enough for automatic processing or translation, and with good IDE support.
+Projectional language workbenches deliver on this goal.
 
 JetBrains MPS
-JetBrains’ Meta Programming System [9] is an open source projectional language
-workbench, so all the statements made earlier apply to MPS. It comes with Java and
-XML as extendible default languages. Defining a language includes (a) defining the
-language concepts (abstract syntax), (b) defining the editor for the concepts and (c)
-defining a generator (compiler). For a language whose programs should be processed
-with a text-oriented tools (such as existing compilers or interpreters) the generator
-outputs text. For higher-level languages, the generator transforms the programs into
-programs expressed in lower level languages. In this case, the generators are not text
-generators, they transform between abstract syntax trees (this process is explained in
-more detail below).
-Editing the tree as opposed to “real text” needs some getting used to. Without
-specific customization, every program element has to be selected from a drop-down
-list to be "instantiated". However, MPS provides editor customizations to enable
-editing that resembles modern IDEs that use automatically expanding code templates.
-This makes editing quite convenient and productive in all but the most exceptional
-cases. 
+JetBrains’ Meta Programming System [9] is an open source projectional language workbench, so all the statements made earlier apply to MPS.
+It comes with Java and XML as extendible default languages.
+Defining a language includes (a) defining the language concepts (abstract syntax), (b) defining the editor for the concepts and (c)
+defining a generator (compiler).
+For a language whose programs should be processed with a text-oriented tools (such as existing compilers or interpreters) the generator outputs text.
+For higher-level languages, the generator transforms the programs into programs expressed in lower level languages.
+In this case, the generators are not text generators, they transform between abstract syntax trees (this process is explained in more detail below).
+Editing the tree as opposed to “real text” needs some getting used to.
+Without specific customization, every program element has to be selected from a drop-down list to be "instantiated".
+However, MPS provides editor customizations to enable editing that resembles modern IDEs that use automatically expanding code templates.
+This makes editing quite convenient and productive in all but the most exceptional cases. 
 
-Concrete Syntax Definition. Instead of defining a grammar and deriving the abstract
-syntax, in MPS the editor definition is based on the language structure as shown in the
-left part of figure 2.
-Figure 2: Syntax/Editor definition, the condition for the init expression is on the right
-The editor for the LocalVariableDeclaration consists of an indent-collection ([- …
--]), a kind of collection which results in a text-like presentation (horizontal, with line
-breaks). It contains the representation of the type (%type%), the name ({name}) and
-the init expression (%init%) if it has one (?). The condition (right half of figure 2)
-makes sure the initialization expression, as well as the equals sign, is only shown if an
-initialization expression is provided. Finally, the horizontal collection contains a
-semicolon - a simple constant. It is assumed that editors for Type and Expression are
-already defined in the base language. Those editors are simply used (i.e. embedded)
-here as we refer to %type% and %init%.
-Type Systems. Type systems [27] defines and validate variable types. Every nontrivial language has a type system and MPS comes with a DSL to define type systems
-for languages.
-Figure 3: Definition of the type system rules
-The type system rules in Figure 3 define that the type of the type property and the
-type of the overall statement have to correspond. In other words, the type of the whole
-statement is the type given in its type property. The second rule (within the if block)
-says that if an init expression is defined, the type of init must be a subtype of the type
-of the defined variable. Type equations not shown here establish the types of the Type
-and Expression concepts.
-Editor Tuning. At this point the definition of the language and the basic editor, as
-well as the type system are finished. However, if you'd try to use the new
-LocalVariableDeclaration statement, you'd have to literally press control space in the
-editor, select the concept LocalVariableDeclaration and use tab or the mouse to fill in 
-the various properties (type, name, init). This is unacceptable. Additional steps have
-to be taken to allow users to simply type int i = 2*3; the way they're used to.
+Concrete Syntax Definition.
+Instead of defining a grammar and deriving the abstract syntax, in MPS the editor definition is based on the language structure as shown in the left part of figure 2.
+Figure 2: Syntax/Editor definition, the condition for the init expression is on the right The editor for the LocalVariableDeclaration consists of an indent-collection ([- …
+-]), a kind of collection which results in a text-like presentation (horizontal, with line breaks).
+It contains the representation of the type (%type%), the name ({name}) and the init expression (%init%) if it has one (?).
+The condition (right half of figure 2) makes sure the initialization expression, as well as the equals sign, is only shown if an initialization expression is provided.
+Finally, the horizontal collection contains a semicolon - a simple constant.
+It is assumed that editors for Type and Expression are already defined in the base language.
+Those editors are simply used (i.e. embedded) here as we refer to %type% and %init%.
 
-We explain all of this to illustrate what's involved in defining languages in a
-projectional editing environment. As the examples below will show, projectional
-editing has a number of intriguing advantages, but there is also a price to pay: this
-price is the additional effort that goes into defining a nicely usable editor. The tools
-(MPS in this example) come with the necessary facilities and makes defining these
-editor convenience functions relatively easy.
+Type Systems.
+Type systems [27] defines and validate variable types.
+Every nontrivial language has a type system and MPS comes with a DSL to define type systems for languages.
+Figure 3: Definition of the type system rules The type system rules in Figure 3 define that the type of the type property and the type of the overall statement have to correspond.
+In other words, the type of the whole statement is the type given in its type property.
+The second rule (within the if block) says that if an init expression is defined, the type of init must be a subtype of the type of the defined variable.
+Type equations not shown here establish the types of the Type and Expression concepts.
 
-in
-general, domain-specific languages, or domain-specific extensions of general purpose
-languages cannot be directly executed. The model has to be translated into a language
-for which some kind of execution infrastructure (a compiler or interpreter) exists.
-In an environment where models and programs are treated the same in that they are
-both stored as an abstract syntax tree and projected for editing, there are two different
-scenarios for code generation:
- domain-specific languages or language extensions typically need to be mapped to
-general purpose languages such as Java or C.
- Since the general purpose languages themselves are represented via an AST and
-projection, the programs cannot be feed directly to the compiler, a text
-representation has to be generated from them.
-The second case is rather straight forward. It is basically pretty printing (aka
-unparsing), since the syntax of the language (abstract + concrete) directly resembles
-the text to be generated. The first case is more interesting. Since both, the DSL (or
-extension) and the target language are represented as AST + projection, such a code 
-generator is in fact a model transformation in the sense that the DSL AST is
-transformed into the target language AST. There is no actual text generation.
+Editor Tuning.
+At this point the definition of the language and the basic editor, as well as the type system are finished.
+However, if you'd try to use the new LocalVariableDeclaration statement, you'd have to literally press control space in the editor, select the concept LocalVariableDeclaration and use tab or the mouse to fill in  the various properties (type, name, init).
+This is unacceptable.
+Additional steps have to be taken to allow users to simply type int i = 2*3; the way they're used to.
 
-Here is the point of this example: Both reduction rules use the concrete syntax of
-the target language in the templates, so it looks as if this is a text-generationtemplate, when in fact it is a model transformation. To make this possible, the existing
-projections for the target language are used to project the resulting model in the
-syntax of the target language. This is visually similar to text generation templates that
-also use the concrete textual syntax of the target language. But the projectional
-approach goes further: when writing the to-be-generated code, the IDE provides 
-syntax coloring, code completion and error checking for the template code. This is
-extremely hard to do for parsed languages, because the parser of the target language
-has to be embedded into the template language, and IDE services (code completion,
-syntax coloring, static checks) would have to be merged as well. We have not yet seen
-such as tool in parser-based languages, although the work of the Spoofax [23] team is
-very promising.
+We explain all of this to illustrate what's involved in defining languages in a projectional editing environment.
+As the examples below will show, projectional editing has a number of intriguing advantages, but there is also a price to pay: this price is the additional effort that goes into defining a nicely usable editor.
+The tools (MPS in this example) come with the necessary facilities and makes defining these editor convenience functions relatively easy.
+
+in general, domain-specific languages, or domain-specific extensions of general purpose languages cannot be directly executed.
+The model has to be translated into a language for which some kind of execution infrastructure (a compiler or interpreter) exists.
+In an environment where models and programs are treated the same in that they are both stored as an abstract syntax tree and projected for editing, there are two different scenarios for code generation:
+ domain-specific languages or language extensions typically need to be mapped to general purpose languages such as Java or C.
+ Since the general purpose languages themselves are represented via an AST and projection, the programs cannot be feed directly to the compiler, a text representation has to be generated from them.
+The second case is rather straight forward.
+It is basically pretty printing (aka unparsing), since the syntax of the language (abstract + concrete) directly resembles the text to be generated.
+The first case is more interesting.
+Since both, the DSL (or extension) and the target language are represented as AST + projection, such a code generator is in fact a model transformation in the sense that the DSL AST is transformed into the target language AST.
+There is no actual text generation.
+
+Here is the point of this example: Both reduction rules use the concrete syntax of the target language in the templates, so it looks as if this is a text-generationtemplate, when in fact it is a model transformation.
+To make this possible, the existing projections for the target language are used to project the resulting model in the syntax of the target language.
+This is visually similar to text generation templates that also use the concrete textual syntax of the target language.
+But the projectional approach goes further: when writing the to-be-generated code, the IDE provides syntax coloring, code completion and error checking for the template code.
+This is extremely hard to do for parsed languages, because the parser of the target language has to be embedded into the template language, and IDE services (code completion, syntax coloring, static checks) would have to be merged as well.
+We have not yet seen such as tool in parser-based languages, although the work of the Spoofax [23] team is very promising.
 
 
-Different Notations. The ability to have several different notations for the same
-language concepts is not technically related to language extension. But it is
-nonetheless very useful. For example, in figure 15, a state machine can be
-represented as a table inline in the textual C program. The two notations can be
-switched back and forth.
+Different Notations.
+The ability to have several different notations for the same language concepts is not technically related to language extension.
+But it is nonetheless very useful.
+For example, in figure 15, a state machine can be represented as a table inline in the textual C program.
+The two notations can be switched back and forth.
 
-While we are aware that parsing technology also moves forward, and language
-composition will become much more practical in these environments as well, we feel
-that projectional editors are a very promising way for the future, especially since they
-can integrate textual, symbolic and graphical notations. Traditionally, the biggest
-complaint about projectional (or structural) editing has been that the editing
-experience is not very convenient. As MPS demonstrates, these reservations are not
-valid (anymore).
+While we are aware that parsing technology also moves forward, and language composition will become much more practical in these environments as well, we feel that projectional editors are a very promising way for the future, especially since they can integrate textual, symbolic and graphical notations.
+Traditionally, the biggest complaint about projectional (or structural) editing has been that the editing experience is not very convenient.
+As MPS demonstrates, these reservations are not valid (anymore).
+
 

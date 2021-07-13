@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<product version="3" modelHash="-5pbljue95xa6g5pat030s2wmq13x1bx">
+  <files names="IntentionsDescriptor.java:addComment_Intention.java:addDot_Intention.java:addFieldVariable_Intention.java:addFromSelector_Intention.java:addNoLoopRule_Intention.java:addSalienceRule_Intention.java:addVariableToSelector_Intention.java:makeExistsExplicit_Intention.java:makeExplicit_Intention.java:makeNotCondition_Intention.java:newStatement_Intention.java:toWhenDot_Intention.java:toggleIsThis_Intention.java" />
+</product>
+

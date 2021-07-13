@@ -1,129 +1,92 @@
-AB - Using C Language Extensions for Developing Embedded Software: A Case Study
+todo
+AB - Using C Language Extensions for Developing Embedded Software: A Case Study 
+Language engineering refers to building, extending and composing general-purpose and domain-specific languages (DSLs) [54].
 
-Language engineering refers to building, extending and
-composing general-purpose and domain-specific languages
-(DSLs) [54].
+Language workbenches [13, 14] are tools for efficiently implementing languages and their integrated development environments (IDEs).
+The JetBrains Meta Programming System (MPS)1
+is an open-source language workbench with comprehensive support for specifying structure, syntax, type systems, transformations and generation, debuggers and IDE support (see Figure 2).
+MPS relies on a projectional editor.
+Projectional editors avoid parsing the concrete syntax of a language to construct the abstract syntax tree (AST); instead, editing gestures directly change the AST, and the concrete syntax is rendered (“projected”) from the changing AST.
 
-Language workbenches [13, 14] are tools for
-efficiently implementing languages and their integrated development environments (IDEs). The JetBrains Meta Programming System (MPS)1
-is an open-source language workbench with comprehensive support for specifying structure,
-syntax, type systems, transformations and generation, debuggers and IDE support (see Figure 2). MPS relies on a
-projectional editor. Projectional editors avoid parsing the
-concrete syntax of a language to construct the abstract syntax tree (AST); instead, editing gestures directly change the
-AST, and the concrete syntax is rendered (“projected”) from
-the changing AST.
-
-This means that, in addition to text,
-languages can also use non-parsable notations such as mathematical symbols, tables and diagrams [52]. Since projectional editors never encounter grammar ambiguities, they
-can support language composition [50].
+This means that, in addition to text, languages can also use non-parsable notations such as mathematical symbols, tables and diagrams [52].
+Since projectional editors never encounter grammar ambiguities, they can support language composition [50].
 
 
-Traditionally, projectional editors were tedious to use and were hardly adopted
-in practice. With MPS, in contrast, editing textual syntax is
-quite close to “normal text editing”. It also supports diffmerge on the level of the projected concrete syntax
+Traditionally, projectional editors were tedious to use and were hardly adopted in practice.
+With MPS, in contrast, editing textual syntax is quite close to “normal text editing”.
+It also supports diffmerge on the level of the projected concrete syntax 
+Variability Feature models are an established formalism for expressing product line variability [3].
+A feature model consists of a tree of features with constraints between them.
+Constraints include mandatory (feature must be in any valid system), optional (feature may not be in a system), or (one or more from a group of features may be in a system)
+and xor (exactly one of a group of features must be in a system).
+A feature may have attributes, and additional crosstree constraints may be specified.
+The code below is one of the feature models from SMT, expressed in mbeddr’s textual notation for feature models.
+It handles the variability associated with different LCD displays and configurations.
 
-Variability Feature models are an established formalism
-for expressing product line variability [3]. A feature model
-consists of a tree of features with constraints between them.
-Constraints include mandatory (feature must be in any valid
-system), optional (feature may not be in a system), or
-(one or more from a group of features may be in a system)
-and xor (exactly one of a group of features must be in a
-system). A feature may have attributes, and additional crosstree constraints may be specified. The code below is one
-of the feature models from SMT, expressed in mbeddr’s
-textual notation for feature models. It handles the variability
-associated with different LCD displays and configurations.
+The features (and hence, the variability expressed) in a feature model can be connected to implementation code through presence conditions.
+A presence condition is a Boolean condition over the features from a feature model attached to a part of a program; only if the condition evaluates to true for the selected product configuration will the corresponding code fragment be included in the program 
 
-The features (and hence, the variability expressed) in a
-feature model can be connected to implementation code
-through presence conditions. A presence condition is a
-Boolean condition over the features from a feature model
-attached to a part of a program; only if the condition evaluates to true for the selected product configuration will the
-corresponding code fragment be included in the program
+One may also ask whether it is the language extensions themselves or the IDE support for the extensions that led to the success.
+However, since MPS always provides IDE support for a language and its extensions, we are not able to evaluate the case where users have access to the language extensions but not to the IDE support.
+In addition, the extensions and the IDE support are synergistic in the sense that because of the abstractions provided by the extensions the IDE is able to provide meaningful support.
+Stated differently: a major reason for defining language extensions is to enable better IDE support.
+In this sense, a strict distinction between the language itself and the IDE support for the language is not meaningful 
 
-
-One may also ask whether it is the language extensions themselves or the IDE support for the extensions that led to the success. However, since MPS always
-provides IDE support for a language and its extensions, we
-are not able to evaluate the case where users have access to
-the language extensions but not to the IDE support. In addition, the extensions and the IDE support are synergistic in
-the sense that because of the abstractions provided by the
-extensions the IDE is able to provide meaningful support.
-Stated differently: a major reason for defining language extensions is to enable better IDE support. In this sense, a strict
-distinction between the language itself and the IDE support
-for the language is not meaningful
+We have chosen MPS because of its robust support for modular language extension and flexible notations.
+To the degree that these features are available in other language workbenches, we expect similar results when building something like mbeddr and SMT.
+While MPS’ support for non-textual notations was important for SMT, modular language extensibility was even more critical. 
 
 
-We have chosen MPS because of
-its robust support for modular language extension and flexible notations. To the degree that these features are available in other language workbenches, we expect similar results when building something like mbeddr and SMT. While
-MPS’ support for non-textual notations was important for
-SMT, modular language extensibility was even more critical. 
+Tool Lock-in mbeddr relies on MPS for editing, diffmerge and C code generation; MPS does not rely on any modeling standards (beyond a MOF-like meta meta model).
+While an export as generated text or on AST level (e.g., to EMF) is feasible, the benefits of the approach in terms of notation and language modularity can only be reaped when using the mbeddr/MPS tools.
+The drawback of tool lock-in is mitigated to some degree by the fact that mbeddr and MPS
+are both open source software 
+Version Control Integration mbeddr stores programs in files (as an XML-serialized AST) which can be managed with any file-based version control system (such as subversion or git, the latter being used in SMT).
+However, diffmerge can only be done meaningfully in MPS, which uses the projectional editor also when showing diffs (known as a rendered diff).
+This means that text-based diff tools or webbased code-review tools such as gerrit cannot be used.
+Learning Curve Using MPS’ projectional editor requires some getting used to and may lead to some initial frustration.
+As the study in [57] shows, the required time varies between a few hours and a few days.
+In addition, users have to learn the extensions provided by mbeddr.
+This includes learning the concrete syntax, but also the concepts and the semantics; as discussed in Section 7.1, Team Expertise, the degree to which this is an issue depends on education of the developers.
+It was not a problem in SMT because of the team members’ skills and their access to the mbeddr developers.
 
 
-Tool Lock-in mbeddr relies on MPS for editing, diffmerge and C code generation; MPS does not rely on any
-modeling standards (beyond a MOF-like meta meta model).
-While an export as generated text or on AST level (e.g., to
-EMF) is feasible, the benefits of the approach in terms of
-notation and language modularity can only be reaped when
-using the mbeddr/MPS tools. The drawback of tool lock-in
-is mitigated to some degree by the fact that mbeddr and MPS
-are both open source software
-
-Version Control Integration mbeddr stores programs in
-files (as an XML-serialized AST) which can be managed
-with any file-based version control system (such as subversion or git, the latter being used in SMT). However, diffmerge can only be done meaningfully in MPS, which uses
-the projectional editor also when showing diffs (known as a
-rendered diff). This means that text-based diff tools or webbased code-review tools such as gerrit cannot be used.
-Learning Curve Using MPS’ projectional editor requires
-some getting used to and may lead to some initial frustration. As the study in [57] shows, the required time varies
-between a few hours and a few days. In addition, users have
-to learn the extensions provided by mbeddr. This includes
-learning the concrete syntax, but also the concepts and the
-semantics; as discussed in Section 7.1, Team Expertise, the
-degree to which this is an issue depends on education of the
-developers. It was not a problem in SMT because of the team
-members’ skills and their access to the mbeddr developers.
+Language Engineering Skills mbeddr can be used outof-the-box, exploiting the existing extensions.
+As this paper shows, these extensions provide significant benefits in themselves.
+However, to fully exploit mbeddr and extend it with domain-specific extensions (see the Missing Extensions discussed in Section 6.1), an organization may want to acquire language engineering skills.
+These skills are not naturally present in many organizations that develop embedded software, and may even be hard to hire.
 
 
-Language Engineering Skills mbeddr can be used outof-the-box, exploiting the existing extensions. As this paper
-shows, these extensions provide significant benefits in themselves. However, to fully exploit mbeddr and extend it with
-domain-specific extensions (see the Missing Extensions discussed in Section 6.1), an organization may want to acquire
-language engineering skills. These skills are not naturally
-present in many organizations that develop embedded software, and may even be hard to hire.
+Whittle also points out that users of ten prefer to not exclusively use graphical notations.
+This is in line with our own experiences, which is why mbeddr supports (mixing of) textual, symbolic, tabular and graphical notations [52]
 
-
-Whittle also points out that users of
-ten prefer to not exclusively use graphical notations. This is
-in line with our own experiences, which is why mbeddr supports (mixing of) textual, symbolic, tabular and graphical notations [52]
-
-Language Workbenches In Section 7.4 we argue why we
-have chosen MPS for the mbeddr implementation and discuss how other contemporary language workbenches, in particular Rascal [25] and Spoofax [23], differ relative to a possible realization of mbeddr’s C extensions. Since language
-engineering is beyond the scope of this paper, we keep the related work on language workbenches brief and refer to [13]
+Language Workbenches In Section 7.4 we argue why we have chosen MPS for the mbeddr implementation and discuss how other contemporary language workbenches, in particular Rascal [25] and Spoofax [23], differ relative to a possible realization of mbeddr’s C extensions.
+Since language engineering is beyond the scope of this paper, we keep the related work on language workbenches brief and refer to [13]
 for a comparison of contemporary language workbenches.
-Early examples of language workbenches include the
-Synthesizer Generator [38] and the Meta Environment [24].
-The latter is an editor for languages defined via SDF, a
-general parsing framework. Rascal and Spoofax provide
-Eclipse-based IDE support for SDF-based languages and
-together with Xtext20, are recent parser-based language
-workbenches. In contrast to MPS, their parser-based nature restricts language syntax to essentially linear text. Language extension and extension composition is supported in
-Spoofax and Rascal; Xtext does not support extension composition, and hence cannot be used to build mbeddr.
-Like MPS, the Intentional Domain Workbench [45] uses
-a projectional editor. In terms of syntactic flexibility, it has
-demonstrated diagrams and tables mixed with text. In terms
-of language extension and extension composition the available information is limited, since it is a commercial product.
-Renggli et al.’s Helvetia [37] supports language embedding and extension of Smalltalk using homogeneous extension, which means that the host language (Smalltalk) is
-also used for defining the extensions (these kinds of extensions are also known as embedded DSLs according to Hudak [21]). The authors argue that the approach is independent of the host language. While this is true in principle,
-their implementation strategy heavily relies on the unique
-aspects of the Smalltalk system which are not available for
-other languages, and in particular, not for C. mbeddr uses
-a heterogeneous approach which does not have these limitations: MPS provides a language-agnostic framework for
-language and IDE extension that can be used with any language, once the language is implemented in MPS.
+Early examples of language workbenches include the Synthesizer Generator [38] and the Meta Environment [24].
+The latter is an editor for languages defined via SDF, a general parsing framework.
+Rascal and Spoofax provide Eclipse-based IDE support for SDF-based languages and together with Xtext20, are recent parser-based language workbenches.
+In contrast to MPS, their parser-based nature restricts language syntax to essentially linear text.
+Language extension and extension composition is supported in Spoofax and Rascal; Xtext does not support extension composition, and hence cannot be used to build mbeddr.
+Like MPS, the Intentional Domain Workbench [45] uses a projectional editor.
+In terms of syntactic flexibility, it has demonstrated diagrams and tables mixed with text.
+In terms of language extension and extension composition the available information is limited, since it is a commercial product.
+Renggli et al.’s Helvetia [37] supports language embedding and extension of Smalltalk using homogeneous extension, which means that the host language (Smalltalk) is also used for defining the extensions (these kinds of extensions are also known as embedded DSLs according to Hudak [21]).
+The authors argue that the approach is independent of the host language.
+While this is true in principle, their implementation strategy heavily relies on the unique aspects of the Smalltalk system which are not available for other languages, and in particular, not for C. mbeddr uses a heterogeneous approach which does not have these limitations: MPS provides a language-agnostic framework for language and IDE extension that can be used with any language, once the language is implemented in MPS.
 
 
 
 
-[3]	D. Beuche, H. Papajewski, and W. Schröder-Preikschat. Variability management with feature models. Science of Computer Programming, 53(3), 2004.
+[3]	D.
+Beuche, H.
+Papajewski, and W.
+Schröder-Preikschat.
+Variability management with feature models.
+Science of Computer Programming, 53(3), 2004.
 
 
-[49]	A. van Deursen and P. Klint. Little languages: Little maintenance? Journal of software maintenance, 10(2), 1998.
+[49]	A. van Deursen and P.
+Klint.
+Little languages: Little maintenance? Journal of software maintenance, 10(2), 1998.
 

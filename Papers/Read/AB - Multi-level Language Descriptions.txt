@@ -1,59 +1,46 @@
-AB - Multi-level Language Descriptions
-
+AB - Multi-level Language Descriptions 
 With instantiation semantics, the language bridges three levels, see [15].
-1. the language specication, or the meta-model,
-2. the user specication, or the model, and
-3. objects of the model.
+1. the language specification, or the meta-model, 2. the user specification, or the model, and 3. objects of the model.
 
-OMG Level Examples Grammar example OCL example
-M3 = meta languages MOF EBNF MOF
-M2 = languages UML metamodel Java grammar OCL language
-M1 = models UML model a program a formula
-M0 = instances objects of UML classes a run a truth value
-
+OMG Level Examples Grammar example OCL example M3 = meta languages MOF EBNF MOF
+M2 = languages UML metamodel Java grammar OCL language M1 = models UML model a program a formula M0 = instances objects of UML classes a run a truth value 
 3.1 MPS
-Meta-Programming System (MPS) [16] is a tool to dene domain-specic languages. It is geared towards professional developers and is often used in a Java
-environment. It is written in Java, but can be used with other languages as well.
-The mbeddr project [20] has applied MPS to programming of embedded devices
-in a C/C++ environment.
-The general philosophy of MPS can be explained in connection with the
-OMG four-level architecture. The meta-languages (M3) in MPS are predened
-by the platform and xed. Being a professional tool, MPS has a large variety of
-meta-languages to describe all aspects of languages.
-The rst main activity in MPS is the description of a language on M2 using
-the M3 languages. This language description is translated by MPS into MPS
-internal Java code thereby creating an IDE for the language described. An example is the denition of a Petrinet language with the MPS meta-languages for
-structure, constraints, text syntax, transformation, intentions, and behaviour.
-The second main activity in MPS is the denition of programs or specications on M1 in the IDE for the language dened on M2. MPS provides a projectional editor starting from the internal objects and showing either a default
-view or a language-dened view. If the programs written should be executable,
-a transformation has to be provided, typically into Java. If this is the case, then
-user programs are transformed into standard Java programs.
-Finally, MPS does not care for M0, as it relies on the built-in execution and
-instantiation as given by Java (or C++, if C++ code is generated). This way,
-M0 need not be handled in MPS.
-For the levels M3-M2 and M2-M1, MPS uses its built-in instantiation semantics, which is accessible using an internal language called S (for structure). For
-instantiation between M1 and M0, the instantiation semantics of the generated
-code is used
+Meta-Programming System (MPS) [16] is a tool to define domain-specific languages.
+It is geared towards professional developers and is often used in a Java environment.
+It is written in Java, but can be used with other languages as well.
+The mbeddr project [20] has applied MPS to programming of embedded devices in a C/C++ environment.
+The general philosophy of MPS can be explained in connection with the OMG four-level architecture.
+The meta-languages (M3) in MPS are predefined by the platform and fixed.
+Being a professional tool, MPS has a large variety of meta-languages to describe all aspects of languages.
+The first main activity in MPS is the description of a language on M2 using the M3 languages.
+This language description is translated by MPS into MPS internal Java code thereby creating an IDE for the language described.
+An example is the definition of a Petrinet language with the MPS meta-languages for structure, constraints, text syntax, transformation, intentions, and behaviour.
+The second main activity in MPS is the definition of programs or specifications on M1 in the IDE for the language defined on M2.
+MPS provides a projectional editor starting from the internal objects and showing either a default view or a language-defined view.
+If the programs written should be executable, a transformation has to be provided, typically into Java.
+If this is the case, then user programs are transformed into standard Java programs.
+Finally, MPS does not care for M0, as it relies on the built-in execution and instantiation as given by Java (or C++, if C++ code is generated).
+This way, M0 need not be handled in MPS.
+For the levels M3-M2 and M2-M1, MPS uses its built-in instantiation semantics, which is accessible using an internal language called S (for structure).
+For instantiation between M1 and M0, the instantiation semantics of the generated code is used 
+
+Both MPS and LanguageLab claim to be bootstrapped, i.e. the meta-languages given in them are defined in the platform itself.
+
+MPS bootstrapping is more tricky.
+The MPS meta-languages are translated into Java.
+This Java code is related to several interfaces and stubs for the MPS tool platform.
+When these interfaces are used, the platform ensures the correct result.
+In addition to the interfaces, MPS also uses the specifications in the languages for cross-referencing and similar purposes.
+In order to achieve bootstrapping in MPS, the previous generated code is stored and used for generating the new version of the code.
+Then, the new code is compiled and a new version of the platform is provided.
+Again, the old version of the module is used in a read-only way in order to produce the new one.
+The trick is to generate the same code as before, in particular the same concept identifiers, because otherwise it would not be possible to connect the old instances of concepts to the new generated concepts.
 
 
-Both MPS and LanguageLab claim to be bootstrapped, i.e. the meta-languages
-given in them are dened in the platform itself.
-
-MPS bootstrapping is more tricky. The MPS meta-languages are translated
-into Java. This Java code is related to several interfaces and stubs for the MPS
-tool platform. When these interfaces are used, the platform ensures the correct
-result. In addition to the interfaces, MPS also uses the specications in the
-languages for cross-referencing and similar purposes.
-In order to achieve bootstrapping in MPS, the previous generated code is
-stored and used for generating the new version of the code. Then, the new
-code is compiled and a new version of the platform is provided. Again, the old
-version of the module is used in a read-only way in order to produce the new
-one. The trick is to generate the same code as before, in particular the same
-concept identiers, because otherwise it would not be possible to connect the
-old instances of concepts to the new generated concepts.
 
 
-Vaclav Pech, Alex Shatalin, and Markus Völter. JetBrains MPS as a tool for
-extending java. In Proceedings of the 2013 International Conference on Principles
-and Practices of Programming on the Java Platform: Virtual Machines, Languages,
-and Tools, PPPJ '13, pages 165168. ACM, 2013
+
+Vaclav Pech, Alex Shatalin, and Markus Völter.
+JetBrains MPS as a tool for extending java.
+In Proceedings of the 2013 International Conference on Principles and Practices of Programming on the Java Platform: Virtual Machines, Languages, and Tools, PPPJ '13, pages 165168.
+ACM, 2013

@@ -1,51 +1,53 @@
-AB - Implementing Modular Domain Specific Languages and Analyses
+AB - Implementing Modular Domain Specific Languages and Analyses 
 
- A DSL can often be decomposed into several conceptually distinct sub-languages
- 
- Obvious analyses
-relevant for such expressions include checking whether these
-expressions cover the whole spectrum of the input values
-(completeness) and if there are expressions that can evaluate to true at the same time (consistency). By implementing
-these analyses for a shared language module, the analyses
-are made available to all the DSLs that reuse this module.
+A DSL can often be decomposed into several conceptually distinct sub-languages  
+Obvious analyses relevant for such expressions include checking whether these expressions cover the whole spectrum of the input values (completeness) and if there are expressions that can evaluate to true at the same time (consistency).
+By implementing these analyses for a shared language module, the analyses are made available to all the DSLs that reuse this module.
 
-Language
-extension adds additional constructs to an existing language.
-Language restriction removes some concepts from an existing language. Language embedding joins two previously unrelated languages. In all three cases, the original language(s)
-are not modified invasively, retaining modularity
+Language extension adds additional constructs to an existing language.
+Language restriction removes some concepts from an existing language.
+Language embedding joins two previously unrelated languages.
+In all three cases, the original language(s)
+are not modified invasively, retaining modularity 
 
 2.1 Language Workbenches and MPS
-Language workbenches are tools that make language and
-IDE development, modularization and composition feasible.
+
+Language workbenches are tools that make language and IDE development, modularization and composition feasible.
 There are two fundamentally different approaches for language implementation as realized by language workbenches.
-Parser-based systems make use of grammars that specify the
-textual structure of legal programs expressed in some language l. A parser is generated from that grammar which
-transforms programs expressed in l into a data structure
-that contains the information expressed by a program, but
-gets rid of the textual concrete syntax. This data structure
-is called an abstract syntax tree (AST). All downstream processing (analyses, transformation) is performed on the AST.
+Parser-based systems make use of grammars that specify the textual structure of legal programs expressed in some language l.
+A parser is generated from that grammar which transforms programs expressed in l into a data structure that contains the information expressed by a program, but gets rid of the textual concrete syntax.
+This data structure is called an abstract syntax tree (AST).
+All downstream processing (analyses, transformation) is performed on the AST.
 Projectional systems work without grammars and parsers:
-as a user edits a program, the AST is modified directly and
-the program’s textual (or other) syntax is merely a projection. While parser-based systems support language modularization and composition to some degree, it is easy to do
-and well supported in projectional systems. JetBrains MPS
-(http://jetbrains.com/mps) is an example of a projectional
-language workbench. 
+as a user edits a program, the AST is modified directly and the program’s textual (or other) syntax is merely a projection.
+While parser-based systems support language modularization and composition to some degree, it is easy to do and well supported in projectional systems.
 
-Decision Tables
-Decision tables exploit JetBrains MPS’ projectional editor in
-order to represent two-level nested if statements as a table.
+JetBrains MPS (http://jetbrains.com/mps) is an example of a projectional language workbench. 
 
-As a consequence of the projectional editor, very few concrete syntax concerns have to be considered when modularizing and composing languages. This means that that language development in MPS closely resembles object-oriented
-programming. Essentially all idioms and patterns known
-from mainstream OO languages like Java can be used in
-language development (details can be found in [9]). So in
-the remainder of this section we will just discuss the abstract
-syntax.
+Decision Tables Decision tables exploit JetBrains MPS’ projectional editor in order to represent two-level nested if statements as a table.
+
+As a consequence of the projectional editor, very few concrete syntax concerns have to be considered when modularizing and composing languages.
+This means that that language development in MPS closely resembles object-oriented programming.
+Essentially all idioms and patterns known from mainstream OO languages like Java can be used in language development (details can be found in [9]).
+So in the remainder of this section we will just discuss the abstract syntax.
 
 
-*** should I be using a solver for completeness
 
-[4]	R. Janicki, D. L. Parnas, and J. Zucker. Tabular representations in relational documents, pages 184–196. Springer-Verlag New York, Inc., 1997.
 
-[7]	M. Mernik, J. Heering, and A. M. Sloane. When and how to develop domain-specific languages. ACM Computing Surveys, 37(4):316–344, 2005.
+*** should I be using a solver for completeness 
+[4]	R.
+Janicki, D.
+L.
+Parnas, and J.
+Zucker.
+Tabular representations in relational documents, pages 184–196.
+Springer-Verlag New York, Inc., 1997.
+
+[7]	M.
+Mernik, J.
+Heering, and A.
+M.
+Sloane.
+When and how to develop domain-specific languages.
+ACM Computing Surveys, 37(4):316–344, 2005.
 

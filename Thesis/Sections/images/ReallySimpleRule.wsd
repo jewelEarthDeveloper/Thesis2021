@@ -1,0 +1,82 @@
+@startuml "The Really Simple Rule Language"
+    class File
+        File : String name
+        File : Fact[] facts
+        File : Rule[] rules 
+
+    class Fact
+        Fact : String name
+        Fact : FactProperty[] properties
+    
+    File "1" -- "0..n" Fact
+
+    class FactProperty
+        FactProperty : String name
+        FactProperty : Boolean value 
+
+    Fact "1" -- "0..n" FactProperty
+
+    class Rule
+        Rule : String name
+        Rule : AbstractCondition[] conditions
+
+    File "1" -- "0..n" Rule
+
+    abstract class AbstractCondition
+        
+    Rule "1" -- "0..n" AbstractCondition
+    
+    abstract class AbstractUnaryCondition
+        AbstractUnaryCondition : FactSelector selector
+
+    AbstractCondition <|-- AbstractUnaryCondition
+
+    class ExistsCondition
+
+    AbstractUnaryCondition <|-- ExistsCondition
+
+    class NotCondition
+
+    AbstractUnaryCondition <|-- NotCondition
+
+    abstract class AbstractBinaryCondition
+        AbstractBinaryCondition : FactSelector leftSelector
+        AbstractBinaryCondition : FactSelector rightSelector
+
+
+    class FactSelector
+        FactSelector : Fact fact
+        FactSelector : Predicate[] predicates
+
+    AbstractUnaryCondition "1" --- "1" FactSelector
+    AbstractBinaryCondition "1" --- "2" FactSelector
+    Fact ... FactSelector
+    
+    AbstractCondition <|-- AbstractBinaryCondition
+
+    class AndCondition
+
+    AbstractBinaryCondition <|-- AndCondition
+
+    class OrCondition
+
+    AbstractBinaryCondition <|-- OrCondition
+
+    abstract class Predicate
+        Predicate : FactProperty property
+
+    FactSelector "1" --- "0..n" Predicate
+    FactProperty .... Predicate
+    
+    class IsPredicate
+    
+    Predicate <|-- IsPredicate
+
+    class NotPredicate
+
+    Predicate <|-- NotPredicate
+    
+    
+        
+
+@enduml

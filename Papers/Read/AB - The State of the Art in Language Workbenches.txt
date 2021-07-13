@@ -1,27 +1,32 @@
-annotated bibliography: The State of the Art in Language Workbenches
-
+todo
+annotated bibliography: The State of the Art in Language Workbenches 
 At the same time, projectional language workbenches like MPS [57] and Intentional [47] are reviving and refining the old idea of structure editors [9], opening up the possibility of mixing arbitrary notations.
 
 Language workbenches are currently enjoying significant growth in number and diversity, driven by both academia and industry.
 
-2.2 Research Methodology
-Domain analysis. The first part of our methodology addresses the goal of accurately describing the domain of language workbenches. 
-Empirical data. In addition to a general overview of language workbenches, we investigated  empirical data on the solutions submitted to the LWC’13.
+2.2 Research Methodology Domain analysis.
+The first part of our methodology addresses the goal of accurately describing the domain of language workbenches. 
+Empirical data.
+In addition to a general overview of language workbenches, we investigated  empirical data on the solutions submitted to the LWC’13.
 
-Generality of the survey. Not all existing language workbenches were represented ... To our knowledge, the features of aforementioned language workbenches are covered by our feature model.
+Generality of the survey.
+Not all existing language workbenches were represented ...
+To our knowledge, the features of aforementioned language workbenches are covered by our feature model.
 Hence, even though not all language workbenches are part of this survey, we consider the domain of language workbenches sufficiently covered.
 
 Language workbenches exist in many different flavors, but they are united by their common goal to facilitate the development of (domain-specific) languages.
 
-In summary, we are aware that the presented numbers are a gross simplification of reality. Nevertheless, ...
+In summary, we are aware that the presented numbers are a gross simplification of reality.
+Nevertheless, ...
 
 Another observation in line with ... is the fact that all ...
 This suggests that the ... is not so much to facilitate ... , but to provide ...
 
 Based on the results, our observations can be summarized as follows:
-– Language workbenches provide adequate abstractions for implementing a language like QL. The results show a marked advantage over manual implementation.
-– The language workbench space is very diverse: different sets of supported features, age ranging from 1 to 18 years, single metalanguage or multiple metalanguages, industry or research, etc. Based on our results it is impossible to conclude that any particular category performs better than others
-
+– Language workbenches provide adequate abstractions for implementing a language like QL.
+The results show a marked advantage over manual implementation.
+– The language workbench space is very diverse: different sets of supported features, age ranging from 1 to 18 years, single metalanguage or multiple metalanguages, industry or research, etc.
+Based on our results it is impossible to conclude that any particular category performs better than others 
 
 we have observed trends towards:
 – Integrating different notation styles (textual, graphical, tabular, symbolic) and editing modes (free-form and projectional).

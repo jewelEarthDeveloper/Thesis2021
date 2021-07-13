@@ -1,69 +1,38 @@
+todo
  Modeling languages, like programming languages, need to be designed if they are to be practical, usable, accepted, and of lasting value.
  
- The key difficulty in producing quality software is specifying and designing the conceptual construct that underlies
-the software [2]. This conceptual construct is usually
-complex
+ The key difficulty in producing quality software is specifying and designing the conceptual construct that underlies the software [2].
+This conceptual construct is usually complex 
 
+A key question to begin our presentation is, ‘For what do we intend to use a modeling language?’ A modeling language, as stated in Ref. [28], is a language used to ‘specify, visualize, construct, and document a software system’.
+Fowler [5] extends this definition to use modeling languages to describe concepts and constructs in the problem domain.
+We use these two definitions as the starting point for our discussion.However, primarily textual modeling languages, such as CSP or B, achieve these intended uses more concisely without the problems of secondary notation [25]
 
-A key question to begin our presentation is, ‘For what do
-we intend to use a modeling language?’ A modeling
-language, as stated in Ref. [28], is a language used to
-‘specify, visualize, construct, and document a software
-system’. Fowler [5] extends this definition to use modeling
-languages to describe concepts and constructs in the
-problem domain. We use these two definitions as the starting point for our discussion.However, primarily textual modeling languages, such as
-CSP or B, achieve these intended uses more concisely
-without the problems of secondary notation [25]
+There is an increasing amount of work on the subject of visualization in a software development context [7,8,24].
 
-There is an increasing amount of work on the subject of
-visualization in a software development context [7,8,24].
-
-? We suggest that there
-are four critical tasks for designers:
+? We suggest that there are four critical tasks for designers:
 1. architectural description;
 2. behavioral description;
-3. system documentation; and
-4. forward and backwards generation
+3. system documentation; and 4. forward and backwards generation 
 
+An evident condition for achieving any of the design goals is the simplicity of the modeling language.
+Without simplicity, the language designer cannot evaluate the consequences of language design decisions, nor can they easily determine if they have met their goals.
+Without simplicity, designers will be overwhelmed by a collection of different abstractions and relationships 
+Hoare, writing about goals in the design of a programming language, says:
+A necessary condition for the achievement of any of these objectives is the utmost simplicity in the design of the language.
 
-An evident condition for achieving any of the design
-goals is the simplicity of the modeling language. Without
-simplicity, the language designer cannot evaluate the consequences of language design decisions, nor can they easily
-determine if they have met their goals. Without simplicity,
-designers will be overwhelmed by a collection of different
-abstractions and relationships
-
-Hoare, writing about goals in the design of a programming
-language, says:
-A necessary condition for the achievement of any of
-these objectives is the utmost simplicity in the design
-of the language.
-
-Hoare describes that some programming language designers have replaced the goal of simplicity with the goal of modularity2 [11], by which it is possible
-for programmers to apply the language by understanding
-only a subset of it. He argues that, in the domain of programming languages, this does not make sense because it is
-possible for programmers to accidentally invoke unknown
-features, and because it is more difficult to satisfy this goal
-than that of simplicity.
+Hoare describes that some programming language designers have replaced the goal of simplicity with the goal of modularity2 [11], by which it is possible for programmers to apply the language by understanding only a subset of it.
+He argues that, in the domain of programming languages, this does not make sense because it is possible for programmers to accidentally invoke unknown features, and because it is more difficult to satisfy this goal than that of simplicity.
 
 
 a hypertext browser.
 
-*Simplicity No unnecessary complexity is
-included in the language.
-*Uniqueness There are no redundant or
-overlapping features.
-*Consistency Language features cooperate to
-meet language design goals.
-*Seamlessness The same abstractions can be
-used throughout development.
-*Reversibility Implementation changes can be
-propagated into the model.
-*Scalability Large and small systems can be
-modeled.
-*Supportability The language is usable by
-humans, and supportable by
-tools.
-*Reliability The language encourages the
-production of reliable software.
+*Simplicity No unnecessary complexity is included in the language.
+*Uniqueness There are no redundant or overlapping features.
+*Consistency Language features cooperate to meet language design goals.
+*Seamlessness The same abstractions can be used throughout development.
+*Reversibility Implementation changes can be propagated into the model.
+*Scalability Large and small systems can be modeled.
+*Supportability The language is usable by humans, and supportable by tools.
+*Reliability The language encourages the production of reliable software.
 Space economy Concise models are produced.

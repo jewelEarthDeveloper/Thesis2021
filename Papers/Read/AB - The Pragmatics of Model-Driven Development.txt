@@ -1,71 +1,43 @@
-AB - The Pragmatics of Model-Driven Development
+todo
+AB - The Pragmatics of Model-Driven Development 
 
+Models help us understand a complex problem and its potential solutions through abstraction.
+Therefore, it seems obvious that software systems, which are often among the most complex engineering systems, can benefit greatly from using models and modeling techniques.
+However, for historical reasons, models in software engineering are infrequent and, even when used, they often play a secondary role 
 
-Models help us
-understand a complex problem and its potential solutions through abstraction. Therefore, it seems obvious that software systems, which are often
-among the most complex engineering systems, can benefit greatly
-from using models and modeling techniques.
-However, for historical reasons, models in
-software engineering are infrequent and, even
-when used, they often play a secondary role
-
-
-Software engineering is in the unfortunate
-position of being a new and relatively immature branch of engineering of which much is
-expected. Seduced by the relative ease of writing code—there is no metal to bend or heavy
-material to move—and compelled by relentless
-market pressures, software users and developers are demanding systems whose complexities
-often exceed our abilities to construct them.
+Software engineering is in the unfortunate position of being a new and relatively immature branch of engineering of which much is expected.
+Seduced by the relative ease of writing code—there is no metal to bend or heavy material to move—and compelled by relentless market pressures, software users and developers are demanding systems whose complexities often exceed our abilities to construct them.
 
 
 MDD’s defining characteristic is that software development’s primary focus and products are models rather than computer programs.
 
-The major advantage of this is that we
-express models using concepts that are much
-less bound to the underlying implementation
-technology and are much closer to the problem
-domain relative to most popular programming
-languages. This makes the models easier to
-specify, understand, and maintain; in some
-cases, it might even be possible for domain experts rather than computing technology specialists to produce systems. It also makes models
-less sensitive to the chosen computing technology and to evolutionary changes to that technology (the concept of platform-independent
-models is often closely connected to MDD).
+The major advantage of this is that we express models using concepts that are much less bound to the underlying implementation technology and are much closer to the problem domain relative to most popular programming languages.
+This makes the models easier to specify, understand, and maintain; in some cases, it might even be possible for domain experts rather than computing technology specialists to produce systems.
+It also makes models less sensitive to the chosen computing technology and to evolutionary changes to that technology (the concept of platform-independent models is often closely connected to MDD).
 
 
-Of course, if models end up merely as documentation, they are of limited value, because
-documentation all too easily diverges from reality. Consequently, a key premise behind MDD
-is that programs are automatically generated
-from their corresponding models.
+Of course, if models end up merely as documentation, they are of limited value, because documentation all too easily diverges from reality.
+Consequently, a key premise behind MDD
+is that programs are automatically generated from their corresponding models.
 
- This is why
-solutions based on so-called round-trip engineering, which automatically converts code
-back into model form, are much more useful.
-One drawback here, though, is that an automated conversion from code to model usually
-can’t perform the kind of abstraction that a
-human can. Therefore, we can attain MDD’s
-full benefits only when we fully exploit its potential for automation. This includes
-■ Automatically generating complete programs from models (as opposed to just
-code skeletons and fragments)
+ This is why solutions based on so-called round-trip engineering, which automatically converts code back into model form, are much more useful.
+One drawback here, though, is that an automated conversion from code to model usually can’t perform the kind of abstraction that a human can.
+Therefore, we can attain MDD’s full benefits only when we fully exploit its potential for automation.
+This includes ■ Automatically generating complete programs from models (as opposed to just code skeletons and fragments)
 ■ Automatically verifying models on a computer (for example, by executing them)
 
 
-The techniques and tools for doing this successfully have now reached a degree of maturity where this is practical even in large-scale
-industrial applications. Modern code generators and related technologies can produce
-code whose efficiency is comparable to (and
-sometimes better than) hand-crafted code.
+The techniques and tools for doing this successfully have now reached a degree of maturity where this is practical even in large-scale industrial applications.
+Modern code generators and related technologies can produce code whose efficiency is comparable to (and sometimes better than) hand-crafted code.
 Even more importantly, we can seamlessly integrate such code generators into existing software production environments and processes.
 This is critical because it minimizes the disruption that occurs when MDD is deployed.
 
 
-To be useful and effective, an engineering
-model must possess, to a sufficient degree, the
-following five key characteristics. The most
-important is abstraction.
-The second key characteristic is understandability
-The third key characteristic of useful models is accuracy.
+To be useful and effective, an engineering model must possess, to a sufficient degree, the following five key characteristics.
+The most important is abstraction.
+The second key characteristic is understandability The third key characteristic of useful models is accuracy.
 Fourth is predictiveness.
-Finally, a model must be inexpensive
-
+Finally, a model must be inexpensive 
 (David Harel compares models that can’t be executed to cars without engines).
 
 

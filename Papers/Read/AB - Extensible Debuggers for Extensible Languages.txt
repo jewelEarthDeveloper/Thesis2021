@@ -1,50 +1,42 @@
-AB - Extensible Debuggers for Extensible Languages
+AB - Extensible Debuggers for Extensible Languages 
 
- Language workbenches significantly reduce the effort for
-building such extensible languages by synthesizing a fully-fledged IDE
-from language definitions. However, in contemporary tools, this synthesis does not include interactive debugging for programs written with the
-base language or its extensions. This paper describes a generic framework
-for extensible debuggers that enables debugging of the language extensions by definig mappings between the base language and the language
-extensions. The architecture is designed for extensibility, so debug support for future extensions can be contributed with little effort. 
+Language workbenches significantly reduce the effort for building such extensible languages by synthesizing a fully-fledged IDE from language definitions.
+However, in contemporary tools, this synthesis does not include interactive debugging for programs written with the base language or its extensions.
+This paper describes a generic framework for extensible debuggers that enables debugging of the language extensions by definig mappings between the base language and the language extensions.
+The architecture is designed for extensibility, so debug support for future extensions can be contributed with little effort. 
 
-Programming languages such as C, Java or Python contain a fixed set of language construct and cannot easily be extended. The debuggers for such languages
-can be hand-crafted specifically for the constructs provided by the language. In
-contrast, modern language engineering allows the development of extensible languages [14, 13]. This allows users to add new constructs to a language in an
-incremental and modular way. These languages are used to describe solutions
-for technical or domain-specific problems on a higher level of abstraction. This
-approach supports domain-specific validation and verification of developed system at the same abstraction level as the problem. Thus it delivers improvements
-in reliability
+Programming languages such as C, Java or Python contain a fixed set of language construct and cannot easily be extended.
+The debuggers for such languages can be hand-crafted specifically for the constructs provided by the language.
+In contrast, modern language engineering allows the development of extensible languages [14, 13].
+This allows users to add new constructs to a language in an incremental and modular way.
+These languages are used to describe solutions for technical or domain-specific problems on a higher level of abstraction.
+This approach supports domain-specific validation and verification of developed system at the same abstraction level as the problem.
+Thus it delivers improvements in reliability 
+The foundation is MPS, which supports language definition.
+Its distinctive feature is its projectional editor, which unlike textual editors, does not rely on a parser.
+Instead, the visual notation is a projection of the Abstract Syntax Tree (AST).
+This means, every change performed by the user is directly reflected in the AST.
 
-The foundation is MPS, which
-supports language definition. Its distinctive feature is its projectional editor,
-which unlike textual editors, does not rely on a parser. Instead, the visual notation is a projection of the Abstract Syntax Tree (AST). This means, every
-change performed by the user is directly reflected in the AST.
+Defining a language or extension in MPS comprises the following steps: structure (syntax or meta model), the concrete syntax (editor definition in MPS), the type system (for defining and checking typing rules), a generator (for mapping extensions to the base language), various IDE features such as quick fixes or refactorings, and of course the debugger.
+This section only discusses aspects important for debugger definition.
+For a more detailed discussion of language extension we refer to [13]. 
 
-Defining a language or extension in MPS comprises the following steps: structure
-(syntax or meta model), the concrete syntax (editor definition in MPS), the
-type system (for defining and checking typing rules), a generator (for mapping
-extensions to the base language), various IDE features such as quick fixes or
-refactorings, and of course the debugger. This section only discusses aspects
-important for debugger definition. For a more detailed discussion of language
-extension we refer to [13]. 
+A particularly important feature of MPS as a language workbench is its support for modular language extension, where an extension lives in its own language module.
+While such a module may depend on (and use concepts from) a base language, it cannot invasively change this base language.
 
-A particularly important feature of MPS as a language workbench is its
-support for modular language extension, where an extension lives in its own
-language module. While such a module may depend on (and use concepts from)
-a base language, it cannot invasively change this base language.
+Debuggers for extensible languages should provide the same functionality as the corresponding base language debugger.
+This includes debug commands (stepping and breakpoints) and inspection of the program state (watches and call stack).
 
-Debuggers for extensible languages should provide the same functionality as the
-corresponding base language debugger. This includes debug commands (stepping
-and breakpoints) and inspection of the program state (watches and call stack).
 
-. To enable debugging on the abstraction level of
-extensions, a mapping must be implemented between the base language debugger
-and the program as represented on the extension-leve
-
-MPS allows the composition of multiple independently developed language extensions in a single program
-
+To enable debugging on the abstraction level of extensions, a mapping must be implemented between the base language debugger and the program as represented on the extension-leve 
+MPS allows the composition of multiple independently developed language extensions in a single program 
 Extensible languages are a good compromise between general-purpose and domain-specific languages because they can grow towards a domain incrementally.
 In addition, they enable validation and verification on the problem-level, by reducing propagation of possible errors into base language code.
 
-[14]	Voelter, M., Visser, E.: Language Extension and Composition with Language Workbenches. In: Companion to the 25th Annual ACM SIGPLAN Conference on Object-Oriented Programming, Systems, Languages, and Applications, SPLASH/OOPSLA. pp. 301–304. ACM, New York, NY, USA (2010)
+
+
+
+[14]	Voelter, M., Visser, E.: Language Extension and Composition with Language Workbenches.
+In: Companion to the 25th Annual ACM SIGPLAN Conference on Object-Oriented Programming, Systems, Languages, and Applications, SPLASH/OOPSLA. pp. 301–304.
+ACM, New York, NY, USA (2010)
 

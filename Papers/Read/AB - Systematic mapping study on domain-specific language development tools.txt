@@ -1,0 +1,151 @@
+todo
+AB - Systematic mapping study on domain-specific language development tools 
+Domain-specific languages (DSL) are programming or modeling languages devoted to a given application domain.
+
+There are many tools used to support the implementation of a DSL, making hard the decision-making process for one or another.
+
+In this sense, identifying and mapping their features is relevant for decision-making by academic and industrial initiative on DSL development.
+
+To reach this independence from platforms, i.e. through a software development project agnostic from implementation details, the creation of a new DSL may be needed to capture domain concepts.
+
+However, creating a new DSL is not a trivial task and it demands the use of many DSL development tools.
+
+These tools support the process of developing and maintaining DSLs, ensuring their consistency, evolution, and maintainability.
+
+Moreover, the tools may include code generators, validators, and model checkers, as well as lexical, semantic, and syntactic analyzers Workbenches (LWs) (Fowler 2010), and their usage processes are usually expressed as toolchains (Jakumeit et al. 2014).
+
+DSLs, also known as Little Languages, Small Languages, Special Purpose Languages, or Domain-Specific Modeling Languages (DSML), is defined as “computer programming languages with limited expressiveness that have focus on a specific domain” (Mernik et al. 2005).
+
+To develop DSLs, tools called Language Workbenches (LWs) are used.
+
+According to Wachsmuth et al. (2014), LWs provide “high-level mechanisms for implementing programming languages and make affordable the development of new languages”.
+
+LWs facilitate not only the definition of semantic and syntactic analyzers, but also provide support to create a custom edition environment for the language, as well as other language-based tools such as model debuggers (Wu et al. 2008), model compilers (Henriques et al. 2002) and model test engines LWs may be used as standalone versions or in combination with frameworks.
+
+According to Johnson (1997), “a framework is a skeleton of an application that is able to be customized by a developer”.
+
+According to the Meta-Object Facility (MOF) specification (OMG 2019), “a metamodel is a model that consists of statements about models, a metamodel is also a model but its universe of discourse is a set of models”.
+
+A metamodel contains statements about the constructs used in a system and is an abstraction of a model (Jeusfeld 2009).
+
+Furthermore, metamodels are used to define DSLs for graphical and textual languages (Schmidt 2006).
+
+Notation Mandatory notation supported by LWs.
+
+It determines whether the models or programs will be presented in a textual, graphical, or tabular form.
+
+It is also possible to use them in a hybrid way, using one or more notations.
+
+Existing notation types are: Textual, Graphic, Tabular, Symbolic, which is a sub-feature of Tabular.
+
+According to Erdweg et al. (2013), “the notation can be a mix of textual, graphical, and tabular notations, where textual notation may optionally support symbols such as integrals or fraction bars embedded in regular text”.
+
+
+Semantics Concerns the meaning of the models and can be categorized as translational or interpretative semantics.
+
+Translational semantics generates a program in some language from a model.
+
+Interpretative semantics, are directed at the execution of a model without a previous translation 
+Editor Support The editor support in LWs contains a sub-feature called editing mode, which is divided in two ways: free-form edition, as a common editor of the textual type, where the user is free to write and edit a template; and projectional edition, where the user works with predefined and fixed layouts.
+
+Also, the editor support has two types of services: Syntactic Service and Semantic Service.
+
+Syntactic Services consist of: Visual highlighting such as coloring text for textual language; Navigation support for outline view; Folding part of a model; Syntactic completion templates to suggest code; Comparison of programs, i.e. via diff tool; Auto formatting, restructuring, or aligning of a model’s presentation.
+
+On the other hand, semantic services consist of a reference resolution to link concepts such as declarations and variables; Code assists through semantic completion that blends semantic information such as reference resolution; Semantics-preserving refactoring of programs or models such as rename a class and move an attribute; Error markers for highlighting inconsistent structural features or violation of object constraints; Quick fixes to fix an error; Origin tracking and tracing models; and code derived from live translations.
+
+Validation: LW’s capability to identify structural, syntactic, and semantic disagreements and inconsistencies between models and metamodels.
+
+Types of validation: Structural validation and semantic validation, split into Naming, Types, and Programmatic.
+
+Testing: Support provided by LWs for language testing, both for semantic (translation or interpretation) and syntactic testing (parser or projections).
+
+Testing aims language debugging and the development of language debuggers.
+
+Types of test support: DSL testing, debugging the DSL language definition (DSL debugging), and debuggers for the defined language (DSL Program Debugging).
+
+Composability: A feature provided by LWs allowing the use of multiple languages to address different aspects of the system, such as support to incremental extension and linguistic alignment.
+
+For example, metamodels composed by other metamodels, or metamodels including structural features from others.
+
+Features related to composability: Syntax/Views, Composability Validation, Composability Semantics, and Editor Services.
+
+Language Workbench Development technologies exclusively aimed to build DSL in an integrated environment (a package of tools, toolbox).
+
+The workbench supports the definition of languages and their integration with the environment of interest (Fowler 2010), thus characterizing supersets Utility Tools A unique component or a set of components which may be used to solve a specific problem in a specific domain or used in the DSL development, offering optional utility features for the other ones.
+
+
+Notation Determine the presentation of models and programs.
+
+Such presentations may be in textual, graphical, or tabular form.
+
+Also, the models may be presented in a hybrid form.
+
+Semantics The categorization of language semantics.
+
+This may be categorized as translational or interpretative semantics.
+
+Edit mode The way how end-users interact with the Tool, LW, or Framework.
+
+It may be divided in two ways: free form edition and projectional edition.
+
+Syntactic service Consists in support syntactic features such as navigation support for outline view, text coloring for textual language, folding a model, completion templates to suggest code and auto-formatting.
+
+Semantic service Consists of semantic features such as code assist through semantic completion, semantics-preserving refactoring of programs or models, error markers to highlight the involved model and quick fixes to fix an error.
+
+Validation Ability to identify structural, syntactic and semantic disagreements and inconsistencies between models and metamodels.
+
+Testing Support for language testing, both for semantic and syntactic testing.
+
+Composability Allows the use of multiple languages, aiming at different aspects of the system.
+
+WORDS I SHOULD BE USING: 
+Table 5 List of Potential Features of DSL-Supporting Tools (Erdweg et al. 2015)
+Features:
+Textual 
+Naming 
+Editor Services 
+Reference Resolution Graphical 
+Types 
+Free-form 
+Semantic Completion Tabular 
+Programmatic 
+Projectional 
+Refactoring Symbols 
+DSL Testing 
+Highlighting 
+Error Marking Model2Text 
+DSL Debugging 
+Outline 
+Quick Fixes Model2Model 
+DSL Progr.
+
+Debugging 
+Folding 
+Origin Tracking Concrete Syntax 
+Syntax/Views 
+Syntactic Completion 
+Live Translation Interpretative 
+Validation 
+Diff Structural 
+Semantics 
+Auto Formatting 
+For this group, we used all the 34 features originally proposed for Language Workbenches (Erdweg et al. 2013), which are more complete toolboxes integrating homogeneous tools and delivering an environment that covers more aspects of the DSL development process.
+
+In this sense, it is worth highlighting the completeness of non-commercial LWs named Xtext, MPS and GEMOC Studio, as well as MetaEdit+.
+
+Six LWs cover both types of notation, graphical and textual.
+
+Among these LWs, we have GEMOC Studio and MPS, two non-commercial LWs that are still being maintained.
+
+GEMOC Studio is the only tool that contains a bi-directional representation of its models.
+
+That means that changes made in the textual model are also made in the graphical model in real-time and the opposite as well.
+
+GEMOC Studio is built on top of EMF, Xtext, and Sirius, being the reason why GEMOC Studio is one of the most complete open-source tools.
+
+GEMOC Studio also supports semantic execution and model simulation.
+
+Considering MPS,besides the graphical and textual notation, it also covers tabular specifications (feature 03).
+
+However, the graphical representation of the model (feature 02) was mentioned by (Erdweg et al. 2015) as being partially implemented in the LW

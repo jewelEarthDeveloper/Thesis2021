@@ -1,106 +1,58 @@
-AB - FASTEN: An Open Extensible Framework to Experiment with Formal Specification Approaches
+AB - FASTEN: An Open Extensible Framework to Experiment with Formal Specification Approaches 
 
+To show the feasibility of the approach, we release an open-source tool based on Jetbrains’ MPS language workbench that provides an extensible stack of more than ten DSLs, situated at different levels of abstraction, built on top of the SMV language. 
 
-To
-show the feasibility of the approach, we release an open-source
-tool based on Jetbrains’ MPS language workbench that provides
-an extensible stack of more than ten DSLs, situated at different
-levels of abstraction, built on top of the SMV language. 
-
-When modeling large systems, it is often the case that
-different parts of the system differ at the conceptual level.
-For example, a component might represent a state machine,
-another might encode a complex decision table, and yet
-another might simple exist to pack and unpack signals When
-working in a setting where only state machines are allowed,
-we will have to encode the other two systems in a very
-2https://sites.google.com/site/fastenroot/
-3https://github.com/mbeddr/mbeddr.formal
-unnatural way, making the model unnecessarily complex and
-hiding the original intent of the designer
-
-At the next abstraction level, we include the specification of
-architectures using contract-based design. This DSL is inspired
-by the powerful functionality of OCRA [5] and has the
-following constructs: interfaces specified with the help of
-typed input and output ports, contracts providing pre- and
-postconditions as LTL expressions, and assemblies
-which represent composition of components. interfaces
-can be put in relation to corresponding SMV MODULEs which
-are used to implement them
-
-Our work relies on language engineering technologies,
-which refer to defining, extending and composing programming and domain-specific languages (DSLs) and tooling. Language workbenches are tools that support efficient language
-engineering. Our work is based on the language workbench
-MPS4 which supports all aspects of the definition of DSLs
-such as abstract syntax, advanced editors, context-sensitive
-constraints, code generators, and analysers. To make the paper
-self contained we briefly enumerate below the core features of
-MPS which we use to build FASTEN, a detailed presentation
-of MPS is beyond the scope of this paper and can be found
-in [7]–[9]
+When modeling large systems, it is often the case that different parts of the system differ at the conceptual level.
+For example, a component might represent a state machine, another might encode a complex decision table, and yet another might simple exist to pack and unpack signals When working in a setting where only state machines are allowed, we will have to encode the other two systems in a very https://sites.google.com/site/fastenroot/ https://github.com/mbeddr/mbeddr.formal unnatural way, making the model unnecessarily complex and hiding the original intent of the designer 
+At the next abstraction level, we include the specification of architectures using contract-based design.
+This DSL is inspired by the powerful functionality of OCRA [5] and has the following constructs: interfaces specified with the help of typed input and output ports, contracts providing pre- and postconditions as LTL expressions, and assemblies which represent composition of components. interfaces can be put in relation to corresponding SMV MODULEs which are used to implement them 
+Our work relies on language engineering technologies, which refer to defining, extending and composing programming and domain-specific languages (DSLs) and tooling.
+Language workbenches are tools that support efficient language engineering.
+Our work is based on the language workbench MPS4 which supports all aspects of the definition of DSLs such as abstract syntax, advanced editors, context-sensitive constraints, code generators, and analysers.
+To make the paper self contained we briefly enumerate below the core features of MPS which we use to build FASTEN, a detailed presentation of MPS is beyond the scope of this paper and can be found in [7]–[9]
 
 a) Domain Appropriate Notations: At the core of MPS
-is a projectional editor. In a projectional editor, the user’s
-editing actions lead directly to changes in the abstract syntax
-tree. No grammar or parser is involved. Projection rules render
-a concrete syntax from the abstract syntax tree. By decoupling
-the abstract syntax from the concrete syntax, it becomes easier
-to provide multiple notations for the same language constructs,
-including non-textual notations such as tables or diagrams.
+is a projectional editor.
+In a projectional editor, the user’s editing actions lead directly to changes in the abstract syntax tree.
+No grammar or parser is involved.
+Projection rules render a concrete syntax from the abstract syntax tree.
+By decoupling the abstract syntax from the concrete syntax, it becomes easier to provide multiple notations for the same language constructs, including non-textual notations such as tables or diagrams.
 
-b) Modular and Extensible Language Eco-systems: The
-abstract syntax used to define an MPS language is defined
-via a meta-model. The meta-model describes and puts in
-relation various entities in the language, as typically done in
-regular object-oriented design. Since no parser is involved,
-grammar ambiguities cannot happen and existing languages
-can be extended with new constructs in a modular fashion
+b) Modular and Extensible Language Eco-systems: The abstract syntax used to define an MPS language is defined via a meta-model.
+The meta-model describes and puts in relation various entities in the language, as typically done in regular object-oriented design.
+Since no parser is involved, grammar ambiguities cannot happen and existing languages can be extended with new constructs in a modular fashion 
 
-c) Rich Context Sensitive Constraints: Beside new constructs, a language extension in MPS also contains different
-constraints which are essential mechanisms to increase the
-usability of the IDE by guiding users towards the creation
-of valid models. MPS offers different mechanisms for defining context sensitive constraints – e.g. scoping rules, typing
-equations or arbitrary checks written in Java. Some constraints
-prevent the construction of invalid models up-front; others lead
-to errors in the editor when they are violated.
+c) Rich Context Sensitive Constraints: Beside new constructs, a language extension in MPS also contains different constraints which are essential mechanisms to increase the usability of the IDE by guiding users towards the creation of valid models.
+MPS offers different mechanisms for defining context sensitive constraints – e.g. scoping rules, typing equations or arbitrary checks written in Java.
+Some constraints prevent the construction of invalid models up-front; others lead to errors in the editor when they are violated.
 
 
-) Modular and stackable model transformations: MPS
-offers two kinds of transformations: model-to-model transformations and text generation. Implementing our approach
-requires mostly a transformation of a model given in one
-language into a model of another language at a lower abstraction level. Only at the very end of the transformation
-chain a text generator is used to output a text representation
-used for downstream compilation. Because the transformations
-typically convert an abstract model to a more detailed model,
-DSLs and their model-to-model generators form a stack.
+d) Modular and stackable model transformations: MPS offers two kinds of transformations: model-to-model transformations and text generation.
+Implementing our approach requires mostly a transformation of a model given in one language into a model of another language at a lower abstraction level.
+Only at the very end of the transformation chain a text generator is used to output a text representation used for downstream compilation.
+Because the transformations typically convert an abstract model to a more detailed model, DSLs and their model-to-model generators form a stack.
  
  
  [a good way to describe my drools base language]
-The SMV base language uses only text generators to produce ”.smv” files from models. All other extensions on top of
-the SMV base language use model-to-model transformations
-to reduce their constructs to the SMV base language.
+The SMV base language uses only text generators to produce ”.smv” files from models.
+All other extensions on top of the SMV base language use model-to-model transformations to reduce their constructs to the SMV base language.
 
 
  [interesting extra functionality]
-e) Advanced IDE and Tooling: MPS offers by default
-support for models authoring (auto-completion, syntax highlighting), for distributed development (diffing and merging at
-model level) and for an integration of external tools.
-FASTEN features an advanced editor for SMV and all
-extensions, integrates deeply the NuSMV tool and lets the
-verification results be displayed directly in the IDE, counterexamples simulated and models animated. Furthermore, we
-support full traceability between high level models and the
-generated code to ease reviews and validation.
+e) Advanced IDE and Tooling: MPS offers by default support for models authoring (auto-completion, syntax highlighting), for distributed development (diffing and merging at model level) and for an integration of external tools.
+FASTEN features an advanced editor for SMV and all extensions, integrates deeply the NuSMV tool and lets the verification results be displayed directly in the IDE, counterexamples simulated and models animated.
+Furthermore, we support full traceability between high level models and the generated code to ease reviews and validation.
 
-Users immediately appreciate the
-diagrammatic notation of architectures, semantically rich interfaces via contracts, the possibility to model state-machines,
-function tables, and (generalized) unit tests. Being able to
-create tests, execute them, and animate the model drastically
-ease the understanding process
+Users immediately appreciate the diagrammatic notation of architectures, semantically rich interfaces via contracts, the possibility to model state-machines, function tables, and (generalized) unit tests.
+Being able to create tests, execute them, and animate the model drastically ease the understanding process 
 
 
 
-[6]	A. Wassyng and R. Janicki, “Tabular expressions in software engineering,” in International Conference on Software and Systems and their Application (ICSSEA), 2003.
+
+
+[6]	A.
+Wassyng and R.
+Janicki, “Tabular expressions in software engineering,” in International Conference on Software and Systems and their Application (ICSSEA), 2003.
 
 [10]	J. van den Bos and T. van der Storm, “A case study in evidence-based dsl evolution,” in Modelling Foundations and Applications, 2013.
 

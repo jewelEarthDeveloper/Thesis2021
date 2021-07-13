@@ -1,26 +1,22 @@
-AB - Requirements as First-Class Citizens: Integrating Requirements Directly with Implementation Artifacts
-
+todo
+AB - Requirements as First-Class Citizens: Integrating Requirements Directly with Implementation Artifacts 
 
 mbeddr builds on the JetBrains MPS language workbench5
-, a tool that supports the definition, composition and integrated use of general purpose or domain-specific languages. MPS uses a projectional editor, which means that, although a syntax may look textual, it is not
-represented as a sequence of characters which are transformed into an abstract
-syntax tree (AST) by a parser. Instead, a user’s editing actions lead directly to
-changes in the AST. Projection rules render a concrete syntax from the AST.
-Consequently, MPS supports non-textual notations such as tables or mathematical symbols, and it also supports wide-ranging language composition and
-extension – no parser ambiguities can ever occur when combining languages.
+, a tool that supports the definition, composition and integrated use of general purpose or domain-specific languages.
+MPS uses a projectional editor, which means that, although a syntax may look textual, it is not represented as a sequence of characters which are transformed into an abstract syntax tree (AST) by a parser.
+Instead, a user’s editing actions lead directly to changes in the AST.
+Projection rules render a concrete syntax from the AST.
+Consequently, MPS supports non-textual notations such as tables or mathematical symbols, and it also supports wide-ranging language composition and extension – no parser ambiguities can ever occur when combining languages.
 
-The tooling described in this paper solves some important challenges in requirements engineering. However, it is assumed that all artifacts
-reside in MPS, which limits the applicability of the approach (an import/export
-facility for requirements is provided, though). On the other hand, mbeddr demonstrates the benefits of building tool suites on top of a language workbench like
-MPS. In our opinion, this trade-off is worthwhile.
+The tooling described in this paper solves some important challenges in requirements engineering.
+However, it is assumed that all artifacts reside in MPS, which limits the applicability of the approach (an import/export facility for requirements is provided, though).
+On the other hand, mbeddr demonstrates the benefits of building tool suites on top of a language workbench like MPS.
+In our opinion, this trade-off is worthwhile.
 
- the
-product manager has expressed that he is very happy using it. Also, we are
-currently in the process of introducing a similar tool to business users in the
-insurance domain. In both cases, the ability to use domain-specific abstractions
-and notations such as tables or formulas were cited as a major advantage
-
-e. This is because the actual tool,
-JetBrains MPS, is essentially a very powerful editor for any kind of language.
+ the product manager has expressed that he is very happy using it.
+Also, we are currently in the process of introducing a similar tool to business users in the insurance domain.
+In both cases, the ability to use domain-specific abstractions and notations such as tables or formulas were cited as a major advantage 
+e.
+This is because the actual tool, JetBrains MPS, is essentially a very powerful editor for any kind of language.
 
 

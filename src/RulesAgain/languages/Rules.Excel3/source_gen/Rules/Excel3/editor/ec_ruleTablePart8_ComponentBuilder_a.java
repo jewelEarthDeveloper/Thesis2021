@@ -41,18 +41,12 @@ import de.slisson.mps.tables.runtime.gridmodel.StringHeaderReference;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import de.slisson.mps.tables.runtime.style.HorizontalAlignment;
 import de.slisson.mps.tables.runtime.gridmodel.GridAdapter;
 import de.slisson.mps.tables.runtime.substitute.SubstituteInfoFactory;
 import de.slisson.mps.tables.runtime.gridmodel.ITableGrid;
 import Rules.Excel3.behavior.RuleCollection__BehaviorDescriptor;
 import Rules3.behavior.RuleStatement__BehaviorDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import de.slisson.mps.tables.runtime.style.HorizontalAlignment;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import de.slisson.mps.tables.runtime.gridmodel.IGridElement;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -62,8 +56,8 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SEmptyContainmentSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 /*package*/ class ec_ruleTablePart8_ComponentBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -219,15 +213,19 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
     return grid;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "rule");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "rule name");
     editorCell.setCellId("Constant_36o78q_a0a0a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
     style.set(StyleAttributes.FONT_SIZE, 14);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(43520)));
+    style.set(StyleAttributes.getInstance().<HorizontalAlignment>getAttribute("de.slisson.mps.tables", "horizontal-alignment"), _StyleParameter_QueryFunction_36o78q_a3a0a0a());
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+  private HorizontalAlignment _StyleParameter_QueryFunction_36o78q_a3a0a0a() {
+    return HorizontalAlignment.CENTER;
   }
   private Color _StyleParameter_QueryFunction_36o78q_a0a0a0() {
     return ((getNode() == null) ? new Color(228, 233, 237) : new Color(228, 233, 237));
@@ -252,33 +250,21 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 
         SNode rulesCollection = SNodeOperations.getNodeAncestor(node, CONCEPTS.RuleCollection$jd, false, false);
 
-        Iterable<SNode> factsInCollection = RuleCollection__BehaviorDescriptor.factsInCollection_id7mXf2twMdrP.invoke(rulesCollection);
-
-        Iterable<SNode> factsWithVars = RuleCollection__BehaviorDescriptor.factsWithVariablesInCollection_id6keRPa96D_1.invoke(rulesCollection);
-
         Iterable<SNode> props = RuleCollection__BehaviorDescriptor.propertiesInCollection_id6keRPa8DhEy.invoke(rulesCollection);
 
-        // set grid to empty cells 
-        grid.setSize(Sequence.fromIterable(props).count() + Sequence.fromIterable(factsWithVars).count(), (int) RuleStatement__BehaviorDescriptor.maxFactOccurence_id4_O$GD8oE6h.invoke(node));
-        for (int i = 0; i < grid.getSizeX(); i++) {
-          for (int j = 0; j < grid.getSizeY(); j++) {
-            grid.setCell(i, j, SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x993797d3830647edL, 0xba6d94925225abc2L, 0x497492ca488a22daL, "Rules.Excel3.structure.EmptyCell")));
-            grid.getCell(i, j).getStyle().set(StyleAttributes.getInstance().<Color>getAttribute("de.slisson.mps.tables", "shade-color"), Color.LIGHT_GRAY);
-          }
-        }
+        grid.setSize(Sequence.fromIterable(props).count() + Sequence.fromIterable(RuleCollection__BehaviorDescriptor.factsInCollection_id7mXf2twMdrP.invoke(rulesCollection)).count(), (int) RuleStatement__BehaviorDescriptor.maxFactOccurence_id4_O$GD8oE6h.invoke(node));
 
         // make headers 
         int colNr = 0;
         for (SNode fact : Sequence.fromIterable(RuleCollection__BehaviorDescriptor.factsInCollection_id7mXf2twMdrP.invoke(rulesCollection))) {
-          int colspan = (int) RuleCollection__BehaviorDescriptor.propsAndVarsInFact_id4_O$GD8Bm5y.invoke(rulesCollection, fact);
+          int colspan = (int) RuleCollection__BehaviorDescriptor.propCountForFact_id5ER99ai_va_.invoke(rulesCollection, fact) + 1;
 
           grid.setColumnHeader(colNr, headerFactRow, colspan, 1, fact);
           grid.setColumnHeaderStyle(colNr, headerFactRow, StyleAttributes.getInstance().<HorizontalAlignment>getAttribute("de.slisson.mps.tables", "horizontal-alignment"), HorizontalAlignment.CENTER);
 
-          if ((boolean) RuleCollection__BehaviorDescriptor.factHasVar_id4_O$GD8CmaS.invoke(rulesCollection, fact)) {
-            grid.setColumnHeader(colNr, headerPropRow, "var");
-            colNr++;
-          }
+          grid.setColumnHeader(colNr, headerPropRow, "$");
+          colNr++;
+
           for (SNode prop : Sequence.fromIterable(RuleCollection__BehaviorDescriptor.propsFromFact_id4_O$GD8CABI.invoke(rulesCollection, fact))) {
             grid.setColumnHeader(colNr, headerPropRow, prop);
             grid.setColumnHeaderStyle(colNr, headerPropRow, StyleAttributes.getInstance().<HorizontalAlignment>getAttribute("de.slisson.mps.tables", "horizontal-alignment"), HorizontalAlignment.CENTER);
@@ -286,67 +272,16 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
           }
         }
 
-        // add cells 
-        colNr = 0;
-        for (final SNode fact : Sequence.fromIterable(factsInCollection)) {
-          Iterable<SNode> selectorsOfFact = ListSequence.fromList(SNodeOperations.getNodeDescendants(node, CONCEPTS.FactSelector$4_, false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return Objects.equals(SLinkOperations.getTarget(SLinkOperations.getTarget(it, LINKS.fact$id2P), LINKS.target$Q83w), fact);
+        for (int i = 0; i < grid.getSizeX(); i++) {
+          for (int j = 0; j < grid.getSizeY(); j++) {
+            SNode createdNode = RuleCollection__BehaviorDescriptor.getNodeOrEmptyfromPosition_id3YYeoU0ZCCJ.invoke(rulesCollection, node, ((int) i), ((int) j));
+            grid.setCell(i, j, createdNode);
+            if ((createdNode == null)) {
+              grid.setSubstituteInfo(i, j, RuleCollection__BehaviorDescriptor.createSubstituteInfo_id5ER99aic6Ui.invoke(rulesCollection, editorContext, node, ((int) i), ((int) j)));
+              if (!((boolean) RuleCollection__BehaviorDescriptor.isVariableColumn_id5ER99ai_N5W.invoke(rulesCollection, ((int) i))) || !((boolean) RuleCollection__BehaviorDescriptor.variableCellHasFact_id7u$IkXPL4ZA.invoke(rulesCollection, node, ((int) i), ((int) j)))) {
+                grid.getCell(i, j).getStyle().set(StyleAttributes.getInstance().<Color>getAttribute("de.slisson.mps.tables", "shade-color"), Color.LIGHT_GRAY);
+              }
             }
-          });
-
-          if (Sequence.fromIterable(factsWithVars).contains(fact)) {
-            Iterable<SNode> selectorsWithVars = Sequence.fromIterable(selectorsOfFact).where(new IWhereFilter<SNode>() {
-              public boolean accept(SNode it) {
-                return (SLinkOperations.getTarget(it, LINKS.variable$fg6S) != null);
-              }
-            });
-
-            SNode variable = SLinkOperations.getTarget(Sequence.fromIterable(selectorsWithVars).first(), LINKS.variable$fg6S);
-            int factRow = 0;
-
-            for (SNode restrictionX : Sequence.fromIterable(selectorsWithVars).select(new ISelector<SNode, SNode>() {
-              public SNode select(SNode it) {
-                return SLinkOperations.getTarget(it, LINKS.variable$fg6S);
-              }
-            })) {
-              grid.setCell(colNr, factRow, variable);
-              if ((variable != null)) {
-                grid.getCell(colNr, factRow).getStyle().set(StyleAttributes.getInstance().<Color>getAttribute("de.slisson.mps.tables", "shade-color"), Color.WHITE);
-              }
-              factRow++;
-            }
-            colNr++;
-          }
-
-          for (final SNode prop : Sequence.fromIterable(RuleCollection__BehaviorDescriptor.propsFromFact_id4_O$GD8CABI.invoke(rulesCollection, fact))) {
-
-            Iterable<SNode> constraints = Sequence.fromIterable(selectorsOfFact).translate(new ITranslator2<SNode, SNode>() {
-              public Iterable<SNode> translate(SNode it) {
-                return SNodeOperations.ofConcept(SLinkOperations.getChildren(it, LINKS.constraints$YjI3), CONCEPTS.FieldConstraint$7z);
-              }
-            }).where(new IWhereFilter<SNode>() {
-              public boolean accept(SNode it) {
-                return Objects.equals(SLinkOperations.getTarget(SLinkOperations.getTarget(it, LINKS.fieldName$6Hj0), LINKS.property$rsy0), prop);
-              }
-            });
-
-            int factRow = 0;
-            for (SNode restriction : Sequence.fromIterable(constraints).select(new ISelector<SNode, SNode>() {
-              public SNode select(SNode it) {
-                return SLinkOperations.getTarget(it, LINKS.restriction$jwYY);
-              }
-            })) {
-              grid.setCell(colNr, factRow, restriction);
-              if ((restriction != null)) {
-                grid.getCell(colNr, factRow).getStyle().set(StyleAttributes.getInstance().<Color>getAttribute("de.slisson.mps.tables", "shade-color"), Color.WHITE);
-              }
-
-
-              factRow++;
-            }
-
-            colNr++;
           }
         }
       }
@@ -379,7 +314,7 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
       leaf.setStyle(style);
       grid.setElement(0, 0, leaf);
     }
-    grid.setColumnHeaders(0, 0, createStaticHeader_36o78q_a2a0(editorContext, node));
+    grid.setColumnHeaders(0, 0, createEditorCellHeader_36o78q_a2a0(editorContext, node));
 
     return grid;
   }
@@ -438,7 +373,8 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
       return "<no outcomes>";
     }
   }
-  public HeaderGrid createStaticHeader_36o78q_a2a0(final EditorContext editorContext, final SNode snode) {
+  public HeaderGrid createEditorCellHeader_36o78q_a2a0(final EditorContext editorContext, final SNode node) {
+    HeaderGrid grid = new HeaderGrid();
     final Style style = new ITableStyleFactory() {
       public Style createStyle(final int columnIndex, final int rowIndex) {
         Style style = new StyleImpl();
@@ -446,13 +382,26 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
         return style;
       }
     }.createStyle(0, 0);
-    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "outcome", false);
-    Header header = new EditorCellHeader(new StringHeaderReference("outcome"), cell);
-    header.setLabel("outcome");
+    final EditorCell cell = createConstant_1();
+    Header header = new EditorCellHeader(new StringHeaderReference("8621219337625677399"), cell);
     header.setStyle(style);
-    HeaderGrid grid = new HeaderGrid();
     grid.setElement(0, 0, header);
     return grid;
+  }
+  private EditorCell createConstant_1() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Actions");
+    editorCell.setCellId("Constant_36o78q_a0c0a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+    style.set(StyleAttributes.FONT_SIZE, 14);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(11145472)));
+    style.set(StyleAttributes.getInstance().<HorizontalAlignment>getAttribute("de.slisson.mps.tables", "horizontal-alignment"), _StyleParameter_QueryFunction_36o78q_a3a0c0a());
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private HorizontalAlignment _StyleParameter_QueryFunction_36o78q_a3a0c0a() {
+    return HorizontalAlignment.CENTER;
   }
 
   private static final class PROPS {
@@ -462,18 +411,9 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
   private static final class CONCEPTS {
     /*package*/ static final SConcept PropertyAttribute$Gb = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute");
     /*package*/ static final SConcept RuleCollection$jd = MetaAdapterFactory.getConcept(0x993797d3830647edL, 0xba6d94925225abc2L, 0x75bd3c2760c11ea0L, "Rules.Excel3.structure.RuleCollection");
-    /*package*/ static final SConcept FactSelector$4_ = MetaAdapterFactory.getConcept(0xfd191ffbab394c9cL, 0xb211e8ff05fd03b0L, 0x47aa13e870db4d31L, "Rules3.structure.FactSelector");
-    /*package*/ static final SConcept FieldConstraint$7z = MetaAdapterFactory.getConcept(0xfd191ffbab394c9cL, 0xb211e8ff05fd03b0L, 0x7e19241b9eba05afL, "Rules3.structure.FieldConstraint");
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink fact$id2P = MetaAdapterFactory.getContainmentLink(0xfd191ffbab394c9cL, 0xb211e8ff05fd03b0L, 0x47aa13e870db4d31L, 0x47aa13e870db8104L, "fact");
-    /*package*/ static final SReferenceLink target$Q83w = MetaAdapterFactory.getReferenceLink(0xfd191ffbab394c9cL, 0xb211e8ff05fd03b0L, 0x7e19241b9e725f44L, 0x7e19241b9e725f45L, "target");
-    /*package*/ static final SContainmentLink variable$fg6S = MetaAdapterFactory.getContainmentLink(0xfd191ffbab394c9cL, 0xb211e8ff05fd03b0L, 0x47aa13e870db4d31L, 0x7e19241b9e75ddb7L, "variable");
-    /*package*/ static final SContainmentLink constraints$YjI3 = MetaAdapterFactory.getContainmentLink(0xfd191ffbab394c9cL, 0xb211e8ff05fd03b0L, 0x47aa13e870db4d31L, 0x7e19241b9eba0614L, "constraints");
-    /*package*/ static final SContainmentLink fieldName$6Hj0 = MetaAdapterFactory.getContainmentLink(0xfd191ffbab394c9cL, 0xb211e8ff05fd03b0L, 0x7e19241b9eba05afL, 0x7e19241b9eba05b0L, "fieldName");
-    /*package*/ static final SReferenceLink property$rsy0 = MetaAdapterFactory.getReferenceLink(0xfd191ffbab394c9cL, 0xb211e8ff05fd03b0L, 0x7e19241b9e793468L, 0x7e19241b9e793469L, "property");
-    /*package*/ static final SContainmentLink restriction$jwYY = MetaAdapterFactory.getContainmentLink(0xfd191ffbab394c9cL, 0xb211e8ff05fd03b0L, 0x7e19241b9eba05afL, 0x7e19241b9ebc4458L, "restriction");
     /*package*/ static final SContainmentLink outcomes$4s7 = MetaAdapterFactory.getContainmentLink(0xfd191ffbab394c9cL, 0xb211e8ff05fd03b0L, 0x7e19241b9e61793cL, 0x7e19241b9e617cbfL, "outcomes");
   }
 }

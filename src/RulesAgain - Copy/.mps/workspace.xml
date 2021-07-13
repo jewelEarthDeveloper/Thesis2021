@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7aff8a5b-0466-46bc-b433-5a9f2f8ecb93" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel3/source_gen/Rules/Excel3/editor/InstanceMethodDeclaration_decisionTable8_Editor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel3/source_gen/Rules/Excel3/editor/InstanceMethodDeclaration_decisionTable8_EditorBuilder_a.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel3/source_gen/Rules/Excel3/editor/IntelligentEmptyCell_Editor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel3/source_gen/Rules/Excel3/editor/IntelligentEmptyCell_EditorBuilder_a.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel3/source_gen/Rules/Excel3/editor/IntelligentEmptyCell_InspectorBuilder_a.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel3/source_gen/Rules/Excel3/editor/addVarFromOperator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel3/source_gen/Rules/Excel3/intentions/addFactToRule_Intention.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel3/source_gen/Rules/Excel3/intentions/removeRuleFromRuleCollection_Intention.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Notes/MPS Advanced training stepik.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notes/MPS Advanced training stepik.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Notes/khonraad mps drools minimum specifications.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notes/khonraad mps drools minimum specifications.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - A Model-Based Approach to Language Integration.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - A Model-Based Approach to Language Integration.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - A categorized bibliography on incremental compuatation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - A categorized bibliography on incremental compuatation.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - AdaptiveVLE An Integrated Framework for Personalized Online Education Using MPS JetBrains Domain-Specific Modeling Environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - AdaptiveVLE An Integrated Framework for Personalized Online Education Using MPS JetBrains Domain-Specific Modeling Environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - An Extensible Framework for Variable-Precision Data-Flow Analyses in MPS.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - An Extensible Framework for Variable-Precision Data-Flow Analyses in MPS.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Architecture as Language.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Architecture as Language.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Automated Domain-Specific C Verification with mbeddr.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Automated Domain-Specific C Verification with mbeddr.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Blending Complex Event Processing with the RETE Algorythm.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Blending Complex Event Processing with the RETE Algorythm.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Chapter 12 –Business Rules and DROOLS.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Chapter 12 –Business Rules and DROOLS.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Consistent projectional editors.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Consistent projectional editors.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - DOMAIN SPECIFIC LANGUAGES FOR EFFICIENT SATELLITE CONTROL SOFTWARE DEVELOPMENT.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - DOMAIN SPECIFIC LANGUAGES FOR EFFICIENT SATELLITE CONTROL SOFTWARE DEVELOPMENT.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - DOMAIN SPECIFIC LANGUAGES FOR EFFICIENT SATELLITE CONTROL SOFTWARE DEVELOPMENT2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - DOMAIN SPECIFIC LANGUAGES FOR EFFICIENT SATELLITE CONTROL SOFTWARE DEVELOPMENT2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Design Guidelines for Domain Specific Languages.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Design Guidelines for Domain Specific Languages.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Developing a Domain Specific Languge for the evolving field of Machine Learning.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Developing a Domain Specific Languge for the evolving field of Machine Learning.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Domain Specific - a Binary Decision.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Domain Specific - a Binary Decision.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Domain-Specific Language for Learning Programming.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Domain-Specific Language for Learning Programming.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Domain-specific languages with JetBrains MPS A comparison with AToM3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Domain-specific languages with JetBrains MPS A comparison with AToM3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Efficiency of Projectional Editing.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Efficiency of Projectional Editing.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Efficient Development of Consistent Projectional Editors using Grammar Cells.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Efficient Development of Consistent Projectional Editors using Grammar Cells.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Embedded Software Development with Projectional Language Workbenches.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Embedded Software Development with Projectional Language Workbenches.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Evaluating the Use of Domain-Specific Modeling in Practice.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Evaluating the Use of Domain-Specific Modeling in Practice.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Experiences with Teaching MPS in Industry.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Experiences with Teaching MPS in Industry.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Exploring DSL evolutionary patterns in practice a study of DSL evolution in a large-scale industrial DSL repository.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Exploring DSL evolutionary patterns in practice a study of DSL evolution in a large-scale industrial DSL repository.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Extensible Debuggers for Extensible Languages.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Extensible Debuggers for Extensible Languages.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Extracting variability from C and lifting it to mbeddr.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Extracting variability from C and lifting it to mbeddr.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - FASTEN An Open Extensible Framework to Experiment with Formal Specification Approaches.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - FASTEN An Open Extensible Framework to Experiment with Formal Specification Approaches.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - FASTEN.Safe A Model-Driven Engineering Tool to Experiment with Checkable Assurance Cases.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - FASTEN.Safe A Model-Driven Engineering Tool to Experiment with Checkable Assurance Cases.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Gaining Industrial Confidence for the Introduction of Domain-Specific Languages.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Gaining Industrial Confidence for the Introduction of Domain-Specific Languages.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Grammar to JetBrains MPS Convertor.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Grammar to JetBrains MPS Convertor.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - INGRID Creating Languages in MPS from ANTLR Grammars.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - INGRID Creating Languages in MPS from ANTLR Grammars.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Implementing Modular Domain Specific Languages and Analyses.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Implementing Modular Domain Specific Languages and Analyses.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - IncA A DSL for the Definition of Incremental Program Analyses.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - IncA A DSL for the Definition of Incremental Program Analyses.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Integrating Prose as First-Class Citizens with Models and Code.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Integrating Prose as First-Class Citizens with Models and Code.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Intentional Programming - Innovation in the Legacy Age.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Intentional Programming - Innovation in the Legacy Age.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Intentional Software.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Intentional Software.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - JetBrains MPS as a Tool for Extending Java.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - JetBrains MPS as a Tool for Extending Java.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Language Composition Untangled.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Language Composition Untangled.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Language Engineering as an Enabler for Incrementally Defined Formal Analyses.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Language Engineering as an Enabler for Incrementally Defined Formal Analyses.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Language Extension and Composition with Language Workbenches.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Language Extension and Composition with Language Workbenches.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Language Modularization and Composition with Projectional Language Workbenches illustrated with MPS.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Language Modularization and Composition with Projectional Language Workbenches illustrated with MPS.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Language Workbench Challenge 2016 the JetBrains Meta Programming System.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Language Workbench Challenge 2016 the JetBrains Meta Programming System.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Language-Oriented Modeling Method Engineering.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Language-Oriented Modeling Method Engineering.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Modern model-based development approach for embedded systems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Modern model-based development approach for embedded systems.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Multi-level Language Descriptions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Multi-level Language Descriptions.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Notable design patterns for domain-specific languages.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Notable design patterns for domain-specific languages.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Preliminary Experience of using mbeddr for Developing Embedded Software.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Preliminary Experience of using mbeddr for Developing Embedded Software.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Principles for modeling language design.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Principles for modeling language design.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Product Line Engineering using Domain-Specific Languages.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Product Line Engineering using Domain-Specific Languages.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Projecting Textual Languages.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Projecting Textual Languages.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Projecting a modular furture.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Projecting a modular furture.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - RULES-BASED ANALYSIS WITH JBOSS DROOLS  ADDING INTELLIGENCE TO AUTOMATION.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - RULES-BASED ANALYSIS WITH JBOSS DROOLS  ADDING INTELLIGENCE TO AUTOMATION.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Requirements as First-Class Citizens Integrating Requirements Directly with Implementation Artifacts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Requirements as First-Class Citizens Integrating Requirements Directly with Implementation Artifacts.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Requirements for Domain-Specific Languages.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Requirements for Domain-Specific Languages.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Rete A Fast Algorithm for the Many Pattern Many Object Pattern Match Problem.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Rete A Fast Algorithm for the Many Pattern Many Object Pattern Match Problem.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Robust Projectional Editing.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Robust Projectional Editing.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Rule based programming with Drools.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Rule based programming with Drools.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - RulesEngine - fowler.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - RulesEngine - fowler.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Shadow Models Incremental Transformations for MPS.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Shadow Models Incremental Transformations for MPS.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Software Language Engineers’ Worst Nightmare.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Software Language Engineers’ Worst Nightmare.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Supporting Diverse Notations in MPS’ Projectional Editor.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Supporting Diverse Notations in MPS’ Projectional Editor.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Taming the Software Development Complexity with Domain Specific Languages.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Taming the Software Development Complexity with Domain Specific Languages.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - The Pragmatics of Model-Driven Development.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - The Pragmatics of Model-Driven Development.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - The State of the Art in Language Workbenches.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - The State of the Art in Language Workbenches.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Towards Improving Software Security using Language Engineering and mbeddr C.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Towards Improving Software Security using Language Engineering and mbeddr C.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Towards User-Friendly Projectional Editors.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Towards User-Friendly Projectional Editors.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Using C Language Extensions for Developing Embedded Software A Case Study.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Using C Language Extensions for Developing Embedded Software A Case Study.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Using Language Engineering to Lift Languages and Analyses at the Domain Level.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Using Language Engineering to Lift Languages and Analyses at the Domain Level.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - Using Language Workbenches and Domain-Specific Languages for Safety-Critical Software Development.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - Using Language Workbenches and Domain-Specific Languages for Safety-Critical Software Development.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - fowler - LWB.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - fowler - LWB.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB - mbeddr an Extensible C-based Programming Language and IDE for Embedded Systems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB - mbeddr an Extensible C-based Programming Language and IDE for Embedded Systems.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Papers/Read/AB Appropriate Levels of Abstraction.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Papers/Read/AB Appropriate Levels of Abstraction.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/abstract_page.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/abstract_page.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/main.ist" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/main.ist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/main.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/main.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel3/source_gen/Rules/Excel3/editor/RuleStatement_decisionTable8_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel3/source_gen/Rules/Excel3/editor/RuleStatement_decisionTable8_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel3/source_gen/Rules/Excel3/editor/ec_ruleTablePart8_ComponentBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel3/source_gen/Rules/Excel3/editor/ec_ruleTablePart8_ComponentBuilder_a.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ConceptEditorHintSettings">
+    <option name="enabledHints">
+      <set>
+        <option value="de.slisson.mps.conditionalEditor.hints.editor.conditionalEditorHints.conditionalEditor" />
+        <option value="de.slisson.mps.conditionalEditor.hints.editor.conditionalEditorHints.conditionalEditor_doNotUseThisHint" />
+      </set>
+    </option>
+  </component>
+  <component name="ConsoleHistory">
+    <option name="tabs">
+      <list>
+        <TabState>
+          <option name="title" value="Console" />
+          <tab>
+            <model ref="a8d03169-d4a6-44b6-a312-da3a3e1bac92/r:b8b429c5-3e55-4dcc-a980-fc5ff9374646(TempModulea8d03169-d4a6-44b6-a312-da3a3e1bac92/ConsoleModel_435627367743300)">
+              <persistence version="9" />
+              <languages>
+                <devkit ref="70d3d6da-af63-483d-a75f-9c8acf8de332(jetbrains.mps.console.devkit)" />
+              </languages>
+              <imports />
+              <registry>
+                <language id="de1ad86d-6e50-4a02-b306-d4d17f64c375" name="jetbrains.mps.console.base">
+                  <concept id="1583916890557930028" name="jetbrains.mps.console.base.structure.ConsoleRoot" flags="ng" index="aymSD">
+                    <child id="1583916890557930415" name="history" index="aymYE" />
+                    <child id="1583916890557930417" name="commandHolder" index="aymYO" />
+                    <child id="9025248442620242919" name="cursor" index="1PhJh3" />
+                  </concept>
+                  <concept id="5758176878586720817" name="jetbrains.mps.console.base.structure.CommandHolderRef" flags="ng" index="2_V_lH">
+                    <reference id="5758176878586720818" name="target" index="2_V_lI" />
+                  </concept>
+                  <concept id="351968380916615243" name="jetbrains.mps.console.base.structure.CommandHolder" flags="ng" index="2Clz$F" />
+                  <concept id="757553790980850366" name="jetbrains.mps.console.base.structure.History" flags="ng" index="3balQm" />
+                </language>
+              </registry>
+              <node concept="aymSD" id="5ER99ahWvPs">
+                <node concept="3balQm" id="5ER99ahWvPt" role="aymYE" />
+                <node concept="2Clz$F" id="5ER99ahWvPu" role="aymYO" />
+                <node concept="2_V_lH" id="5ER99ahWvPv" role="1PhJh3">
+                  <ref role="2_V_lI" node="5ER99ahWvPu" resolve="CommandHolder" />
+                </node>
+              </node>
+            </model>
+          </tab>
+        </TabState>
+      </list>
+    </option>
+  </component>
+  <component name="DefaultSearchOptions3">
+    <search_options>
+      <finders>
+        <finders />
+      </finders>
+      <scope>
+        <scope_type scope_type="PROJECT" module="&lt;default&gt;" model="&lt;default&gt;" />
+      </scope>
+      <view>
+        <flags show_one_result="true" new_tab="false" />
+      </view>
+    </search_options>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MPSBookmarkManager">
+    <option name="myBookmarkInfos">
+      <array>
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+      </array>
+    </option>
+  </component>
+  <component name="MessagesViewTool">
+    <option name="defaultListState">
+      <MessageListState>
+        <option name="autoscrollToSource" value="true" />
+        <option name="info" value="true" />
+        <option name="warnings" value="true" />
+      </MessageListState>
+    </option>
+  </component>
+  <component name="ProjectId" id="1v8CEtINhoVS49qSoQ8BLutUtCw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectPluginManager">
+    <option name="pluginsState">
+      <option name="com.dslfoundry.langvis.plugin.plugin.Plugin_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="com.mbeddr.mpsutil.intentions.runtime.plugin.Runtime_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="com.mbeddr.mpsutil.projectview.runtime.plugin.Runtime_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="com.mbeddr.mpsutil.projectview.vcs.plugin.Vcs_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="de.itemis.mps.editor.celllayout.runtime.plugin.Runtime_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="de.itemis.mps.editor.diagram.runtime.plugin.Runtime_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="de.itemis.mps.mouselistener.runtime.plugin.Runtime_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="de.itemis.mps.selection.runtime.plugin.Runtime_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="de.itemis.mps.tooltips.runtime.plugin.Runtime_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="de.q60.mps.explorer.plugin.Explorer_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="de.q60.mps.shadowmodels.modelcheck.runtime.plugin.Runtime_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="de.q60.mps.shadowmodels.runtime.plugin.Runtime_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="de.slisson.mps.conditionalEditor.runtime.plugin.Runtime_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.PluginSolution_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.PluginSolution_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Plugin_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.execution.configurations.pluginSolution.plugin.PluginSolution_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.ide.actions.Ide_ProjectPlugin">
+        <value>
+          <PluginState>
+            <option name="myComponentsState">
+              <list>
+                <ComponentState>
+                  <option name="first" value="jetbrains.mps.ide.actions.BehaviorDialogsPersistentOptions_PreferencesComponent" />
+                  <params>
+                    <option name="addReturnsOnImplement" value="false" />
+                    <option name="sortAlphabetically" value="false" />
+                    <option name="removeAttributes" value="true" />
+                  </params>
+                </ComponentState>
+              </list>
+            </option>
+          </PluginState>
+        </value>
+      </option>
+      <option name="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.ide.make.actions.Make_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.lang.editor.tooltips.runtime.plugin.Runtime_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.vcs.mergehints.plugin.plugin.Plugin_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+    </option>
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b01099d9-bfc5-4a36-a8cf-ee31c208851e" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="993797d3-8306-47ed-ba6d-94925225abc2(Rules.Excel3)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:48538648-ed27-4aa1-9e26-e4bcb2a01309(Rules.Excel3.behavior) in IdeaFile[path: C:/Repos/Thesis2021/src/RulesAgain/languages/Rules.Excel3/models/Rules.Excel3.behavior.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fd191ffb-ab39-4c9c-b211-e8ff05fd03b0(Rules3)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:1150d448-f221-444c-8400-1c42091f6f14(Rules3.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/RulesAgain/languages/Rules3/models/Rules3.editor.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rule" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="when" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="selector" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fd191ffb-ab39-4c9c-b211-e8ff05fd03b0(Rules3)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:ba24fb4b-1527-417a-85ff-2f241cda9e2d(Rules3.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/RulesAgain/languages/Rules3/models/Rules3.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rule" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="when" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="condition" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fd191ffb-ab39-4c9c-b211-e8ff05fd03b0(Rules3)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:ba24fb4b-1527-417a-85ff-2f241cda9e2d(Rules3.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/RulesAgain/languages/Rules3/models/Rules3.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rule" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="when" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="993797d3-8306-47ed-ba6d-94925225abc2(Rules.Excel3)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fd191ffb-ab39-4c9c-b211-e8ff05fd03b0(Rules3)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:ba24fb4b-1527-417a-85ff-2f241cda9e2d(Rules3.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/RulesAgain/languages/Rules3/models/Rules3.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rule" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b01099d9-bfc5-4a36-a8cf-ee31c208851e" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Rule3" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:1669488a-953b-450f-beae-a0ee62056a9c(Rule3.sandbox.basic) in IdeaFile[path: C:/Repos/Thesis2021/src/RulesAgain/solutions/Rule3.sandbox/models/Rule3.sandbox.basic.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fd191ffb-ab39-4c9c-b211-e8ff05fd03b0(Rules3)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:1150d448-f221-444c-8400-1c42091f6f14(Rules3.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/RulesAgain/languages/Rules3/models/Rules3.editor.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="993797d3-8306-47ed-ba6d-94925225abc2(Rules.Excel3)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:2a8313dd-8df3-4ccf-a484-4f5709f6819c(Rules.Excel3.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/RulesAgain/languages/Rules.Excel3/models/Rules.Excel3.editor.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simple8" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fd191ffb-ab39-4c9c-b211-e8ff05fd03b0(Rules3)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:1150d448-f221-444c-8400-1c42091f6f14(Rules3.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/RulesAgain/languages/Rules3/models/Rules3.editor.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rule" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="when" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="condition" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fd191ffb-ab39-4c9c-b211-e8ff05fd03b0(Rules3)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b01099d9-bfc5-4a36-a8cf-ee31c208851e" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Rule3" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fd191ffb-ab39-4c9c-b211-e8ff05fd03b0(Rules3)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:1150d448-f221-444c-8400-1c42091f6f14(Rules3.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/RulesAgain/languages/Rules3/models/Rules3.editor.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rule" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="when" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fd191ffb-ab39-4c9c-b211-e8ff05fd03b0(Rules3)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:1150d448-f221-444c-8400-1c42091f6f14(Rules3.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/RulesAgain/languages/Rules3/models/Rules3.editor.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rule" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="993797d3-8306-47ed-ba6d-94925225abc2(Rules.Excel3)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:a25c00e0-7028-40e0-8f00-fe35827800de(Rules.Excel3.intentions) in IdeaFile[path: C:/Repos/Thesis2021/src/RulesAgain/languages/Rules.Excel3/models/Rules.Excel3.intentions.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="993797d3-8306-47ed-ba6d-94925225abc2(Rules.Excel3)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:2a8313dd-8df3-4ccf-a484-4f5709f6819c(Rules.Excel3.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/RulesAgain/languages/Rules.Excel3/models/Rules.Excel3.editor.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fd191ffb-ab39-4c9c-b211-e8ff05fd03b0(Rules3)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:ba24fb4b-1527-417a-85ff-2f241cda9e2d(Rules3.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/RulesAgain/languages/Rules3/models/Rules3.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rule" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="when" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="condition" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="5163961811780455736" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fd191ffb-ab39-4c9c-b211-e8ff05fd03b0(Rules3)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:ba24fb4b-1527-417a-85ff-2f241cda9e2d(Rules3.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/RulesAgain/languages/Rules3/models/Rules3.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <SELECTED>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="993797d3-8306-47ed-ba6d-94925225abc2(Rules.Excel3)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:a25c00e0-7028-40e0-8f00-fe35827800de(Rules.Excel3.intentions) in IdeaFile[path: C:/Repos/Thesis2021/src/RulesAgain/languages/Rules.Excel3/models/Rules.Excel3.intentions.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="6938369243927800849" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </SELECTED>
+        </subPane>
+      </pane>
+      <pane id="FileSystem" />
+    </panes>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/solutions/Rule3.sandbox/Rule3.sandbox.msd" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\paul_\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7aff8a5b-0466-46bc-b433-5a9f2f8ecb93" name="Default Changelist" comment="" />
+      <created>1625934221308</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1625934221308</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="UsagesViewTool">
+    <version id="1" />
+    <tabs />
+    <default_view_options>
+      <options category_option="false" module_option="true" model_option="true" root_option="true" path_option="false" count_option="true" info_option="true" view_searched_nodes_option="true" group_searched_nodes_option="true" autoscroll_option="false" />
+    </default_view_options>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-581" y="-840" width="600" height="200" key="#jetbrains.mps.vcs.mergedriver.MergeDriverOptionDialog" timestamp="1625946290221">
+      <screen x="-1568" y="-1440" width="5120" height="1400" />
+    </state>
+    <state x="-581" y="-840" width="600" height="200" key="#jetbrains.mps.vcs.mergedriver.MergeDriverOptionDialog/0.0.1280.680/-1568.-1440.5120.1400@-1568.-1440.5120.1400" timestamp="1625946290221" />
+    <state x="-952" y="-1256" key="CommitChangelistDialog2" timestamp="1625935464288">
+      <screen x="-1568" y="-1440" width="5120" height="1400" />
+    </state>
+    <state x="-952" y="-1256" key="CommitChangelistDialog2/0.0.1280.680/-1568.-1440.5120.1400@-1568.-1440.5120.1400" timestamp="1625935464288" />
+    <state x="-555" y="-1044" key="FileChooserDialogImpl" timestamp="1625934525928">
+      <screen x="-1568" y="-1440" width="5120" height="1400" />
+    </state>
+    <state x="-555" y="-1044" key="FileChooserDialogImpl/0.0.1280.680/-1568.-1440.5120.1400@-1568.-1440.5120.1400" timestamp="1625934525928" />
+    <state x="-804" y="-1060" width="1719" height="639" key="IDE.errors.dialog" timestamp="1625947209035">
+      <screen x="-1568" y="-1440" width="5120" height="1400" />
+    </state>
+    <state x="-804" y="-1060" width="1719" height="639" key="IDE.errors.dialog/0.0.1280.680/-1568.-1440.5120.1400@-1568.-1440.5120.1400" timestamp="1625947209035" />
+    <state x="-426" y="-1014" key="jetbrains.mps.ide.editor.actions.HintsDialog" timestamp="1625935567079">
+      <screen x="-1568" y="-1440" width="5120" height="1400" />
+    </state>
+    <state x="-426" y="-1014" key="jetbrains.mps.ide.editor.actions.HintsDialog/0.0.1280.680/-1568.-1440.5120.1400@-1568.-1440.5120.1400" timestamp="1625935567079" />
+    <state x="-738" y="-1071" width="1072" height="678" key="jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog" timestamp="1626007252383">
+      <screen x="-1475" y="-1440" width="5027" height="1440" />
+    </state>
+    <state x="-738" y="-1071" key="jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog/0.0.1280.680/-1475.-1440.5027.1440@-1475.-1440.5027.1440" timestamp="1626007252383" />
+    <state x="-817" y="-1081" width="1072" height="678" key="jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog/0.0.1280.680/-1568.-1440.5120.1400@-1568.-1440.5120.1400" timestamp="1625948289218" />
+    <state x="-570" y="-897" key="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog" timestamp="1625934527107">
+      <screen x="-1568" y="-1440" width="5120" height="1400" />
+    </state>
+    <state x="-570" y="-897" key="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog/0.0.1280.680/-1568.-1440.5120.1400@-1568.-1440.5120.1400" timestamp="1625934527107" />
+    <state x="-625" y="-1119" key="search.everywhere.popup" timestamp="1626012174951">
+      <screen x="-1475" y="-1440" width="5027" height="1440" />
+    </state>
+    <state x="-625" y="-1119" key="search.everywhere.popup/0.0.1280.680/-1475.-1440.5027.1440@-1475.-1440.5027.1440" timestamp="1626012174951" />
+    <state x="-702" y="-1128" key="search.everywhere.popup/0.0.1280.680/-1568.-1440.5120.1400@-1568.-1440.5120.1400" timestamp="1625946068121" />
+  </component>
+</project>

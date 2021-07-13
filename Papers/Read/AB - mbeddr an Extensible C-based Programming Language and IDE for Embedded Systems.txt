@@ -1,163 +1,99 @@
-AB - mbeddr an Extensible C-based Programming Language and IDE for Embedded Systems
+AB - mbeddr an Extensible C-based Programming Language and IDE for Embedded Systems 
 
- Our implementation technology, the JetBrains MPS open source language workbench, supports the flexible definition, extension, composition and use of multiple languages. A language extension defines new structure, syntax, type system rules
-and semantics, as well, as optionally, support for refactoring, quick fixes and debugging
+Our implementation technology, the JetBrains MPS open source language workbench, supports the flexible definition, extension, composition and use of multiple languages.
+A language extension defines new structure, syntax, type system rules and semantics, as well, as optionally, support for refactoring, quick fixes and debugging 
+The semantics of an extension are typically defined by a transformation back to the base language, an approach also called assimilation [6
 
-The semantics of an
-extension are typically defined by a transformation back
-to the base language, an approach also called assimilation [6
+It should be possible to add meta data such as trace links to requirements or product line variability constraints to arbitrary program nodes, without changing the concept of the node.
 
-It should be possible
-to add meta data such as trace links to requirements or
-product line variability constraints to arbitrary program
-nodes, without changing the concept of the node.
+create a testing language just for drools 
 
-
-create a testing language just for drools
-
-
-product line:. A product is configured by specifying a set of
-configuration flags and the presence condition specifies
-a Boolean expression over these configuration switches6
-.
+product line:.
+A product is configured by specifying a set of configuration flags and the presence condition specifies a Boolean expression over these configuration switches.
 Like requirements traces, presence conditions can be attached to any program element.
 
 
-MPS is a language workbench, a comprehensive tool for
-defining, extending, composing and using sets of integrated languages.
+MPS is a language workbench, a comprehensive tool for defining, extending, composing and using sets of integrated languages.
 
-MPS’ most important characteristic is that
-it is a projectional editor. In parser-based approaches,
-users use text editors to enter character sequences that
-represent programs. A parser then checks the text for
-syntactic correctness and constructs an abstract syntax
-tree from the character sequence. The AST contains all
-the semantic information expressed by the program.
+MPS’ most important characteristic is that it is a projectional editor.
+In parser-based approaches, users use text editors to enter character sequences that represent programs.
+A parser then checks the text for syntactic correctness and constructs an abstract syntax tree from the character sequence.
+The AST contains all the semantic information expressed by the program.
 
 Projectional editors such as MPS do not use parsers.
-In projectional editors, the process happens the other
-way round: as a user edits the program, the AST is
-modified directly. A projection engine then creates a
-representation of the AST that reflects the changes. The
-user interacts with this representation. This approach
-is well-known from graphical editors: when editing a
-UML diagram, users don’t draw pixels onto a canvas,
-and a ”pixel parser” then creates the AST. Rather, the
-editor creates and instance of uml.Class as you drag a
-class from the palette to the canvas. A projection engine
-renders the diagram, in this case drawing a rectangle for
-the class. This approach can be generalized to work with
-any notation, including textual.
+In projectional editors, the process happens the other way round: as a user edits the program, the AST is modified directly.
+A projection engine then creates a representation of the AST that reflects the changes.
+The user interacts with this representation.
+This approach is well-known from graphical editors: when editing a UML diagram, users don’t draw pixels onto a canvas, and a ”pixel parser” then creates the AST.
+Rather, the editor creates and instance of uml.Class as you drag a class from the palette to the canvas.
+A projection engine renders the diagram, in this case drawing a rectangle for the class.
+This approach can be generalized to work with any notation, including textual.
 
 
-In projectional editors, every program element is
-stored as a node with a unique ID (UID) in the AST.
-References between program elements are based on actual pointers (references to UIDs). The AST is actually
-an ASG, an abstract syntax graph, from the start because cross-references are first-class rather than being
-resolved after parsing. The program is stored using a
-generic tree persistence mechanism, often XML.
+In projectional editors, every program element is stored as a node with a unique ID (UID) in the AST.
+References between program elements are based on actual pointers (references to UIDs).
+The AST is actually an ASG, an abstract syntax graph, from the start because cross-references are first-class rather than being resolved after parsing.
+The program is stored using a generic tree persistence mechanism, often XML.
 
 
-Since no grammar is used, grammar classes are not relevant, and no syntactic ambiguities can result from the
-combination of independently developed languages. If
-two concepts (possibly defined by different language extensions) with the same syntax are valid in the same location, the user is forced to decide which one to instantiate as she enters the program. In principle, projectional
-editing is simpler than parsing, since there is no need
-to ”extract” the program structure from a flat textual
-source. However, the challenge in projectional editing is
-making the editing experience convenient and productive. Traditionally, projectional editors have had a bad
-reputation because the user experience in editing programs was unacceptable. MPS has solved this problem,
-the editing experience is comparable to traditional text
-editors. Among others, MPS uses the following strategies to achieve this: aliases are used to instantiate language concepts from the code completion menu (e.g. you
-can just type for to instantiate a ForStatement); side
-transformations support entering trees linearly (e.g. you
-can just type + and 3 on the right side of a 2 to get 2+3);
-and the code completion menu shows targets of references directly instead requiring users to first instantiate
-the reference concept (e.g. when pressing Ctrl-Space after the + in 2+3, you will directly see all visible variables
-and arguments in the code completion menu).
+Since no grammar is used, grammar classes are not relevant, and no syntactic ambiguities can result from the combination of independently developed languages.
+If two concepts (possibly defined by different language extensions) with the same syntax are valid in the same location, the user is forced to decide which one to instantiate as she enters the program.
+In principle, projectional editing is simpler than parsing, since there is no need to ”extract” the program structure from a flat textual source.
+However, the challenge in projectional editing is making the editing experience convenient and productive.
+Traditionally, projectional editors have had a bad reputation because the user experience in editing programs was unacceptable.
+MPS has solved this problem, the editing experience is comparable to traditional text editors.
+Among others, MPS uses the following strategies to achieve this: aliases are used to instantiate language concepts from the code completion menu (e.g. you can just type for to instantiate a ForStatement); side transformations support entering trees linearly (e.g. you can just type + and 3 on the right side of a 2 to get 2+3);
+and the code completion menu shows targets of references directly instead requiring users to first instantiate the reference concept (e.g. when pressing Ctrl-Space after the + in 2+3, you will directly see all visible variables and arguments in the code completion menu).
 
 
 
-concepts constraints AssertStatement {
-can be child
-(context, scope, parentNode, link, childConcept)->boolean {
-parentNode.ancestor<TestCase>.isNotNull;
-} }
-Figure 12. This constraint restricts an
-AssertStatement to be used only inside a TestCase
-by checking that at least one of its ancestors is a
-TestCase
+concepts constraints AssertStatement { can be child (context, scope, parentNode, link, childConcept)->boolean { parentNode.ancestor<TestCase>.isNotNull; } }
+Figure 12.
+
+This constraint restricts an AssertStatement to be used only inside a TestCase by checking that at least one of its ancestors is a TestCase 
 
 
-
-Language extension is not a new idea. The Lisp community has always considered language extension essential to using Lisp effectively. Guy Steele’s OOPSLA
-1998 keynote Growing a Language (and a related journal article [22]) is maybe the most well-known expression of the idea, and Thrift’s extension of Lisp with
-constructs for logic programming [34] is a concrete example. Obviously, Lisp extension could not have been
-used as a basis for mbeddr, since it is based on C
-
-
-Early examples include the Synthesizer Generator [31] as well as the
-Meta Environment [24]. Both generate editors and other
-IDE aspects from a language definition
-
- The topic is still
-actively researched. For example, Bravenboer et al. [5]
-and Dinkelacker [11] provide custom concrete syntax,
-Bracha [4] provides pluggable type systems and Erweg
-et al. [15] discuss modular IDE extensions. Eisenberg
-and Kiczales propose explicit programming [13] which
-supports semantic extension as well as editing extensions (concrete syntax) for a given base language.
-
-Language workbenches start from
-external DSLs and add modularization, and, as a consequence of implementing base languages with the same
-tool, optional tight integration with general purpose
-host languages
-
-Our choice of MPS is due to its support for all aspects of
-language development (structure, syntax, type systems,
-IDE, transformations), its support for flexible syntax as
-a consequence of projectional editing and its support for
-advanced modularization and composition of languages.
-The ability to attach annotations to arbitrary program
-elements without a change to that element’s definition
-is another strong advantage of MPS (we we use this for
-presence conditions and trace links, for example). No
-other freely available tool provides support for all those
-aspects, but some are supported by other tools. For example, Eclipse Xtext13 and its accompanying tool stack
-supports abstract and concrete syntax definition, IDE
-support and transformations, but it is weak regarding
-non-textual syntax and modularization and composition of languages. TU Delft’s Spoofax14 concise type
-system definition. Intentional Software15 supports extremely flexible syntax [32] and language composition
-(it is a projectional editor) but is not easily available.
-Another important reason for our choice is the maturity and stability of MPS and the fact that it is backed
-by a major development tool vendor (JetBrains).
+Language extension is not a new idea.
+The Lisp community has always considered language extension essential to using Lisp effectively.
+Guy Steele’s OOPSLA 1998 keynote Growing a Language (and a related journal article [22]) is maybe the most well-known expression of the idea, and Thrift’s extension of Lisp with constructs for logic programming [34] is a concrete example.
+Obviously, Lisp extension could not have been used as a basis for mbeddr, since it is based on C
 
 
-While the learning curve for MPS is significant (a
-developer who wants to become proficient in MPS language development has to invest at least a month),
-we found that is scales extremely well for larger and
-more sophisticated languages. This is in sharp contrast
-to some of the other tools the authors worked with,
-where implementing simple languages is quick and easy,
-and larger and more sophisticated languages are disproportionately more complex to build.
+Early examples include the Synthesizer Generator [31] as well as the Meta Environment [24].
+Both generate editors and other IDE aspects from a language definition
+The topic is still actively researched.
+For example, Bravenboer et al. [5] and Dinkelacker [11] provide custom concrete syntax, Bracha [4] provides pluggable type systems and Erweg et al. [15] discuss modular IDE extensions.
+Eisenberg and Kiczales propose explicit programming [13] which supports semantic extension as well as editing extensions (concrete syntax) for a given base language.
 
-Projectional Editing Projectional editing is often
-considered a drawback because the editors feel somewhat different and the programs are not stored as text,
-but as a tree (XML). We already highlighted that MPS
-does a good job regarding the editor experience, and
-we feel that the advantages of projectional editors regarding syntactic freedom far outweigh the drawback
-of requiring some initial familiarization. Our experience
-so far with about ten users (pilot users from industry,
-students) shows that after a short guided introduction
-(ca. 30 minutes) and an initial accomodation period (ca.
-1-2 days), users can work productively with the projectional editor. Regarding storage, the situation is not any
-worse than with current modeling tools that store models in a non-textual format, and MPS does provide good
-support for diff and merge using the projected syntax.
+Language workbenches start from external DSLs and add modularization, and, as a consequence of implementing base languages with the same tool, optional tight integration with general purpose host languages 
+Our choice of MPS is due to its support for all aspects of language development (structure, syntax, type systems, IDE, transformations), its support for flexible syntax as a consequence of projectional editing and its support for advanced modularization and composition of languages.
+The ability to attach annotations to arbitrary program elements without a change to that element’s definition is another strong advantage of MPS (we we use this for presence conditions and trace links, for example).
+No other freely available tool provides support for all those aspects, but some are supported by other tools.
+For example, Eclipse Xtext13 and its accompanying tool stack supports abstract and concrete syntax definition, IDE support and transformations, but it is weak regarding non-textual syntax and modularization and composition of languages.
+TU Delft’s Spoofax14 concise type system definition.
+Intentional Software15 supports extremely flexible syntax [32] and language composition (it is a projectional editor) but is not easily available.
+Another important reason for our choice is the maturity and stability of MPS and the fact that it is backed by a major development tool vendor (JetBrains).
+
+
+While the learning curve for MPS is significant (a developer who wants to become proficient in MPS language development has to invest at least a month), we found that is scales extremely well for larger and more sophisticated languages.
+This is in sharp contrast to some of the other tools the authors worked with, where implementing simple languages is quick and easy, and larger and more sophisticated languages are disproportionately more complex to build.
+
+Projectional Editing Projectional editing is often considered a drawback because the editors feel somewhat different and the programs are not stored as text, but as a tree (XML).
+We already highlighted that MPS does a good job regarding the editor experience, and we feel that the advantages of projectional editors regarding syntactic freedom far outweigh the drawback of requiring some initial familiarization.
+Our experience so far with about ten users (pilot users from industry, students) shows that after a short guided introduction (ca. 30 minutes) and an initial accomodation period (ca.
+1-2 days), users can work productively with the projectional editor.
+Regarding storage, the situation is not any worse than with current modeling tools that store models in a non-textual format, and MPS does provide good support for diff and merge using the projected syntax.
 
 
 
 
 
-[10]	David H. Lorenz, Boaz Rosenan. Cedalion: A Language for Language Oriented Programming. In Proceedings of OOPSLA/SPLASH 2011, 2011.
+
+
+[10]	David H.
+Lorenz, Boaz Rosenan.
+Cedalion: A Language for Language Oriented Programming.
+In Proceedings of OOPSLA/SPLASH 2011, 2011.
 
 
 

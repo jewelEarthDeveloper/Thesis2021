@@ -1,56 +1,77 @@
- Language developers can define data-flow graph builders declaratively as
-part of a language definition and compute analysis results
-efficiently based on these data-flow graphs
-
+Language developers can define data-flow graph builders declaratively as part of a language definition and compute analysis results efficiently based on these data-flow graphs 
 Demo video of MPS-DF: https://youtu.be/laNDAZCe2jM.
 
-mbeddr [19],
-WebDSL [17] or Polar [12], 
+mbeddr [19], WebDSL [17] or Polar [12], 
 
-MPS is a projectional language workbench where programs
-are represented as abstract syntax trees (ASTs). Each AST
-node is an instance of a language concept (meta class)
+MPS is a projectional language workbench where programs are represented as abstract syntax trees (ASTs).
+Each AST node is an instance of a language concept (meta class)
 
 should I use data-flow analysis to simulate drools? (NO!)
 
-DCFlow [9] is a DSL and Rascal library for constructing control flow graphs of programs. The DSL is similar
-to the flow-sensitive part of our builder DSL
-
-n. In contrast,
-MPS-DF only requires a new builder implementation and no
-modifications to the analyses
+DCFlow [9] is a DSL and Rascal library for constructing control flow graphs of programs.
+The DSL is similar to the flow-sensitive part of our builder DSL
 
 
-7. REFERENCES
-[1] H. J. Basten and P. Klint. Defacto:
+In contrast, MPS-DF only requires a new builder implementation and no modifications to the analyses 
+
+
+
+
+
+
+
+7.
+REFERENCES
+[1] H.
+J.
+Basten and P.
+Klint.
+Defacto:
 Language-parametric fact extraction from source code.
-In Software Language Engineering. Springer-Verlag,
-2009.
+In Software Language Engineering.
+Springer-Verlag, 2009.
 
-[7] S. Erdweg, P. G. Giarrusso, and T. Rendel. Language
-Composition Untangled. In Proceedings of the Twelfth
-Workshop on Language Descriptions, Tools, and
-Applications. ACM, 2012.
+[7] S.
+Erdweg, P.
+G.
+Giarrusso, and T.
+Rendel.
+Language Composition Untangled.
+In Proceedings of the Twelfth Workshop on Language Descriptions, Tools, and Applications.
+ACM, 2012.
 
-[12] J. K¨arn¨a, J.-P. Tolvanen, and S. Kelly. Evaluating the
-use of domain-specific modeling in practice. In
-Workshop on Domain-Specific Modeling (DSM). 2009.
+[12] J.
+K¨arn¨a, J.-P.
+Tolvanen, and S.
+Kelly.
+Evaluating the use of domain-specific modeling in practice.
+In Workshop on Domain-Specific Modeling (DSM). 2009.
 
-[13] F. Nielson, H. R. Nielson, and C. Hankin. Principles of
-Program Analysis. Springer-Verlag New York, Inc.,
-1999.
+[13] F.
+Nielson, H.
+R.
+Nielson, and C.
+Hankin.
+Principles of Program Analysis.
+Springer-Verlag New York, Inc., 1999.
 
-[14] G. Ramalingam and T. Reps. A Categorized
-Bibliography on Incremental Computation. In
-Proceedings of the Symposium on Principles of
-Programming Languages. ACM, 1993.
+[14] G.
+Ramalingam and T.
+Reps.
+A Categorized Bibliography on Incremental Computation.
+In Proceedings of the Symposium on Principles of Programming Languages.
+ACM, 1993.
 
-[17] E. Visser. Webdsl: A case study in domain-specific
-language engineering. In Generative and
-Transformational Techniques in Software Engineering
-II. Springer-Verlag, 2008.
+[17] E.
+Visser.
+Webdsl: A case study in domain-specific language engineering.
+In Generative and Transformational Techniques in Software Engineering II.
+Springer-Verlag, 2008.
 
-[19] M. Voelter, D. Ratiu, B. Kolb, and B. Schaetz. mbeddr:
-Instantiating a language workbench in the embedded
-software domain. Automated Software Engineering,
-2013.
+[19] M.
+Voelter, D.
+Ratiu, B.
+Kolb, and B.
+Schaetz. mbeddr:
+Instantiating a language workbench in the embedded software domain.
+Automated Software Engineering, 2013.

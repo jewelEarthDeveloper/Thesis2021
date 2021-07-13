@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <root nodeRef="r:1669488a-953b-450f-beae-a0ee62056a9c(Rule3.sandbox.basic)/8484003412859286245">
+    <file name="Product.java">
+      <node id="8484003412859287895" at="7,0,8,0" concept="1" trace="type" />
+      <node id="8484003412859289448" at="8,0,9,0" concept="1" trace="discount" />
+      <node id="8484003412859290015" at="10,27,11,16" concept="3" />
+      <node id="8484003412859290419" at="13,41,14,24" concept="0" />
+      <node id="8484003412859289967" at="10,0,13,0" concept="2" trace="getType#()Ljava/lang/String;" />
+      <node id="8484003412859290248" at="13,0,16,0" concept="2" trace="setDiscount#(I)V" />
+      <scope id="8484003412859289970" at="10,27,11,16" />
+      <scope id="8484003412859290251" at="13,41,14,24" />
+      <scope id="8484003412859289967" at="10,0,13,0" />
+      <scope id="8484003412859290248" at="13,0,16,0">
+        <var name="discount" id="8484003412859290309" />
+      </scope>
+      <unit id="8484003412859286245" at="6,0,18,0" name="Rule3.sandbox.basic.Product" />
+    </file>
+  </root>
+  <root nodeRef="r:1669488a-953b-450f-beae-a0ee62056a9c(Rule3.sandbox.basic)/8484003412861765560">
+    <file name="Client.java">
+      <node id="8484003412861765988" at="7,0,8,0" concept="1" trace="status" />
+      <node id="8484003412861766529" at="8,29,9,18" concept="3" />
+      <node id="8484003412861766440" at="8,0,11,0" concept="2" trace="getStatus#()Ljava/lang/String;" />
+      <scope id="8484003412861766443" at="8,29,9,18" />
+      <scope id="8484003412861766440" at="8,0,11,0" />
+      <unit id="8484003412861765560" at="6,0,12,0" name="Rule3.sandbox.basic.Client" />
+    </file>
+  </root>
+</debug-info>
+

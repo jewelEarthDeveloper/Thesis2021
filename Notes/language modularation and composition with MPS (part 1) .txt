@@ -1,0 +1,10 @@
+language modularation and composition with MPS (part 1) 
+it's a projectional editor
+a projectional editor means that there is no parsing going on
+so what you see here looks textual and feels textual which is an imporatant aspect, but it is projected from an AST.  so instead of writing something in text parsing it into a tree and then working from there, every editor. every editor action directly creates objects on the AST. this is like a in UML tools or graphical editors where if you drag a class shape from the palette onto the canvas you dont drow some pixels and have a pareser which parses these pixels and builds an AST, instead the activity, the gesture of drag and dropping a class onto the canvas creates the object on the ast in the tree and then a rendering engine shows the class as a rectangle or whatever else and in this case here we project things textually.
+ 
+ 
+MPS does a really good job with making the tree editing behave as much as possible as normal text editing.
+nobody wants to edit trees along trees, i.e. entering roots first.  
+traditionally projectional editors required you to edit along the tree and that sucked and that's why projectional editors had a really bad rap.
+MPS does a really good job in masking the fact you're actually editing trees and not just text and that makes it really useable and that makes it feasable to do all the cool things that MPS can do without being annoyed by the fact that you have tree editing. 

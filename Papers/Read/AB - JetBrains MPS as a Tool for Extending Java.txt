@@ -1,132 +1,75 @@
-AB - JetBrains MPS as a Tool for Extending Java
+AB - JetBrains MPS as a Tool for Extending Java 
+Since MPS leverages the concept of projectional editing, non-textual and non-parseable syntactic forms are possible, including tables or mathematical symbols.
+This tool paper introduces MPS and shows how its novel approach can be applied to Java development 
+JetBrains MPS is an open-source language workbench based on a projectional editor.
+It started as an experimental project about ten years ago with the aim to test and validate the ideas of Language Oriented Programming (LOP), as summarized in [2].
 
-Since MPS leverages the concept of projectional editing, non-textual and non-parseable
-syntactic forms are possible, including tables or mathematical symbols. This tool paper introduces MPS and shows
-how its novel approach can be applied to Java development
-
-JetBrains MPS is an open-source language workbench based
-on a projectional editor. It started as an experimental
-project about ten years ago with the aim to test and validate the ideas of Language Oriented Programming (LOP),
-as summarized in [2].
-
-MPS attempted to bring
-code generation and projectional editing (also known as
-structured editing, see [12] for a good definition) to the
-programming mainstream
-
-More
-on how YouTrack benefits from LOP can be found in [9].
+MPS attempted to bring code generation and projectional editing (also known as structured editing, see [12] for a good definition) to the programming mainstream 
+More on how YouTrack benefits from LOP can be found in [9].
 
 
-Abstract Syntax As a first step when defining a new
-language we specify the structure (aka abstract syntax or
-meta model). This resembles object-oriented programming,
-language concepts are similar to classes. Concepts in MPS
-represent types of AST nodes and define the properties,
-methods, children and references that instance nodes may
-have. MPS offers three language aspects to define abstract
-syntax: the structure aspect defines the concepts, their properties and relationships, constraints restrict the allowed set
-of values for properties and references, and the behavior associates methods with concepts
+Abstract Syntax As a first step when defining a new language we specify the structure (aka abstract syntax or meta model).
+This resembles object-oriented programming, language concepts are similar to classes.
+Concepts in MPS represent types of AST nodes and define the properties, methods, children and references that instance nodes may have.
+MPS offers three language aspects to define abstract syntax: the structure aspect defines the concepts, their properties and relationships, constraints restrict the allowed set of values for properties and references, and the behavior associates methods with concepts 
+
+Concrete Syntax The second step is defining the editor for the concepts.
+This reflects the projectional nature of MPS.
+Since code in MPS is never represented as plain text (neither on the screen nor on disk), MPS languages are never parsed and thus no grammar is required.
+This enables the use of non-parseable notations, such as tables or mathematical symbols.
+Instead of a parser, we define editors for language concepts – a visual representation for AST nodes.
+MPS’ editor definition capabilities let the language designer define editors for her new language constructs as well as override editors of concepts from existing languages.
 
 
-Concrete Syntax The second step is defining the editor
-for the concepts. This reflects the projectional nature of
-MPS. Since code in MPS is never represented as plain
-text (neither on the screen nor on disk), MPS languages
-are never parsed and thus no grammar is required. This
-enables the use of non-parseable notations, such as tables or
-mathematical symbols. Instead of a parser, we define editors
-for language concepts – a visual representation for AST
-nodes. MPS’ editor definition capabilities let the language
-designer define editors for her new language constructs as
-well as override editors of concepts from existing languages.
+multiple editors can be defined for a concept, allowing the programmer to choose the notation that fits best the task at hands 
+Being able to quickly build an IDE for a language is one of the most noteworthy advantages of MPS.
+
+The MPS debugger is also extensible, allowing languages to be debugged in MPS.
+The user can set breakpoints and inspect values in the high-level language (DSL), 
+MPS comes with a type system engine that is capable of evaluating type system rules to assign types to language elements (type inference) and to verify correctness of types.
 
 
- multiple editors can be defined for a concept,
-allowing the programmer to choose the notation that fits
-best the task at hands
+MPS also support checks that are not directly related to typing rules.
+A dedicated type of rules, called checking rules, may analyze the model and report warnings or errors whenever an incorrect construct is detected.
+Examples for checking rules in Java include detecting the repetitive use of the same string literal, assignment to a final variable, ignoring a return value and many others.
 
-Being able to quickly build an IDE for a language is one of the
-most noteworthy advantages of MPS.
+Code generation Languages in MPS also define transformation rules to lower-level languages or to plain text.
+The generation process in MPS consists of two phases.
+Phase one uses a template-based model-to-model transformation engine to reduce the program code into the target language, based on reduction rules specified in the generator.
+The target language may be further reduced based on its own reduction rules, and so on.
+When no further model-to-model transformation is applicable to a model, the second phase uses text generators to convert that final model into regular program text that can be fed into a compiler 
+Templates work differently from normal text generation templates such as for example Xpand9, Jet10 or StringTemplate11, since in MPS they do not define text output, but instead model-tomodel transformations.
+The generator developer first writes a structurally correct example model using the target language and then uses so called macros to tie the example model to the actual input from which we generate.
+Both templates and macros are well known concepts from other tools, but in MPS they work on the AST level (see Fig. 1).
 
-The MPS debugger is also extensible, allowing languages
-to be debugged in MPS. The user can set breakpoints and
-inspect values in the high-level language (DSL),
-
-MPS comes with a type system engine
-that is capable of evaluating type system rules to assign
-types to language elements (type inference) and to verify
-correctness of types. T
-
-MPS also support checks that are not directly related
-to typing rules. A dedicated type of rules, called checking
-rules, may analyze the model and report warnings or errors
-whenever an incorrect construct is detected. Examples for
-checking rules in Java include detecting the repetitive use
-of the same string literal, assignment to a final variable,
-ignoring a return value and many others.
-
-Code generation Languages in MPS also define transformation rules to lower-level languages or to plain text. The
-generation process in MPS consists of two phases. Phase
-one uses a template-based model-to-model transformation
-engine to reduce the program code into the target language,
-based on reduction rules specified in the generator. The target language may be further reduced based on its own reduction rules, and so on. When no further model-to-model
-transformation is applicable to a model, the second phase
-uses text generators to convert that final model into regular
-program text that can be fed into a compiler
-
-Templates
-work differently from normal text generation templates such
-as for example Xpand9
-, Jet10 or StringTemplate11, since in
-MPS they do not define text output, but instead model-tomodel transformations. The generator developer first writes
-a structurally correct example model using the target language and then uses so called macros to tie the example
-model to the actual input from which we generate. Both
-templates and macros are well known concepts from other
-tools, but in MPS they work on the AST level (see Fig. 1).
-
- Since projectional editing disambiguates
-constructs originating from different languages, MPS does
-not require the construction of a unifying parser or the definition of composite grammars. Languages can be extended
-with new constructs and new ways to view and edit them.
+Since projectional editing disambiguates constructs originating from different languages, MPS does not require the construction of a unifying parser or the definition of composite grammars.
+Languages can be extended with new constructs and new ways to view and edit them.
 
 
-Together with new concepts, languages may
-introduce new types and relate them to types of other
-languages through subtyping rules. All type equations from
-all used languages enter the pool of rules that the type
-system engine resolves. This declarative approach makes the
-type system easily extensible
-
-Projectional editing makes MPS
+Together with new concepts, languages may introduce new types and relate them to types of other languages through subtyping rules.
+All type equations from all used languages enter the pool of rules that the type system engine resolves.
+This declarative approach makes the type system easily extensible  Projectional editing makes MPS
 a rare species, together with the Intentional Domain Workbench and oomega12. 
 
-Text-based workbenches feel more familiar to today’s developers, as editing text is the mainstream approach to writing code. Also, integration with the existing development
-tool chain, such as VCSs, code review tools or code sharing facilities, is pretty straightforward when the sources are
-text
-
-. In a similar vein, domain experts, who
-typically are the target audience for DSLs, and who do not
-necessarily have a strong background in programming, may
-find projectional editing more convenient, as they do not
-carry the baggage of old habits and since projectional editors can be easily made to resemble the tools or notations
-these experts use in their daily practice
-
+Text-based workbenches feel more familiar to today’s developers, as editing text is the mainstream approach to writing code.
+Also, integration with the existing development tool chain, such as VCSs, code review tools or code sharing facilities, is pretty straightforward when the sources are text.
+In a similar vein, domain experts, who typically are the target audience for DSLs, and who do not necessarily have a strong background in programming, may find projectional editing more convenient, as they do not carry the baggage of old habits and since projectional editors can be easily made to resemble the tools or notations these experts use in their daily practice 
 
 MPS is a powerful tool for language development with special focus on easy language modularization and composition.
 
 
-The MPS
-projectional editor is an important advantage that not only
-offers notational freedom, but also enables flexible composition of languages.
+The MPS projectional editor is an important advantage that not only offers notational freedom, but also enables flexible composition of languages.
 
-Despite its relatively steep learning curve, MPS could
-help the adoption of the LOP principles among software
-practitioners and move the industry forward by making programming languages truly customizable.
+Despite its relatively steep learning curve, MPS could help the adoption of the LOP principles among software practitioners and move the industry forward by making programming languages truly customizable.
 
 
 
 
 
-[9]	V. P. Valeria Adrianova, Maxim Mazin. MPS use of YouTrack case study, 2012.
+
+
+[9]	V.
+P.
+Valeria Adrianova, Maxim Mazin.
+MPS use of YouTrack case study, 2012.
 

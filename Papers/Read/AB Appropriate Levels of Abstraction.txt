@@ -1,3 +1,4 @@
+todo
  
  The software engineering community often aspires to "higher levels of abstraction". 
  Many believe that is the solution to defeat complexity and to increase our productivity.
@@ -10,8 +11,7 @@ Instead of aspiring to higher levels of abstraction, we should instead seek to w
 The appropriate level is sometimes very high and sometimes very low.
 
 It is not only for programming itself that we benefit from working at the appropriate level of abstraction. 
-Other participants in software projects, like subject matter experts, most certainly work at a level of abstraction dierent from the programmer
-
+Other participants in software projects, like subject matter experts, most certainly work at a level of abstraction dierent from the programmer 
 “how can we work at the appropriate level of abstraction at all times”? 
 
 

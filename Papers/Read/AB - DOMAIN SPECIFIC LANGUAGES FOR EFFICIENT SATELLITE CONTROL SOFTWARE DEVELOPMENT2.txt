@@ -1,90 +1,38 @@
 AB - DOMAIN SPECIFIC LANGUAGES FOR EFFICIENT SATELLITE CONTROL SOFTWARE DEVELOPMENT 
 
 
-This is combined with the idea of model
-based development, where a model serves as (single)
-source of information for many derived artifacts
-including the executable, the documentation and
-analyses etc
+This is combined with the idea of model based development, where a model serves as (single) source of information for many derived artifacts including the executable, the documentation and analyses etc 
+With the tools used the boundary between the model and the implementation becomes increasingly fuzzy.
+Analysis and visualization techniques that are usually applied to the model become applicable to the entire implementation.
+Additionally, implementationlevel code refers directly to elements usually regarded as part of the model.
+Essentially, a single artifact (which is both, the model and the implementation) is used to derive all required representations, including C code, documentation, and configuration 
+The following steps are taken to achieve this improvement:
+• identify the key issues that result in inefficiency 
+• identify the essential needs of the application domain 
+• identify the technology for improvement 
+• a prototypical implementation to prove the idea 
+The essential idea is to concentrate on the specific needs of a particular domain and provide efficient means for expressing the solution of a problem in a language (or more generally: by some distinct notation) known to the domains professionals. 
 
-With the tools used the boundary between
-the model and the implementation becomes increasingly
-fuzzy. Analysis and visualization techniques that are
-usually applied to the model become applicable to the
-entire implementation. Additionally, implementationlevel code refers directly to elements usually regarded
-as part of the model.
-Essentially, a single artifact (which is both, the model
-and the implementation) is used to derive all required
-representations, including C code, documentation, and
-configuration
+In practice the user (e.g. the implementer) does not need to keep them in mind and is able to focus on the essential objectives.
+The high-level and domain specific abstract description of the software objectives is automatically transformed into various concrete representations including implementation code, documentation or input for analyses tools.
+Essentially the implementation is a model comprising everything 
+The idea of introducing a compiler for writing computer programs in a human-readable language rather than in a series of '0's and '1's is merely taken to a level where even more accidental complexity is removed from the manual work share.
 
-The following steps are taken to achieve this
-improvement:
-• identify the key issues that result in inefficiency
-• identify the essential needs of the application domain
-• identify the technology for improvement
-• a prototypical implementation to prove the idea
 
-The essential
-idea is to concentrate on the specific needs of a
-particular domain and provide efficient means for
-expressing the solution of a problem in a language (or
-more generally: by some distinct notation) known to the
-domains professionals. 
+Jetbrains' Meta Programming System (MPS) [1] is a language workbench [13] (DSL Development Environment) that is open source and freely available.
+It applies projectional editing.
+This overcomes the limits of language parsers and allows editors to include tables, mathematical symbols and graphical diagrams.
+The user directly modifies the abstract syntax tree (AST), respectively the implementation model, which is projected onto the screen, see Fig. 2.
 
- In practice the user (e.g.
-the implementer) does not need to keep them in mind
-and is able to focus on the essential objectives. The
-high-level and domain specific abstract description of
-the software objectives is automatically transformed
-into various concrete representations including
-implementation code, documentation or input for
-analyses tools. Essentially the implementation is a
-model comprising everything
+Different visualizations can be selected, depending on the current needs, all representing (parts of) the same model.
+Since a parser is not engaged, languages are composable by construction and can be arbitrarily mixed in an implementation.
 
-The idea of introducing a compiler for writing computer
-programs in a human-readable language rather than in a
-series of '0's and '1's is merely taken to a level where
-even more accidental complexity is removed from the
-manual work share. T
+Languages in MPS consist of an abstract syntax (the structure), a type system, a set of constraint rules, (multiple) editors and model-to-model as well as modelto-text transformations, compare Fig.3.
+As the MPS framework is open for extension, it can be easily augmented to interface with various external tools.
+For example, analysis tools are directly integrated and their results are reported in the editor 
+The AST is the implementation model which is transformed via a number of (model-to-model) transformation steps into a textual representation. 
 
-Jetbrains' Meta Programming System (MPS) [1] is a
-language workbench [13] (DSL Development
-Environment) that is open source and freely available. It
-applies projectional editing. This overcomes the limits
-of language parsers and allows editors to include tables,
-mathematical symbols and graphical diagrams. The user
-directly modifies the abstract syntax tree (AST),
-respectively the implementation model, which is
-projected onto the screen, see Fig. 2.
-
-Different visualizations can be selected, depending on
-the current needs, all representing (parts of) the same
-model. Since a parser is not engaged, languages are
-composable by construction and can be arbitrarily
-mixed in an implementation.
-
-Languages in MPS consist of an abstract syntax (the
-structure), a type system, a set of constraint rules,
-(multiple) editors and model-to-model as well as modelto-text transformations, compare Fig.3. As the MPS
-framework is open for extension, it can be easily
-augmented to interface with various external tools. For
-example, analysis tools are directly integrated and their
-results are reported in the editor
-
-The AST is the
-implementation model which is transformed via a
-number of (model-to-model) transformation steps into a
-textual representation. 
-
-During the transformation process
-available MPS languages can be used and the entire
-model is available for queries for efficient
-transformation results
-
-Based on the technology provided by MPS and mbeddr,
-a set of DSLs is currently being developed by OHB in
-the scope of R&D activities. The DSLs capture and
-efficiently implement the crucial elements of satellite
-control software. Redundant and repeatedly applied
-aspects are captured in higher level abstractions (firstclass DSL constructs).
+During the transformation process available MPS languages can be used and the entire model is available for queries for efficient transformation results 
+Based on the technology provided by MPS and mbeddr, a set of DSLs is currently being developed by OHB in the scope of R&D activities.
+The DSLs capture and efficiently implement the crucial elements of satellite control software.
+Redundant and repeatedly applied aspects are captured in higher level abstractions (firstclass DSL constructs).

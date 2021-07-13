@@ -1,146 +1,104 @@
 AB - Embedded Software Development with Projectional Language Workbenches 
 
-we
-propose an approach where modeling and programming is unified using
-projectional language workbenches. 
+we propose an approach where modeling and programming is unified using projectional language workbenches. 
 
-he paper does not propose specific extensions to C in
-the hope that everybody will use them; rather, the paper illustrates the benefits
-of domain specific extension using projectional editors.
+he paper does not propose specific extensions to C in the hope that everybody will use them; rather, the paper illustrates the benefits of domain specific extension using projectional editors.
 
-The main part of
-the paper describes our modular embedded language, a proof-of-concept
-implementation of the approach based on JetBrains MPS. We implemented a
-set of language extensions for embedded programming, such as state machines,
-tasks, type system extensions as well as a domain specific language (DSL) for
-robot control. The language modules are seamlessly integrated, leading to a
-very efficient way for implementing embedded software.
+The main part of the paper describes our modular embedded language, a proof-of-concept implementation of the approach based on JetBrains MPS.
+We implemented a set of language extensions for embedded programming, such as state machines, tasks, type system extensions as well as a domain specific language (DSL) for robot control.
+The language modules are seamlessly integrated, leading to a very efficient way for implementing embedded software.
 
-Finally, in large engineering environments, the integration build can take very
-long, up to several hours. If the concerns described above are only checked during the
-build, this can reduce productivity significantly. Checking these concerns earlier in a
-tool would improve the situation. Better modularity, analyzable dependency
-specification and better support for unit testing would further improve the situation.
+Finally, in large engineering environments, the integration build can take very long, up to several hours.
+If the concerns described above are only checked during the build, this can reduce productivity significantly.
+Checking these concerns earlier in a tool would improve the situation.
+Better modularity, analyzable dependency specification and better support for unit testing would further improve the situation.
 
-Projectional language workbenches (see next section; for
-now, consider them a tool for flexibly defining, mixing and extending languages) are
-the basis for this approach. Extensions can be on arbitrary abstraction levels, thereby
-integrating modeling and programming and avoiding tool integration issues. 
+Projectional language workbenches (see next section; for now, consider them a tool for flexibly defining, mixing and extending languages) are the basis for this approach.
+Extensions can be on arbitrary abstraction levels, thereby integrating modeling and programming and avoiding tool integration issues. 
 
-To implement extensions such as those proposed in the previous section, it must be
-possible to modularize the overall language as otherwise it will become complex and
-bloated. It must also be extendible so that new language modules can be added and
-language concepts in existing modules can be adapted to project- or system specifics.
+To implement extensions such as those proposed in the previous section, it must be possible to modularize the overall language as otherwise it will become complex and bloated.
+It must also be extendible so that new language modules can be added and language concepts in existing modules can be adapted to project- or system specifics.
 Projectional language workbenches form the basis for such an approach.
 
-The term Language Workbench has been coined by Martin Fowler in 2005 [6]. In this
-article he characterizes it as a tool with the following properties:
+The term Language Workbench has been coined by Martin Fowler in 2005 [6].
+In this article he characterizes it as a tool with the following properties:
 1. Users can freely define languages which are fully integrated with each other.
 2. The primary source of information is a persistent abstract representation.
 3. A DSL is defined in three main parts: schema, editor(s), and generator(s).
 4. Language users manipulate a DSL through a projectional editor.
 5. A language workbench can persist incomplete or contradictory information.
-Projectional editing implies that all text, symbols, and graphics are projected, wellknown from graphical modeling tools (UML, ER, State Charts): the model is stored
-independent of its concrete syntax, only the model structure is persisted, often using
-XML or a database. For editing purposes this abstract syntax is projected using
-graphical shapes. Users perform mouse gestures and keyboard actions tailored to the
-graphical editing to modify the abstract model structure directly. While the concrete
-syntax of the model does not have to be stored because it is specified as part of
-language definition and hence known by the projection engine, graphical modeling
-tools usually also store information about the visual layout
 
-Projectional editing can also be used for a syntax that is textual or semi-graphical
-(mathematical notations for example). However, since the projection looks like text,
-users expect interaction patterns and gestures known from "real text" to work (such as
-cursor movements, inserting/deleting characters, rearranging text, selection). A
-projectional editor has to "simulate" these interaction patterns to be usable. 
+Projectional editing implies that all text, symbols, and graphics are projected, wellknown from graphical modeling tools (UML, ER, State Charts): the model is stored independent of its concrete syntax, only the model structure is persisted, often using XML or a database.
+For editing purposes this abstract syntax is projected using graphical shapes.
+Users perform mouse gestures and keyboard actions tailored to the graphical editing to modify the abstract model structure directly.
+While the concrete syntax of the model does not have to be stored because it is specified as part of language definition and hence known by the projection engine, graphical modeling tools usually also store information about the visual layout 
+Projectional editing can also be used for a syntax that is textual or semi-graphical (mathematical notations for example).
+However, since the projection looks like text, users expect interaction patterns and gestures known from "real text" to work (such as cursor movements, inserting/deleting characters, rearranging text, selection).
+
+A projectional editor has to "simulate" these interaction patterns to be usable. 
 
 The following list shows the benefits of the approach:
- In projectional editing, no grammar or parser is used. Editing directly changes the
-program structure (AST). Thus, projectional editors can handle unparseable code.
-Language composition is easily possible, because composed languages cannot
-result in ambiguous grammars, a significant issue in classical parser-based systems.
- Notations are more flexible than ASCII/ANSI/Unicode. Graphical, semi-graphical
-and textual notations can be mixed and combined. For example, a graphical tool
-for editing state machines can embed a textual expression language for editing the
-guard conditions on transitions.
- Because projectional languages by definition need an IDE for editing (it has to do
-the projection!), language definition and extension always implies IDE definition
-and extension. The IDE will provide code completion, error checking and syntax
-highlighting for all languages, even when they are combined.
- Because the model is stored independent of its concrete notation, it is possible to
-represent the same model in different ways simply by providing several
-projections. Different viewpoints [7] of the overall program can be stored in one
-model; editing can be viewpoint or aspect specific. It is also possible to store outof-band data, i.e. annotations on the core model/program. Examples of this include
-documentation, pointers to requirements (traceability) [8] or feature dependencies
-in the context of product lines [9].
+ In projectional editing, no grammar or parser is used.
+Editing directly changes the program structure (AST).
+Thus, projectional editors can handle unparseable code.
+Language composition is easily possible, because composed languages cannot result in ambiguous grammars, a significant issue in classical parser-based systems.
+ Notations are more flexible than ASCII/ANSI/Unicode.
+Graphical, semi-graphical and textual notations can be mixed and combined.
+For example, a graphical tool for editing state machines can embed a textual expression language for editing the guard conditions on transitions.
+ Because projectional languages by definition need an IDE for editing (it has to do the projection!), language definition and extension always implies IDE definition and extension.
+The IDE will provide code completion, error checking and syntax highlighting for all languages, even when they are combined.
+ Because the model is stored independent of its concrete notation, it is possible to represent the same model in different ways simply by providing several projections.
+Different viewpoints [7] of the overall program can be stored in one model; editing can be viewpoint or aspect specific.
+It is also possible to store outof-band data, i.e. annotations on the core model/program.
+Examples of this include documentation, pointers to requirements (traceability) [8] or feature dependencies in the context of product lines [9].
 
-As a side effect, language workbenches deliver on the promise of removing the
-distinction between what is traditionally called programming and what is traditionally
-called modeling. This distinction is arbitrary: developers want to express different
-concerns of software systems with abstractions and notations suitable to that
-particular concern, formally enough for automatic processing or translation, and with
-good IDE support. Projectional language workbenches deliver on this goal in an
-integrated, consistent and productive way. They do this by applying the technology
-known from modeling tools (projection) to editing any notation.
+As a side effect, language workbenches deliver on the promise of removing the distinction between what is traditionally called programming and what is traditionally called modeling.
+This distinction is arbitrary: developers want to express different concerns of software systems with abstractions and notations suitable to that particular concern, formally enough for automatic processing or translation, and with good IDE support.
+Projectional language workbenches deliver on this goal in an integrated, consistent and productive way.
+They do this by applying the technology known from modeling tools (projection) to editing any notation.
 
 JetBrains MPS
-JetBrains’ Meta Programming System is an open source projectional language
-workbench [10]. Defining a language starts by defining the abstract syntax, the editor
-for the language concepts is specified in a second step. Lastly the generator is defined.
-It outputs text (for a low-level language) or it transforms higher-level code into code
-expressed in lower level languages. The higher-level to lower-level generators are not
-text generators, they transform abstract syntax trees.
+JetBrains’ Meta Programming System is an open source projectional language workbench [10].
+Defining a language starts by defining the abstract syntax, the editor for the language concepts is specified in a second step.
+Lastly the generator is defined.
+It outputs text (for a low-level language) or it transforms higher-level code into code expressed in lower level languages.
+The higher-level to lower-level generators are not text generators, they transform abstract syntax trees.
 
-Editing the tree as opposed to “real text” needs some accustomization. Without
-specific adaptations, every program element has to be selected from a drop-down list
-and "instantiated". However, MPS provides editor customizations to enable editing
-that resembles modern IDEs that use automatically expanding code templates. In
-some cases though, the tree shines through: Consider changing a statement like int i =
-j+k; to int i = (j+k)*2; you cannot simply move the cursor to the left of j and insert a
-left parenthesis. Rather, you have to select the + operator (the root node of the
-expression on the right) and use a Surround with Parens refactoring. 
+Editing the tree as opposed to “real text” needs some accustomization.
+Without specific adaptations, every program element has to be selected from a drop-down list and "instantiated".
+However, MPS provides editor customizations to enable editing that resembles modern IDEs that use automatically expanding code templates.
+In some cases though, the tree shines through: Consider changing a statement like int i = j+k; to int i = (j+k)*2; you cannot simply move the cursor to the left of j and insert a left parenthesis.
+Rather, you have to select the + operator (the root node of the expression on the right) and use a Surround with Parens refactoring. 
 
-MPS, like other
-language workbenches, comes with a set of DSLs for language definition, a separate
-DSL for each language aspect. Language aspects include structure, editor, type
-system, generator as well as support for features such as quick fixes or refactorings.
-Defining a new language starts by defining the language structure (aka meta
-model). This is very much like object oriented programming as language elements are
-represented as concepts that have properties, children and references to other
-concepts
+MPS, like other language workbenches, comes with a set of DSLs for language definition, a separate DSL for each language aspect.
+Language aspects include structure, editor, type system, generator as well as support for features such as quick fixes or refactorings.
+Defining a new language starts by defining the language structure (aka meta model).
+This is very much like object oriented programming as language elements are represented as concepts that have properties, children and references to other concepts 
+I already alluded to the relationship between object oriented programming and language definition in MPS.
+This analogy also holds for language extension and specialization.
+Concepts can extend other concepts, and subconcepts can be used polymorphically.
+Languages can extend other languages, too, and the sublanguage can contain subconcepts of concepts in the base language or can override the translation rules (generators) of concepts defined in the base language.
+Concept interfaces are also available.
+Using the Adapter pattern [12], unrelated concepts can be made to fit together.
+To use a B in places where an A (or subtypes) is expected, an adapter BAdapter that extends A and contains or references a B is necessary.
+As shown in [11], this approach supports embedding of completely unrelated languages 
+Languages also define translation rules to lower-level languages or to text.
+MPS includes an incremental translation engine that reduces program code as long as translation rules are available for the program elements.
+At the end, text generators output regular program text that can be fed into a compiler.
 
-I already alluded to the relationship between object oriented programming and
-language definition in MPS. This analogy also holds for language extension and
-specialization. Concepts can extend other concepts, and subconcepts can be used
-polymorphically. Languages can extend other languages, too, and the sublanguage
-can contain subconcepts of concepts in the base language or can override the
-translation rules (generators) of concepts defined in the base language. Concept
-interfaces are also available. Using the Adapter pattern [12], unrelated concepts can
-be made to fit together. To use a B in places where an A (or subtypes) is expected, an
-adapter BAdapter that extends A and contains or references a B is necessary. As
-shown in [11], this approach supports embedding of completely unrelated languages
+In short, language extension provides all the benefits of (what's traditionally known as) modeling, but without all the integration and tooling headaches.
+The perceived disadvantage of language extension - mainly the effort of implementing the extensions - is addressed very effectively by MPS. 
 
-Languages also define translation rules to lower-level languages or to text. MPS
-includes an incremental translation engine that reduces program code as long as
-translation rules are available for the program elements. At the end, text generators
-output regular program text that can be fed into a compiler.
+The ability to extend languages quickly and easily is very powerful.
+One really starts thinking differently about programming and modeling if the language isn't a fixed quantity anymore.
+More specifically, being able to go bottom (i.e. starting with C code, not with high-level models) up has proven useful.
+Additional abstractions are added when the need for them becomes apparent at any time during the project.
 
-In short, language extension provides all the benefits of (what's traditionally known
-as) modeling, but without all the integration and tooling headaches. The perceived
-disadvantage of language extension - mainly the effort of implementing the
-extensions - is addressed very effectively by MPS. 
+The ability to mix what's traditionally considered programming and what's traditionally considered modeling is clearly an advantage.
+Being able to use C
+expressions in state machine guard conditions, or using C statements in the actions of state machines is very useful - especially since consistent IDE support is available and the symbols and type systems are semlessly integrated.
 
-The ability to extend languages quickly and easily is very powerful. One really
-starts thinking differently about programming and modeling if the language isn't a
-fixed quantity anymore. More specifically, being able to go bottom (i.e. starting with
-C code, not with high-level models) up has proven useful. Additional abstractions are
-added when the need for them becomes apparent at any time during the project.
 
-The ability to mix what's traditionally considered programming and what's
-traditionally considered modeling is clearly an advantage. Being able to use C
-expressions in state machine guard conditions, or using C statements in the actions of
-state machines is very useful - especially since consistent IDE support is available and
-the symbols and type systems are semlessly integrated.
+
 
 

@@ -1,170 +1,101 @@
-AB - Efficient Development of Consistent Projectional Editors using Grammar Cells
+AB - Efficient Development of Consistent Projectional Editors using Grammar Cells 
+
+The definition of a projectional editor does not just specify the notation of a language, but also how users interact with the notation.
+Because of that it is easy to end up with different interaction styles within one and between multiple languages.
+The resulting inconsistencies have proven to be a major usability problem.
+
+Our evaluation based on project experience shows that grammar cells improve editing experience by providing a consistent and intuitive “text editor-like” user experience for textual notations.
+At the same time they do not limit language composability and the use of non-textual notations, the primary benefits of projectional editors.
+
+In projectional editors, a user’s editing gestures directly change the abstract syntax tree (AST) of a program.
+Once changed, the projectional editor projects the AST to a suitable notation (or concrete syntax).
+This is in contrast to parserbased editors where users change the (textual) notation, and a parser builds the AST by recognizing structures in the sequence of characters 
+Projectional editing has two major advantages: notational diversity and language composability.
+Notational diversity means that a wide range of notations can be used, including textual, tabular, diagrammatic, and mathematical notations [28]. 
+
+All notations are built on top of the same editor architecture, so they can be freely mixed (math symbols in tables or text in diagrams) while retaining editor support for all of them.
+Several alternative (user-switchable) notations for the same program are also possible.
+Notational diversity is crucial for DSLs targeting non-programmers, such as insurance experts, systems engineers or biologists [32]
+
+Language composition refers to using multiple languages in a single program without invasively modifying the definitions of the participating languages.
+Several forms of language composition exist [11], and projectional editors can support these composition techniques, as demonstrated in [27] for Jetbrains MPS (http://jetbrains.com/mps), the currently most widely used projectional editor.
+Composition is simplified because the syntax of multiple languages used in a single program can never lead to parsing ambiguities.
+
+As a consequence, the abstract syntax, concrete notations, and IDE support of different languages always compose without problems (semantics can still be a challenge).
+
+The main drawback of projectional editors is their questionable usability.
+In a previous paper [30] we identified issues in the areas of efficiently entering textual code, selecting and modifying code, as well as infrastructure integration. 
+
+Yet, the survey in [30] and a follow-on controlled experiment [4] also identified issues that must be addressed in order to align editor behavior with the expectation of users:
+that editing textual notations resembles, as much as possible, editing in traditional text editors.
+
+Substitutions A substitution for a concept C1 lets the user create an instance c2 of some other concept C2 and then execute some code j.
+Typically, the code will create an instance c1 of C1 and set c2 as a child of c1.
+In the GVD example introduced earlier, a substitution is used to allow entering a Type when a GVD is expected (supporting scenario 1 from Sec. 2).
+
+Side Transformations A side transformation on an instance c of concept C will be triggered when the user enters some string t at cursor position p.
+It then executes an action j.
+For example, a right transformation anchored on the {name} of a GVD is triggered by typing =; it sets the expression to something that is non-null (scenario 6).
+Similarly, entering a binary operator on the right or left of an expression inserts a binary expression.
+Note that in this case the priority and associativity of the various binary and unary operators have to be respected, and the necessary tree restructurings have to be implemented as part of j.
+
+Delete Actions A delete action on an instance c of concept C will be triggered when the user presses BACKSPACE at cursor position p.
+It executes an action j that typically deletes c or sets a flag to false.
+Examples include actions that unset the extern and exported flags if BACKSPACE is pressed on them (scenario 7), as well as the removal of binary operators.
+To illustrate these transformations in MPS, we conclude this section with two example transformations.
 
 
-The definition of a projectional editor does not just specify
-the notation of a language, but also how users interact with
-the notation. Because of that it is easy to end up with different
-interaction styles within one and between multiple languages.
-The resulting inconsistencies have proven to be a major
-usability problem.
-
-Our evaluation based on project experience
-shows that grammar cells improve editing experience by
-providing a consistent and intuitive “text editor-like” user
-experience for textual notations. At the same time they do
-not limit language composability and the use of non-textual
-notations, the primary benefits of projectional editors.
-
-In projectional editors, a user’s editing gestures directly
-change the abstract syntax tree (AST) of a program. Once
-changed, the projectional editor projects the AST to a suitable
-notation (or concrete syntax). This is in contrast to parserbased editors where users change the (textual) notation, and
-a parser builds the AST by recognizing structures in the
-sequence of characters
-
-Projectional editing has two major advantages: notational
-diversity and language composability. Notational diversity
-means that a wide range of notations can be used, including textual, tabular, diagrammatic, and mathematical notations [28]. 
-
-All notations are built on top of the same editor
-architecture, so they can be freely mixed (math symbols in
-tables or text in diagrams) while retaining editor support for
-all of them. Several alternative (user-switchable) notations
-for the same program are also possible. Notational diversity is crucial for DSLs targeting non-programmers, such as
-insurance experts, systems engineers or biologists [32]
-
-Language composition refers to using multiple languages
-in a single program without invasively modifying the definitions of the participating languages. Several forms of
-language composition exist [11], and projectional editors
-can support these composition techniques, as demonstrated
-in [27] for Jetbrains MPS (http://jetbrains.com/mps), the currently most widely used projectional editor. Composition is
-simplified because the syntax of multiple languages used in a
-single program can never lead to parsing ambiguities.
-
-As a
-consequence, the abstract syntax, concrete notations, and IDE
-support of different languages always compose without problems (semantics can still be a challenge).
-
-The main drawback of projectional editors is their questionable usability. In a previous paper [30] we identified issues in the areas of efficiently entering textual code, selecting
-and modifying code, as well as infrastructure integration. 
-
-Yet, the survey in [30] and a follow-on controlled experiment [4] also identified issues that must be addressed in
-order to align editor behavior with the expectation of users:
-that editing textual notations resembles, as much as possible,
-editing in traditional text editors.
-
-Substitutions A substitution for a concept C1 lets the user
-create an instance c2 of some other concept C2 and then
-execute some code j. Typically, the code will create an
-instance c1 of C1 and set c2 as a child of c1. In the GVD
-example introduced earlier, a substitution is used to allow
-entering a Type when a GVD is expected (supporting scenario
-1 from Sec. 2).
-
-Side Transformations A side transformation on an instance
-c of concept C will be triggered when the user enters some
-string t at cursor position p. It then executes an action j.
-For example, a right transformation anchored on the {name}
-of a GVD is triggered by typing =; it sets the expression to
-something that is non-null (scenario 6). Similarly, entering
-a binary operator on the right or left of an expression inserts
-a binary expression. Note that in this case the priority and
-associativity of the various binary and unary operators have
-to be respected, and the necessary tree restructurings have to
-be implemented as part of j.
-
-Delete Actions A delete action on an instance c of concept
-C will be triggered when the user presses BACKSPACE
-at cursor position p. It executes an action j that typically
-deletes c or sets a flag to false. Examples include actions that
-unset the extern and exported flags if BACKSPACE is
-pressed on them (scenario 7), as well as the removal of binary
-operators.
-To illustrate these transformations in MPS, we conclude this
-section with two example transformations.
+Language Workbenches All contemporary projectional editors are part of language workbenches, i.e., tools that allow users to define, compose and use their own languages [13].
+Four out of the ten tools that took part in the 2013 Language Workbench Challenge are projectional editors [12].
+At the time of the challenge, both Onion and Más [5] were in very early stages of development and did not provide support for grammar cell-style specification of usable editors.
+The tools have since been discontinued.
+The Whole Workbench [24] emphasizes structured notations (trees, tables) and does not emphasize usable textual editors.
 
 
-Language Workbenches All contemporary projectional
-editors are part of language workbenches, i.e., tools that allow
-users to define, compose and use their own languages [13].
-Four out of the ten tools that took part in the 2013 Language
-Workbench Challenge are projectional editors [12]. At the
-time of the challenge, both Onion and Más [5] were in very
-early stages of development and did not provide support for
-grammar cell-style specification of usable editors. The tools
-have since been discontinued. The Whole Workbench [24]
-emphasizes structured notations (trees, tables) and does not
-emphasize usable textual editors.
-
-
-Projection and Usability An early example of a projectional editor is the Incremental Programming Environment
-(IPE) [16]. It supports the definition of several notations for a
-language as well as partial projections, where parts of the AST
-are not shown. However, IPE did not address editor usability;
-to enter 2+3, users first have to enter the + and then fill in the
-two arguments. Another early example is GANDALF [17];
-the report in [20] states that the authors experienced similar
-usability problems as IPE: “Program editing will be considerably slower than normal keyboard entry, although actual time
-spent programming non-trivial programs should be reduced
-due to reduced error rates.”
-The Intentional Programming project [9, 22] has gained
-widespread visibility and has popularized projectional editing; the Intentional Domain Workbench (IDW) is the contemporary implementation of the approach. IDW supports
-diverse notations [7, 23]. Since it is a commercial system,
-we cannot evaluate its usability, and whether facilities similar to grammar cells are available. What is known from the
-above-mentioned publications suggests that this is not the
-case.
-Clark describes a projectional editor [8] relying on tree
-transformations. No emphasis has been put on usability.
-However, since tree change events are available, grammar
-cells could definitely be integrated.
+Projection and Usability An early example of a projectional editor is the Incremental Programming Environment (IPE) [16].
+It supports the definition of several notations for a language as well as partial projections, where parts of the AST are not shown.
+However, IPE did not address editor usability; to enter 2+3, users first have to enter the + and then fill in the two arguments.
+Another early example is GANDALF [17]; the report in [20] states that the authors experienced similar usability problems as IPE: “Program editing will be considerably slower than normal keyboard entry, although actual time spent programming non-trivial programs should be reduced due to reduced error rates.”
+The Intentional Programming project [9, 22] has gained widespread visibility and has popularized projectional editing; the Intentional Domain Workbench (IDW) is the contemporary implementation of the approach.
+IDW supports diverse notations [7, 23].
+Since it is a commercial system, we cannot evaluate its usability, and whether facilities similar to grammar cells are available.
+What is known from the above-mentioned publications suggests that this is not the case.
+Clark describes a projectional editor [8] relying on tree transformations.
+No emphasis has been put on usability.
+However, since tree change events are available, grammar cells could definitely be integrated.
 Scratch [15] is an environment for learning programming.
-It uses a projectional editor, but does not focus on textual
-editing; it relies mostly on nested blocks/boxes. So does
-GP [18]. Textual notations, and thus grammar cells, are
-not relevant. Prune [2] is a projectional editor developed
-at Facebook. The goal is explicitly to not feel like a text
-editor; the hypothesis is that tree-oriented editing operations
-are more efficient than those known from text editors. While
-this is an interesting hypothesis, our considerable experience
-with using projectional editing in real projects has convinced
-us that this approach is not feasible; hence the work described
-in this paper.
+It uses a projectional editor, but does not focus on textual editing; it relies mostly on nested blocks/boxes.
+So does GP [18].
+Textual notations, and thus grammar cells, are not relevant.
+Prune [2] is a projectional editor developed at Facebook.
+The goal is explicitly to not feel like a text editor; the hypothesis is that tree-oriented editing operations are more efficient than those known from text editors.
+While this is an interesting hypothesis, our considerable experience with using projectional editing in real projects has convinced us that this approach is not feasible; hence the work described in this paper.
 
 
-Projection and Parsing The Synthesizer Generator [21]
-is a projectional editor which, at the fine-grained expression
-level, uses textual input and (regular, textual) parsing. While
-this improves usability, it destroys many of the advantages
-of projectional editing in the first place, because language
-composition and the use of non-textual notations at the
-expression level 
-is limited.
+Projection and Parsing The Synthesizer Generator [21] is a projectional editor which, at the fine-grained expression level, uses textual input and (regular, textual) parsing.
+While this improves usability, it destroys many of the advantages of projectional editing in the first place, because language composition and the use of non-textual notations at the expression level is limited.
 
-Eco [10] relies on language boxes, explicitly delineated
-boundaries between different languages used in a single program (e.g., the user could define a box with Ctrl-Space).
-Each language box may use parsing or projection. This way,
-textual notations can be edited naturally, solving the usability
-issues associated with editing text in a projectional editor.
-However, it is not clear whether fine-grained mixing between
-different boxes will work in terms of usability. For example,
-consider a projectional editor for a mathematical notation embedded (in its own box) inside an otherwise textual editor for
-C code. As part of the mathematical expression, users would
-like to use (textual) references to C variables. Providing an
-integrated user experience without the need to constantly
-switch boxes manually, as well as integrated symbol tables,
-may not be a trivial problem. More generally, Eco has been
-developed with a background in parsing, trying to get some
-of the advantages of a projectional editor through language
-boxes. Our work starts out from projectional editing, trying
-to get to a more parser-like editor experience. A systematic
-and in-depth comparison of the trade-offs between the two
-approaches would be an interesting exercise
+Eco [10] relies on language boxes, explicitly delineated boundaries between different languages used in a single program (e.g., the user could define a box with Ctrl-Space).
+Each language box may use parsing or projection.
+This way, textual notations can be edited naturally, solving the usability issues associated with editing text in a projectional editor.
+However, it is not clear whether fine-grained mixing between different boxes will work in terms of usability.
+For example, consider a projectional editor for a mathematical notation embedded (in its own box) inside an otherwise textual editor for C code.
+As part of the mathematical expression, users would like to use (textual) references to C variables.
+Providing an integrated user experience without the need to constantly switch boxes manually, as well as integrated symbol tables, may not be a trivial problem.
+More generally, Eco has been developed with a background in parsing, trying to get some of the advantages of a projectional editor through language boxes.
+Our work starts out from projectional editing, trying to get to a more parser-like editor experience.
+A systematic and in-depth comparison of the trade-offs between the two approaches would be an interesting exercise 
 
 
 
 
 
 
-[8]	T. Clark. A General Architecture for Heterogeneous Language Engineering and Projectional Editor Support. ArXiv 1506.03398, 2015.
+
+
+[8]	T.
+Clark.
+A General Architecture for Heterogeneous Language Engineering and Projectional Editor Support.
+ArXiv 1506.03398, 2015.
 
 

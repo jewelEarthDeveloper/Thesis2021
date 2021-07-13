@@ -1,43 +1,21 @@
-AB - IncA: A DSL for the Definition of Incremental Program Analyses
+AB - IncA: A DSL for the Definition of Incremental Program Analyses 
+We have implemented IncA on top of JetBrains MPS, an IDE that relies on projectional editing, where code changes occur in the form of user-issued AST change requests.
+This aligns well with incrementalization because each AST change triggers an incremental update of the analysis results.
 
-We have implemented IncA on top of JetBrains MPS,1
-an
-IDE that relies on projectional editing, where code changes
-occur in the form of user-issued AST change requests. This
-aligns well with incrementalization because each AST change
-triggers an incremental update of the analysis results.
+Much like our informal description of the relations above, a graph pattern describes sets of related entities through structural constraints on AST nodes and on instances of other graph patterns.
 
-Much like our informal description of the relations above,
-a graph pattern describes sets of related entities through
-structural constraints on AST nodes and on instances of
-other graph patterns.
+In our implementation based on projectional editing, we receive change events for user-issued AST changes directly from the IDE.  Fine-grained AST change notifications align perfectly with incrementalization and there is no need for a potentially costly parsing step to compute AST differences.
+After an AST change, a projectional editor derives a new projection from the AST and displays it to the programmer 
+We instantiated the architecture for the Meta Programming System (MPS) using IncQuery [35] as the incremental evaluator.
+Both tools are available as open-source software, as is our implementation.2
+MPS is an IDE that uses projectional editing [38] instead of a parser-based approach.
+When editing the program in a projectional editor, every user edit (for example, inserting an operator) directly corresponds to an AST change.
+After an AST change, a projectional editor renders new projection from the changed AST based on projection rules of the AST nodes and displays it to the programmer.
+Projectional editing is well-suited for incremental program analysis because the user’s edits directly correspond to incremental AST changes and no incremental parsing is necessary.
+Our system reuses the incremental graph pattern matching component of IncQuery.
+This component realizes the computation graph presented in Section 2.
+The component expects the graph patterns to be specified using the Java API PSystem.
 
-In our implementation based on projectional editing, we
-receive change events for user-issued AST changes directly
-from the IDE.  Fine-grained AST change notifications align
-perfectly with incrementalization and there is no need for a
-potentially costly parsing step to compute AST differences.
-After an AST change, a projectional editor derives a new
-projection from the AST and displays it to the programmer
-
-We instantiated the architecture for the Meta Programming
-System (MPS) using IncQuery [35] as the incremental evaluator. Both tools are available as open-source software, as is
-our implementation.2
-MPS is an IDE that uses projectional editing [38] instead
-of a parser-based approach. When editing the program in a
-projectional editor, every user edit (for example, inserting
-an operator) directly corresponds to an AST change. After
-an AST change, a projectional editor renders new projection
-from the changed AST based on projection rules of the AST
-nodes and displays it to the programmer. Projectional editing
-is well-suited for incremental program analysis because the
-user’s edits directly correspond to incremental AST changes
-and no incremental parsing is necessary.
-Our system reuses the incremental graph pattern matching component of IncQuery. This component realizes the
-computation graph presented in Section 2. The component
-expects the graph patterns to be specified using the Java API
-PSystem.3 We implemented the IncA compiler to translate
-graph patterns into a PSystem specification. After startup,
-IncQuery uses the navigator to initialize its computation
-graph and to retrieve AST changes.
+3 We implemented the IncA compiler to translate graph patterns into a PSystem specification.
+After startup, IncQuery uses the navigator to initialize its computation graph and to retrieve AST changes.
 

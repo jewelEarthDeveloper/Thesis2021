@@ -1,65 +1,36 @@
-AB - RulesEngine - fowler
-
+todo
+AB - RulesEngine - fowler 
 A rules engine is all about providing an alternative computational model.
-Instead of the usual imperative model, which consists of commands in
-sequence with conditionals and loops, a rules engine is based on a Production
-Rule System. This is a set of production rules, each of which has a condition
-and an action - simplistically you can think of it as a bunch of if-then
-statement
+Instead of the usual imperative model, which consists of commands in sequence with conditionals and loops, a rules engine is based on a Production Rule System.
+This is a set of production rules, each of which has a condition and an action - simplistically you can think of it as a bunch of if-then statement 
+The subtlety is that rules can be written in any order, the engine decides when to evaluate them using whatever order makes sense for it.
+A good way of thinking of it is that the system runs through all the rules, picks the ones for which the condition is true, and then evaluates the corresponding actions.
+The nice thing about this is that many problems naturally t this model:
 
-The subtlety is that rules can be written in any order, the engine decides when
-to evaluate them using whatever order makes sense for it. A good way of
-thinking of it is that the system runs through all the rules, picks the ones for
-which the condition is true, and then evaluates the corresponding actions. The
-nice thing about this is that many problems naturally t this model:
-
-A rules engine is a tool that makes it easier to program using this
-computational model. It may be a complete development environment, or a
-framework that can work with a traditional platform. Most of what I've seen in
-recent years are tools that are designed to t in with an existing platform. At
-one time there was the notion of building an entire system using a tool like
-this, but now people (wisely) tend to use rule engines just for the sections of a
-system. The production rule computational model is best suited for only a
-subset of computational problems, so rules engines are better embedded into
-larger systems.
+A rules engine is a tool that makes it easier to program using this computational model.
+It may be a complete development environment, or a framework that can work with a traditional platform.
+Most of what I've seen in recent years are tools that are designed to t in with an existing platform.
+At one time there was the notion of building an entire system using a tool like this, but now people (wisely) tend to use rule engines just for the sections of a system.
+The production rule computational model is best suited for only a subset of computational problems, so rules engines are better embedded into larger systems.
 
 
 
-An important property of rule engines is chaining - where the action part of
-one rule changes the state of the system in such a way that it alters the value
-of the condition part of other rules. Chaining sounds appealing, since it
-supports more complex behaviors, but can easily end up being very hard to
-reason about and debug.
+An important property of rule engines is chaining - where the action part of one rule changes the state of the system in such a way that it alters the value of the condition part of other rules.
+Chaining sounds appealing, since it supports more complex behaviors, but can easily end up being very hard to reason about and debug.
 
 
-Even so, there's still value in a BusinessReadableDSL, and indeed this is an area
-where I do see value in this computational model. But here too lie dragons.
-The biggest one is that while it can make sense to cast your eyes down a list of
-rules and see that each one makes sense, the interaction of rules can often be
-quite complex - particularly with chaining. So I often hear that it was easy to
-08/02/2021 RulesEngine
-https://martinfowler.com/bliki/RulesEngine.html 3/4
-set up a rules system, but very hard to maintain it because nobody can
-understand this implicit program flow. 
+Even so, there's still value in a BusinessReadableDSL, and indeed this is an area where I do see value in this computational model.
+But here too lie dragons.
+The biggest one is that while it can make sense to cast your eyes down a list of rules and see that each one makes sense, the interaction of rules can often be quite complex - particularly with chaining.
+So I often hear that it was easy to 08/02/2021 RulesEngine https://martinfowler.com/bliki/RulesEngine.html 3/4
+set up a rules system, but very hard to maintain it because nobody can understand this implicit program flow. 
 
-I haven't spent enough time with these systems to get a sense of what
-heuristics we should follow to keep this implicit behavior under control.
-It does seem that it's important to limit the number of rules, indeed any
-system with enough rules to need sophisticated algorithms to get good
-performance probably has too many rules to be understood.
-Be very careful how you use chaining, often its best to organize your rules
-to limit or even eliminate chaining
-As in many places, testing is often undervalued here, but implicit behavior
-makes testing more important - and it needs to be done with production
-data.
-While building a rules system, I'd look to do things that would cause
-EarlyPain with modications of the rule base.
-All of these lead me to think that there's a lot to be said for avoiding rules
-engine products. The basic idea of production rules is very simple. In order to
-keep the implicit behavior under control you also need to limit the number of
-rules by keeping the rules within a narrow context. This would argue for a
-more domain specic approach to rules, where a team builds a limited rules
-engine that's only designed to work within that narrow context. Certainly if
-you're thinking of using a rules engine I'd suggest prototyping with both a
-product and a hand-rolled domain specic approach so you can get a good feel
-for how they would compare.
+I haven't spent enough time with these systems to get a sense of what heuristics we should follow to keep this implicit behavior under control.
+It does seem that it's important to limit the number of rules, indeed any system with enough rules to need sophisticated algorithms to get good performance probably has too many rules to be understood.
+Be very careful how you use chaining, often its best to organize your rules to limit or even eliminate chaining As in many places, testing is often undervalued here, but implicit behavior makes testing more important - and it needs to be done with production data.
+While building a rules system, I'd look to do things that would cause EarlyPain with modications of the rule base.
+All of these lead me to think that there's a lot to be said for avoiding rules engine products.
+The basic idea of production rules is very simple.
+In order to keep the implicit behavior under control you also need to limit the number of rules by keeping the rules within a narrow context.
+This would argue for a more domain specic approach to rules, where a team builds a limited rules engine that's only designed to work within that narrow context.
+Certainly if you're thinking of using a rules engine I'd suggest prototyping with both a product and a hand-rolled domain specic approach so you can get a good feel for how they would compare.

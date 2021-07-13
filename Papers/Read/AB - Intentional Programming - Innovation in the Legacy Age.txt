@@ -1,154 +1,119 @@
 AB - Intentional Programming - Innovation in the Legacy Age 
 
-There is a shortage of innovation in software, due to our limited capacity to deliver innovative
-abstraction mechanisms to the programmers.
+There is a shortage of innovation in software, due to our limited capacity to deliver innovative abstraction mechanisms to the programmers.
 
-The other delivery mechanisms for abstractions — programming languages — can be executed
-on computers, but have other serious limitations to their ability to spread new abstractions. First
-and foremost they tend to invalidate legacy code and thereby create a quandary to the end user
-as to when to change over to new technology. Often the pragmatic answer is “never”: the user
-organization simply may not be able to afford the costs and manage the complexity of
-maintaining the old system simultaneously with the adoption and development of the new.
-Hence, new programming languages can take hold only under the rare conditions when due to
-some paradigm shift the legacy codes lose their value
+The other delivery mechanisms for abstractions — programming languages — can be executed on computers, but have other serious limitations to their ability to spread new abstractions.
+First and foremost they tend to invalidate legacy code and thereby create a quandary to the end user as to when to change over to new technology.
+Often the pragmatic answer is “never”: the user organization simply may not be able to afford the costs and manage the complexity of maintaining the old system simultaneously with the adoption and development of the new.
+Hence, new programming languages can take hold only under the rare conditions when due to some paradigm shift the legacy codes lose their value 
 
 ***
-The
-space of acceptable notations is limited by parsing technology and the reliance on linear text
-streams.
+The space of acceptable notations is limited by parsing technology and the reliance on linear text streams.
 
-Imagine for a moment that new abstractions would not invalidate legacy code, that they would
-exist in an unlimited notational space, and that they could carry domain specific knowledge.
+Imagine for a moment that new abstractions would not invalidate legacy code, that they would exist in an unlimited notational space, and that they could carry domain specific knowledge.
 What kind of abstractions would we then define and use?
 
-Following Fred Brooks we often talk about the division of
-the essential and “accidental” portions of a program. By a “higher” level of abstraction
-we mean an abstraction that covers the essential qualities of the program, which one
-would not change unless the problem statement changed, as opposed to accidental
-detail which one might want to change for performance optimization, for compatibility
-and other reasons, well within the spirit of the existing problem statement
-
- By contrast the traditional solution is to embed the user abstractions
-into some general purpose language abstractions (such as procedure calls, records, or
-classes) where the embedding itself involves accidental decisions which work against
-reuse, and the combinational properties of the result are those of the embedding, rather
-than the embedded abstractions, that is those of the programming language rather than 
-of those of the domain. There can be no guarantees that the domain rules remain
-satisfied.
+Following Fred Brooks we often talk about the division of the essential and “accidental” portions of a program.
+By a “higher” level of abstraction we mean an abstraction that covers the essential qualities of the program, which one would not change unless the problem statement changed, as opposed to accidental detail which one might want to change for performance optimization, for compatibility and other reasons, well within the spirit of the existing problem statement 
+By contrast the traditional solution is to embed the user abstractions into some general purpose language abstractions (such as procedure calls, records, or classes) where the embedding itself involves accidental decisions which work against reuse, and the combinational properties of the result are those of the embedding, rather than the embedded abstractions, that is those of the programming language rather than  of those of the domain.
+There can be no guarantees that the domain rules remain satisfied.
 
 
-We can acknowledge this need by assuring that for
-each abstraction there will be a corresponding “concretion”1
- which hides the implementation
-details, and by further assuring that the concretion process is allowed to result in any
-conceivable implementation
+We can acknowledge this need by assuring that for each abstraction there will be a corresponding “concretion”  which hides the implementation details, and by further assuring that the concretion process is allowed to result in any conceivable implementation 
 
+***The meta-abstraction which has the properties laid down above is called the “intention”.
+From the programmer’s point of view, intentions are what would remain of a program once the accidental details, as well as the notational encoding (that is the syntax) had been factored out. 
 
-***The meta-abstraction which has the properties laid down above is called the “intention”. From
-the programmer’s point of view, intentions are what would remain of a program once the
-accidental details, as well as the notational encoding (that is the syntax) had been factored out. 
-
-Intentions express the programmer’s contribution and nothing more. The name “intention”
+Intentions express the programmer’s contribution and nothing more.
+The name “intention”
 suggests that they express directly the programmer’s computational intent.
 
-It is worth recalling what we gave up relative to computer languages. The biggest
-change is the abandonment of fixed syntax. The way a construct is input is no longer 
-necessarily connected with the way it appears on the screen or in a printout. Ambiguity
-has also become a possibility. Two constructs may look alike but may mean different
-things. Since the program may not have a text representation, a general purpose text
-editor or, indeed, any text based tool such as a source control system or a “grep” tool
-can no longer be applied to programs. When stated so starkly, the changes seem gross
-and unjustifiable, but in fact, our emotional attachment to text and parsing is based more
-on technological legacy and habit than on any real benefit. More on this below.
+It is worth recalling what we gave up relative to computer languages.
+The biggest change is the abandonment of fixed syntax.
+The way a construct is input is no longer necessarily connected with the way it appears on the screen or in a printout.
+Ambiguity has also become a possibility.
+Two constructs may look alike but may mean different things.
+Since the program may not have a text representation, a general purpose text editor or, indeed, any text based tool such as a source control system or a “grep” tool can no longer be applied to programs.
+When stated so starkly, the changes seem gross and unjustifiable, but in fact, our emotional attachment to text and parsing is based more on technological legacy and habit than on any real benefit.
+More on this below.
 
 ***
-our emotional attachment to text and parsing is based more
-on technological legacy and habit than on any real benefit.
+our emotional attachment to text and parsing is based more on technological legacy and habit than on any real benefit.
 
 
-Changes in notation can be implemented by changing the unparser or, more practically, by
-organizing unparsers so that they dispatch indirect though a user-selectable “language” object
-which is just a style sheet for intentions. Notation is used only for interfacing with the human
-user, so the worst that can happen as the result of changes is that the user will be temporarily
-confused.
+Changes in notation can be implemented by changing the unparser or, more practically, by organizing unparsers so that they dispatch indirect though a user-selectable “language” object which is just a style sheet for intentions.
+Notation is used only for interfacing with the human user, so the worst that can happen as the result of changes is that the user will be temporarily confused.
 
-By factoring out the implementation detail, the commonality of programs becomes more
-apparent and easier to exploit. Now we see that the implementation detail itself becomes a
-potential object of reuse.
+By factoring out the implementation detail, the commonality of programs becomes more apparent and easier to exploit.
+Now we see that the implementation detail itself becomes a potential object of reuse.
 
-t the intention is designed by straightforward listing of
-the independent parameters which characterize it, the parameters which the user will “insist on
-deciding”. These parameters may be of any form as long as they can be represented as an IP
-tree.
-
-s. However the number of abstraction creators would grow
-dramatically from today’s handful (a dozen? hundred? we are discussing successful “language
-designers” and “object library vendors”!) to thousands or more.
-
-This means that an abstraction ought to be optimized for readability, modularity,
-modifiability, reusability, information hiding, literary value, or any other source measures, while
-the implementation could be as specialized, compatible, interdependent, fast, small or optimized
-for any other object measures as required in the instance.
-
-In IP the declarations which state invariants guaranteed by the programmer are called
-stipulations. Compared with hand-optimizations, stipulations are explicit and appear in
-one place only — at the place where their validity is most apparent to the reader, where
-they can be easily removed if suspected of being wrong or if they become invalid. It is
-also easy to generate run-time assertions from them for testing.
+t the intention is designed by straightforward listing of the independent parameters which characterize it, the parameters which the user will “insist on deciding”.
+These parameters may be of any form as long as they can be represented as an IP tree.
 
 
-5.1. Legacy Code
-Legacy code can be imported into IP by a language-specific parser. Once the code is in tree
-form, it is treated the same as code entered by the editor. The use of the parser depends on the
-inclusion of a library containing all supported intentions of the legacy language. The reading of a
-program into IP will not make the program more abstract, it will merely enable the combination
-of the program with other components and the gradual upgrading of the program to a more
-intentional form while it can be maintained in a functioning state. 
+However the number of abstraction creators would grow dramatically from today’s handful (a dozen? hundred? we are discussing successful “language designers” and “object library vendors”!) to thousands or more.
+
+This means that an abstraction ought to be optimized for readability, modularity, modifiability, reusability, information hiding, literary value, or any other source measures, while the implementation could be as specialized, compatible, interdependent, fast, small or optimized for any other object measures as required in the instance.
+
+In IP the declarations which state invariants guaranteed by the programmer are called stipulations.
+Compared with hand-optimizations, stipulations are explicit and appear in one place only — at the place where their validity is most apparent to the reader, where they can be easily removed if suspected of being wrong or if they become invalid.
+It is also easy to generate run-time assertions from them for testing.
 
 
-Since the source exists only in tree form, editing in IP is done by direct manipulation through a
-graphical user interface. Not unlike a graphics editor, the user first selects an operand or a place
-in the program, and then executes a command to cut, copy, or paste something there. T
+5.1.
+Legacy Code Legacy code can be imported into IP by a language-specific parser.
+Once the code is in tree form, it is treated the same as code entered by the editor.
+The use of the parser depends on the inclusion of a library containing all supported intentions of the legacy language.
+The reading of a program into IP will not make the program more abstract, it will merely enable the combination of the program with other components and the gradual upgrading of the program to a more intentional form while it can be maintained in a functioning state. 
 
-6.1. Bad engineering is more possible than before.
-Managers view the limitations of existing programming languages as control mechanisms. When
-their organization buys into a language, they also buy into a philosophy of limitation which
-effectively says: mischief caused within the language could not be helped, but at least mischief
-that is outside of the language has been avoided. IP raises to them the specter of unlimited
-mischief. But in fact, for better or worse, IP can be used for control as well as for anarchy. A
-transformation can generate error messages, and it can do that on the basis of domain-specific
-knowledge. Actionable methodologies are encodable into IP with their limitations. For example,
-if procedures without a lead-in comment are not permitted, the rule can be checked by the
-reduction of procedures.
+
+Since the source exists only in tree form, editing in IP is done by direct manipulation through a graphical user interface.
+Not unlike a graphics editor, the user first selects an operand or a place in the program, and then executes a command to cut, copy, or paste something there.
+
+
+6.1.
+Bad engineering is more possible than before.
+Managers view the limitations of existing programming languages as control mechanisms.
+When their organization buys into a language, they also buy into a philosophy of limitation which effectively says: mischief caused within the language could not be helped, but at least mischief that is outside of the language has been avoided.
+IP raises to them the specter of unlimited mischief.
+But in fact, for better or worse, IP can be used for control as well as for anarchy.
+A transformation can generate error messages, and it can do that on the basis of domain-specific knowledge.
+Actionable methodologies are encodable into IP with their limitations.
+For example, if procedures without a lead-in comment are not permitted, the rule can be checked by the reduction of procedures.
 
 
 
-There are three related objections to editing by direct manipulation: first, the most similar
-experience to direct tree editing in the past has been with Syntax Directed Editors which had a
-distinct lack of success. Second, programmers could not use their favorite text editors to edit
-programs. Third, programmers need to learn two languages: the input notation and the display
-notation.
+There are three related objections to editing by direct manipulation: first, the most similar experience to direct tree editing in the past has been with Syntax Directed Editors which had a distinct lack of success.
+Second, programmers could not use their favorite text editors to edit programs.
+Third, programmers need to learn two languages: the input notation and the display notation.
 
-Syntax-directed editing promised benefits such as the early elimination of syntax errors, the
-instant updating of browser database, and the ability to prompt the user with helpful information,
-such as the names of arguments in a statement or a procedure call. These are important benefits
-and the IP editor retains them. Much of the early negative experience with syntax-directed
-editing has been due to the lack of high quality Graphical User Interface (GUI) and also a lack
-of recognition of the key principles of user interface design: above all the interface should be
-modeless: the programmer should be able to enter programs in any order, and the temporary
-incompleteness of the program should not be confused with errors. For example, a reference to
-an undefined name need not disrupt program entry. Sure, the reference may be highlighted and 
+Syntax-directed editing promised benefits such as the early elimination of syntax errors, the instant updating of browser database, and the ability to prompt the user with helpful information, such as the names of arguments in a statement or a procedure call.
+These are important benefits and the IP editor retains them.
+Much of the early negative experience with syntax-directed editing has been due to the lack of high quality Graphical User Interface (GUI) and also a lack of recognition of the key principles of user interface design: above all the interface should be modeless: the programmer should be able to enter programs in any order, and the temporary incompleteness of the program should not be confused with errors.
+For example, a reference to an undefined name need not disrupt program entry.
+Sure, the reference may be highlighted and 
+
+
+
+
+
+
 
 
  
-ABRAHAMS, P. W., Typographical Extensions for Programming Languages:  Breaking out of the ASCII 
+ABRAHAMS, P.
+W., Typographical Extensions for Programming Languages:  Breaking out of the ASCII 
 Straitjacket. 
 
 
-DYKES, L. R., CAMERON, R. D., Towards high-level editing in syntax-based editors.  Software Engineering Journal, July 1990. 
-KAELBLING, M. J., Programming Languages Should NOT Have Comment Statements.  SIGPLAN Notices, Vol 23, No 10. 
+DYKES, L.
+R., CAMERON, R.
+D., Towards high-level editing in syntax-based editors.  Software Engineering Journal, July 1990. 
+KAELBLING, M.
+J., Programming Languages Should NOT Have Comment Statements.  SIGPLAN Notices, Vol 23, No 10. 
 
-MINÖR, S.,  Interacting with structure-oriented editors. Lund University, Sweden 
+MINÖR, S.,  Interacting with structure-oriented editors.
+Lund University, Sweden 
 
 
 

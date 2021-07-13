@@ -1,22 +1,27 @@
+todo
 AB - Shadow Models: Incremental Transformations for MPS
 
 
-Feature modeling is well-established for modeling variability in product lines [9]: a feature model specifies the set
-of possible products by defining identifiable features and
-the constraints between them; configurations specify individual products by selecting features while respecting the
-constraints. 
+Feature modeling is well-established for modeling variability in product lines [9]: a feature model specifies the set of possible products by defining identifiable features and the constraints between them; configurations specify individual products by selecting features while respecting the constraints. 
 
-MPS models are trees with cross-references (or: graphs with
-a single containment hierarchy). Those cross-references are
-particularly challenging: a reference of some type P between
-input nodes A and B must be mapped to a reference of some
-type Q between the corresponding output nodes A’ and B’.
+MPS models are trees with cross-references (or: graphs with a single containment hierarchy).
+Those cross-references are particularly challenging: a reference of some type P between input nodes A and B must be mapped to a reference of some type Q between the corresponding output nodes A’ and B’.
 
-. Dclare for MPS is
-another incremental transformation engine that relies on
-contraints instead of functional transformations. S
+.
+Dclare for MPS is another incremental transformation engine that relies on contraints instead of functional transformations.
+S
 
 
 
 
-[6]	M. Felleisen, R. B. Findler, M. Flatt, S. Krishnamurthi, E. Barzilay, J. McCarthy, and S. Tobin-Hochstadt. A programmable programming language. Communications of the ACM, 61(3):62–71, 2018.
+[6]	M.
+Felleisen, R.
+B.
+Findler, M.
+Flatt, S.
+Krishnamurthi, E.
+Barzilay, J.
+McCarthy, and S.
+Tobin-Hochstadt.
+A programmable programming language.
+Communications of the ACM, 61(3):62–71, 2018.

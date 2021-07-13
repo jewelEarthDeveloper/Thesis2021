@@ -1,46 +1,24 @@
-AB - A Model-Based Approach to Language Integration
+todo
+AB - A Model-Based Approach to Language Integration 
+However, in general verifying the consistency across the language boundaries is not possible because tools are not aware of the cross-language semantics.
 
-However, in general verifying the consistency across the
-language boundaries is not possible because tools are not
-aware of the cross-language semantics.
-
-Combining different languages inside one system can lead
-to possible inconsistencies across the language boundaries.
+Combining different languages inside one system can lead to possible inconsistencies across the language boundaries.
 
 LANGUAGE INTEGRATION IN LANGUAGE
 WORKBENCHES
-Herein we present a preliminary approach to obtain seamless language integration with full tool support in the context
-of language workbenches. Our reference implementation uses
-the Jetbrains MetaProgramming System5
-(MPS) but it is not
-limited to it: it could be implemented also for the Eclipse
-Modeling Platform [5] or other Language workbenches (e.g.,
-Spoofax [6]) as long as the Language Workbench considered
-supports the languages of interest.
-MPS is a projectional editor: it means that the abstract
-information underlying the model (something similar to the
-Abstract Syntax Tree) is persisted independently from the
-concrete syntax of the language. This is radically different
-from what happens with text editors. There are many benefits
-with this choice, but a very important one is that no parsing
-is necessary. In this way languages can be freely evolved
-and combined without the risk of obtaining an ambiguous
-grammar. The models are then projected, hence they are
-represented in a form suitable for understanding and editing by
-the user. Typically these projections are textual but they could
-also be graphical. Different artifacts can be later generated
-from the models: for example compiled java classes or the
-concrete XML files to be distributed within the compiled
-system.
-We chose MPS for the completeness of the tool and because
-some of the authors acquired experience with this environment
-in the context of the mbeddr project6
-. Moreover MPS is
-distributed with language plugins which permit to to operate
-with Java and XML out of the box.
+Herein we present a preliminary approach to obtain seamless language integration with full tool support in the context of language workbenches.
+Our reference implementation uses the Jetbrains MetaProgramming System5
+(MPS) but it is not limited to it: it could be implemented also for the Eclipse Modeling Platform [5] or other Language workbenches (e.g., Spoofax [6]) as long as the Language Workbench considered supports the languages of interest.
+MPS is a projectional editor: it means that the abstract information underlying the model (something similar to the Abstract Syntax Tree) is persisted independently from the concrete syntax of the language.
+This is radically different from what happens with text editors.
+There are many benefits with this choice, but a very important one is that no parsing is necessary.
+In this way languages can be freely evolved and combined without the risk of obtaining an ambiguous grammar.
+The models are then projected, hence they are represented in a form suitable for understanding and editing by the user.
+Typically these projections are textual but they could also be graphical.
+Different artifacts can be later generated from the models: for example compiled java classes or the concrete XML files to be distributed within the compiled system.
+We chose MPS for the completeness of the tool and because some of the authors acquired experience with this environment in the context of the mbeddr project6
+.
+Moreover MPS is distributed with language plugins which permit to to operate with Java and XML out of the box.
 
-It does not resort on a limited universal metamodel, but
-instead use the MPS representation of the language, which
-permits to consider every aspect of the language
-
+It does not resort on a limited universal metamodel, but instead use the MPS representation of the language, which permits to consider every aspect of the language 
 

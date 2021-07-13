@@ -1,140 +1,80 @@
+todo
 AB - Rule based programming with Drools 
 
-. Rule based programming allows
-us to develop applications using declarative rules. These can simplify
-development in applications where such rules based knowledge is used
-for decision making
+.
+Rule based programming allows us to develop applications using declarative rules.
+These can simplify development in applications where such rules based knowledge is used for decision making 
+rULE is a principle or regulation governing conduct, action, procedure, arrangement, etc.
+It is a statement that defines or constrains some aspect of the business; a business rule is intended to assert business structure or to control or influence the business's behavior.
+The power of business rules lies in their ability both to separate knowledge from its implementation logic and to be changed without changing source code 
+A solution is to have a rule engine [1], which is basically a set of tools that enable business analysts and developers to build decision logic based on an organization's data.
+The rule engine evaluates and executes rules.
+The rule engine applies rules and actions as defined by end users without affecting how the application runs.
+The application is built to deal with the rules, which are designed separately 
+The underlying idea of a rule engine is to externalize the business or application logic.
+A rule engine can be viewed as a sophisticated interpreter of if-then statements.
+The if-then statements are the rules.
+A rule is composed of two parts, a condition and an action: When the condition is met, the action is executed.
+The if portion contains conditions (such as price >=1000), and the then portion contains actions (such as offer discount 10%).
+The inputs to a rule engine are a collection of rules called a rule execution set and data objects.
+The outputs are determined by the inputs and may include the original input data objects with modifications, new data objects, and possible side effects. 
 
-rULE is a principle or regulation governing conduct, action,
-procedure, arrangement, etc. It is a statement that defines
-or constrains some aspect of the business; a business rule is
-intended to assert business structure or to control or influence
-the business's behavior. The power of business rules lies in their
-ability both to separate knowledge from its implementation
-logic and to be changed without changing source code
-
-A solution is to have a rule engine [1], which is basically a set
-of tools that enable business analysts and developers to build
-decision logic based on an organization's data. The rule engine
-evaluates and executes rules. The rule engine applies rules and
-actions as defined by end users without affecting how the
-application runs. The application is built to deal with the rules,
-which are designed separately
-
-The underlying idea of a rule engine is to externalize the
-business or application logic. A rule engine can be viewed as a
-sophisticated interpreter of if-then statements. The if-then
-statements are the rules. A rule is composed of two parts, a
-condition and an action: When the condition is met, the action
-is executed. The if portion contains conditions (such as price
->=1000), and the then portion contains actions (such as offer
-discount 10%). The inputs to a rule engine are a collection of
-rules called a rule execution set and data objects. The outputs
-are determined by the inputs and may include the original input
-data objects with modifications, new data objects, and possible
-side effects. 
-
-Several rules engines are available, including commercial
-and open source. Commercial rules engines usually express
-rules in a proprietary English-like language. Others write rules
-using scripting languages such as Groovy or Python. Examples
-of rule engines include Drools, ILOG JRules, BizTalk,
-OpenRules, Fair Isaac Blaze Advisor, PegaRules, RulesPower,
-and Jess, etc
-
+Several rules engines are available, including commercial and open source.
+Commercial rules engines usually express rules in a proprietary English-like language.
+Others write rules using scripting languages such as Groovy or Python.
+Examples of rule engines include Drools, ILOG JRules, BizTalk, OpenRules, Fair Isaac Blaze Advisor, PegaRules, RulesPower, and Jess, etc 
 Advantages of adopting a rule-based approach:
- Rules that represent policies are easily
-communicated and understood.
- Rules retain a higher level of independence than
-conventional programming languages.
- Rules separate knowledge from its implementation
-logic.
- Rules can be changed without changing source
-code; thus, there is no need to recompile the
-application's code.
+ Rules that represent policies are easily communicated and understood.
+ Rules retain a higher level of independence than conventional programming languages.
+ Rules separate knowledge from its implementation logic.
+ Rules can be changed without changing source code; thus, there is no need to recompile the application's code.
  Cost of production and maintenance decreases. 
 
-Drools [2],[3] is an open source rules engine, written in the
-Java language, that uses the Rete algorithm [4] to evaluate the
-rules. The Drools Rete implementation is called ReteOO,
-signifying that Drools has an enhanced and optimized
-implementation of the Rete algorithm for Object Oriented
-systems. Drools let us express our business logic rules in a
-declarative way. 
-We can write rules using a non-XML native
-language that is quite easy to learn and understand. And we can
-embed Java code directly in a rules file
+Drools [2],[3] is an open source rules engine, written in the Java language, that uses the Rete algorithm [4] to evaluate the rules.
+The Drools Rete implementation is called ReteOO, signifying that Drools has an enhanced and optimized implementation of the Rete algorithm for Object Oriented systems.
+Drools let us express our business logic rules in a declarative way. 
+We can write rules using a non-XML native language that is quite easy to learn and understand.
+And we can embed Java code directly in a rules file 
+Drools is a Rule Engine that uses the Rule Based approached to implement an Expert System and is more correctly classified as a Production Rule System.
+A Production Rule System is Turing complete with a focus on knowledge representation to express propositional and first order logic in a concise, non ambiguous and declarative manner.
+The brain of a Production Rules System is an Inference Engine (see Fig 2) that is able to scale to a large number of rules and facts.
+The Inference Engine matches facts and data, against Production Rules, also called Productions or just Rules, to infer conclusions which result in actions 
+The Rules are stored in the Production Memory and the facts that the Inference Engine matches against the Working Memory.
+Facts are asserted into the Working Memory where they may then be modified or retracted.
+A system with a large number of rules and facts may result in many rules being true for the same fact assertion, these rules are said to be in conflict.
+The Agenda manages the execution order of these conflicting rules using a Conflict Resolution strategy. 
 
-Drools is a Rule Engine that uses the Rule Based approached
-to implement an Expert System and is more correctly classified
-as a Production Rule System. A Production Rule System is Turing complete with a focus on knowledge representation to
-express propositional and first order logic in a concise, non
-ambiguous and declarative manner. The brain of a Production
-Rules System is an Inference Engine (see Fig 2) that is able to
-scale to a large number of rules and facts. The Inference Engine
-matches facts and data, against Production Rules, also called
-Productions or just Rules, to infer conclusions which result in
-actions
+A Production Rule System's Inference Engine is statefull and able to enforce truthfulness - called Truth Maintenance.
+A
+logical relationship can be declared by actions which mean the action's state depends on the inference remaining true; when it is no longer true the logical dependent action is undone.
 
-The Rules are stored in the Production Memory and the facts
-that the Inference Engine matches against the Working
-Memory. Facts are asserted into the Working Memory where
-they may then be modified or retracted. A system with a large
-number of rules and facts may result in many rules being true
-for the same fact assertion, these rules are said to be in conflict.
-The Agenda manages the execution order of these conflicting
-rules using a Conflict Resolution strategy. 
+There are two methods of execution for a Production Rule Systems - Forward Chaining and Backward Chaining; systems that implement both are called Hybrid Production Rule Systems.
+Understanding these two modes of operation are key to understanding why a Production Rule System is different and how to get the best from them.
+Forward chaining is 'data-driven'
+and thus reactionary - facts are asserted into the working memory which results in one or more rules being concurrently true and scheduled for execution by the Agenda - we start with a fact, it propagates and we end in a conclusion.
+Drools is a forward chaining engine. 
 
-A Production Rule System's Inference Engine is statefull and
-able to enforce truthfulness - called Truth Maintenance. A
-logical relationship can be declared by actions which mean the
-action's state depends on the inference remaining true; when it
-is no longer true the logical dependent action is undone.
+The word RETE is Latin for "net" meaning network.
+The RETE algorithm can be broken into two parts: rule compilation and runtime execution.
+The compilation algorithm describes how the Rules in the Production Memory to generate an efficient discrimination network.
+In non-technical terms, a discrimination network is used to filter data.
+The idea is to filter data as it propagates through the network.
+At the top of the network the nodes would have many matches and as we go down the network, there would be fewer matches.
+At the very bottom of the network are the terminal nodes.
+There are four basic nodes: root, 1-input, 2-input and terminal. 
 
-There are two methods of execution for a Production Rule
-Systems - Forward Chaining and Backward Chaining; systems
-that implement both are called Hybrid Production Rule
-Systems. Understanding these two modes of operation are key
-to understanding why a Production Rule System is different and
-how to get the best from them. Forward chaining is 'data-driven'
-and thus reactionary - facts are asserted into the working
-memory which results in one or more rules being concurrently
-true and scheduled for execution by the Agenda - we start with
-a fact, it propagates and we end in a conclusion. Drools is a
-forward chaining engine. 
-
-The word RETE is Latin for "net" meaning network. The
-RETE algorithm can be broken into two parts: rule compilation
-and runtime execution.
-The compilation algorithm describes how the Rules in the
-Production Memory to generate an efficient discrimination
-network. In non-technical terms, a discrimination network is
-used to filter data. The idea is to filter data as it propagates
-through the network. At the top of the network the nodes would
-have many matches and as we go down the network, there
-would be fewer matches. At the very bottom of the network are
-the terminal nodes. There are four basic nodes: root, 1-input,
-2-input and terminal. 
-
-The root node is where all objects enter the network. From
-there, it immediately goes to the ObjectTypeNode. The purpose
-of the ObjectTypeNode is to make sure the engine doesn't do 
-more work than it needs to. For example, say we have 2 objects:
-Account and Order. If the rule engine tried to evaluate every
-single node against every object, it would waste a lot of cycles.
-To make things efficient, the engine should only pass the object
-to the nodes that match the object type. The easiest way to do
-this is to create an ObjectTypeNode and have all 1-input and
-2-input nodes descended from it. This way, if an application
-asserts a new account, it won't propagate to the nodes for the
-Order object
-
-In Drools when an object is asserted it retrieves a
-list of valid ObjectTypesNodes via a lookup in a HashMap
-from the object's Class; if this list doesn't exist it scans all the
-ObjectTypde nodes finding valid matches which it caches in the
-list. This enables Drools to match against any Class type that
-matches with an instance of check. 
+The root node is where all objects enter the network.
+From there, it immediately goes to the ObjectTypeNode.
+The purpose of the ObjectTypeNode is to make sure the engine doesn't do 
+more work than it needs to.
+For example, say we have 2 objects:
+Account and Order.
+If the rule engine tried to evaluate every single node against every object, it would waste a lot of cycles.
+To make things efficient, the engine should only pass the object to the nodes that match the object type.
+The easiest way to do this is to create an ObjectTypeNode and have all 1-input and 2-input nodes descended from it.
+This way, if an application asserts a new account, it won't propagate to the nodes for the Order object 
+In Drools when an object is asserted it retrieves a list of valid ObjectTypesNodes via a lookup in a HashMap from the object's Class; if this list doesn't exist it scans all the ObjectTypde nodes finding valid matches which it caches in the list.
+This enables Drools to match against any Class type that matches with an instance of check. 
 
 
 

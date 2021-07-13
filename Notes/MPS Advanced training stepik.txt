@@ -1,0 +1,150 @@
+What is MPS
+MPS is an open-source language workbench that focuses on Domain-specific languages. The project started in 2003 as an experiment to try innovative concepts, such as projectional editor and code generation, on the Java platform. It has gradually evolved into a regular tool that is ready for use in the industry. The open-source license permits users to use MPS in commercial as well as open-source and academic projects without fees or any liabilities to JetBrains. JetBrains offers consultancy, training and commercial support to the customers to fund further development of the tool.
+
+
+MPS has been created by JetBrains. JetBrains is a software company founded in 2000, which focuses on building tools for developers. The product portfolio contains mostly IDEs for popular programming languages and platforms, including Java, Android, C/C++, .Net, Ruby, Python and others. 
+
+
+There are three main benefits of using Language Engineering:
+Productivity
+Quality
+Leveraging expertise
+
+Main gains in productivity come from removing repetition from code and from raising the abstraction level closer to the problem domain. Higher levels of abstraction support programmer's focus and reduce the abstraction gap between the domain and the language. This also applies to the maintenance phase. Reading and understanding code can be greatly improved by raising the level of abstraction.
+
+When comparing the traditional approach using general-purpose languages and language engineering, the productivity increase comes at a price of higher initial costs - the languages must first be designed and implemented. Luckily, language workbenches often support language evolution - you can be developing languages and using them at the same time. Code gets automatically migrated to the most recent version of the languages available. Language development can be done iteratively.
+
+Code written using domain-specific languages tends to contain fewer defects, mainly due to these reasons:
+
+The code is shorter than when written using a GPL.
+The code is easier to analyze by tools and reviewed by humans.
+The language can forbid dangerous or suspicious code constructs, e.g. pointer manipulation or null values
+Error messages that the IDE shows to the user can be also domain-specific, e.g. "Symbol is not available on a phone keyboard".
+The generator generates code with consistent quality - new features (aka business rules, menus, etc.)  have the same quality as the old ones, since the generator used to generate runnable code for them is the same.
+
+Language engineering separates the concerns of the problem domain and the implementation domain.
+
+Problem domain - is covered by the user models using the DSLs. Domain experts understand this domain and so they benefit from being able to read or write code that targets the problem domain. The domain experts' expertise is encoded in the user models. These are typically preserved in version control systems and evolve at the pace of evolution of the business.
+
+Implementation domain - is covered by the generator and the generator run-time frameworks. Professional programmers understand this domain and they use GPLs to implement the logic. The logic of efficient implementation is encoded in the generator and evolves at the pace of evolution of the implementation technology (e.g. Java, the used database system, the operating system, etc.).
+
+Abstract Syntax Trees
+People frequently get confused about how code is represented in computer programs. Compilers, interpreters as well as IDEs need to manipulate code that the user provides. Code is typically provided in text files and the extension of the file indicates the language used by that file. Computer programs, in order to represent the code in memory, need to read the files and process them with a special tool, called parser. Parser uses the known grammar of the language to distinguish individual tokens in the text file and to assign meaning to them. As the parser reads the file it gradually builds a data structure that is known as Abstract Syntax Tree. The structure represents the code fully and unambiguously. Abstract Syntax Trees (AST for short) serve the IDE to provide assistance to the user as well as they serve the compiler to perform transformations that gradually convert the tree into runnable binary code.
+
+Notations
+The chosen notation directly influences the success of a language. People frequently adopt a language or refuse to do so depending on how familiar they feel when interacting with the code. So the notation should be simple and concise and provide sensible defaults. If a preferred notation exists already in the domain, it is advisable to reuse or adapt it in the new language.
+
+Last but not the least, the support that the IDE provides (code-completion, scoping, intentions, refactorings, navigation, error detection, etc.) adds to the usability of the notation itself. It is not only the static syntax of the language, but also the ways user can efficiently interact with the code that users care about when it comes to language notations.
+
+Types of notations
+The long history of parser-based languages has made us believe that textual notations are the preferred ones, while, in fact, they may not be optimal for many problem domains. Abstract Syntax Trees (AST) as a data structure are not limited to representing text. They can easily represent diagrams, tables or anything that can be mapped to a structure of a hierarchy with references. It is the textual editor of the traditional IDEs that puts restrictions on the allowed notations. Tools like MPS that build on the principles of projectional (sometimes called structured) editing can offer a wider range of notations.
+
+Symbols - notations that combine text with non-textual symbols. Math, for example, has been using symbols for centuries and there are good reasons to support these symbols in languages used in math-heavy computations.
+
+State machines - some domains, such as embedded software or robotics, use state machines to model systems that react to external events and change their internal state following some pre-defined set of rules. A printer can be Off, On, Printing, Out-of-paper or Broken. These are the states. As events we would capture pressing the buttons on the printer's keyboard, a print job arrival or a malfunction detection. To express the transitions in individual states after arrival of certain events a table can be used with good success.
+
+ 
+Tables - the wide use of spreadsheets proves that tabular notations are handy for certain types of tasks. Why not to support them in domain-specific languages?
+
+Forms - rich text editors are also frequently utilized for encoding rules of various sorts. Remember all the requirement documents, user guides with quickly outdating code examples or business rules specifications. Clearly there is a need for rich text notations that use layout and formatting as ways to express meaning of the text.
+
+
+Diagrams - numerous problems are best solved in graphics - electrical circuits, organizational charts, workflows, etc. These notations also deserve being supported by a tool that claims to be usable across domains.
+
+For beginners or infrequent users of a language a chatty, highly descriptive syntax with enough visual guidance should be preferred - a learnable notation. For experienced and frequent users an efficient maybe even cryptic, fast to type notation with lots of keyboard shortcuts will allow the users to achieve their tasks faster.
+
+ 
+
+Additionally, notations can be optimized towards easy readability or towards writability. Ceremony in code helps understand context, but slows you down when you have to write the code. Compact syntaxes, on the other hand, may sometimes be challenging to read.
+
+ 
+
+Since MPS enables language designers to provide multiple notations for a language, which the users can easily switch when editing code, the trade off between learnability and effectivity as well as between readability and writability does not need to be made in MPS languages. Instead, you can address these competing concerns with multiple notations, each optimized for a particular task or participant. For example, when encoding a state machine, a textual notation could be used by experienced users to efficiently create definitions (weight towards effectivity and writability), while a diagram notation may be used for code reviews (readability﻿).
+
+Generator
+The generator will be used to generate runnable code from the DSL code. There can possibly be several generators for the same DSL, each generating different implementation code. These generators may be all used at the same time to target multiple platforms, or they may evolve over time one replacing the other as the needs for the run-time platform evolve. One way or another, it is sensible to follow this rule:
+
+A generator must not influence the design of the language
+
+ 
+
+The life-time of a generator is usually shorter than the life-time of the language. It is the user models that hold the business knowledge. They must be preserved while the implementation may change over time.
+
+Multi-stage generation
+It is always worth considering to implement multi-stage generation. Instead of building a generator that goes all the way from a DSL down to a runnable general-purpose language, you can build sensible intermediate languages and generators that only bridge the gap between two neighboring intermediate languages. It will make the semantic gaps smaller and thus the generators combined will be simpler than the big one-step generator. Additionally, the existence of the intermediate languages and their generators can encourage reuse. More languages can be built on top of the intermediate languages and the generators of these new languages will only need to bridge the gap to the closest intermediate language.
+
+ 
+
+In fact, a language scheme with several intermediate languages and smaller staged generators frequently emerges from gradual bottom-up evolution of languages in a particular domain. So this scheme of staged generation is fairly natural.
+
+Design the generator
+A generator consists of stable and variable parts. Stable parts is the code that is always generated unchanged, no matter how the user implements the logic in the DSL. Large portions of the stable parts are frequently extracted away from the generator and implemented as a library that bundles with the generated code at run-time. For example, the UI components or database-connection-handling code should not be generated each time.
+
+The variable parts, on the other hand, reflect the actual DSL code. The generator thus has to support parametrization of the generated code to reflect the input model.
+
+
+Transformation menus are more generic than substitute menus. There are many ways a node can be transformed. Substitution of one node for another node is just one of the possibilities.
+
+Substitutions - a node is replaced with another node
+Side transformations - code is transformed as a result of the user typing something to the left or right of the node
+Context assistant - a small menu of the available actions is displayed in the editor and the user chooses an action in that menu
+Context actions tool - a right-hand side panel with available actions listed
+Just like substitute menus, transformation menus can be explicitly defined or implied by MPS automatically. When a transformation menu is not defined, MPS behaves as if there was a default transformation menu that only includes the default substitute menu. This is why substitutions work without any extra effort on your side. We will play with defining the menus later. Now we will only use the menus that MPS provides by default for all of the concepts.
+
+Update the editors for VarDeclaration, Circle and Square to make them attach the default transform menu to the first cells.
+
+
+
+Be sure you specify default menu for Command, because this is the common super-concept to all concepts that should be in the completion menu when you press Control + Space.
+
+
+
+ 
+
+This is enough to be able to substitute nodes on the first cell of their editors. Try that - put the cursor to the front of a command and press Control + Space. You should see a completion menu with the three substitution options.
+
+
+Node substitutions
+Node substitutions in MPS happen whenever a node is replaced with another node. The new node is substituted for the old node. When the old node's editor only consists of an empty constant cell, mere Control + Space will offer a menu with possible substitutions.
+
+
+SModel
+The j.m.lang.smodel language (S for Structure) is a language that gives the users programmatic access to models. You can query and modify models with code.
+
+Description
+Technically smodel is an extension to BaseLanguage, it adds its own statements, expressions, types and collection operations. It heavily leverages the DotExpression to allow model-specific operations on nodes and concepts. The language also benefits greatly from the collection-processing API in BaseLanguage.collections and closures in BaseLanguage.closures.
+
+The DotExpression on nodes gives access to their:
+
+properties
+behavior methods
+children
+references
+For example, myRoutineCall.definition.name returns the name of the target of the "definition" reference of myNode.
+
+Null values
+The dot operation in smodel is null-safe. If an expression evaluates to null, the null value is returned from the dot operation.
+
+Polymorfism
+Virtual behavior methods called on nodes are polymorfic, non-virtual methods are not.
+
+Operation parameters
+A lot of the operations in the SModel language accept parameters. The parameters can be specified once you open the parameter list by entering < at the end of an operation. E.g. myNode.ancestors<concept = IfStatement, concept = ForStatement>.
+
+The "+" symbol as a parameter to these operations means "include myself". That is, when the node, on which the operation is being invoked, matches the condition, "+" ensures that the node will also be included in the returned result - e.g. myNode.ancestors<concept = IfStatement, +> may return myNode, if it is an IfStatement.
+
+
+
+
+The MPS build language
+Now you will learn how to build and test MPS projects outside of the MPS IDE. This is an essential technique for:
+
+test automation - You can configure continuous integration to periodically build, test and deploy your software.
+building MPS plugins - Your languages can be packaged as a language plugin for your customers to download and use.
+standalone IDEs - Your languages can be packaged as an independent Java application (IDE) that your customers may download, install and run to edit their models.
+The MPS build language is an essential component of this whole process. Build Language is an extensible build automation DSL for defining builds in a declarative way. Generated into Ant, it leverages Ant execution power while keeping your sources clean and free from clutter and irrelevant details. Organized as a stack of MPS languages with ANT at the bottom, it allows each part of your build procedure to be expressed at a different abstraction level. Building a complex artifact (like an MPS plug-in) could be specified in just one line of code, if you follow the language conventions, but, at the same time, nothing prevents you from diving deeper and customizing the details like file management or manifest properties.
+
+
+
+
+

@@ -1,136 +1,79 @@
-AB - Language Extension and Composition with Language Workbenches
+AB - Language Extension and Composition with Language Workbenches 
 
-Domain-specific languages (DSLs) provide high expressive
-power focused on a particular problem domain. They provide linguistic abstractions and specialized syntax specifically designed for a domain, allowing developers to avoid
-boilerplate code and low-level implementation details.
-Language workbenches are tools that integrate all aspects
-of the definition of domain-specific or general-purpose software languages and the creation of a programming environment from such a definition. To count as a language workbench, a tool needs to satisfy basic requirements for the integrated definition of syntax, semantics, and editor services,
-and preferably also support language extension and composition. Within these requirements there is ample room for
-variation in the design of a language workbench
+Domain-specific languages (DSLs) provide high expressive power focused on a particular problem domain.
+They provide linguistic abstractions and specialized syntax specifically designed for a domain, allowing developers to avoid boilerplate code and low-level implementation details.
+Language workbenches are tools that integrate all aspects of the definition of domain-specific or general-purpose software languages and the creation of a programming environment from such a definition.
+To count as a language workbench, a tool needs to satisfy basic requirements for the integrated definition of syntax, semantics, and editor services, and preferably also support language extension and composition.
+Within these requirements there is ample room for variation in the design of a language workbench 
+To enhance acceptance of DSLs with their prospective users (programmers or domain experts), the languages must come with good IDE support, as we know it from tools like Eclipse, Visual Studio or IntelliJ.
+Modern IDEs increase developer productivity by incorporating many different kinds of editor services specific to the syntax and semantics of a language.
+They assist developers in understanding and navigating through the code, they direct developers to inconsistent or incomplete areas of code, and they even help with editing code by providing automatic indentation, bracket insertion, and content completion 
+The development of new DSLs comprises many tasks, ranging from syntax definition to code generation to the construction of an integrated development environment (IDE).
+Language engineering tools are essential for productivity in each of these tasks.
+Specifically for project-specific DSLs, which are by their nature limited in scope, development must be efficient, so DSLs can be developed as part of real-world development projects.
 
-To enhance acceptance of DSLs with their prospective
-users (programmers or domain experts), the languages must
-come with good IDE support, as we know it from tools like
-Eclipse, Visual Studio or IntelliJ. Modern IDEs increase developer productivity by incorporating many different kinds
-of editor services specific to the syntax and semantics of a
-language. They assist developers in understanding and navigating through the code, they direct developers to inconsistent or incomplete areas of code, and they even help with
-editing code by providing automatic indentation, bracket insertion, and content completion
+Language Workbenches Language workbenches [3] are tools that integrate all aspects of the definition of domain-specific or general-purpose software languages and the creation of a programming environment from such a definition.
+To count as a language workbench, a tool needs to satisfy the following basic requirements and preferably also support language extension and composition.
+Within these requirements there is ample room for variation in the design of a language workbench.
 
-The development of new DSLs comprises many tasks,
-ranging from syntax definition to code generation to the construction of an integrated development environment (IDE).
-Language engineering tools are essential for productivity in
-each of these tasks. Specifically for project-specific DSLs,
-which are by their nature limited in scope, development must
-be efficient, so DSLs can be developed as part of real-world
-development projects.
+A language workbench should at least support the definition of individual languages.
+A language definition consists of the definition of the syntax and semantics of the language, as well as the editor services that form the IDE.
 
-Language Workbenches
-Language workbenches [3] are tools that integrate all aspects
-of the definition of domain-specific or general-purpose software languages and the creation of a programming environment from such a definition. To count as a language workbench, a tool needs to satisfy the following basic requirements and preferably also support language extension and
-composition. Within these requirements there is ample room
-for variation in the design of a language workbench.
+Syntax definition: defines the concrete notation used for models and their underlying structure, which is the basis for analysis and transformation.
 
-A language workbench should at least support the definition
-of individual languages. A language definition consists of
-the definition of the syntax and semantics of the language,
-as well as the editor services that form the IDE.
+Semantics definition: defines the analyses and transformations applied to the structures defined by the syntax definition, including error checking, transformations such as refactorings, and code generation to translate a model to an implementation in a target language.
 
-Syntax definition: defines the concrete notation used for
-models and their underlying structure, which is the basis
-for analysis and transformation.
+Editor services definition: defines the editor services that bind the language to an integrated development environment (IDE), including syntax highlighting, outline view, bracket matching, automatic indentation, reference resolving, content completion, error marking, and refactoring.
+Editor services often depend on syntactic or semantic analyses of the structure of edited models.
 
-Semantics definition: defines the analyses and transformations applied to the structures defined by the syntax definition, including error checking, transformations such as
-refactorings, and code generation to translate a model to
-an implementation in a target language.
+2.2 Extension and Composition 
+The next step beyond support for the basic language definition requirements is support for language extension and composition to cater for language evolution and software projects consisting of models in multiple languages.
 
-Editor services definition: defines the editor services that
-bind the language to an integrated development environment (IDE), including syntax highlighting, outline view,
-bracket matching, automatic indentation, reference resolving, content completion, error marking, and refactoring. Editor services often depend on syntactic or semantic
-analyses of the structure of edited models.
+Language extension: existing languages can be extended with new concepts, adapting them to more specific contexts.
 
-2.2 Extension and Composition
-The next step beyond support for the basic language definition requirements is support for language extension and
-composition to cater for language evolution and software
-projects consisting of models in multiple languages.
+Language composition: languages for different domains can composed, either by symbolic integration such that language concepts in one language can reference concepts defined in other languages, or by embedding, such that concepts from one language can be embedded in another one 
 
-Language extension: existing languages can be extended
-with new concepts, adapting them to more specific contexts.
+JetBrains’ Meta Programming System is a projectional language workbench [5] that has been developed over the last couple of years by JetBrains and is now available open source under Apache 2.0.
+MPS comes with an integration into popular version control systems.
+While the code is represented as XML files, the tool provides diff and merge facilities on the level of the concrete, projected syntax 
 
-Language composition: languages for different domains
-can composed, either by symbolic integration such that
-language concepts in one language can reference concepts defined in other languages, or by embedding, such
-that concepts from one language can be embedded in another one
-
-
-JetBrains’ Meta Programming System is a projectional language workbench [5] that has been developed over the last
-couple of years by JetBrains and is now available open
-source under Apache 2.0. MPS comes with an integration
-into popular version control systems. While the code is represented as XML files, the tool provides diff and merge facilities on the level of the concrete, projected syntax
-
-4.1 Syntax Definition
-MPS is a projectional editor. Consequently, language definition does not involve a grammar. Instead, language definition starts by defining the structure of the language through
-concepts. Secondly, projection rules, also known as editors,
-define the textual, tabular or graphical rendering of concepts.
-The projectional approach has a couple of nice characteristics, in addition to fulfilling the requirements for language
-workbenches described above
-
+4.1 Syntax Definition 
+MPS is a projectional editor.
+Consequently, language definition does not involve a grammar.
+Instead, language definition starts by defining the structure of the language through concepts.
+Secondly, projection rules, also known as editors, define the textual, tabular or graphical rendering of concepts.
+The projectional approach has a couple of nice characteristics, in addition to fulfilling the requirements for language workbenches described above 
 – Notations are more flexible than ASCII/ANSI/Unicode.
-Graphical, semi-graphical and textual notations can be
-mixed and combined. For example, a graphical tool for
-editing state machines can embed a textual expression
-language for editing the guard conditions on transitions.
-– Since the model is stored independently from its concrete
-notation, it is possible to represent the same model in different ways simply by providing several projections. Different viewpoints of the overall program can be stored in
-one model, but editing can still be viewpoint specific. It is
-also possible to store out-of-band data, i.e. annotations on
-the core model/program, such as documentation, pointers
-to requirements (traceability) , or feature dependencies in
-the context of product lines.
+Graphical, semi-graphical and textual notations can be mixed and combined.
+For example, a graphical tool for editing state machines can embed a textual expression language for editing the guard conditions on transitions.
+– Since the model is stored independently from its concrete notation, it is possible to represent the same model in different ways simply by providing several projections.
+Different viewpoints of the overall program can be stored in one model, but editing can still be viewpoint specific.
+It is also possible to store out-of-band data, i.e. annotations on the core model/program, such as documentation, pointers to requirements (traceability), or feature dependencies in the context of product lines.
 
-4.2 Semantics Definition
-In MPS, the structure of a program can be restricted using
-various kinds of constraints: scopes, determine the set of
-possible targets for references, type system rules calculate
-types based on typing rules and an inference engine, and
-constraints check domain-specific properties of programs.
-Transformations can be defined between arbitrary languages. Transformations are mappings from one language
-structure onto another one, i.e. transforming the underlying
-graph structure of a model. However, the concrete syntax of
-the target language can be used in transformations, making
-them look more like code generators.
-Transformations can be cascaded and the MPS transformation engine incrementally reduces code until it cannot be
-reduced any further, at which point a text file is generated for
-subsequent compilation.
+4.2 Semantics Definition In MPS, the structure of a program can be restricted using various kinds of constraints: scopes, determine the set of possible targets for references, type system rules calculate types based on typing rules and an inference engine, and constraints check domain-specific properties of programs.
+Transformations can be defined between arbitrary languages.
+Transformations are mappings from one language structure onto another one, i.e. transforming the underlying graph structure of a model.
+However, the concrete syntax of the target language can be used in transformations, making them look more like code generators.
+Transformations can be cascaded and the MPS transformation engine incrementally reduces code until it cannot be reduced any further, at which point a text file is generated for subsequent compilation.
 
-4.3 Editor Services
-In parser-based environments where users basically enter
-text into a buffer, sophisticated editor services are optional
-— one can, in principle, use a simple text editor for editing.
-In a projectional environment this is different because editing requires the projection engine. Consequently, language
-definition requires the definition of IDE services. MPS does
-not even attempt to draw a line between the two: the definition of a language and it’s editors automatically entails
-the creation of services for code completion, syntax highlighting, error markers, go-to-definition, and find references.
-While all of these can be customized, editor services can not
-be removed, since it would make editing models impossible.
+4.3 Editor Services In parser-based environments where users basically enter text into a buffer, sophisticated editor services are optional — one can, in principle, use a simple text editor for editing.
+In a projectional environment this is different because editing requires the projection engine.
+Consequently, language definition requires the definition of IDE services.
+MPS does not even attempt to draw a line between the two: the definition of a language and it’s editors automatically entails the creation of services for code completion, syntax highlighting, error markers, go-to-definition, and find references.
+While all of these can be customized, editor services can not be removed, since it would make editing models impossible.
 
 
-4.4 Language Extension and Composition
-In MPS, language definition is similar to object oriented programming in the sense that language concepts correspond to
-classes and models to objects. Thus, the principles for extension and composition from OO programming can be applied
-to languages. A language can inherit from another language,
-making the concepts from the base language available in the
-sub-language. The sub-language can then add new concepts,
-making the sub-language an extended version of the base
-language. Concepts in the sub-language can also extend concepts in the base language. This is the primary means of language extension: a base language might define a Procedure
-concept that contains a list of Statements. By defining subconcepts of Statement, a sub-language can essentially plug
-into the base language, providing other kinds of statements
-usable in procedures.
-The equivalent of delegation can be used to embed languages. A language can use another language and then define concepts that contain (as children) concepts from the
-used language. No special steps have to be taken to be able
-to integrate the languages syntactically, because no grammar
-and no parser is used.
-There is another way of extending languages that closely
-resembles aspect oriented programming. A language can
-“contribute” additional properties to concepts defined in
-other languages, without invasively modifying this other language. This is very useful for all kinds of annotations such
-as documentation or traces to requirements.
+4.4 Language Extension and Composition In MPS, language definition is similar to object oriented programming in the sense that language concepts correspond to classes and models to objects.
+Thus, the principles for extension and composition from OO programming can be applied to languages.
+A language can inherit from another language, making the concepts from the base language available in the sub-language.
+The sub-language can then add new concepts, making the sub-language an extended version of the base language.
+Concepts in the sub-language can also extend concepts in the base language.
+This is the primary means of language extension: a base language might define a Procedure concept that contains a list of Statements.
+By defining subconcepts of Statement, a sub-language can essentially plug into the base language, providing other kinds of statements usable in procedures.
+The equivalent of delegation can be used to embed languages.
+A language can use another language and then define concepts that contain (as children) concepts from the used language.
+No special steps have to be taken to be able to integrate the languages syntactically, because no grammar and no parser is used.
+There is another way of extending languages that closely resembles aspect oriented programming.
+A language can “contribute” additional properties to concepts defined in other languages, without invasively modifying this other language.
+This is very useful for all kinds of annotations such as documentation or traces to requirements.
+

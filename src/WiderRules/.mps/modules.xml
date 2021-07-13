@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MPSProject">
+    <projectModules>
+      <modulePath path="$PROJECT_DIR$/languages/Rules.Excel/Rules.Excel.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/Rules.Excel3/Rules.Excel3.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/Rules.Filter/Rules.Filter.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/Rules.Graphic/Rules.Graphic.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/Rules.SimpleProjections/Rules.SimpleProjections.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/Rules2/Rules2.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/Rules2/sandbox/Rules2.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/Rules3/Rules3.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/KhonraadRules/KhonraadRules.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/Rule3.sandbox/Rule3.sandbox.msd" folder="" />
+    </projectModules>
+  </component>
+</project>

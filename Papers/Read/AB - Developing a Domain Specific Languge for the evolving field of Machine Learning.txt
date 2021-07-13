@@ -1,311 +1,208 @@
-AB - Developing a Domain Specific Languge for the evolving field of Machine Learning
+AB - Developing a Domain Specific Languge for the evolving field of Machine Learning 
 
 
-. Experts of domains distant from
-computer science need to acquire comprehensive expert knowledge,
-which in terms of content is unrelated to their field of interest. Thus,
-the field of ML remains closed to those other domains
+Experts of domains distant from computer science need to acquire comprehensive expert knowledge, which in terms of content is unrelated to their field of interest.
+Thus, the field of ML remains closed to those other domains 
+The design of MLE strives on usability that exceeds limiting the command set to ML.
+MLE developers should always be able to maintain an overview of how a program works and what effect specific lines of code have.
+We attempt to achieve this by two means: On the one hand, helpful feedback should be given not only after execution but already during programming.
+On the other hand, the developer should always be informed on his options through the visibility of actions and objects.
 
-The design of MLE strives
-on usability that exceeds limiting the command set to ML. MLE
-developers should always be able to maintain an overview of
-how a program works and what effect specific lines of code
-have. We attempt to achieve this by two means: On the one hand,
-helpful feedback should be given not only after execution but
-already during programming. On the other hand, the developer
-should always be informed on his options through the visibility
-of actions and objects.
+A DSL is a language dedicated to the accomplishment of tasks within a specific domain.
+As the main contribution of this thesis is the development of such a language, we introduce the theoretical background on DSL engineering in this chapter.
 
-A DSL is a language dedicated to the accomplishment of tasks within
-a specific domain. As the main contribution of this thesis is the development of such a language, we introduce the theoretical background
-on DSL engineering in this chapter.
+A DSL can be Turing incomplete which limits the possibilities of what can be achieved by them.
+This limitation is an actual gain of abstraction DSLs are much more abstract than GPLs.
+In GPLs, users must be very concrete in describing how to achieve a certain goal while a DSL can provide general, abstract commands  
 
-A DSL can be Turing incomplete which limits the possibilities
-of what can be achieved by them. This limitation is an actual gain of
+language oriented programming paradigm The idea of Language-Oriented Programing is nothing new.
+In fact, it has been described by Ward (1994) almost 25 years ago.
+The aim is to construct a very high-level language enabling an efficient development for a class of domain-specific tasks (i.e. a DSL).
 
+Ward states that the use of high-level languages enables developers to write much shorter code which also is “easier to read, analyze, understand, and modify”.
 
-abstraction DSLs are much more abstract than GPLs. In GPLs,
-users must be very concrete in describing how to achieve a certain
-goal while a DSL can provide general, abstract commands
+Dmitriev (2004), the co-founder and president of the software development company Jetbrains, expand on the Language Oriented Programming Paradigm with focus on freedom in development.
+He states that developers are in theory enabled to create anything that is possible with modern computers.
+In practice, however, they are dependent on languages and software development tools that can hardly be adjusted to their actual needs in reasonable time.
+Thus, he pleads for tools and languages that can easily evolved by anyone which also is the motivation for Jetbrains’ language workbench called MPS.
 
-language oriented programming paradigm
-The idea of Language-Oriented Programing is nothing new. In fact, it
-has been described by Ward (1994) almost 25 years ago. The aim is
-to construct a very high-level language enabling an efficient development for a class of domain-specific tasks (i.e. a DSL).
-
-e. Ward
-states that the use of high-level languages enables developers to write
-much shorter code which also is “easier to read, analyze, understand,
-and modify”.
-
-Dmitriev (2004), the co-founder and president of the software development company Jetbrains, expand on the Language Oriented Programming Paradigm with focus on freedom in development. He states
-that developers are in theory enabled to create anything that is possible with modern computers. In practice, however, they are dependent
-on languages and software development tools that can hardly be adjusted to their actual needs in reasonable time. Thus, he pleads for
-tools and languages that can easily evolved by anyone which also is
-the motivation for Jetbrains’ language workbench called MPS.
-
-Furthermore, Völter (2014) lays out his vision of a programming
-paradigm, which is called "Generic Tools, Specific Languages", in his
-doctor thesis. This paradigm combines the ideas of freedom in development with language-oriented programming. He states that current tools are adapted to domains only perfunctorily. It allows only
-for changes of buttons and functions but neglects the need of modifiable underlying data structures. Generic tools that are extensible
-and adaptable in all aspects – their function, their user interface, and
-their underlying data structures – could be fitted closely to all kinds
-of domain-specific tasks. Moreover, specific languages are not seen
-as an intermediate step when building a domain-specific application
-but as the application itself. The premise is that a high-level language
-that uses domain-specific notations and data structures will be at least
-as efficient in solving domain-specific tasks as traditional tools with
-a graphical user-interface. "Generic Tools, Specific Languages" builds
-on the definition, reuse, and composition of languages which together
-define a high-level DSL and adapt a generic tool. A language workbench such as MPS is that generic tool and it is used for implementing
-both, languages as well as solutions in respective languages.
+Furthermore, Völter (2014) lays out his vision of a programming paradigm, which is called "Generic Tools, Specific Languages", in his doctor thesis.
+This paradigm combines the ideas of freedom in development with language-oriented programming.
+He states that current tools are adapted to domains only perfunctorily.
+It allows only for changes of buttons and functions but neglects the need of modifiable underlying data structures.
+Generic tools that are extensible and adaptable in all aspects – their function, their user interface, and their underlying data structures – could be fitted closely to all kinds of domain-specific tasks.
+Moreover, specific languages are not seen as an intermediate step when building a domain-specific application but as the application itself.
+The premise is that a high-level language that uses domain-specific notations and data structures will be at least as efficient in solving domain-specific tasks as traditional tools with a graphical user-interface. "Generic Tools, Specific Languages" builds on the definition, reuse, and composition of languages which together define a high-level DSL and adapt a generic tool.
+A language workbench such as MPS is that generic tool and it is used for implementing both, languages as well as solutions in respective languages.
 
 
-There are two types of DSLs: internal and external ones. Internal DSLs
-are based on GPLs, which means that they are bound to the syntax
-of their base language. Although internal DSLs can do a good job to
-provide a whole different programming experience the restrictions
-of their roots are always noticeable. The great advantage for internal
-DSLs is that the surrounding infrastructure is at hand. External DSLs,
-in contrast, are completely independent. It is not only required to
-implement the language syntax but also an execution engine which
-allows users to run programs written with the DSL. On the other hand,
-the syntax can be built from ground up with the domain in mind.
+There are two types of DSLs: internal and external ones.
+Internal DSLs are based on GPLs, which means that they are bound to the syntax of their base language.
+Although internal DSLs can do a good job to provide a whole different programming experience the restrictions of their roots are always noticeable.
+The great advantage for internal DSLs is that the surrounding infrastructure is at hand.
+External DSLs, in contrast, are completely independent.
+It is not only required to implement the language syntax but also an execution engine which allows users to run programs written with the DSL.
+On the other hand, the syntax can be built from ground up with the domain in mind.
 
-External DSLs can be subdivided by their type of code representation. Code can be represented textual or projectional. Textual source
-code can be written in any text editor and simply be shared. However,
-it needs to be parsed which limits the possibilities when designing the
-syntax since the parser needs exact indications for the end of a statement (such as a semicolon at the end of a line). Also, it is error-prone
-and requires the user to learn the concrete syntax of the language.
-Projectional code representation puts projections in place of text. A
-projection is a reference to a statement that can be presented in any
-visual matter like graphs, mathematical formulas, images, or simple
-text. This way it can better emphasize the program’s semantics and
-hence promote comprehension. External DSLs are built in specialized
-tools called language workbenches. There are few language workbenches that match the design choices described above (as there are
-few projectional language workbenches at all)
+External DSLs can be subdivided by their type of code representation.
+Code can be represented textual or projectional.
+Textual source code can be written in any text editor and simply be shared.
+However, it needs to be parsed which limits the possibilities when designing the syntax since the parser needs exact indications for the end of a statement (such as a semicolon at the end of a line).
+Also, it is error-prone and requires the user to learn the concrete syntax of the language.
+Projectional code representation puts projections in place of text.
 
-Second, Behringer, Palz, and Berger (2017) present Projectional Editing of Product Lines (PEoPL), a DSL that enables multiple projections for variability mechanisms. Annotative representations such as
-ifdefs3 are supported as well as modular representations (similar to
-component models). Developers can switch between those representations in favor for efficient realization (annotative) or easier comprehension (modular).
+A projection is a reference to a statement that can be presented in any visual matter like graphs, mathematical formulas, images, or simple text.
+This way it can better emphasize the program’s semantics and hence promote comprehension.
+External DSLs are built in specialized tools called language workbenches.
+There are few language workbenches that match the design choices described above (as there are few projectional language workbenches at all)
+
+Second, Behringer, Palz, and Berger (2017) present Projectional Editing of Product Lines (PEoPL), a DSL that enables multiple projections for variability mechanisms.
+Annotative representations such as ifdefs3 are supported as well as modular representations (similar to component models).
+Developers can switch between those representations in favor for efficient realization (annotative) or easier comprehension (modular).
 
 
-4.1 projectional editing
-Languages written with MPS are not represented textually but projectionally. This means that a user of such language is not writing
-plain text to accomplish a task but is choosing from a list of concepts
-that are valid in their specific contexts.
+4.1 projectional editing Languages written with MPS are not represented textually but projectionally.
+This means that a user of such language is not writing plain text to accomplish a task but is choosing from a list of concepts that are valid in their specific contexts.
 
-Therefore, the source code is
-not textual but consists of graphical elements which can be simple
-text but also more complex such as graphs, tables, or formulas. Although the code might look like text, it really is a list of references to
-concepts.
+Therefore, the source code is not textual but consists of graphical elements which can be simple text but also more complex such as graphs, tables, or formulas.
+Although the code might look like text, it really is a list of references to concepts.
 
-This type of programming might appear limiting at first: code cannot simply be copied from elsewhere into the editor. Writing own
-code can sometimes be cumbersome to the restrictions, and the DSL
-highly depends on MPS as development environment (which means
-that users must cope with MPS and cannot use their usual IDE). But
-those restrictions are accompanied by great advantages:
-First, projectional editing makes it impossible to write syntactically
-incorrect code. Although code is typed in, it is only transformed into
-the respective concepts if the concept-aliases are recognized (compare
-figure 4.1). The concrete syntax is auto-completed and only specific
-cells of the concept’s representation can be edited. There will be no
-more annoying errors caused by skipping a parenthesis or semicolon.
-Second, users can see only options that are valid in the specific
-context. Since the context is always known, code-suggestions can be
-used to explore the possibilities that developers have at the current
-point in the program. Therefore, users are encouraged not only to use
-statements and expressions they are familiar with, but to explore the
-greater scope of functions provided by the respective language.
+This type of programming might appear limiting at first: code cannot simply be copied from elsewhere into the editor.
+Writing own code can sometimes be cumbersome to the restrictions, and the DSL
+highly depends on MPS as development environment (which means that users must cope with MPS and cannot use their usual IDE).
+But those restrictions are accompanied by great advantages:
+First, projectional editing makes it impossible to write syntactically incorrect code.
+Although code is typed in, it is only transformed into the respective concepts if the concept-aliases are recognized (compare figure 4.1).
+The concrete syntax is auto-completed and only specific cells of the concept’s representation can be edited.
+There will be no more annoying errors caused by skipping a parenthesis or semicolon.
+Second, users can see only options that are valid in the specific context.
+Since the context is always known, code-suggestions can be used to explore the possibilities that developers have at the current point in the program.
+Therefore, users are encouraged not only to use statements and expressions they are familiar with, but to explore the greater scope of functions provided by the respective language.
 
 
-A programming language, such as any other language, is defined
-by syntax and semantics. The statements themselves as well as the
-ordering of statements need to follow the rules of the language’s syntax. Each statement has a semantic and the arrangement of statement
-defines the semantic (i.e. the purpose) of a program.
-With respect to language engineering, there is a distinction between
-abstract syntax and concrete syntax: The abstract syntax describes the
-structure of the statement (e.g. an if-statement consists of a condition, a list of statements that are called when the condition is met,
-and another list of statements that are called otherwise).
-The concrete
-syntax, on the other hand, describes its concrete shape
+A programming language, such as any other language, is defined by syntax and semantics.
+The statements themselves as well as the ordering of statements need to follow the rules of the language’s syntax.
+Each statement has a semantic and the arrangement of statement defines the semantic (i.e. the purpose) of a program.
+With respect to language engineering, there is a distinction between abstract syntax and concrete syntax: The abstract syntax describes the structure of the statement (e.g. an if-statement consists of a condition, a list of statements that are called when the condition is met, and another list of statements that are called otherwise).
+The concrete syntax, on the other hand, describes its concrete shape 
 
+abstract syntax matters here, which can be considered a tree as well: the Abstract Syntax Tree (AST).
+Each instance of a concept is a node in this tree.
+An execution engine is traversing the AST to run the program.
+While doing so on an external DSL, there are two approaches:
+First, GPL code is generated from the DSL and forwarded to the existing execution engines.
+Second, DSL code is directly interpreted by an execution engine that is developed alongside the DSL.
 
-abstract syntax matters here, which can be considered a tree as well:
-the Abstract Syntax Tree (AST). Each instance of a concept is a node
-in this tree. An execution engine is traversing the AST to run the program. While doing so on an external DSL, there are two approaches:
-First, GPL code is generated from the DSL and forwarded to the existing execution engines. Second, DSL code is directly interpreted by
-an execution engine that is developed alongside the DSL.
-
-to different aspects of the DSL. The entities can be considered in two
-different ways: structural and semantical. Both views are orthogonal
-to each other.
+to different aspects of the DSL.
+The entities can be considered in two different ways: structural and semantical.
+Both views are orthogonal to each other.
 Looking at the semantics, the upper most entity is the project itself.
 It consists of languages, solutions, and devKits:
 • Languages contain concepts of which programs are composed.
 • Solutions contain files in which actual programs are written.
 Here the language concepts are applied.
-• DevKits are groups of languages that can be used to reference
-multiple entities at once.
+• DevKits are groups of languages that can be used to reference multiple entities at once.
 
-Looking at the structure, projects are called repositories. A repository then consists of modules (which semantically can be languages,
-solutions, or devKits). Then there are two entities which are both
-called ’model’ in MPS. One of them is a model container (inside languages this is referred to as aspects) which holds a configuration (e.g.
-used languages and dependencies) for all child-models. The childmodels are the actual files that can be edited inside MPS.
-
-
-al project view on the left
-side as well as the corresponding structural terms to the right.
-MPS indicates languages by yellow square-icon with the letter
-"L" inside (see language "core")
-and solutions by purple ones
-with the letter "S". There are
-nine aspects in the core language (listeners, structure, editor, etc.). To define a language
-concept models can be created
-for each aspect (see section 4.4
-below). Besides the structural
-entities already described above
-"virtual folders" are used to visually group models. They do not affect
-the modules or models in any way and are only used for the sake of
-clarity.
-
-DSLs created in MPS are usually composed of many languagemodules. Some languages then depend on other ones (i.e. concepts of
-the other language are used) and optionally extend them (e.g. by implementing concept-interfaces). Thus, the DSL is modularized which
-enables easier maintenance and a better overview. The main work in
-MPS is in the creation of language concepts which is described in the
-next section
+Looking at the structure, projects are called repositories.
+A repository then consists of modules (which semantically can be languages, solutions, or devKits).
+Then there are two entities which are both called ’model’ in MPS.
+One of them is a model container (inside languages this is referred to as aspects) which holds a configuration (e.g. used languages and dependencies) for all child-models.
+The childmodels are the actual files that can be edited inside MPS.
 
 
-The Structure Aspect models the abstract
-syntax of the concept. Concepts consist
-of elements which can be properties (displayed as gray fields in the diagrams), children (yellow fields), or references (brown
-fields). Properties are of primitive types,
-children are instances of other concepts
-and references are used to refer to nodes
-(i.e. instances of concepts) that are already
-placed somewhere inside the AST. Those
-nodes should not be copied or dislocated
-to prevent inconsistency in the model
+al project view on the left side as well as the corresponding structural terms to the right.
+MPS indicates languages by yellow square-icon with the letter "L" inside (see language "core") and solutions by purple ones with the letter "S".
+There are nine aspects in the core language (listeners, structure, editor, etc.).
+To define a language concept models can be created for each aspect (see section 4.4 below).
+Besides the structural entities already described above "virtual folders" are used to visually group models.
+They do not affect the modules or models in any way and are only used for the sake of clarity.
 
+DSLs created in MPS are usually composed of many languagemodules.
+Some languages then depend on other ones (i.e. concepts of the other language are used) and optionally extend them (e.g. by implementing concept-interfaces).
+Thus, the DSL is modularized which enables easier maintenance and a better overview.
+The main work in MPS is in the creation of language concepts which is described in the next section 
 
-4.4.2 Editor Aspect: The Concrete Syntax
-The Editor Aspect is meant to define the concrete syntax of a concept.
-It provides the representation of a concept that the user will finally
-use to write code; thus, designing the editor crucially affects the usability of a language. In particular, this applies with respect to DSLs
-written in MPS, since its projectional editing already feels unfamiliar
-for users who are used to textual editing.
+The Structure Aspect models the abstract syntax of the concept.
+Concepts consist of elements which can be properties (displayed as gray fields in the diagrams), children (yellow fields), or references (brown fields).
+Properties are of primitive types, children are instances of other concepts and references are used to refer to nodes (i.e. instances of concepts) that are already placed somewhere inside the AST.
+Those nodes should not be copied or dislocated to prevent inconsistency in the model 
+
+4.4.2 Editor Aspect: The Concrete Syntax The Editor Aspect is meant to define the concrete syntax of a concept.
+It provides the representation of a concept that the user will finally use to write code; thus, designing the editor crucially affects the usability of a language.
+In particular, this applies with respect to DSLs written in MPS, since its projectional editing already feels unfamiliar for users who are used to textual editing.
 
 In MPS, language designers can build various concrete representations for the same concept. 
 
-Editors are built of cells which themselves can be arranged in cell
-collections.
+Editors are built of cells which themselves can be arranged in cell collections.
 
-4.4.3 Constraints and Type-System Aspects: The Static Semantics
-The constraints and type-system aspects model the static semantics
-of a DSL. In the constraints, aspect rules are defined that determine
-whether elements semantically can be attributed to a certain node
-depending on the node’s context in the AST. A specific class of such
-rules is based on type expectations and separately defined in the typesystem aspect
+4.4.3 Constraints and Type-System Aspects: The Static Semantics The constraints and type-system aspects model the static semantics of a DSL.
+In the constraints, aspect rules are defined that determine whether elements semantically can be attributed to a certain node depending on the node’s context in the AST.
+A specific class of such rules is based on type expectations and separately defined in the typesystem aspect 
+The constraints and type-system rules are considered when the user writes code with the DSL so that only applicable concepts are suggested for autocompletion which again reduces the complexity and improves the efficiency of the language.
 
-The constraints and type-system rules are considered when the
-user writes code with the DSL so that only applicable concepts are
-suggested for autocompletion which again reduces the complexity
-and improves the efficiency of the language.
+Intentions can provide time-saving shortcuts inside the MPS editor.
+To apply an intention-action, the corresponding node in the AST needs to be in focus 
+Intentions are functions that can be called depending on the context.
+Error-handlers are called when an error is detected.
+Their availability is signaled by a red bulb in the editor.
+For other intentions, context conditions can be defined (such as the presence of the init_expr).
+Often, there are actions and intentions that provide the same effect in different ways.
+The user than can choose the preferred approach which is considered a usability improvement as well.
 
-Intentions can provide time-saving shortcuts inside the MPS editor. To apply an intention-action, the corresponding node in the AST
-needs to be in focus
+The behavior aspect is used to encapsulate functionality that is related to the concept in a manner of object-oriented programming.
+Methods that are defined here can be called on an instantiated node of the concept.
+This allows developers to implement them once and call them in any other aspect of the respective concept or when traversing the AST
 
-Intentions are functions that can be called depending on the context. Error-handlers are called when an error is detected. Their availability is signaled by a red bulb in the editor. For other intentions, context conditions can be defined (such as the presence of the init_expr).
-Often, there are actions and intentions that provide the same effect
-in different ways. The user than can choose the preferred approach
-which is considered a usability improvement as well.
+4.4.6 Generator and TextGen Aspects: The Execution Engines The generator and the text-generation aspects provide the default execution engine in MPS.
+They are used to transform the languagemodel into the model of another DSL or into text (which then usually is any GPL code).
+In this work, interpretation is used as execution engine; therefore, the generator and textgen aspect hardly matter for this DSL
 
-The behavior aspect is used to encapsulate functionality that is related
-to the concept in a manner of object-oriented programming. Methods
-that are defined here can be called on an instantiated node of the concept. This allows developers to implement them once and call them
-in any other aspect of the respective concept or when traversing the
-AST
+Interactions between Aspects The aspects in MPS can be organized into three pillars of a DSL: the AST, the User Interface (UI), and the Execution Engine.
 
-4.4.6 Generator and TextGen Aspects: The Execution Engines
-The generator and the text-generation aspects provide the default execution engine in MPS. They are used to transform the languagemodel into the model of another DSL or into text (which then usually
-is any GPL code). In this work, interpretation is used as execution
-engine; therefore, the generator and textgen aspect hardly matter for
-this DSL
-
-Interactions between Aspects
-The aspects in MPS can be organized into three pillars of a DSL: the
-AST, the User Interface (UI), and the Execution Engine.
-
-The AST contains the semantics of the program. Its shape (i.e. the
-possibilities how the AST can be constructed by the user) is defined
-by the structure aspect which provides the abstract syntax of the language and is constrained by the static semantics (modeled with the
-constraints and type-system aspects). The UI is responsible for the
-usability of the language. It consists of the editor aspect which provides the concrete syntax as well as actions and intentions aspects.
-The Execution Engine is meant to run the program modeled in the
-AST. This can be done by translation (code generation), compilation
-(which could be done with DSL code translated into GPL code), or by
-interpretation.
+The AST contains the semantics of the program.
+Its shape (i.e. the possibilities how the AST can be constructed by the user) is defined by the structure aspect which provides the abstract syntax of the language and is constrained by the static semantics (modeled with the constraints and type-system aspects).
+The UI is responsible for the usability of the language.
+It consists of the editor aspect which provides the concrete syntax as well as actions and intentions aspects.
+The Execution Engine is meant to run the program modeled in the AST.
+This can be done by translation (code generation), compilation (which could be done with DSL code translated into GPL code), or by interpretation.
 
 How these pillars relate to each other is displayed in figure 4.14:
-The AST is visualized by the UI which also allows modification of the
-AST. The Execution Engine on the other side executes the semantic
-that is modeled via the AST. Moreover, there is a Utility block which
-consists of the behavior aspect as well as potential custom aspects. It
-supports the development of the AST and the UI
+The AST is visualized by the UI which also allows modification of the AST.
+The Execution Engine on the other side executes the semantic that is modeled via the AST.
+Moreover, there is a Utility block which consists of the behavior aspect as well as potential custom aspects.
+It supports the development of the AST and the UI
 
 can I use the interpreter-framework??
 
-The modularized structure of MLE allows the composition of variable
-language-dialects. The reduced scope of dialects can help the user to
-deal only with language concepts that are needed in the specific context; therefore, it improves the efficiency in learning and using the DSL.
-In particular, this applies to projectional editing where code is not
-written but selected from available concepts. The number of selectable
-concepts is reduced by excluding language components. Also, code-
-completion is faster when there are less conflicting concept-names.
+The modularized structure of MLE allows the composition of variable language-dialects.
+The reduced scope of dialects can help the user to deal only with language concepts that are needed in the specific context; therefore, it improves the efficiency in learning and using the DSL.
+In particular, this applies to projectional editing where code is not written but selected from available concepts.
+The number of selectable concepts is reduced by excluding language components.
+Also, code-completion is faster when there are less conflicting concept-names.
 
-Language design is usually independent of the tooling provided
-by Integrated Development Environments (IDEs). A developer can
-choose the environment that suits his or her needs best. In the case
-of external DSLs developed in MPS, however, there is a close connection between the two. 
+Language design is usually independent of the tooling provided by Integrated Development Environments (IDEs).
+A developer can choose the environment that suits his or her needs best.
+In the case of external DSLs developed in MPS, however, there is a close connection between the two. 
 
 
-It is a common behavior in projectional
-editors to use code-suggestions in order to find out which actions or
-options are valid in the current context. 
+It is a common behavior in projectional editors to use code-suggestions in order to find out which actions or options are valid in the current context. 
 
-1 Language Optimization for Code-Suggestions
-Code-suggestions in projectional editors can reveal possible action
-and options. However, they can also overwhelm the user by being
-cluttered and inconsistent.
+1 Language Optimization for Code-Suggestions Code-suggestions in projectional editors can reveal possible action and options.
+However, they can also overwhelm the user by being cluttered and inconsistent.
 
-Another optimization for code-suggestions is the choice of
-enumerations over string-labels for the selection of options.
+Another optimization for code-suggestions is the choice of enumerations over string-labels for the selection of options.
 
-Context-based Constraints of Statements
-Hiding options that are incompatible with selections already made is
-another way of reducing the amount of suggestions to those that are
-relevant to the user. 
+Context-based Constraints of Statements Hiding options that are incompatible with selections already made is another way of reducing the amount of suggestions to those that are relevant to the user. 
 
-The
-advantage of options realized via enumerations is that users of the
-DSL do not need to learn and remember the values but can recall
-them as they are available inside code-suggestions.
+The advantage of options realized via enumerations is that users of the DSL do not need to learn and remember the values but can recall them as they are available inside code-suggestions.
 
 
-6.2 feedback
-The feedback-paradigm aims at revealing the state of single objects
-and the whole program. The state of single objects is defined by its
-properties, child-relations, and references. The state of the program,
-in turn, depends on interactions between objects and actions: A syntactically correct statement can be invalid, if an object passed as parameter to the statement, does not meet specific prerequisite. For instance, an item-container that is to be split should consist of more
-than one item. MLE supports users with feedback on both levels, regarding the state of objects and the execution semantics
-
-: Often
-there were problems with the use of projectional editing, which are
-not solely due to the unfamiliar handling
-
-Half of the participants stated that
-they enjoyed the experience but would hesitate to use it in their dayto-day work for reasons such as fear of missing functions, constraints
-of projectional editing, or being forced to use this specific IDE.
+6.2 feedback The feedback-paradigm aims at revealing the state of single objects and the whole program.
+The state of single objects is defined by its properties, child-relations, and references.
+The state of the program, in turn, depends on interactions between objects and actions: A syntactically correct statement can be invalid, if an object passed as parameter to the statement, does not meet specific prerequisite.
+For instance, an item-container that is to be split should consist of more than one item.
+MLE supports users with feedback on both levels, regarding the state of objects and the execution semantics : Often there were problems with the use of projectional editing, which are not solely due to the unfamiliar handling 
+Half of the participants stated that they enjoyed the experience but would hesitate to use it in their dayto-day work for reasons such as fear of missing functions, constraints of projectional editing, or being forced to use this specific IDE.
 
 
 
@@ -313,17 +210,25 @@ of projectional editing, or being forced to use this specific IDE.
 
  
 
-Behringer, B., J. Palz, and T. Berger (2017). “PEoPL: Projectional Editing of Product Lines.” In: 2017 IEEE/ACM 39th International Conference on Software Engineering (ICSE), pp. 563–574.
-C. Kang, Kyo, Sholom Cohen, James A. Hess, William Novak, and
 
-Efftinge, Sven and Markus Völter (2006). “oAW xText: A framework for textual DSLs.” In: Workshop on Modeling Symposium at Eclipse
 
-Feigenspan, Janet, Christian Kästner, Jörg Liebig, Sven Apel, and Stefan Hanenberg (2012). “Measuring programming experience.” In: Program Comprehension (ICPC), 2012 IEEE 20th International Conference on. IEEE, pp. 73–82.
+Behringer, B., J.
+Palz, and T.
+Berger (2017). “PEoPL: Projectional Editing of Product Lines.” In: 2017 IEEE/ACM 39th International Conference on Software Engineering (ICSE), pp. 563–574.
+C.
+Kang, Kyo, Sholom Cohen, James A.
+Hess, William Novak, and 
+Efftinge, Sven and Markus Völter (2006). “oAW xText: A framework for textual DSLs.” In: Workshop on Modeling Symposium at Eclipse 
+Feigenspan, Janet, Christian Kästner, Jörg Liebig, Sven Apel, and Stefan Hanenberg (2012). “Measuring programming experience.” In: Program Comprehension (ICPC), 2012 IEEE 20th International Conference on.
+IEEE, pp. 73–82.
 
-Makarkin, Aleksey (2016). Open API - accessing models from code. Retrieved January 20, 2018. url: https://confluence.jetbrains. com/display/MPSD20182/Open+API+-+accessing+models+ from+code.
+Makarkin, Aleksey (2016).
+Open API - accessing models from code.
+Retrieved January 20, 2018. url: https://confluence.jetbrains. com/display/MPSD20182/Open+API+-+accessing+models+ from+code.
 
-Nielsen, Jakob (1994). “Enhancing the Explanatory Power of Usability Heuristics.” In: Proceedings of the SIGCHI Conference on Human Factors in Computing Systems. CHI ’94. Boston, Massachusetts, USA:
+Nielsen, Jakob (1994). “Enhancing the Explanatory Power of Usability Heuristics.” In: Proceedings of the SIGCHI Conference on Human Factors in Computing Systems.
+CHI ’94.
+Boston, Massachusetts, USA:
 ACM, pp. 152–158. isbn: 0-89791-650-6.
 
-Siegmund, Janet and Jana Schumann (2015). “Confounding parameters on program comprehension: a literature survey.” In: Empirical
-Software Engineering 20.4, pp. 1159–1192.
+Siegmund, Janet and Jana Schumann (2015). “Confounding parameters on program comprehension: a literature survey.” In: Empirical Software Engineering 20.4, pp. 1159–1192.

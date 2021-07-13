@@ -1,146 +1,116 @@
-AB - Automated Domain-Specific C Verification with mbeddr
+AB - Automated Domain-Specific C Verification with mbeddr 
 
-. Our implementation is based
-on the JetBrains MPS language workbench. It provides stateof-the-art language engineering facilities and is discussed in
-Section 2.1
+Our implementation is based on the JetBrains MPS language workbench.
+It provides stateof-the-art language engineering facilities and is discussed in Section 2.1
 
-Our work relies on language engineering [37], which refers to
-defining, extending and composing programming languages
-and their integrated development environments (IDEs). Language workbenches [18] are tools that support efficient language engineering. Our implementation relies on the JetBrains MPS language workbench, which, unlike most other
-language workbenches [17], uses projectional editing.
+Our work relies on language engineering [37], which refers to defining, extending and composing programming languages and their integrated development environments (IDEs).
+Language workbenches [18] are tools that support efficient language engineering.
+Our implementation relies on the JetBrains MPS language workbench, which, unlike most other language workbenches [17], uses projectional editing.
 
-Projectional Editing The conventional approach for language implementation relies on defining a grammar and then
-deriving a parser, which recognizes structure in the program
-text and materializes it into an abstract syntax tree (AST)
+Projectional Editing The conventional approach for language implementation relies on defining a grammar and then deriving a parser, which recognizes structure in the program text and materializes it into an abstract syntax tree (AST)
 
-An
-IDE is essentially a text editor which runs the parser incrementally to maintain the AST. The IDE also provides services
-such as syntax highlighting, navigation or code completion,
-and directly integrates the type checker and a compiler, if any
-Many of these services rely on the AST. As discussed in [23],
-most grammar-based language engineering approaches and
-tools are limited in terms of modular extensibility or composability of grammars, because, depending on the grammar
-class, grammars are not closed under composition. While [23]
-also points out that purely declarative syntax definitions can
-address this challenge to a degree, there are still important
-cases where composability remains limited.
-Projectional editing is a different approach to defining, extending and composing languages and IDEs. A projectional
-editor does not rely on a parser. Instead, as a user edits a
-program, the AST is modified directly. Projection rules create
-a representation of the AST with which the user interacts,
-and which reflects the resulting changes (Figure 3 steps 1 and
-2). As the user edits the program, program nodes are created
-as instances of language concepts. Concepts are the kinds of
-AST nodes, similar to metaclasses in traditional modeling approaches. 
-
-. In the editor, a code completion menu lets users
-create instances based on a text string entered in the editor
-called the alias. The valid aliases (and thus the concepts
-available for instantiation) are determined by the language
-definition. Importantly, every next alias must be recognized as
-it is entered, so there is never any parsing of a structured text
-sequence. In contrast to parser-based systems, where disambiguation is performed by the parser after a (potentially)
-complete program has been entered, in projectional editing,
-disambiguation happens at the time when the user picks a
-concept from the code completion menu: if two concepts
-define the same alias, the user resolves the ambiguity.
-
-In a projectional editor every program node has a unique
-identifier and also points to its defining concept. So once a
-node is created, there is never any ambiguity what it represents, irrespective of its syntax. References between program
-elements are represented as references to the identifier. These
-references are also established during program editing by directly selecting reference targets from the code completion
-menu. This is in contrast to parser-based systems, where a
-reference is expressed as a string in the source text and a separate name resolution phase resolves the target AST element.
+An IDE is essentially a text editor which runs the parser incrementally to maintain the AST.
+The IDE also provides services such as syntax highlighting, navigation or code completion, and directly integrates the type checker and a compiler, if any Many of these services rely on the AST.
+As discussed in [23], most grammar-based language engineering approaches and tools are limited in terms of modular extensibility or composability of grammars, because, depending on the grammar class, grammars are not closed under composition.
+While [23] also points out that purely declarative syntax definitions can address this challenge to a degree, there are still important cases where composability remains limited.
+Projectional editing is a different approach to defining, extending and composing languages and IDEs.
+A projectional editor does not rely on a parser.
+Instead, as a user edits a program, the AST is modified directly.
+Projection rules create a representation of the AST with which the user interacts, and which reflects the resulting changes (Figure 3 steps 1 and 2).
+As the user edits the program, program nodes are created as instances of language concepts.
+Concepts are the kinds of AST nodes, similar to metaclasses in traditional modeling approaches. 
 
 
-Defining and Extending a Language Projectional editing
-makes it simple to define languages and IDEs, or extend them with
-new constructs. Implementing a new language starts with the
-language structure, defining language concepts and the relationships between them. Figure 2A shows the example of an
-IfStmt that consists of a list of statements in its body and an
-Expression as the condition. Figure 2B shows that the if
-statement and the for statement concepts both inherit from
-Stmt. Similar to an object-oriented framework, MPS supports polymorphism, but it does so for language concepts.
-Consequently, IfStmt and ForStmt can be used in program
-locations where a Stmt is expected, for example, in the body of
-an IfStmt. In addition to concepts and their relationships, a
-language definition contains scoping rules, a type system and
-further structural constraints (not discussed here; see [36]).
+In the editor, a code completion menu lets users create instances based on a text string entered in the editor called the alias.
+The valid aliases (and thus the concepts available for instantiation) are determined by the language definition.
+Importantly, every next alias must be recognized as it is entered, so there is never any parsing of a structured text sequence.
+In contrast to parser-based systems, where disambiguation is performed by the parser after a (potentially) complete program has been entered, in projectional editing, disambiguation happens at the time when the user picks a concept from the code completion menu: if two concepts define the same alias, the user resolves the ambiguity.
 
-Defining and Extending a Language Projectional editing
-makes it simple to define languages and IDEs, or extend them with
-new constructs. Implementing a new language starts with the
-language structure, defining language concepts and the relationships between them. Figure 2A shows the example of an
-IfStmt that consists of a list of statements in its body and an
-Expression as the condition. Figure 2B shows that the if
-statement and the for statement concepts both inherit from
-Stmt. Similar to an object-oriented framework, MPS supports polymorphism, but it does so for language concepts.
-Consequently, IfStmt and ForStmt can be used in program
-locations where a Stmt is expected, for example, in the body of
-an IfStmt. In addition to concepts and their relationships, a
-language definition contains scoping rules, a type system and
-further structural constraints (not discussed here; see [36]).
-because these are natural for C code. The textual notation of
-an AST in MPS should not be confused with real textual editing, however: it still uses the projectional approach. Examples of other notations used in mbeddr can be found in [38].
-The particular details of defining projection rules are beyond
-the scope of this paper and are described in [37].
-
-It is possible to extend languages without invasively changing their definition. An extending language defines new
-concepts and their relationship to existing concepts of the
-extended language, as in Figure 2. Consider extending C
-with an unless statement: we create a new language that
-contains an UnlessStmt concept that has a condition and a
-body as children, similar to the IfStmt, in Figure 2A. Next
-we make UnlessStmt inherit from the existing Stmt concept.
-We then define a projection rule that renders UnlessStmt as
-unless (cond ) {body }. A typing rule ensures that the condition is Boolean. Since language definition in MPS always
-implies IDE definition, the unless statement will benefit from
-the same IDE services as the base language – the extensions
-integrate seamlessly. A systematic exploration of language
-extension and composition with MPS can be found in [36]
-
-Generation and Transformation MPS languages are usually generated to real text at some point so they can be passed
-to existing compilers or verification tools. For this purpose,
-the definition of a base language such as C contains a text
-generator (Figure 3, step 3). For extensions, such as the
-UnlessStmt, no text generator is necessary because extensions are reduced to a semantically equivalent C representation before text generation is performed. Such transformations are defined between ASTs where nodes can be replaced
-with other nodes, additional nodes can be created and nodes
-can be removed. The unless (cond ) {body } statement is
-reduced to if (!cond ) {body }
-
-The set of transformations can form a cascade, which incrementally transform extensions into C, then into C header
-and implementation file modules, and finally into text files.
-The existing mbeddr generators deal with many details of textual C. For example, headers are automatically generated and
-name collisions are avoided by a name mangling mechanism.
-Since extensions are transformed to mbeddr C, extension developers do not have to care about these details. For details
-about defining transformations please refer to [37].
+In a projectional editor every program node has a unique identifier and also points to its defining concept.
+So once a node is created, there is never any ambiguity what it represents, irrespective of its syntax.
+References between program elements are represented as references to the identifier.
+These references are also established during program editing by directly selecting reference targets from the code completion menu.
+This is in contrast to parser-based systems, where a reference is expressed as a string in the source text and a separate name resolution phase resolves the target AST element.
 
 
- The boundary can be
-enforced via structural constraints and data flow checks, both
-available to the language engineer in MPS.
+Defining and Extending a Language Projectional editing makes it simple to define languages and IDEs, or extend them with new constructs.
+Implementing a new language starts with the language structure, defining language concepts and the relationships between them.
+Figure 2A shows the example of an IfStmt that consists of a list of statements in its body and an Expression as the condition.
+Figure 2B shows that the if statement and the for statement concepts both inherit from Stmt.
+Similar to an object-oriented framework, MPS supports polymorphism, but it does so for language concepts.
+Consequently, IfStmt and ForStmt can be used in program locations where a Stmt is expected, for example, in the body of an IfStmt.
+In addition to concepts and their relationships, a language definition contains scoping rules, a type system and further structural constraints (not discussed here; see [36]).
 
-Relying
-on MPS, mbeddr keeps track of the mapping of the original
-program nodes to the final line numbers in the textual C
-representation. This enables us to bind the trace steps to the
-program nodes of the SUV. The UI supports navigation from
-the trace to the SUV code.
+Defining and Extending a Language Projectional editing makes it simple to define languages and IDEs, or extend them with new constructs.
+Implementing a new language starts with the language structure, defining language concepts and the relationships between them.
+Figure 2A shows the example of an IfStmt that consists of a list of statements in its body and an Expression as the condition.
+Figure 2B shows that the if statement and the for statement concepts both inherit from Stmt.
+Similar to an object-oriented framework, MPS supports polymorphism, but it does so for language concepts.
+Consequently, IfStmt and ForStmt can be used in program locations where a Stmt is expected, for example, in the body of an IfStmt.
+In addition to concepts and their relationships, a language definition contains scoping rules, a type system and further structural constraints (not discussed here; see [36]).
+because these are natural for C code.
+The textual notation of an AST in MPS should not be confused with real textual editing, however: it still uses the projectional approach.
+Examples of other notations used in mbeddr can be found in [38].
+The particular details of defining projection rules are beyond the scope of this paper and are described in [37].
 
-On the efforts for building the extensions. Once the
-domain-specific extensions are available for a given application domain, expressing models, conditions and environments becomes more efficient. However, the extensions have
-to be built first. Building the state machines extensions took
-the mbeddr team a few weeks. Development of the extensions for conditions and environments to verify state machines can be done in a few days. Both requires developers
-who have experience with developing languages with MPS;
-this in itself requires a few weeks to learn. Whether these
-few weeks and days are feasible in a given domain must be
-judged in each case separately. Like with all reusable assets,
-the decision depends on how often a set of extensions are expected to be used. Considering that the pacemaker contains
-many different pacing modes (implemented with different
-state machines and verification conditions) we think that the
-trade-off makes sense in this particular case.
+It is possible to extend languages without invasively changing their definition.
+An extending language defines new concepts and their relationship to existing concepts of the extended language, as in Figure 2.
+Consider extending C with an unless statement: we create a new language that contains an UnlessStmt concept that has a condition and a body as children, similar to the IfStmt, in Figure 2A.
+Next we make UnlessStmt inherit from the existing Stmt concept.
+We then define a projection rule that renders UnlessStmt as unless (cond ) {body }.
+A typing rule ensures that the condition is Boolean.
+Since language definition in MPS always implies IDE definition, the unless statement will benefit from the same IDE services as the base language – the extensions integrate seamlessly.
+A systematic exploration of language extension and composition with MPS can be found in [36]
+
+Generation and Transformation MPS languages are usually generated to real text at some point so they can be passed to existing compilers or verification tools.
+For this purpose, the definition of a base language such as C contains a text generator (Figure 3, step 3).
+For extensions, such as the UnlessStmt, no text generator is necessary because extensions are reduced to a semantically equivalent C representation before text generation is performed.
+Such transformations are defined between ASTs where nodes can be replaced with other nodes, additional nodes can be created and nodes can be removed.
+The unless (cond ) {body } statement is reduced to if (!cond ) {body }
+
+The set of transformations can form a cascade, which incrementally transform extensions into C, then into C header and implementation file modules, and finally into text files.
+The existing mbeddr generators deal with many details of textual C.
+For example, headers are automatically generated and name collisions are avoided by a name mangling mechanism.
+Since extensions are transformed to mbeddr C, extension developers do not have to care about these details.
+For details about defining transformations please refer to [37].
 
 
-[31]	D. Ratiu, M. Voelter, Z. Molotnikov, and B. Schätz. Implementing modular domain specific languages and analyses. In Proceedings of the 9th Workshop on Model-Driven Engineering, Verification and Validation, MoDeVVa ’12, pages 35–40. ACM, 2012.
-[32]	D. Ratiu, M. Völter, B. Kolb, and B. Schätz. Using Language Engineering to Lift Languages and Analyses at the Domain Level. In 5th International Symposium, NASA Formal Methods, NFM, pages 465–471, 2013.
+The boundary can be enforced via structural constraints and data flow checks, both available to the language engineer in MPS.
+
+Relying on MPS, mbeddr keeps track of the mapping of the original program nodes to the final line numbers in the textual C representation.
+This enables us to bind the trace steps to the program nodes of the SUV.
+The UI supports navigation from the trace to the SUV code.
+
+On the efforts for building the extensions.
+Once the domain-specific extensions are available for a given application domain, expressing models, conditions and environments becomes more efficient.
+However, the extensions have to be built first.
+Building the state machines extensions took the mbeddr team a few weeks.
+Development of the extensions for conditions and environments to verify state machines can be done in a few days.
+Both requires developers who have experience with developing languages with MPS; this in itself requires a few weeks to learn.
+Whether these few weeks and days are feasible in a given domain must be judged in each case separately.
+Like with all reusable assets, the decision depends on how often a set of extensions are expected to be used.
+Considering that the pacemaker contains many different pacing modes (implemented with different state machines and verification conditions) we think that the trade-off makes sense in this particular case.
+
+
+
+
+
+
+
+
+
+[31]	D.
+Ratiu, M.
+Voelter, Z.
+Molotnikov, and B.
+Schätz.
+Implementing modular domain specific languages and analyses.
+In Proceedings of the 9th Workshop on Model-Driven Engineering, Verification and Validation, MoDeVVa ’12, pages 35–40.
+ACM, 2012.
+[32]	D.
+Ratiu, M.
+Völter, B.
+Kolb, and B.
+Schätz.
+Using Language Engineering to Lift Languages and Analyses at the Domain Level.
+In 5th International Symposium, NASA Formal Methods, NFM, pages 465–471, 2013.

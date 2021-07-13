@@ -1,0 +1,11 @@
+
+mps uses a projectional editor which avoids parsing and some of the problems that parsing implies.
+projectional editing means that every edit directly changes the syntax tree and no grammars or parsers are involved.
+
+advantages: if you dont parse, you can use languages and notations that are not parsable.
+obviously you can use regular code or text, but you can also use mathmatical symbols tables and also graphical diagrams.
+
+projectional editing also supports language composition.  because you never run into ambiguities language composition is much more flexible compared to parser based systems.
+
+Historically Projectional editors have had useability challenges and weren't used much in practice.  MPS has
+addressed most of these useablity challenges successfully (show mps usability study)

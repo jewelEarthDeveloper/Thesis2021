@@ -1,104 +1,75 @@
-AB - Grammar to JetBrains MPS Convertor
+AB - Grammar to JetBrains MPS Convertor 
+Their project called MPS (Meta Programming System) is a development environment that allows building custom domain specific languages or extending existing ones.
+Developers can use these newly created languages inside MPS and, out of their programs, they can generate actual code in a given target language such as Java 
 
- Their project called MPS (Meta Programming System) is a development environment that allows building custom domain specific
-languages or extending existing ones. Developers can use these newly created
-languages inside MPS and, out of their programs, they can generate actual code
-in a given target language such as Java
+The project itself started in 2003 as a research project, but JetBrains have been using it in the development of their own products since 2006.
+It is being developed as an open-source product under the Apache 2.0 license.
 
+MPS does not work with the textual representation of the code as usual, but rather with its AST (abstract syntax tree) that is the model of the code.
+The code itself, which is later compiled and run, is built out of this tree.
+So when users are creating programs using MPS, they are basically assembling the tree out of defined building blocks of the language.
+The definition of the language used dictates, which statements or elements can be nested inside each other and what structure the AST can have.
 
-The project itself started in 2003 as
-a research project, but JetBrains have been using it in the development of their
-own products since 2006. It is being developed as an open-source product under
-the Apache 2.0 license.
-
-MPS does not work with the textual representation
-of the code as usual, but rather with its AST (abstract syntax tree) that is the
-model of the code. The code itself, which is later compiled and run, is built out
-of this tree. So when users are creating programs using MPS, they are basically
-assembling the tree out of defined building blocks of the language. The definition
-of the language used dictates, which statements or elements can be nested inside
-each other and what structure the AST can have.
-
-Keeping the model of the code in the AST form has several advantages. One
-of them is that MPS then only allows composing the program strictly following
-the syntax of the language, which results in an inability to actually write syntactically invalid code. It is generated out of the always-valid AST beyond user’s
-reach. This is extremely handy when used, for example, for educational purposes,
-as you can guide students through code creation easily using auto-completion or
-other tools available. It also means that MPS understands the code much better
-and is able to perform some interesting actions or refactoring.
+Keeping the model of the code in the AST form has several advantages.
+One of them is that MPS then only allows composing the program strictly following the syntax of the language, which results in an inability to actually write syntactically invalid code.
+It is generated out of the always-valid AST beyond user’s reach.
+This is extremely handy when used, for example, for educational purposes, as you can guide students through code creation easily using auto-completion or other tools available.
+It also means that MPS understands the code much better and is able to perform some interesting actions or refactoring.
 
 
-2.2 Projectional Editor
-As stated before, MPS is not an ordinary tool, but its most distinctive feature
-might be the projectional editor. The projectional editor is the place where “interaction” between the code and the programmer takes place. The idea behind
-projectional editing is following. When the user is not working with the text
-source code directly, as usual, every node of the AST can be represented in any
-form and take any shape. It is just up to the designer of the language what shape
-will each node take inside the projectional editor.
+2.2 Projectional Editor 
+As stated before, MPS is not an ordinary tool, but its most distinctive feature might be the projectional editor.
+The projectional editor is the place where “interaction” between the code and the programmer takes place.
+The idea behind projectional editing is following.
+When the user is not working with the text source code directly, as usual, every node of the AST can be represented in any form and take any shape.
+It is just up to the designer of the language what shape will each node take inside the projectional editor.
 
-We have an absolute free will in how do we design each node of the AST. We
-can style the node graphically and define its layout in any way. This, of course,
-comes with some drawbacks such as designing a representation like this is quite
-complicated, even for a human
-
-For a definition of concept’s appearance, JetBrains have developed a cellular
-system that allows placing concept’s properties and children into different cells.
-These cells then can be styled to user’s liking. There are many different types
-of cells, each behaving a little bit different towards its contents. We are talking
-about various horizontal or vertical lists etc. More extra cells can be added on top
-of that holding no content but specifying additional layout adjustments such as
-indentation. Each cell can have special context menus bound to it, its formatting
-can be customized and so on
-
-Main building blocks of any MPS language are concepts. You can imagine
-they are the nodes of the AST and we build the code out of them. Every concept can have a definition of one or more different editor aspects. Every aspect
-defines the concept from a different point of view. One aspect might say where
-the concept in AST can be included, another one what code is generated out of it
-and so on. Concepts took over some design patterns known from object oriented
-programming. The concept can be inherited from a parent (abstract) concept
-and it can implement a special interface concept. Most importantly, concepts
-have child concepts and that is how the AST itself is created.
+We have an absolute free will in how do we design each node of the AST.
+We can style the node graphically and define its layout in any way.
+This, of course, comes with some drawbacks such as designing a representation like this is quite complicated, even for a human 
+For a definition of concept’s appearance, JetBrains have developed a cellular system that allows placing concept’s properties and children into different cells.
+These cells then can be styled to user’s liking.
+There are many different types of cells, each behaving a little bit different towards its contents.
+We are talking about various horizontal or vertical lists etc.
+More extra cells can be added on top of that holding no content but specifying additional layout adjustments such as indentation.
+Each cell can have special context menus bound to it, its formatting can be customized and so on 
+Main building blocks of any MPS language are concepts.
+You can imagine they are the nodes of the AST and we build the code out of them.
+Every concept can have a definition of one or more different editor aspects.
+Every aspect defines the concept from a different point of view.
+One aspect might say where the concept in AST can be included, another one what code is generated out of it and so on.
+Concepts took over some design patterns known from object oriented programming.
+The concept can be inherited from a parent (abstract) concept and it can implement a special interface concept.
+Most importantly, concepts have child concepts and that is how the AST itself is created.
 
 
-The structure aspect is the most important aspect, as all concepts must be first
-defined here. This aspect treats the concept somewhat like a Java class. User
-can define the name, inheritance, interfaces and concept fields:
- Children – a list of child concepts and their cardinality
- References – a list of references to already existing nodes (e.g. think
-reference to a node of a method in a method call statement)
- Properties – arbitrary fields of any type that can hold value, just like class
-fields in Java
-The concept can be further marked as a rootable one, which means it can be
-a top level element for some code in a given language. I
+The structure aspect is the most important aspect, as all concepts must be first defined here.
+This aspect treats the concept somewhat like a Java class.
+User can define the name, inheritance, interfaces and concept fields:
+ Children – a list of child concepts and their cardinality 
+ References – a list of references to already existing nodes (e.g. think reference to a node of a method in a method call statement)
+ Properties – arbitrary fields of any type that can hold value, just like class fields in Java The concept can be further marked as a rootable one, which means it can be a top level element for some code in a given language.
 
-Editor aspect is where the user defines what the projectional editor representation
-of a code fragment (an AST node) looks like. The user usually incorporates all
-children, references, and properties inside the representation so that future user
-of the language can insert their value into these placeholders. Any other static
-components can be included too.
 
- TextGen Aspect
- It defines how a certain node
-will be translated into a text source code. This will allow us to generate source
-code in text form out of an AST model and ultimately to generate a text program
-out of the code user writes in the imported language.
-The TextGen aspect is basically just one method definition for each concept of
-the language. This method has several parameters such as the currently processed
-node and some contextual information. It is, however, not returning a string as
-perhaps expected, but rather manipulates an output buffer/stream using some
-built-in functions. MPS then calls this method for the root concept of the program
-and it is up to this concept’s TextGen method to append its children into the
-stream by calling their TextGen methods.
+Editor aspect is where the user defines what the projectional editor representation of a code fragment (an AST node) looks like.
+The user usually incorporates all children, references, and properties inside the representation so that future user of the language can insert their value into these placeholders.
+Any other static components can be included too.
+
+TextGen Aspect  
+It defines how a certain node will be translated into a text source code.
+This will allow us to generate source code in text form out of an AST model and ultimately to generate a text program out of the code user writes in the imported language.
+The TextGen aspect is basically just one method definition for each concept of the language.
+This method has several parameters such as the currently processed node and some contextual information.
+It is, however, not returning a string as perhaps expected, but rather manipulates an output buffer/stream using some built-in functions.
+MPS then calls this method for the root concept of the program and it is up to this concept’s TextGen method to append its children into the stream by calling their TextGen methods.
 
 
 TextGen aspect’s purpose is telling each concept, what the real text code generated out of it will be, once we want to turn our MPS code into a real program.
-Basically, it’s a single method definition for each concept of the language. This
-method has several parameters, such as the currently processed node and some
-contextual information. It is, however, not returning a string as perhaps expected,
-but rather manipulates an output buffer/stream using some built-in functions.
-When generating the code of a program, MPS calls this method for the root
-concept of the program. It is up to this concept’s TextGen method to append its
-children into the stream by invoking their TextGen methods subsequently.
+Basically, it’s a single method definition for each concept of the language.
+This method has several parameters, such as the currently processed node and some contextual information.
+It is, however, not returning a string as perhaps expected, but rather manipulates an output buffer/stream using some built-in functions.
+When generating the code of a program, MPS calls this method for the root concept of the program.
+It is up to this concept’s TextGen method to append its children into the stream by invoking their TextGen methods subsequently.
 
 
 

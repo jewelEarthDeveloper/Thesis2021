@@ -117,11 +117,7 @@ Fact
  - supports in parameter global.method( rule variable.method )
 	- only in brackets
  - supports in parameter variable.property.method( rule variable )
- - supports in parameter !=
- - supports in parameter !=
- - supports in parameter !=
-
-	
+ 
 	
 
  

@@ -1,21 +1,16 @@
-AB - Language-Oriented Modeling Method Engineering
-
+AB - Language-Oriented Modeling Method Engineering 
 3.3.1.3 MPS
-Meta Programming System (MPS) is an open source language realization tool based
-on the language-oriented programming. The creators address it as a language workbench. Thus, it is not a framework or a plugin, but a stand-alone IDE for creating and
-using the created languages. It uses a projectional editor that renders the abstract syntax tree in a notation that looks and feels textual while the user directly edits the tree.
-What this means is that writing a keyword (e.g., while), which is a part of the expression
-(e.g., while <condition> do <something>) will also add the rest of the expression to the
-program, with placeholders (in our example the words started with < and ending with >)
-which need to be filled with values (terminal symbols or other expressions). This also
-means that programs can include syntactic forms other than text, such as tables or
-mathematical symbols [49].
-Defining a language begins with defining the abstract syntax. The editor (projection
-rules) is defined in a second step. The third step is defining a generator which provides
-semantics by mapping defined language constructs to one of the several existing languages. MPS currently supports mapping to C, Java, XML, or plain text.
-The most successful application of MPS nowadays is the mbeddr language, which is
-based on the extensible version of C programming language used in the embedded
-software engineering. Figure 12 shows how the mbeddr projectional editor based on
-MPS represents text and tables in programs. What we actually see is the editing of
-abstract syntax tree, where it is only possible to insert expressions in a valid form. The
-editor warns us about wrongly imputed parameters (the value parts of the expressions).
+Meta Programming System (MPS) is an open source language realization tool based on the language-oriented programming.
+The creators address it as a language workbench.
+Thus, it is not a framework or a plugin, but a stand-alone IDE for creating and using the created languages.
+It uses a projectional editor that renders the abstract syntax tree in a notation that looks and feels textual while the user directly edits the tree.
+What this means is that writing a keyword (e.g., while), which is a part of the expression (e.g., while <condition> do <something>) will also add the rest of the expression to the program, with placeholders (in our example the words started with < and ending with >) which need to be filled with values (terminal symbols or other expressions).
+This also means that programs can include syntactic forms other than text, such as tables or mathematical symbols [49].
+Defining a language begins with defining the abstract syntax.
+The editor (projection rules) is defined in a second step.
+The third step is defining a generator which provides semantics by mapping defined language constructs to one of the several existing languages.
+MPS currently supports mapping to C, Java, XML, or plain text.
+The most successful application of MPS nowadays is the mbeddr language, which is based on the extensible version of C programming language used in the embedded software engineering.
+Figure 12 shows how the mbeddr projectional editor based on MPS represents text and tables in programs.
+What we actually see is the editing of abstract syntax tree, where it is only possible to insert expressions in a valid form.
+The editor warns us about wrongly imputed parameters (the value parts of the expressions).

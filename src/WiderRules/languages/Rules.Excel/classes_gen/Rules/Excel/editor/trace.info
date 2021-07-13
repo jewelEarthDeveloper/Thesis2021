@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/5351203823916750322:jetbrains.mps.baseLanguage.structure.TryUniversalStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
+  <root>
+    <file name="EditorAspectDescriptorImpl.java">
+      <unit at="19,0,39,0" name="Rules.Excel.editor.EditorAspectDescriptorImpl" />
+    </file>
+  </root>
+  <root nodeRef="r:636861d8-a05b-4ca6-b093-03c45754ae61(Rules.Excel.editor)/6626895832076924090">
+    <file name="DEAD_tableUtil.java">
+      <node id="6626895832077182968" at="16,67,17,61" concept="6" />
+      <node id="6626895832079043667" at="17,61,18,0" concept="8" />
+      <node id="6626895832078576765" at="18,0,19,0" concept="8" />
+      <node id="6626895832077212119" at="19,0,20,18" concept="7" />
+      <node id="6626895832079731462" at="24,5,25,46" concept="6" />
+      <node id="6626895832079762550" at="26,87,27,79" concept="7" />
+      <node id="6626895832079730204" at="29,5,30,0" concept="8" />
+      <node id="6626895832079730253" at="30,0,31,41" concept="12" />
+      <node id="6626895832078319523" at="36,72,37,58" concept="6" />
+      <node id="6626895832078319283" at="37,58,38,0" concept="8" />
+      <node id="6626895832078372944" at="38,0,39,412" concept="6" />
+      <node id="6626895832078373998" at="39,412,40,0" concept="8" />
+      <node id="6626895832078376961" at="40,0,41,51" concept="6" />
+      <node id="6626895832078374753" at="41,51,42,33" concept="2" />
+      <node id="6626895832078319380" at="42,33,43,23" concept="7" />
+      <node id="6626895832076924090" at="47,0,48,0" concept="9" trace="ExistsCondition$zq" />
+      <node id="6626895832076924090" at="48,0,49,0" concept="9" trace="FieldConstraint$oO" />
+      <node id="6626895832076924090" at="52,0,53,0" concept="9" trace="selector$V5mL" />
+      <node id="6626895832076924090" at="53,0,54,0" concept="9" trace="conditions$LY0l" />
+      <node id="6626895832076924090" at="54,0,55,0" concept="9" trace="newconstraints$KdZk" />
+      <node id="6626895832076924090" at="55,0,56,0" concept="9" trace="restriction$5rgf" />
+      <node id="6626895832079731462" at="25,46,28,7" concept="4" />
+      <node id="6626895832077181737" at="16,0,22,0" concept="10" trace="generateHeaders#(Lorg/jetbrains/mps/openapi/model/SNode;)LRules/Excel/editor/headerGridParameters;" />
+      <node id="6626895832079731462" at="23,52,29,5" concept="0" />
+      <node id="6626895832078315781" at="36,0,45,0" concept="10" trace="generateGridCells#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <node id="6626895832079727899" at="23,0,33,0" concept="10" trace="getSelector#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="6626895832079731466" at="26,87,27,79" />
+      <scope id="6626895832077181740" at="16,67,20,18">
+        <var name="params" id="6626895832077182969" />
+      </scope>
+      <scope id="6626895832079731462" at="24,5,28,7">
+        <var name="existsCondition" id="6626895832079731462" />
+      </scope>
+      <scope id="6626895832077181737" at="16,0,22,0">
+        <var name="rules" id="6626895832077181802" />
+      </scope>
+      <scope id="6626895832078315784" at="36,72,43,23">
+        <var name="headers" id="6626895832078319524" />
+        <var name="restictions" id="6626895832078376962" />
+        <var name="restriction" id="6626895832078372945" />
+      </scope>
+      <scope id="6626895832079727902" at="23,52,31,41" />
+      <scope id="6626895832078315781" at="36,0,45,0">
+        <var name="rule" id="6626895832078316445" />
+        <var name="rules" id="6626895832078316385" />
+      </scope>
+      <scope id="6626895832079727899" at="23,0,33,0">
+        <var name="condition" id="6626895832079729212" />
+      </scope>
+      <unit id="6626895832076924090" at="46,0,50,0" name="Rules.Excel.editor.DEAD_tableUtil$CONCEPTS" />
+      <unit id="6626895832076924090" at="51,0,57,0" name="Rules.Excel.editor.DEAD_tableUtil$LINKS" />
+      <unit id="6626895832076924090" at="15,0,58,0" name="Rules.Excel.editor.DEAD_tableUtil" />
+    </file>
+  </root>
+  <root nodeRef="r:636861d8-a05b-4ca6-b093-03c45754ae61(Rules.Excel.editor)/6626895832076995246">
+    <file name="columnHeaderParameter.java">
+      <node id="6626895832076997169" at="8,0,9,0" concept="3" trace="leftToRightSpan" />
+      <node id="6626895832076997287" at="9,0,10,0" concept="3" trace="topToBottomSpan" />
+      <node id="6626895832077106943" at="10,0,11,0" concept="3" trace="columnHeader" />
+      <unit id="6626895832076995246" at="7,0,12,0" name="Rules.Excel.editor.columnHeaderParameter" />
+    </file>
+  </root>
+  <root nodeRef="r:636861d8-a05b-4ca6-b093-03c45754ae61(Rules.Excel.editor)/6626895832077107915">
+    <file name="headerGridParameters.java">
+      <node id="6626895832077108222" at="10,0,11,0" concept="3" trace="columnCount" />
+      <node id="6626895832077108552" at="11,0,12,0" concept="3" trace="rowCount" />
+      <node id="6626895832078985516" at="12,0,13,0" concept="3" trace="conditions" />
+      <node id="6626895832079056819" at="13,0,14,0" concept="3" trace="headers" />
+      <unit id="6626895832077107915" at="9,0,15,0" name="Rules.Excel.editor.headerGridParameters" />
+    </file>
+  </root>
+  <root nodeRef="r:636861d8-a05b-4ca6-b093-03c45754ae61(Rules.Excel.editor)/6626895832077108610">
+    <file name="headerMatrix.java">
+      <node id="6626895832077111213" at="10,34,11,55" concept="2" />
+      <node id="6626895832077111221" at="12,5,13,61" concept="6" />
+      <node id="6626895832077111233" at="14,36,15,22" concept="2" />
+      <node id="6626895832077111237" at="16,5,17,31" concept="2" />
+      <node id="6626895832077396801" at="20,59,21,61" concept="6" />
+      <node id="6626895832077410887" at="21,61,22,29" concept="7" />
+      <node id="6626895832077111219" at="9,73,12,5" concept="14" />
+      <node id="6626895832077111236" at="13,61,16,5" concept="14" />
+      <node id="6626895832077381927" at="20,0,24,0" concept="5" trace="get#(II)LRules/Excel/editor/columnHeaderParameter;" />
+      <node id="6626895832077111198" at="9,0,19,0" concept="5" trace="add#(IILRules/Excel/editor/columnHeaderParameter;)V" />
+      <scope id="6626895832077111212" at="10,34,11,55" />
+      <scope id="6626895832077111232" at="14,36,15,22" />
+      <scope id="6626895832077381930" at="20,59,22,29">
+        <var name="inner" id="6626895832077396802" />
+      </scope>
+      <scope id="6626895832077381927" at="20,0,24,0">
+        <var name="index" id="6626895832077385953" />
+        <var name="index2" id="6626895832077385955" />
+      </scope>
+      <scope id="6626895832077111205" at="9,73,17,31">
+        <var name="inner" id="6626895832077111220" />
+      </scope>
+      <scope id="6626895832077111198" at="9,0,19,0">
+        <var name="element" id="6626895832077111203" />
+        <var name="index" id="6626895832077111199" />
+        <var name="index2" id="6626895832077111201" />
+      </scope>
+      <unit id="6626895832077108610" at="7,0,25,0" name="Rules.Excel.editor.headerMatrix" />
+    </file>
+  </root>
+  <root nodeRef="r:636861d8-a05b-4ca6-b093-03c45754ae61(Rules.Excel.editor)/8484003412860609766">
+    <file name="RuleCollection_Editor.java">
+      <node id="8484003412860609766" at="11,79,12,80" concept="7" />
+      <node id="8484003412860609766" at="14,82,15,83" concept="7" />
+      <node id="8484003412860609766" at="11,0,14,0" concept="5" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="8484003412860609766" at="14,0,17,0" concept="5" trace="createInspectedCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="8484003412860609766" at="11,79,12,80" />
+      <scope id="8484003412860609766" at="14,82,15,83" />
+      <scope id="8484003412860609766" at="11,0,14,0">
+        <var name="editorContext" id="8484003412860609766" />
+        <var name="node" id="8484003412860609766" />
+      </scope>
+      <scope id="8484003412860609766" at="14,0,17,0">
+        <var name="editorContext" id="8484003412860609766" />
+        <var name="node" id="8484003412860609766" />
+      </scope>
+      <unit id="8484003412860609766" at="10,0,18,0" name="Rules.Excel.editor.RuleCollection_Editor" />
+    </file>
+    <file name="RuleCollection_EditorBuilder_a.java">
+      <node id="8484003412860609766" at="30,94,31,19" concept="11" />
+      <node id="8484003412860609766" at="31,19,32,18" concept="2" />
+      <node id="8484003412860609766" at="37,26,38,18" concept="7" />
+      <node id="8484003412860609766" at="41,39,42,32" concept="7" />
+      <node id="8484003412860609766" at="45,43,46,120" concept="6" />
+      <node id="8484003412860609766" at="46,120,47,48" concept="2" />
+      <node id="8484003412860609766" at="47,48,48,28" concept="2" />
+      <node id="8484003412860609766" at="48,28,49,31" concept="2" />
+      <node id="8484003412860609791" at="49,31,50,52" concept="2" />
+      <node id="8484003412860609766" at="50,52,51,22" concept="7" />
+      <node id="8484003412860609766" at="53,44,54,97" concept="6" />
+      <node id="8484003412860609766" at="54,97,55,93" concept="6" />
+      <node id="8484003412860609766" at="55,93,56,46" concept="2" />
+      <node id="8484003412860609766" at="56,46,57,51" concept="2" />
+      <node id="8484003412860609766" at="57,51,58,22" concept="7" />
+      <node id="8484003412860609766" at="64,79,65,28" concept="11" />
+      <node id="8484003412860609766" at="65,28,66,25" concept="2" />
+      <node id="8484003412860609766" at="70,28,71,20" concept="7" />
+      <node id="8484003412860609766" at="73,40,74,30" concept="7" />
+      <node id="8484003412860609766" at="76,48,77,39" concept="7" />
+      <node id="8484003412860609766" at="80,57,81,83" concept="6" />
+      <node id="8484003412860609766" at="81,83,82,65" concept="2" />
+      <node id="8484003412860609766" at="82,65,83,25" concept="7" />
+      <node id="8484003412860609766" at="85,41,86,41" concept="2" />
+      <node id="8484003412860609766" at="86,41,87,137" concept="2" />
+      <node id="8484003412860609766" at="88,11,89,36" concept="6" />
+      <node id="8484003412860609766" at="89,36,90,39" concept="2" />
+      <node id="8484003412860609766" at="90,39,91,57" concept="2" />
+      <node id="8484003412860609766" at="91,57,92,34" concept="2" />
+      <node id="8484003412860609766" at="92,34,93,25" concept="7" />
+      <node id="8484003412860609766" at="94,17,95,42" concept="2" />
+      <node id="8484003412860609766" at="99,0,100,0" concept="9" trace="OBJ" />
+      <node id="8484003412860609766" at="103,122,104,92" concept="2" />
+      <node id="8484003412860609766" at="104,92,105,146" concept="2" />
+      <node id="8484003412860609766" at="109,34,110,90" concept="2" />
+      <node id="8484003412860609766" at="110,90,111,142" concept="2" />
+      <node id="8484003412860609766" at="115,34,116,69" concept="2" />
+      <node id="8484003412860609766" at="116,69,117,146" concept="2" />
+      <node id="8484003412860609766" at="121,34,122,91" concept="2" />
+      <node id="8484003412860609796" at="126,43,127,95" concept="6" />
+      <node id="8484003412860609796" at="127,95,128,50" concept="2" />
+      <node id="8484003412860609796" at="128,50,129,36" concept="2" />
+      <node id="8484003412860609796" at="129,36,130,24" concept="7" />
+      <node id="8484003412860609766" at="135,0,136,0" concept="9" trace="rules$VoL3" />
+      <node id="8484003412860609766" at="139,0,140,0" concept="9" trace="RuleStatement$TK" />
+      <node id="8484003412860609766" at="27,0,29,0" concept="3" trace="myNode" />
+      <node id="8484003412860609766" at="61,0,63,0" concept="3" trace="myNode" />
+      <node id="8484003412860609766" at="41,0,44,0" concept="5" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="8484003412860609766" at="73,0,76,0" concept="5" trace="getSLink#()Lorg/jetbrains/mps/openapi/language/SContainmentLink;" />
+      <node id="8484003412860609766" at="76,0,79,0" concept="5" trace="getChildSConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="8484003412860609766" at="120,96,123,9" concept="4" />
+      <node id="8484003412860609766" at="30,0,34,0" concept="1" trace="RuleCollection_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="8484003412860609766" at="64,0,68,0" concept="1" trace="rulesListHandler_3p9d1l_a0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="8484003412860609766" at="69,0,73,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8484003412860609766" at="102,97,106,9" concept="4" />
+      <node id="8484003412860609766" at="108,95,112,9" concept="4" />
+      <node id="8484003412860609766" at="114,74,118,9" concept="4" />
+      <node id="8484003412860609766" at="35,0,40,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8484003412860609766" at="80,0,85,0" concept="5" trace="createNodeCell#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="8484003412860609766" at="119,7,124,7" concept="4" />
+      <node id="8484003412860609766" at="101,107,107,7" concept="4" />
+      <node id="8484003412860609766" at="107,7,113,7" concept="4" />
+      <node id="8484003412860609766" at="113,7,119,7" concept="4" />
+      <node id="8484003412860609796" at="126,0,132,0" concept="5" trace="createConstant_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="8484003412860609766" at="53,0,60,0" concept="5" trace="createRefNodeList_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="8484003412860609766" at="45,0,53,0" concept="5" trace="createCollection_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="8484003412860609766" at="87,137,96,7" concept="13" />
+      <node id="8484003412860609766" at="85,0,98,0" concept="5" trace="createEmptyCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="8484003412860609766" at="101,0,126,0" concept="5" trace="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Z)V" />
+      <scope id="8484003412860609766" at="37,26,38,18" />
+      <scope id="8484003412860609766" at="41,39,42,32" />
+      <scope id="8484003412860609766" at="70,28,71,20" />
+      <scope id="8484003412860609766" at="73,40,74,30" />
+      <scope id="8484003412860609766" at="76,48,77,39" />
+      <scope id="8484003412860609766" at="94,17,95,42" />
+      <scope id="8484003412860609766" at="121,34,122,91" />
+      <scope id="8484003412860609766" at="30,94,32,18" />
+      <scope id="8484003412860609766" at="64,79,66,25" />
+      <scope id="8484003412860609766" at="103,122,105,146" />
+      <scope id="8484003412860609766" at="109,34,111,142" />
+      <scope id="8484003412860609766" at="115,34,117,146" />
+      <scope id="8484003412860609766" at="41,0,44,0" />
+      <scope id="8484003412860609766" at="73,0,76,0" />
+      <scope id="8484003412860609766" at="76,0,79,0" />
+      <scope id="8484003412860609766" at="80,57,83,25">
+        <var name="elementCell" id="8484003412860609766" />
+      </scope>
+      <scope id="8484003412860609766" at="120,96,123,9" />
+      <scope id="8484003412860609766" at="30,0,34,0">
+        <var name="context" id="8484003412860609766" />
+        <var name="node" id="8484003412860609766" />
+      </scope>
+      <scope id="8484003412860609766" at="64,0,68,0">
+        <var name="context" id="8484003412860609766" />
+        <var name="ownerNode" id="8484003412860609766" />
+      </scope>
+      <scope id="8484003412860609766" at="69,0,73,0" />
+      <scope id="8484003412860609766" at="102,97,106,9" />
+      <scope id="8484003412860609766" at="108,95,112,9" />
+      <scope id="8484003412860609766" at="114,74,118,9" />
+      <scope id="8484003412860609796" at="126,43,130,24">
+        <var name="editorCell" id="8484003412860609796" />
+      </scope>
+      <scope id="8484003412860609766" at="35,0,40,0" />
+      <scope id="8484003412860609766" at="53,44,58,22">
+        <var name="editorCell" id="8484003412860609766" />
+        <var name="handler" id="8484003412860609766" />
+      </scope>
+      <scope id="8484003412860609766" at="80,0,85,0">
+        <var name="elementNode" id="8484003412860609766" />
+      </scope>
+      <scope id="8484003412860609766" at="88,11,93,25">
+        <var name="emptyCell" id="8484003412860609766" />
+      </scope>
+      <scope id="8484003412860609766" at="45,43,51,22">
+        <var name="editorCell" id="8484003412860609766" />
+      </scope>
+      <scope id="8484003412860609796" at="126,0,132,0" />
+      <scope id="8484003412860609766" at="53,0,60,0" />
+      <scope id="8484003412860609766" at="45,0,53,0" />
+      <scope id="8484003412860609766" at="85,41,96,7" />
+      <scope id="8484003412860609766" at="85,0,98,0" />
+      <scope id="8484003412860609766" at="101,107,124,7" />
+      <scope id="8484003412860609766" at="101,0,126,0">
+        <var name="elementCell" id="8484003412860609766" />
+        <var name="elementNode" id="8484003412860609766" />
+        <var name="isEmptyCell" id="8484003412860609766" />
+      </scope>
+      <unit id="8484003412860609766" at="134,0,137,0" name="Rules.Excel.editor.RuleCollection_EditorBuilder_a$LINKS" />
+      <unit id="8484003412860609766" at="138,0,141,0" name="Rules.Excel.editor.RuleCollection_EditorBuilder_a$CONCEPTS" />
+      <unit id="8484003412860609766" at="60,0,133,0" name="Rules.Excel.editor.RuleCollection_EditorBuilder_a$rulesListHandler_3p9d1l_a0" />
+      <unit id="8484003412860609766" at="26,0,142,0" name="Rules.Excel.editor.RuleCollection_EditorBuilder_a" />
+    </file>
+    <file name="RuleCollection_InspectorBuilder_a.java">
+      <node id="8484003412860609766" at="34,97,35,19" concept="11" />
+      <node id="8484003412860609766" at="35,19,36,18" concept="2" />
+      <node id="8484003412860609766" at="41,26,42,18" concept="7" />
+      <node id="8484003412860609766" at="45,39,46,32" concept="7" />
+      <node id="8484003412860609766" at="49,43,50,118" concept="6" />
+      <node id="8484003412860609766" at="50,118,51,48" concept="2" />
+      <node id="8484003412860609766" at="51,48,52,28" concept="2" />
+      <node id="8484003412860609766" at="52,28,53,31" concept="2" />
+      <node id="8484003412860609772" at="53,31,54,49" concept="2" />
+      <node id="8484003412860609777" at="54,49,55,49" concept="2" />
+      <node id="8484003412860609766" at="55,49,56,22" concept="7" />
+      <node id="8484003412860609772" at="58,41,59,98" concept="6" />
+      <node id="8484003412860609772" at="59,98,60,46" concept="2" />
+      <node id="8484003412860609772" at="60,46,61,34" concept="2" />
+      <node id="8484003412860609772" at="61,34,62,22" concept="7" />
+      <node id="8484003412860609777" at="64,41,65,39" concept="2" />
+      <node id="8484003412860609777" at="66,9,67,49" concept="6" />
+      <node id="8484003412860609777" at="67,49,68,76" concept="2" />
+      <node id="8484003412860609777" at="68,76,69,149" concept="6" />
+      <node id="8484003412860609777" at="69,149,70,45" concept="2" />
+      <node id="8484003412860609777" at="70,45,71,44" concept="2" />
+      <node id="8484003412860609777" at="71,44,72,86" concept="2" />
+      <node id="8484003412860609777" at="72,86,73,33" concept="2" />
+      <node id="8484003412860609777" at="73,33,74,188" concept="6" />
+      <node id="8484003412860609777" at="76,41,77,118" concept="7" />
+      <node id="8484003412860609777" at="80,74,81,89" concept="6" />
+      <node id="8484003412860609777" at="81,89,82,145" concept="7" />
+      <node id="8484003412860609777" at="83,12,84,24" concept="7" />
+      <node id="8484003412860609777" at="85,15,86,40" concept="2" />
+      <node id="8484003412860609766" at="91,0,92,0" concept="9" trace="name$MnvL" />
+      <node id="8484003412860609766" at="95,0,96,0" concept="9" trace="PropertyAttribute$Gb" />
+      <node id="8484003412860609766" at="31,0,33,0" concept="3" trace="myNode" />
+      <node id="8484003412860609766" at="45,0,48,0" concept="5" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="8484003412860609777" at="76,0,79,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="8484003412860609766" at="34,0,38,0" concept="1" trace="RuleCollection_InspectorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="8484003412860609766" at="39,0,44,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8484003412860609777" at="74,188,79,9" concept="6" />
+      <node id="8484003412860609777" at="79,9,84,24" concept="4" />
+      <node id="8484003412860609772" at="58,0,64,0" concept="5" trace="createConstant_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="8484003412860609766" at="49,0,58,0" concept="5" trace="createCollection_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="8484003412860609777" at="65,39,87,5" concept="13" />
+      <node id="8484003412860609777" at="64,0,89,0" concept="5" trace="createProperty_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="8484003412860609766" at="41,26,42,18" />
+      <scope id="8484003412860609766" at="45,39,46,32" />
+      <scope id="8484003412860609777" at="76,41,77,118" />
+      <scope id="8484003412860609777" at="85,15,86,40" />
+      <scope id="8484003412860609766" at="34,97,36,18" />
+      <scope id="8484003412860609777" at="80,74,82,145">
+        <var name="manager" id="8484003412860609777" />
+      </scope>
+      <scope id="8484003412860609766" at="45,0,48,0" />
+      <scope id="8484003412860609777" at="76,0,79,0">
+        <var name="it" id="8484003412860609777" />
+      </scope>
+      <scope id="8484003412860609766" at="34,0,38,0">
+        <var name="context" id="8484003412860609766" />
+        <var name="node" id="8484003412860609766" />
+      </scope>
+      <scope id="8484003412860609772" at="58,41,62,22">
+        <var name="editorCell" id="8484003412860609772" />
+      </scope>
+      <scope id="8484003412860609766" at="39,0,44,0" />
+      <scope id="8484003412860609772" at="58,0,64,0" />
+      <scope id="8484003412860609766" at="49,43,56,22">
+        <var name="editorCell" id="8484003412860609766" />
+      </scope>
+      <scope id="8484003412860609766" at="49,0,58,0" />
+      <scope id="8484003412860609777" at="66,9,84,24">
+        <var name="currentPropertyAttributes" id="8484003412860609777" />
+        <var name="editorCell" id="8484003412860609777" />
+        <var name="property" id="8484003412860609777" />
+        <var name="propertyAttributes" id="8484003412860609777" />
+      </scope>
+      <scope id="8484003412860609777" at="64,41,87,5" />
+      <scope id="8484003412860609777" at="64,0,89,0" />
+      <unit id="8484003412860609766" at="90,0,93,0" name="Rules.Excel.editor.RuleCollection_InspectorBuilder_a$PROPS" />
+      <unit id="8484003412860609766" at="94,0,97,0" name="Rules.Excel.editor.RuleCollection_InspectorBuilder_a$CONCEPTS" />
+      <unit id="8484003412860609777" at="75,102,79,7" name="Rules.Excel.editor.RuleCollection_InspectorBuilder_a$1" />
+      <unit id="8484003412860609766" at="30,0,98,0" name="Rules.Excel.editor.RuleCollection_InspectorBuilder_a" />
+    </file>
+  </root>
+</debug-info>
+
