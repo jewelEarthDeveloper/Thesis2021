@@ -17,8 +17,6 @@ import de.slisson.mps.tables.runtime.cells.PartialTableEditor;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import java.awt.Color;
 import de.slisson.mps.tables.runtime.gridmodel.EditorCellGridLeaf;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
@@ -39,8 +37,10 @@ import de.slisson.mps.tables.runtime.gridmodel.Header;
 import de.slisson.mps.tables.runtime.gridmodel.EditorCellHeader;
 import de.slisson.mps.tables.runtime.gridmodel.StringHeaderReference;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import java.awt.Color;
 import de.slisson.mps.tables.runtime.style.HorizontalAlignment;
 import de.slisson.mps.tables.runtime.gridmodel.GridAdapter;
 import de.slisson.mps.tables.runtime.substitute.SubstituteInfoFactory;
@@ -154,7 +154,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
       public Style createStyle(final int columnIndex, final int rowIndex) {
         Style style = new StyleImpl();
         final EditorCell editorCell = null;
-        style.set(StyleAttributes.getInstance().<Color>getAttribute("de.slisson.mps.tables", "shade-color"), _StyleParameter_QueryFunction_36o78q_a0a0a0());
         return style;
       }
     }.createStyle(0, 0);
@@ -226,9 +225,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
   }
   private HorizontalAlignment _StyleParameter_QueryFunction_36o78q_a3a0a0a() {
     return HorizontalAlignment.CENTER;
-  }
-  private Color _StyleParameter_QueryFunction_36o78q_a0a0a0() {
-    return ((getNode() == null) ? new Color(228, 233, 237) : new Color(228, 233, 237));
   }
   public Grid createGridQuery_36o78q_b0a(final EditorContext editorContext, final SNode node) {
     EditorCell editorCell = null;
