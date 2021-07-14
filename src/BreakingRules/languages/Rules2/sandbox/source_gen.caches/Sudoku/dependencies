@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="Sudoku.Cell">
+    <classNode dependClassName="Sudoku.CellCol" />
+    <classNode dependClassName="Sudoku.CellRow" />
+    <classNode dependClassName="Sudoku.CellSqr" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode extendsClassName="Sudoku.SetOfNine" />
+  </dependency>
+  <dependency className="Sudoku.CellCol">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="Sudoku.CellFile" />
+  </dependency>
+  <dependency className="Sudoku.CellFile">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuilder" />
+    <classNode extendsClassName="Sudoku.CellGroup" />
+  </dependency>
+  <dependency className="Sudoku.CellGroup">
+    <classNode dependClassName="Sudoku.Cell" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.util.concurrent.CopyOnWriteArraySet" />
+    <classNode extendsClassName="Sudoku.SetOfNine" />
+  </dependency>
+  <dependency className="Sudoku.CellRow">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="Sudoku.CellFile" />
+  </dependency>
+  <dependency className="Sudoku.CellSqr">
+    <classNode dependClassName="Sudoku.CellCol" />
+    <classNode dependClassName="Sudoku.CellRow" />
+    <classNode extendsClassName="Sudoku.CellGroup" />
+  </dependency>
+  <dependency className="Sudoku.Counter" />
+  <dependency className="Sudoku.SetOfNine">
+    <classNode dependClassName="Sudoku.CellGroup" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.Set" />
+  </dependency>
+  <dependency className="Sudoku.Setting">
+    <classNode dependClassName="java.lang.Integer" />
+  </dependency>
+  <dependency className="Sudoku.Stepping" />
+</dependenciesRoot>
+

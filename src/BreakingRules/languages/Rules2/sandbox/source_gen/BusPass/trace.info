@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root nodeRef="r:55aef4ff-dce8-4cd3-ab36-b5eadc3382fb(BusPass)/3160832622109081794">
+    <file name="BusPass.java">
+      <node id="3160832622109188502" at="7,0,8,0" concept="2" trace="person" />
+      <node id="3160832622109188512" at="9,31,10,23" concept="1" />
+      <node id="3160832622109188536" at="13,29,14,18" concept="6" />
+      <node id="3160832622109188543" at="17,40,18,25" concept="1" />
+      <node id="3160832622109188580" at="22,28,23,45" concept="6" />
+      <node id="3160832622109188605" at="28,20,29,19" concept="6" />
+      <node id="3160832622109188609" at="31,50,32,19" concept="6" />
+      <node id="3160832622109188620" at="33,5,34,0" concept="7" />
+      <node id="3160832622109188621" at="34,0,35,34" concept="5" />
+      <node id="3160832622109188627" at="35,34,36,0" concept="7" />
+      <node id="3160832622109188630" at="37,35,38,19" concept="6" />
+      <node id="3160832622109188648" at="39,5,40,16" concept="6" />
+      <node id="3160832622109188656" at="44,25,45,35" concept="5" />
+      <node id="3160832622109188662" at="45,35,46,25" concept="1" />
+      <node id="3160832622109188670" at="46,25,47,18" concept="6" />
+      <node id="3160832622109188509" at="9,0,12,0" concept="0" trace="BusPass#(LBusPass/Person;)V" />
+      <node id="3160832622109188534" at="13,0,16,0" concept="4" trace="getPerson#()LBusPass/Person;" />
+      <node id="3160832622109188541" at="17,0,20,0" concept="4" trace="setPerson#(LBusPass/Person;)V" />
+      <node id="3160832622109188600" at="27,35,30,5" concept="3" />
+      <node id="3160832622109188607" at="30,5,33,5" concept="3" />
+      <node id="3160832622109188628" at="36,0,39,5" concept="3" />
+      <node id="3160832622109188576" at="21,0,25,0" concept="4" trace="toString#()Ljava/lang/String;" />
+      <node id="3160832622109188652" at="43,0,49,0" concept="4" trace="hashCode#()I" />
+      <node id="3160832622109188594" at="26,0,42,0" concept="4" trace="equals#(Ljava/lang/Object;)Z" />
+      <scope id="3160832622109188511" at="9,31,10,23" />
+      <scope id="3160832622109188535" at="13,29,14,18" />
+      <scope id="3160832622109188542" at="17,40,18,25" />
+      <scope id="3160832622109188579" at="22,28,23,45" />
+      <scope id="3160832622109188604" at="28,20,29,19" />
+      <scope id="3160832622109188608" at="31,50,32,19" />
+      <scope id="3160832622109188629" at="37,35,38,19" />
+      <scope id="3160832622109188509" at="9,0,12,0">
+        <var name="name" id="3160832622109188525" />
+      </scope>
+      <scope id="3160832622109188534" at="13,0,16,0" />
+      <scope id="3160832622109188541" at="17,0,20,0">
+        <var name="person" id="3160832622109188551" />
+      </scope>
+      <scope id="3160832622109188655" at="44,25,47,18">
+        <var name="result" id="3160832622109188657" />
+      </scope>
+      <scope id="3160832622109188576" at="21,0,25,0" />
+      <scope id="3160832622109188652" at="43,0,49,0" />
+      <scope id="3160832622109188599" at="27,35,40,16">
+        <var name="buspass" id="3160832622109188622" />
+      </scope>
+      <scope id="3160832622109188594" at="26,0,42,0">
+        <var name="o" id="3160832622109188597" />
+      </scope>
+      <unit id="3160832622109081794" at="6,0,51,0" name="BusPass.BusPass" />
+    </file>
+  </root>
+  <root nodeRef="r:55aef4ff-dce8-4cd3-ab36-b5eadc3382fb(BusPass)/3160832622109081866">
+    <file name="Person.java">
+      <node id="3160832622109081932" at="7,0,8,0" concept="2" trace="name" />
+      <node id="3160832622109081993" at="8,0,9,0" concept="2" trace="age" />
+      <node id="3160832622109082183" at="10,39,11,21" concept="1" />
+      <node id="3160832622109083570" at="11,21,12,19" concept="1" />
+      <node id="3160832622109090281" at="15,27,16,16" concept="6" />
+      <node id="3160832622109092616" at="19,36,20,21" concept="1" />
+      <node id="3160832622109095983" at="23,23,24,20" concept="6" />
+      <node id="3160832622109100123" at="27,31,28,19" concept="1" />
+      <node id="3160832622109105578" at="32,28,33,63" concept="6" />
+      <node id="3160832622109125604" at="38,20,39,19" concept="6" />
+      <node id="3160832622109133136" at="41,50,42,19" concept="6" />
+      <node id="3160832622109135421" at="43,5,44,0" concept="7" />
+      <node id="3160832622109138252" at="44,0,45,31" concept="5" />
+      <node id="3160832622109139994" at="45,31,46,0" concept="7" />
+      <node id="3160832622109151113" at="47,28,48,19" concept="6" />
+      <node id="3160832622109164743" at="50,35,51,19" concept="6" />
+      <node id="3160832622109141170" at="52,5,53,0" concept="7" />
+      <node id="3160832622109142382" at="53,0,54,16" concept="6" />
+      <node id="3160832622109174322" at="58,25,59,33" concept="5" />
+      <node id="3160832622109176844" at="59,33,60,31" concept="1" />
+      <node id="3160832622109184291" at="60,31,61,18" concept="6" />
+      <node id="3160832622109089793" at="15,0,18,0" concept="4" trace="getName#()Ljava/lang/String;" />
+      <node id="3160832622109091567" at="19,0,22,0" concept="4" trace="setName#(Ljava/lang/String;)V" />
+      <node id="3160832622109095426" at="23,0,26,0" concept="4" trace="getAge#()I" />
+      <node id="3160832622109099370" at="27,0,30,0" concept="4" trace="setAge#(I)V" />
+      <node id="3160832622109125100" at="37,35,40,5" concept="3" />
+      <node id="3160832622109129142" at="40,5,43,5" concept="3" />
+      <node id="3160832622109145185" at="46,0,49,5" concept="3" />
+      <node id="3160832622109153558" at="49,5,52,5" concept="3" />
+      <node id="3160832622109082052" at="10,0,14,0" concept="0" trace="Person#(Ljava/lang/String;I)V" />
+      <node id="3160832622109104586" at="31,0,35,0" concept="4" trace="toString#()Ljava/lang/String;" />
+      <node id="3160832622109169293" at="57,0,63,0" concept="4" trace="hashCode#()I" />
+      <node id="3160832622109123424" at="36,0,56,0" concept="4" trace="equals#(Ljava/lang/Object;)Z" />
+      <scope id="3160832622109089796" at="15,27,16,16" />
+      <scope id="3160832622109091570" at="19,36,20,21" />
+      <scope id="3160832622109095429" at="23,23,24,20" />
+      <scope id="3160832622109099373" at="27,31,28,19" />
+      <scope id="3160832622109104590" at="32,28,33,63" />
+      <scope id="3160832622109125102" at="38,20,39,19" />
+      <scope id="3160832622109129144" at="41,50,42,19" />
+      <scope id="3160832622109145187" at="47,28,48,19" />
+      <scope id="3160832622109153560" at="50,35,51,19" />
+      <scope id="3160832622109082055" at="10,39,12,19" />
+      <scope id="3160832622109089793" at="15,0,18,0" />
+      <scope id="3160832622109091567" at="19,0,22,0">
+        <var name="name" id="3160832622109092076" />
+      </scope>
+      <scope id="3160832622109095426" at="23,0,26,0" />
+      <scope id="3160832622109099370" at="27,0,30,0">
+        <var name="age" id="3160832622109099954" />
+      </scope>
+      <scope id="3160832622109169298" at="58,25,61,18">
+        <var name="result" id="3160832622109174325" />
+      </scope>
+      <scope id="3160832622109082052" at="10,0,14,0">
+        <var name="age" id="3160832622109082114" />
+        <var name="name" id="3160832622109082083" />
+      </scope>
+      <scope id="3160832622109104586" at="31,0,35,0" />
+      <scope id="3160832622109169293" at="57,0,63,0" />
+      <scope id="3160832622109123430" at="37,35,54,16">
+        <var name="person" id="3160832622109138253" />
+      </scope>
+      <scope id="3160832622109123424" at="36,0,56,0">
+        <var name="o" id="3160832622109123428" />
+      </scope>
+      <unit id="3160832622109081866" at="6,0,64,0" name="BusPass.Person" />
+    </file>
+  </root>
+  <root nodeRef="r:55aef4ff-dce8-4cd3-ab36-b5eadc3382fb(BusPass)/3160832622109215380">
+    <file name="BadBehaviour.java">
+      <node id="3160832622109215381" at="7,0,8,0" concept="2" trace="person" />
+      <node id="3160832622109215388" at="9,36,10,23" concept="1" />
+      <node id="3160832622109215400" at="13,29,14,18" concept="6" />
+      <node id="3160832622109215407" at="17,40,18,25" concept="1" />
+      <node id="3160832622109215421" at="21,28,22,49" concept="6" />
+      <node id="3160832622109215440" at="27,20,28,19" concept="6" />
+      <node id="3160832622109215444" at="30,50,31,19" concept="6" />
+      <node id="3160832622109215455" at="32,5,33,0" concept="7" />
+      <node id="3160832622109215456" at="33,0,34,49" concept="5" />
+      <node id="3160832622109215462" at="34,49,35,0" concept="7" />
+      <node id="3160832622109215465" at="36,40,37,19" concept="6" />
+      <node id="3160832622109215472" at="38,5,39,16" concept="6" />
+      <node id="3160832622109215480" at="43,25,44,35" concept="5" />
+      <node id="3160832622109215486" at="44,35,45,25" concept="1" />
+      <node id="3160832622109215492" at="45,25,46,18" concept="6" />
+      <node id="3160832622109215385" at="9,0,12,0" concept="0" trace="BadBehaviour#(LBusPass/Person;)V" />
+      <node id="3160832622109215398" at="13,0,16,0" concept="4" trace="getPerson#()LBusPass/Person;" />
+      <node id="3160832622109215405" at="17,0,20,0" concept="4" trace="setPerson#(LBusPass/Person;)V" />
+      <node id="3160832622109215435" at="26,35,29,5" concept="3" />
+      <node id="3160832622109215442" at="29,5,32,5" concept="3" />
+      <node id="3160832622109215463" at="35,0,38,5" concept="3" />
+      <node id="3160832622109215417" at="20,0,24,0" concept="4" trace="toString#()Ljava/lang/String;" />
+      <node id="3160832622109215476" at="42,0,48,0" concept="4" trace="hashCode#()I" />
+      <node id="3160832622109215429" at="25,0,41,0" concept="4" trace="equals#(Ljava/lang/Object;)Z" />
+      <scope id="3160832622109215387" at="9,36,10,23" />
+      <scope id="3160832622109215399" at="13,29,14,18" />
+      <scope id="3160832622109215406" at="17,40,18,25" />
+      <scope id="3160832622109215420" at="21,28,22,49" />
+      <scope id="3160832622109215439" at="27,20,28,19" />
+      <scope id="3160832622109215443" at="30,50,31,19" />
+      <scope id="3160832622109215464" at="36,40,37,19" />
+      <scope id="3160832622109215385" at="9,0,12,0">
+        <var name="name" id="3160832622109215395" />
+      </scope>
+      <scope id="3160832622109215398" at="13,0,16,0" />
+      <scope id="3160832622109215405" at="17,0,20,0">
+        <var name="person" id="3160832622109215415" />
+      </scope>
+      <scope id="3160832622109215479" at="43,25,46,18">
+        <var name="result" id="3160832622109215481" />
+      </scope>
+      <scope id="3160832622109215417" at="20,0,24,0" />
+      <scope id="3160832622109215476" at="42,0,48,0" />
+      <scope id="3160832622109215434" at="26,35,39,16">
+        <var name="badbehaviour" id="3160832622109215457" />
+      </scope>
+      <scope id="3160832622109215429" at="25,0,41,0">
+        <var name="o" id="3160832622109215432" />
+      </scope>
+      <unit id="3160832622109215380" at="6,0,50,0" name="BusPass.BadBehaviour" />
+    </file>
+  </root>
+  <root nodeRef="r:55aef4ff-dce8-4cd3-ab36-b5eadc3382fb(BusPass)/3160832622109230290">
+    <file name="AdultBusPass.java">
+      <node id="3160832622109230511" at="7,38,8,18" concept="8" />
+      <node id="3160832622109232865" at="12,28,13,54" concept="6" />
+      <node id="3160832622109230446" at="7,0,10,0" concept="0" trace="AdultBusPass#(LBusPass/Person;)V" />
+      <node id="3160832622109232861" at="11,0,15,0" concept="4" trace="toString#()Ljava/lang/String;" />
+      <scope id="3160832622109230450" at="7,38,8,18" />
+      <scope id="3160832622109232864" at="12,28,13,54" />
+      <scope id="3160832622109230446" at="7,0,10,0">
+        <var name="person" id="3160832622109230472" />
+      </scope>
+      <scope id="3160832622109232861" at="11,0,15,0" />
+      <unit id="3160832622109230290" at="6,0,16,0" name="BusPass.AdultBusPass" />
+    </file>
+  </root>
+  <root nodeRef="r:55aef4ff-dce8-4cd3-ab36-b5eadc3382fb(BusPass)/3160832622109236075">
+    <file name="IsChild.java">
+      <node id="3160832622109238932" at="7,0,8,0" concept="2" trace="person" />
+      <node id="3160832622109236457" at="9,33,10,25" concept="1" />
+      <node id="3160832622109236471" at="13,29,14,18" concept="6" />
+      <node id="3160832622109236478" at="17,40,18,25" concept="1" />
+      <node id="3160832622109236493" at="22,28,23,44" concept="6" />
+      <node id="3160832622109236512" at="28,20,29,19" concept="6" />
+      <node id="3160832622109236516" at="31,50,32,19" concept="6" />
+      <node id="3160832622109236527" at="33,5,34,0" concept="7" />
+      <node id="3160832622109236528" at="34,0,35,34" concept="5" />
+      <node id="3160832622109236534" at="35,34,36,0" concept="7" />
+      <node id="3160832622109236537" at="37,35,38,19" concept="6" />
+      <node id="3160832622109236544" at="39,5,40,16" concept="6" />
+      <node id="3160832622109247773" at="44,25,45,29" concept="6" />
+      <node id="3160832622109236454" at="9,0,12,0" concept="0" trace="IsChild#(LBusPass/Person;)V" />
+      <node id="3160832622109236469" at="13,0,16,0" concept="4" trace="getPerson#()LBusPass/Person;" />
+      <node id="3160832622109236476" at="17,0,20,0" concept="4" trace="setPerson#(LBusPass/Person;)V" />
+      <node id="3160832622109236507" at="27,35,30,5" concept="3" />
+      <node id="3160832622109236514" at="30,5,33,5" concept="3" />
+      <node id="3160832622109236535" at="36,0,39,5" concept="3" />
+      <node id="3160832622109236489" at="21,0,25,0" concept="4" trace="toString#()Ljava/lang/String;" />
+      <node id="3160832622109236548" at="43,0,47,0" concept="4" trace="hashCode#()I" />
+      <node id="3160832622109236501" at="26,0,42,0" concept="4" trace="equals#(Ljava/lang/Object;)Z" />
+      <scope id="3160832622109236456" at="9,33,10,25" />
+      <scope id="3160832622109236470" at="13,29,14,18" />
+      <scope id="3160832622109236477" at="17,40,18,25" />
+      <scope id="3160832622109236492" at="22,28,23,44" />
+      <scope id="3160832622109236511" at="28,20,29,19" />
+      <scope id="3160832622109236515" at="31,50,32,19" />
+      <scope id="3160832622109236536" at="37,35,38,19" />
+      <scope id="3160832622109236551" at="44,25,45,29" />
+      <scope id="3160832622109236454" at="9,0,12,0">
+        <var name="person" id="3160832622109236464" />
+      </scope>
+      <scope id="3160832622109236469" at="13,0,16,0" />
+      <scope id="3160832622109236476" at="17,0,20,0">
+        <var name="person" id="3160832622109236486" />
+      </scope>
+      <scope id="3160832622109236489" at="21,0,25,0" />
+      <scope id="3160832622109236548" at="43,0,47,0" />
+      <scope id="3160832622109236506" at="27,35,40,16">
+        <var name="isChild" id="3160832622109236529" />
+      </scope>
+      <scope id="3160832622109236501" at="26,0,42,0">
+        <var name="o" id="3160832622109236504" />
+      </scope>
+      <unit id="3160832622109236075" at="6,0,48,0" name="BusPass.IsChild" />
+    </file>
+  </root>
+  <root nodeRef="r:55aef4ff-dce8-4cd3-ab36-b5eadc3382fb(BusPass)/3160832622109259454">
+    <file name="IsAdult.java">
+      <node id="3160832622109259456" at="7,0,8,0" concept="2" trace="person" />
+      <node id="3160832622109259463" at="9,33,10,25" concept="1" />
+      <node id="3160832622109259475" at="13,29,14,18" concept="6" />
+      <node id="3160832622109259482" at="17,40,18,25" concept="1" />
+      <node id="3160832622109259497" at="22,28,23,44" concept="6" />
+      <node id="3160832622109259516" at="28,20,29,19" concept="6" />
+      <node id="3160832622109259520" at="31,50,32,19" concept="6" />
+      <node id="3160832622109259531" at="33,5,34,0" concept="7" />
+      <node id="3160832622109259532" at="34,0,35,34" concept="5" />
+      <node id="3160832622109259538" at="35,34,36,0" concept="7" />
+      <node id="3160832622109259541" at="37,35,38,19" concept="6" />
+      <node id="3160832622109259548" at="39,5,40,16" concept="6" />
+      <node id="3160832622109259556" at="44,25,45,29" concept="6" />
+      <node id="3160832622109259460" at="9,0,12,0" concept="0" trace="IsAdult#(LBusPass/Person;)V" />
+      <node id="3160832622109259473" at="13,0,16,0" concept="4" trace="getPerson#()LBusPass/Person;" />
+      <node id="3160832622109259480" at="17,0,20,0" concept="4" trace="setPerson#(LBusPass/Person;)V" />
+      <node id="3160832622109259511" at="27,35,30,5" concept="3" />
+      <node id="3160832622109259518" at="30,5,33,5" concept="3" />
+      <node id="3160832622109259539" at="36,0,39,5" concept="3" />
+      <node id="3160832622109259493" at="21,0,25,0" concept="4" trace="toString#()Ljava/lang/String;" />
+      <node id="3160832622109259552" at="43,0,47,0" concept="4" trace="hashCode#()I" />
+      <node id="3160832622109259505" at="26,0,42,0" concept="4" trace="equals#(Ljava/lang/Object;)Z" />
+      <scope id="3160832622109259462" at="9,33,10,25" />
+      <scope id="3160832622109259474" at="13,29,14,18" />
+      <scope id="3160832622109259481" at="17,40,18,25" />
+      <scope id="3160832622109259496" at="22,28,23,44" />
+      <scope id="3160832622109259515" at="28,20,29,19" />
+      <scope id="3160832622109259519" at="31,50,32,19" />
+      <scope id="3160832622109259540" at="37,35,38,19" />
+      <scope id="3160832622109259555" at="44,25,45,29" />
+      <scope id="3160832622109259460" at="9,0,12,0">
+        <var name="person" id="3160832622109259470" />
+      </scope>
+      <scope id="3160832622109259473" at="13,0,16,0" />
+      <scope id="3160832622109259480" at="17,0,20,0">
+        <var name="person" id="3160832622109259490" />
+      </scope>
+      <scope id="3160832622109259493" at="21,0,25,0" />
+      <scope id="3160832622109259552" at="43,0,47,0" />
+      <scope id="3160832622109259510" at="27,35,40,16">
+        <var name="isAdult" id="3160832622109259533" />
+      </scope>
+      <scope id="3160832622109259505" at="26,0,42,0">
+        <var name="o" id="3160832622109259508" />
+      </scope>
+      <unit id="3160832622109259454" at="6,0,48,0" name="BusPass.IsAdult" />
+    </file>
+  </root>
+  <root nodeRef="r:55aef4ff-dce8-4cd3-ab36-b5eadc3382fb(BusPass)/3160832622109263929">
+    <file name="ChildBusPass.java">
+      <node id="3160832622109263934" at="7,38,8,18" concept="8" />
+      <node id="3160832622109263943" at="12,28,13,54" concept="6" />
+      <node id="3160832622109263930" at="7,0,10,0" concept="0" trace="ChildBusPass#(LBusPass/Person;)V" />
+      <node id="3160832622109263939" at="11,0,15,0" concept="4" trace="toString#()Ljava/lang/String;" />
+      <scope id="3160832622109263933" at="7,38,8,18" />
+      <scope id="3160832622109263942" at="12,28,13,54" />
+      <scope id="3160832622109263930" at="7,0,10,0">
+        <var name="person" id="3160832622109263936" />
+      </scope>
+      <scope id="3160832622109263939" at="11,0,15,0" />
+      <unit id="3160832622109263929" at="6,0,16,0" name="BusPass.ChildBusPass" />
+    </file>
+  </root>
+</debug-info>
+

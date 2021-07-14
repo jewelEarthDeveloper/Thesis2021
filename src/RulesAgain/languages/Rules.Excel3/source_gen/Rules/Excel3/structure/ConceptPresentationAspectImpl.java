@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_EmptyCell;
   private ConceptPresentation props_FactExists;
-  private ConceptPresentation props_IntelligentEmptyCell;
   private ConceptPresentation props_RuleCollection;
 
   @Override
@@ -33,13 +32,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_FactExists = cpb.create();
         }
         return props_FactExists;
-      case LanguageConceptSwitch.IntelligentEmptyCell:
-        if (props_IntelligentEmptyCell == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("IntelligentEmptyCell");
-          props_IntelligentEmptyCell = cpb.create();
-        }
-        return props_IntelligentEmptyCell;
       case LanguageConceptSwitch.RuleCollection:
         if (props_RuleCollection == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

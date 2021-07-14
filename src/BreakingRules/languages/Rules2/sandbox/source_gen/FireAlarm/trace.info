@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
+  <root nodeRef="r:9855c323-db5a-44b6-ace6-1a41697dcf5d(FireAlarm)/9086333424236290106">
+    <file name="Alarm.java">
+      <node id="9086333424236290206" at="7,0,8,0" concept="2" trace="name" />
+      <node id="9086333424236290312" at="9,29,10,21" concept="1" />
+      <node id="9086333424236337080" at="13,27,14,16" concept="6" />
+      <node id="9086333424236292691" at="17,36,18,21" concept="1" />
+      <node id="9086333424236294994" at="22,28,23,40" concept="6" />
+      <node id="9086333424236300697" at="28,20,29,18" concept="6" />
+      <node id="9086333424236306327" at="31,50,32,19" concept="6" />
+      <node id="9086333424236307805" at="33,5,34,28" concept="5" />
+      <node id="9086333424236315612" at="35,37,36,19" concept="6" />
+      <node id="9086333424236311346" at="37,5,38,16" concept="6" />
+      <node id="9086333424236319472" at="42,25,43,27" concept="6" />
+      <node id="9086333424236290240" at="9,0,12,0" concept="0" trace="Alarm#(Ljava/lang/String;)V" />
+      <node id="9086333424236335924" at="13,0,16,0" concept="4" trace="getName#()Ljava/lang/String;" />
+      <node id="9086333424236292496" at="17,0,20,0" concept="4" trace="setName#(Ljava/lang/String;)V" />
+      <node id="9086333424236300190" at="27,35,30,5" concept="3" />
+      <node id="9086333424236301532" at="30,5,33,5" concept="3" />
+      <node id="9086333424236312476" at="34,28,37,5" concept="3" />
+      <node id="9086333424236294303" at="21,0,25,0" concept="4" trace="toString#()Ljava/lang/String;" />
+      <node id="9086333424236318383" at="41,0,45,0" concept="4" trace="hashCode#()I" />
+      <node id="9086333424236299552" at="26,0,40,0" concept="4" trace="equals#(Ljava/lang/Object;)Z" />
+      <scope id="9086333424236290244" at="9,29,10,21" />
+      <scope id="9086333424236335927" at="13,27,14,16" />
+      <scope id="9086333424236292499" at="17,36,18,21" />
+      <scope id="9086333424236294306" at="22,28,23,40" />
+      <scope id="9086333424236300192" at="28,20,29,18" />
+      <scope id="9086333424236301534" at="31,50,32,19" />
+      <scope id="9086333424236312478" at="35,37,36,19" />
+      <scope id="9086333424236318386" at="42,25,43,27" />
+      <scope id="9086333424236290240" at="9,0,12,0">
+        <var name="name" id="9086333424236290271" />
+      </scope>
+      <scope id="9086333424236335924" at="13,0,16,0" />
+      <scope id="9086333424236292496" at="17,0,20,0">
+        <var name="name" id="9086333424236292615" />
+      </scope>
+      <scope id="9086333424236294303" at="21,0,25,0" />
+      <scope id="9086333424236318383" at="41,0,45,0" />
+      <scope id="9086333424236299555" at="27,35,38,16">
+        <var name="alarm" id="9086333424236307806" />
+      </scope>
+      <scope id="9086333424236299552" at="26,0,40,0">
+        <var name="o" id="9086333424236299781" />
+      </scope>
+      <unit id="9086333424236290106" at="6,0,46,0" name="FireAlarm.Alarm" />
+    </file>
+  </root>
+  <root nodeRef="r:9855c323-db5a-44b6-ace6-1a41697dcf5d(FireAlarm)/9086333424236322398">
+    <file name="Room.java">
+      <node id="9086333424236322592" at="7,0,8,0" concept="2" trace="name" />
+      <node id="9086333424236322600" at="9,28,10,21" concept="1" />
+      <node id="9086333424236338464" at="13,27,14,16" concept="6" />
+      <node id="9086333424236322613" at="17,38,18,28" concept="6" />
+      <node id="9086333424236322626" at="22,28,23,39" concept="6" />
+      <node id="9086333424236322643" at="28,20,29,18" concept="6" />
+      <node id="9086333424236322647" at="31,50,32,19" concept="6" />
+      <node id="9086333424236322658" at="33,5,34,25" concept="5" />
+      <node id="9086333424236322666" at="35,36,36,19" concept="6" />
+      <node id="9086333424236322675" at="37,5,38,16" concept="6" />
+      <node id="9086333424236322684" at="42,25,43,27" concept="6" />
+      <node id="9086333424236322596" at="9,0,12,0" concept="0" trace="Room#(Ljava/lang/String;)V" />
+      <node id="9086333424236338462" at="13,0,16,0" concept="4" trace="getName#()Ljava/lang/String;" />
+      <node id="9086333424236322611" at="17,0,20,0" concept="4" trace="setName#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="9086333424236322638" at="27,35,30,5" concept="3" />
+      <node id="9086333424236322645" at="30,5,33,5" concept="3" />
+      <node id="9086333424236322664" at="34,25,37,5" concept="3" />
+      <node id="9086333424236322624" at="21,0,25,0" concept="4" trace="toString#()Ljava/lang/String;" />
+      <node id="9086333424236322682" at="41,0,45,0" concept="4" trace="hashCode#()I" />
+      <node id="9086333424236322636" at="26,0,40,0" concept="4" trace="equals#(Ljava/lang/Object;)Z" />
+      <scope id="9086333424236322599" at="9,28,10,21" />
+      <scope id="9086333424236338463" at="13,27,14,16" />
+      <scope id="9086333424236322612" at="17,38,18,28" />
+      <scope id="9086333424236322625" at="22,28,23,39" />
+      <scope id="9086333424236322642" at="28,20,29,18" />
+      <scope id="9086333424236322646" at="31,50,32,19" />
+      <scope id="9086333424236322665" at="35,36,36,19" />
+      <scope id="9086333424236322683" at="42,25,43,27" />
+      <scope id="9086333424236322596" at="9,0,12,0">
+        <var name="name" id="9086333424236322606" />
+      </scope>
+      <scope id="9086333424236338462" at="13,0,16,0" />
+      <scope id="9086333424236322611" at="17,0,20,0">
+        <var name="name" id="9086333424236322621" />
+      </scope>
+      <scope id="9086333424236322624" at="21,0,25,0" />
+      <scope id="9086333424236322682" at="41,0,45,0" />
+      <scope id="9086333424236322637" at="27,35,38,16">
+        <var name="room" id="9086333424236322659" />
+      </scope>
+      <scope id="9086333424236322636" at="26,0,40,0">
+        <var name="o" id="9086333424236322679" />
+      </scope>
+      <unit id="9086333424236322398" at="6,0,46,0" name="FireAlarm.Room" />
+    </file>
+  </root>
+  <root nodeRef="r:9855c323-db5a-44b6-ace6-1a41697dcf5d(FireAlarm)/9086333424236325763">
+    <file name="Sprinkler.java">
+      <node id="9086333424236328949" at="7,0,8,0" concept="2" trace="room" />
+      <node id="9086333424236330931" at="8,0,9,0" concept="2" trace="on" />
+      <node id="9086333424236340553" at="10,31,11,21" concept="1" />
+      <node id="9086333424236325819" at="14,43,15,21" concept="1" />
+      <node id="9086333424236342089" at="15,21,16,17" concept="1" />
+      <node id="9086333424236325832" at="19,34,20,21" concept="1" />
+      <node id="9086333424236349645" at="23,25,24,16" concept="6" />
+      <node id="9086333424236353892" at="27,25,28,14" concept="6" />
+      <node id="9086333424236359419" at="31,33,32,17" concept="1" />
+      <node id="9086333424236325845" at="36,28,37,58" concept="6" />
+      <node id="9086333424236325862" at="42,20,43,18" concept="6" />
+      <node id="9086333424236325866" at="45,50,46,19" concept="6" />
+      <node id="9086333424236379626" at="47,5,48,0" concept="7" />
+      <node id="9086333424236380335" at="48,0,49,0" concept="7" />
+      <node id="9086333424236325877" at="49,0,50,40" concept="5" />
+      <node id="9086333424236381045" at="50,40,51,0" concept="7" />
+      <node id="9086333424236377203" at="52,29,53,19" concept="6" />
+      <node id="9086333424236386394" at="55,41,56,19" concept="6" />
+      <node id="9086333424236382422" at="57,5,58,0" concept="7" />
+      <node id="9086333424236325894" at="58,0,59,16" concept="6" />
+      <node id="9086333424236325903" at="63,25,64,49" concept="6" />
+      <node id="9086333424236340549" at="10,0,13,0" concept="0" trace="Sprinkler#(LFireAlarm/Room;)V" />
+      <node id="9086333424236325830" at="19,0,22,0" concept="4" trace="setRoom#(LFireAlarm/Room;)V" />
+      <node id="9086333424236348986" at="23,0,26,0" concept="4" trace="getRoom#()LFireAlarm/Room;" />
+      <node id="9086333424236353206" at="27,0,30,0" concept="4" trace="isOn#()Z" />
+      <node id="9086333424236358115" at="31,0,34,0" concept="4" trace="setOn#(Z)V" />
+      <node id="9086333424236325857" at="41,35,44,5" concept="3" />
+      <node id="9086333424236325864" at="44,5,47,5" concept="3" />
+      <node id="9086333424236374154" at="51,0,54,5" concept="3" />
+      <node id="9086333424236383105" at="54,5,57,5" concept="3" />
+      <node id="9086333424236325815" at="14,0,18,0" concept="0" trace="Sprinkler#(LFireAlarm/Room;Z)V" />
+      <node id="9086333424236325843" at="35,0,39,0" concept="4" trace="toString#()Ljava/lang/String;" />
+      <node id="9086333424236325901" at="62,0,66,0" concept="4" trace="hashCode#()I" />
+      <node id="9086333424236325855" at="40,0,61,0" concept="4" trace="equals#(Ljava/lang/Object;)Z" />
+      <scope id="9086333424236340552" at="10,31,11,21" />
+      <scope id="9086333424236325831" at="19,34,20,21" />
+      <scope id="9086333424236348989" at="23,25,24,16" />
+      <scope id="9086333424236353209" at="27,25,28,14" />
+      <scope id="9086333424236358118" at="31,33,32,17" />
+      <scope id="9086333424236325844" at="36,28,37,58" />
+      <scope id="9086333424236325861" at="42,20,43,18" />
+      <scope id="9086333424236325865" at="45,50,46,19" />
+      <scope id="9086333424236374156" at="52,29,53,19" />
+      <scope id="9086333424236383107" at="55,41,56,19" />
+      <scope id="9086333424236325902" at="63,25,64,49" />
+      <scope id="9086333424236325818" at="14,43,16,17" />
+      <scope id="9086333424236340549" at="10,0,13,0">
+        <var name="room" id="9086333424236340559" />
+      </scope>
+      <scope id="9086333424236325830" at="19,0,22,0">
+        <var name="room" id="9086333424236325840" />
+      </scope>
+      <scope id="9086333424236348986" at="23,0,26,0" />
+      <scope id="9086333424236353206" at="27,0,30,0" />
+      <scope id="9086333424236358115" at="31,0,34,0">
+        <var name="on" id="9086333424236358821" />
+      </scope>
+      <scope id="9086333424236325815" at="14,0,18,0">
+        <var name="on" id="9086333424236341730" />
+        <var name="room" id="9086333424236325825" />
+      </scope>
+      <scope id="9086333424236325843" at="35,0,39,0" />
+      <scope id="9086333424236325901" at="62,0,66,0" />
+      <scope id="9086333424236325856" at="41,35,59,16">
+        <var name="sprinkler" id="9086333424236325878" />
+      </scope>
+      <scope id="9086333424236325855" at="40,0,61,0">
+        <var name="o" id="9086333424236325898" />
+      </scope>
+      <unit id="9086333424236325763" at="6,0,67,0" name="FireAlarm.Sprinkler" />
+    </file>
+  </root>
+  <root nodeRef="r:9855c323-db5a-44b6-ace6-1a41697dcf5d(FireAlarm)/9086333424236403902">
+    <file name="Fire.java">
+      <node id="9086333424236408535" at="7,0,8,0" concept="2" trace="room" />
+      <node id="9086333424236408546" at="9,26,10,21" concept="1" />
+      <node id="9086333424236408584" at="13,34,14,21" concept="1" />
+      <node id="9086333424236408597" at="17,25,18,16" concept="6" />
+      <node id="9086333424236408624" at="22,28,23,38" concept="6" />
+      <node id="9086333424236408645" at="28,20,29,18" concept="6" />
+      <node id="9086333424236408649" at="31,50,32,19" concept="6" />
+      <node id="9086333424236408661" at="33,5,34,0" concept="7" />
+      <node id="9086333424236408662" at="34,0,35,25" concept="5" />
+      <node id="9086333424236408668" at="35,25,36,0" concept="7" />
+      <node id="9086333424236408680" at="37,36,38,19" concept="6" />
+      <node id="9086333424236408689" at="39,5,40,0" concept="7" />
+      <node id="9086333424236408690" at="40,0,41,16" concept="6" />
+      <node id="9086333424236408700" at="45,25,46,32" concept="6" />
+      <node id="9086333424236408542" at="9,0,12,0" concept="0" trace="Fire#(LFireAlarm/Room;)V" />
+      <node id="9086333424236408582" at="13,0,16,0" concept="4" trace="setRoom#(LFireAlarm/Room;)V" />
+      <node id="9086333424236408595" at="17,0,20,0" concept="4" trace="getRoom#()LFireAlarm/Room;" />
+      <node id="9086333424236408640" at="27,35,30,5" concept="3" />
+      <node id="9086333424236408647" at="30,5,33,5" concept="3" />
+      <node id="9086333424236408678" at="36,0,39,5" concept="3" />
+      <node id="9086333424236408622" at="21,0,25,0" concept="4" trace="toString#()Ljava/lang/String;" />
+      <node id="9086333424236408698" at="44,0,48,0" concept="4" trace="hashCode#()I" />
+      <node id="9086333424236408638" at="26,0,43,0" concept="4" trace="equals#(Ljava/lang/Object;)Z" />
+      <scope id="9086333424236408545" at="9,26,10,21" />
+      <scope id="9086333424236408583" at="13,34,14,21" />
+      <scope id="9086333424236408596" at="17,25,18,16" />
+      <scope id="9086333424236408623" at="22,28,23,38" />
+      <scope id="9086333424236408644" at="28,20,29,18" />
+      <scope id="9086333424236408648" at="31,50,32,19" />
+      <scope id="9086333424236408679" at="37,36,38,19" />
+      <scope id="9086333424236408699" at="45,25,46,32" />
+      <scope id="9086333424236408542" at="9,0,12,0">
+        <var name="room" id="9086333424236408552" />
+      </scope>
+      <scope id="9086333424236408582" at="13,0,16,0">
+        <var name="room" id="9086333424236408592" />
+      </scope>
+      <scope id="9086333424236408595" at="17,0,20,0" />
+      <scope id="9086333424236408622" at="21,0,25,0" />
+      <scope id="9086333424236408698" at="44,0,48,0" />
+      <scope id="9086333424236408639" at="27,35,41,16">
+        <var name="fire" id="9086333424236408663" />
+      </scope>
+      <scope id="9086333424236408638" at="26,0,43,0">
+        <var name="o" id="9086333424236408694" />
+      </scope>
+      <unit id="9086333424236403902" at="6,0,49,0" name="FireAlarm.Fire" />
+    </file>
+  </root>
+</debug-info>
+

@@ -10,12 +10,10 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
-import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptEmptyCell = createDescriptorForEmptyCell();
   /*package*/ final ConceptDescriptor myConceptFactExists = createDescriptorForFactExists();
-  /*package*/ final ConceptDescriptor myConceptIntelligentEmptyCell = createDescriptorForIntelligentEmptyCell();
   /*package*/ final ConceptDescriptor myConceptRuleCollection = createDescriptorForRuleCollection();
   private final LanguageConceptSwitch myIndexSwitch;
 
@@ -32,7 +30,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptEmptyCell, myConceptFactExists, myConceptIntelligentEmptyCell, myConceptRuleCollection);
+    return Arrays.asList(myConceptEmptyCell, myConceptFactExists, myConceptRuleCollection);
   }
 
   @Override
@@ -43,8 +41,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptEmptyCell;
       case LanguageConceptSwitch.FactExists:
         return myConceptFactExists;
-      case LanguageConceptSwitch.IntelligentEmptyCell:
-        return myConceptIntelligentEmptyCell;
       case LanguageConceptSwitch.RuleCollection:
         return myConceptRuleCollection;
       default:
@@ -72,20 +68,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.associate("variable", 0x650edf5289052ad7L).target(0xfd191ffbab394c9cL, 0xb211e8ff05fd03b0L, 0x7e19241b9e61c8d6L).optional(true).origin("7282003193083800279").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForIntelligentEmptyCell() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Rules.Excel3", "IntelligentEmptyCell", 0x993797d3830647edL, 0xba6d94925225abc2L, 0x3fbe398e80fd4279L);
-    b.class_(false, false, false);
-    b.origin("r:8ad27230-54be-465f-b5a3-8a81f73bd349(Rules.Excel3.structure)/4593171954176705145");
-    b.version(2);
-    b.property("isFactVariable", 0x3fbe398e80fd427aL).type(PrimitiveTypeId.BOOLEAN).origin("4593171954176705146").done();
-    b.property("rowHasFact", 0x3fbe398e8123ea68L).type(PrimitiveTypeId.BOOLEAN).origin("4593171954179238504").done();
-    b.property("gridX", 0x5ab724929229a11dL).type(PrimitiveTypeId.INTEGER).origin("6536733596087591197").done();
-    b.property("gridY", 0x5ab724929229a121L).type(PrimitiveTypeId.INTEGER).origin("6536733596087591201").done();
-    b.associate("rule", 0x3fbe398e80fd427cL).target(0xfd191ffbab394c9cL, 0xb211e8ff05fd03b0L, 0x7e19241b9e61793cL).optional(true).origin("4593171954176705148").done();
-    b.associate("fact", 0x3fbe398e80fd427eL).target(0xfd191ffbab394c9cL, 0xb211e8ff05fd03b0L, 0x7e19241b9e5fe1b7L).optional(true).origin("4593171954176705150").done();
-    b.associate("property", 0x3fbe398e80fd4281L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL).optional(true).origin("4593171954176705153").done();
-    return b.create();
-  }
   private static ConceptDescriptor createDescriptorForRuleCollection() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Rules.Excel3", "RuleCollection", 0x993797d3830647edL, 0xba6d94925225abc2L, 0x75bd3c2760c11ea0L);
     b.class_(false, false, false);
@@ -94,7 +76,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:8ad27230-54be-465f-b5a3-8a81f73bd349(Rules.Excel3.structure)/8484003412860542624");
     b.version(2);
     b.aggregate("rules", 0x75bd3c2760c1208bL).target(0xfd191ffbab394c9cL, 0xb211e8ff05fd03b0L, 0x7e19241b9e61793cL).optional(true).ordered(true).multiple(true).origin("8484003412860543115").done();
-    b.aggregate("empty", 0x5ab7249291f7cbddL).target(0x993797d3830647edL, 0xba6d94925225abc2L, 0x3fbe398e80fd4279L).optional(true).ordered(true).multiple(true).origin("6536733596084325341").done();
     return b.create();
   }
 }

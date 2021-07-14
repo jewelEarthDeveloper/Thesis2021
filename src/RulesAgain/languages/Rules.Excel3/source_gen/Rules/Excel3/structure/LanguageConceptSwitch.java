@@ -11,14 +11,12 @@ public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
   public static final int EmptyCell = 0;
   public static final int FactExists = 1;
-  public static final int IntelligentEmptyCell = 2;
-  public static final int RuleCollection = 3;
+  public static final int RuleCollection = 2;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x993797d3830647edL, 0xba6d94925225abc2L);
     builder.put(0x497492ca488a22daL, EmptyCell);
     builder.put(0x650edf5288ddd983L, FactExists);
-    builder.put(0x3fbe398e80fd4279L, IntelligentEmptyCell);
     builder.put(0x75bd3c2760c11ea0L, RuleCollection);
     myIndex = builder.seal();
   }

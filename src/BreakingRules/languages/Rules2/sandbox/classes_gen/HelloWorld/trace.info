@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <root nodeRef="r:1048dc17-1f5a-4e67-9c8f-4b05400b41ff(HelloWorld)/3160832622108728042">
+    <file name="Message.java">
+      <node id="3160832622108688943" at="7,0,8,0" concept="5" trace="HELLO" />
+      <node id="3160832622108689067" at="8,0,9,0" concept="5" trace="GOODBYE" />
+      <node id="3160832622108689194" at="10,0,11,0" concept="2" trace="message" />
+      <node id="3160832622108689282" at="11,0,12,0" concept="2" trace="status" />
+      <node id="3160832622108689571" at="16,30,17,24" concept="4" />
+      <node id="3160832622108690841" at="20,48,21,27" concept="1" />
+      <node id="3160832622108700011" at="24,26,25,23" concept="4" />
+      <node id="3160832622108705808" at="28,43,29,25" concept="1" />
+      <node id="3160832622108689397" at="13,0,15,0" concept="0" trace="Message#()V" />
+      <node id="3160832622108689519" at="16,0,19,0" concept="3" trace="getMessage#()Ljava/lang/String;" />
+      <node id="3160832622108690535" at="20,0,23,0" concept="3" trace="setMessage#(Ljava/lang/String;)V" />
+      <node id="3160832622108698942" at="24,0,27,0" concept="3" trace="getStatus#()I" />
+      <node id="3160832622108703098" at="28,0,31,0" concept="3" trace="setStatus#(I)V" />
+      <scope id="3160832622108689400" at="13,20,13,20" />
+      <scope id="3160832622108689522" at="16,30,17,24" />
+      <scope id="3160832622108690538" at="20,48,21,27" />
+      <scope id="3160832622108698945" at="24,26,25,23" />
+      <scope id="3160832622108703101" at="28,43,29,25" />
+      <scope id="3160832622108689397" at="13,0,15,0" />
+      <scope id="3160832622108689519" at="16,0,19,0" />
+      <scope id="3160832622108690535" at="20,0,23,0">
+        <var name="message" id="3160832622108690664" />
+      </scope>
+      <scope id="3160832622108698942" at="24,0,27,0" />
+      <scope id="3160832622108703098" at="28,0,31,0">
+        <var name="status" id="3160832622108705275" />
+      </scope>
+      <unit id="3160832622108728042" at="6,0,33,0" name="HelloWorld.Message" />
+    </file>
+  </root>
+</debug-info>
+

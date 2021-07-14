@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="BusPass.AdultBusPass">
+    <classNode dependClassName="BusPass.Person" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="BusPass.BusPass" />
+  </dependency>
+  <dependency className="BusPass.BadBehaviour">
+    <classNode dependClassName="BusPass.Person" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="BusPass.BusPass">
+    <classNode dependClassName="BusPass.Person" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="BusPass.ChildBusPass">
+    <classNode dependClassName="BusPass.Person" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="BusPass.BusPass" />
+  </dependency>
+  <dependency className="BusPass.IsAdult">
+    <classNode dependClassName="BusPass.Person" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="BusPass.IsChild">
+    <classNode dependClassName="BusPass.Person" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="BusPass.Person">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+</dependenciesRoot>
+
