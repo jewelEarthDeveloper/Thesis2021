@@ -275,8 +275,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
             EditorCellGridLeaf cell = as_kaejt3_a0a3a0a31a0a0a0g0q(grid.getCell(i, j), EditorCellGridLeaf.class);
             if (!(Objects.equals(cell, null))) {
-              EditorCell editorCell = cell.getEditorCell();
-              editorCell.getStyle().set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+              cell.getEditorCell().getStyle().set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
             }
 
             if ((createdNode == null)) {

@@ -302,6 +302,7 @@
     <classNode dependClassName="Rules2.editor.InsertLogicalStatement_Editor" />
     <classNode dependClassName="Rules2.editor.InsertStatement_Editor" />
     <classNode dependClassName="Rules2.editor.IntegerLiteral_Editor" />
+    <classNode dependClassName="Rules2.editor.LessThanEqualOperator_Editor" />
     <classNode dependClassName="Rules2.editor.LessThanOperator_Editor" />
     <classNode dependClassName="Rules2.editor.ModifyStatement_Editor" />
     <classNode dependClassName="Rules2.editor.MultiAnd_Editor" />
@@ -1384,6 +1385,22 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
+  </dependency>
+  <dependency className="Rules2.editor.LessThanEqualOperator_Editor">
+    <classNode dependClassName="Rules2.editor.LessThanEqualOperator_EditorBuilder_a" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="Rules2.editor.LessThanEqualOperator_EditorBuilder_a">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>

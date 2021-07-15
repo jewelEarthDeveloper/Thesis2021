@@ -52,6 +52,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptInsertLogicalStatement = createDescriptorForInsertLogicalStatement();
   /*package*/ final ConceptDescriptor myConceptInsertStatement = createDescriptorForInsertStatement();
   /*package*/ final ConceptDescriptor myConceptIntegerLiteral = createDescriptorForIntegerLiteral();
+  /*package*/ final ConceptDescriptor myConceptLessThanEqualOperator = createDescriptorForLessThanEqualOperator();
   /*package*/ final ConceptDescriptor myConceptLessThanOperator = createDescriptorForLessThanOperator();
   /*package*/ final ConceptDescriptor myConceptLiteralRestrictionValue = createDescriptorForLiteralRestrictionValue();
   /*package*/ final ConceptDescriptor myConceptModifyStatement = createDescriptorForModifyStatement();
@@ -96,7 +97,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractBinaryCondition, myConceptAbstractCondition, myConceptAbstractUnaryCondition, myConceptAndCondition, myConceptAndConstraint, myConceptBooleanLiteral, myConceptComment, myConceptCompoundValueRestriction, myConceptConstraint, myConceptConstraintGroup, myConceptContainsOperator, myConceptDeleteStatement, myConceptDroolsStatement, myConceptEmptyStatement, myConceptEqualsOperator, myConceptEvalCondition, myConceptExistsCondition, myConceptFactImportStatement, myConceptFactImportedRef, myConceptFactProperty, myConceptFactPropertyAccessorRef, myConceptFactSelector, myConceptFactSetMethodAccessor, myConceptFieldConstraint, myConceptFile, myConceptFloatLiteral, myConceptGlobalRef, myConceptGlobalStatement, myConceptGreatedThanOperator, myConceptGreaterThanEqualOperator, myConceptHaltStatement, myConceptIFileLevelStatement, myConceptIMultiRestrictionable, myConceptIWhenField, myConceptInSet, myConceptInlineEval, myConceptInsertLogicalStatement, myConceptInsertStatement, myConceptIntegerLiteral, myConceptLessThanOperator, myConceptLiteralRestrictionValue, myConceptModifyStatement, myConceptMultiAnd, myConceptMultiOr, myConceptMultiRestriction, myConceptMultiRestrictionOperator, myConceptNoLoopAttribute, myConceptNotCondition, myConceptNotOperator, myConceptNullLiteral, myConceptOrCondition, myConceptOrConstraint, myConceptRestriction, myConceptRestrictionGroup, myConceptRestrictionOperator, myConceptRestrictionValue, myConceptReturnValueRestrictionValue, myConceptRuleAttributes, myConceptRuleStatement, myConceptRuleVariable, myConceptRuleVariableRef, myConceptSalienceAttribute, myConceptSetMembership, myConceptSingleValueRestriction, myConceptStringLiteral, myConceptVariableRestrictionValue, myConceptWhenFieldDot);
+    return Arrays.asList(myConceptAbstractBinaryCondition, myConceptAbstractCondition, myConceptAbstractUnaryCondition, myConceptAndCondition, myConceptAndConstraint, myConceptBooleanLiteral, myConceptComment, myConceptCompoundValueRestriction, myConceptConstraint, myConceptConstraintGroup, myConceptContainsOperator, myConceptDeleteStatement, myConceptDroolsStatement, myConceptEmptyStatement, myConceptEqualsOperator, myConceptEvalCondition, myConceptExistsCondition, myConceptFactImportStatement, myConceptFactImportedRef, myConceptFactProperty, myConceptFactPropertyAccessorRef, myConceptFactSelector, myConceptFactSetMethodAccessor, myConceptFieldConstraint, myConceptFile, myConceptFloatLiteral, myConceptGlobalRef, myConceptGlobalStatement, myConceptGreatedThanOperator, myConceptGreaterThanEqualOperator, myConceptHaltStatement, myConceptIFileLevelStatement, myConceptIMultiRestrictionable, myConceptIWhenField, myConceptInSet, myConceptInlineEval, myConceptInsertLogicalStatement, myConceptInsertStatement, myConceptIntegerLiteral, myConceptLessThanEqualOperator, myConceptLessThanOperator, myConceptLiteralRestrictionValue, myConceptModifyStatement, myConceptMultiAnd, myConceptMultiOr, myConceptMultiRestriction, myConceptMultiRestrictionOperator, myConceptNoLoopAttribute, myConceptNotCondition, myConceptNotOperator, myConceptNullLiteral, myConceptOrCondition, myConceptOrConstraint, myConceptRestriction, myConceptRestrictionGroup, myConceptRestrictionOperator, myConceptRestrictionValue, myConceptReturnValueRestrictionValue, myConceptRuleAttributes, myConceptRuleStatement, myConceptRuleVariable, myConceptRuleVariableRef, myConceptSalienceAttribute, myConceptSetMembership, myConceptSingleValueRestriction, myConceptStringLiteral, myConceptVariableRestrictionValue, myConceptWhenFieldDot);
   }
 
   @Override
@@ -181,6 +182,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptInsertStatement;
       case LanguageConceptSwitch.IntegerLiteral:
         return myConceptIntegerLiteral;
+      case LanguageConceptSwitch.LessThanEqualOperator:
+        return myConceptLessThanEqualOperator;
       case LanguageConceptSwitch.LessThanOperator:
         return myConceptLessThanOperator;
       case LanguageConceptSwitch.LiteralRestrictionValue:
@@ -604,6 +607,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure)/9086333424243319486");
     b.version(2);
     b.aggregate("value", 0x7e19241b9ec822bfL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L).optional(false).ordered(true).multiple(false).origin("9086333424243319487").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForLessThanEqualOperator() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Rules2", "LessThanEqualOperator", 0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x717c5f9ee21a8bc1L);
+    b.class_(false, false, false);
+    b.super_("Rules2.structure.RestrictionOperator", 0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x2bdd8885e329b1a0L);
+    b.origin("r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure)/8177516159400840129");
+    b.version(2);
+    b.alias("<=");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForLessThanOperator() {

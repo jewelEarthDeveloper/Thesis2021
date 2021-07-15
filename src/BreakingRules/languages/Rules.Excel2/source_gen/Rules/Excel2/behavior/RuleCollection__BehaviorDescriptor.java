@@ -226,14 +226,14 @@ public final class RuleCollection__BehaviorDescriptor extends BaseBHDescriptor {
             NodeSubstituter substituter = new NodeSubstituter() {
               @Override
               public SNode substituteNode(SNode newNode, SNode currentNode) {
-                SNode condX = SLinkOperations.addNewChild(rule, LINKS.conditions$LY0l, CONCEPTS.ExistsCondition$zq);
-                SNode selectorX = SLinkOperations.setNewChild(condX, LINKS.selector$V5mL, CONCEPTS.FactSelector$lQ);
-                SNode factRefX = SLinkOperations.setNewChild(selectorX, LINKS.fact$47k6, CONCEPTS.FactImportedRef$el);
-                SLinkOperations.setTarget(factRefX, LINKS.target$C2kL, fact);
+                SNode cond = SLinkOperations.addNewChild(rule, LINKS.conditions$LY0l, CONCEPTS.ExistsCondition$zq);
+                SNode selector = SLinkOperations.setNewChild(cond, LINKS.selector$V5mL, CONCEPTS.FactSelector$lQ);
+                SNode factRef = SLinkOperations.setNewChild(selector, LINKS.fact$47k6, CONCEPTS.FactImportedRef$el);
+                SLinkOperations.setTarget(factRef, LINKS.target$C2kL, fact);
 
-                SNode fieldConstraintX = SLinkOperations.addNewChild(selectorX, LINKS.newconstraints$KdZk, CONCEPTS.FieldConstraint$oO);
-                SNode factProp = SLinkOperations.setNewChild(fieldConstraintX, LINKS.fieldName$SB$h, CONCEPTS.FactProperty$Ri);
-                SLinkOperations.setTarget(fieldConstraintX, LINKS.restriction$5rgf, newNode);
+                SNode fieldConstraint = SLinkOperations.addNewChild(selector, LINKS.newconstraints$KdZk, CONCEPTS.FieldConstraint$oO);
+                SNode factProp = SLinkOperations.setNewChild(fieldConstraint, LINKS.fieldName$SB$h, CONCEPTS.FactProperty$Ri);
+                SLinkOperations.setTarget(fieldConstraint, LINKS.restriction$5rgf, newNode);
                 return SLinkOperations.setTarget(factProp, LINKS.property$dmNh, prop);
               }
             };

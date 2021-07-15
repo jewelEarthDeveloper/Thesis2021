@@ -48,6 +48,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_InsertLogicalStatement;
   private ConceptPresentation props_InsertStatement;
   private ConceptPresentation props_IntegerLiteral;
+  private ConceptPresentation props_LessThanEqualOperator;
   private ConceptPresentation props_LessThanOperator;
   private ConceptPresentation props_LiteralRestrictionValue;
   private ConceptPresentation props_ModifyStatement;
@@ -351,6 +352,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_IntegerLiteral = cpb.create();
         }
         return props_IntegerLiteral;
+      case LanguageConceptSwitch.LessThanEqualOperator:
+        if (props_LessThanEqualOperator == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("<=");
+          props_LessThanEqualOperator = cpb.create();
+        }
+        return props_LessThanEqualOperator;
       case LanguageConceptSwitch.LessThanOperator:
         if (props_LessThanOperator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

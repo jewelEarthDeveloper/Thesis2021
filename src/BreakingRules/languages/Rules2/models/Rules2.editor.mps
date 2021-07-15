@@ -2698,5 +2698,12 @@
       <node concept="l2Vlx" id="6rbseOdxINd" role="2iSdaV" />
     </node>
   </node>
+  <node concept="24kQdi" id="75WnTVy6CJ2">
+    <property role="3GE5qa" value="rule.when.selector.constraint.restriction.operator" />
+    <ref role="1XX52x" to="8gas:75WnTVy6CJ1" resolve="LessThanEqualOperator" />
+    <node concept="3F0ifn" id="75WnTVy6CJ4" role="2wV5jI">
+      <property role="3F0ifm" value="&lt;=" />
+    </node>
+  </node>
 </model>
 

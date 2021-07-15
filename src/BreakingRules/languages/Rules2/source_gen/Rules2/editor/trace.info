@@ -17,7 +17,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/5351203823916750322:jetbrains.mps.baseLanguage.structure.TryUniversalStatement" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="20,0,234,0" name="Rules2.editor.EditorAspectDescriptorImpl" />
+      <unit at="20,0,236,0" name="Rules2.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="FactPropertyAccessorRef_SubstituteMenu.java">
       <unit at="90,0,93,0" name="Rules2.editor.FactPropertyAccessorRef_SubstituteMenu$CONCEPTS" />
@@ -3556,8 +3556,8 @@
   </root>
   <root nodeRef="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor)/7692915210158506460">
     <file name="EditorAspectDescriptorImpl.java">
-      <node id="7692915210158506460" at="181,65,182,100" concept="8" />
-      <scope id="7692915210158506460" at="181,65,182,100" />
+      <node id="7692915210158506460" at="183,65,184,100" concept="8" />
+      <scope id="7692915210158506460" at="183,65,184,100" />
     </file>
     <file name="FactProperty_ApplySideTransform.java">
       <node id="7692915210158506460" at="32,0,33,0" concept="3" trace="myLocations" />
@@ -4415,6 +4415,49 @@
       <unit id="7692915210160979645" at="120,0,123,0" name="Rules2.editor.EvalCondition_EditorBuilder_a$LINKS" />
       <unit id="7692915210160979645" at="62,0,113,0" name="Rules2.editor.EvalCondition_EditorBuilder_a$expressionSingleRoleHandler_syv9qe_b0" />
       <unit id="7692915210160979645" at="23,0,124,0" name="Rules2.editor.EvalCondition_EditorBuilder_a" />
+    </file>
+  </root>
+  <root nodeRef="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor)/8177516159400840130">
+    <file name="LessThanEqualOperator_Editor.java">
+      <node id="8177516159400840130" at="11,79,12,87" concept="8" />
+      <node id="8177516159400840130" at="11,0,14,0" concept="6" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="8177516159400840130" at="11,79,12,87" />
+      <scope id="8177516159400840130" at="11,0,14,0">
+        <var name="editorContext" id="8177516159400840130" />
+        <var name="node" id="8177516159400840130" />
+      </scope>
+      <unit id="8177516159400840130" at="10,0,15,0" name="Rules2.editor.LessThanEqualOperator_Editor" />
+    </file>
+    <file name="LessThanEqualOperator_EditorBuilder_a.java">
+      <node id="8177516159400840130" at="16,101,17,19" concept="13" />
+      <node id="8177516159400840130" at="17,19,18,18" concept="2" />
+      <node id="8177516159400840130" at="23,26,24,18" concept="8" />
+      <node id="8177516159400840130" at="27,39,28,30" concept="8" />
+      <node id="8177516159400840132" at="31,41,32,95" concept="7" />
+      <node id="8177516159400840132" at="32,95,33,46" concept="2" />
+      <node id="8177516159400840132" at="33,46,34,28" concept="2" />
+      <node id="8177516159400840132" at="34,28,35,31" concept="2" />
+      <node id="8177516159400840132" at="35,31,36,34" concept="2" />
+      <node id="8177516159400840132" at="36,34,37,22" concept="8" />
+      <node id="8177516159400840130" at="13,0,15,0" concept="3" trace="myNode" />
+      <node id="8177516159400840130" at="27,0,30,0" concept="6" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="8177516159400840130" at="16,0,20,0" concept="1" trace="LessThanEqualOperator_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="8177516159400840130" at="21,0,26,0" concept="6" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8177516159400840132" at="31,0,39,0" concept="6" trace="createConstant_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="8177516159400840130" at="23,26,24,18" />
+      <scope id="8177516159400840130" at="27,39,28,30" />
+      <scope id="8177516159400840130" at="16,101,18,18" />
+      <scope id="8177516159400840130" at="27,0,30,0" />
+      <scope id="8177516159400840130" at="16,0,20,0">
+        <var name="context" id="8177516159400840130" />
+        <var name="node" id="8177516159400840130" />
+      </scope>
+      <scope id="8177516159400840130" at="21,0,26,0" />
+      <scope id="8177516159400840132" at="31,41,37,22">
+        <var name="editorCell" id="8177516159400840132" />
+      </scope>
+      <scope id="8177516159400840132" at="31,0,39,0" />
+      <unit id="8177516159400840130" at="12,0,40,0" name="Rules2.editor.LessThanEqualOperator_EditorBuilder_a" />
     </file>
   </root>
   <root nodeRef="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor)/9086333424236438340">

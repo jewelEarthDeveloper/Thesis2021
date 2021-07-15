@@ -899,5 +899,12 @@
       <ref role="20lvS9" to="tpee:gbb6qgO" resolve="FloatingPointConstant" />
     </node>
   </node>
+  <node concept="1TIwiD" id="75WnTVy6CJ1">
+    <property role="EcuMT" value="8177516159400840129" />
+    <property role="3GE5qa" value="rule.when.selector.constraint.restriction.operator" />
+    <property role="TrG5h" value="LessThanEqualOperator" />
+    <property role="34LRSv" value="&lt;=" />
+    <ref role="1TJDcQ" node="2Jty8nzar6w" resolve="RestrictionOperator" />
+  </node>
 </model>
 

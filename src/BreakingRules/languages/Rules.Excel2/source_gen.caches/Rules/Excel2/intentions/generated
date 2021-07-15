@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="438bcled0xrvpytfxz56mdy05aaf4le">
-  <files names="IntentionsDescriptor.java:addFactToRule_Intention.java:addFieldConstraint_Intention.java:addRuleToCollection_Intention.java:removeRuleFromRuleCollection_Intention.java" />
+<product version="3" modelHash="-cpx4cps4h64b9gltihhjjw9cm816dfr">
+  <files names="IntentionsDescriptor.java:addFactToRule_Intention.java:addFieldConstraint_Intention.java:addRuleToCollection_Intention.java:removeFactFromRule_Intention.java:removeRuleFromRuleCollection_Intention.java" />
 </product>
 
