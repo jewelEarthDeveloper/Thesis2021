@@ -24,11 +24,6 @@
       <unit id="7021565346286252564" at="6,0,12,0" name="Rules2.sandbox.uva.Faculty" />
     </file>
   </root>
-  <root nodeRef="r:03cbcdc4-5041-4fbf-9f16-e99392f59dec(Rules2.sandbox.uva)/7021565346286252948">
-    <file name="Level.java">
-      <unit id="7021565346286252948" at="6,0,10,0" name="Rules2.sandbox.uva.Level" />
-    </file>
-  </root>
   <root nodeRef="r:03cbcdc4-5041-4fbf-9f16-e99392f59dec(Rules2.sandbox.uva)/7021565346286253680">
     <file name="Result.java">
       <node id="8621219337627850358" at="7,0,8,0" concept="1" trace="course" />
@@ -63,37 +58,59 @@
     <file name="Student.java">
       <node id="7021565346286261338" at="8,0,9,0" concept="1" trace="id" />
       <node id="7021565346286261448" at="9,23,10,14" concept="3" />
-      <node id="7021565346286262298" at="12,0,13,0" concept="1" trace="program" />
-      <node id="7021565346286263184" at="13,31,14,19" concept="3" />
-      <node id="7021565346286264189" at="16,0,17,0" concept="1" trace="results" />
-      <node id="7021565346286265670" at="17,36,18,19" concept="3" />
-      <node id="7021565346287031357" at="20,0,21,0" concept="1" trace="weightedAverage" />
-      <node id="7021565346287034570" at="21,35,22,27" concept="3" />
-      <node id="7021565346286420822" at="24,0,25,0" concept="1" trace="yearsStudied" />
-      <node id="7021565346286422516" at="25,29,26,24" concept="3" />
-      <node id="7021565346287022272" at="28,0,29,0" concept="1" trace="cumlaude" />
-      <node id="7021565346287026433" at="29,45,30,29" concept="0" />
+      <node id="7021565346286262298" at="13,0,14,0" concept="1" trace="program" />
+      <node id="7021565346286263184" at="14,31,15,19" concept="3" />
+      <node id="7021565346286264189" at="18,0,19,0" concept="1" trace="results" />
+      <node id="7021565346286265670" at="19,36,20,19" concept="3" />
+      <node id="7021565346287031357" at="23,0,24,0" concept="1" trace="weightedAverage" />
+      <node id="7021565346287034570" at="24,23,25,27" concept="3" />
+      <node id="7407138175577132096" at="28,0,29,0" concept="1" trace="closeCount" />
+      <node id="7407138175577135704" at="29,30,30,22" concept="3" />
+      <node id="7407138175577139765" at="32,45,33,33" concept="0" />
+      <node id="7407138175577194123" at="36,0,37,0" concept="1" trace="exemptCredits" />
+      <node id="7407138175577194129" at="37,33,38,25" concept="3" />
+      <node id="7407138175577194135" at="40,55,41,41" concept="0" />
+      <node id="7021565346286420822" at="44,0,45,0" concept="1" trace="yearsStudied" />
+      <node id="7021565346286422516" at="45,32,46,24" concept="3" />
+      <node id="7021565346287022272" at="49,0,50,0" concept="1" trace="cumlaude" />
+      <node id="7021565346287026433" at="50,45,51,29" concept="0" />
       <node id="7021565346286261399" at="9,0,12,0" concept="2" trace="getId#()J" />
-      <node id="7021565346286263106" at="13,0,16,0" concept="2" trace="getProgram#()LRules2/sandbox/uva/Program;" />
-      <node id="7021565346286265189" at="17,0,20,0" concept="2" trace="getResults#()Ljava/util/List;" />
-      <node id="7021565346287033542" at="21,0,24,0" concept="2" trace="getWeightedAverage#()I" />
-      <node id="7021565346286421978" at="25,0,28,0" concept="2" trace="getYearsdied#()I" />
-      <node id="7021565346287025322" at="29,0,32,0" concept="2" trace="setCumlaude#(Z)V" />
+      <node id="7021565346286263106" at="14,0,17,0" concept="2" trace="getProgram#()LRules2/sandbox/uva/Program;" />
+      <node id="7021565346286265189" at="19,0,22,0" concept="2" trace="getResults#()Ljava/util/List;" />
+      <node id="7021565346287033542" at="24,0,27,0" concept="2" trace="getAvg#()I" />
+      <node id="7407138175577134798" at="29,0,32,0" concept="2" trace="getCloseCount#()I" />
+      <node id="7407138175577138557" at="32,0,35,0" concept="2" trace="setCloseCount#(I)V" />
+      <node id="7407138175577194127" at="37,0,40,0" concept="2" trace="getExemptCredits#()I" />
+      <node id="7407138175577194133" at="40,0,43,0" concept="2" trace="setExemptedCredits#(I)V" />
+      <node id="7021565346286421978" at="45,0,48,0" concept="2" trace="getYearsStudied#()I" />
+      <node id="7021565346287025322" at="50,0,53,0" concept="2" trace="setCumlaude#(Z)V" />
       <scope id="7021565346286261402" at="9,23,10,14" />
-      <scope id="7021565346286263109" at="13,31,14,19" />
-      <scope id="7021565346286265192" at="17,36,18,19" />
-      <scope id="7021565346287033545" at="21,35,22,27" />
-      <scope id="7021565346286421981" at="25,29,26,24" />
-      <scope id="7021565346287025325" at="29,45,30,29" />
+      <scope id="7021565346286263109" at="14,31,15,19" />
+      <scope id="7021565346286265192" at="19,36,20,19" />
+      <scope id="7021565346287033545" at="24,23,25,27" />
+      <scope id="7407138175577134801" at="29,30,30,22" />
+      <scope id="7407138175577138560" at="32,45,33,33" />
+      <scope id="7407138175577194128" at="37,33,38,25" />
+      <scope id="7407138175577194134" at="40,55,41,41" />
+      <scope id="7021565346286421981" at="45,32,46,24" />
+      <scope id="7021565346287025325" at="50,45,51,29" />
       <scope id="7021565346286261399" at="9,0,12,0" />
-      <scope id="7021565346286263106" at="13,0,16,0" />
-      <scope id="7021565346286265189" at="17,0,20,0" />
-      <scope id="7021565346287033542" at="21,0,24,0" />
-      <scope id="7021565346286421978" at="25,0,28,0" />
-      <scope id="7021565346287025322" at="29,0,32,0">
+      <scope id="7021565346286263106" at="14,0,17,0" />
+      <scope id="7021565346286265189" at="19,0,22,0" />
+      <scope id="7021565346287033542" at="24,0,27,0" />
+      <scope id="7407138175577134798" at="29,0,32,0" />
+      <scope id="7407138175577138557" at="32,0,35,0">
+        <var name="closeCount" id="7407138175577139464" />
+      </scope>
+      <scope id="7407138175577194127" at="37,0,40,0" />
+      <scope id="7407138175577194133" at="40,0,43,0">
+        <var name="exemptedCredits" id="7407138175577194143" />
+      </scope>
+      <scope id="7021565346286421978" at="45,0,48,0" />
+      <scope id="7021565346287025322" at="50,0,53,0">
         <var name="cumlaude" id="7021565346287026233" />
       </scope>
-      <unit id="7021565346286254306" at="7,0,33,0" name="Rules2.sandbox.uva.Student" />
+      <unit id="7021565346286254306" at="7,0,54,0" name="Rules2.sandbox.uva.Student" />
     </file>
   </root>
   <root nodeRef="r:03cbcdc4-5041-4fbf-9f16-e99392f59dec(Rules2.sandbox.uva)/7021565346286255680">
@@ -102,28 +119,13 @@
       <node id="7021565346286256549" at="9,31,10,19" concept="3" />
       <node id="7021565346286430428" at="12,0,13,0" concept="1" trace="courses" />
       <node id="7021565346286255920" at="13,36,14,19" concept="3" />
-      <node id="7021565346286414847" at="16,0,17,0" concept="1" trace="lengthFullTime" />
-      <node id="7021565346286415781" at="17,34,18,26" concept="3" />
-      <node id="7021565346286417118" at="20,0,21,0" concept="1" trace="lengthPartTime" />
-      <node id="7021565346286418877" at="21,34,22,26" concept="3" />
       <node id="7021565346286256441" at="9,0,12,0" concept="2" trace="getFaculty#()LRules2/sandbox/uva/Faculty;" />
       <node id="7021565346286255869" at="13,0,16,0" concept="2" trace="getCourses#()Ljava/util/List;" />
-      <node id="7021565346286415499" at="17,0,20,0" concept="2" trace="getLengthFullTime#()I" />
-      <node id="7021565346286418329" at="21,0,24,0" concept="2" trace="getLengthPartTime#()I" />
       <scope id="7021565346286256444" at="9,31,10,19" />
       <scope id="7021565346286255872" at="13,36,14,19" />
-      <scope id="7021565346286415502" at="17,34,18,26" />
-      <scope id="7021565346286418332" at="21,34,22,26" />
       <scope id="7021565346286256441" at="9,0,12,0" />
       <scope id="7021565346286255869" at="13,0,16,0" />
-      <scope id="7021565346286415499" at="17,0,20,0" />
-      <scope id="7021565346286418329" at="21,0,24,0" />
-      <unit id="7021565346286255680" at="7,0,25,0" name="Rules2.sandbox.uva.Program" />
-    </file>
-  </root>
-  <root nodeRef="r:03cbcdc4-5041-4fbf-9f16-e99392f59dec(Rules2.sandbox.uva)/7021565346286423553">
-    <file name="EnrolmentType.java">
-      <unit id="7021565346286423553" at="6,0,10,0" name="Rules2.sandbox.uva.EnrolmentType" />
+      <unit id="7021565346286255680" at="7,0,17,0" name="Rules2.sandbox.uva.Program" />
     </file>
   </root>
 </debug-info>

@@ -13,12 +13,4 @@ public class Program {
   public List<Course> getCourses() {
     return courses;
   }
-  private int lengthFullTime;
-  public int getLengthFullTime() {
-    return lengthFullTime;
-  }
-  private int lengthPartTime;
-  public int getLengthPartTime() {
-    return lengthPartTime;
-  }
 }

@@ -3,9 +3,7 @@
   <dependency className="Rules2.sandbox.uva.Course">
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="Rules2.sandbox.uva.EnrolmentType" />
   <dependency className="Rules2.sandbox.uva.Faculty" />
-  <dependency className="Rules2.sandbox.uva.Level" />
   <dependency className="Rules2.sandbox.uva.Program">
     <classNode dependClassName="Rules2.sandbox.uva.Course" />
     <classNode dependClassName="Rules2.sandbox.uva.Faculty" />

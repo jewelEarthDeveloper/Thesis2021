@@ -9,22 +9,43 @@ public class Student {
   public long getId() {
     return id;
   }
+
   private Program program;
   public Program getProgram() {
     return program;
   }
+
   private List<Result> results;
   public List<Result> getResults() {
     return results;
   }
+
   private int weightedAverage;
-  public int getWeightedAverage() {
+  public int getAvg() {
     return weightedAverage;
   }
+
+  private int closeCount = 0;
+  public int getCloseCount() {
+    return closeCount;
+  }
+  public void setCloseCount(int closeCount) {
+    this.closeCount = closeCount;
+  }
+
+  private int exemptCredits = 0;
+  public int getExemptCredits() {
+    return exemptCredits;
+  }
+  public void setExemptedCredits(int exemptedCredits) {
+    this.exemptCredits = exemptedCredits;
+  }
+
   private int yearsStudied;
-  public int getYearsdied() {
+  public int getYearsStudied() {
     return yearsStudied;
   }
+
   private boolean cumlaude;
   public void setCumlaude(boolean cumlaude) {
     this.cumlaude = cumlaude;

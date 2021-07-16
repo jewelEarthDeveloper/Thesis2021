@@ -34,12 +34,14 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
       case 0:
         if (true) {
           // concept 
-          intentions = new IntentionFactory[5];
+          intentions = new IntentionFactory[7];
           intentions[0] = new addFactToRule_Intention();
           intentions[1] = new addFieldConstraint_Intention();
           intentions[2] = new addRuleToCollection_Intention();
           intentions[3] = new removeRuleFromRuleCollection_Intention();
           intentions[4] = new removeFactFromRule_Intention();
+          intentions[5] = new whereAmI_Intention();
+          intentions[6] = new addNewSelectorOfFact_Intention();
         }
         break;
       default:
@@ -51,12 +53,14 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[5];
+    IntentionFactory[] rv = new IntentionFactory[7];
     rv[0] = new addFactToRule_Intention();
     rv[1] = new addFieldConstraint_Intention();
     rv[2] = new addRuleToCollection_Intention();
     rv[3] = new removeRuleFromRuleCollection_Intention();
     rv[4] = new removeFactFromRule_Intention();
+    rv[5] = new whereAmI_Intention();
+    rv[6] = new addNewSelectorOfFact_Intention();
     return Arrays.asList(rv);
   }
   private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e61793cL)).seal();

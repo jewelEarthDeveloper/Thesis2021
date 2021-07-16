@@ -14,7 +14,9 @@ import jetbrains.mps.openapi.intentions.IntentionExecutable;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import Rules.Excel2.behavior.RuleCollection__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.intentions.AbstractIntentionExecutable;
 import jetbrains.mps.openapi.intentions.ParameterizedIntentionExecutable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -59,7 +61,15 @@ public final class addFactToRule_Intention extends AbstractIntentionDescriptor i
     return list;
   }
   private List<SNode> parameter(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SNodeOperations.getNodeDescendants(SNodeOperations.getContainingRoot(node), CONCEPTS.FactImportStatement$3W, false, new SAbstractConcept[]{})).toListSequence();
+    {
+      final SNode rules = SNodeOperations.getParent(node);
+      if (SNodeOperations.isInstanceOf(rules, CONCEPTS.RuleCollection$bT)) {
+        Iterable<SNode> factsInCollection = RuleCollection__BehaviorDescriptor.factsInCollection_id65LB7G8xbqT.invoke(rules);
+        List<SNode> allFacts = SNodeOperations.getNodeDescendants(SNodeOperations.getContainingRoot(node), CONCEPTS.FactImportStatement$3W, false, new SAbstractConcept[]{});
+        return ListSequence.fromList(allFacts).subtract(Sequence.fromIterable(factsInCollection)).toListSequence();
+      }
+    }
+    return null;
   }
   /*package*/ final class IntentionImplementation extends AbstractIntentionExecutable implements ParameterizedIntentionExecutable {
     private SNode myParameter;
@@ -68,7 +78,7 @@ public final class addFactToRule_Intention extends AbstractIntentionDescriptor i
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Add \"" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(myParameter, LINKS.type$6tAj), LINKS.classifier$cxMr), PROPS.name$MnvL) + "\" condition to the \"" + SPropertyOperations.getString(node, PROPS.name$MnvL) + "\" rule";
+      return "Add \"" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(myParameter, LINKS.type$6tAj), LINKS.classifier$cxMr), PROPS.name$MnvL) + "\" Fact to rule";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {

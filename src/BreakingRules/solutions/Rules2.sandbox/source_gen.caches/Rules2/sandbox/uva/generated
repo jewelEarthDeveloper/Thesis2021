@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-5t48y48ii5szvitnsr5ja3y4kglbkax">
-  <files names="Course.java:EnrolmentType.java:Faculty.java:Level.java:Program.java:Result.java:Student.java" />
+<product version="3" modelHash="-b8oyctfb8irsjesvhariqyv63gg58z9">
+  <files names="Course.java:Faculty.java:Program.java:Result.java:Student.java" />
 </product>
 

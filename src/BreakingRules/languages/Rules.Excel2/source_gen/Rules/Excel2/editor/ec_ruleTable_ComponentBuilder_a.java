@@ -280,8 +280,12 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
             if ((createdNode == null)) {
               grid.setSubstituteInfo(i, j, RuleCollection__BehaviorDescriptor.createSubstituteInfo_id5ER99aic6Ui.invoke(rulesCollection, editorContext, node, ((int) i), ((int) j)));
-              if (!((boolean) RuleCollection__BehaviorDescriptor.isVariableColumn_id5ER99ai_N5W.invoke(rulesCollection, ((int) i))) || !((boolean) RuleCollection__BehaviorDescriptor.variableCellHasFact_id7u$IkXPL4ZA.invoke(rulesCollection, node, ((int) i), ((int) j)))) {
-                grid.getCell(i, j).getStyle().set(StyleAttributes.getInstance().<Color>getAttribute("de.slisson.mps.tables", "shade-color"), Color.getHSBColor(237, 238, 200));
+              if ((boolean) RuleCollection__BehaviorDescriptor.variableCellHasFact_id7u$IkXPL4ZA.invoke(rulesCollection, node, ((int) i), ((int) j))) {
+                grid.getCell(i, j).getStyle().set(StyleAttributes.getInstance().<Color>getAttribute("de.slisson.mps.tables", "shade-color"), Color.getHSBColor(0.2f, 0.1f, 1.0f));
+              } else if ((boolean) RuleCollection__BehaviorDescriptor.cellWithPropertyWithoutRestiction_id3IYBRBxZAJ2.invoke(rulesCollection, node, ((int) i), ((int) j))) {
+                grid.getCell(i, j).getStyle().set(StyleAttributes.getInstance().<Color>getAttribute("de.slisson.mps.tables", "shade-color"), Color.getHSBColor(0.2f, 0.1f, 1.0f));
+              } else if (!((boolean) RuleCollection__BehaviorDescriptor.isVariableColumn_id5ER99ai_N5W.invoke(rulesCollection, ((int) i))) || !((boolean) RuleCollection__BehaviorDescriptor.variableCellHasFact_id7u$IkXPL4ZA.invoke(rulesCollection, node, ((int) i), ((int) j)))) {
+                grid.getCell(i, j).getStyle().set(StyleAttributes.getInstance().<Color>getAttribute("de.slisson.mps.tables", "shade-color"), Color.getHSBColor(0.15f, 0.05f, 0.9f));
               }
             }
           }

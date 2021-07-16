@@ -19,13 +19,11 @@ import jetbrains.mps.intentions.AbstractIntentionExecutable;
 import jetbrains.mps.openapi.intentions.ParameterizedIntentionExecutable;
 import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SProperty;
 
 public final class removeFactFromRule_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
   public removeFactFromRule_Intention() {
@@ -60,6 +58,8 @@ public final class removeFactFromRule_Intention extends AbstractIntentionDescrip
     return list;
   }
   private List<SNode> parameter(final SNode node, final EditorContext editorContext) {
+
+
     return SNodeOperations.getNodeDescendants(node, CONCEPTS.FactImportedRef$el, false, new SAbstractConcept[]{});
   }
   /*package*/ final class IntentionImplementation extends AbstractIntentionExecutable implements ParameterizedIntentionExecutable {
@@ -69,7 +69,7 @@ public final class removeFactFromRule_Intention extends AbstractIntentionDescrip
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "remove \"" + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(myParameter, LINKS.target$C2kL), LINKS.type$6tAj)) + "\" Fact from \"" + SPropertyOperations.getString(node, PROPS.name$MnvL) + "\"";
+      return "remove this selector for the \"" + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(myParameter, LINKS.target$C2kL), LINKS.type$6tAj)) + "\" Fact from rule";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
@@ -95,9 +95,5 @@ public final class removeFactFromRule_Intention extends AbstractIntentionDescrip
   private static final class LINKS {
     /*package*/ static final SReferenceLink target$C2kL = MetaAdapterFactory.getReferenceLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e725f44L, 0x7e19241b9e725f45L, "target");
     /*package*/ static final SContainmentLink type$6tAj = MetaAdapterFactory.getContainmentLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e5fe1b7L, 0x7e19241b9e5fe1baL, "type");
-  }
-
-  private static final class PROPS {
-    /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
   }
 }
