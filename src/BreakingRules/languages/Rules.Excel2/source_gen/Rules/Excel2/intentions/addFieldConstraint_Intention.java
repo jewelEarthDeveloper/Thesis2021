@@ -79,7 +79,7 @@ public final class addFieldConstraint_Intention extends AbstractIntentionDescrip
     public String getDescription(final SNode node, final EditorContext editorContext) {
       SNode prop = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e793468L, "Rules2.structure.FactProperty"));
       SLinkOperations.setTarget(prop, LINKS.property$dmNh, myParameter);
-      return "Add \"" + FactProperty__BehaviorDescriptor.toFieldName_id7Sp91Iuum_h.invoke(prop) + "\" property to rule";
+      return "Add \"" + FactProperty__BehaviorDescriptor.toFieldName_id7Sp91Iuum_h.invoke(prop) + "\" Property to Rule";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {

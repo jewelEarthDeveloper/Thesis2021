@@ -78,7 +78,7 @@ public final class addFactToRule_Intention extends AbstractIntentionDescriptor i
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Add \"" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(myParameter, LINKS.type$6tAj), LINKS.classifier$cxMr), PROPS.name$MnvL) + "\" Fact to rule";
+      return "Add \"" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(myParameter, LINKS.type$6tAj), LINKS.classifier$cxMr), PROPS.name$MnvL) + "\" Fact to Rule";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {

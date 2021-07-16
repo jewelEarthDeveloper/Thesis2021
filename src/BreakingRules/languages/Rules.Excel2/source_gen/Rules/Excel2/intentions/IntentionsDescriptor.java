@@ -39,9 +39,9 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
           intentions[1] = new addFieldConstraint_Intention();
           intentions[2] = new addRuleToCollection_Intention();
           intentions[3] = new removeRuleFromRuleCollection_Intention();
-          intentions[4] = new removeFactFromRule_Intention();
-          intentions[5] = new whereAmI_Intention();
-          intentions[6] = new addNewSelectorOfFact_Intention();
+          intentions[4] = new addNewSelectorOfFact_Intention();
+          intentions[5] = new removeFactFromRule_Intention();
+          intentions[6] = new removePropertyFromSelector_Intention();
         }
         break;
       default:
@@ -58,9 +58,9 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
     rv[1] = new addFieldConstraint_Intention();
     rv[2] = new addRuleToCollection_Intention();
     rv[3] = new removeRuleFromRuleCollection_Intention();
-    rv[4] = new removeFactFromRule_Intention();
-    rv[5] = new whereAmI_Intention();
-    rv[6] = new addNewSelectorOfFact_Intention();
+    rv[4] = new addNewSelectorOfFact_Intention();
+    rv[5] = new removeFactFromRule_Intention();
+    rv[6] = new removePropertyFromSelector_Intention();
     return Arrays.asList(rv);
   }
   private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e61793cL)).seal();

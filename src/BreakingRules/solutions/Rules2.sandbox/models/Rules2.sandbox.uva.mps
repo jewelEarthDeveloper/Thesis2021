@@ -374,11 +374,6 @@
             <node concept="3wueNd" id="65LB7G8CoIE" role="3wrfAG">
               <property role="TrG5h" value="s" />
             </node>
-            <node concept="3wCM6O" id="3IYBRBxTC3B" role="3wCM8f">
-              <node concept="3wo11N" id="3IYBRBxTC3C" role="3wCM6F">
-                <ref role="3wo11M" node="65LB7G8CpN6" resolve="getAvg" />
-              </node>
-            </node>
           </node>
         </node>
         <node concept="3wEREV" id="65LB7G8A581" role="3wEUeh">

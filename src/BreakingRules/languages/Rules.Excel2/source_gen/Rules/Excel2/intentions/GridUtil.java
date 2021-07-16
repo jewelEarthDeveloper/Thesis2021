@@ -71,9 +71,67 @@ public class GridUtil {
       rowCnt += (int) RuleStatement__BehaviorDescriptor.maxFactOccurence_id4_O$GD8oE6h.invoke(rule);
     }
 
+    return null;
+  }
+
+  public static SNode getPropertyFromLocation(EditorContext context, SNode rules) {
+    GridPosition pos = getGridPosition(context);
+    if (isTitleRow(pos, rules)) {
+      return null;
+    }
+
+    int colCnt = 2;
+    for (SNode fact : Sequence.fromIterable(RuleCollection__BehaviorDescriptor.factsInCollection_id65LB7G8xbqT.invoke(rules))) {
+      // var col 
+      if (Objects.equals(colCnt, pos.getX())) {
+        return null;
+      }
+      colCnt++;
+      // prop cols 
+      for (SNode prop : Sequence.fromIterable(RuleCollection__BehaviorDescriptor.propsFromFact_id65LB7G8y80o.invoke(rules, fact))) {
+        if (Objects.equals(colCnt, pos.getX())) {
+          return prop;
+        }
+        colCnt++;
+      }
+    }
+
 
     return null;
   }
+
+  public static boolean isExistingPropertyCell(EditorContext context, SNode rules) {
+    GridPosition pos = getGridPosition(context);
+
+    if (isTitleRow(pos, rules)) {
+      return false;
+    }
+    SNode selector = getSelectorFromLocation(context, rules);
+
+    // name = col 1  
+    int colCnt = 2;
+    for (SNode fact : Sequence.fromIterable(RuleCollection__BehaviorDescriptor.factsInCollection_id65LB7G8xbqT.invoke(rules))) {
+      // var col 
+      if (Objects.equals(colCnt, pos.getX())) {
+        return false;
+      }
+      colCnt++;
+      // prop cols 
+      for (final SNode prop : Sequence.fromIterable(RuleCollection__BehaviorDescriptor.propsFromFact_id65LB7G8y80o.invoke(rules, fact))) {
+        if (Objects.equals(colCnt, pos.getX())) {
+          return (ListSequence.fromList(SNodeOperations.getNodeDescendants(selector, CONCEPTS.FactProperty$Ri, false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return Objects.equals(SLinkOperations.getTarget(it, LINKS.property$dmNh), prop);
+            }
+          }).first() != null);
+        }
+        colCnt++;
+      }
+    }
+
+    return false;
+  }
+
 
   private static boolean isTitleRow(GridPosition pos, SNode rules) {
     return pos.getY() < 2;
@@ -94,23 +152,25 @@ public class GridUtil {
     EditorCell eCell = editorContext.getSelectedCell();
 
     if (eCell.getParent() instanceof EditorCell_GridCell) {
-      EditorCell_GridCell gCell = as_35xsn8_a0a0a2a01(eCell.getParent(), EditorCell_GridCell.class);
+      EditorCell_GridCell gCell = as_35xsn8_a0a0a2a51(eCell.getParent(), EditorCell_GridCell.class);
       return gCell.getGridPosition();
     }
 
     return null;
   }
-  private static <T> T as_35xsn8_a0a0a2a01(Object o, Class<T> type) {
+  private static <T> T as_35xsn8_a0a0a2a51(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept FactSelector$lQ = MetaAdapterFactory.getConcept(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x47aa13e870db4d31L, "Rules2.structure.FactSelector");
+    /*package*/ static final SConcept FactProperty$Ri = MetaAdapterFactory.getConcept(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e793468L, "Rules2.structure.FactProperty");
   }
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink fact$47k6 = MetaAdapterFactory.getContainmentLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x47aa13e870db4d31L, 0x47aa13e870db8104L, "fact");
     /*package*/ static final SReferenceLink target$C2kL = MetaAdapterFactory.getReferenceLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e725f44L, 0x7e19241b9e725f45L, "target");
     /*package*/ static final SContainmentLink rules$Bngn = MetaAdapterFactory.getContainmentLink(0x903686680b064529L, 0xa25ba5999072a9a0L, 0x61719c7b08847c63L, 0x61719c7b08847c6dL, "rules");
+    /*package*/ static final SReferenceLink property$dmNh = MetaAdapterFactory.getReferenceLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e793468L, 0x7e19241b9e793469L, "property");
   }
 }

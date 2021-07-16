@@ -56,7 +56,7 @@ public final class addNewSelectorOfFact_Intention extends AbstractIntentionDescr
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
       SNode fact = GridUtil.getGridFactFromLocation(editorContext, SNodeOperations.cast(SNodeOperations.getParent(node), CONCEPTS.RuleCollection$bT));
-      return "add a new \"" + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(fact, LINKS.type$6tAj)) + "\" Fact selector to rule";
+      return "Add a New \"" + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(fact, LINKS.type$6tAj)) + "\" Fact Selector to Rule";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {

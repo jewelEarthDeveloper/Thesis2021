@@ -67,7 +67,7 @@ public final class addRuleToCollection_Intention extends AbstractIntentionDescri
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "mode to rule group " + SPropertyOperations.getString(myParameter, PROPS.name$MnvL);
+      return "Move to Rule Group " + SPropertyOperations.getString(myParameter, PROPS.name$MnvL);
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {

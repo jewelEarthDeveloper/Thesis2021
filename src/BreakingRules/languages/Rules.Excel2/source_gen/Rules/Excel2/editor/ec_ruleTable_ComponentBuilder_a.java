@@ -47,6 +47,11 @@ import de.slisson.mps.tables.runtime.substitute.SubstituteInfoFactory;
 import de.slisson.mps.tables.runtime.gridmodel.ITableGrid;
 import Rules.Excel2.behavior.RuleCollection__BehaviorDescriptor;
 import Rules2.behavior.RuleStatement__BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import Rules2.behavior.FactProperty__BehaviorDescriptor;
 import de.slisson.mps.tables.runtime.gridmodel.IGridElement;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -56,8 +61,8 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SEmptyContainmentSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 /*package*/ class ec_ruleTable_ComponentBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -255,14 +260,16 @@ import org.jetbrains.mps.openapi.language.SConcept;
         for (SNode fact : Sequence.fromIterable(RuleCollection__BehaviorDescriptor.factsInCollection_id65LB7G8xbqT.invoke(rulesCollection))) {
           int colspan = (int) RuleCollection__BehaviorDescriptor.propCountForFact_id65LB7G8xz5m.invoke(rulesCollection, fact) + 1;
 
-          grid.setColumnHeader(colNr, headerFactRow, colspan, 1, fact);
+          grid.setColumnHeader(colNr, headerFactRow, colspan, 1, BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(fact, LINKS.type$6tAj)));
           grid.setColumnHeaderStyle(colNr, headerFactRow, StyleAttributes.getInstance().<HorizontalAlignment>getAttribute("de.slisson.mps.tables", "horizontal-alignment"), HorizontalAlignment.CENTER);
 
           grid.setColumnHeader(colNr, headerPropRow, "$");
           colNr++;
 
           for (SNode prop : Sequence.fromIterable(RuleCollection__BehaviorDescriptor.propsFromFact_id65LB7G8y80o.invoke(rulesCollection, fact))) {
-            grid.setColumnHeader(colNr, headerPropRow, prop);
+            SNode propRef = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e793468L, "Rules2.structure.FactProperty"));
+            SLinkOperations.setTarget(propRef, LINKS.property$dmNh, prop);
+            grid.setColumnHeader(colNr, headerPropRow, FactProperty__BehaviorDescriptor.toFieldName_id7Sp91Iuum_h.invoke(propRef));
             grid.setColumnHeaderStyle(colNr, headerPropRow, StyleAttributes.getInstance().<HorizontalAlignment>getAttribute("de.slisson.mps.tables", "horizontal-alignment"), HorizontalAlignment.CENTER);
             colNr++;
           }
@@ -427,6 +434,8 @@ import org.jetbrains.mps.openapi.language.SConcept;
   }
 
   private static final class LINKS {
+    /*package*/ static final SContainmentLink type$6tAj = MetaAdapterFactory.getContainmentLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e5fe1b7L, 0x7e19241b9e5fe1baL, "type");
+    /*package*/ static final SReferenceLink property$dmNh = MetaAdapterFactory.getReferenceLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e793468L, 0x7e19241b9e793469L, "property");
     /*package*/ static final SContainmentLink outcomes$LYHo = MetaAdapterFactory.getContainmentLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e61793cL, 0x7e19241b9e617cbfL, "outcomes");
   }
 }

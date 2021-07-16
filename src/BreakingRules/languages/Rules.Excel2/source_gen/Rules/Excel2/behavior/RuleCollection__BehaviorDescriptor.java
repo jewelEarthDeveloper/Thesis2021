@@ -215,7 +215,7 @@ public final class RuleCollection__BehaviorDescriptor extends BaseBHDescriptor {
               SNode selector = SLinkOperations.setNewChild(cond, LINKS.selector$V5mL, CONCEPTS.FactSelector$lQ);
               SNode factRef = SLinkOperations.setNewChild(selector, LINKS.fact$47k6, CONCEPTS.FactImportedRef$el);
               SLinkOperations.setTarget(factRef, LINKS.target$C2kL, fact);
-              return SLinkOperations.setNewChild(selector, LINKS.variable$1ao9, null);
+              return SLinkOperations.setTarget(selector, LINKS.variable$1ao9, newNode);
             }
           };
           return new WrapperSubstituteInfo(editorContext, SNodeOperations.getParent(rule), rule, SNodeOperations.getContainingLink(rule), CONCEPTS.RuleVariable$Ol, substituter);

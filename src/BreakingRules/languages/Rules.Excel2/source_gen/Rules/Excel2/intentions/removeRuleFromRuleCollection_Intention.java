@@ -53,7 +53,7 @@ public final class removeRuleFromRuleCollection_Intention extends AbstractIntent
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "remove rule \"" + SPropertyOperations.getString(node, PROPS.name$MnvL) + "\" from rule collection";
+      return "Remove Rule \"" + SPropertyOperations.getString(node, PROPS.name$MnvL) + "\" from Rule Collection";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
