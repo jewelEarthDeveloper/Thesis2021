@@ -25,7 +25,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Objects;
 import Rules2.behavior.RuleStatement__BehaviorDescriptor;
 import de.slisson.mps.tables.runtime.substitute.NodeSubstituter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import de.slisson.mps.tables.runtime.substitute.WrapperSubstituteInfo;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
@@ -203,7 +202,7 @@ public final class RuleCollection__BehaviorDescriptor extends BaseBHDescriptor {
             NodeSubstituter substituter = new NodeSubstituter() {
               @Override
               public SNode substituteNode(SNode newNode, SNode currentNode) {
-                return SLinkOperations.setTarget(factSelector, LINKS.variable$1ao9, SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e61c8d6L, "Rules2.structure.RuleVariable")));
+                return SLinkOperations.setTarget(factSelector, LINKS.variable$1ao9, newNode);
               }
             };
             return new WrapperSubstituteInfo(editorContext, factSelector, SLinkOperations.getTarget(factSelector, LINKS.variable$1ao9), SNodeOperations.getContainingLink(SLinkOperations.getTarget(factSelector, LINKS.variable$1ao9)), CONCEPTS.RuleVariable$Ol, substituter);
