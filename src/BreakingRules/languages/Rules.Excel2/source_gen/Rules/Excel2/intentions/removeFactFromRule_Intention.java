@@ -37,7 +37,7 @@ public final class removeFactFromRule_Intention extends AbstractIntentionDescrip
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), CONCEPTS.RuleCollection$bT);
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), CONCEPTS.RuleCollection$bT) && (GridUtil.getSelectorFromLocation(editorContext, SNodeOperations.cast(SNodeOperations.getParent(node), CONCEPTS.RuleCollection$bT)) != null);
   }
   @Override
   public boolean isSurroundWith() {
@@ -63,6 +63,8 @@ public final class removeFactFromRule_Intention extends AbstractIntentionDescrip
         final SNode rules = SNodeOperations.getParent(node);
         if (SNodeOperations.isInstanceOf(rules, CONCEPTS.RuleCollection$bT)) {
           SNode factSelector = GridUtil.getSelectorFromLocation(editorContext, rules);
+          SNodeOperations.deleteNode(SNodeOperations.getNodeAncestor(factSelector, CONCEPTS.NotCondition$NS, false, false));
+          SNodeOperations.deleteNode(SNodeOperations.getNodeAncestor(factSelector, CONCEPTS.ExistsCondition$zq, false, false));
           SNodeOperations.deleteNode(factSelector);
         }
       }
@@ -75,6 +77,8 @@ public final class removeFactFromRule_Intention extends AbstractIntentionDescrip
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept RuleCollection$bT = MetaAdapterFactory.getConcept(0x903686680b064529L, 0xa25ba5999072a9a0L, 0x61719c7b08847c63L, "Rules.Excel2.structure.RuleCollection");
+    /*package*/ static final SConcept NotCondition$NS = MetaAdapterFactory.getConcept(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x47aa13e870db4d45L, "Rules2.structure.NotCondition");
+    /*package*/ static final SConcept ExistsCondition$zq = MetaAdapterFactory.getConcept(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x47aa13e870db4d38L, "Rules2.structure.ExistsCondition");
   }
 
   private static final class LINKS {

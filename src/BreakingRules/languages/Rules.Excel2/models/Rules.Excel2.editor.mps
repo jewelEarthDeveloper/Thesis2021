@@ -337,7 +337,12 @@
     <node concept="2BsEeg" id="65LB7G8$kTd" role="2ABdcP">
       <property role="2gpH_U" value="true" />
       <property role="TrG5h" value="decisionTable" />
-      <property role="2BUmq6" value="decisionTable" />
+      <property role="2BUmq6" value="decision Table" />
+    </node>
+    <node concept="2BsEeg" id="5iEJ7v5cGfF" role="2ABdcP">
+      <property role="2gpH_U" value="true" />
+      <property role="TrG5h" value="CommonSelectorTable" />
+      <property role="2BUmq6" value="decision Table" />
     </node>
   </node>
   <node concept="24kQdi" id="65LB7G8$lcJ">
