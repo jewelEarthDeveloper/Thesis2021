@@ -1,0 +1,89 @@
+\documentclass[
+    11pt, 
+    english, 
+    singlespacing, 
+    headsepline]{MastersDoctoralThesis} 
+    
+\usepackage[utf8]{inputenc} 
+
+
+\usepackage[T1]{fontenc} 
+\usepackage{mathpazo} 
+\usepackage[backend=biber, style=ieee,citestyle=numeric-comp]{biblatex}
+
+
+
+\usepackage[autostyle=true]{csquotes} 
+\usepackage{epigraph}
+
+\geometry{
+	paper=a4paper, 
+	inner=2.5cm, 
+	outer=3.8cm, 
+	bindingoffset=.5cm, 
+	top=1.5cm, 
+	bottom=1.5cm}
+
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{array}
+
+\usepackage{enumitem}
+
+\usepackage[pdfstartview=FitH,colorlinks=true,citecolor=ForestGreen,linkcolor=NavyBlue]{hyperref}
+
+\usepackage[automake]{glossaries}
+
+\usepackage{colortbl,xcolor}
+\usepackage{amsmath,amssymb,fourier}
+
+\usepackage{listings} 
+\lstset{morekeywords={},
+    showstringspaces=false}
+
+\definecolor{commentGreen}{RGB}{128,127,41}
+\definecolor{stringGreen}{RGB}{0,127,38}
+\definecolor{keywordRed}{RGB}{151,0,11}
+\definecolor{typePurple}{RGB}{128,3,82}
+\definecolor{variableBlue}{RGB}{0,0,255}
+\definecolor{annotationRed}{RGB}{198,4,38}
+\definecolor{annotationBlue}{RGB}{32,21,223}
+
+\lstdefinelanguage[drl]{Drools}{
+    sensitive=true,
+    keywordsprefix=\$,
+    alsoletter={:, },
+    morekeywords=[2]{long,int,boolean,double,float,enum},
+    morekeywords=[3]{package,import,declare,end,extends,from,insert,modify,not,new,no loop,query,retract,rule,salience,then,this,when, eval},
+    morekeywords=[4]{after,before,during,over window:length,over window:time,overlaps},
+    morekeywords=[5]{{no loop},over window:length,over window:time},
+    morecomment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    moredelim=[s][\color{annotationRed}\itshape]{@}{)},
+    moredelim=[s][\color{annotationBlue}\itshape]{@[}{]},
+    morestring=[b]",
+    morestring=[d]',
+%%% default style
+    basicstyle=\footnotesize\ttfamily,
+    numbers=left,
+    stepnumber=1,
+    showstringspaces=false,
+    tabsize=1,
+    breaklines=true,
+    breakatwhitespace=false,
+    % identifierstyle=\normalfont,
+    commentstyle=\color{commentGreen}\itshape,
+    keywordstyle=\color{keywordRed}\bfseries,
+    keywordstyle=[1]\color{variableBlue}\itshape,
+    keywordstyle=[2]\color{typePurple}\bfseries,
+    keywordstyle=[3]\color{keywordRed}\bfseries,
+    keywordstyle=[4]\color{keywordRed}\bfseries,
+    keywordstyle=[5]\color{stringGreen}\bfseries,
+    stringstyle=\color{stringGreen}
+}[comments,keywords,strings]
+
+
+\bibliography{main}
+
+\setlength{\parskip}{1em}
