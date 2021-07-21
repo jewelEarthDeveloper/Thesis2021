@@ -104,6 +104,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(16191367)));
       editorCell.getStyle().putAll(style);
+      am_deleteVariableMaintainGridPosition.setCellActions(editorCell, myNode, getEditorContext());
       editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
       setCellContext(editorCell);
       Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), CONCEPTS.PropertyAttribute$Gb);

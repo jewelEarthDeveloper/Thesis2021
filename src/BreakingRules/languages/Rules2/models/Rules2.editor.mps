@@ -55,6 +55,11 @@
       <concept id="8478191136883534237" name="jetbrains.mps.lang.editor.structure.IExtensibleSubstituteMenuPart" flags="ng" index="upBLQ">
         <child id="8478191136883534238" name="features" index="upBLP" />
       </concept>
+      <concept id="8478191136883534207" name="jetbrains.mps.lang.editor.structure.SubstituteFeature_Selection" flags="ng" index="upBMk">
+        <child id="8478191136883534208" name="query" index="upBLF" />
+      </concept>
+      <concept id="8478191136882577348" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_CreatedNode" flags="ng" index="uqdCJ" />
+      <concept id="8478191136882577194" name="jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Select" flags="in" index="uqdF1" />
       <concept id="1177335944525" name="jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_SubstituteString" flags="in" index="uGdhv" />
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
@@ -3515,6 +3520,21 @@
                       </node>
                     </node>
                   </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="upBMk" id="6$MIDXSyDCG" role="upBLP">
+        <node concept="uqdF1" id="6$MIDXSyDCI" role="upBLF">
+          <node concept="3clFbS" id="6$MIDXSyDCK" role="2VODD2">
+            <node concept="3clFbF" id="6$MIDXSyDEj" role="3cqZAp">
+              <node concept="2OqwBi" id="6$MIDXSyDOd" role="3clFbG">
+                <node concept="uqdCJ" id="6$MIDXSyDEi" role="2Oq$k0" />
+                <node concept="1OKiuA" id="6$MIDXSyDYQ" role="2OqNvi">
+                  <node concept="1Q80Hx" id="6$MIDXSyE0W" role="lBI5i" />
+                  <node concept="2B6iha" id="6$MIDXSyEd9" role="lGT1i" />
                 </node>
               </node>
             </node>

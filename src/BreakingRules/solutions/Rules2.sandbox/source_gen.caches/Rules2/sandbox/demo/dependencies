@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="Rules2.sandbox.demo.Course">
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="Rules2.sandbox.demo.Faculty" />
+  <dependency className="Rules2.sandbox.demo.Program">
+    <classNode dependClassName="Rules2.sandbox.demo.Course" />
+    <classNode dependClassName="Rules2.sandbox.demo.Faculty" />
+    <classNode dependClassName="java.util.List" />
+  </dependency>
+  <dependency className="Rules2.sandbox.demo.Result">
+    <classNode dependClassName="Rules2.sandbox.demo.Course" />
+  </dependency>
+  <dependency className="Rules2.sandbox.demo.Student">
+    <classNode dependClassName="Rules2.sandbox.demo.Program" />
+    <classNode dependClassName="Rules2.sandbox.demo.Result" />
+    <classNode dependClassName="java.util.List" />
+  </dependency>
+</dependenciesRoot>
+

@@ -5,9 +5,9 @@ package Rules.Excel2.intentions;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import de.slisson.mps.tables.runtime.simplegrid.GridPosition;
+import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import Rules.Excel2.behavior.RuleCollection__BehaviorDescriptor;
-import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import Rules2.behavior.RuleStatement__BehaviorDescriptor;
@@ -24,7 +24,9 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 public class GridUtil {
   public static SNode getGridFactFromLocation(EditorContext context, SNode rules) {
     GridPosition pos = getGridPosition(context);
-
+    if (Objects.equals(pos, null)) {
+      return null;
+    }
     if (isTitleRow(pos, rules)) {
       return null;
     }

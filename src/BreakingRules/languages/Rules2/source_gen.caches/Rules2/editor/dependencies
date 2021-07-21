@@ -1885,7 +1885,6 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.regex.Pattern" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.logging.runtime.model.LoggingRuntime" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
@@ -1900,8 +1899,6 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.selection.SelectionManager" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.apache.log4j.Level" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

@@ -1,0 +1,19 @@
+@startuml
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+
+
+database "Production\nMemory\n(rules)"  as rules 
+database "Working\nMemory\n(facts)"  as facts 
+
+package "Inference Engine\n(Rete-OO)" as rete {
+  [Pattern Matcher] as matcher
+  [Agenda] as agenda
+}
+
+rules -right-> matcher
+facts -left-> matcher
+matcher -down-> agenda :select for\nexecution
+agenda -up-> facts :update
+
+@enduml
