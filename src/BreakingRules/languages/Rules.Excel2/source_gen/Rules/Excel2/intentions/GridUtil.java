@@ -150,15 +150,17 @@ public class GridUtil {
 
   private static GridPosition getGridPosition(EditorContext editorContext) {
     EditorCell eCell = editorContext.getSelectedCell();
-
-    if (eCell.getParent() instanceof EditorCell_GridCell) {
-      EditorCell_GridCell gCell = as_35xsn8_a0a0a2a51(eCell.getParent(), EditorCell_GridCell.class);
-      return gCell.getGridPosition();
+    while (!(Objects.equals(eCell.getParent(), null))) {
+      if (eCell.getParent() instanceof EditorCell_GridCell) {
+        EditorCell_GridCell gCell = as_35xsn8_a0a0a0a1a51(eCell.getParent(), EditorCell_GridCell.class);
+        return gCell.getGridPosition();
+      }
+      eCell = eCell.getParent();
     }
 
     return null;
   }
-  private static <T> T as_35xsn8_a0a0a2a51(Object o, Class<T> type) {
+  private static <T> T as_35xsn8_a0a0a0a1a51(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 

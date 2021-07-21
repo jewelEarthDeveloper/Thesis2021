@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase implements EditorHintsProvider {
-  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("decisionTable", "decisionTable", true, "Rules.Excel2.editor.decisionTable.decisionTable"));
+  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("decisionTable", "decision Table", true, "Rules.Excel2.editor.decisionTable.decisionTable"), new ConceptEditorHintImpl("CommonSelectorTable", "decision Table", true, "Rules.Excel2.editor.decisionTable.CommonSelectorTable"));
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     SAbstractConcept cncpt = ((SAbstractConcept) concept);

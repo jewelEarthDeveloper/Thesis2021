@@ -14,6 +14,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="IntentionsDescriptor.java">
       <unit at="18,0,68,0" name="Rules.Excel2.intentions.IntentionsDescriptor" />
@@ -84,18 +85,18 @@
       <node id="4305053639646809222" at="146,130,147,136" concept="7" />
       <node id="4305053639646809230" at="147,136,148,86" concept="8" />
       <node id="4305053639646810215" at="151,76,152,55" concept="7" />
-      <node id="4305053639646810221" at="152,55,153,0" concept="10" />
-      <node id="4305053639646810224" at="154,59,155,100" concept="7" />
-      <node id="4305053639646810232" at="155,100,156,37" concept="8" />
-      <node id="4305053639646810241" at="157,5,158,0" concept="10" />
-      <node id="4305053639646810242" at="158,0,159,16" concept="8" />
-      <node id="4305053639646810227" at="161,69,162,47" concept="8" />
-      <node id="4305053639646528467" at="166,0,167,0" concept="11" trace="FactSelector$lQ" />
-      <node id="4305053639646528467" at="167,0,168,0" concept="11" trace="FactProperty$Ri" />
-      <node id="4305053639646528467" at="171,0,172,0" concept="11" trace="fact$47k6" />
-      <node id="4305053639646528467" at="172,0,173,0" concept="11" trace="target$C2kL" />
-      <node id="4305053639646528467" at="173,0,174,0" concept="11" trace="rules$Bngn" />
-      <node id="4305053639646528467" at="174,0,175,0" concept="11" trace="property$dmNh" />
+      <node id="7580326316901678856" at="154,61,155,104" concept="7" />
+      <node id="7580326316901678864" at="155,104,156,39" concept="8" />
+      <node id="7580326316901681863" at="157,7,158,32" concept="2" />
+      <node id="4305053639646810241" at="159,5,160,0" concept="10" />
+      <node id="4305053639646810242" at="160,0,161,16" concept="8" />
+      <node id="7580326316901678859" at="163,71,164,47" concept="8" />
+      <node id="4305053639646528467" at="168,0,169,0" concept="11" trace="FactSelector$lQ" />
+      <node id="4305053639646528467" at="169,0,170,0" concept="11" trace="FactProperty$Ri" />
+      <node id="4305053639646528467" at="173,0,174,0" concept="11" trace="fact$47k6" />
+      <node id="4305053639646528467" at="174,0,175,0" concept="11" trace="target$C2kL" />
+      <node id="4305053639646528467" at="175,0,176,0" concept="11" trace="rules$Bngn" />
+      <node id="4305053639646528467" at="176,0,177,0" concept="11" trace="property$dmNh" />
       <node id="4305053639646801751" at="27,0,30,5" concept="5" />
       <node id="4305053639646801775" at="35,17,38,7" concept="5" />
       <node id="4305053639646801793" at="41,132,44,9" concept="5" />
@@ -108,17 +109,18 @@
       <node id="6100895867821696605" at="123,0,126,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="4305053639646803031" at="136,0,139,0" concept="12" trace="isTitleRow#(Lde/slisson/mps/tables/runtime/simplegrid/GridPosition;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="4305053639646806243" at="140,0,143,0" concept="12" trace="isNameCol#(Lde/slisson/mps/tables/runtime/simplegrid/GridPosition;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="4305053639646810227" at="161,0,164,0" concept="12" trace="as_35xsn8_a0a0a2a51#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-      <node id="4305053639646810222" at="153,0,157,5" concept="5" />
+      <node id="7580326316901678859" at="163,0,166,0" concept="12" trace="as_35xsn8_a0a0a0a1a51#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+      <node id="7580326316901675404" at="153,56,157,7" concept="5" />
       <node id="4305053639648189730" at="62,0,67,51" concept="7" />
       <node id="6100895867821648094" at="121,49,126,30" concept="8" />
       <node id="4305053639646801787" at="40,19,46,7" concept="4" />
       <node id="6100895867821758241" at="90,19,96,7" concept="4" />
       <node id="4305053639646809203" at="144,0,150,0" concept="12" trace="isOutcomeCol#(Lde/slisson/mps/tables/runtime/simplegrid/GridPosition;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="6100895867821613537" at="120,138,127,9" concept="5" />
+      <node id="7580326316901671015" at="152,55,159,5" concept="14" />
       <node id="6100895867821613530" at="119,19,129,7" concept="4" />
-      <node id="4305053639646810212" at="151,0,161,0" concept="12" trace="getGridPosition#(Ljetbrains/mps/openapi/editor/EditorContext;)Lde/slisson/mps/tables/runtime/simplegrid/GridPosition;" />
       <node id="4305053639648108048" at="58,35,70,7" concept="5" />
+      <node id="4305053639646810212" at="151,0,163,0" concept="12" trace="getGridPosition#(Ljetbrains/mps/openapi/editor/EditorContext;)Lde/slisson/mps/tables/runtime/simplegrid/GridPosition;" />
       <node id="4305053639646801769" at="33,19,47,5" concept="4" />
       <node id="6100895867821758219" at="83,19,97,5" concept="4" />
       <node id="4305053639648106453" at="56,19,72,5" concept="4" />
@@ -139,9 +141,9 @@
       <scope id="6100895867821696606" at="123,45,124,94" />
       <scope id="4305053639646803037" at="136,68,137,26" />
       <scope id="4305053639646806245" at="140,67,141,58" />
-      <scope id="4305053639646810227" at="161,69,162,47" />
-      <scope id="4305053639646810223" at="154,59,156,37">
-        <var name="gCell" id="4305053639646810225" />
+      <scope id="7580326316901678859" at="163,71,164,47" />
+      <scope id="7580326316901675406" at="154,61,156,39">
+        <var name="gCell" id="7580326316901678857" />
       </scope>
       <scope id="4305053639648189742" at="64,0,67,0">
         <var name="it" id="4305053639648189742" />
@@ -157,9 +159,9 @@
         <var name="pos" id="4305053639646806260" />
         <var name="rules" id="4305053639646806262" />
       </scope>
-      <scope id="4305053639646810227" at="161,0,164,0">
-        <var name="o" id="4305053639646810227" />
-        <var name="type" id="4305053639646810227" />
+      <scope id="7580326316901678859" at="163,0,166,0">
+        <var name="o" id="7580326316901678859" />
+        <var name="type" id="7580326316901678859" />
       </scope>
       <scope id="4305053639646801792" at="41,132,45,17" />
       <scope id="6100895867821758247" at="91,132,95,17" />
@@ -169,6 +171,7 @@
         <var name="varCols" id="4305053639646809215" />
       </scope>
       <scope id="6100895867821613543" at="121,49,126,30" />
+      <scope id="7580326316901671017" at="153,56,158,32" />
       <scope id="4305053639646801787" at="40,19,46,7">
         <var name="prop" id="4305053639646801788" />
       </scope>
@@ -180,9 +183,6 @@
         <var name="rules" id="4305053639646809207" />
       </scope>
       <scope id="6100895867821613536" at="120,138,128,17" />
-      <scope id="4305053639646810214" at="151,76,159,16">
-        <var name="eCell" id="4305053639646810216" />
-      </scope>
       <scope id="4305053639648108050" at="59,120,69,24">
         <var name="fact" id="4305053639648168367" />
         <var name="factIndex" id="4305053639648139015" />
@@ -191,11 +191,14 @@
       <scope id="6100895867821613530" at="119,19,129,7">
         <var name="prop" id="6100895867821613531" />
       </scope>
-      <scope id="4305053639646810212" at="151,0,161,0">
-        <var name="editorContext" id="4305053639646810246" />
+      <scope id="4305053639646810214" at="151,76,161,16">
+        <var name="eCell" id="4305053639646810216" />
       </scope>
       <scope id="4305053639646801770" at="34,128,46,7" />
       <scope id="6100895867821758220" at="84,128,96,7" />
+      <scope id="4305053639646810212" at="151,0,163,0">
+        <var name="editorContext" id="4305053639646810246" />
+      </scope>
       <scope id="4305053639646801769" at="33,19,47,5">
         <var name="fact" id="4305053639646801808" />
       </scope>
@@ -245,9 +248,9 @@
       </scope>
       <unit id="4305053639648189742" at="63,180,67,9" name="Rules.Excel2.intentions.GridUtil$1" />
       <unit id="6100895867821696605" at="122,155,126,11" name="Rules.Excel2.intentions.GridUtil$2" />
-      <unit id="4305053639646528467" at="165,0,169,0" name="Rules.Excel2.intentions.GridUtil$CONCEPTS" />
-      <unit id="4305053639646528467" at="170,0,176,0" name="Rules.Excel2.intentions.GridUtil$LINKS" />
-      <unit id="4305053639646528467" at="24,0,177,0" name="Rules.Excel2.intentions.GridUtil" />
+      <unit id="4305053639646528467" at="167,0,171,0" name="Rules.Excel2.intentions.GridUtil$CONCEPTS" />
+      <unit id="4305053639646528467" at="172,0,178,0" name="Rules.Excel2.intentions.GridUtil$LINKS" />
+      <unit id="4305053639646528467" at="24,0,179,0" name="Rules.Excel2.intentions.GridUtil" />
     </file>
   </root>
   <root nodeRef="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/4305053639648498712">
