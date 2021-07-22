@@ -16,7 +16,7 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class am_deleteVariableMaintainGridPosition {
+public class am_deleteRestictionMaintainGridPosition {
 
   /*package*/ static AbstractCellAction createAction_DELETE(final SNode node) {
     return new AbstractCellAction() {
@@ -28,7 +28,7 @@ public class am_deleteVariableMaintainGridPosition {
         EditorCell eCell = editorContext.getSelectedCell();
         while (!(Objects.equals(eCell.getParent(), null))) {
           if (eCell.getParent() instanceof EditorCell_GridCell) {
-            gCell = as_7sw4ei_a0a0a0a2a1a0a0a1(eCell.getParent(), EditorCell_GridCell.class);
+            gCell = as_6owpn1_a0a0a0a2a1a0a0a1(eCell.getParent(), EditorCell_GridCell.class);
             break;
           }
           eCell = eCell.getParent();
@@ -93,7 +93,7 @@ public class am_deleteVariableMaintainGridPosition {
       editorCell.setAction(actionType, createAction_DELETE(node));
     }
   }
-  private static <T> T as_7sw4ei_a0a0a0a2a1a0a0a1(Object o, Class<T> type) {
+  private static <T> T as_6owpn1_a0a0a0a2a1a0a0a1(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 
