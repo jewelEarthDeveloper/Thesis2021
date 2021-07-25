@@ -27,6 +27,7 @@ Once this desynchronization occurs, to know what the rules that govern the appli
 
 A rules engine is also known as a Business Rules Engine, a Business Rules Management System or a Production Rules System.
 The goal of a rules engine  is the abstraction of business rules into encoded and packaged logic that defines the tasks of an organization with the accompanying tools that evaluate and execute these rules.
+Simply put, they are where we evaluate our rules.
 Rules engines match rules against facts and infer conclusions. 
 If we return to the Modus Ponens comparison:
 
@@ -64,6 +65,11 @@ This algorithm works by modelling the rules as a network of nodes where each nod
 A fact will be filtered through this network.
 The pre-calculation of this network is what provides the performance characteristics.
 
+The first popular rules engine was Office Production System from 1976. 
+In 1981 OPS5 added the Rete algorithm.
+CLIPS in  ..
+JESS
+Drools 
 
 
 
@@ -99,6 +105,19 @@ Some of the advantages of using a rules engine include:
     \item Business logic can be externalized
     \item Rules can be human readable
 \end{itemize}
+
+% wip
+Rules that represent policies are easily
+communicated and understood.
+Rules retain a higher level of independence than
+conventional programming languages.
+Rules separate knowledge from its implementation
+logic.
+Rules can be changed without changing source
+code; thus, there is no need to recompile the
+application's code.
+Cost of production and maintenance decreases. 
+% end wip 
 
 
 In summary a rules engine, is the executor of a rules based program, consisting of discreet declarative rules which model a part of the business domain.

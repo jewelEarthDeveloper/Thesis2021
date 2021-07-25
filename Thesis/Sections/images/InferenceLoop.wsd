@@ -1,0 +1,46 @@
+@startuml
+
+@startuml
+	skinparam linetype polyline 
+
+
+	partition "Working Memory" {
+        === F1 === --> "assert fact" as assert
+        === F1 === --> "modify fact" as modify
+        === F1 === --> "retract fact" as retract
+        assert --> === F2 ===
+        modify --> === F2 ===
+        retract --> === F2 ===
+    }
+
+    (*) --> assert
+
+    partition "Pattern Matcher" {
+        === F2 === --> "Rete-OO algorithm" as algo 
+        
+    }
+
+    "Production Rules" -left-> algo
+
+    partition "Agenda" {
+        ConflictResolver --> "Selected Rules"
+        algo --> "Selected Rules" 
+ 
+    }
+
+    if "A rule\nis selected" then
+        -right->[Yes] "Fire Rule"
+        if "Rule specifies Exit" then
+            -up->[Yes] (*)
+        else 
+            -up->[No] === F1 ===
+        endif
+    else
+        --up->[No] (*)
+    endif
+
+    
+    
+
+
+@enduml
