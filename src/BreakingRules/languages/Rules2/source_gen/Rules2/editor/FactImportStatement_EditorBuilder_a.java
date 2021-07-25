@@ -29,7 +29,7 @@ import jetbrains.mps.editor.runtime.cells.BigCellUtil;
   }
 
   private EditorCell createComponent_0() {
-    EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "Rules2.editor.factimport");
+    EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "Rules2.editor.ec_factimport");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, getNode());
     if (bigCell != null) {
       bigCell.setBig(true);

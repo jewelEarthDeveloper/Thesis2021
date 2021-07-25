@@ -1,32 +1,253 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BreakpointManager">
+    <breakpoint kind="JAVA_LINE_BREAKPOINT">
+      <JavaBreakpointInfo>
+        <option name="location" value="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor)/8035805630154815215" />
+        <option name="mySuspendPolicy" value="2" />
+        <option name="myIsLogMessage" value="false" />
+        <option name="myCreationTime" value="1627052593705" />
+        <option name="myIsEnabled" value="true" />
+      </JavaBreakpointInfo>
+    </breakpoint>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="bd0f6795-7866-4d8c-b269-3f6c9e7ba8c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/CompoundValueRestriction_decisionTable_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/CompoundValueRestriction_decisionTable_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/InSet_decisionTable_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/InSet_decisionTable_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/MultiRestriction_decisionTable_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/MultiRestriction_decisionTable_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/RestrictionGroup_decisionTable_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/RestrictionGroup_decisionTable_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/ReturnValueRestrictionValue_decisionTable_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/ReturnValueRestrictionValue_decisionTable_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/SingleValueRestriction_decisionTable_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/SingleValueRestriction_decisionTable_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/VariableRestrictionValue_decisionTable_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/VariableRestrictionValue_decisionTable_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/am_deleteRestictionMaintainGridPosition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/Rules.DecisionTable.mpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/models/Rules.DecisionTable.editor.mps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/models/Rules.DecisionTable.structure.mps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/source_gen.caches/Rules/DecisionTable/behavior/dependencies" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/source_gen.caches/Rules/DecisionTable/behavior/generated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/source_gen.caches/Rules/DecisionTable/constraints/dependencies" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/source_gen.caches/Rules/DecisionTable/constraints/generated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/source_gen.caches/Rules/DecisionTable/dependencies" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/source_gen.caches/Rules/DecisionTable/editor/dependencies" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/source_gen.caches/Rules/DecisionTable/editor/generated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/source_gen.caches/Rules/DecisionTable/generated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/source_gen.caches/Rules/DecisionTable/intentions/dependencies" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/source_gen.caches/Rules/DecisionTable/intentions/generated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/source_gen.caches/Rules/DecisionTable/structure/dependencies" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/source_gen.caches/Rules/DecisionTable/structure/generated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/source_gen.caches/Rules/DecisionTable/typesystem/dependencies" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/source_gen.caches/Rules/DecisionTable/typesystem/generated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/source_gen/Rules/DecisionTable/Language.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/source_gen/Rules/DecisionTable/behavior/trace.info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/source_gen/Rules/DecisionTable/constraints/trace.info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/source_gen/Rules/DecisionTable/editor/VerticalLabelUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/source_gen/Rules/DecisionTable/editor/trace.info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/source_gen/Rules/DecisionTable/intentions/trace.info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/source_gen/Rules/DecisionTable/structure/trace.info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/source_gen/Rules/DecisionTable/trace.info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.DecisionTable/source_gen/Rules/DecisionTable/typesystem/trace.info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/FactImportStatement_table1_EditorBuilder_a.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/GlobalStatement_table1_EditorBuilder_a.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/HeaderUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/HeaderValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/InSet_table1_Editor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/InstanceMethodDeclaration_table1_Editor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/InstanceMethodDeclaration_table1_EditorBuilder_a.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/MultiRestriction_table1_Editor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/RestrictionGroup_table1_Editor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/ReturnValueRestrictionValue_table1_Editor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/RuleCollection_table1_Editor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/RuleCollection_table1_EditorBuilder_a.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/RuleStatement_table1_Editor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/RuleStatement_table1_EditorBuilder_a.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/RuleVariableRef_table1_Editor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/RuleVariableRef_table1_EditorBuilder_a.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/RuleVariable_table1_EditorBuilder_a.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/SingleValueRestriction_table1_Editor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/VariableRestrictionValue_table1_Editor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/VerticalLabelUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/ec_decisionTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/ec_decisionTable_ComponentBuilder_a.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules.Excel2_2/Rules.Excel2_2.mpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/behavior/BooleanLiteral__BehaviorDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/behavior/CompoundValueRestriction__BehaviorDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/behavior/FloatLiteral__BehaviorDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/behavior/IMultiRestrictionable__BehaviorDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/behavior/InSet__BehaviorDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/behavior/IntegerLiteral__BehaviorDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/behavior/MultiAnd__BehaviorDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/behavior/MultiOr__BehaviorDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/behavior/MultiRestrictionOperator__BehaviorDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/behavior/MultiRestriction__BehaviorDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/behavior/NullLiteral__BehaviorDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/behavior/RestrictionGroup__BehaviorDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/behavior/RestrictionOperator__BehaviorDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/behavior/RestrictionValue__BehaviorDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/behavior/Restriction__BehaviorDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/behavior/ReturnValueRestrictionValue__BehaviorDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/behavior/SetMembership__BehaviorDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/behavior/SingleValueRestriction__BehaviorDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/behavior/StringLiteral__BehaviorDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/behavior/VariableRestrictionValue__BehaviorDescriptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/Rules.Excel2.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/Rules.Excel2.mpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$12.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$13$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$13$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$13.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$14.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$CONCEPTS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$LINKS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/CompoundValueRestriction_decisionTable_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/CompoundValueRestriction_decisionTable_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/CompoundValueRestriction_decisionTable_EditorBuilder_a$membershipSingleRoleHandler_bri909_a0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/CompoundValueRestriction_decisionTable_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/EditorAspectDescriptorImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/EditorAspectDescriptorImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/FactImportStatement_decisionTable_Editor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/FactImportStatement_decisionTable_Editor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/FactImportStatement_decisionTable_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/FactImportStatement_decisionTable_EditorBuilder_a$typeSingleRoleHandler_fa2i19_a0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/FactImportStatement_decisionTable_EditorBuilder_a$typeSingleRoleHandler_fa2i19_a0a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/FactImportStatement_decisionTable_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/FactImportStatement_decisionTable_EditorBuilder_a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/GlobalStatement_decisionTable_Editor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/GlobalStatement_decisionTable_Editor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/InSet_decisionTable_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/InSet_decisionTable_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/InSet_decisionTable_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/InSet_decisionTable_EditorBuilder_a$valuesListHandler_d322se_b0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/InSet_decisionTable_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/InstanceMethodDeclaration_decisionTable_Editor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/InstanceMethodDeclaration_decisionTable_Editor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/MultiRestriction_decisionTable_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/MultiRestriction_decisionTable_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/MultiRestriction_decisionTable_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/MultiRestriction_decisionTable_EditorBuilder_a$lhsrestrictionSingleRoleHandler_fm3m2b_b0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/MultiRestriction_decisionTable_EditorBuilder_a$operatorSingleRoleHandler_fm3m2b_d0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/MultiRestriction_decisionTable_EditorBuilder_a$rhsrestrictionSingleRoleHandler_fm3m2b_f0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/MultiRestriction_decisionTable_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/RestrictionGroup_decisionTable_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/RestrictionGroup_decisionTable_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/RestrictionGroup_decisionTable_EditorBuilder_a$restrictionsSingleRoleHandler_uamsib_a0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/RestrictionGroup_decisionTable_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ReturnValueRestrictionValue_decisionTable_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ReturnValueRestrictionValue_decisionTable_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ReturnValueRestrictionValue_decisionTable_EditorBuilder_a$valueSingleRoleHandler_3yyert_a0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ReturnValueRestrictionValue_decisionTable_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/RuleCollection_decisionTable_Editor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/RuleCollection_decisionTable_Editor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/RuleStatement_decisionTable_Editor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/RuleStatement_decisionTable_Editor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/RuleStatement_decisionTable_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/RuleStatement_decisionTable_EditorBuilder_a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/RuleVariableRef_decisionTable_Editor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/RuleVariableRef_decisionTable_Editor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/RuleVariable_decisionTable_Editor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/RuleVariable_decisionTable_Editor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/SingleValueRestriction_decisionTable_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/SingleValueRestriction_decisionTable_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/SingleValueRestriction_decisionTable_EditorBuilder_a$operatorSingleRoleHandler_clrljv_a0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/SingleValueRestriction_decisionTable_EditorBuilder_a$valueSingleRoleHandler_clrljv_b0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/SingleValueRestriction_decisionTable_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/VariableRestrictionValue_decisionTable_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/VariableRestrictionValue_decisionTable_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/VariableRestrictionValue_decisionTable_EditorBuilder_a$valueSingleRoleHandler_7aaics_a0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/VariableRestrictionValue_decisionTable_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$CONCEPTS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$LINKS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$PROPS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$outcomesSingleRoleHandler_ro4eeg_a2a0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a$outcomesSingleRoleHandler_ro4eeg_a2a0.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/structure/ConceptPresentationAspectImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/structure/ConceptPresentationAspectImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/structure/LanguageConceptSwitch.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/structure/LanguageConceptSwitch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/structure/StructureAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/structure/StructureAspectDescriptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/structure/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/models/Rules.Excel2.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/models/Rules.Excel2.behavior.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/models/Rules.Excel2.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/models/Rules.Excel2.editor.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/models/Rules.Excel2.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/models/Rules.Excel2.structure.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen.caches/Rules/Excel2/behavior/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen.caches/Rules/Excel2/behavior/dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen.caches/Rules/Excel2/behavior/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen.caches/Rules/Excel2/behavior/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen.caches/Rules/Excel2/editor/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen.caches/Rules/Excel2/editor/dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen.caches/Rules/Excel2/editor/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen.caches/Rules/Excel2/editor/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen.caches/Rules/Excel2/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen.caches/Rules/Excel2/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen.caches/Rules/Excel2/structure/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen.caches/Rules/Excel2/structure/dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen.caches/Rules/Excel2/structure/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen.caches/Rules/Excel2/structure/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/behavior/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/CompoundValueRestriction_decisionTable_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/CompoundValueRestriction_decisionTable_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/CompoundValueRestriction_table1_EditorBuilder_a.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/EditorAspectDescriptorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/EditorAspectDescriptorImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/am_deleteVariableMaintainGridPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/am_deleteVariableMaintainGridPosition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/FactImportStatement_decisionTable_Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/FactImportStatement_decisionTable_Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/FactImportStatement_decisionTable_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/FactImportStatement_decisionTable_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/GlobalStatement_decisionTable_Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/GlobalStatement_decisionTable_Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/InSet_decisionTable_Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/RuleVariable_table1_Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/InSet_decisionTable_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/InSet_table1_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/InstanceMethodDeclaration_decisionTable_Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/InstanceMethodDeclaration_decisionTable_Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/MultiRestriction_decisionTable_Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/CompoundValueRestriction_table1_Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/MultiRestriction_decisionTable_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/MultiRestriction_table1_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/RestrictionGroup_decisionTable_Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/FactImportStatement_table1_Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/RestrictionGroup_decisionTable_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/RestrictionGroup_table1_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/ReturnValueRestrictionValue_decisionTable_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/ReturnValueRestrictionValue_decisionTable_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/ReturnValueRestrictionValue_table1_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/RuleCollection_decisionTable_Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/RuleCollection_decisionTable_Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/RuleStatement_decisionTable_Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/RuleStatement_decisionTable_Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/RuleStatement_decisionTable_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/RuleStatement_decisionTable_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/RuleVariableRef_decisionTable_Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/RuleVariableRef_decisionTable_Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/RuleVariable_decisionTable_Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/RuleVariable_decisionTable_Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/SingleValueRestriction_decisionTable_Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/GlobalStatement_table1_Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/SingleValueRestriction_decisionTable_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/SingleValueRestriction_table1_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/VariableRestrictionValue_decisionTable_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/VariableRestrictionValue_decisionTable_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/VariableRestrictionValue_table1_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/ec_ruleTable_ComponentBuilder_a.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/structure/ConceptPresentationAspectImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/structure/ConceptPresentationAspectImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/structure/LanguageConceptSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/structure/LanguageConceptSwitch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/structure/StructureAspectDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/structure/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules2/Rules2.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules2/Rules2.mpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules2/classes_gen/Rules2/behavior/BehaviorAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules2/classes_gen/Rules2/behavior/BehaviorAspectDescriptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules2/classes_gen/Rules2/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules2/classes_gen/Rules2/behavior/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules2/classes_gen/Rules2/editor/EditorAspectDescriptorImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules2/classes_gen/Rules2/editor/EditorAspectDescriptorImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules2/classes_gen/Rules2/editor/FactImportStatement_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules2/classes_gen/Rules2/editor/FactImportStatement_EditorBuilder_a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules2/classes_gen/Rules2/editor/factimport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules2/classes_gen/Rules2/editor/factimport_ComponentBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules2/classes_gen/Rules2/editor/factimport_ComponentBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules2/classes_gen/Rules2/editor/factimport_ComponentBuilder_a$typeSingleRoleHandler_dgbxxk_c0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules2/classes_gen/Rules2/editor/factimport_ComponentBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules2/classes_gen/Rules2/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules2/classes_gen/Rules2/editor/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules2/models/Rules2.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules2/models/Rules2.behavior.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules2/models/Rules2.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules2/models/Rules2.editor.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules2/source_gen.caches/Rules2/behavior/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules2/source_gen.caches/Rules2/behavior/dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules2/source_gen.caches/Rules2/behavior/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules2/source_gen.caches/Rules2/behavior/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules2/source_gen.caches/Rules2/editor/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules2/source_gen.caches/Rules2/editor/dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules2/source_gen.caches/Rules2/editor/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules2/source_gen.caches/Rules2/editor/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules2/source_gen.caches/Rules2/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules2/source_gen.caches/Rules2/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/behavior/BehaviorAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/behavior/BehaviorAspectDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/behavior/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/editor/EditorAspectDescriptorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/editor/EditorAspectDescriptorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/editor/FactImportStatement_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/editor/FactImportStatement_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/editor/factimport.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/editor/ec_factimport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/editor/factimport_ComponentBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/editor/ec_factimport_ComponentBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules2/source_gen/Rules2/editor/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/Rules2.sandbox/classes_gen/Rules2/sandbox/demo/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/Rules2.sandbox/classes_gen/Rules2/sandbox/demo/Program.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/Rules2.sandbox/classes_gen/Rules2/sandbox/demo/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/Rules2.sandbox/classes_gen/Rules2/sandbox/demo/Result.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/Rules2.sandbox/classes_gen/Rules2/sandbox/demo/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/Rules2.sandbox/classes_gen/Rules2/sandbox/demo/trace.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/Rules2.sandbox/models/Rules2.sandbox.demo.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/Rules2.sandbox/models/Rules2.sandbox.demo.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/Rules2.sandbox/models/Rules2.sandbox.uva.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/Rules2.sandbox/models/Rules2.sandbox.uva.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/Rules2.sandbox/source_gen.caches/Rules2/sandbox/demo/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/Rules2.sandbox/source_gen.caches/Rules2/sandbox/demo/dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/Rules2.sandbox/source_gen.caches/Rules2/sandbox/demo/generated" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/Rules2.sandbox/source_gen.caches/Rules2/sandbox/demo/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/Rules2.sandbox/source_gen.caches/Rules2/sandbox/uva/generated" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/Rules2.sandbox/source_gen.caches/Rules2/sandbox/uva/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/Rules2.sandbox/source_gen/Rules2/sandbox/demo/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/Rules2.sandbox/source_gen/Rules2/sandbox/demo/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/Rules2.sandbox/source_gen/Rules2/sandbox/demo/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/Rules2.sandbox/source_gen/Rules2/sandbox/demo/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/Rules2.sandbox/source_gen/Rules2/sandbox/demo/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/Rules2.sandbox/source_gen/Rules2/sandbox/demo/trace.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +268,7 @@
         <TabState>
           <option name="title" value="Console" />
           <tab>
-            <model ref="fa2b8dcf-46ad-482a-b4ff-d80638121b50/r:c20ae006-8177-472e-9f91-0edeb322ed5b(TempModulefa2b8dcf-46ad-482a-b4ff-d80638121b50/ConsoleModel_198384292864200)">
+            <model ref="4114e871-65ee-4045-964c-cfb23ef2c5de/r:0882a32d-ed95-42ff-bcbd-1c6e6a9d88e9(TempModule4114e871-65ee-4045-964c-cfb23ef2c5de/ConsoleModel_67435632961200)">
               <persistence version="9" />
               <languages>
                 <devkit ref="70d3d6da-af63-483d-a75f-9c8acf8de332(jetbrains.mps.console.devkit)" />
@@ -67,11 +288,11 @@
                   <concept id="757553790980850366" name="jetbrains.mps.console.base.structure.History" flags="ng" index="3balQm" />
                 </language>
               </registry>
-              <node concept="aymSD" id="6$MIDXStNxs">
-                <node concept="3balQm" id="6$MIDXStNxt" role="aymYE" />
-                <node concept="2Clz$F" id="6$MIDXStNxu" role="aymYO" />
-                <node concept="2_V_lH" id="6$MIDXStNxv" role="1PhJh3">
-                  <ref role="2_V_lI" node="6$MIDXStNxu" resolve="CommandHolder" />
+              <node concept="aymSD" id="6Y4UEk_nwoa">
+                <node concept="3balQm" id="6Y4UEk_nwob" role="aymYE" />
+                <node concept="2Clz$F" id="6Y4UEk_nwoc" role="aymYO" />
+                <node concept="2_V_lH" id="6Y4UEk_nwod" role="1PhJh3">
+                  <ref role="2_V_lI" node="6Y4UEk_nwoc" resolve="CommandHolder" />
                 </node>
               </node>
             </model>
@@ -262,6 +483,7 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
+      <pane id="FileSystem" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -271,252 +493,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="f24ba329-52af-4b48-9e31-eeb1585d17ab" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Rules2" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:e4780ca0-e598-4917-996d-d7319e900b8c(Rules2.sandbox.demo) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/solutions/Rules2.sandbox/models/Rules2.sandbox.demo.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="f24ba329-52af-4b48-9e31-eeb1585d17ab" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Rules2" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.editor.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fact" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:6108e2d3-6753-4663-a9ea-b677a866de71(Rules2.behavior) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.behavior.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fact" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Solutions" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="de" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slisson" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tables" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="da21218f-a674-474d-8b4e-d59e33007003" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="de" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:c6ef9172-b9db-4546-97ce-db76c1f2586f(de.slisson.mps.tables.runtime) in IdeaFile[path: C:/Users/paul_/AppData/Roaming/JetBrains/MPS2020.2/plugins/mps-tables/languages/mps-tables/de.slisson.mps.tables.runtime-src.jar!/module/models/de/slisson/mps/tables/runtime.mpb]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:32e7668a-cc1d-445f-a538-678c22b2fafb(de.slisson.mps.tables.runtime.substitute) in IdeaFile[path: C:/Users/paul_/AppData/Roaming/JetBrains/MPS2020.2/plugins/mps-tables/languages/mps-tables/de.slisson.mps.tables.runtime-src.jar!/module/models/de/slisson/mps/tables/runtime/substitute.mpb]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:6108e2d3-6753-4663-a9ea-b677a866de71(Rules2.behavior) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.behavior.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="90368668-0b06-4529-a25b-a5999072a9a0(Rules.Excel2)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:7b5d54b1-c1c0-45a0-a350-76ab433cdd47(Rules.Excel2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules.Excel2/models/Rules.Excel2.structure.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="90368668-0b06-4529-a25b-a5999072a9a0(Rules.Excel2)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules.Excel2/models/Rules.Excel2.behavior.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.editor.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rule" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="when" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="90368668-0b06-4529-a25b-a5999072a9a0(Rules.Excel2)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:3f042c12-bc5e-412d-b0b7-c8892b43090a(Rules.Excel2.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules.Excel2/models/Rules.Excel2.editor.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.editor.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Solutions" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="de" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slisson" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tables" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.structure.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rule" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="90368668-0b06-4529-a25b-a5999072a9a0(Rules.Excel2)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules.Excel2/models/Rules.Excel2.behavior.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="7021565346285139422" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -540,110 +516,6 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Solutions" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="de" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slisson" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tables" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="da21218f-a674-474d-8b4e-d59e33007003" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.structure.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rule" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="when" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="condition" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Solutions" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="de" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slisson" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.editor.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rule" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="when" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="selector" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="constraint" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="restriction" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Project" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -674,25 +546,11 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
+              <option name="myItemId" value="f24ba329-52af-4b48-9e31-eeb1585d17ab" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.structure.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fact" />
+              <option name="myItemId" value="Rules2" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -710,33 +568,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="rule" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="90368668-0b06-4529-a25b-a5999072a9a0(Rules.Excel2)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Solutions" />
+              <option name="myItemId" value="fact" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -751,20 +583,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.structure.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.editor.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -790,23 +608,15 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
+              <option name="myItemId" value="90368668-0b06-4529-a25b-a5999072a9a0(Rules.Excel2)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.editor.mps]" />
+              <option name="myItemId" value="r:3f042c12-bc5e-412d-b0b7-c8892b43090a(Rules.Excel2.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules.Excel2/models/Rules.Excel2.editor.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="rule" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="when" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="selector" />
+              <option name="myItemId" value="table1" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -820,13 +630,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules.Excel2/models/Rules.Excel2.intentions.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
+              <option name="myItemId" value="r:7b5d54b1-c1c0-45a0-a350-76ab433cdd47(Rules.Excel2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules.Excel2/models/Rules.Excel2.structure.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -840,11 +644,13 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.editor.mps]" />
+              <option name="myItemId" value="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.structure.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="rule" />
+              <option name="myItemId" value="Project" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -862,47 +668,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="restriction" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Solutions" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="de" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slisson" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tables" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="da21218f-a674-474d-8b4e-d59e33007003" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="de" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="f24ba329-52af-4b48-9e31-eeb1585d17ab" />
+              <option name="myItemId" value="decisionTable" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -930,49 +696,81 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemId" value="Project" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Solutions" />
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="de" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slisson" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tables" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="da21218f-a674-474d-8b4e-d59e33007003" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="de" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:c6ef9172-b9db-4546-97ce-db76c1f2586f(de.slisson.mps.tables.runtime) in IdeaFile[path: C:/Users/paul_/AppData/Roaming/JetBrains/MPS2020.2/plugins/mps-tables/languages/mps-tables/de.slisson.mps.tables.runtime-src.jar!/module/models/de/slisson/mps/tables/runtime.mpb]" />
+              <option name="myItemId" value="r:6108e2d3-6753-4663-a9ea-b677a866de71(Rules2.behavior) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.behavior.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemId" value="Project" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Solutions" />
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="de" />
+              <option name="myItemId" value="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rule" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="90368668-0b06-4529-a25b-a5999072a9a0(Rules.Excel2)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules.Excel2/models/Rules.Excel2.behavior.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="90368668-0b06-4529-a25b-a5999072a9a0(Rules.Excel2)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:3f042c12-bc5e-412d-b0b7-c8892b43090a(Rules.Excel2.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules.Excel2/models/Rules.Excel2.editor.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="90368668-0b06-4529-a25b-a5999072a9a0(Rules.Excel2)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -982,25 +780,20 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="f24ba329-52af-4b48-9e31-eeb1585d17ab" />
+              <option name="myItemId" value="90368668-0b06-4529-a25b-a5999072a9a0(Rules.Excel2)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Rules2" />
+              <option name="myItemId" value="r:7b5d54b1-c1c0-45a0-a350-76ab433cdd47(Rules.Excel2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules.Excel2/models/Rules.Excel2.structure.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:e4780ca0-e598-4917-996d-d7319e900b8c(Rules2.sandbox.demo) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/solutions/Rules2.sandbox/models/Rules2.sandbox.demo.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="641173928591354656" />
+              <option name="myItemId" value="8035805630165490487" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </SELECTED>
         </subPane>
       </pane>
-      <pane id="FileSystem" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -1010,6 +803,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/languages/Rules2/Rules2.mpl" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -1024,290 +818,29 @@
   </component>
   <component name="UsagesViewTool">
     <version id="1" />
-    <tabs>
-      <tab>
-        <result_provider class_name="jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.UnionNode">
-          <child rpn="jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.FinderNode">
-            <generated_finder class_name="jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder" />
-          </child>
-        </result_provider>
-        <query>
-          <scope scope_class="jetbrains.mps.ide.findusages.model.scopes.ProjectScope" />
-          <holder holder_class="jetbrains.mps.ide.findusages.model.holders.NodeHolder">
-            <node ref="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure)/9086333424236611798" title="RuleVariable" />
-          </holder>
-        </query>
-        <usage_view>
-          <tree_wrapper>
-            <view_options>
-              <options category_option="false" module_option="true" model_option="true" root_option="true" path_option="false" count_option="true" info_option="true" view_searched_nodes_option="true" group_searched_nodes_option="true" autoscroll_option="false" />
-            </view_options>
-            <contents caption="" excluded="false" isresult="false" results_section="false">
-              <role name="main root" />
-              <child caption="Searched nodes" excluded="false" isresult="false" results_section="false">
-                <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.SearchedNodesNodeData" />
-                <role name="searched nodes" />
-                <child caption="Searched nodes" excluded="false" isresult="false" results_section="false" category="Searched nodes" category_kind="Category">
-                  <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" />
-                  <role name="category:Category" />
-                  <child caption="Rules2" excluded="false" isresult="false" results_section="false" module_ref="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)">
-                    <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" />
-                    <role name="module" />
-                    <child caption="Rules2.structure" excluded="false" isresult="false" results_section="false">
-                      <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
-                      <role name="model" />
-                      <child caption="RuleVariable" info="" excluded="false" isresult="true" results_section="false" nodePtr="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure)/9086333424236611798" isRoot="true">
-                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                        <role name="target" />
-                      </child>
-                      <model uid="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure)" />
-                    </child>
-                  </child>
-                </child>
-              </child>
-              <child caption="Usages" excluded="false" isresult="false" results_section="true">
-                <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ResultsNodeData" />
-                <role name="results" />
-                <child caption="Node Usages" excluded="false" isresult="false" results_section="true" category="Node Usages" category_kind="Category">
-                  <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" />
-                  <role name="category:Category" />
-                  <child caption="Rules2" excluded="false" isresult="false" results_section="true" module_ref="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)">
-                    <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" />
-                    <role name="module" />
-                    <child caption="Rules2.editor" excluded="false" isresult="false" results_section="true">
-                      <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
-                      <role name="model" />
-                      <child caption="FactImportedRef_TransformationMenu" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor)/7692915210156403082" isRoot="true">
-                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                        <role name="root" />
-                        <child caption="node&lt;RuleVariable&gt;" info="(role: createdType in: node&lt;&gt;)" excluded="false" isresult="true" results_section="true" nodePtr="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor)/7692915210156414579">
-                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                          <role name="target" />
-                        </child>
-                      </child>
-                      <child caption="FactProperty_TransformationMenu" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor)/7692915210155980783" isRoot="true">
-                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                        <role name="root" />
-                        <child caption="node&lt;RuleVariable&gt;" info="(role: createdType in: node&lt;&gt;)" excluded="false" isresult="true" results_section="true" nodePtr="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor)/7692915210156008645">
-                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                          <role name="target" />
-                        </child>
-                      </child>
-                      <child caption="RuleVariable_Editor" info="" excluded="false" isresult="true" results_section="true" nodePtr="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor)/9086333424237927937" isRoot="true">
-                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                        <role name="target" />
-                      </child>
-                      <model uid="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor)" />
-                    </child>
-                    <child caption="Rules2.structure" excluded="false" isresult="false" results_section="true">
-                      <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
-                      <role name="model" />
-                      <child caption="FactSelector" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure)/5163961811780455729" isRoot="true">
-                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                        <role name="root" />
-                        <child caption="variable" info="(role: linkDeclaration in: FactSelector)" excluded="false" isresult="true" results_section="true" nodePtr="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure)/9086333424237927863">
-                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                          <role name="target" />
-                        </child>
-                      </child>
-                      <child caption="FieldConstraint" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure)/9086333424242394543" isRoot="true">
-                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                        <role name="root" />
-                        <child caption="variable" info="(role: linkDeclaration in: FieldConstraint)" excluded="false" isresult="true" results_section="true" nodePtr="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure)/3160832622107844140">
-                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                          <role name="target" />
-                        </child>
-                      </child>
-                      <child caption="GlobalStatement" info="" excluded="false" isresult="true" results_section="true" nodePtr="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure)/2325666238749834155" isRoot="true">
-                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                        <role name="target" />
-                      </child>
-                      <child caption="RuleVariableRef" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure)/9086333424236611797" isRoot="true">
-                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                        <role name="root" />
-                        <child caption="target" info="(role: linkDeclaration in: RuleVariableRef)" excluded="false" isresult="true" results_section="true" nodePtr="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure)/9086333424238026531">
-                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                          <role name="target" />
-                        </child>
-                      </child>
-                      <model uid="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure)" />
-                    </child>
-                    <child caption="Rules2.constraints" excluded="false" isresult="false" results_section="true">
-                      <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
-                      <role name="model" />
-                      <child caption="RuleVariableRef_Constraints" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:cd99c5ca-56d1-4bfb-b04f-f913c9184b5d(Rules2.constraints)/9086333424240570236" isRoot="true">
-                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                        <role name="root" />
-                        <child caption="localVars" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:cd99c5ca-56d1-4bfb-b04f-f913c9184b5d(Rules2.constraints)/9086333424240578028">
-                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                          <role name="root to target" />
-                          <child caption="nlist&lt;RuleVariable&gt;" info="(role: type in: localVars)" excluded="false" isresult="true" results_section="true" nodePtr="r:cd99c5ca-56d1-4bfb-b04f-f913c9184b5d(Rules2.constraints)/9086333424240576971">
-                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                            <role name="target" />
-                          </child>
-                          <child caption="RuleVariable" info="(role: conceptArgument in: concept)" excluded="false" isresult="true" results_section="true" nodePtr="r:cd99c5ca-56d1-4bfb-b04f-f913c9184b5d(Rules2.constraints)/9086333424240578033">
-                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                            <role name="target" />
-                          </child>
-                        </child>
-                        <child caption="globalVars" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:cd99c5ca-56d1-4bfb-b04f-f913c9184b5d(Rules2.constraints)/2325666238754894798">
-                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                          <role name="root to target" />
-                          <child caption="node&lt;RuleVariable&gt;" info="(role: elementType in: sequence&lt;node&lt;RuleVariable&gt;&gt;)" excluded="false" isresult="true" results_section="true" nodePtr="r:cd99c5ca-56d1-4bfb-b04f-f913c9184b5d(Rules2.constraints)/2325666238754894690">
-                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                            <role name="target" />
-                          </child>
-                        </child>
-                      </child>
-                      <model uid="r:cd99c5ca-56d1-4bfb-b04f-f913c9184b5d(Rules2.constraints)" />
-                    </child>
-                    <child caption="Rules2.behavior" excluded="false" isresult="false" results_section="true">
-                      <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
-                      <role name="model" />
-                      <child caption="RuleVariable_Behavior" info="" excluded="false" isresult="true" results_section="true" nodePtr="r:6108e2d3-6753-4663-a9ea-b677a866de71(Rules2.behavior)/2325666238752451359" isRoot="true">
-                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                        <role name="target" />
-                      </child>
-                      <model uid="r:6108e2d3-6753-4663-a9ea-b677a866de71(Rules2.behavior)" />
-                    </child>
-                    <child caption="Rules2.intentions" excluded="false" isresult="false" results_section="true">
-                      <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
-                      <role name="model" />
-                      <child caption="addFieldVariable" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:fc8eb3b1-9b3c-4a54-8969-750af517f14c(Rules2.intentions)/3160832622107855135" isRoot="true">
-                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                        <role name="root" />
-                        <child caption="set new" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:fc8eb3b1-9b3c-4a54-8969-750af517f14c(Rules2.intentions)/3160832622107879098">
-                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                          <role name="target" />
-                        </child>
-                      </child>
-                      <child caption="addVariableToSelector" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:fc8eb3b1-9b3c-4a54-8969-750af517f14c(Rules2.intentions)/9086333424237936646" isRoot="true">
-                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                        <role name="root" />
-                        <child caption="node&lt;RuleVariable&gt;" info="(role: createdType in: node&lt;&gt;)" excluded="false" isresult="true" results_section="true" nodePtr="r:fc8eb3b1-9b3c-4a54-8969-750af517f14c(Rules2.intentions)/9086333424238022310">
-                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                          <role name="target" />
-                        </child>
-                      </child>
-                      <model uid="r:fc8eb3b1-9b3c-4a54-8969-750af517f14c(Rules2.intentions)" />
-                    </child>
-                  </child>
-                  <child caption="Rules.Excel2" excluded="false" isresult="false" results_section="true" module_ref="90368668-0b06-4529-a25b-a5999072a9a0(Rules.Excel2)">
-                    <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" />
-                    <role name="module" />
-                    <child caption="Rules.Excel2.behavior" excluded="false" isresult="false" results_section="true">
-                      <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
-                      <role name="model" />
-                      <child caption="RuleCollection_Behavior" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/7021565346285139422" isRoot="true">
-                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                        <role name="root" />
-                        <child caption="createSubstituteInfo(EditorContext,node&lt;RuleStatement&gt;,int,int):SubstituteInfo" info="(role: method in: RuleCollection_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596088037010">
-                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                          <role name="root to target" />
-                          <child caption="var" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596088098054">
-                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                            <role name="root to target" />
-                            <child caption="node&lt;RuleVariable&gt;" info="(role: type in: var)" excluded="false" isresult="true" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596088097748">
-                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                              <role name="target" />
-                            </child>
-                          </child>
-                          <child caption="substituter" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596090572371">
-                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                            <role name="root to target" />
-                            <child caption="NodeSubstituter$anonymous" info="(role: cls in: anonymous class)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596090572375">
-                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                              <role name="root to target" />
-                              <child caption="substituteNode(node&lt;RuleVariable&gt;,node&lt;RuleVariable&gt;):node&lt;&gt;" info="(role: member in: NodeSubstituter$anonymous)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596090572377">
-                                <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                                <role name="root to target" />
-                                <child caption="newNode" info="(role: parameter in: substituteNode(node&lt;RuleVariable&gt;,node&lt;RuleVariable&gt;):node&lt;&gt;)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596090572378">
-                                  <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                                  <role name="root to target" />
-                                  <child caption="node&lt;RuleVariable&gt;" info="(role: type in: newNode)" excluded="false" isresult="true" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596090572379">
-                                    <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                                    <role name="target" />
-                                  </child>
-                                </child>
-                                <child caption="currentNode" info="(role: parameter in: substituteNode(node&lt;RuleVariable&gt;,node&lt;RuleVariable&gt;):node&lt;&gt;)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596090572380">
-                                  <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                                  <role name="root to target" />
-                                  <child caption="node&lt;RuleVariable&gt;" info="(role: type in: currentNode)" excluded="false" isresult="true" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596090572381">
-                                    <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                                    <role name="target" />
-                                  </child>
-                                </child>
-                                <child caption="node&lt;RuleVariable&gt;" info="(role: createdType in: node&lt;&gt;)" excluded="false" isresult="true" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596092278987">
-                                  <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                                  <role name="target" />
-                                </child>
-                              </child>
-                            </child>
-                          </child>
-                          <child caption="concept/&lt;name&gt;/" info="(role: actualArgument in: WrapperSubstituteInfo(EditorContext,node&lt;&gt;,node&lt;&gt;,SContainmentLink,concept&lt; &gt;,NodeSubstituter))" excluded="false" isresult="true" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596093013387">
-                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                            <role name="target" />
-                          </child>
-                          <child caption="substituter" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596093152805">
-                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                            <role name="root to target" />
-                            <child caption="NodeSubstituter$anonymous" info="(role: cls in: anonymous class)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596093152809">
-                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                              <role name="root to target" />
-                              <child caption="substituteNode(node&lt;RuleVariable&gt;,node&lt;RuleVariable&gt;):node&lt;&gt;" info="(role: member in: NodeSubstituter$anonymous)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596093152811">
-                                <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                                <role name="root to target" />
-                                <child caption="newNode" info="(role: parameter in: substituteNode(node&lt;RuleVariable&gt;,node&lt;RuleVariable&gt;):node&lt;&gt;)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596093152812">
-                                  <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                                  <role name="root to target" />
-                                  <child caption="node&lt;RuleVariable&gt;" info="(role: type in: newNode)" excluded="false" isresult="true" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596093152813">
-                                    <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                                    <role name="target" />
-                                  </child>
-                                </child>
-                                <child caption="currentNode" info="(role: parameter in: substituteNode(node&lt;RuleVariable&gt;,node&lt;RuleVariable&gt;):node&lt;&gt;)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596093152814">
-                                  <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                                  <role name="root to target" />
-                                  <child caption="node&lt;RuleVariable&gt;" info="(role: type in: currentNode)" excluded="false" isresult="true" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596093152815">
-                                    <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                                    <role name="target" />
-                                  </child>
-                                </child>
-                              </child>
-                            </child>
-                          </child>
-                          <child caption="concept/&lt;name&gt;/" info="(role: actualArgument in: WrapperSubstituteInfo(EditorContext,node&lt;&gt;,node&lt;&gt;,SContainmentLink,concept&lt; &gt;,NodeSubstituter))" excluded="false" isresult="true" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596093152843">
-                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                            <role name="target" />
-                          </child>
-                        </child>
-                      </child>
-                      <model uid="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)" />
-                    </child>
-                  </child>
-                </child>
-              </child>
-            </contents>
-          </tree_wrapper>
-        </usage_view>
-      </tab>
-    </tabs>
+    <tabs />
     <default_view_options>
       <options category_option="false" module_option="true" model_option="true" root_option="true" path_option="false" count_option="true" info_option="true" view_searched_nodes_option="true" group_searched_nodes_option="true" autoscroll_option="false" />
     </default_view_options>
   </component>
   <component name="WindowStateProjectService">
-    <state x="1007" y="-1368" key="#MPSPropertiesConfigurable" timestamp="1626273729734">
+    <state x="1007" y="-1368" key="#MPSPropertiesConfigurable" timestamp="1627112864878">
       <screen x="-1568" y="-1440" width="5120" height="1400" />
     </state>
-    <state x="1007" y="-1368" key="#MPSPropertiesConfigurable/0.0.1280.680/-1568.-1440.5120.1400@-1568.-1440.5120.1400" timestamp="1626273729734" />
-    <state x="2064" y="-1043" key="#jetbrains.mps.ide.util.NodesChooser" timestamp="1626265356237">
+    <state x="1007" y="-1368" key="#MPSPropertiesConfigurable/0.0.1280.680/-1568.-1440.5120.1400@-1568.-1440.5120.1400" timestamp="1627112864878" />
+    <state x="-611" y="-990" key="#jetbrains.mps.ide.migration.MigrationAssistantWizard" timestamp="1627123576273">
       <screen x="-1568" y="-1440" width="5120" height="1400" />
     </state>
-    <state x="2064" y="-1043" key="#jetbrains.mps.ide.util.NodesChooser/0.0.1280.680/-1568.-1440.5120.1400@-1568.-1440.5120.1400" timestamp="1626265356237" />
-    <state x="1995" y="-991" key="#jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport.AddRequiredModelImportsDialog2" timestamp="1626878782203">
+    <state x="-611" y="-990" key="#jetbrains.mps.ide.migration.MigrationAssistantWizard/0.0.1280.680/-1568.-1440.5120.1400@-1568.-1440.5120.1400" timestamp="1627123576273" />
+    <state x="2064" y="-1043" key="#jetbrains.mps.ide.util.NodesChooser" timestamp="1627124656078">
       <screen x="-1568" y="-1440" width="5120" height="1400" />
     </state>
+    <state x="2091" y="-1032" key="#jetbrains.mps.ide.util.NodesChooser/0.0.1280.680/-1475.-1440.5027.1440@-1475.-1440.5027.1440" timestamp="1627065501780" />
+    <state x="2064" y="-1043" key="#jetbrains.mps.ide.util.NodesChooser/0.0.1280.680/-1568.-1440.5120.1400@-1568.-1440.5120.1400" timestamp="1627124656078" />
+    <state x="2023" y="-978" key="#jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport.AddRequiredModelImportsDialog2" timestamp="1627055071434">
+      <screen x="-1475" y="-1440" width="5027" height="1440" />
+    </state>
+    <state x="2023" y="-978" key="#jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport.AddRequiredModelImportsDialog2/0.0.1280.680/-1475.-1440.5027.1440@-1475.-1440.5027.1440" timestamp="1627055071434" />
     <state x="1995" y="-991" key="#jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport.AddRequiredModelImportsDialog2/0.0.1280.680/-1568.-1440.5120.1400@-1568.-1440.5120.1400" timestamp="1626878782203" />
     <state x="-801" y="-1031" key="DiffContextDialog" timestamp="1626878175241">
       <screen x="-1568" y="-1440" width="5120" height="1400" />
@@ -1317,25 +850,38 @@
       <screen x="-1568" y="-1440" width="5120" height="1400" />
     </state>
     <state x="1998" y="-1044" key="FileChooserDialogImpl/0.0.1280.680/-1568.-1440.5120.1400@-1568.-1440.5120.1400" timestamp="1626249687445" />
-    <state x="157" y="49" width="1046" height="631" key="IDE.errors.dialog" timestamp="1626895496861">
+    <state x="157" y="49" width="2245" height="1380" key="IDE.errors.dialog" timestamp="1627122395917">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="1782" y="-1045" key="IDE.errors.dialog/0.0.1280.680/-1475.-1440.5027.1440@-1475.-1440.5027.1440" timestamp="1626425079897" />
-    <state x="157" y="49" width="1046" height="631" key="IDE.errors.dialog/0.0.1280.680/-1568.-1440.5120.1400@-1568.-1440.5120.1400" timestamp="1626895496861" />
+    <state x="1100" y="-1385" width="2245" height="1380" key="IDE.errors.dialog/0.0.1280.680/-1475.-1440.5027.1440@-1475.-1440.5027.1440" timestamp="1627065541907" />
+    <state x="157" y="49" width="1046" height="631" key="IDE.errors.dialog/0.0.1280.680/-1568.-1440.5120.1400@-1568.-1440.5120.1400" timestamp="1627122395917" />
+    <state x="33" y="0" key="SettingsEditor" timestamp="1627029117196">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="33" y="0" key="SettingsEditor/0.0.1280.680/-1475.-1440.5027.1440@0.0.1280.680" timestamp="1627029117196" />
     <state x="692" y="-1042" width="675" height="655" key="StructurePopup" timestamp="1626452084667">
       <screen x="-1475" y="-1440" width="5027" height="1440" />
     </state>
     <state x="692" y="-1042" width="675" height="655" key="StructurePopup/0.0.1280.680/-1475.-1440.5027.1440@-1475.-1440.5027.1440" timestamp="1626452084667" />
-    <state x="2034" y="-916" key="jetbrains.mps.ide.editor.actions.HintsDialog" timestamp="1626954417501">
+    <state x="-617" y="-1046" key="jetbrains.mps.ide.blame.dialog.BlameDialog" timestamp="1627046106021">
+      <screen x="-1475" y="-1440" width="5027" height="1440" />
+    </state>
+    <state x="-617" y="-1046" key="jetbrains.mps.ide.blame.dialog.BlameDialog/0.0.1280.680/-1475.-1440.5027.1440@-1475.-1440.5027.1440" timestamp="1627046106021" />
+    <state x="2034" y="-916" key="jetbrains.mps.ide.editor.actions.HintsDialog" timestamp="1627125148464">
       <screen x="-1568" y="-1440" width="5120" height="1400" />
     </state>
-    <state x="2062" y="-901" key="jetbrains.mps.ide.editor.actions.HintsDialog/0.0.1280.680/-1475.-1440.5027.1440@-1475.-1440.5027.1440" timestamp="1626457106289" />
-    <state x="2034" y="-916" key="jetbrains.mps.ide.editor.actions.HintsDialog/0.0.1280.680/-1568.-1440.5120.1400@-1568.-1440.5120.1400" timestamp="1626954417501" />
+    <state x="2062" y="-901" key="jetbrains.mps.ide.editor.actions.HintsDialog/0.0.1280.680/-1475.-1440.5027.1440@-1475.-1440.5027.1440" timestamp="1627060745409" />
+    <state x="901" y="255" key="jetbrains.mps.ide.editor.actions.HintsDialog/0.0.1280.680/-1475.-1440.5027.1440@0.0.1280.680" timestamp="1627029222004" />
+    <state x="2034" y="-916" key="jetbrains.mps.ide.editor.actions.HintsDialog/0.0.1280.680/-1568.-1440.5120.1400@-1568.-1440.5120.1400" timestamp="1627125148464" />
     <state x="901" y="255" key="jetbrains.mps.ide.editor.actions.HintsDialog/0.0.1280.680@0.0.1280.680" timestamp="1626296019459" />
-    <state x="1235" y="-1246" key="jetbrains.mps.ide.ui.dialogs.properties.choosers.ChooserDialog" timestamp="1626273723834">
+    <state x="-487" y="-845" key="jetbrains.mps.ide.newModuleDialogs.CloneModuleDialog" timestamp="1627052946444">
+      <screen x="-1475" y="-1440" width="5027" height="1440" />
+    </state>
+    <state x="-487" y="-845" key="jetbrains.mps.ide.newModuleDialogs.CloneModuleDialog/0.0.1280.680/-1475.-1440.5027.1440@-1475.-1440.5027.1440" timestamp="1627052946444" />
+    <state x="1235" y="-1246" key="jetbrains.mps.ide.ui.dialogs.properties.choosers.ChooserDialog" timestamp="1627112855001">
       <screen x="-1568" y="-1440" width="5120" height="1400" />
     </state>
-    <state x="1235" y="-1246" key="jetbrains.mps.ide.ui.dialogs.properties.choosers.ChooserDialog/0.0.1280.680/-1568.-1440.5120.1400@-1568.-1440.5120.1400" timestamp="1626273723834" />
+    <state x="1235" y="-1246" key="jetbrains.mps.ide.ui.dialogs.properties.choosers.ChooserDialog/0.0.1280.680/-1568.-1440.5120.1400@-1568.-1440.5120.1400" timestamp="1627112855001" />
     <state x="-566" y="-1071" key="jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog" timestamp="1626465145836">
       <screen x="-1475" y="-1440" width="5027" height="1440" />
     </state>
@@ -1345,9 +891,10 @@
       <screen x="-1568" y="-1440" width="5120" height="1400" />
     </state>
     <state x="1983" y="-897" key="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog/0.0.1280.680/-1568.-1440.5120.1400@-1568.-1440.5120.1400" timestamp="1626249689772" />
-    <state x="617" y="-1122" width="840" height="1034" key="search.everywhere.popup" timestamp="1626461683205">
-      <screen x="-1475" y="-1440" width="5027" height="1440" />
+    <state x="563" y="-1131" width="856" height="1006" key="search.everywhere.popup" timestamp="1627122031942">
+      <screen x="-1568" y="-1440" width="5120" height="1400" />
     </state>
     <state x="617" y="-1122" width="840" height="1034" key="search.everywhere.popup/0.0.1280.680/-1475.-1440.5027.1440@-1475.-1440.5027.1440" timestamp="1626461683205" />
+    <state x="563" y="-1131" width="856" height="1006" key="search.everywhere.popup/0.0.1280.680/-1568.-1440.5120.1400@-1568.-1440.5120.1400" timestamp="1627122031942" />
   </component>
 </project>

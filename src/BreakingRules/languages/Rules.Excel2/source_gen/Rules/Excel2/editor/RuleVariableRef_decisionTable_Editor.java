@@ -11,7 +11,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class RuleVariableRef_decisionTable_Editor extends DefaultNodeEditor {
-  private Collection<String> myContextHints = Arrays.asList(new String[]{"Rules.Excel2.editor.decisionTable.decisionTable"});
+  private Collection<String> myContextHints = Arrays.asList(new String[]{"Rules.Excel2.editor.hints_excel2.decisionTable"});
   @Override
   @NotNull
   public Collection<String> getContextHints() {

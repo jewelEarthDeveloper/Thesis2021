@@ -18,39 +18,39 @@ import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase implements EditorHintsProvider {
-  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("decisionTable", "decision Table", true, "Rules.Excel2.editor.decisionTable.decisionTable"), new ConceptEditorHintImpl("CommonSelectorTable", "decision Table", true, "Rules.Excel2.editor.decisionTable.CommonSelectorTable"));
+  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("table1", "interesting table", true, "Rules.Excel2.editor.hints_excel2.table1"), new ConceptEditorHintImpl("decisionTable", "decision table", true, "Rules.Excel2.editor.hints_excel2.decisionTable"));
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     SAbstractConcept cncpt = ((SAbstractConcept) concept);
     switch (conceptIndex.index(cncpt)) {
       case 0:
-        return Collections.<ConceptEditor>singletonList(new CompoundValueRestriction_decisionTable_Editor());
+        return Collections.<ConceptEditor>singletonList(new CompoundValueRestriction_table1_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new FactImportStatement_decisionTable_Editor());
+        return Arrays.asList(new ConceptEditor[]{new FactImportStatement_decisionTable_Editor(), new FactImportStatement_table1_Editor()});
       case 2:
-        return Collections.<ConceptEditor>singletonList(new GlobalStatement_decisionTable_Editor());
+        return Arrays.asList(new ConceptEditor[]{new GlobalStatement_decisionTable_Editor(), new GlobalStatement_table1_Editor()});
       case 3:
-        return Collections.<ConceptEditor>singletonList(new InSet_decisionTable_Editor());
+        return Collections.<ConceptEditor>singletonList(new InSet_table1_Editor());
       case 4:
-        return Collections.<ConceptEditor>singletonList(new InstanceMethodDeclaration_decisionTable_Editor());
+        return Arrays.asList(new ConceptEditor[]{new InstanceMethodDeclaration_decisionTable_Editor(), new InstanceMethodDeclaration_table1_Editor()});
       case 5:
-        return Collections.<ConceptEditor>singletonList(new MultiRestriction_decisionTable_Editor());
+        return Collections.<ConceptEditor>singletonList(new MultiRestriction_table1_Editor());
       case 6:
-        return Collections.<ConceptEditor>singletonList(new RestrictionGroup_decisionTable_Editor());
+        return Collections.<ConceptEditor>singletonList(new RestrictionGroup_table1_Editor());
       case 7:
-        return Collections.<ConceptEditor>singletonList(new ReturnValueRestrictionValue_decisionTable_Editor());
+        return Collections.<ConceptEditor>singletonList(new ReturnValueRestrictionValue_table1_Editor());
       case 8:
-        return Arrays.asList(new ConceptEditor[]{new RuleCollection_Editor(), new RuleCollection_decisionTable_Editor()});
+        return Arrays.asList(new ConceptEditor[]{new RuleCollection_Editor(), new RuleCollection_decisionTable_Editor(), new RuleCollection_table1_Editor()});
       case 9:
-        return Collections.<ConceptEditor>singletonList(new RuleStatement_decisionTable_Editor());
+        return Arrays.asList(new ConceptEditor[]{new RuleStatement_decisionTable_Editor(), new RuleStatement_table1_Editor()});
       case 10:
-        return Collections.<ConceptEditor>singletonList(new RuleVariable_decisionTable_Editor());
+        return Arrays.asList(new ConceptEditor[]{new RuleVariable_decisionTable_Editor(), new RuleVariable_table1_Editor()});
       case 11:
-        return Collections.<ConceptEditor>singletonList(new RuleVariableRef_decisionTable_Editor());
+        return Arrays.asList(new ConceptEditor[]{new RuleVariableRef_decisionTable_Editor(), new RuleVariableRef_table1_Editor()});
       case 12:
-        return Collections.<ConceptEditor>singletonList(new SingleValueRestriction_decisionTable_Editor());
+        return Collections.<ConceptEditor>singletonList(new SingleValueRestriction_table1_Editor());
       case 13:
-        return Collections.<ConceptEditor>singletonList(new VariableRestrictionValue_decisionTable_Editor());
+        return Collections.<ConceptEditor>singletonList(new VariableRestrictionValue_table1_Editor());
       default:
     }
     return Collections.<ConceptEditor>emptyList();
@@ -65,6 +65,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
           switch (editorComponentId) {
             case "Rules.Excel2.editor.ec_collapsibleRuleStatement":
               return Collections.<ConceptEditorComponent>singletonList(new ec_collapsibleRuleStatement());
+            case "Rules.Excel2.editor.ec_decisionTable":
+              return Collections.<ConceptEditorComponent>singletonList(new ec_decisionTable());
             case "Rules.Excel2.editor.ec_ruleTable":
               return Collections.<ConceptEditorComponent>singletonList(new ec_ruleTable());
             default:

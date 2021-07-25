@@ -242,6 +242,7 @@
         <ref role="3uigEE" node="65LB7G8_rpK" resolve="Result" />
       </node>
     </node>
+    <node concept="3wupCW" id="6FtsIMtM5uc" role="3whXX$" />
     <node concept="3wupCW" id="65LB7G8_uvC" role="3whXX$" />
     <node concept="3wu5OB" id="65LB7G8A0Zv" role="3whXX$">
       <property role="TrG5h" value="set up" />
@@ -671,8 +672,8 @@
               </node>
               <node concept="3wDm10" id="6rbseOdwIUV" role="3wDm13">
                 <node concept="38_y9J" id="6rbseOdwIUT" role="38X3$Y" />
-                <node concept="3wOgq_" id="6rbseOdwIUZ" role="3wDm16">
-                  <node concept="3cmrfG" id="6rbseOdwIV0" role="3wOgq$">
+                <node concept="3wOgq_" id="5z9EKjI$GUn" role="3wDm16">
+                  <node concept="3cmrfG" id="5z9EKjI$GUo" role="3wOgq$">
                     <property role="3cmrfH" value="8" />
                   </node>
                 </node>
@@ -920,17 +921,6 @@
           <node concept="RslVp" id="6rbseOdyCL0" role="RslV7">
             <node concept="3wqRHv" id="6rbseOdyCL1" role="RspbG">
               <ref role="3wqRHu" node="65LB7G8_uvo" />
-            </node>
-            <node concept="3wCM6O" id="6rbseOdyCLv" role="3wCM8f">
-              <node concept="3wo11N" id="6rbseOdyCLw" role="3wCM6F">
-                <ref role="3wo11M" node="7u$IkXQ2kt_" resolve="isResit" />
-              </node>
-              <node concept="3wDm10" id="6rbseOdyCLF" role="3wDm13">
-                <node concept="38X3_4" id="6rbseOdyCLD" role="38X3$Y" />
-                <node concept="3wDmSt" id="6rbseOdyCLJ" role="3wDm16">
-                  <property role="3wDmSs" value="true" />
-                </node>
-              </node>
             </node>
           </node>
         </node>
@@ -1368,8 +1358,6 @@
       </node>
     </node>
     <node concept="3wupCW" id="6$MIDXSJNFZ" role="3whXX$" />
-    <node concept="3wupCW" id="6$MIDXSG8i9" role="3whXX$" />
-    <node concept="3wupCW" id="6rbseOdoVah" role="3whXX$" />
     <node concept="1DXu0o" id="6rbseOdxEQn" role="3whXX$">
       <property role="TrG5h" value="Humanities cumlaude rules" />
       <node concept="3wu5OB" id="6rbseOdxEQo" role="1DXu0m">

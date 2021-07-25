@@ -720,22 +720,22 @@
     </file>
   </root>
   <root nodeRef="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor)/2946471364452626000">
-    <file name="factimport.java">
+    <file name="ec_factimport.java">
       <node id="2946471364452626000" at="15,47,16,35" concept="8" />
-      <node id="2946471364452626000" at="18,79,19,79" concept="8" />
+      <node id="2946471364452626000" at="18,79,19,82" concept="8" />
       <node id="2946471364452626000" at="18,0,21,0" concept="6" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="2946471364452626000" at="14,0,18,0" concept="6" trace="getContextHints#()Ljava/util/Collection;" />
       <scope id="2946471364452626000" at="15,47,16,35" />
-      <scope id="2946471364452626000" at="18,79,19,79" />
+      <scope id="2946471364452626000" at="18,79,19,82" />
       <scope id="2946471364452626000" at="18,0,21,0">
         <var name="editorContext" id="2946471364452626000" />
         <var name="node" id="2946471364452626000" />
       </scope>
       <scope id="2946471364452626000" at="14,0,18,0" />
-      <unit id="2946471364452626000" at="13,0,22,0" name="Rules2.editor.factimport" />
+      <unit id="2946471364452626000" at="13,0,22,0" name="Rules2.editor.ec_factimport" />
     </file>
-    <file name="factimport_ComponentBuilder_a.java">
-      <node id="2946471364452626000" at="38,93,39,19" concept="13" />
+    <file name="ec_factimport_ComponentBuilder_a.java">
+      <node id="2946471364452626000" at="38,96,39,19" concept="13" />
       <node id="2946471364452626000" at="39,19,40,18" concept="2" />
       <node id="2946471364452626000" at="45,26,46,18" concept="8" />
       <node id="2946471364452626000" at="49,39,50,32" concept="8" />
@@ -790,15 +790,15 @@
       <node id="2946471364452626000" at="49,0,52,0" concept="6" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="2946471364452626005" at="56,49,59,5" concept="5" />
       <node id="2946471364452626025" at="59,5,62,5" concept="5" />
-      <node id="2946471364452626015" at="65,0,68,0" concept="6" trace="nodeCondition_dgbxxk_a1a#()Z" />
-      <node id="2946471364452626026" at="68,0,71,0" concept="6" trace="nodeCondition_dgbxxk_a2a#()Z" />
+      <node id="2946471364452626015" at="65,0,68,0" concept="6" trace="nodeCondition_p55uax_a1a#()Z" />
+      <node id="2946471364452626026" at="68,0,71,0" concept="6" trace="nodeCondition_p55uax_a2a#()Z" />
       <node id="2946471364452626005" at="82,0,85,0" concept="6" trace="getText#()Ljava/lang/String;" />
       <node id="2946471364452626000" at="124,87,127,7" concept="5" />
       <node id="2946471364452626000" at="127,7,130,7" concept="5" />
       <node id="2946471364452626000" at="146,0,149,0" concept="6" trace="getNoTargetText#()Ljava/lang/String;" />
-      <node id="2946471364452626000" at="38,0,42,0" concept="1" trace="factimport_ComponentBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2946471364452626000" at="38,0,42,0" concept="1" trace="ec_factimport_ComponentBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2946471364452626000" at="95,0,99,0" concept="6" trace="createRefNode_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="2946471364452626000" at="103,0,107,0" concept="1" trace="typeSingleRoleHandler_dgbxxk_c0#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="2946471364452626000" at="103,0,107,0" concept="1" trace="typeSingleRoleHandler_p55uax_c0#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="2946471364452626000" at="43,0,48,0" concept="6" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2946471364452626005" at="80,54,85,15" concept="7" />
       <node id="2946471364452626000" at="108,0,113,0" concept="6" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -821,7 +821,7 @@
       <scope id="2946471364452626000" at="128,42,129,45" />
       <scope id="2946471364452626000" at="142,17,143,42" />
       <scope id="2946471364452626000" at="146,40,147,25" />
-      <scope id="2946471364452626000" at="38,93,40,18" />
+      <scope id="2946471364452626000" at="38,96,40,18" />
       <scope id="2946471364452626000" at="95,40,97,33">
         <var name="provider" id="2946471364452626000" />
       </scope>
@@ -874,10 +874,10 @@
       </scope>
       <scope id="2946471364452626000" at="132,0,146,0" />
       <scope id="2946471364452626005" at="80,0,95,0" />
-      <unit id="2946471364452626000" at="151,0,154,0" name="Rules2.editor.factimport_ComponentBuilder_a$LINKS" />
-      <unit id="2946471364452626005" at="81,88,85,5" name="Rules2.editor.factimport_ComponentBuilder_a$1" />
-      <unit id="2946471364452626000" at="99,0,150,0" name="Rules2.editor.factimport_ComponentBuilder_a$typeSingleRoleHandler_dgbxxk_c0" />
-      <unit id="2946471364452626000" at="34,0,155,0" name="Rules2.editor.factimport_ComponentBuilder_a" />
+      <unit id="2946471364452626000" at="151,0,154,0" name="Rules2.editor.ec_factimport_ComponentBuilder_a$LINKS" />
+      <unit id="2946471364452626005" at="81,88,85,5" name="Rules2.editor.ec_factimport_ComponentBuilder_a$1" />
+      <unit id="2946471364452626000" at="99,0,150,0" name="Rules2.editor.ec_factimport_ComponentBuilder_a$typeSingleRoleHandler_p55uax_c0" />
+      <unit id="2946471364452626000" at="34,0,155,0" name="Rules2.editor.ec_factimport_ComponentBuilder_a" />
     </file>
   </root>
   <root nodeRef="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor)/2946471364452836099">
@@ -5439,32 +5439,32 @@
       <node id="9086333424236488576" at="17,19,18,18" concept="2" />
       <node id="9086333424236488576" at="23,26,24,18" concept="8" />
       <node id="9086333424236488576" at="27,39,28,31" concept="8" />
-      <node id="2946471364452628543" at="31,42,32,107" concept="7" />
-      <node id="2946471364452628543" at="32,107,33,72" concept="7" />
-      <node id="2946471364452628543" at="34,26,35,27" concept="2" />
-      <node id="2946471364452628543" at="35,27,36,30" concept="2" />
-      <node id="2946471364452628543" at="37,5,38,22" concept="8" />
+      <node id="7700437298458842247" at="31,42,32,110" concept="7" />
+      <node id="7700437298458842247" at="32,110,33,72" concept="7" />
+      <node id="7700437298458842247" at="34,26,35,27" concept="2" />
+      <node id="7700437298458842247" at="35,27,36,30" concept="2" />
+      <node id="7700437298458842247" at="37,5,38,22" concept="8" />
       <node id="9086333424236488576" at="13,0,15,0" concept="3" trace="myNode" />
       <node id="9086333424236488576" at="27,0,30,0" concept="6" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="9086333424236488576" at="16,0,20,0" concept="1" trace="FactImportStatement_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="2946471364452628543" at="33,72,37,5" concept="5" />
+      <node id="7700437298458842247" at="33,72,37,5" concept="5" />
       <node id="9086333424236488576" at="21,0,26,0" concept="6" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="2946471364452628543" at="31,0,40,0" concept="6" trace="createComponent_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="7700437298458842247" at="31,0,40,0" concept="6" trace="createComponent_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="9086333424236488576" at="23,26,24,18" />
       <scope id="9086333424236488576" at="27,39,28,31" />
       <scope id="9086333424236488576" at="16,99,18,18" />
-      <scope id="2946471364452628543" at="34,26,36,30" />
+      <scope id="7700437298458842247" at="34,26,36,30" />
       <scope id="9086333424236488576" at="27,0,30,0" />
       <scope id="9086333424236488576" at="16,0,20,0">
         <var name="context" id="9086333424236488576" />
         <var name="node" id="9086333424236488576" />
       </scope>
       <scope id="9086333424236488576" at="21,0,26,0" />
-      <scope id="2946471364452628543" at="31,42,38,22">
-        <var name="bigCell" id="2946471364452628543" />
-        <var name="editorCell" id="2946471364452628543" />
+      <scope id="7700437298458842247" at="31,42,38,22">
+        <var name="bigCell" id="7700437298458842247" />
+        <var name="editorCell" id="7700437298458842247" />
       </scope>
-      <scope id="2946471364452628543" at="31,0,40,0" />
+      <scope id="7700437298458842247" at="31,0,40,0" />
       <unit id="9086333424236488576" at="12,0,41,0" name="Rules2.editor.FactImportStatement_EditorBuilder_a" />
     </file>
   </root>

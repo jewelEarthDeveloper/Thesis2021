@@ -14,10 +14,14 @@
     <import index="xx25" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure.types(MPS.Core/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="tpfv" ref="r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.typesystem)" />
+    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
+    <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
+    <import index="htnt" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.plaf.basic(JDK/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="fbzs" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.geom(JDK/)" />
     <import index="ca7q" ref="r:6108e2d3-6753-4663-a9ea-b677a866de71(Rules2.behavior)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
-    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpfp" ref="r:00000000-0000-4000-0000-011c89590519(jetbrains.mps.baseLanguage.regexp.jetbrains.mps.regexp.accessory)" implicit="true" />
   </imports>
   <registry>
@@ -503,8 +507,8 @@
   <node concept="24kQdi" id="7Sp91IunYu0">
     <property role="3GE5qa" value="fact" />
     <ref role="1XX52x" to="8gas:7Sp91IunY6R" resolve="FactImportStatement" />
-    <node concept="PMmxH" id="2zzY1xb3NwZ" role="2wV5jI">
-      <ref role="PMmxG" node="2zzY1xb3MTg" resolve="factimport" />
+    <node concept="PMmxH" id="6FtsIMtNHi7" role="2wV5jI">
+      <ref role="PMmxG" node="2zzY1xb3MTg" resolve="ec_factimport" />
     </node>
   </node>
   <node concept="24kQdi" id="7Sp91IuobT4">
@@ -2566,7 +2570,7 @@
   </node>
   <node concept="PKFIW" id="2zzY1xb3MTg">
     <property role="3GE5qa" value="fact" />
-    <property role="TrG5h" value="factimport" />
+    <property role="TrG5h" value="ec_factimport" />
     <ref role="1XX52x" to="8gas:7Sp91IunY6R" resolve="FactImportStatement" />
     <node concept="3EZMnI" id="2zzY1xb3MTi" role="2wV5jI">
       <node concept="2iRfu4" id="2zzY1xb3MTj" role="2iSdaV" />

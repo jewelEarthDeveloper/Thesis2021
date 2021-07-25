@@ -51,7 +51,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import Rules2.behavior.FactProperty__BehaviorDescriptor;
 import de.slisson.mps.tables.runtime.gridmodel.IGridElement;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -248,7 +247,6 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
       public void fillGrid(final ITableGrid grid, final SNode node, final SubstituteInfoFactory substituteInfoFactory) {
         int headerFactRow = 0;
         int headerPropRow = 1;
-
         SNode rulesCollection = SNodeOperations.getNodeAncestor(node, CONCEPTS.RuleCollection$bT, false, false);
 
         Iterable<SNode> props = RuleCollection__BehaviorDescriptor.propertiesInCollection_id65LB7G8xnUt.invoke(rulesCollection);
@@ -269,7 +267,7 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
           for (SNode prop : Sequence.fromIterable(RuleCollection__BehaviorDescriptor.propsFromFact_id65LB7G8y80o.invoke(rulesCollection, fact))) {
             SNode propRef = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e793468L, "Rules2.structure.FactProperty"));
             SLinkOperations.setTarget(propRef, LINKS.property$dmNh, prop);
-            grid.setColumnHeader(colNr, headerPropRow, FactProperty__BehaviorDescriptor.toFieldName_id7Sp91Iuum_h.invoke(propRef));
+            grid.setColumnHeader(colNr, headerPropRow, propRef);
             grid.setColumnHeaderStyle(colNr, headerPropRow, StyleAttributes.getInstance().<HorizontalAlignment>getAttribute("de.slisson.mps.tables", "horizontal-alignment"), HorizontalAlignment.CENTER);
             colNr++;
           }
@@ -280,7 +278,7 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
             SNode createdNode = RuleCollection__BehaviorDescriptor.getNodeOrEmptyfromPosition_id3YYeoU0ZCCJ.invoke(rulesCollection, node, ((int) i), ((int) j));
             grid.setCell(i, j, createdNode);
 
-            EditorCellGridLeaf cell = as_kaejt3_a0a3a0a31a0a0a0g0q(grid.getCell(i, j), EditorCellGridLeaf.class);
+            EditorCellGridLeaf cell = as_kaejt3_a0a3a0a21a0a0a0g0q(grid.getCell(i, j), EditorCellGridLeaf.class);
             if (!(Objects.equals(cell, null))) {
               cell.getEditorCell().getStyle().set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
             }
@@ -420,7 +418,7 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
   private HorizontalAlignment _StyleParameter_QueryFunction_ro4eeg_a3a0c0a() {
     return HorizontalAlignment.CENTER;
   }
-  private static <T> T as_kaejt3_a0a3a0a31a0a0a0g0q(Object o, Class<T> type) {
+  private static <T> T as_kaejt3_a0a3a0a21a0a0a0g0q(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 

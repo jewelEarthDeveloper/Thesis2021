@@ -4,6 +4,10 @@ package Rules2.sandbox.demo;
 
 
 public class Result {
+  private Student student;
+  public Student getStudent() {
+    return student;
+  }
   private Course course;
   public Course getCourse() {
     return course;

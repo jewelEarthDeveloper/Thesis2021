@@ -26,32 +26,37 @@
   </root>
   <root nodeRef="r:e4780ca0-e598-4917-996d-d7319e900b8c(Rules2.sandbox.demo)/641173928591355381">
     <file name="Result.java">
-      <node id="641173928591355382" at="7,0,8,0" concept="1" trace="course" />
-      <node id="641173928591355423" at="8,29,9,18" concept="3" />
-      <node id="641173928591355385" at="12,0,13,0" concept="1" trace="grade" />
-      <node id="641173928591355424" at="13,25,14,17" concept="3" />
-      <node id="641173928591355388" at="17,0,18,0" concept="1" trace="notAttended" />
-      <node id="641173928591355425" at="18,34,19,23" concept="3" />
-      <node id="641173928591355391" at="22,0,23,0" concept="1" trace="resit" />
-      <node id="641173928591355426" at="23,28,24,17" concept="3" />
-      <node id="641173928591355394" at="27,0,28,0" concept="1" trace="exempted" />
-      <node id="641173928591355427" at="28,31,29,20" concept="3" />
-      <node id="641173928591355383" at="8,0,11,0" concept="2" trace="getCourse#()LRules2/sandbox/demo/Course;" />
-      <node id="641173928591355386" at="13,0,16,0" concept="2" trace="getGrade#()I" />
-      <node id="641173928591355389" at="18,0,21,0" concept="2" trace="isNotAttended#()Z" />
-      <node id="641173928591355392" at="23,0,26,0" concept="2" trace="isResit#()Z" />
-      <node id="641173928591355395" at="28,0,31,0" concept="2" trace="isExempted#()Z" />
-      <scope id="641173928591355400" at="8,29,9,18" />
-      <scope id="641173928591355405" at="13,25,14,17" />
-      <scope id="641173928591355410" at="18,34,19,23" />
-      <scope id="641173928591355415" at="23,28,24,17" />
-      <scope id="641173928591355420" at="28,31,29,20" />
-      <scope id="641173928591355383" at="8,0,11,0" />
-      <scope id="641173928591355386" at="13,0,16,0" />
-      <scope id="641173928591355389" at="18,0,21,0" />
-      <scope id="641173928591355392" at="23,0,26,0" />
-      <scope id="641173928591355395" at="28,0,31,0" />
-      <unit id="641173928591355381" at="6,0,33,0" name="Rules2.sandbox.demo.Result" />
+      <node id="6397832783327296618" at="7,0,8,0" concept="1" trace="student" />
+      <node id="6397832783327297322" at="8,31,9,19" concept="3" />
+      <node id="641173928591355382" at="11,0,12,0" concept="1" trace="course" />
+      <node id="641173928591355423" at="12,29,13,18" concept="3" />
+      <node id="641173928591355385" at="16,0,17,0" concept="1" trace="grade" />
+      <node id="641173928591355424" at="17,25,18,17" concept="3" />
+      <node id="641173928591355388" at="21,0,22,0" concept="1" trace="notAttended" />
+      <node id="641173928591355425" at="22,34,23,23" concept="3" />
+      <node id="641173928591355391" at="26,0,27,0" concept="1" trace="resit" />
+      <node id="641173928591355426" at="27,28,28,17" concept="3" />
+      <node id="641173928591355394" at="31,0,32,0" concept="1" trace="exempted" />
+      <node id="641173928591355427" at="32,31,33,20" concept="3" />
+      <node id="6397832783327297129" at="8,0,11,0" concept="2" trace="getStudent#()LRules2/sandbox/demo/Student;" />
+      <node id="641173928591355383" at="12,0,15,0" concept="2" trace="getCourse#()LRules2/sandbox/demo/Course;" />
+      <node id="641173928591355386" at="17,0,20,0" concept="2" trace="getGrade#()I" />
+      <node id="641173928591355389" at="22,0,25,0" concept="2" trace="isNotAttended#()Z" />
+      <node id="641173928591355392" at="27,0,30,0" concept="2" trace="isResit#()Z" />
+      <node id="641173928591355395" at="32,0,35,0" concept="2" trace="isExempted#()Z" />
+      <scope id="6397832783327297132" at="8,31,9,19" />
+      <scope id="641173928591355400" at="12,29,13,18" />
+      <scope id="641173928591355405" at="17,25,18,17" />
+      <scope id="641173928591355410" at="22,34,23,23" />
+      <scope id="641173928591355415" at="27,28,28,17" />
+      <scope id="641173928591355420" at="32,31,33,20" />
+      <scope id="6397832783327297129" at="8,0,11,0" />
+      <scope id="641173928591355383" at="12,0,15,0" />
+      <scope id="641173928591355386" at="17,0,20,0" />
+      <scope id="641173928591355389" at="22,0,25,0" />
+      <scope id="641173928591355392" at="27,0,30,0" />
+      <scope id="641173928591355395" at="32,0,35,0" />
+      <unit id="641173928591355381" at="6,0,37,0" name="Rules2.sandbox.demo.Result" />
     </file>
   </root>
   <root nodeRef="r:e4780ca0-e598-4917-996d-d7319e900b8c(Rules2.sandbox.demo)/641173928591355433">
@@ -119,13 +124,18 @@
       <node id="641173928591355564" at="9,31,10,19" concept="3" />
       <node id="641173928591355551" at="12,0,13,0" concept="1" trace="courses" />
       <node id="641173928591355566" at="13,36,14,19" concept="3" />
+      <node id="6397832783327294766" at="16,0,17,0" concept="1" trace="name" />
+      <node id="6397832783327295198" at="17,27,18,16" concept="3" />
       <node id="641173928591355550" at="9,0,12,0" concept="2" trace="getFaculty#()LRules2/sandbox/demo/Faculty;" />
       <node id="641173928591355552" at="13,0,16,0" concept="2" trace="getCourses#()Ljava/util/List;" />
+      <node id="6397832783327295075" at="17,0,20,0" concept="2" trace="getName#()Ljava/lang/String;" />
       <scope id="641173928591355556" at="9,31,10,19" />
       <scope id="641173928591355561" at="13,36,14,19" />
+      <scope id="6397832783327295078" at="17,27,18,16" />
       <scope id="641173928591355550" at="9,0,12,0" />
       <scope id="641173928591355552" at="13,0,16,0" />
-      <unit id="641173928591355548" at="7,0,17,0" name="Rules2.sandbox.demo.Program" />
+      <scope id="6397832783327295075" at="17,0,20,0" />
+      <unit id="641173928591355548" at="7,0,21,0" name="Rules2.sandbox.demo.Program" />
     </file>
   </root>
 </debug-info>

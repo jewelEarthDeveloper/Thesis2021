@@ -14,6 +14,7 @@
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
+        <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
@@ -21,6 +22,10 @@
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
         <child id="1169129564478" name="implements" index="PzmwI" />
+      </concept>
+      <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
+        <property id="241647608299431129" name="propertyId" index="IQ2nx" />
+        <reference id="1082985295845" name="dataType" index="AX2Wp" />
       </concept>
       <concept id="1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" flags="ig" index="1TJgyj">
         <property id="1071599776563" name="role" index="20kJfa" />
@@ -53,6 +58,30 @@
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" to="8gas:7Sp91Iuon$W" resolve="RuleStatement" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="6Y4UEk_TsdY">
+    <property role="EcuMT" value="8035805630162125694" />
+    <property role="TrG5h" value="HeaderValue" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="6Y4UEk_TsdZ" role="1TKVEl">
+      <property role="IQ2nx" value="8035805630162125695" />
+      <property role="TrG5h" value="fact" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="6Y4UEkA2eVj" role="1TKVEl">
+      <property role="IQ2nx" value="8035805630164430547" />
+      <property role="TrG5h" value="property" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="6Y4UEk_Tse1" role="1TKVEl">
+      <property role="IQ2nx" value="8035805630162125697" />
+      <property role="TrG5h" value="restriction" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6Y4UEkA6hGR">
+    <property role="EcuMT" value="8035805630165490487" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
 </model>
 

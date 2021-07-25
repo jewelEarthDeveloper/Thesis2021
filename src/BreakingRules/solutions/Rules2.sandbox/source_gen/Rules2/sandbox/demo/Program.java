@@ -13,4 +13,8 @@ public class Program {
   public List<Course> getCourses() {
     return courses;
   }
+  private String name;
+  public String getName() {
+    return name;
+  }
 }

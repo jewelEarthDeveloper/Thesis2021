@@ -7,10 +7,12 @@
   <dependency className="Rules2.sandbox.demo.Program">
     <classNode dependClassName="Rules2.sandbox.demo.Course" />
     <classNode dependClassName="Rules2.sandbox.demo.Faculty" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
   </dependency>
   <dependency className="Rules2.sandbox.demo.Result">
     <classNode dependClassName="Rules2.sandbox.demo.Course" />
+    <classNode dependClassName="Rules2.sandbox.demo.Student" />
   </dependency>
   <dependency className="Rules2.sandbox.demo.Student">
     <classNode dependClassName="Rules2.sandbox.demo.Program" />

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954:jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <root nodeRef="r:f23aa6a0-ce24-473f-842c-3f8964e71dab(Rules.DecisionTable.editor)/8035805630154560342">
+    <file name="VerticalLabelUI.java">
+      <node id="8035805630154587022" at="18,10,19,36" concept="1" />
+      <node id="8035805630154602895" at="23,51,24,46" concept="4" />
+      <node id="8035805630154605070" at="24,46,25,48" concept="5" />
+      <node id="8035805630154616298" at="28,0,29,0" concept="8" trace="paintIconR" />
+      <node id="8035805630154616302" at="29,0,30,0" concept="8" trace="paintTextR" />
+      <node id="8035805630154616306" at="30,0,31,0" concept="8" trace="paintViewR" />
+      <node id="8035805630154616310" at="31,0,32,0" concept="8" trace="paintViewInsets" />
+      <node id="8035805630154638939" at="35,47,36,30" concept="4" />
+      <node id="8035805630154638945" at="36,30,37,34" concept="4" />
+      <node id="8035805630154638949" at="37,34,38,82" concept="4" />
+      <node id="8035805630154638968" at="39,43,40,13" concept="5" />
+      <node id="8035805630154638970" at="41,5,42,40" concept="4" />
+      <node id="8035805630154638973" at="42,40,43,51" concept="1" />
+      <node id="8035805630154638978" at="43,51,44,40" concept="1" />
+      <node id="8035805630154638982" at="44,40,45,39" concept="1" />
+      <node id="8035805630154639123" at="45,39,46,35" concept="6" />
+      <node id="8035805630154638986" at="46,35,47,86" concept="1" />
+      <node id="8035805630154638995" at="47,86,48,86" concept="1" />
+      <node id="8035805630154639004" at="48,86,49,75" concept="1" />
+      <node id="8035805630154639014" at="49,75,50,75" concept="1" />
+      <node id="8035805630154639025" at="50,75,51,93" concept="4" />
+      <node id="8035805630154639036" at="51,93,52,35" concept="4" />
+      <node id="8035805630154639042" at="52,35,53,43" concept="4" />
+      <node id="8035805630154812354" at="53,43,54,0" concept="7" />
+      <node id="8035805630154815209" at="54,0,55,28" concept="1" />
+      <node id="8035805630154815215" at="55,28,56,36" concept="1" />
+      <node id="8035805630154812570" at="56,36,57,0" concept="7" />
+      <node id="8035805630154813302" at="57,0,58,0" concept="7" />
+      <node id="8035805630154639091" at="59,23,60,31" concept="4" />
+      <node id="8035805630154639095" at="60,31,61,48" concept="4" />
+      <node id="8035805630154639104" at="62,30,63,62" concept="1" />
+      <node id="8035805630154639113" at="64,14,65,63" concept="1" />
+      <node id="8035805630154639120" at="67,5,68,24" concept="1" />
+      <node id="8035805630154639111" at="64,12,66,7" concept="0" />
+      <node id="8035805630154638956" at="38,82,41,5" concept="2" />
+      <node id="8035805630154601323" at="22,0,27,0" concept="3" trace="getPreferredSize#(Ljavax/swing/JComponent;)Ljava/awt/Dimension;" />
+      <node id="8035805630154639100" at="61,48,66,7" concept="2" />
+      <node id="8035805630154639084" at="58,0,67,5" concept="2" />
+      <node id="8035805630154617527" at="34,0,70,0" concept="3" trace="paint#(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V" />
+      <scope id="8035805630154586568" at="18,10,19,36" />
+      <scope id="8035805630154638967" at="39,43,40,13" />
+      <scope id="8035805630154639103" at="62,30,63,62" />
+      <scope id="8035805630154639112" at="64,14,65,63" />
+      <scope id="8035805630154601329" at="23,51,25,48">
+        <var name="dim" id="8035805630154602896" />
+      </scope>
+      <scope id="8035805630154601323" at="22,0,27,0">
+        <var name="c" id="8035805630154601327" />
+      </scope>
+      <scope id="8035805630154639089" at="59,23,66,7">
+        <var name="textX" id="8035805630154639090" />
+        <var name="textY" id="8035805630154639094" />
+      </scope>
+      <scope id="8035805630154617535" at="35,47,68,24">
+        <var name="clippedText" id="8035805630154639024" />
+        <var name="fm" id="8035805630154638969" />
+        <var name="g2" id="8035805630154639035" />
+        <var name="icon" id="8035805630154638948" />
+        <var name="label" id="8035805630154638938" />
+        <var name="text" id="8035805630154638944" />
+        <var name="tr" id="8035805630154639041" />
+      </scope>
+      <scope id="8035805630154617527" at="34,0,70,0">
+        <var name="c" id="8035805630154617533" />
+        <var name="g" id="8035805630154617531" />
+      </scope>
+      <unit id="8035805630154560342" at="17,0,72,0" name="Rules.DecisionTable.editor.VerticalLabelUI" />
+    </file>
+  </root>
+</debug-info>
+

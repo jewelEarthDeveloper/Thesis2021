@@ -13,7 +13,20 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myGlobalStatement__BehaviorDescriptor = new GlobalStatement__BehaviorDescriptor();
+  private final BHDescriptor myNullLiteral__BehaviorDescriptor = new NullLiteral__BehaviorDescriptor();
+  private final BHDescriptor myRestrictionOperator__BehaviorDescriptor = new RestrictionOperator__BehaviorDescriptor();
+  private final BHDescriptor myMultiRestriction__BehaviorDescriptor = new MultiRestriction__BehaviorDescriptor();
+  private final BHDescriptor myRestrictionGroup__BehaviorDescriptor = new RestrictionGroup__BehaviorDescriptor();
+  private final BHDescriptor myMultiRestrictionOperator__BehaviorDescriptor = new MultiRestrictionOperator__BehaviorDescriptor();
+  private final BHDescriptor myMultiAnd__BehaviorDescriptor = new MultiAnd__BehaviorDescriptor();
+  private final BHDescriptor myMultiOr__BehaviorDescriptor = new MultiOr__BehaviorDescriptor();
+  private final BHDescriptor myIMultiRestrictionable__BehaviorDescriptor = new IMultiRestrictionable__BehaviorDescriptor();
   private final BHDescriptor myGlobalRef__BehaviorDescriptor = new GlobalRef__BehaviorDescriptor();
+  private final BHDescriptor myFloatLiteral__BehaviorDescriptor = new FloatLiteral__BehaviorDescriptor();
+  private final BHDescriptor myCompoundValueRestriction__BehaviorDescriptor = new CompoundValueRestriction__BehaviorDescriptor();
+  private final BHDescriptor mySetMembership__BehaviorDescriptor = new SetMembership__BehaviorDescriptor();
+  private final BHDescriptor myInSet__BehaviorDescriptor = new InSet__BehaviorDescriptor();
+  private final BHDescriptor myStringLiteral__BehaviorDescriptor = new StringLiteral__BehaviorDescriptor();
   private final BHDescriptor myFactImportStatement__BehaviorDescriptor = new FactImportStatement__BehaviorDescriptor();
   private final BHDescriptor myRuleStatement__BehaviorDescriptor = new RuleStatement__BehaviorDescriptor();
   private final BHDescriptor myRuleVariableRef__BehaviorDescriptor = new RuleVariableRef__BehaviorDescriptor();
@@ -21,6 +34,13 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myFactProperty__BehaviorDescriptor = new FactProperty__BehaviorDescriptor();
   private final BHDescriptor myFactPropertyAccessorRef__BehaviorDescriptor = new FactPropertyAccessorRef__BehaviorDescriptor();
   private final BHDescriptor myRuleAttributes__BehaviorDescriptor = new RuleAttributes__BehaviorDescriptor();
+  private final BHDescriptor myRestriction__BehaviorDescriptor = new Restriction__BehaviorDescriptor();
+  private final BHDescriptor mySingleValueRestriction__BehaviorDescriptor = new SingleValueRestriction__BehaviorDescriptor();
+  private final BHDescriptor myRestrictionValue__BehaviorDescriptor = new RestrictionValue__BehaviorDescriptor();
+  private final BHDescriptor myBooleanLiteral__BehaviorDescriptor = new BooleanLiteral__BehaviorDescriptor();
+  private final BHDescriptor myVariableRestrictionValue__BehaviorDescriptor = new VariableRestrictionValue__BehaviorDescriptor();
+  private final BHDescriptor myReturnValueRestrictionValue__BehaviorDescriptor = new ReturnValueRestrictionValue__BehaviorDescriptor();
+  private final BHDescriptor myIntegerLiteral__BehaviorDescriptor = new IntegerLiteral__BehaviorDescriptor();
 
   public BehaviorAspectDescriptor() {
   }
@@ -30,26 +50,66 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     SAbstractConcept cncpt = concept;
     switch (conceptIndex.index(cncpt)) {
       case 0:
-        return myFactImportStatement__BehaviorDescriptor;
+        return myBooleanLiteral__BehaviorDescriptor;
       case 1:
-        return myFactProperty__BehaviorDescriptor;
+        return myCompoundValueRestriction__BehaviorDescriptor;
       case 2:
-        return myFactPropertyAccessorRef__BehaviorDescriptor;
+        return myFactImportStatement__BehaviorDescriptor;
       case 3:
-        return myGlobalRef__BehaviorDescriptor;
+        return myFactProperty__BehaviorDescriptor;
       case 4:
-        return myGlobalStatement__BehaviorDescriptor;
+        return myFactPropertyAccessorRef__BehaviorDescriptor;
       case 5:
-        return myRuleAttributes__BehaviorDescriptor;
+        return myFloatLiteral__BehaviorDescriptor;
       case 6:
-        return myRuleStatement__BehaviorDescriptor;
+        return myGlobalRef__BehaviorDescriptor;
       case 7:
-        return myRuleVariable__BehaviorDescriptor;
+        return myGlobalStatement__BehaviorDescriptor;
       case 8:
+        return myIMultiRestrictionable__BehaviorDescriptor;
+      case 9:
+        return myInSet__BehaviorDescriptor;
+      case 10:
+        return myIntegerLiteral__BehaviorDescriptor;
+      case 11:
+        return myMultiAnd__BehaviorDescriptor;
+      case 12:
+        return myMultiOr__BehaviorDescriptor;
+      case 13:
+        return myMultiRestriction__BehaviorDescriptor;
+      case 14:
+        return myMultiRestrictionOperator__BehaviorDescriptor;
+      case 15:
+        return myNullLiteral__BehaviorDescriptor;
+      case 16:
+        return myRestriction__BehaviorDescriptor;
+      case 17:
+        return myRestrictionGroup__BehaviorDescriptor;
+      case 18:
+        return myRestrictionOperator__BehaviorDescriptor;
+      case 19:
+        return myRestrictionValue__BehaviorDescriptor;
+      case 20:
+        return myReturnValueRestrictionValue__BehaviorDescriptor;
+      case 21:
+        return myRuleAttributes__BehaviorDescriptor;
+      case 22:
+        return myRuleStatement__BehaviorDescriptor;
+      case 23:
+        return myRuleVariable__BehaviorDescriptor;
+      case 24:
         return myRuleVariableRef__BehaviorDescriptor;
+      case 25:
+        return mySetMembership__BehaviorDescriptor;
+      case 26:
+        return mySingleValueRestriction__BehaviorDescriptor;
+      case 27:
+        return myStringLiteral__BehaviorDescriptor;
+      case 28:
+        return myVariableRestrictionValue__BehaviorDescriptor;
       default:
     }
     return null;
   }
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e5fe1b7L), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e793468L), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e7d398bL), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x61719c7b0898dc95L), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x20466d1f4acd7babL), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9eb25ea0L), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e61793cL), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e61c8d6L), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e61c8d5L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9ebc4a06L), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x6ac2b99ff4bfd68eL), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e5fe1b7L), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e793468L), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e7d398bL), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x66cb70ed0d86ecc7L), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x61719c7b0898dc95L), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x20466d1f4acd7babL), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x2bdd8885e32f3dd3L), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x6ac2b99ff4bfd694L), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9ec822beL), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x2bdd8885e32f3d9cL), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x2bdd8885e32f3dbcL), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x2bdd8885e32f3d74L), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x2bdd8885e32f3d9bL), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x20466d1f4ae52417L), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9ebc4457L), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x2bdd8885e32f3d77L), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x2bdd8885e329b1a0L), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9ebc445cL), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9ec3a395L), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9eb25ea0L), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e61793cL), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e61c8d6L), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e61c8d5L), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x6ac2b99ff4bfd68fL), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9ebc445bL), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x6ac2b99ff4c4085bL), MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9ebe5bf9L)).seal();
 }

@@ -51,7 +51,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(myNode), CONCEPTS.RuleCollection$bT);
   }
   private EditorCell createComponent_0() {
-    EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "Rules.Excel2.editor.ec_ruleTable");
+    EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "Rules.Excel2.editor.ec_decisionTable");
     return editorCell;
   }
   private EditorCell createComponent_1() {

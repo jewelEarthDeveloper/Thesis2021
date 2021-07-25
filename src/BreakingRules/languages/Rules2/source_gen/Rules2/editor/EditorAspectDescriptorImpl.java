@@ -135,8 +135,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     switch (conceptIndex1.index(cncpt)) {
       case 0:
         if (true) {
-          if ("Rules2.editor.factimport".equals(editorComponentId)) {
-            return Collections.<ConceptEditorComponent>singletonList(new factimport());
+          if ("Rules2.editor.ec_factimport".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new ec_factimport());
           }
         }
         break;

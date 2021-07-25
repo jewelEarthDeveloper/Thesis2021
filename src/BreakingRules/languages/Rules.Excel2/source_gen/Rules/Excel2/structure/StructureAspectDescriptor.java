@@ -10,8 +10,10 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
+  /*package*/ final ConceptDescriptor myConceptHeaderValue = createDescriptorForHeaderValue();
   /*package*/ final ConceptDescriptor myConceptRuleCollection = createDescriptorForRuleCollection();
   private final LanguageConceptSwitch myIndexSwitch;
 
@@ -28,13 +30,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptRuleCollection);
+    return Arrays.asList(myConceptHeaderValue, myConceptRuleCollection);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myIndexSwitch.index(id)) {
+      case LanguageConceptSwitch.HeaderValue:
+        return myConceptHeaderValue;
       case LanguageConceptSwitch.RuleCollection:
         return myConceptRuleCollection;
       default:
@@ -47,6 +51,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myIndexSwitch.index(c);
   }
 
+  private static ConceptDescriptor createDescriptorForHeaderValue() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Rules.Excel2", "HeaderValue", 0x903686680b064529L, 0xa25ba5999072a9a0L, 0x6f84eaa525e5c37eL);
+    b.class_(false, false, false);
+    b.origin("r:7b5d54b1-c1c0-45a0-a350-76ab433cdd47(Rules.Excel2.structure)/8035805630162125694");
+    b.version(2);
+    b.property("fact", 0x6f84eaa525e5c37fL).type(PrimitiveTypeId.STRING).origin("8035805630162125695").done();
+    b.property("property", 0x6f84eaa52608eed3L).type(PrimitiveTypeId.STRING).origin("8035805630164430547").done();
+    b.property("restriction", 0x6f84eaa525e5c381L).type(PrimitiveTypeId.STRING).origin("8035805630162125697").done();
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForRuleCollection() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Rules.Excel2", "RuleCollection", 0x903686680b064529L, 0xa25ba5999072a9a0L, 0x61719c7b08847c63L);
     b.class_(false, false, false);

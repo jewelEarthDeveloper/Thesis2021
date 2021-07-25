@@ -38,7 +38,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
     return editorCell;
   }
   private EditorCell createComponent_0() {
-    EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "Rules2.editor.factimport");
+    EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "Rules2.editor.ec_factimport");
     return editorCell;
   }
 }
