@@ -11,6 +11,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import javax.swing.JComponent;
+import jetbrains.mps.project.PathMacros;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 /*package*/ class Selected_EditorBuilder_a extends AbstractEditorBuilder {
@@ -46,6 +49,8 @@ import javax.swing.JLabel;
     return editorCell;
   }
   private JComponent _QueryFunction_JComponent_cua9qg_a0a() {
-    return new JLabel();
+    String folder = PathMacros.getInstance().getValue("rule_icons");
+    Icon smile = new ImageIcon(folder + "\\24px_X.png");
+    return new JLabel(smile);
   }
 }

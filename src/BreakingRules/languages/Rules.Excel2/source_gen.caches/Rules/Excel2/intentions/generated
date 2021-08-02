@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="jans6udr2fhkh9caw4lt5vap8eve2y">
-  <files names="GridUtil.java:IntentionsDescriptor.java:addFactToRule_Intention.java:addFieldConstraint_Intention.java:addNewSelectorOfFact_Intention.java:addRuleToCollection_Intention.java:removeFactFromRule_Intention.java:removePropertyFromSelector_Intention.java:removeRuleFromRuleCollection_Intention.java" />
+<product version="3" modelHash="-eb239m4ryad0z4m476elv8cdgocbkth">
+  <files names="DecisionTableUtil.java:GridUtil.java:IntentionsDescriptor.java:addFactToRule_Intention.java:addFieldConstraint_Intention.java:addNewSelectorOfFact_Intention.java:addRuleToCollection_Intention.java:removeDecisionTablePropertySelection_Intention.java:removeFactFromRule_Intention.java:removePropertyFromSelector_Intention.java:removeRuleFromRuleCollection_Intention.java" />
 </product>
 

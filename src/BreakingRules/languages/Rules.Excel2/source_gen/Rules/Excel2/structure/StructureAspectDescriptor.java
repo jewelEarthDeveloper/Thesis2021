@@ -14,7 +14,9 @@ import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptHeaderValue = createDescriptorForHeaderValue();
+  /*package*/ final ConceptDescriptor myConceptNotSelected = createDescriptorForNotSelected();
   /*package*/ final ConceptDescriptor myConceptRuleCollection = createDescriptorForRuleCollection();
+  /*package*/ final ConceptDescriptor myConceptSelected = createDescriptorForSelected();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -30,7 +32,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptHeaderValue, myConceptRuleCollection);
+    return Arrays.asList(myConceptHeaderValue, myConceptNotSelected, myConceptRuleCollection, myConceptSelected);
   }
 
   @Override
@@ -39,8 +41,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.HeaderValue:
         return myConceptHeaderValue;
+      case LanguageConceptSwitch.NotSelected:
+        return myConceptNotSelected;
       case LanguageConceptSwitch.RuleCollection:
         return myConceptRuleCollection;
+      case LanguageConceptSwitch.Selected:
+        return myConceptSelected;
       default:
         return null;
     }
@@ -61,6 +67,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.property("restriction", 0x6f84eaa525e5c381L).type(PrimitiveTypeId.STRING).origin("8035805630162125697").done();
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForNotSelected() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Rules.Excel2", "NotSelected", 0x903686680b064529L, 0xa25ba5999072a9a0L, 0x52b2a3bf52aaccb2L);
+    b.class_(false, false, false);
+    b.origin("r:7b5d54b1-c1c0-45a0-a350-76ab433cdd47(Rules.Excel2.structure)/5959005299085593778");
+    b.version(2);
+    b.associate("rule", 0x52b2a3bf52fd475eL).target(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e61793cL).optional(false).origin("5959005299090999134").done();
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForRuleCollection() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Rules.Excel2", "RuleCollection", 0x903686680b064529L, 0xa25ba5999072a9a0L, 0x61719c7b08847c63L);
     b.class_(false, false, false);
@@ -69,6 +83,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:7b5d54b1-c1c0-45a0-a350-76ab433cdd47(Rules.Excel2.structure)/7021565346285124707");
     b.version(2);
     b.aggregate("rules", 0x61719c7b08847c6dL).target(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e61793cL).optional(true).ordered(true).multiple(true).origin("7021565346285124717").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForSelected() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Rules.Excel2", "Selected", 0x903686680b064529L, 0xa25ba5999072a9a0L, 0x52b2a3bf52aacc7dL);
+    b.class_(false, false, false);
+    b.origin("r:7b5d54b1-c1c0-45a0-a350-76ab433cdd47(Rules.Excel2.structure)/5959005299085593725");
+    b.version(2);
+    b.associate("rule", 0x52b2a3bf52fd475cL).target(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e61793cL).optional(false).origin("5959005299090999132").done();
     return b.create();
   }
 }

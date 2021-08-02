@@ -10,7 +10,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_HeaderValue;
+  private ConceptPresentation props_NotSelected;
   private ConceptPresentation props_RuleCollection;
+  private ConceptPresentation props_Selected;
 
   @Override
   @Nullable
@@ -24,6 +26,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_HeaderValue = cpb.create();
         }
         return props_HeaderValue;
+      case LanguageConceptSwitch.NotSelected:
+        if (props_NotSelected == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x903686680b064529L, 0xa25ba5999072a9a0L, 0x52b2a3bf52aaccb2L, 0x52b2a3bf52fd475eL, "rule", "", "");
+          props_NotSelected = cpb.create();
+        }
+        return props_NotSelected;
       case LanguageConceptSwitch.RuleCollection:
         if (props_RuleCollection == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -31,6 +40,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_RuleCollection = cpb.create();
         }
         return props_RuleCollection;
+      case LanguageConceptSwitch.Selected:
+        if (props_Selected == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x903686680b064529L, 0xa25ba5999072a9a0L, 0x52b2a3bf52aacc7dL, 0x52b2a3bf52fd475cL, "rule", "", "");
+          props_Selected = cpb.create();
+        }
+        return props_Selected;
     }
     return null;
   }

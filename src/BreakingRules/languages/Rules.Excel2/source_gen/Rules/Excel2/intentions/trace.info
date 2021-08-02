@@ -17,7 +17,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="IntentionsDescriptor.java">
-      <unit at="18,0,68,0" name="Rules.Excel2.intentions.IntentionsDescriptor" />
+      <unit at="18,0,76,0" name="Rules.Excel2.intentions.IntentionsDescriptor" />
     </file>
   </root>
   <root nodeRef="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/4305053639646528467">
@@ -258,7 +258,7 @@
   <root nodeRef="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/4305053639648498712">
     <file name="IntentionsDescriptor.java">
       <node id="4305053639648498712" at="41,71,42,63" concept="2" />
-      <node id="4305053639648498712" at="60,57,61,49" concept="2" />
+      <node id="4305053639648498712" at="67,57,68,49" concept="2" />
     </file>
     <file name="addNewSelectorOfFact_Intention.java">
       <node id="4305053639648498712" at="25,0,26,0" concept="3" trace="myCachedExecutable" />
@@ -346,10 +346,171 @@
       <unit id="4305053639648498712" at="24,0,88,0" name="Rules.Excel2.intentions.addNewSelectorOfFact_Intention" />
     </file>
   </root>
+  <root nodeRef="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/5959005299090931698">
+    <file name="IntentionsDescriptor.java">
+      <node id="5959005299090931698" at="50,47,51,79" concept="2" />
+      <node id="5959005299090931698" at="70,55,71,65" concept="2" />
+    </file>
+    <file name="removeDecisionTablePropertySelection_Intention.java">
+      <node id="5959005299090931698" at="21,0,22,0" concept="3" trace="myCachedExecutable" />
+      <node id="5959005299090931698" at="22,59,23,138" concept="13" />
+      <node id="5959005299090931698" at="26,35,27,50" concept="8" />
+      <node id="5959005299090931698" at="31,53,32,19" concept="8" />
+      <node id="5959005299090931698" at="33,5,34,16" concept="8" />
+      <node id="2752817945675258509" at="36,91,37,106" concept="8" />
+      <node id="5959005299090931698" at="40,35,41,17" concept="8" />
+      <node id="5959005299090931698" at="44,37,45,105" concept="2" />
+      <node id="5959005299090931698" at="46,5,47,30" concept="8" />
+      <node id="5959005299091052142" at="53,87,54,136" concept="8" />
+      <node id="5959005299090931698" at="60,48,61,65" concept="8" />
+      <node id="5959005299090931698" at="66,0,67,0" concept="11" trace="rule$HiFu" />
+      <node id="5959005299090931698" at="50,0,52,0" concept="1" trace="IntentionImplementation#()V" />
+      <node id="5959005299090931698" at="22,0,25,0" concept="1" trace="removeDecisionTablePropertySelection_Intention#()V" />
+      <node id="5959005299090931698" at="30,84,33,5" concept="5" />
+      <node id="5959005299090931698" at="36,0,39,0" concept="6" trace="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <node id="5959005299090931698" at="43,99,46,5" concept="5" />
+      <node id="5959005299090931698" at="56,0,59,0" concept="6" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="5959005299090931698" at="25,0,29,0" concept="6" trace="getPresentation#()Ljava/lang/String;" />
+      <node id="5959005299090931698" at="39,0,43,0" concept="6" trace="isSurroundWith#()Z" />
+      <node id="5959005299090931698" at="52,0,56,0" concept="6" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+      <node id="5959005299090931698" at="59,0,63,0" concept="6" trace="getDescriptor#()Ljetbrains/mps/openapi/intentions/IntentionDescriptor;" />
+      <node id="5959005299090931698" at="43,0,49,0" concept="6" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+      <node id="5959005299090931698" at="29,0,36,0" concept="6" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <scope id="5959005299090931698" at="50,38,50,38" />
+      <scope id="5959005299090931702" at="57,78,57,78" />
+      <scope id="5959005299090931698" at="22,59,23,138" />
+      <scope id="5959005299090931698" at="26,35,27,50" />
+      <scope id="5959005299090931698" at="31,53,32,19" />
+      <scope id="2752817945675258195" at="36,91,37,106" />
+      <scope id="5959005299090931698" at="40,35,41,17" />
+      <scope id="5959005299090931698" at="44,37,45,105" />
+      <scope id="5959005299090931700" at="53,87,54,136" />
+      <scope id="5959005299090931698" at="60,48,61,65" />
+      <scope id="5959005299090931698" at="50,0,52,0" />
+      <scope id="5959005299090931698" at="22,0,25,0" />
+      <scope id="5959005299090931698" at="36,0,39,0">
+        <var name="editorContext" id="5959005299090931698" />
+        <var name="node" id="5959005299090931698" />
+      </scope>
+      <scope id="5959005299090931698" at="56,0,59,0">
+        <var name="editorContext" id="5959005299090931698" />
+        <var name="node" id="5959005299090931698" />
+      </scope>
+      <scope id="5959005299090931698" at="25,0,29,0" />
+      <scope id="5959005299090931698" at="30,84,34,16" />
+      <scope id="5959005299090931698" at="39,0,43,0" />
+      <scope id="5959005299090931698" at="43,99,47,30" />
+      <scope id="5959005299090931698" at="52,0,56,0">
+        <var name="editorContext" id="5959005299090931698" />
+        <var name="node" id="5959005299090931698" />
+      </scope>
+      <scope id="5959005299090931698" at="59,0,63,0" />
+      <scope id="5959005299090931698" at="43,0,49,0">
+        <var name="context" id="5959005299090931698" />
+        <var name="node" id="5959005299090931698" />
+      </scope>
+      <scope id="5959005299090931698" at="29,0,36,0">
+        <var name="editorContext" id="5959005299090931698" />
+        <var name="node" id="5959005299090931698" />
+      </scope>
+      <unit id="5959005299090931698" at="65,0,68,0" name="Rules.Excel2.intentions.removeDecisionTablePropertySelection_Intention$LINKS" />
+      <unit id="5959005299090931698" at="49,0,64,0" name="Rules.Excel2.intentions.removeDecisionTablePropertySelection_Intention$IntentionImplementation" />
+      <unit id="5959005299090931698" at="20,0,69,0" name="Rules.Excel2.intentions.removeDecisionTablePropertySelection_Intention" />
+    </file>
+  </root>
+  <root nodeRef="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/5959005299091051097">
+    <file name="DecisionTableUtil.java">
+      <node id="5947797795517885126" at="20,40,21,35" concept="8" />
+      <node id="5947797795517789554" at="23,7,24,65" concept="7" />
+      <node id="5947797795517830264" at="25,83,26,0" concept="10" />
+      <node id="5947797795517831283" at="26,0,27,54" concept="7" />
+      <node id="5947797795517865010" at="27,54,28,0" concept="10" />
+      <node id="2752817945675242946" at="28,0,29,192" concept="7" />
+      <node id="2752817945675252755" at="29,192,30,34" concept="8" />
+      <node id="2752817945675255042" at="32,7,33,29" concept="8" />
+      <node id="5947797795517865851" at="37,72,38,48" concept="7" />
+      <node id="5947797795517868342" at="39,5,40,63" concept="7" />
+      <node id="5947797795517868353" at="41,81,42,190" concept="7" />
+      <node id="5947797795517868356" at="42,190,43,0" concept="10" />
+      <node id="5947797795517878252" at="43,0,44,50" concept="8" />
+      <node id="5947797795517866180" at="46,5,47,0" concept="10" />
+      <node id="5947797795517866242" at="47,0,48,17" concept="8" />
+      <node id="5947797795517826654" at="51,76,52,55" concept="7" />
+      <node id="5947797795517826669" at="54,61,55,103" concept="7" />
+      <node id="5947797795517826677" at="55,103,56,39" concept="8" />
+      <node id="5947797795517826681" at="57,7,58,32" concept="2" />
+      <node id="5947797795517826692" at="59,5,60,0" concept="10" />
+      <node id="5947797795517826693" at="60,0,61,16" concept="8" />
+      <node id="5947797795517882766" at="64,55,65,43" concept="8" />
+      <node id="5947797795517826672" at="67,70,68,47" concept="8" />
+      <node id="5959005299091051097" at="72,0,73,0" concept="11" trace="RuleCollection$bT" />
+      <node id="5947797795517882766" at="64,0,67,0" concept="12" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
+      <node id="5947797795517826672" at="67,0,70,0" concept="12" trace="as_mqc8iy_a0a0a0a1a4#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+      <node id="5947797795517826662" at="53,56,57,7" concept="5" />
+      <node id="5947797795517868342" at="40,63,45,7" concept="5" />
+      <node id="5947797795517789554" at="24,65,31,9" concept="5" />
+      <node id="5947797795517826660" at="52,55,59,5" concept="14" />
+      <node id="5947797795517868342" at="38,48,46,5" concept="0" />
+      <node id="5947797795517789554" at="22,12,32,7" concept="0" />
+      <node id="5947797795517885428" at="22,10,34,5" concept="0" />
+      <node id="5947797795517826652" at="51,0,63,0" concept="12" trace="getGridPosition#(Ljetbrains/mps/openapi/editor/EditorContext;)Lde/slisson/mps/tables/runtime/simplegrid/GridPosition;" />
+      <node id="5947797795517865526" at="37,0,50,0" concept="12" trace="hasProperty#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="5947797795517883287" at="19,87,34,5" concept="5" />
+      <node id="5959005299091054619" at="19,0,36,0" concept="12" trace="getPropertyFromGridPosition#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <scope id="5947797795517883289" at="20,40,21,35" />
+      <scope id="5947797795517882766" at="64,55,65,43" />
+      <scope id="5947797795517826672" at="67,70,68,47" />
+      <scope id="5947797795517826668" at="54,61,56,39">
+        <var name="gCell" id="5947797795517826670" />
+      </scope>
+      <scope id="5947797795517868346" at="41,81,44,50">
+        <var name="hv" id="5947797795517868354" />
+      </scope>
+      <scope id="5947797795517882766" at="64,0,67,0">
+        <var name="str" id="5947797795517882766" />
+      </scope>
+      <scope id="5947797795517826672" at="67,0,70,0">
+        <var name="o" id="5947797795517826672" />
+        <var name="type" id="5947797795517826672" />
+      </scope>
+      <scope id="5947797795517789558" at="25,83,30,34">
+        <var name="hv" id="2752817945675242947" />
+        <var name="pos" id="5947797795517831284" />
+      </scope>
+      <scope id="5947797795517826661" at="53,56,58,32" />
+      <scope id="5947797795517868342" at="39,5,45,7">
+        <var name="collection" id="5947797795517868342" />
+      </scope>
+      <scope id="5947797795517789554" at="23,7,31,9">
+        <var name="collection" id="5947797795517789554" />
+      </scope>
+      <scope id="5947797795517826653" at="51,76,61,16">
+        <var name="eCell" id="5947797795517826655" />
+      </scope>
+      <scope id="5947797795517885429" at="22,12,33,29" />
+      <scope id="5947797795517865529" at="37,72,48,17">
+        <var name="pos" id="5947797795517865852" />
+      </scope>
+      <scope id="5947797795517826652" at="51,0,63,0">
+        <var name="editorContext" id="5947797795517826696" />
+      </scope>
+      <scope id="5947797795517865526" at="37,0,50,0">
+        <var name="context" id="5947797795517865713" />
+        <var name="rule" id="5947797795517865715" />
+      </scope>
+      <scope id="5959005299091054622" at="19,87,34,5" />
+      <scope id="5959005299091054619" at="19,0,36,0">
+        <var name="context" id="5959005299091054648" />
+        <var name="rule" id="5959005299091054695" />
+      </scope>
+      <unit id="5959005299091051097" at="71,0,74,0" name="Rules.Excel2.intentions.DecisionTableUtil$CONCEPTS" />
+      <unit id="5959005299091051097" at="18,0,75,0" name="Rules.Excel2.intentions.DecisionTableUtil" />
+    </file>
+  </root>
   <root nodeRef="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/6100895867820166069">
     <file name="IntentionsDescriptor.java">
       <node id="6100895867820166069" at="42,63,43,61" concept="2" />
-      <node id="6100895867820166069" at="61,49,62,47" concept="2" />
+      <node id="6100895867820166069" at="68,49,69,47" concept="2" />
     </file>
     <file name="removeFactFromRule_Intention.java">
       <node id="6100895867820166069" at="24,0,25,0" concept="3" trace="myCachedExecutable" />
@@ -441,7 +602,7 @@
   <root nodeRef="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/6100895867821152236">
     <file name="IntentionsDescriptor.java">
       <node id="6100895867821152236" at="43,61,44,69" concept="2" />
-      <node id="6100895867821152236" at="62,47,63,55" concept="2" />
+      <node id="6100895867821152236" at="69,47,70,55" concept="2" />
     </file>
     <file name="removePropertyFromSelector_Intention.java">
       <node id="6100895867821152236" at="30,0,31,0" concept="3" trace="myCachedExecutable" />
@@ -536,7 +697,7 @@
   <root nodeRef="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/7407138175576081789">
     <file name="IntentionsDescriptor.java">
       <node id="7407138175576081789" at="37,47,38,56" concept="2" />
-      <node id="7407138175576081789" at="56,52,57,42" concept="2" />
+      <node id="7407138175576081789" at="63,52,64,42" concept="2" />
     </file>
     <file name="addFactToRule_Intention.java">
       <node id="7407138175576081789" at="32,36,33,137" concept="13" />
@@ -664,7 +825,7 @@
   <root nodeRef="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/7407138175576120503">
     <file name="IntentionsDescriptor.java">
       <node id="7407138175576120503" at="38,56,39,61" concept="2" />
-      <node id="7407138175576120503" at="57,42,58,47" concept="2" />
+      <node id="7407138175576120503" at="64,42,65,47" concept="2" />
     </file>
     <file name="addFieldConstraint_Intention.java">
       <node id="7407138175576120503" at="32,41,33,137" concept="13" />
@@ -823,7 +984,7 @@
   <root nodeRef="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/7407138175576881138">
     <file name="IntentionsDescriptor.java">
       <node id="7407138175576881138" at="39,61,40,62" concept="2" />
-      <node id="7407138175576881138" at="58,47,59,48" concept="2" />
+      <node id="7407138175576881138" at="65,47,66,48" concept="2" />
     </file>
     <file name="addRuleToCollection_Intention.java">
       <node id="7407138175576881138" at="29,42,30,138" concept="13" />
@@ -925,7 +1086,7 @@
   <root nodeRef="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/7407138175576935223">
     <file name="IntentionsDescriptor.java">
       <node id="7407138175576935223" at="40,62,41,71" concept="2" />
-      <node id="7407138175576935223" at="59,48,60,57" concept="2" />
+      <node id="7407138175576935223" at="66,48,67,57" concept="2" />
     </file>
     <file name="removeRuleFromRuleCollection_Intention.java">
       <node id="7407138175576935223" at="23,0,24,0" concept="3" trace="myCachedExecutable" />

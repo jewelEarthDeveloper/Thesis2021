@@ -58,10 +58,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     return editorCell;
   }
   private boolean nodeCondition_n7xyne_a0a() {
-    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(myNode), CONCEPTS.FactSelector$lQ));
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(myNode), CONCEPTS.RuleStatement$TK));
   }
   private boolean nodeCondition_n7xyne_a4a() {
-    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(myNode), CONCEPTS.FactSelector$lQ));
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(myNode), CONCEPTS.RuleStatement$TK));
   }
   private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(");
@@ -193,7 +193,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept FactSelector$lQ = MetaAdapterFactory.getConcept(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x47aa13e870db4d31L, "Rules2.structure.FactSelector");
+    /*package*/ static final SConcept RuleStatement$TK = MetaAdapterFactory.getConcept(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e61793cL, "Rules2.structure.RuleStatement");
   }
 
   private static final class LINKS {

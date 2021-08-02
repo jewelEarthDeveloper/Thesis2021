@@ -1,0 +1,19 @@
+@startuml
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+
+
+actor developer as dev
+
+rectangle "projectional editor" as editor {
+    (AST) as ast
+    (projection) as proj
+}
+
+ast --> proj : (1) map to\nvisual\npresentation
+proj --> dev : (2) shown\npresentation
+dev --> proj : (3) perform\naction\non projection
+proj --> ast : (4) action\nmapped\nto AST
+
+
+@enduml

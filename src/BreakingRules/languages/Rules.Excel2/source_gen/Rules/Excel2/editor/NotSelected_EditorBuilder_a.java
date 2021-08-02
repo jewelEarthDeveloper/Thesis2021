@@ -9,11 +9,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
-import javax.swing.JComponent;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 /*package*/ class NotSelected_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -39,16 +35,13 @@ import javax.swing.JLabel;
     editorCell.setCellId("Collection_fn5t8f_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createJComponent_0());
+    editorCell.addEditorCell(createConstant_0());
     return editorCell;
   }
-  private EditorCell createJComponent_0() {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_fn5t8f_a0a(), "JComponent_fn5t8f_a0");
-    editorCell.setCellId("JComponent_fn5t8f_a0_0");
+  private EditorCell createConstant_0() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
+    editorCell.setCellId("Constant_fn5t8f_a0");
+    editorCell.setDefaultText("");
     return editorCell;
-  }
-  private JComponent _QueryFunction_JComponent_fn5t8f_a0a() {
-    Icon smile = new ImageIcon("C:\\Repos\\Thesis2021\\src\\BreakingRules\\174px-Font_Awesome_5_regular_laugh.svg.png");
-    return new JLabel(smile);
   }
 }

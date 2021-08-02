@@ -44,6 +44,13 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
           intentions[6] = new removePropertyFromSelector_Intention();
         }
         break;
+      case 1:
+        if (true) {
+          // concept 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new removeDecisionTablePropertySelection_Intention();
+        }
+        break;
       default:
     }
     myCached.put(concept, intentions);
@@ -53,7 +60,7 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[7];
+    IntentionFactory[] rv = new IntentionFactory[8];
     rv[0] = new addFactToRule_Intention();
     rv[1] = new addFieldConstraint_Intention();
     rv[2] = new addRuleToCollection_Intention();
@@ -61,7 +68,8 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
     rv[4] = new addNewSelectorOfFact_Intention();
     rv[5] = new removeFactFromRule_Intention();
     rv[6] = new removePropertyFromSelector_Intention();
+    rv[7] = new removeDecisionTablePropertySelection_Intention();
     return Arrays.asList(rv);
   }
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e61793cL)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e61793cL), MetaIdFactory.conceptId(0x903686680b064529L, 0xa25ba5999072a9a0L, 0x52b2a3bf52aacc7dL)).seal();
 }

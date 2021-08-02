@@ -79,9 +79,27 @@
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
-  <node concept="1TIwiD" id="6Y4UEkA6hGR">
-    <property role="EcuMT" value="8035805630165490487" />
+  <node concept="1TIwiD" id="5aMCVXiEGLX">
+    <property role="EcuMT" value="5959005299085593725" />
+    <property role="TrG5h" value="Selected" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5aMCVXiZkts" role="1TKVEi">
+      <property role="IQ2ns" value="5959005299090999132" />
+      <property role="20kJfa" value="rule" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="8gas:7Sp91Iuon$W" resolve="RuleStatement" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5aMCVXiEGMM">
+    <property role="EcuMT" value="5959005299085593778" />
+    <property role="TrG5h" value="NotSelected" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5aMCVXiZktu" role="1TKVEi">
+      <property role="IQ2ns" value="5959005299090999134" />
+      <property role="20kJfa" value="rule" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="8gas:7Sp91Iuon$W" resolve="RuleStatement" />
+    </node>
   </node>
 </model>
 

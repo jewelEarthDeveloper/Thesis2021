@@ -42,13 +42,15 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import java.awt.Color;
 import de.slisson.mps.tables.runtime.style.HorizontalAlignment;
+import de.slisson.mps.tables.runtime.style.VerticalAlignment;
 import de.slisson.mps.tables.runtime.gridmodel.GridAdapter;
 import de.slisson.mps.tables.runtime.substitute.SubstituteInfoFactory;
 import de.slisson.mps.tables.runtime.gridmodel.ITableGrid;
 import Rules.Excel2.behavior.RuleCollection__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import de.slisson.mps.tables.runtime.style.VerticalAlignment;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.editor.runtime.style.CellAlign;
 import de.slisson.mps.tables.runtime.gridmodel.IGridElement;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -58,8 +60,8 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SEmptyContainmentSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 /*package*/ class ec_decisionTable_ComponentBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -221,6 +223,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     style.set(StyleAttributes.FONT_SIZE, 14);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(43520)));
     style.set(StyleAttributes.getInstance().<HorizontalAlignment>getAttribute("de.slisson.mps.tables", "horizontal-alignment"), _StyleParameter_QueryFunction_fo87g8_a3a0a0a());
+    style.set(StyleAttributes.getInstance().<VerticalAlignment>getAttribute("de.slisson.mps.tables", "vertical-alignment"), VerticalAlignment.BOTTOM);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -245,7 +248,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
       public void fillGrid(final ITableGrid grid, final SNode node, final SubstituteInfoFactory substituteInfoFactory) {
         SNode rulesCollection = SNodeOperations.getNodeAncestor(node, CONCEPTS.RuleCollection$bT, false, false);
 
-        Iterable<HeaderValue> headers = RuleCollection__BehaviorDescriptor.getTableHeaders_id6Y4UEk_vXaO.invoke(rulesCollection);
+        Iterable<HeaderValue> headers = RuleCollection__BehaviorDescriptor.getDecisionTableHeaders_id6Y4UEk_vXaO.invoke(rulesCollection);
 
         Iterable<SNode> props = RuleCollection__BehaviorDescriptor.propertiesInCollection_id65LB7G8xnUt.invoke(rulesCollection);
 
@@ -264,8 +267,41 @@ import org.jetbrains.mps.openapi.language.SConcept;
         }
 
         for (int i = 0; i < grid.getSizeX(); i++) {
-          SNode var = ListSequence.fromList(SNodeOperations.getNodeDescendants(rulesCollection, CONCEPTS.RuleVariable$Ol, false, new SAbstractConcept[]{})).first();
-          grid.setCell(i, 0, var);
+          SNode tableNode = RuleCollection__BehaviorDescriptor.getDecisionTableCell_id6Y4UEkA6nk3.invoke(rulesCollection, node, ((int) i));
+          if ((tableNode == null)) {
+            SNode ns = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x903686680b064529L, 0xa25ba5999072a9a0L, 0x52b2a3bf52aaccb2L, "Rules.Excel2.structure.NotSelected"));
+            SLinkOperations.setTarget(ns, LINKS.rule$Hkm2, node);
+            grid.setCell(i, 0, ns);
+            continue;
+          }
+          {
+            final SNode selector = tableNode;
+            if (SNodeOperations.isInstanceOf(selector, CONCEPTS.FactSelector$lQ)) {
+              if ((SLinkOperations.getTarget(selector, LINKS.variable$1ao9) != null)) {
+                grid.setCell(i, 0, SLinkOperations.getTarget(selector, LINKS.variable$1ao9));
+              } else {
+                SNode sel = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x903686680b064529L, 0xa25ba5999072a9a0L, 0x52b2a3bf52aacc7dL, "Rules.Excel2.structure.Selected"));
+                SLinkOperations.setTarget(sel, LINKS.rule$HiFu, node);
+                grid.setCell(i, 0, sel);
+              }
+              continue;
+            }
+          }
+          {
+            final SNode constraint = tableNode;
+            if (SNodeOperations.isInstanceOf(constraint, CONCEPTS.FieldConstraint$oO)) {
+              SNode selector = SNodeOperations.getNodeAncestor(constraint, CONCEPTS.FactSelector$lQ, false, false);
+              if ((SLinkOperations.getTarget(selector, LINKS.variable$1ao9) != null)) {
+                grid.setCell(i, 0, SLinkOperations.getTarget(selector, LINKS.variable$1ao9));
+                grid.getCell(i, 0).getStyle().set(StyleAttributes.HORIZONTAL_ALIGN, CellAlign.CENTER);
+              } else {
+                SNode sel = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x903686680b064529L, 0xa25ba5999072a9a0L, 0x52b2a3bf52aacc7dL, "Rules.Excel2.structure.Selected"));
+                SLinkOperations.setTarget(sel, LINKS.rule$HiFu, node);
+                grid.setCell(i, 0, sel);
+              }
+              continue;
+            }
+          }
         }
       }
     }.fillGrid(gridAdapter, node, substituteInfoFactory);
@@ -383,6 +419,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     style.set(StyleAttributes.FONT_SIZE, 14);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(11145472)));
     style.set(StyleAttributes.getInstance().<HorizontalAlignment>getAttribute("de.slisson.mps.tables", "horizontal-alignment"), _StyleParameter_QueryFunction_fo87g8_a3a0c0a());
+    style.set(StyleAttributes.getInstance().<VerticalAlignment>getAttribute("de.slisson.mps.tables", "vertical-alignment"), VerticalAlignment.BOTTOM);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -398,11 +435,15 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private static final class CONCEPTS {
     /*package*/ static final SConcept PropertyAttribute$Gb = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute");
     /*package*/ static final SConcept RuleCollection$bT = MetaAdapterFactory.getConcept(0x903686680b064529L, 0xa25ba5999072a9a0L, 0x61719c7b08847c63L, "Rules.Excel2.structure.RuleCollection");
-    /*package*/ static final SConcept RuleVariable$Ol = MetaAdapterFactory.getConcept(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e61c8d6L, "Rules2.structure.RuleVariable");
+    /*package*/ static final SConcept FactSelector$lQ = MetaAdapterFactory.getConcept(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x47aa13e870db4d31L, "Rules2.structure.FactSelector");
+    /*package*/ static final SConcept FieldConstraint$oO = MetaAdapterFactory.getConcept(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9eba05afL, "Rules2.structure.FieldConstraint");
   }
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink rules$Bngn = MetaAdapterFactory.getContainmentLink(0x903686680b064529L, 0xa25ba5999072a9a0L, 0x61719c7b08847c63L, 0x61719c7b08847c6dL, "rules");
+    /*package*/ static final SReferenceLink rule$Hkm2 = MetaAdapterFactory.getReferenceLink(0x903686680b064529L, 0xa25ba5999072a9a0L, 0x52b2a3bf52aaccb2L, 0x52b2a3bf52fd475eL, "rule");
+    /*package*/ static final SContainmentLink variable$1ao9 = MetaAdapterFactory.getContainmentLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x47aa13e870db4d31L, 0x7e19241b9e75ddb7L, "variable");
+    /*package*/ static final SReferenceLink rule$HiFu = MetaAdapterFactory.getReferenceLink(0x903686680b064529L, 0xa25ba5999072a9a0L, 0x52b2a3bf52aacc7dL, 0x52b2a3bf52fd475cL, "rule");
     /*package*/ static final SContainmentLink outcomes$LYHo = MetaAdapterFactory.getContainmentLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e61793cL, 0x7e19241b9e617cbfL, "outcomes");
   }
 }

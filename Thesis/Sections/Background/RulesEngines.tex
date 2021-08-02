@@ -45,6 +45,8 @@ In terms of a rule engine and business rules this could be seen as:
     \item it executes the conclusion: $q$
 \end{enumerate}
 
+Rules engines follow the recognize-act cycle.  First the match, i.e. are there any rules with a true condition, Next the do conflict resolution, to pick the most relevant of the matching rules, finally they act, which is to perform the actions described in the rule.
+If no items are matched then the cycle is terminated, otherwise the first step is returned to.
 
 Rules Engines are declarative, focussing on the what of the rules not the the how of the execution.
 Date\cite{date2000not} describes rules engine as to ``specify business process declaratively, via business rules and get the system to compile those rules in to the necessary procedural (and executable) code.''

@@ -6,43 +6,44 @@ import jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
-import Rules.Excel2.editor.HeaderValue;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import org.jetbrains.mps.openapi.model.SNode;
+import Rules.Excel2.editor.HeaderValue;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.EditorContext;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import Rules2.behavior.FactProperty__BehaviorDescriptor;
 import Rules2.behavior.Restriction__BehaviorDescriptor;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import java.util.Objects;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import Rules2.behavior.RuleStatement__BehaviorDescriptor;
 import de.slisson.mps.tables.runtime.substitute.NodeSubstituter;
 import de.slisson.mps.tables.runtime.substitute.WrapperSubstituteInfo;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SProperty;
 
 public final class RuleCollection__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x903686680b064529L, 0xa25ba5999072a9a0L, 0x61719c7b08847c63L, "Rules.Excel2.structure.RuleCollection");
 
-  public static final SMethod<Iterable<HeaderValue>> getTableHeaders_id6Y4UEk_vXaO = new SMethodBuilder<Iterable<HeaderValue>>(new SJavaCompoundTypeImpl((Class<Iterable<HeaderValue>>) ((Class) Object.class))).name("getTableHeaders").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6Y4UEk_vXaO").build();
+  public static final SMethod<SNode> getDecisionTableCell_id6Y4UEkA6nk3 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getDecisionTableCell").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6Y4UEkA6nk3").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
+  public static final SMethod<Iterable<HeaderValue>> getDecisionTableHeaders_id6Y4UEk_vXaO = new SMethodBuilder<Iterable<HeaderValue>>(new SJavaCompoundTypeImpl((Class<Iterable<HeaderValue>>) ((Class) Object.class))).name("getDecisionTableHeaders").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6Y4UEk_vXaO").build();
   /*package*/ static final SMethod<Iterable<HeaderValue>> headers_id6Y4UEk__3T8 = new SMethodBuilder<Iterable<HeaderValue>>(new SJavaCompoundTypeImpl((Class<Iterable<HeaderValue>>) ((Class) Object.class))).name("headers").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("6Y4UEk__3T8").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Iterable<SNode>> factsInCollection_id65LB7G8xbqT = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("factsInCollection").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("65LB7G8xbqT").build();
   public static final SMethod<Iterable<SNode>> propertiesInCollection_id65LB7G8xnUt = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("propertiesInCollection").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("65LB7G8xnUt").build();
@@ -54,12 +55,38 @@ public final class RuleCollection__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<SNode> getNodeOrEmptyfromPosition_id3YYeoU0ZCCJ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getNodeOrEmptyfromPosition").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3YYeoU0ZCCJ").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
   public static final SMethod<SubstituteInfo> createSubstituteInfo_id5ER99aic6Ui = new SMethodBuilder<SubstituteInfo>(new SJavaCompoundTypeImpl(SubstituteInfo.class)).name("createSubstituteInfo").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5ER99aic6Ui").build(SMethodBuilder.createJavaParameter(EditorContext.class, ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getTableHeaders_id6Y4UEk_vXaO, headers_id6Y4UEk__3T8, factsInCollection_id65LB7G8xbqT, propertiesInCollection_id65LB7G8xnUt, propCountForFact_id65LB7G8xz5m, propsFromFact_id65LB7G8y80o, isVariableColumn_id5ER99ai_N5W, variableCellHasFact_id7u$IkXPL4ZA, cellWithPropertyWithoutRestiction_id3IYBRBxZAJ2, getNodeOrEmptyfromPosition_id3YYeoU0ZCCJ, createSubstituteInfo_id5ER99aic6Ui);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getDecisionTableCell_id6Y4UEkA6nk3, getDecisionTableHeaders_id6Y4UEk_vXaO, headers_id6Y4UEk__3T8, factsInCollection_id65LB7G8xbqT, propertiesInCollection_id65LB7G8xnUt, propCountForFact_id65LB7G8xz5m, propsFromFact_id65LB7G8y80o, isVariableColumn_id5ER99ai_N5W, variableCellHasFact_id7u$IkXPL4ZA, cellWithPropertyWithoutRestiction_id3IYBRBxZAJ2, getNodeOrEmptyfromPosition_id3YYeoU0ZCCJ, createSubstituteInfo_id5ER99aic6Ui);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static Iterable<HeaderValue> getTableHeaders_id6Y4UEk_vXaO(@NotNull final SNode __thisNode__) {
+  /*package*/ static SNode getDecisionTableCell_id6Y4UEkA6nk3(@NotNull SNode __thisNode__, SNode rule, int pos) {
+    Iterable<HeaderValue> headers = RuleCollection__BehaviorDescriptor.getDecisionTableHeaders_id6Y4UEk_vXaO.invoke(__thisNode__);
+    final HeaderValue header = Sequence.fromIterable(headers).toGenericArray(HeaderValue.class)[pos];
+    if (isEmptyString(header.getProperty())) {
+      return ListSequence.fromList(SNodeOperations.getNodeDescendants(rule, CONCEPTS.FactSelector$lQ, false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return ListSequence.fromList(SLinkOperations.getChildren(it, LINKS.newconstraints$KdZk)).isEmpty();
+        }
+      }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return Objects.equals(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(it, LINKS.fact$47k6), LINKS.target$C2kL), LINKS.type$6tAj), LINKS.classifier$cxMr), PROPS.name$MnvL), header.getFact());
+        }
+      }).first();
+    }
+
+    return ListSequence.fromList(SNodeOperations.getNodeDescendants(rule, CONCEPTS.FieldConstraint$oO, false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return Objects.equals(FactProperty__BehaviorDescriptor.toFieldName_id7Sp91Iuum_h.invoke(SNodeOperations.cast(SLinkOperations.getTarget(it, LINKS.fieldName$SB$h), CONCEPTS.FactProperty$Ri)), header.getProperty());
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return Objects.equals(Restriction__BehaviorDescriptor.toString_id6Y4UEk_yGyR.invoke(SLinkOperations.getTarget(it, LINKS.restriction$5rgf)), header.getRestriction());
+      }
+    }).first();
+
+  }
+  /*package*/ static Iterable<HeaderValue> getDecisionTableHeaders_id6Y4UEk_vXaO(@NotNull final SNode __thisNode__) {
     Iterable<HeaderValue> headers = ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.rules$Bngn)).translate(new ITranslator2<SNode, HeaderValue>() {
       public Iterable<HeaderValue> translate(SNode it) {
         List<SNode> selectors = SNodeOperations.getNodeDescendants(it, CONCEPTS.FactSelector$lQ, false, new SAbstractConcept[]{});
@@ -343,26 +370,28 @@ public final class RuleCollection__BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((Iterable<HeaderValue>) getTableHeaders_id6Y4UEk_vXaO(node));
+        return (T) ((SNode) getDecisionTableCell_id6Y4UEkA6nk3(node, (SNode) parameters[0], ((int) (Integer) parameters[1])));
       case 1:
-        return (T) ((Iterable<HeaderValue>) headers_id6Y4UEk__3T8(node, (SNode) parameters[0]));
+        return (T) ((Iterable<HeaderValue>) getDecisionTableHeaders_id6Y4UEk_vXaO(node));
       case 2:
-        return (T) ((Iterable<SNode>) factsInCollection_id65LB7G8xbqT(node));
+        return (T) ((Iterable<HeaderValue>) headers_id6Y4UEk__3T8(node, (SNode) parameters[0]));
       case 3:
-        return (T) ((Iterable<SNode>) propertiesInCollection_id65LB7G8xnUt(node));
+        return (T) ((Iterable<SNode>) factsInCollection_id65LB7G8xbqT(node));
       case 4:
-        return (T) ((Integer) propCountForFact_id65LB7G8xz5m(node, (SNode) parameters[0]));
+        return (T) ((Iterable<SNode>) propertiesInCollection_id65LB7G8xnUt(node));
       case 5:
-        return (T) ((Iterable<SNode>) propsFromFact_id65LB7G8y80o(node, (SNode) parameters[0]));
+        return (T) ((Integer) propCountForFact_id65LB7G8xz5m(node, (SNode) parameters[0]));
       case 6:
-        return (T) ((Boolean) isVariableColumn_id5ER99ai_N5W(node, ((int) (Integer) parameters[0])));
+        return (T) ((Iterable<SNode>) propsFromFact_id65LB7G8y80o(node, (SNode) parameters[0]));
       case 7:
-        return (T) ((Boolean) variableCellHasFact_id7u$IkXPL4ZA(node, (SNode) parameters[0], ((int) (Integer) parameters[1]), ((int) (Integer) parameters[2])));
+        return (T) ((Boolean) isVariableColumn_id5ER99ai_N5W(node, ((int) (Integer) parameters[0])));
       case 8:
-        return (T) ((Boolean) cellWithPropertyWithoutRestiction_id3IYBRBxZAJ2(node, (SNode) parameters[0], ((int) (Integer) parameters[1]), ((int) (Integer) parameters[2])));
+        return (T) ((Boolean) variableCellHasFact_id7u$IkXPL4ZA(node, (SNode) parameters[0], ((int) (Integer) parameters[1]), ((int) (Integer) parameters[2])));
       case 9:
-        return (T) ((SNode) getNodeOrEmptyfromPosition_id3YYeoU0ZCCJ(node, (SNode) parameters[0], ((int) (Integer) parameters[1]), ((int) (Integer) parameters[2])));
+        return (T) ((Boolean) cellWithPropertyWithoutRestiction_id3IYBRBxZAJ2(node, (SNode) parameters[0], ((int) (Integer) parameters[1]), ((int) (Integer) parameters[2])));
       case 10:
+        return (T) ((SNode) getNodeOrEmptyfromPosition_id3YYeoU0ZCCJ(node, (SNode) parameters[0], ((int) (Integer) parameters[1]), ((int) (Integer) parameters[2])));
+      case 11:
         return (T) ((SubstituteInfo) createSubstituteInfo_id5ER99aic6Ui(node, (EditorContext) parameters[0], (SNode) parameters[1], ((int) (Integer) parameters[2]), ((int) (Integer) parameters[3])));
       default:
         throw new BHMethodNotFoundException(this, method);
@@ -392,20 +421,8 @@ public final class RuleCollection__BehaviorDescriptor extends BaseBHDescriptor {
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-
-  private static final class LINKS {
-    /*package*/ static final SContainmentLink rules$Bngn = MetaAdapterFactory.getContainmentLink(0x903686680b064529L, 0xa25ba5999072a9a0L, 0x61719c7b08847c63L, 0x61719c7b08847c6dL, "rules");
-    /*package*/ static final SContainmentLink fact$47k6 = MetaAdapterFactory.getContainmentLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x47aa13e870db4d31L, 0x47aa13e870db8104L, "fact");
-    /*package*/ static final SReferenceLink target$C2kL = MetaAdapterFactory.getReferenceLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e725f44L, 0x7e19241b9e725f45L, "target");
-    /*package*/ static final SContainmentLink type$6tAj = MetaAdapterFactory.getContainmentLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e5fe1b7L, 0x7e19241b9e5fe1baL, "type");
-    /*package*/ static final SReferenceLink classifier$cxMr = MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier");
-    /*package*/ static final SContainmentLink fieldName$SB$h = MetaAdapterFactory.getContainmentLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9eba05afL, 0x7e19241b9eba05b0L, "fieldName");
-    /*package*/ static final SContainmentLink restriction$5rgf = MetaAdapterFactory.getContainmentLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9eba05afL, 0x7e19241b9ebc4458L, "restriction");
-    /*package*/ static final SReferenceLink property$dmNh = MetaAdapterFactory.getReferenceLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e793468L, 0x7e19241b9e793469L, "property");
-    /*package*/ static final SContainmentLink variable$1ao9 = MetaAdapterFactory.getContainmentLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x47aa13e870db4d31L, 0x7e19241b9e75ddb7L, "variable");
-    /*package*/ static final SContainmentLink conditions$LY0l = MetaAdapterFactory.getContainmentLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e61793cL, 0x7e19241b9e617cbcL, "conditions");
-    /*package*/ static final SContainmentLink selector$V5mL = MetaAdapterFactory.getContainmentLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x47aa13e870db4d2eL, 0x47aa13e870db4d2fL, "selector");
-    /*package*/ static final SContainmentLink newconstraints$KdZk = MetaAdapterFactory.getContainmentLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x47aa13e870db4d31L, 0x7e19241b9eba0614L, "newconstraints");
+  private static boolean isEmptyString(String str) {
+    return str == null || str.isEmpty();
   }
 
   private static final class CONCEPTS {
@@ -416,6 +433,21 @@ public final class RuleCollection__BehaviorDescriptor extends BaseBHDescriptor {
     /*package*/ static final SConcept RuleVariable$Ol = MetaAdapterFactory.getConcept(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e61c8d6L, "Rules2.structure.RuleVariable");
     /*package*/ static final SConcept ExistsCondition$zq = MetaAdapterFactory.getConcept(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x47aa13e870db4d38L, "Rules2.structure.ExistsCondition");
     /*package*/ static final SConcept Restriction$dQ = MetaAdapterFactory.getConcept(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9ebc4457L, "Rules2.structure.Restriction");
+  }
+
+  private static final class LINKS {
+    /*package*/ static final SContainmentLink newconstraints$KdZk = MetaAdapterFactory.getContainmentLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x47aa13e870db4d31L, 0x7e19241b9eba0614L, "newconstraints");
+    /*package*/ static final SContainmentLink fact$47k6 = MetaAdapterFactory.getContainmentLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x47aa13e870db4d31L, 0x47aa13e870db8104L, "fact");
+    /*package*/ static final SReferenceLink target$C2kL = MetaAdapterFactory.getReferenceLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e725f44L, 0x7e19241b9e725f45L, "target");
+    /*package*/ static final SContainmentLink type$6tAj = MetaAdapterFactory.getContainmentLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e5fe1b7L, 0x7e19241b9e5fe1baL, "type");
+    /*package*/ static final SReferenceLink classifier$cxMr = MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier");
+    /*package*/ static final SContainmentLink fieldName$SB$h = MetaAdapterFactory.getContainmentLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9eba05afL, 0x7e19241b9eba05b0L, "fieldName");
+    /*package*/ static final SContainmentLink restriction$5rgf = MetaAdapterFactory.getContainmentLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9eba05afL, 0x7e19241b9ebc4458L, "restriction");
+    /*package*/ static final SContainmentLink rules$Bngn = MetaAdapterFactory.getContainmentLink(0x903686680b064529L, 0xa25ba5999072a9a0L, 0x61719c7b08847c63L, 0x61719c7b08847c6dL, "rules");
+    /*package*/ static final SReferenceLink property$dmNh = MetaAdapterFactory.getReferenceLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e793468L, 0x7e19241b9e793469L, "property");
+    /*package*/ static final SContainmentLink variable$1ao9 = MetaAdapterFactory.getContainmentLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x47aa13e870db4d31L, 0x7e19241b9e75ddb7L, "variable");
+    /*package*/ static final SContainmentLink conditions$LY0l = MetaAdapterFactory.getContainmentLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x7e19241b9e61793cL, 0x7e19241b9e617cbcL, "conditions");
+    /*package*/ static final SContainmentLink selector$V5mL = MetaAdapterFactory.getContainmentLink(0x17e7b90aaaca44c7L, 0xaaaa8155bb498bd7L, 0x47aa13e870db4d2eL, 0x47aa13e870db4d2fL, "selector");
   }
 
   private static final class PROPS {
