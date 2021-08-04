@@ -96,10 +96,10 @@ Projectional editing generalizes this approach to projecting any notation define
 \subsubsection{What advantages does projectional editing bring?}
 
 Projectional editing gives advantages both to the language engineer and the program developers.
-There follows, in no particular order, a number of advantages of projectional editing 
+There follows, in no particular order, a number of advantages of projectional editing synthesised from the literature mapping described in the chapter \ref{chapter:Method}.[TODO: make sure I describe the literature mapping].
  
-\paragraph{Exploratory programming}
-As with their progenitors, syntax-directed editors, modern projectional editors help guide a developer unfamiliar of a language.
+\paragraph{Exploratory programming\cite{klimevs2016domain,ratiu2017experiences,volter2010language,voelter2014towards}}
+As with their progenitors, syntax-directed editors, modern projectional editors help guide a developer unfamiliar with a language.
 The defined editors with rigid syntax and pre-defined layout mean that only specific cells within the editor can be edited.
 This template style means the she does not have to worry about significance of spacing or indentation.
 Minutiae of syntactic adornments, such as statement ending semi-colons or enclosing matched brackets, are also not interfering with her exploration of the language space.
@@ -133,136 +133,49 @@ Of course the projections can also be projections of text.
 This is often the appropriate projection type if the developer interacting with the language's domain expertise is parser-based languages.
 
 \paragraph{Mixed notation}
-– Notations are more flexible than ASCII/ANSI/Unicode.
-Graphical, semi-graphical and textual notations can be mixed and combined.
-For example, a graphical tool for editing state machines can embed a textual expression language for editing the guard conditions on transitions.
-Since all editors use the same projectional architecture this works seamlessly.
-In particular, non-textual notations can be used inside textual notations.
-Examples include:
-– mathematical symbols embedded in textual programs – tables that contain text or math symbols – tables embedded in textual programs – mathematical symbols embedded in prose – lines, progress bar other other shapes embedded arbitrarily 
-ProjEs can also mix different notational styles.
-For example, tables can contain textual expressions and mathematical symbols (as in mbeddr’s decision tables), and textual programs can embed graphics.
-
-combination of graphical and textual editing
-Graphical, semi-graphical and textual notations can be mixed and combined.
-For example, a graphical tool for editing state machines can embed a textual expression language for editing the guard conditions on transitions.
-
-All notations are built on top of the same editor architecture, so they can be freely mixed (math symbols in tables or text in diagrams) while retaining editor support for all of them.
-
-The projection can take on many forms and it is even possible to combine different types of projections, such as including tables inside a textual presentation.
-with projectional editing it is natural to combine projections because there is no requirement stating that the syntax should be unambiguous 
+Because no parsing is required, the different forms of rich notation can be combined without the need to create a unifying parser.
+With all notations working on the same editor infrastructure mathematic symbols can be embedded within textual projections, within tables within graphical representations.
+As ambiguity is not an issue for the underlying AST, then mixing different notations becomes much easier.
 
 \paragraph{Multiple views}
-– Since the model is stored independently from its concrete notation, it is possible to represent the same model in different ways simply by providing several projections.
-Different viewpoints of the overall program can be stored in one model, but editing can still be viewpoint specific.
-Because the model is stored independent of its concrete notation, it is possible to represent the same model in different ways simply by providing several projections.
-Different viewpoints [11] of the overall program can be stored in one model, but editing can still be viewpoint specific.
-Multiple Editors A single concept can define several editors, and a given program can be edited using any of them.
-unconstrained projection, Change notations on fly
+With the AST being the stored artefact rather than the notation, projectional editing allows the language engineer to define multiple views on the same model optimised for different tasks.
+Similar to how software architecture presents different views for different stakeholders interests, the same notational diversity can be achieve with specific editors targeted to experts in the various parts of the domain.
+A developer can switch between different projections of a node within a larger projection, to find the one that best suits their current task.
 
-Projectional editing, keeping the code in the AST form, and the absence of parsers, brings along several benefits.
-• Since the projection is detached from the physical representation of code (AST), authors of languages can define multiple notations and allow the developers to switch between them on the screen.
-The language author can define multiple alternative visualizations and let the developer choose one that fits best the task at hand.
-
-multiple notations for same language, choose between readability and writability
-multiple simultaneous views
-2) change notations on the fly, so you can choose the notation that best suits the problem at hand
-Furthermore, the projectional editor is an enabler for multiple notations and for implementing modular and extensible languages.
-Several alternative (user-switchable) notations for the same program are also possible.
-Notational diversity is crucial for DSLs targeting non-programmers, such as insurance experts, systems engineers or biologists [32]
-Because the model is stored independent of its concrete notation, it is possible to represent the same model in different ways simply by providing several projections.
-Different viewpoints [7] of the overall program can be stored in one model; editing can be viewpoint or aspect specific.
+Because the architecture of a projectional editor follows the principles of model view controller, it is possible to have multiple simultaneous views of the model.
+This allows the developer to update a projection that is optimised for writing and immediately see its effect in a projection optimised for understanding.
 
 \paragraph{Language composition}
-Its distinguishing feature is its projectional editor, which supports practically unlimited language extension and composition [65]
-Since projectional editing disambiguates constructs originating from different languages, it does not require the construction of a unifying parser or the definition of composite grammars.
-Languages can be extended with new constructs and new ways to view and edit them.
-Since no grammar is used, grammar classes are not relevant, and no syntactic ambiguities can result from the combination of independently developed languages.
-If two concepts (possibly defined by different language extensions) with the same syntax are valid in the same location, the user is forced to decide which one to instantiate as she enters the program.
-Since a projectional editor never encounters grammar ambiguities, they can support language composition [9].
-ProjEs also avoid the problems with compositionality known from grammar-based systems:
-ambiguities cannot arise since no grammars are used.
-In ProjEs, since no grammars are used, language composition is unlimited (discussed systematically in [8])
+Parser-based languages can support some modularization and composition, but a projectional editor allows easy and extensive modular language extension and composition.
+This is a result of the nodes of an AST being disambiguated at entry rather than through a parser.
+If two items with the same syntax are available at the same place, then the user will choose the one that they require, and therefore the node has an explicitly chosen meaning.
 
-Projectional editing has two advantages.
-First, it supports flexible composition of languages because the ambiguities associated with parsers cannot happen in projectional editors.
-While parser-based systems support language modularization and composition to some degree, it is easy to do and well supported in projectional systems.
+The composition of independently developed languages does not suffer from the syntactic or keyword clashes they would in two grammar defined languages.
+Because of the lack of ambiguity, every node referencing the concept that defines it, these languages, when put together, will not have structural or syntactic issues.
 
-Projectional editing, keeping the code in the AST form, and the absence of parsers, brings along several benefits.
-• Programming languages can be defined in a modular way, and multiple languages can be easily combined together in a single program or one can extend another.
-
-As a consequence of the projectional editor, very few concrete syntax concerns have to be considered when modularizing and composing languages.
-
-no ambiguities,easy language composition, modular languages, embedded languages , extensible languages
-3) combine languages easily
-Projectional code does not have to be parsed, so language syntax can have much more options and languages can be freely combined together.
-Language composition is easily possible, because languages composition cannot result in ambiguous grammars [1, 19, 20].
-
-projectional editing also supports language composition.  because you never run into ambiguities language composition is much more flexible compared to parser based systems.
-
-Projectional editors have two main advantages, both resulting from the absence of parsing.
-Second, they support various ways of language composition [19], typically including modular language extension as well as embedding of unrelated languages into a host language [44, 51]
-Language composition refers to using multiple languages in a single program without invasively modifying the definitions of the participating languages.
-Extensions can be on arbitrary abstraction levels, thereby integrating modeling and programming and avoiding tool integration issues. 
-
-
-There is no room for ambiguous or conflicting grammars because there is no need for grammars or parsers at all.
-Since projectional editors never encounter grammar ambiguities, they can support language composition [50].
-In contrast to parser-based systems, where disambiguation is performed by the parser after a (potentially) complete program has been entered, in projectional editing, disambiguation happens at the time when the user picks a concept from the code completion menu: if two concepts define the same alias, the user resolves the ambiguity.
-Furthermore, the projectional editor is an enabler for multiple notations and for implementing modular and extensible languages.
-Language composition is easily possible, because composed languages cannot result in ambiguous grammars, a significant issue in classical parser-based systems.
-Before projectional editors, technology was the limiting factor requiring unambiguous grammars.
-
-After a user has picked a language construct and it has been instantiated in the AST, a program is never ambiguous: every node points to its defining concept.
-This is important, because independently developed languages can be composed in a single program and never lead to structural or syntactic problems, irrespective of the concrete syntax of the participating languages.
-
-For instance, two languages could have overlapping keywords, which parser-based tools could not easily disambiguate (without the need for writing dedicated disambiguation code for the combination of the two languages).
-Projectional editing has two major advantages: notational diversity and language composability.
-
+Composition can involve extending an existing language or embedding other languages in a host language without modifying the definition of said language.
+The ease of composition and extensions leads to the advantage of being able to build larger languages out of smaller modules.
 
 \paragraph{IDE functionality}
+Developers in mature languages are used to the functionality of mature IDEs.
+These functionalities include syntax highlighting, intelligent code completion or suggestion, and static analysis for errors and validation.
+As projectional languages store the AST rather than the the concrete syntax, they require an IDE to edit.
+Because of this, when a language engineer designs the language she also has to design the IDE.
 
-The IDE will provide code completion, error checking and syntax highlighting for all languages, even when they are combined.
-Because projectional languages by definition need an IDE for editing (it has to do the projection!), language definition and extension always implies IDE definition and extension.
-The IDE will provide code completion, error checking and syntax highlighting for all languages, even when they are combined.
+Because the projection is based on the AST it always knows it's context.
+When the editor already knows the meaning of the node it is representing, then syntax highlighting is simple.
+From knowing it's context, it makes it much simpler to suggest intelligent code completions.
 
-faster code completion as there is a smaller set of valid options  , intelligent code completion , low effort to implement mature editor features, syntax highlighting, IDE created by default
-Since the context is always known, code-suggestions can be used to explore the possibilities that developers have at the current point in the program.
-The number of selectable concepts is reduced by excluding language components.
-Also, code-completion is faster when there are less conflicting concept-names.
-It is a common behavior in projectional editors to use code-suggestions in order to find out which actions or options are valid in the current context. 
-Code-suggestions in projectional editors can reveal possible action and options.
+Always having a complete AST makes it much easier to validate scope, typing and other hard to implement code validators.
 
-Projectional editor provides intelligent code completion 
-An intelligent code completion can be sophisticated and larger parts of code can be inserted automatically, so syntax can be more explanatory without the need of writing more.
-The fact that projectional editor manipulates directly with AST allows to implement some editor features that are common in mature IDEs with much less effort.
-But the projectional approach goes further: when writing the to-be-generated code, the IDE provides syntax coloring, code completion and error checking for the template code.
-This is extremely hard to do for parsed languages, because the parser of the target language has to be embedded into the template language, and IDE services (code completion, syntax coloring, static checks) would have to be merged as well
-This aspect is particularly relevant for projectional editors because they usually require users to part from the traditional textual editing experience.
+\paragraph{Language evolution}
+Extending a language with new capabilities and syntax is simple.
+If the change is syntactic then the language engineer has to update an editor.
+If there is a semantic change then the language engineer can write a migration in the language, to transform a node of one concept to a different type, and the developer would have to run that migration on their code.
 
-
-\paragraph{other (language evolution)}
-ease of product line development,  no grammar or parser is required,  easy to  migrating when concrete syntax changes, no need to ”extract” the program structure from a flat textual source,
-It is also possible to store outof-band data, i.e. annotations on the core model/program.
-Examples of this include documentation, pointers to requirements (traceability) [8] or feature dependencies in the context of product lines [9].
-It is also possible to store out-of-band data, i.e. annotations on the core model/program, such as documentation, pointers to requirements (traceability), or feature dependencies in the context of product lines.
-The following is a list of benefits of projectional editing:
- No grammar or parser is required.
- It is also possible to store out-ofband data, i.e. annotations on the core model/program.
- Examples of this include documentation, pointers to requirements (traceability) [12] or feature dependencies in the context of product lines [13].
- support migrating programs when concrete syntax changes Concrete syntax changes are supported by default with projectional editing without requiring any migration.
- Since only the AST is stored in the model, all concrete syntax elements purely exist in the editor.
- In principle, projectional editing is simpler than parsing, since there is no need to ”extract” the program structure from a flat textual source.
-  
-
-            
-
-
-Projectional editing gives advantages both to the language engineer and the program developers.
-
-
-Whilst modern IDE's will give you quick feedback on existing supported languages, this is not the case for bespoke DSLs.
-
+\paragraph{Ancillary data}
+Data can be added to nodes that can augment the AST. 
+This has shown to be useful for documentation, requirements traceability and product line feature dependencies.
 
 
 
