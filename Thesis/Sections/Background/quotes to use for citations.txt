@@ -287,6 +287,9 @@ The idea behind projectional editing is following.
 When the user is not working with the text source code directly, as usual, every node of the AST can be represented in any form and take any shape.
 It is just up to the designer of the language what shape will each node take inside the projectional editor.
 
+
+
+
 % WHAT CAN IT DO/ADVANTAGES
 Symbols - notations that combine text with non-textual symbols. Math, for example, has been using symbols for centuries and there are good reasons to support these symbols in languages used in math-heavy computations.
 State machines - some domains use state machines to model systems that react to external events and change their internal state following some pre-defined set of rules. To express the transitions in individual states after arrival of certain events a table can be used with good success.
@@ -321,6 +324,8 @@ This allows for much more flexible concrete syntax definitions,
 This way it can better emphasize the program’s semantics and hence promote comprehension.
 
 First, projectional editing makes it impossible to write syntactically incorrect code.
+
+
 Although code is typed in, it is only transformed into the respective concepts if the concept-aliases are recognized (compare figure 4.1).
 The concrete syntax is auto-completed and only specific cells of the concept’s representation can be edited.
 There will be no more annoying errors caused by skipping a parenthesis or semicolon.
@@ -330,9 +335,9 @@ In particular, this applies to projectional editing where code is not written bu
 The number of selectable concepts is reduced by excluding language components.
 Also, code-completion is faster when there are less conflicting concept-names.
 
-
 It is a common behavior in projectional editors to use code-suggestions in order to find out which actions or options are valid in the current context. 
 Code-suggestions in projectional editors can reveal possible action and options.
+
 Since we deal with a projectional editor there is no parser involved and different projections (textual, graphical, and tabular) are possible.
 This overcomes the limits of language parsers and allows editors to include tables, mathematical symbols and graphical diagrams.
 The user directly modifies the abstract syntax tree (AST), respectively the implementation model, which is projected onto the screen, see Fig. 2.
@@ -352,6 +357,7 @@ Editor has also pre-defined layout, which takes care about spacing and indentati
 Projectional code does not have to be parsed, so language syntax can have much more options and languages can be freely combined together.
 There is also support for visual elements such as tables or diagrams.
 The fact that projectional editor manipulates directly with AST allows to implement some editor features that are common in mature IDEs with much less effort.
+
 
 Projectional editors have two main advantages, both resulting from the absence of parsing.
 First, they support notations that cannot easily be parsed, such as tables, diagrams or mathematical formulas—each of which can be mixed with the others and with textual notations [45, 52]
@@ -380,6 +386,7 @@ It is also possible to store outof-band data, i.e. annotations on the core model
 Examples of this include documentation, pointers to requirements (traceability) [8] or feature dependencies in the context of product lines [9].
 
 
+
 While parser-based systems support language modularization and composition to some degree, it is easy to do and well supported in projectional systems.
 
 As a consequence of the projectional editor, very few concrete syntax concerns have to be considered when modularizing and composing languages.
@@ -388,6 +395,8 @@ As a consequence of the projectional editor, very few concrete syntax concerns h
 Structure or projectional editors are a well-studied concept among researchers and some practitioners. 
 They have the huge advantage of preventing syntax and in some cases type errors, and aid the discovery of syntax by users unfamiliar with a language.
 
+
+*** GOT TO HERE ***
 
 Projectional editing, keeping the code in the AST form, and the absence of parsers, brings along several benefits.
 • A projectional editor does not allow the developers to enter syntactically invalid code, because it controls the interaction between the user and the program code.
@@ -429,6 +438,7 @@ Different viewpoints [11] of the overall program can be stored in one model, but
 It is also possible to store out-ofband data, i.e. annotations on the core model/program.
 Examples of this include documentation, pointers to requirements (traceability) [12] or feature dependencies in the context of product lines [13].
 
+
 But the projectional approach goes further: when writing the to-be-generated code, the IDE provides syntax coloring, code completion and error checking for the template code.
 This is extremely hard to do for parsed languages, because the parser of the target language has to be embedded into the template language, and IDE services (code completion, syntax coloring, static checks) would have to be merged as well
 This aspect is particularly relevant for projectional editors because they usually require users to part from the traditional textual editing experience.
@@ -450,9 +460,6 @@ MPS, for example, supports textual notations, symbols (such as fraction bars or 
 a projectional editor, which, by its very nature, can deal with many different notational styles, including text, prose, math tables and graphics 
 
 The projectional approach can be generalized to work with any notation, including textual.
-
-
-
 
 
 Projectional editing has two advantages.
@@ -487,10 +494,12 @@ Since ProjEs never parse the concrete syntax, they can use notations that are no
 Examples include tables, mathematical symbols (fraction bars, superscript or P) or diagrams.
 
 
+
 ProjEs can also mix different notational styles.
 For example, tables can contain textual expressions and mathematical symbols (as in mbeddr’s decision tables), and textual programs can embed graphics.
 
 In a ProjE, it is possible to project program nodes in arbitrary ways, including tables or mathematical symbols; these cannot just be typed.
+
 
 Its distinguishing feature is its projectional editor, which supports practically unlimited language extension and composition [65] as well as a flexible mix of a wide range of textual, tabular, mathematical and graphical notations [67].
 
@@ -501,6 +510,10 @@ obviously you can use regular code or text, but you can also use mathmatical sym
 projectional editing also supports language composition.  because you never run into ambiguities language composition is much more flexible compared to parser based systems.
 
 %DISADVANTAGES
+
+
+*** GOT TO HERE ***
+
 The freedom in defining the concrete syntax is not problematic for the computer, but it can cause problems for the language user 
 Ambiguous syntax is not only a problem for parsers, but a problem that affects humans as well. 
 but there are also downsides to this syntax ambiguities do not only affect parsers, but humans as well 
@@ -656,6 +669,64 @@ Each language box may use parsing or projection.
 
 
 
+%%% NEW STUFF %%%
+In contrast to text editors, the editing metaphors of projectional editors typically require robust design of a large set of editing operations to reach the expressiveness of a text editor
+
+A text-oriented editor uses similar layout and syntactical elements as a textual language, but constrains editing to maintain a valid abstract syntax tree (AST). 
+While providing a familiar way of reading code, editing operations may as such not be possible in the way users would expect from the interface, unless special care is taken [9]. 
+sometimes considered more approachable as the direct composition of elements does not allow for syntax errors.
+Ensuring usability within projectional editors, however, is a complex problem that requires robust design
+ Editing, however, is typically more complex than working in a text editor, as the structure of the AST
+has to be adhered to. 
+@inproceedings{beckmann2020visual,
+  title={Visual design for a tree-oriented projectional editor},
+  author={Beckmann, Tom and Ramson, Stefan and Rein, Patrick and Hirschfeld, Robert},
+  booktitle={Conference Companion of the 4th International Conference on Art, Science, and Engineering of Programming},
+  pages={113--119},
+  year={2020}
+}
+
+require the programmers to adapt and learn how to work with a projectional editor
+The second important drawback of LWB technology is that programs are persisted in data structures that cannot be easily edited without tool support
+
+++ IDE support
+@article{simi2014composable,
+  title={Composable languages for bioinformatics: the nyosh experiment},
+  author={Simi, Manuele and Campagne, Fabien},
+  journal={PeerJ},
+  volume={2},
+  pages={e241},
+  year={2014},
+  publisher={PeerJ Inc.}
+}
 
 
+The disadvantage of the projectional approach is that the supporting technology is less mature and less widespread.
+A suitably equipped projectional editor can easily provide mixed textual and graphical interaction modes.
+In the case of the technology described in this paper, graphs, trees and text are all specialisations of a more general type of concrete-syntax element and can therefore be arbitrarily interleaved.
+A criticism of projectional technology is that it tends to be syntax-directed which can reduce usability by forcing the user to enter language structures through a pre-defined interface. 
+A key challenge to achieving engineered integration is posed by concretesyntax. By inverting the focus of attention to abstract-syntax, a projectional editor does not suffer from such problems.
+Hiding the AST and only presenting the syntactical, textual representation may, however, make these types of explicit tree transformations more difficult for a user to perform, as boundaries and nesting of nodes are not necessarily apparent
+@article{clark2015general,
+  title={A general architecture for heterogeneous language engineering and projectional editor support},
+  author={Clark, Tony},
+  journal={arXiv preprint arXiv:1506.03398},
+  year={2015}
+}
+
+language modularity, notational freedom 
+This means that, in addition to text, languages can also use non-parsable notations such as mathematical symbols, tables and diagrams
+support a wide range of language composition
+
+However, even in MPS, the editor is not identical to a text editor; this can be a hurdle for new MPS users who are used to text editors, and thus a barrier to adoption
+@article{voelter2019lessons,
+  title={Lessons learned from developing mbeddr: a case study in language engineering with mps},
+  author={Voelter, Markus and Kolb, Bernd and Szab{\'o}, Tam{\'a}s and Ratiu, Daniel and van Deursen, Arie},
+  journal={Software \& Systems Modeling},
+  volume={18},
+  number={1},
+  pages={585--630},
+  year={2019},
+  publisher={Springer}
+}
 % WIP End
