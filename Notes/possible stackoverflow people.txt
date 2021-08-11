@@ -1,0 +1,57 @@
+names:
+Roddy of the Frozen Peas: (answering)
+
+Aarij Siddiqui (asking)
+(maybe) aarij.siddiqui@live.com
+
+Akhil Kumar Amarneni (asking) akhilkumaramarneni@gmail.com
+
+
+Paras Bansal (answering)
+IT Consultant at TATA Consultancy Services
+irst '.' last	jane.doe@ironmountain.com	
+95.9%
+first_initial last	jdoe@ironmountain.com	
+3.1%
+
+Yves Glodt (answering) 
+info@ypzeelon.com.
+
+volothamp@gmail.com (answering)
+
+@GeoffreyDeSmet (twitter) (answering)
+
+steve@scattercode.co.uk (answering)
+
+@martez81 (twitter) (asking) 
+
+@tarilabs (twitter) (answering) works at redhat
+
+@salaboy (twitter) ( answering) think irecognize from his blog
+
+toivotuo@gmail.com (asking)
+
+@VincenzoDAmore (asking)
+
+John Dugger (asking) (vscoder)
+@unitedhealthgroup.com
+UnitedHealth Group ’s Employees Email Address Formats	Percentage
+firstNamelastName	janedoe@unitedhealthgroup.com	33%
+lastNameInitialfirstNameInitial	dj@unitedhealthgroup.com	33%
+lastName	doe@unitedhealthgroup.com	45%
+lastNameInitial.firstNameInitial	d.j@unitedhealthgroup.com	52%
+firstNameInitial_lastNameInitial	j_d@unitedhealthgroup.com	61%
+firstName.lastName	jane.doe@unitedhealthgroup.com	85%
+
+ info@akryvtsun.com(asking) (Andriy Kryvtsun)
+
+nzuwera2002@gmail.com (NZUWERA GILBERT) (answering)
+lukas@petrovicky.net (answering) (appears to be expert)
+
+volothamp@gmail.com (answering)
+
+git@einverne.info (asking) (@einverne twitter)
+
+@ilesteban (answering) seems like an expert
+
+github@dadadom.de
