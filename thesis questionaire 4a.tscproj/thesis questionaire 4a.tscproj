@@ -2081,13 +2081,13 @@
 
                     ],
                     "start" : 0,
-                    "duration" : 319,
+                    "duration" : 798,
                     "mediaStart" : 0,
                     "mediaDuration" : 319,
-                    "scalar" : 1,
+                    "scalar" : "798/319",
                     "metadata" : {
                       "AutoAppliedSmartFocus" : "False",
-                      "clipSpeedAttribute" : false
+                      "clipSpeedAttribute" : true
                     },
                     "animationTracks" : {
 
@@ -2148,8 +2148,8 @@
     "backgroundColor" : [ 0, 0, 0, 255]
   },
   "metadata" : {
-    "AutoSaveFile" : "C:\\Users\\paul_\\AppData\\Local\\TechSmith\\Camtasia Studio\\21.0\\Auto-Saves\\thesis questionaire 4a18555ae7.autosave.tscproj",
-    "CanvasZoom" : 100,
+    "AutoSaveFile" : "",
+    "CanvasZoom" : 60,
     "Date" : "2021-08-11 11:33:52 PM",
     "IsAutoSave" : false,
     "IsStandalone" : true,

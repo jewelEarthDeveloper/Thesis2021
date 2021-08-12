@@ -92,14 +92,143 @@ UML diagrams are not stored as pictures and whose pixels are parsed to create an
 Instead the model is stored, often with extra information about visual layout, and the image of the UML is projected to the modeller to edit.
 Projectional editing generalizes this approach to projecting any notation defined by the language engineer.
 
+\subsection{Examples of projectional editing}
+
+Table \ref{table:projectional_languages} gives an incomplete and inconsistant history of projectional languages.
+
+\begin{table}[h]
+    \begin{center}
+        \begin{tabular}{ |l | l | } 
+            \hline
+            Language                   & Notes   \\
+            \hline
+            MPS & inspired by a call to action for Language orientated programming\cite{dmitriev2004language} Jetbrains embarked in 2004 \\
+                & on a mission to build a product to fulfil that ideal.  Meta Programming System (MPS) was the outcome of that journey.  \\
+                & used to create the languages mbeddr, PEoPL, and Realaxy.  Has an active community of deveopers. \\
+            Incremental Programming Environment\cite{medina1981incremental}  & A syntax-directed language independent editor from 1980. Got subsumed into GANDALF  \\
+            Intentional Domain Workbench & Inspired by Charles Simonyi's 1995 essay ``The Death of Computer Languages, The Birth of Intentional Programming''\cite{simonyi1995death}\\
+                    & the IDW was the product of the company Simonyi founded in 2002, Intentional Software. \\
+                    & In 2017 Microsoft, as a part of an "acquihire" bought Intentional Software for it's employees and let the product die.\\
+            GANDALF\cite{NotkinDavid1985TGp} & Taking over from IPE in 1980 at Carnagie Mellon \\
+            Synthesizer Generator & \\
+            Whole Platform & \\
+            M\'as & \\
+            Onion & \\
+            Scratch & \\
+            Blockly & \\
+            Prune & \\
+            Eco & \\
+            Lamdu & \\
+            Blueprints (Unreal Engine) & \\
+            Interlisp-D & \\
+            deuce & \\
+            Enso & \\
+            Cedalion & \\  
+            Gentleman & \\            
+            \hline
+        \end{tabular}
+    \end{center}
+    \caption{An incomplete list of projectional languages}
+    \label{table:projectional_languages}
+\end{table}
+
+
+\paragraph{PEoPL}
+\paragraph{}
+%EXAMPLES
+At the same time, projectional language workbenches like MPS [57] and Intentional [47]
+
+Second, Behringer, Palz, and Berger (2017) present Projectional Editing of Product Lines (PEoPL), a DSL that enables multiple projections for variability mechanisms.
+
+Such editors have existed since the 1980s and gained widespread attention with the Intentional Programming paradigm, which used projectional editing at its core.
+
+Projectional editing, also known as structured editing or syntax-directed editing, is not a new idea; early references go back to the 1980s and include the Incremental Programming Environment [32], GANDALF [35], and the Synthesizer Generator [39].
+Work on projectional editors continues today: Intentional Programming [44, 18, 45, 14] is its most well-known incarnation.
+Other contemporary tools [20] are the Whole Platform [9], M´as [3], Onion, and MPS [4]
+
+Projectional Editors from the 1980s.
+GANDALF [35] and the Incremental Programming Environment (IPE) [32] do not attempt to make editing textual notations efficient; for example, they lack support for linear editing of tree-structured expressions.
+The Synthesizer Generator [39] avoids the use of projectional editing at the fine-grained expression level, where textual input and parsing is used.
+While this may improve editing efficiency, it risks the advantages of projectional editing, because language composition at the expression level is limited.
+Another work that implements and uses a DSL within the Synthesizer Generator [37] concludes: “Program editing will be considerably slower than normal keyboard entry, although actual time spent programming non-trivial programs should be reduced due to reduced error rates.”
+
+The Intentional Domain Workbench (IDW) is the most recent implementation of the Intentional Programming paradigm [44, 18], supporting diverse notations [45, 14].
+Since it is a commercial, closed-source project without widespread adoption yet, we cannot easily study it or survey its users.
+
+
+All contemporary projectional editors are part of language workbenches
+
+An early example of a projectional editor is the Incremental Programming Environment (IPE) [16].
+It supports the definition of several notations for a language as well as partial projections, where parts of the AST are not shown.
+However, IPE did not address editor usability; to enter 2+3, users first have to enter the + and then fill in the two arguments.
+Another early example is GANDALF [17]; the report in [20] states that the authors experienced similar usability problems as IPE: “Program editing will be considerably slower than normal keyboard entry, although actual time spent programming non-trivial programs should be reduced due to reduced error rates.”
+The Intentional Programming project [9, 22] has gained widespread visibility and has popularized projectional editing; the Intentional Domain Workbench (IDW) is the contemporary implementation of the approach.
+IDW supports diverse notations [7, 23].
+
+Scratch [15] is an environment for learning programming.
+It uses a projectional editor, but does not focus on textual editing; it relies mostly on nested blocks/boxes.
+So does GP [18].
+Textual notations, and thus grammar cells, are not relevant.
+Prune [2] is a projectional editor developed at Facebook.
+The goal is explicitly to not feel like a text editor; the hypothesis is that tree-oriented editing operations are more efficient than those known from text editors.
+While this is an interesting hypothesis, our considerable experience with using projectional editing in real projects has convinced us that this approach is not feasible; hence the work described in this paper.
+
+The Synthesizer Generator [21] is a projectional editor which, at the fine-grained expression level, uses textual input and (regular, textual) parsing.
+While this improves usability, it destroys many of the advantages of projectional editing in the first place, because language composition and the use of non-textual notations at the expression level is limited.
+
+Eco [10] relies on language boxes, explicitly delineated boundaries between different languages used in a single program (e.g., the user could define a box with Ctrl-Space).
+Each language box may use parsing or projection.
+This way, textual notations can be edited naturally, solving the usability issues associated with editing text in a projectional editor.
+
+*** gothere
+Lamdu [5], a functional, projectional language (no paper)
+
+. Dataflow visual programming languages, such as Blueprints in the Unreal Engine [2], are often domain-specific.
+
+
+Early syntax-directed source code editors included Interlisp-D (for Lisp’s limited syntax) and Emily[1] (for PL/I’s rich syntax).
+
+deuce: lightweight structured editing in sketch-n-sketch
+
+Blockly: https://developers.google.com/blockly
+
+
+
+An early example of a ProjE is the Incremental Programming Environment (IPE) [4].
+Another early example is GANDALF [5], which generates a ProjE from a language specification.
+
+The Synthesizer Generator [7] is also a ProjE.
+However, at the fine-grained expression level, textual input and parsing is used.
+While this improves usability, it destroys many of the advantages of projectional editing in the first place, because language composition at the expression level is limited.
+In fact, extension of expressions is particularly important to tightly integrate an embedded language with its host language [8].
+
+The Intentional Programming [2,3] project has gained widespread visibility and has popularized projectional editing; the Intentional Domain Workbench (IDW) is the contemporary implementation of the approach.
+IDW supports diverse notations [9,10].
+
+
+Language boxes [11] rely on explicitly delineating the boundaries between different languages used in a single program (e.g., the user could change the box with Ctrl-Space).
+Each language box may use parsing or projection.
+
+
+according to LWBC 2015 the 4 porjectional LWB that took place Enso, Mas, MPS, and whole
+
+
+Cedalion's 
+
+
+
+
+
+
 
 \subsubsection{What advantages does projectional editing bring?}
 
 Projectional editing gives advantages both to the language engineer and the program developers.
-There follows, in no particular order, a number of advantages of projectional editing synthesised from the literature mapping described in the chapter \ref{chapter:Method}.[TODO: make sure I describe the literature mapping].
-The advantages given here are a synthesized from the papers shown in table \ref{table:Projectional_Advantages}.
+There is a lot of crossover and repetition between papers written on the subject of projectional editing as to the advantages it brings.
+To that end, what follows is a synthesis of a number of papers as to the advantages given.
+Rather than attributing advantages in line to their citations, a helpful reference of papers which proclaim such advantages can be found in table \ref{table:Projectional_Advantages}.
 
-\begin{table}
+\begin{table}[h]
     \begin{center}
         \begin{tabular}{ |l | c | l | } 
             \hline
@@ -201,11 +330,14 @@ If there is a semantic change then the language engineer can write a migration i
 Data can be added to nodes that can augment the AST. 
 This has shown to be useful for documentation, requirements traceability and product line feature dependencies.
 
-%DISADVANTAGES
-
 \subsubsection{What are the disadvantages of projectional editing?}
+Whilst there are fewer papers proclaiming the disadvantages of projectional editing, we repeated the approach of the previous section.
+Thus, we have synthesised the disadvantages from papers in the following sections and listed citations for these ideas in the table \ref{table:Projectional_Disadvantages}
 
-\begin{table}
+We do not consider that the dearth of disadvantages discussed as evidence of projectional editings superiority.
+We consider that those who do not find projectional editing useful do not write papers about it.
+
+\begin{table}[h]
     \begin{center}
         \begin{tabular}{ |l | c | l | } 
             \hline
@@ -273,88 +405,6 @@ The nature of projectional editing is that what one edits is a projection of the
 Organisations thinking of going the projectional route for their DSLs may fear being locked into a specific implementation of the concept.
 To be able to use previously developed languages would require using the same tool set. 
 Changing to a different toolset for language design would require a significant re-skilling effort.
-
-
-%EXAMPLES
-At the same time, projectional language workbenches like MPS [57] and Intentional [47]
-
-Second, Behringer, Palz, and Berger (2017) present Projectional Editing of Product Lines (PEoPL), a DSL that enables multiple projections for variability mechanisms.
-
-Such editors have existed since the 1980s and gained widespread attention with the Intentional Programming paradigm, which used projectional editing at its core.
-
-Projectional editing, also known as structured editing or syntax-directed editing, is not a new idea; early references go back to the 1980s and include the Incremental Programming Environment [32], GANDALF [35], and the Synthesizer Generator [39].
-Work on projectional editors continues today: Intentional Programming [44, 18, 45, 14] is its most well-known incarnation.
-Other contemporary tools [20] are the Whole Platform [9], M´as [3], Onion, and MPS [4]
-
-Projectional Editors from the 1980s.
-GANDALF [35] and the Incremental Programming Environment (IPE) [32] do not attempt to make editing textual notations efficient; for example, they lack support for linear editing of tree-structured expressions.
-The Synthesizer Generator [39] avoids the use of projectional editing at the fine-grained expression level, where textual input and parsing is used.
-While this may improve editing efficiency, it risks the advantages of projectional editing, because language composition at the expression level is limited.
-Another work that implements and uses a DSL within the Synthesizer Generator [37] concludes: “Program editing will be considerably slower than normal keyboard entry, although actual time spent programming non-trivial programs should be reduced due to reduced error rates.”
-
-The Intentional Domain Workbench (IDW) is the most recent implementation of the Intentional Programming paradigm [44, 18], supporting diverse notations [45, 14].
-Since it is a commercial, closed-source project without widespread adoption yet, we cannot easily study it or survey its users.
-
-
-All contemporary projectional editors are part of language workbenches
-
-An early example of a projectional editor is the Incremental Programming Environment (IPE) [16].
-It supports the definition of several notations for a language as well as partial projections, where parts of the AST are not shown.
-However, IPE did not address editor usability; to enter 2+3, users first have to enter the + and then fill in the two arguments.
-Another early example is GANDALF [17]; the report in [20] states that the authors experienced similar usability problems as IPE: “Program editing will be considerably slower than normal keyboard entry, although actual time spent programming non-trivial programs should be reduced due to reduced error rates.”
-The Intentional Programming project [9, 22] has gained widespread visibility and has popularized projectional editing; the Intentional Domain Workbench (IDW) is the contemporary implementation of the approach.
-IDW supports diverse notations [7, 23].
-
-Scratch [15] is an environment for learning programming.
-It uses a projectional editor, but does not focus on textual editing; it relies mostly on nested blocks/boxes.
-So does GP [18].
-Textual notations, and thus grammar cells, are not relevant.
-Prune [2] is a projectional editor developed at Facebook.
-The goal is explicitly to not feel like a text editor; the hypothesis is that tree-oriented editing operations are more efficient than those known from text editors.
-While this is an interesting hypothesis, our considerable experience with using projectional editing in real projects has convinced us that this approach is not feasible; hence the work described in this paper.
-
-The Synthesizer Generator [21] is a projectional editor which, at the fine-grained expression level, uses textual input and (regular, textual) parsing.
-While this improves usability, it destroys many of the advantages of projectional editing in the first place, because language composition and the use of non-textual notations at the expression level is limited.
-
-Eco [10] relies on language boxes, explicitly delineated boundaries between different languages used in a single program (e.g., the user could define a box with Ctrl-Space).
-Each language box may use parsing or projection.
-This way, textual notations can be edited naturally, solving the usability issues associated with editing text in a projectional editor.
-
-Lamdu [5], a functional, projectional language (no paper)
-
-. Dataflow visual programming languages, such as Blueprints in the Unreal Engine [2], are often domain-specific.
-
-
-Early syntax-directed source code editors included Interlisp-D (for Lisp’s limited syntax) and Emily[1] (for PL/I’s rich syntax).
-
-deuce: lightweight structured editing in sketch-n-sketch
-
-Blockly: https://developers.google.com/blockly
-
-
-
-An early example of a ProjE is the Incremental Programming Environment (IPE) [4].
-Another early example is GANDALF [5], which generates a ProjE from a language specification.
-
-The Synthesizer Generator [7] is also a ProjE.
-However, at the fine-grained expression level, textual input and parsing is used.
-While this improves usability, it destroys many of the advantages of projectional editing in the first place, because language composition at the expression level is limited.
-In fact, extension of expressions is particularly important to tightly integrate an embedded language with its host language [8].
-
-The Intentional Programming [2,3] project has gained widespread visibility and has popularized projectional editing; the Intentional Domain Workbench (IDW) is the contemporary implementation of the approach.
-IDW supports diverse notations [9,10].
-
-
-Language boxes [11] rely on explicitly delineating the boundaries between different languages used in a single program (e.g., the user could change the box with Ctrl-Space).
-Each language box may use parsing or projection.
-
-
-according to LWBC 2015 the 4 porjectional LWB that took place Enso, Mas, MPS, and whole
-
-
-Cedalion's 
-
-
 
 
 
