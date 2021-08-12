@@ -87,6 +87,7 @@ public final class RuleCollection__BehaviorDescriptor extends BaseBHDescriptor {
 
   }
   /*package*/ static Iterable<HeaderValue> getDecisionTableHeaders_id6Y4UEk_vXaO(@NotNull final SNode __thisNode__) {
+
     Iterable<HeaderValue> headers = ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.rules$Bngn)).translate(new ITranslator2<SNode, HeaderValue>() {
       public Iterable<HeaderValue> translate(SNode it) {
         List<SNode> selectors = SNodeOperations.getNodeDescendants(it, CONCEPTS.FactSelector$lQ, false, new SAbstractConcept[]{});
@@ -113,17 +114,28 @@ public final class RuleCollection__BehaviorDescriptor extends BaseBHDescriptor {
     return headers;
   }
   /*package*/ static Iterable<HeaderValue> headers_id6Y4UEk__3T8(@NotNull SNode __thisNode__, final SNode selector) {
+
+    if (ListSequence.fromList(SNodeOperations.getNodeDescendants(selector, CONCEPTS.FieldConstraint$oO, false, new SAbstractConcept[]{})).count() == 0) {
+      return ListSequence.fromList(SNodeOperations.getNodeDescendants(selector, CONCEPTS.FactImportedRef$el, false, new SAbstractConcept[]{})).select(new ISelector<SNode, HeaderValue>() {
+        public HeaderValue select(SNode it) {
+          return new HeaderValue(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(it, LINKS.target$C2kL), LINKS.type$6tAj), LINKS.classifier$cxMr), PROPS.name$MnvL), "", "");
+        }
+      });
+    }
+
     Iterable<HeaderValue> restrictions = ListSequence.fromList(SNodeOperations.getNodeDescendants(selector, CONCEPTS.FieldConstraint$oO, false, new SAbstractConcept[]{})).select(new ISelector<SNode, HeaderValue>() {
       public HeaderValue select(SNode it) {
         return new HeaderValue(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(selector, LINKS.fact$47k6), LINKS.target$C2kL), LINKS.type$6tAj), LINKS.classifier$cxMr), PROPS.name$MnvL), FactProperty__BehaviorDescriptor.toFieldName_id7Sp91Iuum_h.invoke(SNodeOperations.cast(SLinkOperations.getTarget(it, LINKS.fieldName$SB$h), CONCEPTS.FactProperty$Ri)), Restriction__BehaviorDescriptor.toString_id6Y4UEk_yGyR.invoke(SLinkOperations.getTarget(it, LINKS.restriction$5rgf)));
       }
     });
+
     Iterable<HeaderValue> justTheFactsMam = ListSequence.fromList(SNodeOperations.getNodeDescendants(selector, CONCEPTS.FieldConstraint$oO, false, new SAbstractConcept[]{})).select(new ISelector<SNode, HeaderValue>() {
       public HeaderValue select(SNode it) {
         return new HeaderValue(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(selector, LINKS.fact$47k6), LINKS.target$C2kL), LINKS.type$6tAj), LINKS.classifier$cxMr), PROPS.name$MnvL), "", "");
       }
     });
-    return Sequence.fromIterable(restrictions).concat(Sequence.fromIterable(justTheFactsMam)).distinct();
+
+    return Sequence.fromIterable(justTheFactsMam).concat(Sequence.fromIterable(restrictions)).distinct();
   }
   /*package*/ static Iterable<SNode> factsInCollection_id65LB7G8xbqT(@NotNull SNode __thisNode__) {
     return ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.rules$Bngn)).translate(new ITranslator2<SNode, SNode>() {

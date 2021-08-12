@@ -205,7 +205,6 @@ This has shown to be useful for documentation, requirements traceability and pro
 
 \subsubsection{What are the disadvantages of projectional editing?}
 
-
 \begin{table}
     \begin{center}
         \begin{tabular}{ |l | c | l | } 
@@ -214,11 +213,11 @@ This has shown to be useful for documentation, requirements traceability and pro
             \hline
             Low adoption               & 4 & \cite{vysoky2018ingrid,voelter2015using,voelter2015towards,voelter2014projecting} \\
             Unnatural user experience  & 11 & \cite{vysoky2018ingrid,voelter2015towards,voelter2014towards,voelter2012mbeddr,voelter2014projecting,berger2016efficiency,voelter2016efficient,voelter2010embedded,voelter2010language2,schindler2016language,voelter2014supporting} \\
-            Abigious read syntax       & 1 & \cite{guttormsen2017consistent} \\
+            Abigious syntax           & 1 & \cite{guttormsen2017consistent} \\
             Inflexibility              & 2 & \cite{voelter2014towards,voelter2014supporting} \\
             lack of integration with text ecosystem & 5 & \cite{voelter2012mbeddr,voelter2014towards,voelter2012mbeddr,voelter2014projecting,voelter2014supporting} \\
             Learning curve             & 5 & \cite{voelter2010language2,pech2013jetbrains,voelter2012mbeddr,voelter2014towards,voelter2015using} \\
-            Vendor lock\-in            & 2 & \cite{voelter2010embedded,voelter2010language2} \\
+            Vendor lock\-in            & 2 & \cite{voelter2010embedded,voelter2010language2,tomassetti2020reflections} \\
             \hline
         \end{tabular}
     \end{center}
@@ -226,90 +225,54 @@ This has shown to be useful for documentation, requirements traceability and pro
     \label{table:Projectional_Disadvantages}
 \end{table}
 
-%not widly adopted
-This idea emerged as early as in 1970s, but it failed to get adopted widely, mostly due to inconvenient and unnatural way of manipulating code.
-Historically Projectional editors have had useability challenges and weren't used much in practice.  
-Traditionally, projectional editors were tedious to use and were hardly adopted in practice.
-Traditionally, projectional editors were hard to use and were not adopted much in practice.
-Traditionally, PEs also have drawbacks, which is why they have not seen much adoption despite their advantages.
+\paragraph{Lack of adoption}
+The ideas that proceeded projectional editing - structured editor or syntax-directed editor - has been around since the early 1970's yet has failed to be adopted widely.
+This argument is a bit of a tautological one, as the low adoption is perhaps an outcome of the other disadvantages of projectional editing.
+However, low adoption can lead to a viscious circlem where lack of adoption prevents further adoption.
 
+\paragraph{Inconvenient or unnatural editing}
+Early attempts at projectional editing presented an inconvenient and unnatural user experience when coding.
+These usability challanges, exempified by the tedious manner of entering code as per the order of the tree, compares badly to parser based languages.
+A traditional text based language can be entered the way it looks, by typing the characters one after another,
 
-%editing inconvenient or unnatural (to those used to text editing)
-This idea emerged as early as in 1970s, but it failed to get adopted widely, mostly due to inconvenient and unnatural way of manipulating code.
-This notational flexibility leads to drawbacks.
+This bad reputation continues, despite massive improvements in projectional editors.
+Whilst there is no debate that projectional editing feels different, it is questioned as to whether this inconvenience is an intrinsic property or a result of developers, through year of experience, being used to text based programming. 
 
-In a ParE, a program can always be typed exactly the way it looks by typing the sequence of characters one by one.
-Historically Projectional editors have had useability challenges and weren't used much in practice.  
-Traditionally, projectional editors were tedious to use and were hardly adopted in practice.
-First, for notations that look textual, users expect that the editing behavior resembles classical text editing as much as possible 
-However, the challenge in projectional editing is making the editing experience convenient and productive.
-Traditionally, projectional editors have had a bad reputation because the user experience in editing programs was unacceptable.
-Traditionally, projectional editors were hard to use and were not adopted much in practice.
-Projectional editing is often considered a drawback because the editors feel somewhat different and the programs are not stored as text, but as a tree (XML).
-First, for languages that use a textual syntax, users expect the editor to behave like regular, characteroriented text editors.
-Since PEs do not work with sequences of characters, this can be a challenge. 
-Thus, it is crucial that projectional editors do not negatively impact editing efficiency for textual notations.
-This is their weak spot: for textual notations, projectional editors behave differently from what developers know from traditional text editors in terms of the granularity and restrictions of code edits and code selections.
-The main drawback of projectional editors is their questionable usability.
-However, since the projection looks like text, users expect interaction patterns and gestures known from "real text" to work (such as cursor movements, inserting/deleting characters, rearranging text, selection).
-A projectional editor has to "simulate" these interaction patterns to be usable. 
-For a projectional editor to be useful, it has to "simulate" interaction patterns known from real text.
-However, since the projection looks like text, users expect interaction patterns and gestures known from "real text" to work.
-This transition requires significant training and it can be a cause of resistance.
-By improving the editing experience we can reduce this risk.
+Modern projectional editors, when using a textual syntax face an "uncanny valley" issue.
+Whilst trying to simulate a text editor, the developers start to expect all of the functinoality of the text based IDEs.
+This is a particular weak spot, especially with regards to granularity and restrictions of cursor movement, insertion, deletion, selection, copy and pasting, and other interacting with text
 
-Traditionally, projectional editors have also had disadvantages relative to editor usability and infrastructure integration; those are discussed in [3].
+\paragraph{Ambigious syntax}
+One of the selling points of projectional editing, especially when it comes to language composition, is that there can be no ambigious syntax.
+Whilst this may be true for the AST, it is not so for the developer as they read this code on the screen.
+If one combined Drools and Basic rather than Java, the developer may become confused as to which language the ``Then'' keyword referes when she read it.
 
-%ambigious syntax for coder
-The freedom in defining the concrete syntax is not problematic for the computer, but it can cause problems for the language user 
-Ambiguous syntax is not only a problem for parsers, but a problem that affects humans as well. 
-but there are also downsides to this syntax ambiguities do not only affect parsers, but humans as well 
-However, a projection can still be ambiguous or confusing to the user.
+\paragraph{Inflexibility}
+As a developer one has no flexibility in code layout, perhaps for enhanced readability. 
+This is entirely in the hands of the language engineer when determining the projection rules.
 
-%inflexibility
-ProjE does not support custom layout (SM.6) – the representation is determined completely by the projection rules.
-One characteristic of projectional editors is that the language structure strictly determines the structure of the code that can be written in the editor.
+\paragraph{Integration with the text based world}
+Projectional editors do not store the definition of the program in the form of a plain text implementation in the concrete syntax.
+Instead the AST is stored and serialized in a format not meant to be human readable, such as XML.
 
-%stored product is inconvenient fo existing tools
-Second, ProjEs cannot store programs in the concrete syntax – otherwise, this syntax would have to be parsed when programs are loaded into the editor.
-Instead, programs are stored as a serialized AST, often as XML. 
-Projectional editing is often considered a drawback because the editors feel somewhat different and the programs are not stored as text, but as a tree (XML).
-The second challenge of PEs is infrastructure integration.
-PEs do not store programs as text, because this would re-introduce parsing and hence negate the advantages.
-Instead, the AST is persisted, typically as XML.
-For use in practice, the integration of these XML files with version control systems must be addressed: diff/merge must be supported using the concrete, projected syntax.
+This leads to an issue with integration with the infrastructure that has grown arounf text based programing languages.
+Two notable examples are text diffing, especially where branch merging is concerned and code sharing.
+The diffing issue can and has been solved within projectional editing tools.
+This is however difficult to integrate into the workflows of software development workflows that include multiple tools.
 
-Traditionally, projectional editors have also had disadvantages relative to editor usability and infrastructure integration; those are discussed in [3].
+Textual source code can be be shared simply by email or websites, this is not the case with projectional code.
 
-***GOT HERE***
+\paragraph{Learning curve}
+For the language engineer, the necessity to develop an editor with a good user experience is much harder work than defining a grammar for a parsed language.
+The learning curve for the langauge engineer is significant, as by default, she has to think also of the IDE devleopment.
 
-%code sharing 
-Textual source code can be written in any text editor and simply be shared.
+For the developer, the different style of editing takes some getting used to.
 
-%bad projections
-
-Some projections are really bad and should be rejected, which this paper advocates.
-
-%vendor lockin technology
-Because projectional languages by definition need an IDE for editing (it has to do the projection!), language definition and extension always implies IDE definition and extension.
-
-
-%learning curve
-As the examples below will show, projectional editing has a number of intriguing advantages, but there is also a price to pay: this price is the additional effort that goes into defining a nicely usable editor.
-Despite its relatively steep learning curve, MPS could help the adoption of the LOP principles among software practitioners and move the industry forward by making programming languages truly customizable.
-While the learning curve for MPS is significant (a developer who wants to become proficient in MPS language development has to invest at least a month), we found that is scales extremely well for larger and more sophisticated languages.
-, the surveyed professional developers confirm the effectiveness of these mitigations in their every-day work, while the learning curve is high, requiring additional training.
-Learning Curve Using MPS’ projectional editor requires some getting used to and may lead to some initial frustration.
-
-
-%propriatorial conceptual framework
-
-%unproven technology
-
-%portable theory
-
-
-
+\paragraph{Vendor lock-in}
+The nature of projectional editing is that what one edits is a projection of the AST and therefore an IDE is needed to do the projecting, as well as language definition.
+Organisations thinking of going the projectional route for their DSLs may fear being locked into a specific implementation of the concept.
+To be able to use previously developed languages would require using the same tool set. 
+Changing to a different toolset for language design would require a significant re-skilling effort.
 
 
 %EXAMPLES

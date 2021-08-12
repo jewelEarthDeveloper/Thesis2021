@@ -4767,7 +4767,7 @@
                         <ref role="3cqZAo" node="5aMCVXiNUHG" resolve="folder" />
                       </node>
                       <node concept="Xl_RD" id="5aMCVXiNUHT" role="3uHU7w">
-                        <property role="Xl_RC" value="\\24px_X.png" />
+                        <property role="Xl_RC" value="\\24px_laugh.png" />
                       </node>
                     </node>
                   </node>

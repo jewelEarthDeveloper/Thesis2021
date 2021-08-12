@@ -50,7 +50,7 @@ import javax.swing.JLabel;
   }
   private JComponent _QueryFunction_JComponent_cua9qg_a0a() {
     String folder = PathMacros.getInstance().getValue("rule_icons");
-    Icon smile = new ImageIcon(folder + "\\24px_X.png");
+    Icon smile = new ImageIcon(folder + "\\24px_laugh.png");
     return new JLabel(smile);
   }
 }

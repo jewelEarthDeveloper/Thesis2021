@@ -744,8 +744,8 @@
       <node id="5959005299087346177" at="47,161,48,51" concept="4" />
       <node id="5959005299087346177" at="48,51,49,22" concept="11" />
       <node id="5959005299088010091" at="51,61,52,68" concept="10" />
-      <node id="5959005299088010098" at="52,68,53,56" concept="10" />
-      <node id="5959005299088010106" at="53,56,54,29" concept="11" />
+      <node id="5959005299088010098" at="52,68,53,60" concept="10" />
+      <node id="5959005299088010106" at="53,60,54,29" concept="11" />
       <node id="5959005299087346177" at="20,0,22,0" concept="5" trace="myNode" />
       <node id="5959005299087346177" at="34,0,37,0" concept="9" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="5959005299087346177" at="23,0,27,0" concept="2" trace="Selected_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
