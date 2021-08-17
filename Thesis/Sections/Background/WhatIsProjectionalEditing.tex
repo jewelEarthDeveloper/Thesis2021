@@ -1,11 +1,12 @@
 \subsection{What is projectional editing?}
 
 Traditionally programmers write code with text editors, or integrated development environments (IDE), which adjust the concrete syntax and allows a parser to create the abstract syntax tree.
-A projectional editor, also known as structured editor or syntax-directed editor, inverts this relationship, as a developer edits the abstract syntax tree and allows the IDE to project the concrete syntax.
+A projectional editor, Inverts this relationship, as a developer edits the abstract syntax tree and allows the IDE to project the concrete syntax.
 
 \subsubsection{parser based editing}
 
-In a traditional, parser-based, development workflow, users use a text editor to represent the program.
+
+In a traditional, parser-based, development workflow, a program is defined using text and can be edited with a text editor.
 Because it is text based then the notation of the language is limited to text.
 A grammar is a definition of the formal syntactical rules, or concrete syntax, of a programming language.
 The lexer and parser are derived from the grammar.
@@ -24,8 +25,9 @@ This assistance is appreciated, because without IDE help learning the concrete s
 
 \subsubsection{projectional definition}
 
+In the projectional editing paradigm the program is represented by a semantic model that can only be read and edited with projectional editing tools. 
 A projectional editor does not parse any text.
-In its place, a developer reads and edits the AST through a projected notation.
+In its place, a developer reads and edits a representation of the AST through a projected notation.
 Her editing gestures immediately and directly manipulate the AST within predefined and fixed layouts.
 
 The principle of projectional editing is familiar to those that use visual programming, like Scratch or Blockly, or graphical modelling tools, such as MetaEdit+.
@@ -34,7 +36,8 @@ They project the underlying models/programs in a view and which they store as th
 
 Projectional editing is the generalization of this idea, with the ability to render multiple representation of the program with a wide range of notation styles.
 
-The projection may be textual. 
+The projection may sometimes seem like a text editor, however this is just acrobatics by the language engineer designing an editor that makes a developer feel more comfortable. 
+The text is just another type of projection of the AST.
 It also may be any other notation that can represent the semantic meaning of the code, such as formulas, graphs, or images.
 Projections are not just the notation, but also how the user interacts with the projection.
 In this sense the definition of the projections and the IDE/UI overlap.
@@ -46,6 +49,10 @@ MDE
 MBSE
 
 Low-code software development
+
+Most confusing of all Projectional Editing the  of projecting an editor from an AST, should not be confused with Projectional Editing the methodology of Product line differentiation in code bases.
+The reason we call this confusing is that as well as the name being the same, one of the leading products for this product line technique is called PEoPL, developed in MPS.
+This product is a projectional Editor (the paradigm) for product lines projectional editing (the methodology).
 
 \subsubsection{How projectional editing works}
 
@@ -203,6 +210,10 @@ deuce: lightweight structured editing in sketch-n-sketch
 
 Blockly: https://developers.google.com/blockly
 
+mage? r Jupyter notebooks
+
+citrus
+visual macro system in Racket
 
 
 An early example of a ProjE is the Incremental Programming Environment (IPE) [4].
@@ -333,7 +344,8 @@ From knowing it's context, it makes it much simpler to suggest intelligent code 
 Always having a complete AST makes it much easier to validate scope, typing and other hard to implement code validators.
 
 \paragraph{Language evolution}
-Extending a language with new capabilities and syntax is simple.
+Parsing complicates the evolution of languages, for example, adding a new reserved word is difficult without breaking existing code.
+Extending a language with new capabilities and syntax in projectional editing is simple.
 If the change is syntactic then the language engineer has to update an editor.
 If there is a semantic change then the language engineer can write a migration in the language, to transform a node of one concept to a different type, and the developer would have to run that migration on their code.
 
@@ -359,7 +371,7 @@ We consider that those who do not find projectional editing useful do not write 
             Abigious syntax           & 1 & \cite{guttormsen2017consistent} \\
             Inflexibility              & 2 & \cite{voelter2014towards,voelter2014supporting} \\
             lack of integration with text ecosystem & 5 & \cite{voelter2012mbeddr,voelter2014towards,voelter2012mbeddr,voelter2014projecting,voelter2014supporting} \\
-            Learning curve             & 5 & \cite{voelter2010language2,pech2013jetbrains,voelter2012mbeddr,voelter2014towards,voelter2015using} \\
+            Learning curve             & 5 & \cite{voelter2010language2,pech2013jetbrains,voelter2012mbeddr,voelter2014towards,voelter2015using,prinz2021teaching} \\
             Vendor lock\-in            & 2 & \cite{voelter2010embedded,voelter2010language2,tomassetti2020reflections} \\
             \hline
         \end{tabular}
