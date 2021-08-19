@@ -1,11 +1,11 @@
-\chapter{Method: Systematic Review}\label{chapter:Method_systematic_review}
+\section{Method: Systematic Review}\label{section:Method_systematic_review}
 
 To answer the first Research Question, ``what is the current state of Projectional Editing?'', we conducted a systematic literature review.
 Hereafter, we describe the method we undertook.
 
 To carry out this review we followed Kitchenham's\cite{Kitchenham_2015} advice on systematic review protocol validation, (see appendix \ref{appendix:protocolValidation} for the exact checklist we used).
 
-\section{Motivation}
+\subsection{Motivation}
 The motivation that preceded this research was a requirement to understand if projectional editing was an idea that was worth investigating.
 Through our background research we saw an interest in the precursors to projectional editing in the late 70's through to the mid 80's.
 This seemed to be abandoned until the mid 90's following Charles Simonyi's treaties on Intentional programming.
@@ -19,7 +19,7 @@ For the wider community, there does not seem to be any systematic reviews specif
 This study is not extending any previous Systematic Review as, although there were literature surveys and mapping studies covering some adjacent fields, no SLRs were found.  
 Thus we believe it may be useful for those in the language engineering research community to bring together all current research in the area of projectional editing in one place.
 
-\section{Research Question}
+\subsection{Research Question}
 This paper we only have one research question to synthesize the findings of scientific papers towards.
 This is ``What is the current state of Projectional Editing?''
 
@@ -31,7 +31,7 @@ This question for us can be broke down into:
 \end{itemize}
 
 
-\section{Search Strategy}
+\subsection{Search Strategy}
 
 The search process is automated as SLRs require a high level of completeness, which cannot be effectively achieved manually.
 Our first major decision was whether to engage in creating a quasi-gold standard as advised by Zhang \cite{Zhang_2011}. 
@@ -95,7 +95,7 @@ All of the papers not excluded in each iteration will be the basis for the quali
 After the final iteration, as a final step the selected papers will have a deeper scan.
 This is to verify our initial scan that the papers met our inclusion criteria, before moving on to the quality assessment.
 
-\section{Study Selection}
+\subsection{Study Selection}
 
 The Inclusion Criteria are:
 \begin{itemize}
@@ -135,7 +135,7 @@ An SLR is interested in studies rather than papers.
 There is a many-to-many relation between papers and studies.
 We will review the selected papers to note when this has happened in our results to make sure studies do not get over or undercounted.
 
-\section{Quality of Primary Studies}
+\subsection{Quality of Primary Studies}
 To discover explanatory reasons for why there may be differences in study results, and to weigh how valuable specific studies are, we will assess the quality of the selected studies.
 
 To try and avoid a Results Section bias we will be operating a results-blind quality assessment.  
@@ -201,10 +201,68 @@ Should there be a high disagreement the design of the checklist will be revisite
 The quality checklist is trying to weed out the biases of selection, performance, detection, and exclusion, as well as other threats to the validity of the studies under test.
 Validity issues can occur during the design, operation, analysis, or conclusion of an empirical study.
 
-\section{Data Extraction}
+\subsection{Data Extraction}
+No data extraction will be necessary for the first sub-question,  ``Is there current research in the area of projectional editing?''.
+The fact of the existence of papers that have been verified to be primary studies either into projectional editing theory or practical use of it will be enough to answer the question.
 
-\section{Data aggregation and synthesis}
+For the question of ``What tools are currently being used for research?'', we shall note each tool discussed specifically with regards to the study being carried out.
 
-\section{Reporting}
+Finally, for the sentiment we shall pass each paragraph of the introduction, the discussion and the conclusion through a sentiment analyser and, if the paragraph is pertinent to projectional editing, we will not it's sentiment score.  
+The sentiment analysis tool we shall use is Microsoft Azure Cognitive Services Text Analytics.
+The code to carry out this task is shown in listing \ref{listing:text_analytics}
 
-\section{Review Management}
+\begin{lstlisting}[language={Python}, caption=Text Analytics code., captionpos=b, label=listing:text_analytics, breaklines=true]
+
+    from azure.core.credentials import AzureKeyCredential
+    from azure.ai.textanalytics import TextAnalyticsClient
+    
+    endpoint = "REPLACE_WITH_CORRECT_ENDPOINT"
+    key = "REPLACE_WITH_CORRECT_KEY"
+    
+    text_analytics_client = TextAnalyticsClient(endpoint=endpoint, credential=AzureKeyCredential(key))
+    
+    documents = [
+        "REPLACE WITH A LIST OF PARAGRAPHS FROM EACH PAPER",
+    ]
+
+    result = text_analytics_client.analyze_sentiment(documents, show_opinion_mining=True)
+    
+    docs = [doc for doc in result if not doc.is_error]
+
+    for idx, doc in enumerate(docs):
+        print("Document text: {}".format(documents[idx]))
+        print("Overall sentiment: {}".format(doc.sentiment))
+\end{lstlisting}
+
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c | l | l | c |} 
+		\hline
+		\#& Data Type           & Description                                          & RQ     \\ \hline
+		\hline
+        1 & Study ID            & Unique identifier for the study                      &        \\ \hline
+        2 & Title of Study      & The paper name                                       &        \\ \hline
+        3 & Year of Publication & Will be either 2020 or 2021                          &        \\ \hline
+        4 & Author(s) Names     & Including affiliation                                &        \\ \hline
+        5 & Source of Study     & Name Of Online Database/ Digital Library             &        \\ \hline
+        6 & Type of Study       & Publication/Conference/Workshop/Symposium            &        \\ \hline
+        7 & Name of Venue       & Journal/Conference in which study has been published &        \\ \hline
+        8 & Tools in Study      & A list of the tools used                             & RQ 1.2 \\ \hline
+        9 & Sentiment           & The sentiment scores from appropriate paragraphs     & RQ 1.3 \\ \hline		
+	\end{tabular}	
+	\caption{Data extraction form.}
+    \label{table:Data_Extraction_Form}
+\end{table}
+
+
+
+
+\subsection{Data aggregation and synthesis}
+[TODO: This section]
+
+\subsection{Reporting}
+[TODO: This section]
+
+\subsection{Review Management}
+[TODO: This section]
