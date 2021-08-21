@@ -26,25 +26,29 @@ The First column ``Paper Title'' is the name of the paper as given by the search
 
 The second column ``Lib'', indicates the library or search engine through which it was found.  
 The Libraries are Identified by the Keys in table \ref{table:SearchEngineKey}.
+
+precision = search selected over total selected
+sensitivity (recall) = total searched over search selected
+
 \begin{table}[h]
     \begin{center}
-        \begin{tabular}{ |l | c | c | l| } 
+        \begin{tabular}{ | l | l | c | c | c | c |} 
             \hline
-            Key & Search engine/library     & original \# & final cut \#      \\
+            Key & Search engine/library     & original \# & selected \# & sensitivity & precision\\
             \hline
             \hline
-            1  & Google Scholar             & 82          & ?                 \\
-            2  & IEEExplores                & 5           & ?                 \\
-            3  & ACM                        & 18          & ?                 \\
-            4  & BASE                       & 7           & ?                 \\
-            5  & CORE                       & 7           & ?                 \\
-            6  & Web of Science             & 1           & 0                 \\
-            7  & Microsoft Academic         & 10          & ?                 \\
-            8  & SCOPUS                     & 10          & ?                 \\
-            9  & Semantic Scholar           & 10          & ?                 \\
-            10 & SpringerLink               & 22          & ?                 \\
-            11 & Wiley Online               & 1           & ?                 \\
-            12 & Science.gov                & 0           & ?                 \\
+            1  & Google Scholar             & 82          & 22          & 76\%        &  27\%    \\
+            2  & IEEExplores                & 5           & 2           &  7\%        &  40\%    \\
+            3  & ACM                        & 18          & 3           & 10\%        &  16\%    \\
+            4  & BASE                       & 7           & 3           & 10\%        &  43\%    \\
+            5  & CORE                       & 7           & 1           &  3\%        &  14\%    \\
+            6  & Web of Science             & 1           & 0           &  0\%        &   0\%    \\
+            7  & Microsoft Academic         & 10          & 5           & 17\%        &  50\%    \\
+            8  & SCOPUS                     & 10          & 3           & 10\%        &  30\%    \\
+            9  & Semantic Scholar           & 10          & 4           & 14\%        &  40\%    \\
+            10 & SpringerLink               & 22          & 11          & 38\%        &  50\%    \\
+            11 & Wiley Online               & 1           & 0           &  0\%        &   0\%    \\
+            12 & Science.gov                & 0           & 0           &  0\%        &   0\%    \\
             \hline
         \end{tabular}
     \end{center}
@@ -65,112 +69,112 @@ Ths final column ``ref'', gives a link to the citations in the separate bibliogr
 
 
 \begin{landscape}
-    \begin{longtable}{ | p{15cm} | *{7}{c|} }
+    \begin{longtable}{ | p{15cm} | *{5}{c|} }
     \hline
-    Paper Title                                                                                                                                                   & lib       & in     &  exclusion  & F\# & B\#& QA  & ref \\ \hline 
+    Paper Title                                                                                                                                                   & lib       & in     &  exclusion  & F\# & B\# \\ \hline 
     \hline
     \endhead  % header material
     \hline\endfoot  % footer material
-        ``Filmar, assistir e problematizar'' – contribuições à aprendizagem de cálculos                                                                           & 9         &        & not english &  X  & X  &     &  X        \\ \hline 
-        20. Internationales Stuttgarter Symposium                                                                                                                 & 10        &        & book        &  X  & X  &     &  X       \\ \hline 
-        A Domain-Specific Language for Payroll Calculations: a Case Study at DATEV                                                                                & 1         & \cmark &             &  0  & 0  &     &          \\ \hline 
-        A Domain-Specific Language for Payroll Calculations: An Experience Report from DATEV                                                                      & 1,10      & \cmark & Duplicate   &  X  & X  &     &  X        \\ \hline 
-        A Framework for Modernizing Domain-Specific Languages                                                                                                     & 1         & \cmark & gray        &  X  & X  &     &  X        \\ \hline 
-        A Framework for Projectional Multi-variant Model Editors.                                                                                                 & 1,8       & \cmark &             &  0  & 0  &     &          \\ \hline 
-        A Generic Projectional Editor for EMF Models.                                                                                                             & 1,7,8,9   & \cmark &             &  2  & 0  &     &          \\ \hline 
-        A language-driven Development framework for simulation components to generate simulated environments                                                      & 1         & \cmark & gray        &  X  & X  &     &  X        \\ \hline 
-        A Model-Driven Approach Towards Automatic Migration to Microservices                                                                                      & 10        & \cmark &             &  5  & 0  &     &          \\ \hline 
-        A survey of Model Driven Engineering in robotics                                                                                                          & 1         & \cmark &             &  2  & 2  &     &          \\ \hline 
-        A Survey on the Design Space of End-User Oriented Languages for Specifying Robotic Missions                                                               & 1,10      & \cmark &             &  1  & 5  &     &          \\ \hline 
-        A survey on the formalisation of system requirements and their validation                                                                                 & 1         & \cmark &             &  0  & 0  &     &          \\ \hline 
-        A text-based syntax completion method using LR parsing                                                                                                    & 1         &        &             &  X  & X  &     &  X        \\ \hline 
-        Activities and costs of re-engineering cloned variants into an integrated platform                                                                        & 1         &        &             &  X  & X  &     &  X        \\ \hline 
-        AdaptiveVLE: An Integrated Framework for Personalized Online Education Using MPS JetBrains Domain-Specific Modeling Environment                           & 1,2       & \cmark &             &  1  & 1  &     &          \\ \hline 
-        Adding Interactive Visual Syntax to Textual Code                                                                                                          & 3         & \cmark &             &  3  & 0  &     &          \\ \hline 
-        An approach to generate text-based IDEs for syntax completion based on syntax specification                                                               & 1         & \cmark &             &  1  & 0  &     &          \\ \hline 
-        An MPS implementation for SimpliC                                                                                                                         & 1         & \cmark & gray        &  x  & x  &     &          \\ \hline 
-        Blended graphical and textual modelling for UML profiles: A proof-of-concept implementation and experiment                                                & 1         & \cmark &             &  0  & 0  &     &          \\ \hline 
-        Block-based syntax from context-free grammars                                                                                                             & 1,3,5     & \cmark &             &  0  & 2  &     &          \\ \hline 
-        Bridging the worlds of textual and projectional language workbenches                                                                                      & 1         & \cmark & gray        &  X  & X  &     &  X        \\ \hline 
-        Classification Algorithms Framework (CAF) to Enable Intelligent Systems Using JetBrains MPS Domain-Specific Languages Environment                         & 2,5       & \cmark &             &  4  & 0  &     &          \\ \hline 
-        Code and Structure Editing for Teaching: A Case Study in using Bibliometrics to Guide Computer Science Research                                           & 1,9       & \cmark &             &  2  & 0  &     &          \\ \hline 
-        ComPOS - a Domain-Specific Language for Composing Internet-of-Things Systems                                                                              & 1,4       & \cmark & gray        &  X  & X  &     &  X        \\ \hline 
-        Concepts of variation control systems                                                                                                                     & 1         & \cmark &             &  9  & 5  &     &          \\ \hline 
-        Concise, Type-Safe, and Efficient Structural Diffing                                                                                                      & 3         &        &             &  X  & X  &     &  X        \\ \hline 
-        Constructing optimized constraint-preserving application conditions for model transformation rules                                                        & 1         &        &             &  X  & X  &     &  X        \\ \hline 
-        Design \& Evaluation of an Accessible High-Level Language for Advanced Cryptography                                                                       & 1         & \cmark & gray        &  X  & X  &     &  X        \\ \hline 
-        Domain-specific languages for modeling and simulation                                                                                                     & 1         &        &             &  X  & X  &     &  X       \\ \hline 
-        Domain-Specific Languages in Practice                                                                                                                     & 10        & \cmark & book        &  X  & X  &     &  X       \\ \hline 
-        DSL Based Approach for Building Model-Driven Questionnaires                                                                                               & 1,10      & \cmark &             &  0  & 1  &     &          \\ \hline 
-        DSS-Based Ontology Alignment in Solid Reference System Configuration                                                                                      & 10        &        & unavailable &  X  & X  &     &  X        \\ \hline 
-        Editing Software as Strategy Value                                                                                                                        & 1         &        &             &  X  & X  &     &  X        \\ \hline 
-        Efficient editing in a tree-oriented projectional editor                                                                                                  & 1,3,7,8,9 & \cmark &             &  1  & 0  &     &          \\ \hline 
-        Efficient generation of graphical model views via lazy model-to-text transformation                                                                       & 1,4       & \cmark &             &  1  & 0  &     &          \\ \hline 
-        Efficient usage of abstract scenarios for the development of highly-automated driving functions                                                           & 1,10      & \cmark & unavailable &  X  & X  &     &  X        \\ \hline 
-        Enabling language engineering for the masses                                                                                                              & 1,3       & \cmark &             &  2  & 1  &     &          \\ \hline 
-        Engineering Gameful Applications with MPS                                                                                                                 & 1,10      & \cmark &             &  0  & 2  &     &          \\ \hline 
-        Enhancing development and consistency of UML models and model executions with USE studio                                                                  & 1,3,7,8,9 & \cmark &             &  0  & 2  &     &          \\ \hline 
-        Enterprise Information Systems                                                                                                                            & 10        &        & book        &  X  & X  &     &  X        \\ \hline 
-        Example-driven software language engineering                                                                                                              & 1,3       & \cmark &             &  1  & 2  &     &          \\ \hline 
-        Exploring Visual Primitives for Authoring Source Code                                                                                                     & 1         &        & gray        &  X  & X  &     &  X        \\ \hline 
-        FASTEN: An Extensible Platform to Experiment with Rigorous Modeling of Safety-Critical Systems                                                            & 1,10      & \cmark &             &  0  & 5  &     &          \\ \hline 
-        FeatureCoPP: unfolding preprocessor variability                                                                                                           & 1,3       &        &             &  X  & X  &     &  X        \\ \hline 
-        FeatureVista: Interactive Feature Visualization                                                                                                           & 1         &        &             &  X  & X  &     &  X        \\ \hline 
-        Filling Typed Holes with Live GUIs                                                                                                                        & 3         & \cmark &             &  0  & 5  &     &          \\ \hline 
-        First-class concepts: reifying architectural knowledge beyond the dominant decomposition                                                                  & 1,3       & \cmark &             &  0  & 1  &     &          \\ \hline 
-        FORMREQ 2020                                                                                                                                              & 1,2,8     &        & book        &  X  & X  &     &  X        \\ \hline 
-        Gentleman: a light-weight web-based projectional editor generator                                                                                         & 1,3,4,7,8,9 & \cmark &           &  0  & 0  &     &          \\ \hline 
-        GPP, the Generic Preprocessor                                                                                                                             & 1         &        &             &  X  & X  &     &  X        \\ \hline 
-        Improving the usability of the domain-specific language editors using artificial intelligence                                                             & 1         & \cmark & gray        &  X  & X  &     &  X        \\ \hline 
-        Incremental Flow Analysis through Computational Dependency Reification                                                                                    & 1,2       & \cmark &             &  0  & 2  &     &          \\ \hline    
-        Incrementalizing Static Analyses in Datalog                                                                                                               & 1         & \cmark & gray        &  X  & X  &     &  X        \\ \hline 
-        Integrating the Common Variability Language with Multilanguage Annotations for Web Engineering                                                            & 1         &        &             &  X  & X  &     &  X        \\ \hline 
-        Integrating UML and ALF: An Approach to Overcome the Code Generation Dilemma in Model-Driven Software Engineering                                         & 10        & \cmark &             &  0  & 0  &     &          \\ \hline 
-        Javardise: a structured code editor for programming pedagogy in Java                                                                                      & 1         & \cmark &             &  0  & 0  &     &          \\ \hline 
-        JetBrains MPS as Core DSL Technology for Developing Professional Digital Printers                                                                         & 1,10      & \cmark &             &  0  & 0  &     &          \\ \hline 
-        JetBrains MPS: Why Modern Language Workbenches Matter                                                                                                     & 1,7,10    & \cmark &             &  0  & 1  &     &          \\ \hline 
-        Learning Data Analysis with MetaR                                                                                                                         & 1,10      & \cmark &             &  0  & 0  &     &          \\ \hline 
-        Lipschitz-like property relative to a set and the generalized Mordukhovich criterion                                                                      & 6         &        &             &  X  & X  &     &  X        \\ \hline 
-        Macros for Domain-Specific Languages                                                                                                                      & 3         &        &             &  X  & X  &     &  X        \\ \hline 
-        Mechanizing metatheory interactively                                                                                                                      & 1         & \cmark & gray        &  X  & X  &     &  X        \\ \hline 
-        Migrating Insurance Calculation Rule Descriptions from Word to MPS                                                                                        & 1,10      & \cmark &             &  0  & 0  &     &          \\ \hline 
-        Model Driven Software Engineering Meta-Workbenches: An XTools Approach                                                                                    & 1,5       & \cmark &             &  0  & 0  &     &          \\ \hline 
-        Model-based safety assessment with SysML and component fault trees: application and lessons learned                                                       & 1,10      & \cmark &             &  8  & 0  &     &          \\ \hline 
-        Model-Driven Development for Spring Boot Microservices                                                                                                    & 1,5       & \cmark & gray        &  X  & X  &     &  X        \\ \hline 
-        n Challenges for Software Language Engineering                                                                                                            & 1         &        &             &  X  & X  &     &  X        \\ \hline 
-        On preserving variability consistency in multiple models                                                                                                  & 1,3       &        &             &  X  & X  &     &  X        \\ \hline 
-        On the Need for a Formally Complete and Standardized Language Mapping between C++ and UML.                                                                & 1         &        &             &  X  & X  &     &  X        \\ \hline 
-        On the Understandability of Language Constructs to Structure the State and Behavior in Abstract State Machine Specifications: A Controlled Experiment     & 1         &        &             &  X  & X  &     &  X        \\ \hline 
-        On the use of product-line variants as experimental subjects for clone-and-own research: a case study                                                     & 1         &        &             &  X  & X  &     &  X        \\ \hline 
-        PAMOJA: A component framework for grammar-aware engineering                                                                                               & 1         & \cmark &             &  0  & 1  &     &          \\ \hline 
-        Programming Robots for Activities of Everyday Life                                                                                                        & 1         & \cmark & gray        &  X  & X  &     &  X        \\ \hline 
-        Programming tools for intelligent systems                                                                                                                 & 1         & \cmark & gray        &  X  & X  &     &  X        \\ \hline 
-        Projecting Textual Languages                                                                                                                              & 1,10      & \cmark &             &  0  & 1  &     &          \\ \hline 
-        Rule-based and user feedback-driven decision support system for transforming automatically-generated alignments into information-integration alignments   & 5         &        & unavailable &  X  & X  &     &  X        \\ \hline 
-        Semi-Automatische Deduktion von Feature-Lokalisierung während der Softwareentwicklung: Masterarbeit                                                       & 5         &        & not english &  X  & X  &     &  X        \\ \hline 
-        Should Variation Be Encoded Explicitly in Databases?                                                                                                      & 1         &        &             &  X  & X  &     &  X        \\ \hline 
-        SLang: A Domain-specific Language for Survey Questionnaires                                                                                               & 1         & \cmark &             &  0  & 0  &     &          \\ \hline 
-        SpecEdit: Projectional Editing for TLA+ Specifications                                                                                                    & 1,4,7     & \cmark &             &  0  & 0  &     &          \\ \hline 
-        Specifying Software Languages: Grammars, Projectional Editors, and Unconventional Approaches                                                              & 1,2,4,5,7,8,9& \cmark &             &  0  & 6  &     &          \\ \hline 
-        Teaching Language Engineering Using MPS                                                                                                                   & 10        & \cmark &             &  0  & 0  &     &          \\ \hline 
-        Teaching MPS: Experiences from Industry and Academia                                                                                                      & 1,10      & \cmark &             &  0  & 1  &     &          \\ \hline 
-        Teasy framework: uma solução para testes automatizados em aplicações web                                                                                  & 1         & \cmark & not english &  X  & X  &     &          \\ \hline 
-        The Art of Bootstrapping                                                                                                                                  & 10        & \cmark &             &  3  & 0  &     &          \\ \hline 
-        The state of adoption and the challenges of systematic variability management in industry                                                                 & 1         &        &             &  X  & X  &     &  X        \\ \hline 
-        Toward a domain-specific language for scientific workflow-based applications on multicloud system                                                         & 1,11      &        &             &  X  & X  &     &  X        \\ \hline 
-        Towards a Universal Variability Language                                                                                                                  & 1         & \cmark & gray        &  X  & X  &     &  X        \\ \hline 
-        Towards Multi-editor Support for Domain-Specific Languages Utilizing the Language Server Protocol                                                         & 10        & \cmark &             &  5  & 0  &     &          \\ \hline 
-        Towards Ontology-based Domain Specific Language for Internet of Things                                                                                    & 1,3       & \cmark &             &  0  & 0  &     &          \\ \hline 
-        Towards projectional editing for model-based SPLs                                                                                                         & 3,4,7,8,9 & \cmark &             &  3  & 0  &     &          \\ \hline 
-        Tychonis: A model-based approach to define and search for geometric events in space                                                                       & 1         &        &             &  X  & X  &     &  X        \\ \hline 
-        Type-Directed Program Transformations for the Working Functional Programmer                                                                               & 1         & \cmark &             &  0  & 0  &     &          \\ \hline 
-        Understanding Variability-Aware Analysis in Low-Maturity Variant-Rich Systems                                                                             & 1         &        &             &  X  & X  &     &  X        \\ \hline 
-        Untangling Mechanized Proofs                                                                                                                              & 3         &        &             &  X  & X  &     &  X        \\ \hline 
-        Variability representations in class models: An empirical assessment                                                                                      & 1,3       &        &             &  X  & X  &     &  X        \\ \hline 
-        Visual design for a tree-oriented projectional editor                                                                                                     & 1,3,4,7,8,9& \cmark & Duplicate  &  X  & X  &     &  X        \\ \hline 
-        What do practitioners expect from the meta-modeling tools? A survey                                                                                       & 1,7,8,9   & \cmark &             &  0  & 3  &     &          \\ \hline 
-        Cyrillic named paper 1                                                                                                                                    & 1         &        & not english &  X  & X  &     &  X        \\ \hline 
-        Cyrillic named paper 2                                                                                                                                    & 1         &        & not english &  X  & X  &     &  X        \\ \hline 
+        ``Filmar, assistir e problematizar'' – contribuições à aprendizagem de cálculos                                                                           & 9         &        & not english &  X  & X   \\ \hline 
+        20. Internationales Stuttgarter Symposium                                                                                                                 & 10        &        & book        &  X  & X   \\ \hline 
+        A Domain-Specific Language for Payroll Calculations: a Case Study at DATEV                                                                                & 1         & \cmark &             &  0  & 0   \\ \hline 
+        A Domain-Specific Language for Payroll Calculations: An Experience Report from DATEV                                                                      & 1,10      & \cmark & Duplicate   &  X  & X   \\ \hline 
+        A Framework for Modernizing Domain-Specific Languages                                                                                                     & 1         & \cmark & gray        &  X  & X   \\ \hline 
+        A Framework for Projectional Multi-variant Model Editors.                                                                                                 & 1,8       & \cmark &             &  0  & 0   \\ \hline 
+        A Generic Projectional Editor for EMF Models.                                                                                                             & 1,7,8,9   & \cmark &             &  2  & 0   \\ \hline 
+        A language-driven Development framework for simulation components to generate simulated environments                                                      & 1         & \cmark & gray        &  X  & X   \\ \hline 
+        A Model-Driven Approach Towards Automatic Migration to Microservices                                                                                      & 10        & \cmark &             &  5  & 0   \\ \hline 
+        A survey of Model Driven Engineering in robotics                                                                                                          & 1         & \cmark &             &  2  & 2   \\ \hline 
+        A Survey on the Design Space of End-User Oriented Languages for Specifying Robotic Missions                                                               & 1,10      & \cmark &             &  1  & 5   \\ \hline 
+        A survey on the formalisation of system requirements and their validation                                                                                 & 1         & \cmark &             &  0  & 0   \\ \hline 
+        A text-based syntax completion method using LR parsing                                                                                                    & 1         &        &             &  X  & X   \\ \hline 
+        Activities and costs of re-engineering cloned variants into an integrated platform                                                                        & 1         &        &             &  X  & X   \\ \hline 
+        AdaptiveVLE: An Integrated Framework for Personalized Online Education Using MPS JetBrains Domain-Specific Modeling Environment                           & 1,2       & \cmark &             &  1  & 1   \\ \hline 
+        Adding Interactive Visual Syntax to Textual Code                                                                                                          & 3         & \cmark &             &  3  & 0   \\ \hline 
+        An approach to generate text-based IDEs for syntax completion based on syntax specification                                                               & 1         & \cmark &             &  1  & 0   \\ \hline 
+        An MPS implementation for SimpliC                                                                                                                         & 1         & \cmark & gray        &  x  & x   \\ \hline 
+        Blended graphical and textual modelling for UML profiles: A proof-of-concept implementation and experiment                                                & 1         & \cmark &             &  0  & 0   \\ \hline 
+        Block-based syntax from context-free grammars                                                                                                             & 1,3,5     & \cmark &             &  0  & 2   \\ \hline 
+        Bridging the worlds of textual and projectional language workbenches                                                                                      & 1         & \cmark & gray        &  X  & X   \\ \hline 
+        Classification Algorithms Framework (CAF) to Enable Intelligent Systems Using JetBrains MPS Domain-Specific Languages Environment                         & 2,5       & \cmark &             &  4  & 0   \\ \hline 
+        Code and Structure Editing for Teaching: A Case Study in using Bibliometrics to Guide Computer Science Research                                           & 1,9       & \cmark &             &  2  & 0   \\ \hline 
+        ComPOS - a Domain-Specific Language for Composing Internet-of-Things Systems                                                                              & 1,4       & \cmark & gray        &  X  & X   \\ \hline 
+        Concepts of variation control systems                                                                                                                     & 1         & \cmark &             &  9  & 5   \\ \hline 
+        Concise, Type-Safe, and Efficient Structural Diffing                                                                                                      & 3         &        &             &  X  & X   \\ \hline 
+        Constructing optimized constraint-preserving application conditions for model transformation rules                                                        & 1         &        &             &  X  & X   \\ \hline 
+        Design \& Evaluation of an Accessible High-Level Language for Advanced Cryptography                                                                       & 1         & \cmark & gray        &  X  & X   \\ \hline 
+        Domain-specific languages for modeling and simulation                                                                                                     & 1         &        &             &  X  & X   \\ \hline 
+        Domain-Specific Languages in Practice                                                                                                                     & 10        & \cmark & book        &  X  & X   \\ \hline 
+        DSL Based Approach for Building Model-Driven Questionnaires                                                                                               & 1,10      & \cmark &             &  0  & 1   \\ \hline 
+        DSS-Based Ontology Alignment in Solid Reference System Configuration                                                                                      & 10        &        & unavailable &  X  & X   \\ \hline 
+        Editing Software as Strategy Value                                                                                                                        & 1         &        &             &  X  & X   \\ \hline 
+        Efficient editing in a tree-oriented projectional editor                                                                                                  & 1,3,7,8,9 & \cmark &             &  1  & 0   \\ \hline 
+        Efficient generation of graphical model views via lazy model-to-text transformation                                                                       & 1,4       & \cmark &             &  1  & 0   \\ \hline 
+        Efficient usage of abstract scenarios for the development of highly-automated driving functions                                                           & 1,10      & \cmark & unavailable &  X  & X   \\ \hline 
+        Enabling language engineering for the masses                                                                                                              & 1,3       & \cmark &             &  2  & 1   \\ \hline 
+        Engineering Gameful Applications with MPS                                                                                                                 & 1,10      & \cmark &             &  0  & 2   \\ \hline 
+        Enhancing development and consistency of UML models and model executions with USE studio                                                                  & 1,3,7,8,9 & \cmark &             &  0  & 2   \\ \hline 
+        Enterprise Information Systems                                                                                                                            & 10        &        & book        &  X  & X   \\ \hline 
+        Example-driven software language engineering                                                                                                              & 1,3       & \cmark &             &  1  & 2   \\ \hline 
+        Exploring Visual Primitives for Authoring Source Code                                                                                                     & 1         &        & gray        &  X  & X   \\ \hline 
+        FASTEN: An Extensible Platform to Experiment with Rigorous Modeling of Safety-Critical Systems                                                            & 1,10      & \cmark &             &  0  & 5   \\ \hline 
+        FeatureCoPP: unfolding preprocessor variability                                                                                                           & 1,3       &        &             &  X  & X   \\ \hline 
+        FeatureVista: Interactive Feature Visualization                                                                                                           & 1         &        &             &  X  & X   \\ \hline 
+        Filling Typed Holes with Live GUIs                                                                                                                        & 3         & \cmark &             &  0  & 5   \\ \hline 
+        First-class concepts: reifying architectural knowledge beyond the dominant decomposition                                                                  & 1,3       & \cmark &             &  0  & 1   \\ \hline 
+        FORMREQ 2020                                                                                                                                              & 1,2,8     &        & book        &  X  & X   \\ \hline 
+        Gentleman: a light-weight web-based projectional editor generator                                                                                         & 1,3,4,7,8,9 & \cmark &           &  0  & 0   \\ \hline 
+        GPP, the Generic Preprocessor                                                                                                                             & 1         &        &             &  X  & X   \\ \hline 
+        Improving the usability of the domain-specific language editors using artificial intelligence                                                             & 1         & \cmark & gray        &  X  & X   \\ \hline 
+        Incremental Flow Analysis through Computational Dependency Reification                                                                                    & 1,2       & \cmark &             &  0  & 2   \\ \hline    
+        Incrementalizing Static Analyses in Datalog                                                                                                               & 1         & \cmark & gray        &  X  & X   \\ \hline 
+        Integrating the Common Variability Language with Multilanguage Annotations for Web Engineering                                                            & 1         &        &             &  X  & X   \\ \hline 
+        Integrating UML and ALF: An Approach to Overcome the Code Generation Dilemma in Model-Driven Software Engineering                                         & 10        & \cmark &             &  0  & 0   \\ \hline 
+        Javardise: a structured code editor for programming pedagogy in Java                                                                                      & 1         & \cmark &             &  0  & 0   \\ \hline 
+        JetBrains MPS as Core DSL Technology for Developing Professional Digital Printers                                                                         & 1,10      & \cmark &             &  0  & 0   \\ \hline 
+        JetBrains MPS: Why Modern Language Workbenches Matter                                                                                                     & 1,7,10    & \cmark &             &  0  & 1   \\ \hline 
+        Learning Data Analysis with MetaR                                                                                                                         & 1,10      & \cmark &             &  0  & 0   \\ \hline 
+        Lipschitz-like property relative to a set and the generalized Mordukhovich criterion                                                                      & 6         &        &             &  X  & X   \\ \hline 
+        Macros for Domain-Specific Languages                                                                                                                      & 3         &        &             &  X  & X   \\ \hline 
+        Mechanizing metatheory interactively                                                                                                                      & 1         & \cmark & gray        &  X  & X   \\ \hline 
+        Migrating Insurance Calculation Rule Descriptions from Word to MPS                                                                                        & 1,10      & \cmark &             &  0  & 0   \\ \hline 
+        Model Driven Software Engineering Meta-Workbenches: An XTools Approach                                                                                    & 1,5       & \cmark &             &  0  & 0   \\ \hline 
+        Model-based safety assessment with SysML and component fault trees: application and lessons learned                                                       & 1,10      & \cmark &             &  8  & 0   \\ \hline 
+        Model-Driven Development for Spring Boot Microservices                                                                                                    & 1,5       & \cmark & gray        &  X  & X   \\ \hline 
+        n Challenges for Software Language Engineering                                                                                                            & 1         &        &             &  X  & X   \\ \hline 
+        On preserving variability consistency in multiple models                                                                                                  & 1,3       &        &             &  X  & X   \\ \hline 
+        On the Need for a Formally Complete and Standardized Language Mapping between C++ and UML.                                                                & 1         &        &             &  X  & X   \\ \hline 
+        On the Understandability of Language Constructs to Structure the State and Behavior in Abstract State Machine Specifications: A Controlled Experiment     & 1         &        &             &  X  & X   \\ \hline 
+        On the use of product-line variants as experimental subjects for clone-and-own research: a case study                                                     & 1         &        &             &  X  & X   \\ \hline 
+        PAMOJA: A component framework for grammar-aware engineering                                                                                               & 1         & \cmark &             &  0  & 1   \\ \hline 
+        Programming Robots for Activities of Everyday Life                                                                                                        & 1         & \cmark & gray        &  X  & X   \\ \hline 
+        Programming tools for intelligent systems                                                                                                                 & 1         & \cmark & gray        &  X  & X   \\ \hline 
+        Projecting Textual Languages                                                                                                                              & 1,10      & \cmark &             &  0  & 1   \\ \hline 
+        Rule-based and user feedback-driven decision support system for transforming automatically-generated alignments into information-integration alignments   & 5         &        & unavailable &  X  & X   \\ \hline 
+        Semi-Automatische Deduktion von Feature-Lokalisierung während der Softwareentwicklung: Masterarbeit                                                       & 5         &        & not english &  X  & X   \\ \hline 
+        Should Variation Be Encoded Explicitly in Databases?                                                                                                      & 1         &        &             &  X  & X   \\ \hline 
+        SLang: A Domain-specific Language for Survey Questionnaires                                                                                               & 1         & \cmark &             &  0  & 0   \\ \hline 
+        SpecEdit: Projectional Editing for TLA+ Specifications                                                                                                    & 1,4,7     & \cmark &             &  0  & 0   \\ \hline 
+        Specifying Software Languages: Grammars, Projectional Editors, and Unconventional Approaches                                                              & 1,2,4,5,7,8,9& \cmark &             &  0  & 6 \\ \hline 
+        Teaching Language Engineering Using MPS                                                                                                                   & 10        & \cmark &             &  0  & 0   \\ \hline 
+        Teaching MPS: Experiences from Industry and Academia                                                                                                      & 1,10      & \cmark &             &  0  & 1   \\ \hline 
+        Teasy framework: uma solução para testes automatizados em aplicações web                                                                                  & 1         & \cmark & not english &  X  & X   \\ \hline 
+        The Art of Bootstrapping                                                                                                                                  & 10        & \cmark &             &  3  & 0   \\ \hline 
+        The state of adoption and the challenges of systematic variability management in industry                                                                 & 1         &        &             &  X  & X   \\ \hline 
+        Toward a domain-specific language for scientific workflow-based applications on multicloud system                                                         & 1,11      &        &             &  X  & X   \\ \hline 
+        Towards a Universal Variability Language                                                                                                                  & 1         & \cmark & gray        &  X  & X   \\ \hline 
+        Towards Multi-editor Support for Domain-Specific Languages Utilizing the Language Server Protocol                                                         & 10        & \cmark &             &  5  & 0   \\ \hline 
+        Towards Ontology-based Domain Specific Language for Internet of Things                                                                                    & 1,3       & \cmark &             &  0  & 0   \\ \hline 
+        Towards projectional editing for model-based SPLs                                                                                                         & 3,4,7,8,9 & \cmark &             &  3  & 0   \\ \hline 
+        Tychonis: A model-based approach to define and search for geometric events in space                                                                       & 1         &        &             &  X  & X   \\ \hline 
+        Type-Directed Program Transformations for the Working Functional Programmer                                                                               & 1         & \cmark &             &  0  & 0   \\ \hline 
+        Understanding Variability-Aware Analysis in Low-Maturity Variant-Rich Systems                                                                             & 1         &        &             &  X  & X   \\ \hline 
+        Untangling Mechanized Proofs                                                                                                                              & 3         &        &             &  X  & X   \\ \hline 
+        Variability representations in class models: An empirical assessment                                                                                      & 1,3       &        &             &  X  & X   \\ \hline 
+        Visual design for a tree-oriented projectional editor                                                                                                     & 1,3,4,7,8,9& \cmark & Duplicate  &  X  & X   \\ \hline 
+        What do practitioners expect from the meta-modeling tools? A survey                                                                                       & 1,7,8,9   & \cmark &             &  0  & 3   \\ \hline 
+        Cyrillic named paper 1                                                                                                                                    & 1         &        & not english &  X  & X   \\ \hline 
+        Cyrillic named paper 2                                                                                                                                    & 1         &        & not english &  X  & X   \\ \hline 
         \caption{Systematic review log - search results}
         \label{table:Systematic_Review_Log_1}
     \end{longtable}

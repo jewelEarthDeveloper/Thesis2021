@@ -211,7 +211,7 @@ Finally, for the sentiment we shall pass each paragraph of the introduction, the
 The sentiment analysis tool we shall use is Microsoft Azure Cognitive Services Text Analytics.
 The code to carry out this task is shown in listing \ref{listing:text_analytics}
 
-\begin{lstlisting}[language={Python}, caption=Text Analytics code., captionpos=b, label=listing:text_analytics, breaklines=true]
+\begin{lstlisting}[language=Python, caption=Text Analytics code., captionpos=b, label=listing:text_analytics, breaklines=true]
 
     from azure.core.credentials import AzureKeyCredential
     from azure.ai.textanalytics import TextAnalyticsClient
@@ -221,17 +221,21 @@ The code to carry out this task is shown in listing \ref{listing:text_analytics}
     
     text_analytics_client = TextAnalyticsClient(endpoint=endpoint, credential=AzureKeyCredential(key))
     
-    documents = [
-        "REPLACE WITH A LIST OF PARAGRAPHS FROM EACH PAPER",
-    ]
-
-    result = text_analytics_client.analyze_sentiment(documents, show_opinion_mining=True)
+    inputfiles = [[ARRAY_OF_FILES_TO_BE_ANALYSED]]
     
-    docs = [doc for doc in result if not doc.is_error]
-
-    for idx, doc in enumerate(docs):
-        print("Document text: {}".format(documents[idx]))
-        print("Overall sentiment: {}".format(doc.sentiment))
+    with open('/content/sample_data/sentiment/output_all.txt','a') as outf:
+      for sections in inputfiles:
+        for section in sections:
+          print("Section: {}".format(section),file=outf)
+          f = open('/content/sample_data/sentiment/'+section)
+          content = f.readlines()
+          # for brevity an optimization to deal with 10 document limit is removed
+          if len(content) != 0:
+            result = text_analytics_client.analyze_sentiment(content, show_opinion_mining=True)
+            docs = [doc for doc in result if not doc.is_error]
+            for idx, doc in enumerate(docs):
+              print("sentiment: {}".format(doc.sentiment),file=outf)
+              print("Document text: {}".format(content[idx]),file=outf)
 \end{lstlisting}
 
 
