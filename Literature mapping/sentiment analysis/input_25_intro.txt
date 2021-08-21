@@ -1,0 +1,26 @@
+To reach the goal of automatically analyzed requirements, a formalization is required and the resulting expressions must be closer to the expertise domain of the engineers.
+As noticed by formal methods users on industrial cases [1], formal specification based on simple discrete math with basic set theory and predicates notation is quite familiar to engineers.
+Numerous research efforts address this challenge through mathematical formalism equipped with powerful tools for reasoning and handling specifications [2].
+Temporal Logic of Actions (TLA+) is a formal specification language created by Leslie Lamport [3].
+TLA+ defines a temporal logic based on set theory that facilitates the specification of dynamic systems.
+TLA+ specifications are amendable to formal verification either through model-checking via TLC [4] or theorem proving using TLA+ Proof System (TLAPS) [5].
+Particularly well adapted for the specification of distributed systems, TLA+ has been successfully used in both academia and industry.
+Amongst its industrial uses, we can cite its usage in production, for capturing the design requirements of todays most influential cloud infrastructures, S3 from Amazon [1], Azure from Microsoft [6] and Elasticsearch [7].
+The transition from natural language requirements to formal specifications is not always as smooth as end-users might want it to be, even when provided with adequate analysis tools.
+As observed by Green [8], the alignment of the language with the domain greatly influences the ability to effectively express facts in that domain.
+In the case of TLA+, the language concepts and semantics are directly mapped to mathematics, offering the premises for both formalization and automation.
+However, at the syntactic level, TLA+ suffers from the duality of its syntax, which introduces a gap between the conceptual view of the specification and its encoding in ASCII.
+According to Green, this duality entails an arduous cognitive dimension [8] for the specification designer.
+Moreover, TLA+ is targeted at non-programmers.
+Leslie Lamport answered in 2014 to some user’s feedback [9]: “As for the ”pretty-printed” version versus the ASCII, a TLA+ user at Intel wrote that one of the good things about TLA+ is that if he doesn’t understand what a TLA+ construct means, he can look it up in a math book.
+Math books don’t write math in ASCII, they use standard mathematical symbols.
+I want TLA+ users to think in terms of math, which means thinking in terms of its symbols.
+You will soon get to be bilingual, reading math and its TLA+ ASCII versions equally well.” He indicated at the time that it is inconceivable to give up the mathematical affiliation of TLA+, and that it is therefore inevitable to keep the mathematical notation in parallel with the code written in ASCII.
+This leads us to the following research question: Is it possible to hide TLA+’s syntax duality in a viable bilingual Integrated Development Environment (IDE) to reduce the mental efforts of system engineers? Such an IDE would expose only the mathematical syntax to the user, translating it to the ASCII version for ensuring compatibility with the existing tools.
+At first glance this does not seem so trivial because the input device we use, the keyboard, does not allow for the direct input of special characters, like ∈.
+Furthermore, the use of the Unicode ID (U+2208) or of complex key combinations needed for writing the corresponding Unicode characters are no better solution.
+This paper introduces SpecEdit, an IDE with a projectional editor for TLA+ that solves this problem.
+SpecEdit lets the designer use standard mathematical symbols in the specifications.
+This approach is meant to minimize the mental effort and streamline the formal system specification process.
+We illustrate the benefits of our approach using the openly available specification of the cluster coordination of Elasticsearch.
+We furthermore assess the complementarity of SpecEdit with respect to the existing TLA+ tools and emphasize some of the advantages of projectional editors for writing formal requirements and specifications.

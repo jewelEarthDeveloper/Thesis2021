@@ -1,0 +1,86 @@
+The presented approach was realized in a tool for evaluation in two real-world automotive use cases.
+This section introduces our tool and discusses the realization of particular features that correspond to our drivers (D1)–(D6).
+The modeling tool is based on the language workbench JetBrains Meta Programming System (MPS)1 that provides rich features for language design, language modularization, textual and graphical editors, as well as artifact generation.
+Usage of language workbenches such as MPS in safetycritical environments have been proposed by Völter et al. [42], who justify the use of DSLs in order to introduce rigor, consistency, and traceability into development processes.
+Particularly, the strong language modularization support provides the necessary means to allow integration of all relevant aspects into one language family and allow modeling these aspects in a single-source-of-truth model (D2).
+Only a very limited number of approaches we found in the literature are model-based or leverage the benefits of a DSL.
+Projectional editing in MPS allows tailoring of our languages and editors to the needs of our stakeholders, e.g., different textual and graphical editors (D6).
+The generalpurpose language Java as base language in MPS allows us to integrate with the domain tools that our stakeholders are used to or required to use for creation of assurance cases (D6).
+4.1 SysML.
+A complex, software-intensive system usually does not have one single notation that fits all relevant aspects.
+Particularly, since different aspects may be specified by different roles at different times.
+Often you want to define separate DSLs for each viewpoint, or provide different notations for different viewpoints [41].
+We implemented the subset of the SysML 1.4 metamodel that is relevant for our stakeholders and use cases (see Sect. 5) in MPS’ meta-metamodel, i.e., essentially blocks [32, Ch.8], ports and flows [32, Ch.8], activities [32, Ch.11], allocations [32, Ch.15], and requirements [32, Ch.16].
+MPS provides features that allow to provide different DSLs for different aspects of the system.
+The projectional editing feature of MPS allows to provide different concrete notations by providing different projections of the underlying abstract syntax tree.
+Since all projections directly manipulate the same abstract syntax tree, no conversion needs to be done between the different notations as it would be necessary in parser-based approaches [43].
+For certain viewpoints, a graphical notation is better suited, especially when dealing with relationships between system entities or some kind of data flow as often specified with SysML.
+In these cases, graphical notations make it easier to derive a mental model of a system structure [36].
+Textual models, on the other hand, integrate more easily with source code management and build infrastructures, e.g., merging of models.
+We provide one textual DSL and two graphical DSLs for editing of blocks, ports, and connectors, corresponding to the SysML block definition diagram and internal block diagram.
+Component fault trees can be edited in a textual or graphical DSL as well, see Fig. 8.
+For editing of activities, we provide one textual and one graphical DSL corresponding to the SysML activity diagram.
+From our experience, textual notation is faster and more efficient in the initial creation of a system, while graphical notation is better suited for understanding and maintaining a system.
+Additionally, different stakeholders prefer a textual or a graphical notation.
+In our use case, software developers tend to prefer textual notation for its efficiency, while safety experts tend to prefer graphical notation that is closer to the notation they are used from domain-typical tools, e.g., Isograph’s Reliability Workbench.
+For our approach, we want to provide a graphical and a textual notation for the component fault trees language.
+While the graphical notation is more accustomed to the safety expert reviewing it, the textual notation is closer to the component developer, in the future potentially providing the component fault tree together with the component.
+An additional view that proved extremely efficient to discuss about error propagation is an integrated view that shows the graphical CFTs inside the blocks of the SysML IBDs, easing the comprehension of the error propagation through the system. 
+4.2 Automated analysis.
+We decided for use existing, potentially certified tools for performing the fault tree analysis, instead of performing it on our own.
+Advantages are the use of certified tools as well as providing the domain experts the possibility to review the analysis results in the tools of their choice and expertise, potentially integrated in established certification processes.
+4.2.1 Integration of third-party tools In Sects. 3.2.2 and 3.3.2, respectively, we detail how the system fault tree and the FMEA artifacts are generated from the SysML model and the CFTs.
+In order to analyze the generated fault tree, we transform it into the OpenPSA3 format, an XML-based open format for fault trees, as well as the respective configuration files for an FTA call to the open-source command-line tool XFTA4.
+After the FTA was performed, we read the generated results file and display the computed reliability value at the respective output error.
+The experience with our business units shows that the resulting reliability is often not as important as the minimum cut sets or the generated fault tree itself.
+Arbre-Analyste is a free graphical viewer for the OpenPSA format that allows to compute the minimum cut sets on the generated system fault tree.
+However, in order to use the resulting fault tree in a safety case of a product, the respective safety standards demand for qualified software tools.
+For this reason, we extended our tool to not only generate the system fault tree as OpenPSA files, but additionally transform the fault tree in CSV files that can be imported by Isograph’s Reliability Workbench, which is a qualified and established FTA tool.
+The automatically generated FMEA structure tree, function network, and failure network are transformed into the XML-based format of APIS IQ-RM, which is a qualified and established FMEA tool.
+Figure 9 shows a screenshot of the generated FMEA artifacts in IQ-RM.
+4.2.2 Lifting analysis results to the model While the usage of external tools for the analysis has its advantages, we loose the immediate feedback inside our modeling environment, which is one of our main drivers(D1).
+As a countermeasure, we want to lift the analysis results from the domain-specific tools up to the level of our models.
+In case of the quantitative FTA, this means annotating the error probabilities calculated by the domain-specific FTA tools to the respective errors in the CFTs.
+CFTs of blocks and activities may be instantiated multiple times in a system fault tree, though, so that we potentially get different probabilities for the output errors for each instantiation of the blocks or activities, respectively.
+When reading back the results we therefore annotate a table of probabilities to the errors that shows the probability of the error for each instantiation of the CFT.
+Figure 10 shows the CFT of the operation “ADCTrigger” that is called by four different call operation actions.
+Thus, it is instantiated four times in the system fault tree, potentially leading to four different probabilities of the “flgADCMeasurement” output error.
+The probabilities table attached to the output shows the probabilities in the context of the four call operation actions.
+4.3 Usability features We have implemented several features that ease the creation and handling of SysML models and CFTs.
+4.3.1 Import and export Most Bosch business units use either IBM’s Rhapsody6 or Sparx’s Enterprise Architect7 to model their systems in SysML.
+In order to not manually regenerate the models in our MPS-based prototypical tool, we created importers that are able to read the exported XML Metadata Interchange (XMI) file from Rhapsody or use the Java API of Enterprise Architect.
+Due to the different modeling ways, we found it necessary to adapt and extend these importers for each use case we considered (D4).
+We also provide exporters to XMI in order to export modifications back to general-purpose SysML modeling tools.
+However, while we are able to import a model itself, its graphical aspects and layout information are not yet considered by our importers.
+As a result, the graphical representation often differs considerably from the representation in Rhapsody or Enterprise Architect.
+Unless these aspects are covered properly by the importers and exporters as well, including the FTA and FMEA tools in the loop, fluent roundtrip engineering is not possible, which hinders adoption by end-users.
+Additionally, the current version of our graphical representations only shows one layer of hierarchy.
+We found this to be hindering discussions with the domain experts, since additional time is needed to check and adapt to the novel representation.
+As long as these issues remain, we assume changes of the model are done within the general-purpose modeling tool in order to ensure the single-source-of-truth principle as well as the graphics and layouting decisions are kept.
+4.3.2 Pessimistic CFT generation Since the imported SysML models often consist of a large number of blocks without an explicit failure model, we created a CFT generator that adds a pessimistic CFT to each block.
+The generator assumes that blocks without any input ports contain one basic event that is forwarded to each output port.
+Blocks with input ports have one OR gate that collects all input errors and propagates the result to each output port.
+A first analysis of the output events of top level blocks often results in quick insights into the system.
+It is especially helpful in detecting unconnected input ports or missing connections.
+Since this feature allows automatic generation of the error model from a SysML IBD or activity diagram, it allows together with the analysis introduced in Sect. 4.2 a pessimistic system fault tree generation and FTA from a SysML IBD or activity diagram without additional modeling required, cf. [27].
+Note, however, that this feature is only intended to accelerate the manual generation of CFTs.
+It might not be helpful without manual adaptation of the CFTs and must not be used without manual review of the result.
+4.3.3 Design optimization patterns In addition to the analysis of the system, we started developing a library of model transformations that optimize the system design with respect to dependability.
+We follow existing approaches discussed in Sect. 2 and leverage the possibility of generating fault trees to automatically optimize the cost of the system with respect to the specified safety requirements.
+In the following, we summarize this design optimization approach that was originally published by Munk et al. [30].
+We propose to automatically improve an architecture model such that the probability of the top events remains below a given upper bound while the costs of that system are minimized.
+As costs we consider not only the monetary costs of the hardware components but also the number of components, the size of required memory, the runtime load, the chip area, etc.; costs are annotated to the components of the architecture model.
+Note that for functional architecture models the probability of basic events might be hard to define.
+In this case, the functional architecture can still be automatically improved by removing minimum cut sets with only one basic event.
+Our approach uses a catalog of safety-aware design optimization patterns of which each pattern is described as a model transformation on the architecture model.
+For example, one optimization pattern adds dual modular redundancy (DMR) or triple modular redundancy (TMR), respectively, to the system.
+Another pattern replaces a component with a more reliable but more expensive, or a less reliable but cheaper variant.
+The catalog of safety-aware design optimization patterns can then be shared among different projects and used for different products.
+Due to the multi-objective nature of the underlying optimization problem, we use metaheuristics such as evolutionary algorithms (EAs) as most suitable to find good architecture models [6].
+An EA evaluates the fitness of a set of solutions (represented as a so-called population).
+For the next generation of that population, only a specific number of the fittest solutions are kept while the rest of the population is replaced by mutations of solutions or crossovers between two solutions.
+In our case, the fitness of a specific solution is derived from the costs annotated to the architecture model as well as the probability of the top events.
+Mutations are represented by model transformations while the minimum cut sets give a good indication which components of the architecture model are best to transform.
+So far, we have not implemented the crossover operator.
+Since different model transformations affect different cost metrics and can lower the probability of one top event but increase the probability of another top event, their result is a set of Pareto-optimal architecture models.
+Thus, the presented cost optimization approach can merely indicate a set of potential architectures to a human expert who then manually chooses the final architecture from that set.

@@ -1,0 +1,9 @@
+Engineering a software language, be it a programming language or a modeling language, requires versatile knowledge and software development skills from a language developer, as they have to define its syntax, static and dynamic semantics, as well as implement a tailored Integrated Development Environment (IDE), which is vital for successful adoption of the language [43].
+Over a decade ago, tools to define software languages together with their IDEs have appeared under the name of language workbenches [13, 15]; many of them still have a very steep learning curve even for experienced software professionals [34].
+Our hypothesis [4] is that one of the key factors that inherently makes language engineering intricate is the prevalence of meta-definitions, with language definition tools (such as grammars and language workbenches) themselves being on the meta-meta-level.
+We describe in this paper our vision of a web-based tool— Language Wheel—aimed at beginner language engineers, and list possible requirements for such a tool.
+A language is defined by giving examples of code written in it using illustrative syntax definition.
+These examples are then annotated to specify different concerns of language definition—abstract syntax, typing rules, validation rules, formatting rules, and dynamic semantics.
+Such a definition mechanism can serve as a front-end language workbench, whose output is a language definition in another language workbench [13], such as, for example, Eclipse Xtext [5, 14], Monticore [21], Spoofax [23], or JetBrains MPS [8].
+An alternative possibility is to output a tailored editor—be it textual (e.g., Monaco or Ace) or projectional [18, 46])—and a code generator for a language, or, depending on the language, a CRUD application.
+Yet another possibility is to output a language server protocol (LSP) instance [10] for the language defined in Language Wheel.

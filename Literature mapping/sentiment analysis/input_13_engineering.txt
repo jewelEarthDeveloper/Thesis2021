@@ -1,0 +1,43 @@
+The GDF is composed of a set of languages, each of which defined to cover the artifacts constituting the gamification stack.
+A graphical representation of this stack is shown in Fig. 7 [6]: it is composed of a set of layers that will be referred to as game modeling layers, namely, GML, GaML, and GiML.
+They represent incremental refinements/specializations of gamification concepts, from higher to lower levels of abstraction, respectively.
+The remaining layers, i.e., GsML and GadML, are called utility layers and can be defined on top of any of the game modeling ones.
+GDF conveys a gamification design process that reflects widely adopted practices in the state of the art and practice of the field [2, 25] (see also Sect. 2).
+Taking inspiration from this process, GDF provides different modeling languages for specifying the main game components, i.e., game elements, and how they interact to build up a gameful application, that is, mechanics.
+Such components are progressively refined to reach implementation code for a target gamification engine that copes with game instances execution.
+For this purpose, we selected a specific gamification engine [26] based on DROOLS rule engine.6 It is an opensource component and exposes its main functionalities as services (Open APIs) that are used by GDF.
+Notably, services include supporting the definition and deployment of games, accessing information about the game and player state, and supporting the configuration of notifications for communicating game results to the players.
+The Gamification Modeling Language (GML) is used to represent the set of core elements essential to describe a gameful system (i.e., Point, Badge, Action, etc. introduced in Fig. 2).
+Figure 8 shows an excerpt of the main GML concepts: a Game concept is composed of a set of properties (i.e., id, domain, and owner) that characterize a specific gameful solution, and a set of children concepts that allow to specify the main game elements, that is, the fundamental ingredients of a gamified application.
+GML conforms to the MPS base language and provides the basic gamification building blocks.
+Other languages (GaML, GiML, etc.) are derived as lower abstraction levels.
+In this respect, a game designer should extend/refine GML concepts every time there is a need to introduce new game elements or mechanics.
+The Game Model Language (GaML) extends GML with concepts used to define concrete game descriptions.
+As shown in Fig. 9, through GaML, the designer can specify how the game components are assembled to create an application into a GameDefinition.
+Notably, the concept of Point in GML is specialized in skillPoint and experiencePoint, to distinguish between points gained by means of specific activity goals and points gained due to the progression through the game, respectively.
+Moreover, dataDrivenAction and evenDrivenAction are exploited to recognize activities based on data (i.e., modeling task completed.) or on events (i.e., surveys filled).
+In a similar manner, the Challenge concept coming from GML is refined through, e.g., PlayerChallenge and TeamChallenge, to distinguish between challenges intended to be completed individually and the ones to be accomplished as groups of players, respectively.
+GaML is generic enough to enable the reuse of the defined gamification concepts into multiple development scenarios (e.g., the distinction between the types of actions and points).
+A game instance is a GameDefinition, as prescribed in GaML, opportunely instantiated to be run by the gamification engine.
+In general, an instantiation consists of the specification of the players/teams involved in the game; hence, one or more instances of multiple games may run concurrently by means of the same engine.
+The Game Instance Model Language (GiML) binds game definitions coming from GaML with instantiation details, as depicted in Fig. 10.
+In particular, the universityInstance defines teams and players that play in a certain instance of a game.
+GiML also supports for single-player challenges.
+singlePlayerChallenges demand to players the fulfillment of a specific goal, whose attainment requires a prolonged individual commitment, typically within a limited period.
+In order to confer a feeling of progress and mastery, GDF supports the definition of Levels.
+Levels are always defined in association with a specific Point Concept.
+For this in GiML, we have identified two types of levels: skillLevels and experiencelevels.
+The first are related to skillPoints, while the second to the experiencePoints point concepts.
+GiML instantiates also the badgeCollections.
+They are used in order to further reward, through a collectible visual representation, the results of a player in terms of specific achievements.
+Apart from game modeling languages, GDF provides so-called utility languages.
+One of them is the Game Simulation Language (GsML), which allows to simulate game scenarios.
+In particular, a GameSimulation is composed of a GameDefinition and a set of SingleGameExecution elements, as depicted in Fig. 11.
+In turn, each game execution is made up of a Team and/or a Player that can execute an actionInstance or a challengeInstance (see Fig. 12).
+In this way, the designer can specify specific game situations and check what state changes are triggered.
+In this respect, it is important to mention that the target gamification engine7 provides the necessary features to track the gamification rules triggered during the execution together with the corresponding state changes.
+Another utility feature provided by GDF is adaptation.
+This feature leverages specific capabilities of the target gamification engine and, in particular, a recommendation system for generating players’ tailored challenges based on game historical data and current status, a mechanism to “inject” new game contents on the fly.
+With this premise, GadML allows to model those scenarios when a new game content (i.e., a new challenge recommended by the engine) has to be assigned to a specific player on the fly.
+In particular, the GameAdaptation concept includes gameId and playerId parameters for a game adaptation, plus a set of children to specify the new challenge to be injected.
+As Fig. 13 shows, a newChallenge refines a simple game adaptation by defining a ChallengeModel, ChallengeData (i.e., bonusScore, virtualPrize, etc.), and ChallengeDate (i.e., validity period of time for the challenge).

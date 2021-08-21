@@ -1,0 +1,24 @@
+5 Conclusion
+5.1 Technical Advantages and Shortcomings.
+MPS provided the means to go for a fully structured DSL while keeping the familiar document appearance (see Fig. 10).
+Language composition allowed well-designed and fine-grained decisions on first-class language concepts vs. backward-compatible compromises or low-level constructs.
+Intentions provided an easy way to integrate user-controlled pattern recognizers to higher-level language concepts.
+We encountered performance issues if MPS showed big root nodes in the editor.
+Even more useful editors would have been possible if MPS provided cached access to find all references results.
+We did not succeed with implicit type inference, because we could not strictly separate scopes that should infer types from scopes that should only check type compliance.
+Importing the existing code base posed the biggest challenge by far.
+We succeeded with a multistep approach that ensured early feedback on import issues.
+We strongly recommend short feedback loops for any large-scale model import, as processing time grows exponentially with every additional step, and the complexity even of simple transformations gets out of hand quickly.
+Both non-incremental C source code import and insufficient model merge technologies forced us to only change the original C sources and reimport the complete code every time.
+Improvements in both fields would considerably simplify similar challenges. 
+5.2 Project Results.
+The users in the IT department are very satisfied with the MPS-based solution.
+We consider their early involvement, continuous feedback during development, and early training for both MPS and Subversion vital for the success of the project.
+The users profit from guaranteed consistency of the FuMo DSL code they are working with and the executed code.
+The turnaround time between a change in a FuMo and testable code is reduced by several orders of magnitude—from days or weeks to seconds.
+Complete version control of all artifacts through Subversion assures safe processing and storage of changes.
+It streamlines collaboration, both within the IT department and with the external service provider.
+Shorter turnaround time and reduced communication overhead lead to higher efficiency and fewer misunderstandings, ultimately speeding up time-to-market and lowering the defect rate.
+Both the IT department and the external service provider can focus on their field of expertise: insurance domain knowledge and operational/nonfunctional aspects, respectively.
+The MPS-based FuMos are in production for more than 2 years.
+Zurich and itemis continue to improve the system, migrate it to new MPS versions, and adjust it to new requirements.

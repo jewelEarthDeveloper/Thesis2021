@@ -1,0 +1,10 @@
+Working in projectional editors can provide an editing experience that is as fast or faster than working in text editors [1].
+In contrast to text editors, the editing metaphors of projectional editors typically require robust design of a large set of editing operations to reach the expressiveness of a text editor [10].
+We distinguish between text-oriented and tree-oriented projectional editors in this paper.
+A text-oriented editor uses similar layout and syntactical elements as a textual language, but constrains editing to maintain a valid abstract syntax tree (AST).
+While providing a familiar way of reading code, editing operations may as such not be possible in the way users would expect from the interface, unless special care is taken [9].
+A tree-oriented projectional editor makes the structure of the AST apparent through user interface elements.
+While often perceived as inefficient, the editing metaphors may appear clearer to users when compared to a text-oriented projectional editor, as boundaries between elements are immediately apparent.
+We hypothesize that supporting users’ understanding of the AST through presentation in a tree-oriented projectional editor can increase editing efficiency, as opposed to making projectional editors feel more like text editors.
+To test this hypothesis we present the design of a tree-oriented projectional Editor for Smalltalk [3].
+The editor is available on GitHub

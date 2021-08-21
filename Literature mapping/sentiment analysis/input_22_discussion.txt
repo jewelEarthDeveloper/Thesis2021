@@ -1,0 +1,12 @@
+Our approach proved to be feasible in supporting the analysis of complex safety-critical systems, e.g., highly automated driving architectures, while several challenges still remain to be solved [5].
+Apart from the challenge of compliance with relevant norms, e.g., the ISO 26262, further technical challenges remain that we want to discuss in the following.
+Lots of SysML features still remain to be fully exploited for system fault tree generation, e.g., integrating not only flow ports (data-flow-oriented interaction) but also service ports (K5), as this type of interaction (often asynchronous) is typical not only for software systems, but also for open networked systems and systems with user interaction (D4).
+Also, an obvious further step is to exploit the dynamical architectural aspects covered by SysML activity diagrams, which currently get lost when generating the static system fault tree.
+Approaches that exploit these dynamics were already proposed, e.g., by Kaiser et al. [21] and Kabir et al. [20], but need to be evaluated for use in an industrial automotive context.
+To further integrate dynamic aspects into the proposed approach, enriching the fault model regarding timing aspects by techniques such as dynamic fault trees (DFT) [20], combining CFTs with Markov chains [47], or formal safety contracts are on our roadmap as well.
+The FMEA support has not yet been extended for models that mainly rely on activity diagrams.
+Requirements often only provide an indication of the function of a block in the sense of an FMEA.
+Additional research on the similarities and differences between the nature of requirements and FMEA functions might help to automatically relate these.
+While importing general-purpose SysML models from Rhapsody and Enterprise Architect (Sect. 4.3.1) and the automatic generation of pessimistic fault trees (Sect. 4.3.2) already allowed fast application of the proposed approach on two industrial subsystems, legacy systems with missing or insufficient models currently cannot be supported by our tooling.
+A potential path to circumvent this problem is complementing our approach with model mining approaches that mine system models as well as potentially even fault models from legacy code.
+Further challenges include integration with model-based security analysis, which we started in [12], and analysis of the safety of the intended functionality (SOTIF).

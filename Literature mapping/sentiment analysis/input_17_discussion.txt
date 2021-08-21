@@ -1,0 +1,21 @@
+In this section, the approach presented in this paper is discussed.
+First, the resulting benefits are given: Fully Executable Models.
+This approach overcomes the code generation dilemma that occurs when model and hand-written code evolve independently.
+Specifying both structure and behavior leads to a generation of fully executable source code that can be used by further programs and does not require any user interaction or code modifications afterwards; any information contained in the model is mapped adequately to the resulting source code automatically.
+Convenient Notation.
+Our approach combines modeling structure and behavior using two different modeling languages and two different paradigms of editing models.
+On the one hand, the projectional diagram editor provides convenient graphical notation for modeling structural elements.
+On the other hand, behavior is added textually by means of the parser-based editor instead of using another graphical editor; while graphical notation for behavioral model elements can result in very large and confusing diagrams, using textual syntax results in concise model representations that are easy to read and understand.
+Visual Integration.
+Modeling structure using UML diagrams and behavior using ALF text is not only combined technically but also visually: The different editors are combined in the modeling environment by means of appropriate Eclipse concepts.
+The user gets the feeling of editing one model instead of dealing with a collection of models that are involved in the background.
+Interlinked Model System.
+Another conceivable approach to overcome the code generation dilemma could provide for modeling the structure and adding the behavior by means of code snippets in terms of plain text comments in the UML model.
+By contrast, our approach contains all the information of the modeled system in several models within an interlinked system; hence, all the artifacts used for the code generation – in particular the ALF operations – are persisted in terms of models within the ALF model system.
+In contrast to plain code snippets, cross links can be exploited to find model elements and text editor mechanisms as a content assist can be used.
+Flexible Workflow.
+The kernel transformation converting UML models to ALF model systems and vice versa is bidirectional and incremental.
+Thus, a very flexible workflow is supported that allows for development processes consisting of several iterations of editing structural and behavioral model elements.
+These aspects emphasize in particular the benefits of using ALF as the underlying language for expressing behavioral elements.
+However, using ALF comes along with a significant drawback with respect to expressiveness: Although by means of ALF a quite large range of model elements can be expressed, only a proper subset of UML is supported; thus, some elements – e.g., interfaces – cannot be expressed exactly.
+Nevertheless, the semantics of non-fUML elements often can be approximated pretty well using alternate components – e.g., abstract classes instead of interfaces – such that in practice, the limited expressiveness resulting from using ALF does not restrict the modeling process too hard.

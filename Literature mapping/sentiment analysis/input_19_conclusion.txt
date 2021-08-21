@@ -1,0 +1,26 @@
+Engineers can spend countless hours discussing a design aspect of a printer system, both within and across engineering disciplines.
+It is hard to overestimate the time spent on discussing printer-specific details while (sometimes unconsciously) speaking different languages to explain such details to each other.
+Commodity tools used for capturing printer-specific knowledge in models do not necessarily allow for domain-specific customization.
+Hence, when sharing knowledge, engineers still spend a lot of time on interpreting the models in such tools.
+At Canon Production Printing, technology for domain-specific languages has proven to provide a suitable means to bridge this domain-specific interpretation gap between models in commodity tools.
+Moving to a model-based way-of-working is mostly a no-brainer at Canon Production Printing.
+However, choosing MPS as core technology to bridge domainspecific interpretation gaps certainly is not.
+It is also not straightforward to introduce it as core technology for formalizing printer knowledge to enable automated processing.
+As highlighted in previous sections, the main challenges with MPS have been as follows: Steep learning curve of MPS, both for DSL engineers and DSL users: The projectional editing experience is unlike any commodity tool, which therefore requires adapting to a different way of user interaction.
+In addition, the vast amount of already available languages and their interrelations is challenging to overview.
+These foundations are, however, key to the strengths of MPS.
+They enable language modularity and seamless editing of different views with one and the same underlying model.
+We believe that the direction of itemis’ Modelix can substantially reduce the steepness of the learning curve for DSL users.
+Lack of full-fledged DSL models in MPS for commodity languages such as C++, C# and VHDL: As exemplified in Sects. 4 and 5, such languages are generation targets from specification models at Canon Production Printing.
+Instead of being able to exploit model-to-model transformations to full-fledged DSL models that rely on fully engineered model-to-text transformations in a final code generation step, we resorted to creating our own model-to-text transformations.
+This approach hampers maintainability, also in view of remaining compatibility with libraries for such target languages.
+Hence, we intend to exploit future DSL model solutions that the (open-source) MPS community may develop.
+Existing parsers or grammar rules commonly available in alternative technologies are not immediately reusable in MPS.
+Integrating existing textual languages, for example, tends to require more effort than just integrating an existing parser technology.
+We believe that extending MPS with a means to also allow traditional text-based parsing would ease adoption considerably.
+We experienced that the performance of (chains of) (model-to-model) transformations can be undesirably low.
+This is, however, not only experienced for MPS but also for alternative DSL technologies, including Eclipse Xtext/Sirius.
+Despite the above, more and more people within Canon Production Printing are taking up the challenge to learn MPS or will be empowered by user-friendly interfaces toward a consistent and coherent set of domain-specific models (e.g., by exploiting itemis’ Modelix).
+The key advantage over other DSL technologies to pursue this direction are the architectural foundations of MPS easing supporting (1) multiple syntaxes (views) for a DSL model (including having one source of information) and (2) composability or modularity of DSL models (including the availability of meta-languages like KernelF).
+This enables DSL engineers to focus on the DSL model itself instead of on resolving low-level, often tool-related, challenges that tend to arise in other DSL technologies.
+DSL users benefit primarily from the ease of using multiple syntaxes and of course the well-known general benefits of using DSL technology (e.g., the early while-you-type validation and auto-completion facilities).

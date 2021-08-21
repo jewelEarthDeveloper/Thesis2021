@@ -1,0 +1,41 @@
+This section discusses the limitations of the approach, the rationale behind them, and possible solutions to overcome them.
+These limitations are based on assumptions and constraints in the grammar.
+Besides, there is also a technical limitation related to how the mapping is implemented.
+1. The names of the nonterminal symbols in a grammar must be unique.
+In other words, the current approach does not support the definition of two concepts with the same name.
+The rationale behind this is that the name of a nonterminal symbol is used to define an interface concept in the generated MPS language, and the production labels are used to create concepts.
+One way to avoid this constraint could be defining a renaming scheme that can detect and fix name conflicts.
+However, this solution might introduce a side effect on the language’s usability; projectional editors use these names for IDE services such as tab completion, so they must be descriptive enough for end users.
+Also, other language components must be refactored according to the renaming mechanism.
+Therefore, we did not implement an automatic renaming scheme, and we preferred to include it as a limitation of the current approach.
+2. In the mapping between a Rascal grammar and an MPS language, symbol labels are used as variable names, either for children or references in MPS concepts.
+These names should be unique within the same concept, yet not for the whole language.
+For instance, if we define concepts A and B, both can contain a reference of a child named name; however, A cannot have more than one child or reference called name.
+In other words, symbol labels can be reused across concepts but not within the same concept.
+3. Lexicals are a challenging concept to deal with because there is no standard way of defining them.
+However, it is possible to make some assumptions on regularity and define a set of constraints to translate lexical between platforms in an automatic way, but this requires considerable effort.
+As a result, we did not want to restrict regular expressions, so we included lexicals that represent MPS built-in types (e.g., string, int) to the lexical library.
+The current approach does not limit users from defining custom lexicals.
+However, users must manually define a mapping between the custom lexical defined in Rascal and the right translation for MPS.
+Section 4.1 describes the details on how to support customdefined lexicals.
+4. It is required to label all the production rules and symbols within a production rule because the approach uses the labels for naming concepts or children reference fields.
+A solution could be to generate placeholder names, yet this introduces other issues such as nondescriptive names and name matching issues when importing existing textual programs.
+5. The current approach does not take advantage of name resolution, especially for code completion, which is a keystone for projectional LWBs.
+For instance, in MPS, concept hierarchies do not rely on trees’ definition; instead, they use graphs.
+6. The current implementation supports the mapping of lists and separated lists of symbols into MPS language concepts (editor and structure aspects).
+However, the mapping for separated lists is partially implemented.
+The current approach treats separated lists just as a list.
+As a result, the separator symbol is ignored for the generation of the editor.
+The current approach does not support language nor program evolution.
+In other words, the current approach considers languages as stand-alone units.
+It does not consider that changes might happen to the language.
+For example, if a developer uses a textual language A and generates a projectional language A* inside MPS, the current approach only accepts valid programs according to A.
+If there are changes to the original language A, those changes cannot be patched in the generated versions.
+This forces to regenerate the whole language from scratch or make changes by hand.
+Some changes do not break the importing of programs: Addition of language constructs to the grammar and then using them in a program.
+This means that the plug-in for importing programs, ImportProgram (Sect. 4.5), will not find such elements.
+As a result, the plug-in notifies the user.
+Modification of existing language constructs (e.g., adding or removing parameters).
+As expected, this type of change often ends up in a failure.
+In sum, language engineers and users, in general, should be aware of the language’s version and the version used to define programs.
+We see this problem as an opportunity for future extensions of the current approach to supporting languages and programs’ evolution.

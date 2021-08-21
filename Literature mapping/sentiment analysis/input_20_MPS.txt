@@ -1,0 +1,71 @@
+7 Advanced Exploitation of MPS.
+JetBrains MPS is not only a language workbench to create DSLs, it also provides a wide range of additional instruments to build a comprehensive working environment around the DSL itself.
+MetaR leverages some of these MPS features to make its delivered functionalities and the user experience unique.
+This section presents some notable capabilities of MetaR that would not have been achieved with any other language workbench than MPS.
+7.1 Graphical Elements.
+In MetaR, graphical elements are mixed with statements in the Analysis editor.
+We have already encountered some of these elements in Sect. 6.
+These inclusions are possible thanks to the capabilities of MPS to embed Java Swing components inside the editor’s cells.
+Graphical elements in MetaR have two different functions: 
+1) Triggering actions—these actions typically support the statement’s purpose.
+2) Displaying results—the results coming from one statement or multiple statements are shown in between the statements.
+On a small scale, the second function can be compared to Jupyter Notebooks7 where snippets of code generate results inside a notebook’s cells.
+7.1.1 Buttons.
+MetaR comes with a language (metar.ui) for adding cells with buttons to the projectional editor and associating actions with them.
+We have already seen some buttons next to statements to show/hide/move cells in the editor (see Figs. 14, 15, and 17).
+The Table (Sect. 4) editor uses buttons differently.
+In this case, the action associated with the button is to open the File Open Dialog box on the local system and allow for locating and selecting the file with the table (Fig. 22).
+7.1.2 HTML Tables.
+Sometimes it is useful to visualize a snapshot of a table’s content directly inside the editor.
+The preview table statement allows for the creation of a small customized preview by embedding an HTML table inside a cell.
+Columns and rows of this preview can be resized as desired as shown in Fig. 23.
+7.1.3 Auto-refreshable Images.
+In Figs. 15 and 17, we saw how the multiplot statement displays images inside one or more cells in the editor.
+The same images are also available as preview in the inspector of the concept.
+Images in MetaR are auto-refreshable.
+This means that whenever the image changes, it is automatically reloaded in the cell.
+To achieve this result, MetaR uses a Project Plugin.
+This type of MPS plugin provides a way to integrate Java code with the IDE functionalities.
+They are created with the jetbrains.mps.lang.plugin.standalone language and held inside solutions.
+The concept in charge of displaying a specific image also registers a listener of the image file in the plugin.
+The plugin makes sure that the listener subscribes on the file exactly once and is triggered at the right time.
+When the analysis is executed and a change is detected, the listener invokes the Java code inside another solution and the image is automatically refreshed in all of the cells where it is currently loaded.
+7.2 Table Viewer Tool.
+Tools are extensions of the original MPS IDE.
+They provide customized views to open with the context menu.
+The MPS plugin language (jetbrains.mps.lang.plugin) supports the creation of plugin solutions that define new Tools.
+The MetaR Table Viewer is a Tool associated with the Table concept and its descendants.
+The viewer adds to the MPS interface the capabilities to load the table’s content and show it in a graphical context inside a view.
+Wherever a table name appears (in a Table or an Analysis node), the tool can be opened to see the rows and columns of that table along with their values.
+Rows are dynamically loaded as the user scrolls down the content (Fig. 24).
+7.3 Execution.
+MPS provides Run configurations (jetbrains.mps.execution.configurations) to define how to execute processes starting from selected nodes in the language.
+MetaR uses these configurations to run the R scripts that it generates from the Analysis node.
+7.3.1 RunR Configuration.
+The RunR configuration is a plugin solution in MetaR for the execution of analyses.
+By right-clicking on any descendant node of the Analysis node, it is possible to trigger the RunR configuration from the context menu.
+A setting editor dialog for the configuration is opened to customize the execution.
+When the configuration is started, it first builds the current model and then runs the generated R script for the analysis.
+The configuration includes Commands (defined with the jetbrains.mps.execution.commands language) to invoke the R runtime installed on the local system with the proper parameters (including, of course, the location of the R script).
+7.3.2 Monitored Execution.
+MetaR users are not experts at debugging problems in a program, however, and in any execution things can fail for several reasons.
+Since the R script is not directly visible, MetaR offers a way to monitor the progress of the execution and understand which statement generates an error, if one occurs.
+Each statement has an ID assigned, which is basically the identifier of the node.
+As the execution advances, the statement IDs are sent to the Run view (see Fig. 25) and printed.
+Inside the view, the text is properly linked to the node in the AST with the same ID.
+Whenever an error occurs (also printed in the Run view), the user can click on the link and get to the root of the problem (the statement that generates the error messages).
+This is obviously not a debugging tool, yet it gives users an idea of where to investigate an execution problem.
+7.3.3 Integration with Container Technology.
+Reproducibility of results is a key point in research.
+The scientific community does not accept or consider valid results that cannot be reproduced.
+This also applies to data analysis: if the same analysis is executed with the same inputs several times, it must yield exactly the same results.
+Any software application (including MetaR) needs some sort of runtime support from other software.
+This is critical in terms of reproducibility, because these external dependencies introduce a level of uncertainty that is difficult to control.
+Several years ago, container technology was introduced to provide fully capable execution environments on any computer supporting the technology.
+There is no need for the user to deal with installation of libraries and dependencies, downloading packages, messing with configuration files, etc.; everything is made available in a single package called image.
+MetaR integrates with Docker [17], the most popular container technology.
+Extensions to default MPS configuration settings have been created in MetaR to set the required information.
+When options in Fig. 26 are set, each MetaR analysis becomes a containerized application; it is automatically executed inside the virtual environment created starting from the selected Docker image.
+This small and lightweight environment, called container, guarantees that whenever and wherever the analysis runs, it will always use the same software packaged in the image.
+Typically, the R runtime and common R packages are deployed in the image.
+From the user point of view, once the checkbox in Fig. 26 is checked, it is handled transparently and seamlessly by MetaR.

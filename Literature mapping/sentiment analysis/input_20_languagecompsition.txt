@@ -1,0 +1,25 @@
+MetaR has been developed in a research community, where collaboration prevails (or should) over competition.
+For this reason, MetaR offers a means to contribute to the project with new features that can be plugged in the DSL with minimal effort by advanced users.
+This is possible thanks to the very particular way JetBrains MPS maintains and manipulates the language definition.
+Differently from other language workbenches and development environments, MPS maintains the language definition in an Abstract Syntax Tree (AST) [12].
+Working directly with the AST has the advantage of facilitating the creation of composable languages and making them seamlessly integrate.
+Language composition has been a pillar of MetaR since its inception.
+Two languages compose when elements of language B can be used or referred by elements of language A.
+Since MPS works with ASTs, this translates to attaching nodes defined in B as children of a node defined in A.
+Favoring composition makes it possible to create micro-languages [10] that integrate directly with the core DSL.
+The design of the elements to compose in MetaR builds on top of a previous work [13] where we experimented and assembled our experience with language composition and MPS.
+The structure of a language in MPS is defined by a set of concepts.
+Mirroring what is available in object-oriented programming, a concept can extend another concept and implement multiple concept interfaces.
+On the other hand, interfaces can extend several other interfaces.
+All these relations permit the modeling of complex contracts among concepts, achieving language composition.
+What can be primarily composed in MetaR are statements inside the analysis.
+Or at least this is the type of composition most visible to the end user.
+Several concepts and interfaces in the metar.tables language define the rules for code editing and rendering of new statements.
+These rules mainly affect how statements are expected to behave, take their inputs, expose their outputs, and generate the R code to ultimately execute the analysis of the data.
+Defining a new Statement concept compliant with these rules makes it immediately available to be used inside an analysis, no matter in which language it is defined: it just needs to be part of the lexical environment.
+New statements simply and seamlessly compose with MetaR through language composition without any intervention in the host language(s).
+With these techniques, several micro-languages have been created and incorporated in MetaR.
+We call a language a micro-language when it has a very small structure (sometimes even just one concept) offering extensions to MetaR core DSL.
+Each of them provides abstractions designed for a specific purpose (typically, new statements).
+When combined through language composition, microlanguages provide complementary features and make it possible to write richer MetaR analyses.
+One of the most prominent examples of a micro-language is the BioMart language (see Sect. 6.4).

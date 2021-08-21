@@ -1,0 +1,23 @@
+In Software Engineering there is a usual distinction between essential and accidental difficulties [2].
+Essential difficulties are those that are inherent to the complexity of the problem at hand, whereas accidental difficulties emerge from the form that is used to map the problem into a solution.
+With respect to programming, languageindependent algorithms are mapped to a particular programming language syntax.
+Understanding the algorithm and the general programming concepts are the essential difficulty, whereas the syntax is an accidental one.
+Mastering a programming language requires understanding its programming model, as well as the syntax to instantiate it.
+We may known well how a sorting algorithm works (essence), but not being immediately able to implement it using a particular language that we are not acquainted with (accident).
+Although syntax is not the essence of a program, it may have a significant impact on the usability of a programming language.
+Particular characteristics of certain syntaxes may consist of hurdles, especially to novices [3, 11].
+Regarding experienced programmers, although they should be able to understand every kind of syntax, they usually have strong feelings in favor or against particular kinds of syntax (as part of the so-called programming language wars [10]).
+Syntax-directed code editing was proposed back in the 1980’s [12], being the key idea the concept of a code editor that constrains the user editing activity so that program being written is (almost) always syntactically valid.
+That is, the source code, while it may have semantic errors, it always parses (i.e. it is accepted by the grammar).
+We refer to this kind of tool as a structured editor.
+Structured editors stemmed from a line of research at Cornell and Carnegie Mellon Universities, and were adopted therein for teaching, as well as in other universities in USA during the 1980’s [8].
+Despite the promising idea, they have neither gained widespread adoption in programming education, nor in the software industry.
+The reasons possibly relate to the usability of the editing experience, but this subject was not studied systematically.
+Projectional editors, such as those that can be developed with MPS (JetBrains’ Meta Programming System), is a closely related tool concept that in addition to AST-based editing is also capable of combining multiple syntaxes.
+Nonetheless, the code writing experience of both structured editors and projectional ones is similar.
+Projectional editors have a few usability issues that may hinder their wide adoption [13].
+However, a usability study [1] revealed that projectional editors are efficient to use for basic editing tasks – the case with introductory programming.
+The effectiveness of structured editors through controlled experiments has not been a subject of much research.
+We believe in the potential of structured code editors, especially for introductory programming purposes.
+We aim at rehashing the concept, perform user studies to investigate how to maximize the usability of structured editors for introductory programming, and further evaluate their benefits and drawbacks.
+At this stage, we have developed Javardise, a structured editor for a subset of the Java language (see Figure 1), covering the syntax that we expose to students during the first programming course taught at our institution.

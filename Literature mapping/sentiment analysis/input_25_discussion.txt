@@ -1,0 +1,6 @@
+SpecEdit provides a solution that unifies the two existing syntaxes of TLA+ and eases the work of engineers.
+To do so, not only was it necessary to formalize a new model of the language but also was it crucial to work on the input modes provided to the users.
+Not yet a full-fledged IDE, SpecEdit nonetheless is a viable TLA+ specification editor, as illustrated on the Elasticsearch case-study.
+It is meant to epitomize what can be achieved through projectional technology for improv ing the experience of systems engineers using specification languages such as, but not limited to, TLA+.
+Some future research directions include the use of modelfederations [19] to ensure the traceability of textual requirements translated into TLA+ specifications via SpecEdit.
+We are also considering implementing various projections for TLA+ specifications, based on tabular/graphical Editors.

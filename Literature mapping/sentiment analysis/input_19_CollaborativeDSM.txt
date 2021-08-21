@@ -1,0 +1,47 @@
+7 Collaborative Domain-Specific Modeling
+MPS comes with a high-end Integrated Development Environment (IDE) that is well suited for the development and exploitation of Domain-Specific Languages (DSL) in an industrial context.
+This IDE is a stand-alone desktop application.
+Its users include DSL engineers developing DSL models with accompanying functionalities and DSL users that create and exploit instances of such DSL models.
+The appearance of the IDE can be customized to ease usage for DSL users (e.g., as RCP).
+This helps in reducing the learning curve that is often experienced and in only covering the specific functionality relevant for DSL users.
+Exploitation of MPS at Canon Production Printing has, however, revealed the need for some additional capabilities: Collaborative modeling: DSLs at Canon Production Printing often represent domain-specific interfaces between models from different engineering disciplines, as also exemplified with the DSLs in Sects. 3 and 4.
+Such interfaces would benefit from the ability to collaboratively update DSL instances in a similar fashion to Google Docs and Microsoft Office 365 support for office documents.
+Collaborative modeling would benefit from a web-based front-end for, in particular, DSL users.
+A server-based deployment would also ease version control for DSL users unfamiliar with traditional software technologies and terminology for version control.
+In addition, it eases updating any involved tools (e.g., for automated code generation, build, and test tool chains) in case of DSL evolution.
+Integration in larger GUI applications: Canon Production Printing has various existing development environments that could benefit from exploiting DSL technology.
+Such environments may rely on custom Graphical User Interfaces (GUI) for which it is often not easy or even infeasible to (completely or partly) replace them in a gradual or disruptive step by the IDE for MPS.
+Such situations would benefit from the ability to integrate the DSL technologies provided by MPS into the existing development environments as DSL widgets.
+Domain-specific customization of look-and-feel: Canon Production Printing positioned model-driven development as crucial for timely development of novel printer systems.
+Engineers of all engineering disciplines are expected to exploit DSLs for which tooling is realized using MPS.
+However, engineers with little or no affinity for software development have many difficulties in adopting the IDE (even as DSL users).
+It would be beneficial to provide DSL technology as part of highly customized GUIs with a domain-specific look-and-feel that is much closer to that of domain-specific tools currently used by such engineers.
+This section7 peeks into the future direction Canon Production Printing is considering for a widespread exploitation of MPS throughout the organization, which covers not only research & development but also, for example, sales and service.
+7.1 Blended Collaborative Domain-Specific Modeling 
+A fundamental concept underlying MPS is the use of a model-view architecture.
+This is exposed by the DSL model instance being projected, possibly even with multiple different syntaxes at the same time, to a DSL user.
+The DSL user can change the DSL model instance via any of these projections or views in traditional model-view architecture terminology.
+This results in the DSL model instance changing, and hence all projections of the DSL model instance update consistently.
+This principle is also suited for collaborative modeling since it is irrelevant whether the projections are to a single DSL user or to multiple DSL users.
+Such projections may concern different syntaxes for the same DSL model instance.
+Note that blended collaborative domain-specific modeling as described here requires the one DSL model instance to be (simultaneously) accessible for all involved DSL users.
+itemis is experimenting with generating all that is needed to support blended collaborative domain-specific modeling based on a DSL model defined in the IDE that comes with MPS [1].
+Figure 18 shows a high-level overview of itemis’ initiative called Modelix [15].
+It relies on the DSL model instance being accessible on a central server.
+Based on a plugin, the DSL model instance can be accessed with the existing IDE of MPS.
+The DSL model instance can, at the same time, also be accessed via a web-based front-end in a DSL user’s web browser.
+The idea is that execution of DSL facilities such as model transformations and code generation runs on the server.
+itemis’ Modelix approach shown in Fig. 18 has the major benefit that existing DSL models defined with MPS like those highlighted in previous sections can be used in a blended collaborative way without restarting their development in a different technology such as Javascript.
+In addition, the existing IDE can still be used by DSL users that are already familiar with it as it integrates seamlessly.
+Based on these advantages, Canon Production Printing intends to use itemis’ technology to extend the applicability of DSL technology throughout a larger part of the organization.
+7.2 DSL Widgets in Custom GUIs 
+Next to the Graphical User Interfaces (GUIs) made available to print professionals (customers of Canon Production Printing) as part of the Professional Digital Printer product families, several tools to develop and maintain these product families are also being created for use within Canon Production Printing.
+Application of DSL technology to formalize the domain-specific knowledge underlying both such Graphical User Interfaces has major benefits.
+However, existing DSL technology does not (yet) provide the customization flexibility that traditional software technology provides to develop GUIs.
+With the introduction of itemis’ Modelix, Canon Production Printing envisions the use of Modelix to create DSL widgets as part of traditional GUIs applications realized with traditional web technology such as Google’s Angular [11].
+MPS and Angular use a similar component-based approach to compose complex views on a collection of related data items from simple views on individual data items.
+On the other hand, the concepts underlying a model-view architecture can be realized fairly easily in Angular.
+In the Angular context, the controller concept of a model-view architecture, which is responsible for converting (raw) data into a form that can be displayed to users via a view, is often denoted as ViewModel.
+Given the similarities, Canon Production Printing envisions that Angular applications can be partly DSLified with Modelix-based components, bringing together the strengths of MPS’s DSL technology and the customization flexibility of Angular.
+7.3 Outlook for Collaborative Modeling Canon Production Printing intends to investigate how the combination of Modelix and Angular can serve the creation of blended collaborative domain-specific modeling as part of (possibly existing) larger GUI applications with domain-specific customization and look-and-feel.
+This future direction is expected to vastly increase adoption of MPS’s DSL technology at Canon Production Printing.

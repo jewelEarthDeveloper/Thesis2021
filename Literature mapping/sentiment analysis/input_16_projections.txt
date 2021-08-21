@@ -1,0 +1,46 @@
+2.2 Projections
+A projection is a representation of a concept that can be visualized and interacted with in the graphical user interface (GUI).
+It can be applied to any part of a concept, such as the concept as a whole or an attribute.
+Note that the language engineer may define multiple projections for a concept.
+By doing so, we can obtain the right combination of visuals in any given situation.
+Gentleman offers predefined layouts found in modern GUI technologies [14].
+It also provides data-specific controls in the form of fields, providing more structure to help users quickly scan and comprehend the information presented [12].
+Both layouts and field can be customized with a style.
+At the moment, Gentleman only supports relative and tabular positioning with limited support for graphical elements.
+It does not provide the means to arbitrarily position elements, that would be possible with the use of HTML canvas, for example.
+2.2.1 Layout.
+A layout is concerned with the structure of a projection.
+It organizes elements presented in the GUI by indicating the location of its child elements.
+Gentleman defines layouts similar to those found in popular GUI frameworks such as Xamarin [10], SWT [9], and WPF [15].
+For instance, the StackLayout piles elements horizontally or vertically, the WrapLayout group its elements in a block, and the TableLayout arranges them in a row or column-directed table.
+Every layout presents a container that can be configured to be collapsible, draggable, or resizable.
+A layout child elements can be a text content, a layout, or a field.
+In the Mindmap instance presented in Figure 2, the organization of the elements is structured using the StackLayout to order them vertically.
+We use the WrapLayout to group them together, such as the heading Mind Map <title="Planning">.
+Each layout is further enriched with styling rules like color, border, and spacing values.
+2.2.2 Field.
+A field is concerned with manipulating the value of a concept; thus, it enables data input and output.
+It provides an abstraction for the underlying widget (control element) to promote reusability and portability.
+Gentleman uses a modular approach to select the right widget for the intent of the user.
+For instance, it selects a Textarea if the user intends to write text on multiple line or a single-line Textbox otherwise.
+Gentleman offers fields that cover the most fundamental widget components in GUIs [8].
+Among others, a TextField allows the user to input characters for a String or Number.
+A BinaryField enables the user to alternate between two states of a concept value, such as for a Boolean.
+A LinkField allows the user to refer to another concept and bind its projection for a Reference.
+A ChoiceField enables the user to select one item in a predefined list for a Prototype.
+Each field offers specific customizations, such as the projection of each choice in a ChoiceField or the visual delimitation between items of a ListField.
+More advanced fields, like a TableField allow the user to manipulate structured data and provide the ability to add, remove, sort, and filter data.
+Fields also have generic properties to specify, for example, if they are read-only, disabled, or hidden.
+In the Mindmap instance presented in Figure 2, the title, name and description attributes all target a String concept and, therefore are rendered as TextFields.
+The marker added to the main topics are LinkFields, referencing the declared markers in the header.
+The main topics and subtopics are rendered as ListFields stacked horizontally.
+Additional main topics can be added to the central topic with the Add control action.
+Note how we customized this action field to display a template of the main topic structure.
+2.2.3 Style.
+Any projection can be complemented with style rules to describe its presentation.
+Styles can be defined directly in the Gentleman editor or imported and applied to a layout, text container, or field.
+For example, users can set the font, color, and alignment of text and the border of a table.
+To avoid repetition and encourage better integration, Gentleman leverages the browser technologies, offering full support for CSS class selectors.
+Layouts and fields also expose class selectors for their HTML elements.
+This enables the language engineer to declare global styles through CSS and specific context-based rules in Gentleman.
+Note that images can be added through the background property offered in CSS and Gentleman.

@@ -1,0 +1,47 @@
+Language-oriented programming is always concerned with two different artifacts: the language description and the solution description.
+When we consider the OMG four-level architecture as shown in Fig. 1, then the language description is placed on level M2,7 while the solution description is placed on level M1.
+There are also different roles connected to these two levels: a language designer works on level M2 and a solution designer works on level M1 The course on generative programming is mostly related to language designers and handles the tools and mindset needed to create languages and associated tools.
+However, a good understanding of solution design and architecture is an essential precondition to becoming a good language designer.
+Language designs are essentially also solution descriptions—in a very limited domain.
+Here, we need language descriptions that lead to language tools.
+Language descriptions describe languages completely with all their aspects.
+Meta-modelling has often stopped at incomplete language descriptions consisting only of structure (defined using MOF [38]) and constraints (defined using OCL [56]).
+However, a language description has more aspects; in particular, concrete syntax and semantics have to be considered [26].
+In [35], a language definition is said to consist of the following aspects: structure, syntax, and semantics (see Fig. 2).
+Structure, also called abstract syntax, coincides with a narrow understanding of meta-model.
+It consists of two sub-aspects, namely, the definition of possible concepts with their connections and the restriction of those using constraints.
+Sometimes, a restriction could be expressed as a structure or the other way around.
+Syntax stands for concrete syntax, and it defines how instances of the language are shown.
+This can be the definition of a graphical or textual concrete language syntax, or something in between, like tables, diagrams, or formulas.
+Behavior explains the semantics of the language.
+This can be a transformation into another language (denotational or translational semantics), or it defines the execution of language instances (operational semantics).8 These aspects are not always as strictly separated as they seem in the illustration; constraints are shown as overlapping with structure since constraints interact closely with the structure-related technologies in building up (and restricting) the structure of the language.
+However, constraints can also be used for defining restrictions for presentation as well as behavior.
+The structure is the core of the language; it contains the concepts that should be part of the language and the relations between them.
+A meta-model-based approach to language design focuses on the structure.
+A welldefined language structure is the starting point to define one or more textual or graphical presentations for the language, as well as to define code generation into executable target languages such as Java.
+MPS features a large set of meta-languages, and some of them match the aspects shown in Fig. 2.
+Section 4 provides more details about the MPS concepts used in the course.
+The definition of possible concepts in the structure aspect is handled by the structure meta-language.
+At the same time, restrictions can be expressed using the constraints and the type system meta-languages.
+The editor meta-language handles the syntax aspect covering both text syntax and diagrammatic syntax.
+Transformation semantics is handled by the textgen meta-language for modelto-text transformations and by the generator meta-language for model-to-model transformations.
+MPS does not support execution semantics; it can be captured using parts of the action meta-language.
+In addition, MPS allows influencing the user appearance of the generated IDE using the intentions, the refactorings, and the usages meta-languages.
+Moreover, MPS allows using low-level implementation details in the language design, for example, using the actions meta-language.
+Finally, MPS provides means to describe tool-related information, for example, how the described IDE is built.
+These parts are not essential in a language design course.
+Domain-specific languages are always about the correct abstraction level.
+They enable to express the knowledge of the domain.
+A DSL can describe a complete solution on a suitable abstraction level.
+Of course, it is necessary to know the domain well to come up with a good domain-specific language.
+As meta-languages are also domain-specific languages, the same is true for them.
+They have to be on the correct abstraction level.
+Since the domain of language descriptions is relatively new, there are only a few good patterns of language description available.
+Most often, the implementation is guiding the concepts provided because language designers are often solution designers knowing how to write a code.
+An essential part of this course concerns finding a suitable abstraction level to facilitate code generation from models.
+In this respect, tools for language description are used as an example.
+Therefore, it is essential to have excellent highlevel abstractions available and explain how these are translated into low-level code by the tools.
+However, it is a challenge to find tools and technologies that work on a high abstraction level for each language aspect.
+If the abstraction level is too low, too many seemingly irrelevant details will create complications and complexities, making it more difficult for the students to get started with the tools.
+On the other hand, if the abstraction level is too high, it may not be possible to generate working tools from the language specification.
+For structure and textual syntax, some meta-languages provide a suitable level of abstraction, while it is more difficult to find the right abstractions for the other language aspects.

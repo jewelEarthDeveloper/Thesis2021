@@ -1,0 +1,50 @@
+To experiment on whether a blended modelling environment could provide beneficial improvements to modelling activities and decrease modelling time, we implemented a prototype based on Papyrus and Xtext in the Eclipse environment.
+There are alternative approaches to the development of a blended modelling environment for UML profiles, but any such tool must address some common issues such as the synchronisation of multiple representations by editors as well as their persistence, or the handling of cross-references between model elements.
+For the purpose of synchronisation, some tools may choose to keep separate representations and use explicit transformations between them to keep them up-to-date.
+An advantage of this approach is that representations could be persisted in the format preferred by the users or tools.
+The disadvantage is that such transformations must be explicitly written and maintained, when the language evolves.
+This entails the problem of keeping the transformations consistent with the language and with each other.
+Furthermore, keeping sepa925 rate representations would be prone to error in a collaborative environment, as multiple copies of the same model could be modified separately in inconsistent ways.
+A different approach is that of projectional editors which, as previously discussed, keep only one underlying representation of the model’s abstract syntax and different editors and viewers are responsible for the conversion between abstract and concrete syntax.
+The obvious advantage here is that it avoids the problems described in the previous paragraph, as there is no need for transformations between representations.
+A disadvantage is that it may not provide the same flexibility of storing multiple representations.
+For the purpose of supporting UML-based profiles specifically in a blended environment, there are additional challenges, in particular, the support for multiple stereotype applications.
+Our solution leverages Xtext’s own mechanisms which infer an appropriate Ecore meta-model upon which the generated environment operates.
+To achieve the seamless synchronisation we override Xtext’s document provider behaviour, which maps domain elements to documents, and is used by (textual) editors to update the textual representation, the abstract syntax elements, notify listeners of changes, etc.
+By overriding Xtext document provider, we are able to maintain only one common resource.
+Our approach can be considered as semi-projectional, differing from existing projectional tools, such as MPS, in several ways: 1) it addresses support for DSMLs defined as UML profiles; 2) the textual representation is truly textual, as opposed to a form-based representation, and thus enables the use of textbased tools (e.g. regex search); 3) it relies on existing mature frameworks for graphical modelling with UML (Papyrus) and text-based IDEs (Xtext).
+In Section 4, we listed a set of five improvements to current practices brought by our blended modelling framework, which we discuss in the followings.
+Grammar customisability Given a UML profile (or any other EMF-based DSML), Xtext grammars could be semi-automatically generated to define a textual concrete syntax for the profile (or part of it).
+Xtext provides an out-of-the-box features for generating grammars from UML profiles.
+The generation process is not customisable nor parametric.
+That is to say, generated grammars are in most cases unusable in practice without refactoring and manual tuning.
+That was the case for the MARTE profile.
+In our solution, we manually created and customised an Xtext grammar from a sub-set of MARTE.
+Doing so, we were able to provide a customised and convenient solution to blended modelling for UML and MARTE.
+Nevertheless, a blended modelling environment shall provide a specific feature for parametric and semi-automatic generation of Xtext grammars from profiles, so as to be customisable and refactorable to fit the stakeholder’s needs.
+This would not jeopardise the (de-)serialisation mechanisms as long as it does not break the conformance of models to the UML profiles specification (i.e., metamodel).
+We are currently working on such a feature, which is expected to heavily simplify the job of a DSML developer.
+Multiple stereotypes application in textual format The possibility to apply multiple stereotypes (coming from the same and/or from different profiles) is crucial to provide a full-fledged modelling environment for UML and profiles.
+Currently, since Xtext does not provide out-of-the-box features for generating grammars entailing concepts embodied in different profiles (or packages within a profile), this is not trivial to achieve.
+In this work, we showed how we provided our framework with such a feature combining grammar rules representing stereotyped metaclass instances and runtime validation checks.
+Stereotype applications correspond to boolean rule properties, literally indicating whether or not a given stereotype is applied.
+A similar approach supports stereotype properties together with dedicated validation checks regulating their availability, i.e.
+prevent editing the properties of non-applied stereotypes.
+Each stereotype is managed independently, hence an indefinite number of stereotype applications can be handled on a single element.
+Furthermore, users have the possibility to easily introduce additional constraints concerning one or more stereotypes in the form of validation checks, e.g.
+HwProcessor instances should contain at least one packaged element stereotyped as HwCache.
+When a stereotype is applicable to multiple UML base elements, there would be duplicates in the grammar (one rule per base element).
+Initially, we tried to avoid this by using Xtext’s fragment rules.
+However, since fragments were not compatible with unordered sets in Xtext and we did not want to impose a specific order for stereotype tokens and stereotype properties, we decided to get rid of fragments and opt for better usability of the textual languages instead rather than a more condensed grammar.
+Cross-profile modelling One of the main characteristics of our solution is that it does not entail complex profile-specific explicit synchronisation transformations between textual and graphical notations.
+This makes most of the framework cross-profile.
+The only transformations needed for propagating stereotype applications across the notations are mainly based on the grammar, hence generalisable.
+The mechanism itself is cross-profile and profile-specific instances such as XMarte can be generated from its metamodel definition in a semi-automated manner, with the help of the blended DSML developer for more complex cases.
+On-the-fly changes propagation Model changes done in one view are seamlessly reflected and visible in the other views (graphical, textual and tree-based views in Figure 5).
+On-the-fly propagation is achieved thanks to a single persistent resource shared among the views.
+Although the propagation does not produce tangible delays in the rendering of the changed model across notations, the stakeholder may want to disable it for specific reasons (e.g., sketching purposes with non-conforming models).
+This feature is currently not available in the framework, but we are working on it.
+Cross-notation multi-view modelling We showed how an Xtext-based textual language (XMarte), with related grammar and editor, representing only a sub-set of the HwLogical package of MARTE can seamlessly work on a UML resource containing other UML and MARTE concepts (e.g., UML elements in SW_Functions package and MARTE «Allocate» in Figure 5).
+For instance, XMarte would be suitable for a platform modeller, who might not need or want to view functional details.
+This is possible thanks to our enhanced Xtext resource management, which, instead of overwriting the in-memory model with plain text, propagates changes directly to the UML resource, the same used for editing and rendering UML models in the graphical and tree-based views by Papyrus.
+As further enhancements of the multi-view nature of our framework, we plan to provide features for layered accessibility to shared information with multiple read/write access rights levels, enforcement of specific notations depending on the stakeholder roles, wizard-based customisability of perspectives, and inclusion of additional notations (besides graphical and textual, such as tabular, form, etc).

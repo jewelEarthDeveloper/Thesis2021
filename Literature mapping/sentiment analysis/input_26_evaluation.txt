@@ -1,0 +1,59 @@
+5 Experiences and Evaluation. Having used Eclipse and Microsoft Studio and MPS in teaching language handling, there are several remarks to be made about the suitability of MPS for teaching and the pitfalls for the teaching situation.
+Please note that we use MPS in the specific context of students, being novice programmers and not experienced in language design.
+By running the language handling course, the following experiences were gathered.
+Students are no experienced developers.
+MPS may work well for experienced developers, who use many keyboard shortcuts regularly.
+For those, MPS feels very natural.
+Students are novice programmers, and they most often try to write some text and copy-paste existing specifications.
+This is often tricky or impossible with MPS due to its projectional nature.
+MPS shows best practice.
+It is good to use a running example where aspects are added to complete a simple sample language.
+It is also beneficial to cover all language aspects within one platform.
+MPS has the advantage that the definitions of all MPS meta-languages are accessible in addition to several sample languages.
+This allows copying from best practice examples.
+The theory comes before tools.
+The understanding of the concepts of language design is strengthened by showing their implementation in MPS.
+However, students tend to drown in the tool details of MPS, which hampers their understanding.
+It is often easier to start with the high-level theoretical concepts before showing the implementation.
+MPS is heavy.
+MPS is a heavy tool to use in teaching.
+The learning curve is very steep, and students take a long time to get used to the tool.
+There are very many details, and for a novice, it is not easy to see what is essential and what not and where to look for a place to change unwanted behavior.
+We try to limit the complexity of the projects by focusing on the concepts mentioned in Sect. 3.
+Distinguishing languages and specifications is tricky.
+In MPS, both languages (level M2) and meta-languages (level M3) and even specifications (level M1) are shown in the same way and in the same editor window; see Fig. 10.
+They are also represented internally in the same way.
+This is a challenge for students as they need to understand the difference between languages and specifications.
+The teaching tool LanguageLab makes it easier to see this difference [14].
+Learning MPS is possible.
+Despite the heavy tool and the heavy tasks, the students consistently report that they learn a lot in this course and that they can use this in their future job.
+This is visible in the results from the course, which are good grades and decent languages in most of the cases.
+After the course, the students have a good understanding of language handling and how it can be used.
+From our experiences, there are several possible improvements for MPS which are as follows.
+Most of them relate to the complexity of the tool and the associated steep learning curve for new users.
+There are plugins for some of the points mentioned, which should be included in the standard version of MPS.
+Have a simpler starting user interface.
+It would be a good idea to adapt the user interface to the experience of the user.
+A set of essential features could be a starting point for a novice user, and then the user interface could grow in line with the new experiences of the user.
+The concepts presented in Sect. 3 would be a good starting point for the essential features.
+Restrict expressivity.
+Currently, most of the MPS meta-languages have a procedural core that allows expressing everything computable in the sense of Java.
+However, in many cases, a higher level of abstraction would restrict some functionality but would increase precision.
+A good example is the handling of type systems.
+A bad example is the behavior aspect which collects everything that does not fit somewhere else.
+Have a web version of MPS.
+It would be excellent if students could work in a (simplified) version of MPS online, including shared documents.
+This would also improve the teaching process a lot.
+Besides, it also simplifies version handling and migration.
+Provide an overview of the structure.
+The individual definition of concepts in MPS gives a lot of freedom, but it is easy to lose the overview.
+Class diagrams are an excellent way to present such an overview.
+These diagrams could be generated from the structure definitions.
+For large languages, an overview of the concepts is essential, and support for this is needed.
+Improve meta-languages The current meta-languages are not always the most abstract languages to express the needed information.
+It would be essential to have grammar cells in the core of MPS and even improve on this idea and introduce more high-level patterns.
+The second area of improvement of metalanguages would be in the area of name binding, as described in [29].
+It might be possible to create a version of MPS using simpler meta-languages by using bootstrapping as explored in [41, 42].
+Provide a decent meta-language for execution.
+This requirement might not be most pressing for practical application, but it is essential for teaching in the area of language processing.
+As the examples of MPS show, interpreters are useful, and a good meta-language should be available.

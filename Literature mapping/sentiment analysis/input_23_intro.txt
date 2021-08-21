@@ -1,0 +1,17 @@
+While modeling is now validated as effective for solving complex problems or developing complex systems, its widespread and systematic application has not yet lived up to expectations.
+Several studies have been led to analyse the reasons of this situation and highlighted several issues, including the complexity of the modeling languages and tools [1–3] and the lack of required skills in abstraction [4].
+Indeed, in many studies around Model-Based Systems Engineering (MBSE) adoption, usability of tools is very often stressed as one of the key issues for the adoption of MBSE paradigms.
+We do agree of course that user experience of tools can be improved, and lot of people are working hard to improve including as for example new HCI or even AI-empowered assistants.
+However, we are definitively also convinced that it is fundamental to assist users to face the complexity - accidental or essential - of MBSE related artefacts by augmenting the MBSE tools with self-training facilities.
+In this way, it could be possible to reduce tools learning curve and encourage their users to persist with them despite the required initial efforts.
+Indeed, it is to be expected that tools, languages, etc. used to solve complex problems will remain complex, even if their user experience is optimised.
+As a consequence, it is important to provide additional features supporting the learning.
+In this demo, we illustrate the role gamification could play to lower the entry barrier of modeling and modeling tools.
+Gamification is the exploitation of gaming mechanisms for serious purposes, like promoting behavioral changes, soliciting participation, and engagement in activities.
+Gamification is gaining popularity in all those domains that would benefit from the increased engagement of their target users [5].
+Therefore, disparate contexts use gamification applications, such as education [6–8], health and environment [9, 10], e-banking [11], and even software engineering [12].
+We present a gamified software modeling environment realized to design games for specific training/learning goals.
+In particular we present how using it, the Papyrus1 modeling tool has been gamified with the objective to help students learning specific modeling aspects using both UML and Papyrus for UML.
+Through a concrete case study, we demonstrate that our approach is applicable with limited effort, does not require any major modifications in the existing modeling environment, neither introduces complex dependencies.
+In Section 2 we detail the main components of the gamified software modeling environment and in Section 3 we illustrate its application in a concrete software design courses where a “Hangman Game” is used to improve the learning curve.
+ 

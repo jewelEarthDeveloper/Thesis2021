@@ -1,0 +1,6 @@
+We presented the central notions of the projectional editor, Gentleman.
+The editor offers a rich GUI enabled by standard layouts and fields, and projections that can be applied to any part of the DSL concepts.
+Ultimately, our goal is to integrate Gentleman in full-fledged language workbenches to offer a more adapted user experience to domain users.
+Gentleman is an ongoing project with a roadmap filled with more novelties.
+We would like to integrate a model explorer, investigate proper undo/redo functionalities for projectional editors, and enable collaborative modeling.
+We are also working on providing a standard API based on the language server protocol to ease the integration with language workbenches.

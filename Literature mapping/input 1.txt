@@ -1,0 +1,226 @@
+"""Over the last three years, DATEV, a leading German payroll services provider, has been developing a domain-specific language (DSL) for expressing the calculation logic at the core of their payroll systems. The goal is to allow the business programmers to express and test the calculations and their evolution over time in a way that is completely independent of the technical infrastructure that is used to execute them in the data center."""
+"""Business programmers are people who are experts in the intricacies of the payroll domain and its governing laws and regulations (LaR) – but not in software development – which leads to interesting tradeoffs in the design of the DSL."""
+"""The specific set of challenges that motivated the development of the DSL are given in Sec. 3.2."""
+"""Payroll might seem dull and not too complicated (“just a bunch of decisions and some math”)."""
+"""However, the need to work on data that changes over time, to follow the evolution of the LaR, and to keep the language understandable for non-expert programmers makes it interesting from a language design perspective."""
+"""The need for execution independent of the deployment infrastructure in the data center and on other devices plus the required flexibility in terms of service granularity and packaging into user-facing applications add interesting non-functional challenges."""
+"""6.1 RQ1 Is a suitably-designed DSL able to significantly reduce the perceived complexity in the payroll domain? Comparison to the old system Specific differences that led to accidental complexity have been pointed out in the chapter already using the LEGACY label."""
+"""We will not repeat them here."""
+"""Three-Layer Separation A naive look at the payroll domain suggests that it is mostly about complex decisions and calculations."""
+"""And indeed, these are relevant."""
+"""For example, Sec. 5 shows how we use decision tables and domainspecific data types to reduce complexity and increase readability."""
+"""However, most of the language features relate to versioning, temporal data, dependencies and the variability between different versions."""
+"""This this is where most of the domain complexity lies."""
+"""Addressing these complexities directly in the language allowed to reduce the perceived complexity."""
+"""We heard statements like “this looks simple – why do we need a DSL?” Of course it is only simple because of the DSL."""
+"""We have seen this three-layer structure – surface logic, hidden complexities, technical aspects – in other domains, too ."""
+"""Debugging The ease of locating and understanding errors is a major factor for productivity and a major pain point in the LEGACY system."""
+"""The DSL brings three improvements: (1) The execution of a calculation collects explanations, end-user relevant messages that explain a potentially non-intuitive result (“The church tax rate is 9% instead of the standard 8% because the person lives in Bad Wimpfen.”)."""
+"""(2) The tracer mentioned above that shows the complete calculation tree with values overlaid over the program."""
+"""Those two approaches allow the business developer to track down errors without considering technical aspects."""
+"""For case (3), this is different: if a calculation succeeds in the interpreter but fails in the generated Java code, then there is either an error in the interpreter or in the generator; debugging the interpreter implementation or the generated code, together with an engineer, is necessary."""
+"""But once the infrastructure is tested, this third step is rare and most of the debugging can be done with methods 1 and 2."""
+"""Post-Mortem Debugging If the calculation is correct in the interpreter but then fails in the generated Java, the error must lie in the generator, and the problem must be debugged by a technical developer."""
+"""However, sometimes a corner case might occur in a real-world calculation for which no test exists, leading to a faulty result."""
+"""To understand this, users can let the tracer create a test case which debugs the calculation in the IDE."""
+"""Depending on how often this will occur in practice (it shouldn’t, with sufficient test coverage!), we will add functionality to collect the data at runtime and automatically construct a corresponding test case."""
+""""""
+"""6.2 RQ2 Does the use of DSLs and the associated tools increase or decrease the quality of the final product? Reuse of a Mature Language Reuse is a proven means of reducing development effort and increasing quality."""
+"""There is lots of research into language modularity and composition , and it works robustly in MPS ."""
+"""A low-level functional language is an good candidate for reuse because most DSLs require expressions to express arithmetics, comparison and logical operations."""
+"""KernelF  is such as language, and the payroll DSL uses it as its core."""
+"""KernelF and its interpreter has been used in several other projects and it is therefore stable and mature."""
+"""In particular, its tests achive 100% branch coverage regarding the semantics definition in the interpreter."""
+"""The payroll DSL benefited significantly; we found only one major semantic bug in KernelF and fixed a few minor issues."""
+"""Redundant Execution The duplication of execution semantics in the interpreter and the generator adds complexity, and it took some time to align the semantics of the two by ensuring all tests succeed in both environments."""
+"""On the other hand, the relatively simpler interpreter acts as a kind of “executable specification” for the more complex generator."""
+"""Aligning the two was simplified by the fact that both are ultimately Java, so they could share runtime classes (such as BigInteger, BigDecimal or Date), avoiding discrepancies in smallstep semantics."""
+"""We are confident in the approach, because we have used it before in healthcare , where the redundancy was essential to the safety argument."""
+"""Generated Low-Level Code Because the mapping to the execution infrastructure is generated, it is very easy to achieve consistency in the implementation."""
+"""A change in the use of the infrastructure, a bug fix, or an optimization requires only a change in the generator to update the whole code base."""
+"""This approach increases agility for the technical aspects of the system."""
+"""Of course, the generator can also be a source of errors: a mistake in the generator replicates effectively into the code base as well."""
+"""However, such errors are often relatively easy to find, because lots of things break simultaneously."""
+"""Based on our experience in this and other projects, the trade off works: once the generator is tested reasonably well, overall stability increases, and the time to roll out improvements decreases."""
+"""Reuse of QA infrastructure We were able to reuse the KernelF infrastructure for testing, including the ability to run interpreted tests on the CI server as well as the facilities for measuring various aspects of coverage for the language implementation."""
+"""Multi-Step QA A goal of the DSL is to allow business programmers to express and test the payroll logic without caring about technical aspects ( C3 )."""
+"""To this end, we separate functional and technical concerns: models contain only business logic, the generators, runtimes and frameworks take care of the technical aspects."""
+"""Our development process (see Fig.5) adds concerns step by step, which means that a failure diagnoses precisely where a fault lies."""
+"""Step (1) concerns and tests the functional correctness."""
+"""A failing test indicates an error in the business logic, or, initially, in the interpreter (while the interpreter is not yet mature)."""
+"""Step (2) translates the business logic to Java and thus concerns performance."""
+"""We run the same set of tests, and if one fails, either the generator or the interpreter is faulty; likely it is the generator, because it is more complex."""
+"""Step (3) adds the infrastructure to make the system scale."""
+"""A failure after this step indicates a problem with frameworks or the platform."""
+"""Documentation and Communication Because the DSL programs are free of technical concerns and use domain-relevant abstractions and notations, the need for documentation (beyond code comments that explain the “why” of a piece of code) is greatly reduced."""
+"""This prevents the documentation from diverging from the code."""
+"""The language definition also serves as a formalized interface between the business programmers and the technical teams, which puts their communication and coordination efforts on a more solid foundation, reducing the risk of misunderstandings and inefficiencies."""
+"""6.3 RQ3 Can a DSL that reduces complexity be taught to domain-experts in a reasonable amount of time? IDE Support Users wanted tool support beyond the MPS defaults."""
+"""For example, they expected buttons to insert data, enum or calculation declarations into a (new version of a) module, intentions to selectively copy declarations inherited from a previous version into the current one for subsequent change, or menu items for creating a test case for a module."""
+"""While many of these make sense because they bundle repeated multi-step changes, others were exact duplicates as the default code completion."""
+"""For example, typing calc and then using code completion produces  which is what our users wanted a button to do."""
+"""Once users got familiar with code completion (as opposed to buttons known from classical applications), the requests for these fine-grained UI actions subsided."""
+"""Error Checking The quality of analyses and associated error messages is important for the acceptance of the DSL with its users."""
+"""We put a lot of effort into the wording of error messages and into making sure they are reported at the correct locations(s), and with accurate descriptions of what the problem is; many error messages come with quick fixes that automatically fix the problem when triggered by the user."""
+"""Liveness Short turnaround times help developers stay “in the flow”."""
+"""In addition, for people with limited experience with abstraction such as our users, it is very useful to be able to execute programs immediately and reduce the gap between the program and its execution – which is one of the motivations for live programming ."""
+"""In our architecture, this rapid turnaround is facilitated by the in-IDE interpreter: users iteratively create models, play with them, and then write tests to verify the behavior (see (1) in Fig.5)."""
+"""The Big Picture Reuse between versions was a contested issue: a new version v4 selectively overwrites the declarations from previous versions, requiring the user to look through v1..v3 to understand the effective contents of v4.
+End users did not appreciate this need to mentally assemble “everything” from parts to achieve reuse.
+To resolve this tension, we exploit MPS’ projectional editor to optionally show inherited declarations in the new version: “everything” can be seen in one place, optionally.
+In addition, we integrated automatically-rendered UML-style diagrams to show the relationships between the declarations in a module, as well as a tree view that shows the applicable versions and their effective declarations for a calculation that spans several business areas.
+Since each business area can have a different set of versions that might start on different dates, it is not trivial to understand which versions of which business area are applicable for a calculation on some particular date.
+End-User Involvement During initial development, involvement of domain experts was difficult.
+The team worked on the core language abstractions without focussing on usability.
+User feedback would have been negative for “superficial” reasons; we wanted to avoid such negative first impressions.
+In addition, many future users struggle with formulating the requirements for the DSL because they are not aware of the design space for the language and IDE.
+Instead, the DATEV language developers, themselves former payroll developers, acted as proxies for our users.
+Once the language started to mature, future users were integrated more broadly through demo sessions, screencasts and workshops.
+The feedback loops were shortend and we focused on more and more detailed aspects of the language and the IDE.
+Teaching The best way to teach the DSL is to let future users experience the language.
+We did this in four steps.
+(1) Language developers create sample models that address common problems in the domain; (2) These samples form the basis for tutorials, demos, screencasts and howtos that illustrate language and tooling in a way that connects with future users.
+(3) User/developerpairs implement the examples; and (4) Gradually, users try to independently implement further examples, supporting each other.
+Language developers are available as 2nd level support.
+Initially the last step was harder than expected; our users told us that routine work didn’t allow them to spend time ”playing around with the DSL”.
+Now, after some time of learning, the approach works really well and the business programmers “experiment” with the language as the try to implement new requirements.
+Git Most business programmers had not used a version control system before.
+To keep the complexity of using Git low, we taught the users the basics using the built-in IDE features of MPS, avoiding the command-line.
+In addition, developers try to avoid merge conflicts (perceived as especially cumbersome) by using a development process that avoids parallel work on the same parts of the system by different developers in the first place.
+Infrastructure A crucial ingredient to limiting the complexity for the end users is that they are not required to deal with any part of the deployment stack; once they get their tests running in the IDE and have pushed the changes into Git, they are done (see Fig. 5).
+LEGACY Developers were required to deal with multiple components of the overall stack, increasing complexity How well does the DSL and its use for application development fit with established IT development processes and system architecture? Layered Architecture The DSL was specifically scoped to cover only the business logic of the domain; integration with the deployment infrastructure is done on the level of the generated code using agreed interfaces.
+Before considering a DSL for the business logic, DATEV had already decided to use a microservice architecture and to apply domain-driven design .
+Each service would be layered like an onion (compare ), with outside-in dependencies.
+Figure Fig. 6 illustrates the current architecture of a microservice focusing on DSL integration.
+The domain layer contains the generated business logic.
+It relies on libraries that form the DSL runtime that are shared among services for the generated DSL code.
+The api layer exposes the service functionality to the outside and, in our case, also contains the Driver that provides the current employee, the current date, access to reference data as well as to the (calculation results of) other services.
+Finally, the infrastructure layer contains technology adapters (database, UI, middleware).
+Generating the technology-independent domain layer from models was a natural integration point for the DSL.
+The first test of this approach was to remodel, and then regenerate, a manually written domain layer for a prototype microservice.
+Agreeing on the DSL runtime interfaces and those implemented by the generated domain layer took a couple of iterations.
+In particular, building a common understanding of the relation between versions, their impact on deployment, and an the API that supports cross-version polymorphism for calculation versions took time.
+Flexible Deployment From corporate architecture guidelines it was clear from the start that the calculations would run in a distributed, microservice architecture.
+However, the allocation of functionality to services was open because of the different trade-offs regarding performance, scalability, stability and service management overhead: (i) every version of every business area a separate service; (ii) all versions of a business area in one service; (iii) multiple business areas with all their version in one service; (iv) all business areas and versions in one service.
+It was useful that the DSL can accomodate all four options by adapting generators or build scripts.
+In addition, the development of business logic could proceed without deployment decision in the architecture team, which helped to “unblock” the teams.
+Ultimately option (iii) was chosen for the initial deployment; for example, the two tax-related and the four social-insurancerelated business areas were deployed in joint services, respectively.
+A different trade-off might lead to choosing different options in the future.
+For now, the mapping of business areas to services is performed outside of the DSL, as part of the build process.
+LEGACY The monolithic COBOL architecture could not be broken up easily into different deployment units, making the trade-offs harder to reevaluate.
+Even during the development of the system, the execution infrastructure was changed from JEE to Spring; this required changes to method signatures and annotations in the generated POJOs and the persistence layer.
+Those changes could be achieved by modifying the generators.
+No modification of the business logic was necessary.
+Overall, the integration effort into the new technology stack was low, in line with our expectations and the “promise” of model-driven development, DSLs and code generation.
+Execution Paradigm A second technical aspect concerns the execution of the computation.
+Initially it was not clear whether, when data changes, computations would recalculate everything for a particular employee and month, or whether they would store intermediate results and use the dependencies to incrementally recalculate the transitive closure of the changed data.
+The functional nature of the language allows both, after generators and runtimes are adapted.
+Currently, we use the simpler from-scratch approach.
+More generally, future optimizations in terms of scalability or resource consumption will very likely be implementable in the generators and frameworks, without invasive changes to the DSL programs.
+LEGACY The monolithic COBOL architecture relied on an hard-coded, imperative execution paradigm.
+Technology-independent Testing A natural consequence of the onion architecture is that the domain layer can be run without infrastructure, by mocking the infrastructure interfaces.
+This is an important ingredient of our QA approach, as illustrated by step 2 in Fig. 5.
+Generator Complexity Developing the generator to Java was more effort than expected.
+One reason was that the functional language had to be mapped to Java’s imperative style.
+This led to excessive use of closures in the generated code as well as long, hard-to-debug chained dot expressions; we have implemented a transformation that splits the chains into sequences of variable declarations before generation.
+The generated Java code will then also use a sequence of variable declaration statements, making it easier to read and debug.
+DATEV initially wanted the generated code to look exactly as if it were hand-written, partly to simplify debugging, partly to preempt those developers who were be sceptical about code generation, and partly to make the integration with the existing infrastructure, frameworks and programming guidelines easier.
+We were required to respect naming conventions and use strongly-typed APIs even behind the interfaces to the generated black box.
+This led to larger, more complex generators (we invented an intermediate language to deal with versioning of strongly-typed APIs) as well as to a significantly bigger (generated) codebase compared to a solution that relied on more generic APIs inside the generated code.
+Over time, as more and more of the microservices contain generated business logic and the trust in the generator-based approach increases, DATEV realized that the hard requirements for strongly-typed data structures and readable generated code decreases.
+As of now, the first microservices process the data structures as JSON and do not rely on strongly typed Java-classes internally.
+If this approach continues, this will reduce the complexity of the generator.
+Another example is that necessay checks, if a new version of a business object still has a value for a deleted field, doesn’t lead to a ”compilation error” anymore – we now report this as an error during the validation phase, which is fully accepted by the users.
+Build Process The automated build shown in Fig.  5 had to be integrated into DATEV’s CI infrastructure.
+In principle this is not a problem with MPS – it can be used in headless mode to check, generate and test models.
+However, the (partially reusable) build infrastructure of KernelF relies on gradle and DATEV required the use of Maven.
+Also, setting up an MPS headless build is generally tedious and error prone (see ).
+This led to a few weeks of additional effort.
+MPS Distribution MPS is a Java application that runs on the desktop.
+It does require infrastructure for deploying the tool to the (virtualized) PCs of the users.
+The effort to set this up was higher than expected.
+Language Updates Like most other IDEs, MPS relies on a plugin system; the languages and IDE customizations used by business programmers are such plugins.
+The integration server builds these plugins for every commit, and at the end of each sprint, these are made available to the MPS installations via a CloudFoundry web server.
+The MPS installations prompt the user to download the new plugins and potentially run model migrations.
+Specific and Generic A well-designed general-purpose programming language has few orthogonal, and composable language concepts that allow users to define their own abstractions.
+For DSLs, in contrast, it is less important that users can define their own abstractions; instead, users expect the DSL to come with prededefined abstractions for the use cases relevant to the domain (which partially explains the large number of language concepts in Table 1).
+However, if a DSL is designed in this rigid way, it cannot grow towards more expressive power over time without expensive structural refactorings.
+An extensible functional language like KernelF, together with MPS’ capabilities, provides an elegant middle ground.
+Structurally, everything is an Expression.
+However, initial iterations of the language only ship with use-case specific, highlevel expressions that are easy for the end users to understand (an example is the Boolean list l1 and l2 do not share data used in a constraint).
+As users become more experienced, one can add more expressive constructs (l1.intersect(l2).isEmpty) without changing the fundamental architecture of the language.
+A second example: in several cases, our end users asked us to remove genericity in favour of a more specific approach (with better, less generic tool support); for example, when assigning to an enum-valued result variable in a calculation, users suggested code completion to propose only the enum literals (“it is too complex otherwise”), not realizing that they might want to compute the value and added them back in over time without any significant change to the language.
+Potentially, this filtering can be user-specific.
+In the case with the assignment to enum-valued variables we will customize the MPS code completion menu (once the feature becomes available) to show the enum literals at the top and in bold, and all the other expressions further down; this will highlight the “simple” approach while still allowing more expressive, generic expressions.
+There’s a saying in the computer science community: “Every DSL will eventually evolve into a general-purpose language”.
+We think this is wrong – this DSL and other similar ones are not a replacement for Java or C.
+However, most DSLs, as they evolve, will need more (mostly lower level) features that make it Turing complete.
+But these languages still have lots of domain-specific concepts in them as well, so they are not general-purpose.
+However, when selecting the tooling to build the languge, make sure you chose one that is expressive enough to be able to handle this evolution.
+Functional Programming As we have said earlier, a challenge for many business programmers is functional thinking and programming.
+The functional approach is very useful for lots of technical reasons – such as easy extensibility and relatively easy analysability – and to provide lots of end-user-relevant features with acceptable implementation effort.
+However, many business programmers, especially those who have extensive imperative experience, consider it a challenge.
+We mitigate this by providing high-level declarative abstractions for things that are ubiquituous in the domain, so that “low-level functional algorithmic programming” is required rarely.
+The approach is (half jokingly) called “funclerative programming” in .
+The Price of Reuse Language reuse comes at a price: an existing language concept might not be 100% what we need in a DSL.
+For example, a keyword might be English instead of German, one might prefer a different default (for example, does the type number without a specification of decimal digits denote an integer or a real?) or one might prefer the first operation on a list<T> to be of type T instead of opt<T> because the reusing language does not use option types.
+In practice, we usually start a new DSL by reusing (potentially non-ideal) language constructs from KernelF initially to get the project going quickly and proof its viability.
+In later phases, once we know the investment will not be wasted, we replace (some of) them with more ideal, custom-developed constructs.
+We have also reused the KernelF-to-Java generator; the low-level abstractions, such as the basic expressions, worked in the DATEV context without problems.
+The higher-level the reused language construct, the more likely it is that the choices the original generator developer has made do not fit with the project-specific context.
+For example, the generator for messages, a facility for collecting and reporting errors and warnings to the user, did not fit directly.
+Luckily, MPS provides mechanisms to override the existing generator in such situations.
+SMT It turns out that many analyses that are expected by our business programmers require abstract interpretation [9, 10] on an SMT  domain.
+An example is checking a set of Boolean expressions (in a switch-like expression or distributed over several calculations) for completeness and overlap.
+However, users do not necessarily understand why this is so much more complicated than some of the other error checking performed by the IDE.
+We have observed the same in other DSL projects .
+To make such analyses possible, we would have to translate all of KernelF to solvers like Z3 , and build this transformation in a way that is easily extensible towards constructs from DSLs that extend or embed KernelF.
+This is a major task; itemis has been working on for the last few years, but has not yet finished.
+This can be seen as a negative consequece of reusing KernelF: our language is now so expressive that it is prohibitively expensive to transate it into SMT.
+However, the domain does require this expressiveness, so not reusing KernelF would not make it better.
+However, what we can learn from this is that we should develop a successor to KernelF which is integrated with – meaning: translatable to – an SMT solver right from the start.
+Attention to Detail There is different emphasis between end users and language engineers regarding detail.
+Examples abound.
+We had to allow leading zeros in date and month literals as well as German umlauts and § signs in identifiers.
+We developed an infrastructure to manage abbreviations of name components (a central list of allowed name components, componentwise code completion of multi-part names based on the list, checking rules, refactorings to extract name components, showing names in abbreviated and expanded form).
+We spent a lot of time on the exact rounding rules for currency types.
+We worked on tool infrastructure to support internationalization for messages and integration with external translation tools.
+And we were required to use German-language keywords for DATEV-specific language concepts, which leads to a curious mix of German and English, because the keywords of KernelF-concepts cannot easily be changed to German.
+When initially estimating the overall effort for the project, we did not take such requirements into account.
+Pros and Cons of the Projectional Editor A projectional editor is a good fit for DSLs like the current one because of its support for non-textual notations such as tables, the ability to use non-parseable, natural language like syntax and its support for more highly-structured, text-template-like notations such as the one for calculation shown in Sec. 6.2.
+And since grammar cells  have been available, the “feel” of the editor is close enough to a text editor for it to be acceptable to most users.
+The projectional editor is also an important enabler for the versatile support in MPS for language extension and composition, because one never runs into parsing ambiguities.
+However, we did run into a few limitations.
+For example, insertion into the headers of decision tables took a while to get smooth.
+And the /yyyy mm dd/ syntax for dates is a non-convincing compromise: dd.mm.yyyy is ambiguous with decimal number literals because a projectional editor has no look-ahead to be able to distinguish the two.
+MPS Limitations More generally, we encountered a few limitations of MPS, including (1) keywords in multiple languages, (2) projecting nodes in places other than their location in the AST, (3) execution of expensive global validations, and (4) execution of a single set of tests both using the interpreter and the Java generator.
+For (2), (3) and (4) we developed workarounds, (1) is unresolved.
+For a thorough discussion of the “good, bad and the ugly” of MPS regarding the development of large-scale DSLs, we refer to.
+MPS, in General From an end user perspective, MPS looks and feels too much like an IDE (even though everything that is not needed for the payroll DSL has been removed from the UI).
+The requirement to install it locally on the users’ PCs is also not a plus.
+An ideal tool would run in the browser and feel more like a modern web app, while still supporting all the language engineering available in MPS.
+However, as far as the authors know, such a tool is currently not available, even though various communities have started to develop prototypes.
+MPS Learning Curve Learning to be a productive MPS language developer is hard, for many reasons: most developers do not have language development experience in the first place, MPS is a powerful tool and has many facets, not everything is as consistent within MPS as it could be, and the documentation is not as thorough and far-reaching as it should be.
+While the focus of this chapter is not the mechanics of building the DSL (and we refer the reader to), it is worth pointing out that it took longer than expected for the new language developers to become productive with MPS.
+Resistance to Change? It is often said that domain experts and business programmers resist change, such as when moving to a DSL.
+We have heard it too in this project.
+Upon closer inquiry we have found that what they are really saying is something like: “last time we had to change, the new system was not ready yet, bugs were not fixed fast enough, we were not taught how it works, our feedback was not taken seriously, and, during the period of changing to the new system we were expected to be as productive as during the time before the change”.
+Avoid these things, and you will encounter much less resistance.
+Summary 
+We have described the development of a domain-specific language for payroll applications at DATEV.
+The DSL reduces complexity in terms of the core domain and infrastructure dependencies ( RQ1 ), increases quality by simplifying testing, immediate feedback, and a step-wise build process ( RQ2 ), is accessible to non-expert programmer end users ( RQ3 ) and integrates with existing architectures and build pipelines, while keeping deployment options flexible ( RQ4 ).
+This way, the language helps DATEV address core business challenges including keeping track with evolving law ( C1 ), the need to develop new and innovative products faster ( C2 ) and running those on a wide variety of platforms ( C3 ).
+While not everything was smooth sailing, the DSL is now in productive use.
+Conclusions At a more general level, all involved parties agree that the goals set out for the DSL-based development process have largely been reached, as far as we can tell after a few years of development and use.
+Both the business programmers and the infrastructure developers recognize the value of separating the domain and technical concerns.
+Business programmers have been overheard saying that “we really don’t care about the technical implementation in the data center” are happy that they can implement, test and deploy (!) new functionality reliably within a single sprint, something that was not feasible before.
+The infrastructure developers are also happy because they “don’t have to care about the complexity of payroll calculation”, and that they are able to ship cross-cutting optimizations in the generated code with relative ease.
+The simple migration from JEE to Spring also drove home this benefit.
+The Future Based on the positive experience with the DSL, it will be expanded in the future.
+Currently, around 15% of the overall domain functionality has been reimplemented with the DSL, and it will take a few more years to get to 100%.
+As of now, two major extension of the scope of the DSL are currently being adressed.
+The first is data transfer to external consumers (such as government agencies) where we are working on language features to specify the respective data mappings.
+The second extension is the creation of reports and lists, where the DSL will support query and aggregation of data.
+In addition, an MPS-based DSL is also being developed by a second department of DATEV, the one that provides the service of creating and optimizing the yearly tax declarations both for companies and individual citizens in Germany.
+That language also relies on KernelF at its core and shares a few foundational extensions such as dates and temporal types, but uses different domain-specific abstractions.
+		

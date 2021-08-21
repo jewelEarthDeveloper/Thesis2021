@@ -1,0 +1,102 @@
+This section overviews the architecture of SpecEdit discussing the creation of a basic projectional editor as well as the improvements needed for a better user experience and compatibility of the IDE with existing tools.
+A. SpecEdit’s Architecture 
+SpecEdit solves the syntax duality problem of TLA+ by providing an IDE with a projectional editor integrating modern features such as syntax highlighting and autocompletion.
+Furthermore, SpecEdit offers a flexible backend that preserves the compatibility with the existing tools.
+An overview of the high-level architecture of SpecEdit is shown in Figure 1.
+In the Figure, the core components of SpecEdit are emphasized by the green (representing metamodels) and blue boxes (representing the tools).
+The Projectional Editor displays the TLA+ model that is instantiated based on user input.
+As usual, the model conformsTo the metamodel.
+For SpecEdit, we created a syntax-driven TLA+ metamodel, to finely capture user intentions.
+SpecEdit supports Free editing and Reference resolution, besides other features inherited from the underlying language workbench, such as syntax highlighting and refactoring (not shown in the Figure).
+The backend is composed of the PasteHandler, the Writer, and the Reader.
+The PasteHandler enables on-the-fly conversion from ASCII TLA+ specifications (stored in the clipboard) to instantiated TLA+ model nodes.
+The Writer represents the serialization modules, which, based on the Persistence model, outputs different file-based representations of the model.
+The Reader represents the file-input modules, which can instantiate the TLA+ Model according to the Persistence model (and after parsing the files according to the respective Grammar rules).
+SpecEdit supports copy-paste, both internally by exchanging AST nodes through the Writer-Clipboard-Reader path, and externally by processing plaintext coming from the system clipboard via the PasteHandler.
+SpecEdit backend supports TLA+ ASCII files (which is the standard supported by the existing TLA+ tools) and an XML-based serialization format (easy to parse, internal format).
+SpecEdit is implemented with the MPS language workbench, a mature, commercially supported technology for DSL design, which facilitates the creation of IDEs with a projectional editor.
+The first step towards the creation of an IDE with a language workbench, such as MPS, consists in the definition of the language (abstract syntax, concrete syntax, pretty-printing) with the tools of the workbench.
+Section III-B describes the process of defining TLA+ as a Language in MPS.
+Projectional editors rely extensively on the abstract syntax, and allow direct editing of the underlying model.
+Users do not write code, but they instantiate metamodel elements (AST nodes) via numerous specialized editors.
+MPS gives the possibility to use the completion menu to select a new node to be instantiated.
+MPS will thus show, in the menu, only nodes that can be instantiated at the cursor position.
+However, this process is slow and very frustrating when not combined with free editing.
+To overcome this limitations, SpecEdit implements free editing support on top of the MPS specialized editors.
+Free editing, combined with Reference Resolution (Section III-C), optimizes the user experience.
+By default, MPS saves models as XML files, which are easy to parse and manipulate programmatically.
+However, to ensure the compatibility with the existing TLA+ tools, two custom modules were created, namely a PasteHandler and a custom ASCII persistence model (section III-D).
+B. Basic Projectional Editor for TLA+ 
+Since MPS frees programmers from defining a grammar for their languages, the MPS Structure Language is provided as an alternative.
+Concepts in MPS, defined via the Structure Language, represent the abstract syntax (types and hierarchy of AST nodes) and they reference children nodes, parent nodes, properties (of primary data types), etc.
+To define the underlying language metamodel in MPS, the TLA+ grammar (defined explicitly in [10]) was converted into a set of MPS Concepts.
+The extraction of the language Concepts from the concrete syntax resulted in a metamodel with 110 interconnected Concepts.
+For the definition of the concrete syntax, each Concept was associated with a specific MPS Concept Editor.
+From the model-view-controller design-pattern perspective, these Concept Editors play the role of “views” and “controllers” for the associated language Concepts (“models”).
+An Editor is described by the cells it is composed of, like a template.
+Figure 2 illustrates an Editor for a TLA+ Module.
+In blue are represented read-only fields.
+ModuleName designates a mandatory string that must be entered by the user, SetOfMod- uleNames optional strings and SetOfUnits a set of expressions and statements that may constitute the TLA+ Module.
+Since Unicode characters are supported by MPS, they were used to customize the Editors and thus to obtain a rendering that integrates the mathematical notation.
+In Figure 3, the case branch is automatically instantiated, by the customized Editor, with an → (instead of the ASCII −>) as a read-only field.
+To allow users to insert symbols, in fields that accept inputs (direct input or completion), MPS Enums were used.
+Enumerations in MPS allow to define properties with values from pre-defined sets.
+The possible values are shown, in a context-menu, if the given values can be inserted at the current cursor position according to the metamodel.
+Figure 4 shows the mapping between the TLA+ grammar rule ”PrefixOp” (top) and the corresponding MPS Enum node (left) as well as the rendering in the completion menu when prompted to users (right).
+Note for instance the suggestion of the <> symbol, representing an eventuality in temporal logic, instead of the <> string.
+C. Customization of user experience 
+This section discusses the solutions implemented in SpecEdit for free editing and reference resolution support.
+1) Free editing: In MPS, by default, free editing is prohibited.
+This means, that, unless the user is given a predefined box, users cannot use the keyboard to write code.
+To allow free editing, programmers have to make fields editable in MPS Editors.
+Once editable, users will be able to write freely with their keyboard but MPS will point to syntax errors since writing with the keyboard does not instantiate new Concepts.
+To solve this issue, predefined strings were mapped to the Concepts as aliases (via MPS Aliases and the Transformation Menu Language which allows to trigger actions when given patterns are identified).
+Not only do aliases appear in completion menus and context assistants but MPS also instantiates the corresponding Concepts in the current model the user is editing when the alias or a part of it (if no other possible match) is typed in.
+Another editing issue is hiding optional model elements, when they are not needed.
+For instance, in TLA+, a module can optionally extend other modules.
+In Figure 2 the optional block is shown as a set of cells preceded by a question mark.
+In the case of a standalone TLA+ module, the ”EXTENDS” clause should be hidden.
+However, if it is hidden, there is no mechanism defined to allow users to make it appear and thus to import modules.
+In MPS this user intention is captured through ”display conditions” and ”side tranform actions”, which allow to implement specific mechanisms in the editor.
+Figure 5 illustrates this principle.
+A Transformation Menu can be invoked by a user typing “EXTENDS” right to the cell to which it has been associated.
+It leads to the instantiation of a new element in the list of extended module names.
+The condition in the “show if” property is then verified, and the hidden field is unhidden.
+2) Reference Resolution: Syntax predictions are an asset to be used in parallel with free editing.
+Predictions are not only meant to suggest AST nodes to instantiate but also strings to fill in editable fields.
+Reference resolution is one of the functionalities meant to enhance the predictions provided by the IDE.
+In MPS, a reference creates a link between two nodes of the AST outside the tree containment hierarchy.
+For instance, a “VariableDeclaration” node is contained in a ”Module”, but can be referred to, using a “VariableReference” node, from any following definition.
+The principle is thus to use pointers in Editors targeting the variable declaration identifier.
+The main goal is to improve user experience by automatically providing (in the context menu) the identifiers (or names) defined in the specification scope.
+Figure 6 shows that when editing the ”CanMove” definition, the user is presented with the previously defined variables A and B.
+Furthermore, connecting the concepts through references enables refactoring transformations, such as renaming, which applies seamlessly to all occurrences of the reference.
+D. Plaintext support with ANTLR 
+This section discusses pasting and file-loading and saving in SpecEdit; three simple actions which need special attention in projectional editors.
+1) Paste handler: When a user tries to paste an element into the IDE, a background routine is in charge of retrieving the clipboard content and inserting it in the code editor.
+This happens transparently when working with text.
+In a projectional editor, however, the text from the clipboard should be first parsed and interpreted to instantiate the corresponding nodes in the model.
+SpecEdit uses the ANTLR parser-generator framework and a TLA+ grammar definition to process plaintext.
+ANTLR builds a parse tree and generates a skeleton visitor class containing methods for traversing parse trees.
+In the case of SpecEdit, the corresponding visitor class is subclassed and each visit method overridden to instantiate MPS Concepts.
+The TLA+ Concepts defined are programmatically accessible within MPS.
+As opposed to regular transpiling, in the case of SpecEdit, the input and output language are the same.
+Their respective definitions are however different (ASCII grammar versus MPS Language).
+To integrate the modules generated with ANTLR into MPS and consequently into SpecEdit, a Java archive containing the compiled code and the various dependencies (like the parser, lexer and visitor) was created and imported under a new solution in MPS (as a stub model).
+Based on this process, we created an MPS plugin inserting a new entry in the context menu.
+Thanks to this plugin, when the user clicks on the new entry in the menu, a method retrieving the content of the clipboard is called and checks that the retrieved text verifies a given pattern.
+The text retrieved from the clipboard, which\ is tokenized, parsed, visited and mapped with MPS Concepts allows the instantiation of an AST.
+2) Custom persistence model: By default, models in MPS are saved in a proprietary XML-based format.
+The idea we had was to create a custom persistence model allowing to remove any formatting specific to the IDE in order to save TLA+ source code files directly in plaintext and ensure the compatibility of SpecEdit with the existing TLA+ tools.
+This implied modifying the reading (opening files) and writing (saving files) procedures of the IDE.
+The approach followed is very similar to the one used for the realization of the paste handler.
+It involved using the modules generated using ANTLR to ensure the transpiling.
+As in the case of the paste handler, a new dedicated MPS plugin build solution was created that imports a custom persistence model.
+Classes were created to override the persistence logic, encapsulate the parsing and visiting procedures and implement the different interfaces that are essential for dealing with the internal working mechanisms of MPS.
+[16] Apart from the import source, which is a file and not the clipboard, the processing principle for loading ASCII TLA+ files is exactly the same as for the paste handler (lexing, parsing, visiting, mapping).
+Note however that we created an explicit plugin descriptor for MPS to be aware that this plugin provides a model factory.
+The writing procedure is delegated to text generators implemented via MPS TextGens.
+The two import approaches selected, namely pasting and customizing the persistence model, were chosen because of their respective merits.
+While importing unstructured models in MPS (i.e.
+models written in plaintext) is essential from a user’s point of view, being able to insert pieces of TLA+ code from external editors into ongoing MPS projects is also useful.
+Finally, the basic projectional editor, introduced in Section III-B, once tuned-up, became SpecEdit, a TLA+ IDE which solves the syntax duality problem of TLA+ without compromising either the user experience or the compatibility with the existing tools.

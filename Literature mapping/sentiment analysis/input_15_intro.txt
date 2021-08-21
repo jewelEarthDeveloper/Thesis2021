@@ -1,0 +1,69 @@
+It is common knowledge that software-intensive systems in general are becoming larger, more complex and more relevant to crucial tasks in our society.
+Due to the high impact of a malfunctioning, we must have a high degree of confidence that the systems cannot harm people or expensive equipment [14].
+Testing is Limited.
+Testing is a well-known approach to building trust.
+Systems are “tried out”, unit tests and integration tests are written and automatically executed for the software parts, hardware-in-the-loop tests verify aspects of the hardware and red teams try to attack the system to uncover vectors for malicious attacks.
+However, usually testing can only show the presence of bugs, and not prove their absence.
+Phrased differently, testing suffers from the coverage problem, which means that you can only be sure that your system is “correct” if you test it completely.
+“Completely” is a high bar that is often not reachable in practice for complex systems.
+Formal Methods.
+Formal methods can be an important ingredient in an engineer’s toolset to build trust in critical systems.
+Depending on the particular formalism, formal methods can either help with systematically improving the coverage of tests or can even proof the absence of certain classes of errors such as runtime errors (e.g.
+overflows) or conformance of a client’s implementation with a API.
+Some formal verification tools (e.g. cbmc [9]) work directly on source code, however, most require a model expressed in a particular language on which to operate.
+While this can be seen as a disadvantage (if you are a code-centric developer), it has the important advantage that models cannot just represent software – they can also represent aspects of the system implemented in hardware, or even aspects of the environment.
+Models – for example of interfaces, protocols or state-based behavior – can also be defined in earlier stages of development where hardware or source code are still elusive.
+This way, engineers can experiment with various design alternatives early in the development, building trust in their work early, and avoid expensive rework during later stages of development.
+Bringing Formal Methods Closer to Practitioners.
+However, formal methods are hard to use by practitioners for several reasons.
+First, some of the formalisms are conceptually hard to understand [21]; they often encode non-trivial mathematical ideas that are not familiar to engineers [31].
+The input languages of verification tools contain low-level abstractions that are targeted towards verification, which forces engineers to bridge a large abstraction gap when they encode system-level concepts.
+Second, these formalisms are by necessity general – they are not specific to the engineer’s domain, which makes the transformation of the engineering model to the tool’s input and the lifting of the results even harder.
+Third, there is often no robust tool support (IDEs) for verification engines; and common software IDE services such as auto-completion, refactorings or debugging the models is non-existent.
+Fourth, using real-world verification requires the use of multiple formalisms for the definitions of state-transitions or constraints, requiring multiple encodings of the engineering model and/or fusion of the results.
+Fifth, the interpretation of the results of the verification tools, such as understanding the witnesses for verification failures in terms of the engineering model, is often not trivial either.
+In safety-critical contexts, formal verification results may be used as evidence supporting assurance arguments that demonstrate that the system meets critical goals.
+Finally, not everything that is needed to make an argumentation for the system’s safety can be formalized [34, 13].
+In these cases, unstructured or semi-structured artifacts (such as the original textual requirements, SysML diagrams) must be integrated with formalized models, both conceptually and technically.
+Our Vision.
+We envision an integrated modeling and verification platform, that deeply integrates models for requirements, design, verification and assurance at increasing levels of formality as illustrated in Figure 1.
+Our platform has the following characteristics: (1) The user interacts with a limited number of models whose structure and notation is meaningful to the user’s engineering domain.
+Informal parts of the system such as textual requirements, or safety arguments can be incrementally formalized and combined with other formal specifications.
+(2) The languages used to define these models allow the user to express properties that they want to verify; again, these properties are expressed with a language that is close to the user’s domain.
+(3) These models, together with the properties they must satisfy, are then automatically translated into one or more verification formalisms, and (4) existing verification engines are executed to verify the properties.
+(5) The low-level verification results are lifted back to the level of the engineering model; potentially, the results from multiple verification tools are semantically integrated.
+(6) Using references and other model-level mechanisms, the formal models can be connected to informal or semi-formal content, (7) integrating system and safety engineering models in a semantically rich assurance case to ensure consistency between design and safety models.
+Last but not least, the tool should be built as an open platform to make it extensible with new formalisms or user-facing languages, and its user experience should be on par with modern IDEs in terms of editor features, type checking and error reporting.
+How to get there.
+We rely on language workbenches [12], tools that support the efficient implementation of languages, type systems, model transformations, and IDEs.
+We use a layered approach that delivers early benefits even while only a part of our overall vision is implemented.
+As foundational language workbench we chose JetBrains MPS1 due to its powerful support for language engineering (Section 7.2).
+We start with the implementation of several input languages of verification tools in our language workbench – e.g.
+we implement the language SMV, the input language of the NuSMV [7] model checker; or Promela, the input language of Spin [15] model checker.
+This step does not give us improvements in terms of semantic abstraction, but it results in a robust IDE for writing models in the notation of the formalism that has the usual modern front-end features such as syntax coloring, code completion, type checking and reporting of the verification results.
+Based on JetBrains MPS’ support for modular language extension, we incrementally add discrete extensions to these low-level input languages to make idiomatic use simpler.
+These extensions are still generic, but useful for less mathematically-minded users.
+Next, we implement an integrating language based on the component-instanceconnector paradigm; such languages are well known to many engineers, provide good support for hierarchical breakdown of systems and are reasonably generic (as evidenced by SysML [27]).
+Furthermore, we develop extensions to the component language that allow the user to annotate properties relevant for verification.
+A chain of model-to-model transformations convert this model, including the properties to verify, into the input language of one of the integrated verification tools.
+After the verification is run, we provide lifting of verification results back to the users such that they can easily understand what went wrong and perform fixes.
+This integrated language for modeling and verification is the first major goal of our vision.
+To enable a transition from textual requirements to formal models, we have developed a set of DSLs for specifying requirements by using increasingly semantically rich models.
+The requirements models range from plain natural language text to requirements templates (aka. boilerplates) or formal models written e.g. using temporal-logics.
+The richer the models the more rigorous verification is possible.
+The results of verification can be further used in safety assurance arguments that we integrate via another set of DSLs specialized for safety engineering.
+Are we there yet? FASTEN2 is an open-source3 platform that enables experimentation with modeling abstractions amenable for verification on the way to our vision.
+It supports exploration of the idea, in a bottom-up manner by combining informal and increasingly formal models, and verifies the degree to which it is realistic.
+FASTEN is built on JetBrains MPS, which has been used successfully in a safety-critical context [35].
+While FASTEN is not a production-ready tool, it has been used to verify realistic systems in industrial settings.
+To validate the extensibility with regards to verification formalisms, we present various extensions shipped with FASTEN itself.
+In addition to these open-source extensions, we also discuss closed-source extension, developed independently at Bosch.
+To validate the extensibility for a particular domain, we demonstrate a more extensive case study developed at the Corporate Research department of Bosch.
+Contributions.
+The main contribution of this chapter is FASTEN, an open-source platform based on JetBrains MPS, for safety critical systems development.
+FASTEN allows experimentation with adequate and domain specific modeling abstractions to capture different aspects of safety critical systems from requirements, design, verification to safety assurance.
+The parts focused on safety assurance is referred as FASTEN.Safe.
+For each of these aspects, we provide DSLs that enable the transition from informal to formal descriptions.
+We present a novel architecture for building model driven engineering tooling around modular and extensible stacks of DSLs that leverage on the language engineering capabilities of the Jetbrains MPS language workbench.
+FASTEN has been built over the last three years by industrial researchers from three companies (Siemens, Bosch, itemis) and a research institute (fortiss).
+Last but not least, this chapter presents our experiences and lessons learnt with developing and using FASTEN in research transfer projects inside our organizations.

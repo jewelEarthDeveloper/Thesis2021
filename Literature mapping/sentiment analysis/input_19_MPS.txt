@@ -1,0 +1,21 @@
+Our feature model is implemented in MPS, based on a generic feature modeling language provided by itemis, who integrated a constraint solver with their feature model language.
+This constraint solver provides instant feedback on inconsistent models or contradicting constraints within the model.
+On our request, itemis implemented an accompanying language to support the feature flags.
+We further leveraged MPS’s language extensibility to add custom validations on top of the existing feature model language.
+We exploit this, for example, to ensure unique feature names and that feature names adhere to the rules of the target language.
+As MPS allows additional generators without changing the source model’s language, we have implemented our own generator based on the language stack developed by itemis.
+The MPS projectional editor integrates seamlessly both the graphical feature tree and the textual constraint expressions.
+Modeling and reasoning about all features and their dependencies is quite challenging.
+However, the integrated rendering and seamless editing allow the focus to be placed on the inherent complexity, rather than dealing with inadequate or split up editors (i.e., tooling issues).
+As we are replacing the logic with variation points throughout our code base, team members regularly encounter MPS for the first time when they adopt our feature model.
+Being developers, this user group is not discouraged by MPS’s IDE appearance.
+However, they still have difficulties in working with the tool without close guidance.
+The main usability issues include the separation between context menu and intention menu, the unfamiliar keyboard navigation and selection scheme.
+The feature modeling language consists of two main aspects: the feature model and configurations.
+After every change to the feature model, the user has to explicitly adapt each configuration to the changes by triggering an intention.
+This could be avoided if MPS would provide language developers with an easy mechanism to propagate changes to other parts of the model, while keeping manual changes on the propagation target untouched.
+MPS supports generic language extension through node annotations and accompanying amendments to the projected main editor.
+However, a language extension cannot easily amend the projected inspector editor.
+The target programming language of our custom generator is not available as MPS language, and is too complex to easily implement.
+MPS’s TextGen is not well suited to generate large amounts of text, especially if the generated structure differs from the input model.
+We resolved this issue by leveraging the PlaintextGen extension [8].

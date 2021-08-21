@@ -1,0 +1,57 @@
+3 Proposed Solution
+We proposed to migrate VADM and all FuMos to MPS models and generate the C implementation.
+The revised product development process is depicted in Fig. 4.
+It removed the implement–check–adjust cycle between the IT department and the external service provider.2 The test creation process remained the same.
+The IT department continued to define FuMos and VADM, but in MPS instead of Word.
+The MPS models were stored in the Subversion [1, 7] version control system.
+All non-domain aspects were moved to support libraries.
+This approach removed most of the identified shortcomings Version Control FuMo models are versioned like any other development artifact.
+The versioning system provides proven diff/merge support, completely integrated into MPS.
+C implementations do not need to be versioned any more, as they can be regenerated at any time.
+FuMo Structure By formalizing the FuMo DSL, we provide all the regular IDE tooling: entering invalid or inconsistent syntax becomes impossible by design, autocompletion supports the user with available choices, named references are replaced by technical references and guarantee consistency, and model validation provides instant feedback.
+We have implemented a generator, so inherently each construct has defined semantics.
+Of course, all technical meta-information listed in the FuMo header is implicit: we automatically collect the lists of parameters and used FuMos from the FuMo DSL.
+Memory Allocation The FuMo DSL does not provide direct access to memory management; it is handled by the generator.
+We use the same memory allocation API throughout the generator.
+Global VADM Structure We do not change this fundamental software design choice.
+For once, the approach has been chosen for a good reason: it minimizes data copying and enables high performance.
+Also, such a change has been out of the scope of the project, and it would not have been wise to combine such a fundamental implementation change with the technology migration at hand.
+However, due to the FuMo DSL, we know exactly which FuMo (or function) accesses which VADM attribute.
+This offers a sound basis for future changes, if desired.
+Test Execution Environment Although not initially planned, we had to enable test execution on PCs to finish the migration to MPS (see Sect. 4.4).
+Based on this work, Zurich now runs tests in an automated nightly build.
+Test Result Granularity For our migration efforts, we semiautomated more granular failure reports through trace logging (see Sect. 4.4).
+However, this required invasive changes to the production code and would hamper performance seriously.
+Thus, these changes were only temporary.
+Enable Accurate Searches Most searches look up named references.
+By providing first-class technical references, we replaced these searches by straightforward linking and find all references commands.
+FuMo models become the definitive source, and generation guarantees consistency of FuMo and C implementation.
+Thus, we cannot miss any reference from the model.
+C Language Knowledge and Duplicated Implementation Effort IT department staff writes FuMos in FuMo DSL and can immediately generate, compile, and execute the resulting implementation—prototyping and implementing a FuMo uses the same tool.
+This means searching and prototyping does not require detailed knowledge of the C language any more.
+Programming skills are still required for debugging purposes.
+Inconsistencies Between FuMo and C Implementation All C implementations are generated from the FuMo models.
+Therefore, we cannot have any inconsistencies.
+As we use the same generator for all FuMos, all C implementations for one FuMo DSL concept must be identical.
+High Communication Effort With code generation, writing FuMos and implementing them in C happen at one place by one party, thus removing any communication overhead.
+The external service provider stays accountable for nonfunctional aspects of the system.
+They can focus on support libraries and operational aspects.
+Of course, both parties need to stay in close alignment.
+Long Turnaround Time Code generation delivers the C implementation of every FuMo within seconds, i.e., several orders of magnitude faster than the previous process.
+This provides the IT department with immediate feedback and direct control of the outcome.
+3.1 Solution Technologies.
+We proposed MPS as implementation technology for several reasons.
+To ease adoption, we kept a form-like user experience similar to the existing FuMos.
+This is easily feasible with projectional editors.
+Similarly, projectional editors support VADM’s tabular style.
+Intermixing prose text in FuMos with formal math expressions and links to parameters would be hard or even impossible with parserbased systems.
+MPS’ language extension mechanism supports clean language design decisions while providing an escape mechanism for edge cases in legacy code.
+We could design the FuMo DSL on its existing level of abstraction.
+Edge cases like irregular pointer access were handled by language concepts unavailable to the end-user, while performance optimizations like pointer arithmetic could be represented by embedded C code.
+itemis knows MPS very well, rendering this technology the obvious choice.
+We could leverage our experience with mbeddr [2, 4, 10] as MPS-based C implemen- tation and generator to C source code.
+Our internal importer from C source code to mbeddr C models enabled the import of existing FuMo implementations.
+Zurich tasked itemis with maintenance, migration, and further development, relieving them from MPS development.
+We proposed Subversion as a version control system, as it was available within Zurich.
+It is less complex than git, lowering the initial threshold especially for users unfamiliar with version control systems.
+MPS supports Subversion out of the box.

@@ -1,0 +1,4 @@
+In this paper we presented the experiences matured in the development of a Model-Driven approach for the migration of monolithic applications to microservice applications.
+The proposed solution is based on the definition of two domain specific languages, one for the microservices specification and one for their deployment in a Docker container, and on a set of generators that make the migration approach automatic and with less manual intervention by developers.
+The framework have been implemented by means of the MPS text-based language workbench and evaluated with an initial with the aim to demonstrate the feasibility of the approach, and calls for future research.
+To make is scalable and usable in real contexts we are interested to test it using different industrial case studies to further investigate the soundness of the proposed methodology and eventually to extend the specification of the provided DSLs in MPS to make it more general.

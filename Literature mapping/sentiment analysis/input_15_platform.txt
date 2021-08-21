@@ -1,0 +1,15 @@
+To enable an efficient implementation of our vision, we have modularized recurring functionality in a set of DSLs and libraries that make up the FASTEN Platform.
+Figure 2 shows an overview of the FASTEN architecture.
+FASTEN integrates external analysis engines (see bottom of the figure) as black boxes – NuSMV [7], Spin [15] and Prism [22] are integrated as external binaries, the Z3 [10] is integrated via its Java API.
+Foundational Libraries.
+All languages and functionalities are developed on top of JetBrains MPS plus languages and libraries provided by the MPS-extensions4 and mbeddr-platform5 projects.
+We use these language libraries for diagrammatic, tree and tabular notations, for the improving editor usability (via grammar-cells [38]) and for generated code review.
+From an implementation perspective this infrastructure proved to be crucial to our approach.
+Our Infrastructure: the FASTEN Platform.
+In order to facilitate the development of DSLs and the integration of formal analysis tools, FASTEN comes with a set of basic languages and functionalities that can be grouped as follows: 1.
+1. Infrastructure: commonly used DSLs such as an expressions language; support for calling external tools, displaying analysis results in the IDE, 
+2. Basic modeling: base DSLs for the definition of modeling languages such as architecture, message-sequence-charts or tabular specifications, 
+3. Input languages of existing analyses tools: the implementation of input languages (e.g., SMV, Promela, SMTlib, Prism) of the integrated analysis tools.
+4. Standard languages: the GSN [18] modeling language for creating assurance cases, the STAMP [23] modeling language for performing hazard analysis and a base language for the specification of textual requirements.
+On top of the FASTEN-Platform, we have created DSL extensions to enable more comfortable modeling and verification.
+In the following sections we present selected examples of higher-level abstractions and functionalities that have been built so far.

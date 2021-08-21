@@ -1,0 +1,29 @@
+This paper is an extended version of [20] and provides besides an extended example use case some more technical details.
+Model-driven software engineering (MDSE) [24] aims at reducing effort for developing software by specifying higherlevel (executable) models, instead of lower-level hand-written source code.
+An initial model capturing the requirements is often the starting point from which a number of models over multiple levels of abstraction is derived, until the system is eventually implemented.
+In order to support model-driven software engineering in a full-fledged way, key enabling technologies are mandatory for defining modeling languages and specifying and executing model transformations.
+Usually, modeling languages are defined with the help of metamodels in the context of object-oriented modeling.
+To this end, the Object Management Group (OMG) provides the Meta Object Facility (MOF) standard [18].
+Throughout the last two decades, UML [19] has been established as the de-facto standard modeling language for model-driven development.
+In its current version, UML comprises seven kinds of diagrams dedicated to structural modeling and seven different diagrams addressing behavioral aspects of a software system.
+In order to support model-driven software engineering in a full-fledged way, having models which allow for a generation of fully executable code is crucial.
+However, generating executable code requires a precise and well-defined execution semantics of behavioral models.
+Unfortunately, not all behavioral diagrams provided by UML are equipped with such a well-defined semantics.
+Furthermore, some diagrams with a well-defined execution semantics, e.g., activity diagrams, are on a lower level of abstraction in terms of specifying control flow.
+As a consequence, the state of the art in model-driven software engineering nowadays is specifying the static structure of the software system using models from which source code is generated.
+This generated source code is then augmented with behavioral elements using regular programming languages.
+This fact which we call the “code generation dilemma” [6] is problematic as the different fragments of the software system tend to evolve separately which quickly leads to inconsistencies between the model and the (generated) source code.
+Round-trip engineering [7] may help to keep the structural parts consistent but unfortunately there is still no adequate representation of the manually supplied behavioral fragments.
+The Action Language for Foundational UML (ALF) [15] is also an OMG standard addressing a textual surface representation for a major part of UML model elements.
+Furthermore, it provides an execution semantics via a mapping of the ALF concrete syntax to the abstract syntax of the OMG standard of a Foundational Subset for Executable UML Models, also known as Foundational UML or just fUML [16].
+The primary goal is to provide a concrete textual syntax allowing software engineers to specify executable behavior within a wider model which is represented using the usual graphical notations of UML.
+A simple use case is the specification of method bodies for operations contained in class diagrams.
+To this end, it provides a language with a procedural character whose underlying data model is UML.
+However, ALF also provides a concrete syntax for structural modeling within the limits of the fUML subset.
+In the academic world, the Eclipse Modeling Framework (EMF) [22] constitutes the platform for research dedicated to model-driven software engineering.
+Its metamodel Ecore is based on a subset of MOF called Essential MOF (EMOF).
+Following a pragmatic approach, EMF strictly focuses on principles from object-oriented modeling only providing core concepts for defining classes, attributes, and relationships between classes.
+Furthermore, it allows for Java code generation from these structural model definitions.
+EMF provides an extensible platform for the development of MDSE applications.
+In this paper, we present a tight integration of the OMG standards UML and ALF to realize an integrated modeling environment which allows for structural as well as behavioral modeling.
+Fully executable Java source code is generated from the resulting models, allowing for “real” MDSE approaches.

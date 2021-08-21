@@ -1,0 +1,12 @@
+Implementing a software language—be it a modeling language or a programming language—requires specifying its syntax, as well as static and dynamic semantics.
+While conceptually none of these present a particular challenge, developers often struggle to bring their languages to life.
+Reasons for obstacles range from the lack of knowledge on parser implementation to absence of tool support for the language—most commonly, users expect an Integrated Development Environment (IDE) to be shipped together with a language, which is vital for adoption of a language [10].
+Recently, an array of tools designed to define software languages together with their IDEs have appeared under the name of language workbenches [3, 4, 10].
+These tools allow specifying syntax, typing rules, and code generators for a language, and they output a tailored IDE with standard services such as syntax-aware editor, code completion, automatic code corrections, and others.
+Despite this fact, many of current language workbenches have a very steep learning curve even for experienced software professionals [8], and their adoption rate still leaves much to be desired.
+At the same time, a noticeable amount of domain modeling is done using “office software”, such as word processors [9] and spreadsheet calculators [1].
+Our hypothesis is that meta-definitions—that are prevalent in language workbenches—is a key factor that complicates language engineering for beginner language engineers.
+Consider the following definition of construct variable declaration: var x = 10.
+This definition looks like an instance of a variable declaration, and no meta-definition along the lines of VarDecl → “var” ident “=” expr is explicitly mentioned.
+We suggest an approach where a language is defined by giving examples of code written in it, which are then annotated to specify different concerns of language definition—such as abstract syntax, typing rules, validation rules, formatting rules, and dynamic semantics.
+We consider three possible implementation strategies of this approach: within an existing rich text processor (such as Microsoft Word), within a notebook (similar to Jupyter notebooks [6]), and within a dedicated example-driven language workbench.

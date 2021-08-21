@@ -1,0 +1,32 @@
+As mentioned in Sect. 2.3, the language engineering process devoted to the creation of GDF constituted an endeavor due to diverse challenges, summarized as follows and discussed in detail after: – scalability of modeling techniques, and in particular of diagrammatic forms, in the case of systems of logical constraints; – multiple levels of concepts definitions and corresponding instantiations; – usability of available multilevel modeling workbenches.
+The first problem can be regarded as general and not due to the specific application domain and the language workbench taken into account.
+Indeed, using diagrammatic representations for complex systems of logical constraints tends to become quickly intractable: modeling sequences of events together with their preconditions and constraints, possibly also including negative statements, makes the size of the specifications to exponentially grow with the number of handled variables/events.
+We already gained large experience in modeling smart mobility applications and incurred in the same scalability problem we faced for gamification [29].
+As a consequence, after some preliminary attempts and the necessary investigation of the state of the art, we decided to opt for a text-based modeling solution.
+Admittedly, at this point, we could have chosen a different language workbench, notably XText,10 for trying to implement GDF.
+However, the language import feature embedded in MPS caught our attention, and we decided to give it a try, without a thorough comparison with possible text-based alternatives.
+The second among the listed challenges can be reduced to a separation-ofconcerns need [30]: in order to cope with the growing complexity of gameful applications, it is desired to partition their design and development into smaller, typically simpler, sub-problems.
+More precisely, sub-problems would be (i) the definition of gaming elements and mechanics in general; (ii) the specification of selected elements and mechanics for a certain game; and (iii) the deployment of game elements and mechanics of a specific gamification engine, including the configuration of players and teams.
+It is worth noting that in order to make this separation effective, consistency support shall also be provided, such that, e.g., it would not be possible to use a game element when not permitted by the mechanics used in the game itself.
+In this context, the language import feature provided by MPS reveals its criticality: since MPS is based on projectional editing, it is simply not possible to produce ill-formed models.
+As a direct consequence, since, e.g., models in (ii) originate from the definitions in (i), a mechanism or element defined in (i) can only be used in (ii) as conforming to the language definition.
+In the same way, a deployment specification in (iii) can be only done as conforming to the definition of the game provided in (ii).
+In the MDE literature, separation-of-concerns and consistency management have been widely investigated, and in fact, there exist solutions like multilevel modeling and megamodeling that would suit for GDF purposes.
+Nonetheless, while from a theoretical perspective those approaches are valid, the same cannot be said about availability of tools.
+As a matter of fact, in our experience, MPS has been the first workbench delivering language engineering support with a tractable level of complexity, even for persons not necessarily MDE experts.
+Here it is important to remind that GDF is intended to be extensible to new game elements, mechanics, etc., and to be used by all gamification stakeholders.
+Therefore, the usability of the language workbench is of critical importance.
+As mentioned before, the language extension mechanisms provided by MPS allow to import existing languages and extend them by operating limited refinements, both for new concepts, new constraints, and so forth.
+At the same time, consistency management is implicitly built by means of inheritance relationships.
+As expected, also MPS requires a training period, and the learning curve might be steep.
+In our experiences, people with programming backgrounds might have some advantage in the learning phase, while MDE experts might find some of the features as unexpected and/or counterintuitive.
+Indeed, MPS exploits a precise set of tools that need to be carefully understood in order to be able to use the workbench effectively.
+In other words, while MPS demonstrates to be fairly simple to use for entry levels, when users require advanced features, the workbench exposes a rather complex and extensive set of details that need to be taken care of.
+In this respect, the vast availability of tutorials and examples falls short, because a more conceptual description about how different portions of the workbench are kept together would be required.
+Moreover, the need for a language debugger increases with the size of the project; in fact, in most cases, a language engineer understands that a specification is wrong due to some unexpected behavior of the resulting artefacts, while the reason of the malfunctions remains completely hidden.
+For the current version of GDF, we expect gamification stakeholders to optionally define new game elements and mechanics, while the typical use would be to instantiate existing mechanics and elements in corresponding game definitions.
+In turn, game definitions would be exploited to define gameful application deployments on a selected gamification engine.
+Moreover, GDF provides languages to define game monitoring and adaptations at runtime.
+While in most cases it is enough to define game elements and state change rules, the specifications might grow in their complexity and require fine-tuning for which stakeholders would require MPS experts’ help.
+In this respect, we are planning future refinements/extensions of GDF to make the specification of gameful applications simpler.
+Notably, we would abstract from the MPS workbench itself by means of, e.g., a web interface for game definitions; moreover, we would like to investigate easier ways of specifying detailed game behaviors, especially to relieve stakeholders of the burden due to hand-tuning the generators embedded in GDF.

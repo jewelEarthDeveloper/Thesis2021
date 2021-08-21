@@ -1,0 +1,18 @@
+A survey is a systematic method for collecting data about (a sample of) entities to construct quantitative descriptors of the attributes of a larger population of which the entities are members.
+The usage of a questionnaire is, by far, the most common data collection strategy [1].
+Highly influenced by recent information technology advances, developing software to support a questionnaire-based survey seems to be an ordinary software engineering task.
+After all, questionnaires are forms, for which a large number of different solutions and development strategies exist.
+However, as survey scales in size or complexity, this ordinary task becomes daunting.
+A questionnaire can comprise hundreds of variables intertwined in a complex web of data quality controls implemented to guarantee that each question is fully understood and adequately answered.
+Hence, underestimating questionnaire design complexity is a common flaw that directly impacts survey quality [1].
+In engineering, complexity is frequently handled by raising the level of abstraction.
+In particular, model-driven software engineering (MDSE) aims at raising computer language abstraction further by making models first-class citizens in the software development process.
+This article proposes the usage of a model-driven approach for designing complex questionnaires.
+Specifically, it proposes a Domain Specific Language (DSL) for modeling questionnaires, presents a prototype, and evaluates the use of the DSL as a strategy to reduce the gap between survey domain experts and software developers, improve reuse, eliminate redundancy and minimize rework.
+In more detail, the article first describes a domain analysis that resulted in a model for the structure of questionnaires, including elements that allow the modeling of questionnaire data consistency and integrity rules, as well as the specification of behavioral aspects of the questionnaire required to capture navigation flow.
+Next, based on the proposed model, the article describes the design of a prototype domain-specific language (DSL) for modeling complex questionnaires, called SLang, and its implementation using the MPS projectional language workbench.
+The SLang design process and the main decisions provide insights on how model-driven DSL approaches can be applied to real-world problems.
+Finally, the article covers the evaluation of SLang, providing a good picture of the proposed solution in practice.
+In this evaluation, real-world questionnaires modeled with SLang were deployed in a complete setting, including both the SInterviewer app and a backend responsible for centralizing collected data, with real end-users executing mock interviews.
+SLang prototyping has been previously described in [2].
+This article contains additional insights on the survey questionnaires domain and how the domain analysis was performed, additional information on the SLang design, with improved examples, and details of the language evaluation process, including an IT environment that is closer to reality.

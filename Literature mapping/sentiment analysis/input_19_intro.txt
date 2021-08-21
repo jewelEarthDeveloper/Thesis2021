@@ -1,0 +1,25 @@
+Canon Production Printing develops high-end professional digital printers in three categories: (1) industry-leading continuous-feed printers for massive print volumes and fast, high-quality results in full color or black & white; (2) highly efficient, highvolume printers for in-house printing or publishing; and (3) large-format printers for stunning display graphics and high-quality CAD/GIS applications.
+These products serve the professional print market with suitable trade-offs between multiple system Key Performance Indicators (KPIs) such as productivity, perceived image quality (i.e., how good does the printed image look), print robustness (e.g., how well does the ink stick to the medium), and cost.
+Figure 1 highlights some example printer families with an indication of their productivity capabilities and physical sizes.
+The printers in Fig. 1 exploit an inkjet print process, which covers steps such as image processing, positioning the jetted ink on media, and spreading & solidification of the ink.
+How each print process step is realized has an impact on the various system KPIs.
+A multitude of engineering disciplines (software, electrical and mechanical hardware, physics, and chemistry) is involved in the development of print processes and printers, and hence in realizing competitive values for all the system KPIs.
+Development within Canon Production Printing exploits several model-based approaches in all engineering disciplines to cope with the ever-increasing complexity.
+The complexity of professional digital printers is nowadays fairly comparable to that of high-end cars.
+At Canon Production Printing, model-based approaches have already proven to be essential for efficiently performing continuous innovation with sustainable quality in a highly competitive market.
+An important ingredient of model-based development at Canon Production Printing is to have good tool support to do the actual modeling.
+Architects, designers, and engineers often rely on tools that are to some extent targeted for addressing specific aspects of a printer.
+For example, the mechanical design relies on using a CAD tool, which is, however, an unfamiliar development environment for a software designer.
+Nevertheless, the mechanical and software designer are working on the same printer, and hence part of the knowledge captured in their models must be the same to ensure that together they come to a design that will actually work.
+Exposing (the knowledge captured in) models to a wider audience than the original context from which they originated is an essential ingredient of achieving consistent designs within and across engineering disciplines.
+Instead of teaching the wider audience to use the tool in which a model was originally created, it can be more appropriate to introduce a (meta)tool that allows for automated exchange of the knowledge captured in various domain-specific models (which are developed in a diversity of tools).
+This allows for much better reuse of models within and across engineering disciplines.
+In summary, the benefits of using a (meta)tool include: Users don’t have to learn the quirks of numerous tools.
+Within one (meta)tool, multiple models can be integrated much more intimately.
+Integrating and maintaining one (meta)tool in development (and automated build) environments is less work than integrating and maintaining multiple tools.
+MPS is a core (meta)tool that is used extensively within Canon Production Printing.
+However, it is not only used for realizing consistent exchange of knowledge captured in models developed in more domain-specific tools (such as the CAD tool example).
+It is also being used as the main tool for creating models to capture knowledge that has not yet been formalized.
+This allows computer-based processing for more automated printer development as essential extensions to the capabilities of consistent exchange of knowledge between domain-specific tools.
+This chapter highlights several modeling efforts that emerged within Canon Production Printing and how MPS played a role in these efforts.
+Figure 2 gives a high-level impression of the main relations between the different DSLs discussed in this chapter and knowledge captured in domain models for the involved engineering disciplines.

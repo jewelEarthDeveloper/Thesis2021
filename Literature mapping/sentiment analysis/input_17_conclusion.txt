@@ -1,0 +1,5 @@
+In this paper, we presented an approach which allows for modeling structure as well as behavior of a software system using an integrated tool combining two OMG standards: UML and ALF.
+While UML package diagrams and class diagrams are used for modeling the structure, method bodies – i.e., the behavior of a method – are specified using ALF.
+Fully executable Java source code may be generated from the resulting model system which can be integrated seamlessly in existing software ecosystems.
+The integrated user interface abstracts from the underlying set of models and provides a unified look and feel for the end user allowing for graphical as well as textual modeling.
+The feasibility of the approach has been demonstrated using an example workflow which may occur in real-life iterative software development processes.

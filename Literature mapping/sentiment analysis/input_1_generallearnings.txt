@@ -1,0 +1,64 @@
+Specific and Generic A well-designed general-purpose programming language has few orthogonal, and composable language concepts that allow users to define their own abstractions.
+For DSLs, in contrast, it is less important that users can define their own abstractions; instead, users expect the DSL to come with prededefined abstractions for the use cases relevant to the domain (which partially explains the large number of language concepts in Table 1).
+However, if a DSL is designed in this rigid way, it cannot grow towards more expressive power over time without expensive structural refactorings.
+An extensible functional language like KernelF, together with MPS’ capabilities, provides an elegant middle ground.
+Structurally, everything is an Expression.
+However, initial iterations of the language only ship with use-case specific, highlevel expressions that are easy for the end users to understand (an example is the Boolean list l1 and l2 do not share data used in a constraint).
+As users become more experienced, one can add more expressive constructs (l1.intersect(l2).isEmpty) without changing the fundamental architecture of the language.
+A second example: in several cases, our end users asked us to remove genericity in favour of a more specific approach (with better, less generic tool support); for example, when assigning to an enum-valued result variable in a calculation, users suggested code completion to propose only the enum literals (“it is too complex otherwise”), not realizing that they might want to compute the value and added them back in over time without any significant change to the language.
+Potentially, this filtering can be user-specific.
+In the case with the assignment to enum-valued variables we will customize the MPS code completion menu (once the feature becomes available) to show the enum literals at the top and in bold, and all the other expressions further down; this will highlight the “simple” approach while still allowing more expressive, generic expressions.
+There’s a saying in the computer science community: “Every DSL will eventually evolve into a general-purpose language”.
+We think this is wrong – this DSL and other similar ones are not a replacement for Java or C.
+However, most DSLs, as they evolve, will need more (mostly lower level) features that make it Turing complete.
+But these languages still have lots of domain-specific concepts in them as well, so they are not general-purpose.
+However, when selecting the tooling to build the languge, make sure you chose one that is expressive enough to be able to handle this evolution.
+Functional Programming As we have said earlier, a challenge for many business programmers is functional thinking and programming.
+The functional approach is very useful for lots of technical reasons – such as easy extensibility and relatively easy analysability – and to provide lots of end-user-relevant features with acceptable implementation effort.
+However, many business programmers, especially those who have extensive imperative experience, consider it a challenge.
+We mitigate this by providing high-level declarative abstractions for things that are ubiquituous in the domain, so that “low-level functional algorithmic programming” is required rarely.
+The approach is (half jokingly) called “funclerative programming” in .
+The Price of Reuse Language reuse comes at a price: an existing language concept might not be 100% what we need in a DSL.
+For example, a keyword might be English instead of German, one might prefer a different default (for example, does the type number without a specification of decimal digits denote an integer or a real?) or one might prefer the first operation on a list<T> to be of type T instead of opt<T> because the reusing language does not use option types.
+In practice, we usually start a new DSL by reusing (potentially non-ideal) language constructs from KernelF initially to get the project going quickly and proof its viability.
+In later phases, once we know the investment will not be wasted, we replace (some of) them with more ideal, custom-developed constructs.
+We have also reused the KernelF-to-Java generator; the low-level abstractions, such as the basic expressions, worked in the DATEV context without problems.
+The higher-level the reused language construct, the more likely it is that the choices the original generator developer has made do not fit with the project-specific context.
+For example, the generator for messages, a facility for collecting and reporting errors and warnings to the user, did not fit directly.
+Luckily, MPS provides mechanisms to override the existing generator in such situations.
+SMT It turns out that many analyses that are expected by our business programmers require abstract interpretation [9, 10] on an SMT  domain.
+An example is checking a set of Boolean expressions (in a switch-like expression or distributed over several calculations) for completeness and overlap.
+However, users do not necessarily understand why this is so much more complicated than some of the other error checking performed by the IDE.
+We have observed the same in other DSL projects .
+To make such analyses possible, we would have to translate all of KernelF to solvers like Z3 , and build this transformation in a way that is easily extensible towards constructs from DSLs that extend or embed KernelF.
+This is a major task; itemis has been working on for the last few years, but has not yet finished.
+This can be seen as a negative consequece of reusing KernelF: our language is now so expressive that it is prohibitively expensive to transate it into SMT.
+However, the domain does require this expressiveness, so not reusing KernelF would not make it better.
+However, what we can learn from this is that we should develop a successor to KernelF which is integrated with – meaning: translatable to – an SMT solver right from the start.
+Attention to Detail There is different emphasis between end users and language engineers regarding detail.
+Examples abound.
+We had to allow leading zeros in date and month literals as well as German umlauts and § signs in identifiers.
+We developed an infrastructure to manage abbreviations of name components (a central list of allowed name components, componentwise code completion of multi-part names based on the list, checking rules, refactorings to extract name components, showing names in abbreviated and expanded form).
+We spent a lot of time on the exact rounding rules for currency types.
+We worked on tool infrastructure to support internationalization for messages and integration with external translation tools.
+And we were required to use German-language keywords for DATEV-specific language concepts, which leads to a curious mix of German and English, because the keywords of KernelF-concepts cannot easily be changed to German.
+When initially estimating the overall effort for the project, we did not take such requirements into account.
+Pros and Cons of the Projectional Editor A projectional editor is a good fit for DSLs like the current one because of its support for non-textual notations such as tables, the ability to use non-parseable, natural language like syntax and its support for more highly-structured, text-template-like notations such as the one for calculation shown in Sec. 6.2.
+And since grammar cells  have been available, the “feel” of the editor is close enough to a text editor for it to be acceptable to most users.
+The projectional editor is also an important enabler for the versatile support in MPS for language extension and composition, because one never runs into parsing ambiguities.
+However, we did run into a few limitations.
+For example, insertion into the headers of decision tables took a while to get smooth.
+And the /yyyy mm dd/ syntax for dates is a non-convincing compromise: dd.mm.yyyy is ambiguous with decimal number literals because a projectional editor has no look-ahead to be able to distinguish the two.
+MPS Limitations More generally, we encountered a few limitations of MPS, including (1) keywords in multiple languages, (2) projecting nodes in places other than their location in the AST, (3) execution of expensive global validations, and (4) execution of a single set of tests both using the interpreter and the Java generator.
+For (2), (3) and (4) we developed workarounds, (1) is unresolved.
+For a thorough discussion of the “good, bad and the ugly” of MPS regarding the development of large-scale DSLs, we refer to.
+MPS, in General From an end user perspective, MPS looks and feels too much like an IDE (even though everything that is not needed for the payroll DSL has been removed from the UI).
+The requirement to install it locally on the users’ PCs is also not a plus.
+An ideal tool would run in the browser and feel more like a modern web app, while still supporting all the language engineering available in MPS.
+However, as far as the authors know, such a tool is currently not available, even though various communities have started to develop prototypes.
+MPS Learning Curve Learning to be a productive MPS language developer is hard, for many reasons: most developers do not have language development experience in the first place, MPS is a powerful tool and has many facets, not everything is as consistent within MPS as it could be, and the documentation is not as thorough and far-reaching as it should be.
+While the focus of this chapter is not the mechanics of building the DSL (and we refer the reader to), it is worth pointing out that it took longer than expected for the new language developers to become productive with MPS.
+Resistance to Change? It is often said that domain experts and business programmers resist change, such as when moving to a DSL.
+We have heard it too in this project.
+Upon closer inquiry we have found that what they are really saying is something like: “last time we had to change, the new system was not ready yet, bugs were not fixed fast enough, we were not taught how it works, our feedback was not taken seriously, and, during the period of changing to the new system we were expected to be as productive as during the time before the change”.
+Avoid these things, and you will encounter much less resistance.

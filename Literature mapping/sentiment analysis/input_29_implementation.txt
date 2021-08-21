@@ -1,0 +1,22 @@
+In this section, we will describe the approach that is used to implement OntIoT.
+Figure 4 describes the steps for building OntIoT and its editor from the SSN ontology.
+OWL is used to represent the SSN ontology.
+The transformation engine is responsible for transforming the OWL SSN ontology to the target language structure based on a set of general mapping rules (Section 5.1).
+The input for the engine is the SSN OWL file and the output is the abstract syntax tree for the OntIoT language.
+The latter is used inside the language workbench to generate the final DSL and its editor by the language designer.
+Our ontology-based approach for building OntIoT is a generic approach that can build a DSL from any OWL ontology.
+SSN ontology is selected to build OntIoT since it is a W3C and OGC standard.
+In addition, it is a high level ontology that could be used in a wide range of IoT applications.
+Accordingly, OntIoT could be used in many IoT sub domains like smart home, smart healthcare, and agriculture monitoring.
+SSN ontology is considered as a core ontology for a set of more specific ontologies like IoT-Lite4 and OpenIoT5 .
+The extension of OntIoT to cover these ontologies is a straightforward using our generic approach without need to rebuild the language.
+In our implementation, we used Meta Programming System 6 (MPS) language workbench for building OntIoT.
+MPS is an open source workbench that implements the projectional editing technique for DSL development.
+The projectional editing technique is selected to implement OntIoT for many reasons: First, OntIoT is based on SSN ontology.
+There are many similarities between the ontology structure and the AST structure.
+The AST is the core unit in the projectional editing.
+These similarities facilitate the transformation process.
+Second, the projectional editing technique will allow to build different editors types for OntIoT (e.x. textual and graphical editors).
+Currently, we provide only a textual editor but we plan to build a graphical one.
+Third, It allows OntIoT to contain mixed notations (i.e. textual, symbols, and tabular) which is not applicable in other techniques.
+Finally, projectional editing technique allows OntIoT to be easily extended to map the different ontologies that utilize or extend SSN ontology.

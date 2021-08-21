@@ -1,0 +1,29 @@
+Language workbenches [1] (LWBs) are IDEs that support engineers in the design and development of software languages [2].
+These tools are aimed to improve and increase the adoption of Language-Oriented Programming (LOP).
+LOP is a technique for solving software engineering problems through the use of multiple domain-specific languages (DSLs) [3].
+DSLs are small and simple languages tailored to solve problems in a particular application domain [4].
+There are two types of DSLs, internal and external [3].
+The first one reuses the concrete syntax of the host language and its parser, much like a stylized library.
+An external DSL, however, typically requires the implementation of a parser and compiler.
+Jetbrains MPS is a projectional language workbench that obviates the need for parsing and, as a result, allows the engineer to define DSLs with a multiplicity of notations, varying from textual, and tabular, to diagrammatic, or prose-like.
+MPS provides editor support that allows users to directly edit the abstract syntax structures of a language rather than reconstructing such structure from the linear sequences of characters entered in text editors.
+Nevertheless, many existing languages are defined purely textually.
+For instance, all mainstream programming languages are textual (e.g., Java, C#, Javascript etc.).
+But many DSLs, like GNU Make, Graphviz, SQL, etc., are strictly textual languages too.
+To make such existing languages available for (re)use from within MPS, language engineers have to redefine the syntax of such languages using the concepts and editor features of MPS, which is a tedious and error-prone endeavor.
+In this chapter, we detail an approach to take an existing context-free grammar (e.g., from a parser generator tool) of a textual language and convert it automatically to MPS concept definitions.
+As a result, such languages can be imported into MPS without having to write abstract syntax definitions by hand.
+Furthermore, the approach supports loading parse trees of existing programs into automatically generated MPS editors, so that they become available for reuse immediately.
+Companies in the Eindhoven (The Netherlands) region (e.g., Canon Production Printing and ASML) have been using DSLs for several years [5].
+Some of these companies use textual LWBs, projectional LWBs, or both, such as Canon Production Printing.
+When companies are using both types of LWBs, it is often desired to reuse existing textual languages within a projectional LWB and vice versa.
+If such a reuse facility exists, companies will avoid the costs of reimplementing features and maintaining the same functionality in different platforms.
+Likewise, developers can be more productive from the engineering point of view and invest more time in developing new features or improving existing ones.
+Finally, the reuse strategy could reduce time to market for new products.
+In this chapter, we present an approach toward bridging the gap between textual and projectional LWBs, which has been implemented in the context of the Rascal (textual) and MPS (projectional) language workbenches.
+Our Rascal2MPS [6] takes a Rascal grammar and converts it to equivalent concept hierarchies and editor definitions in MPS.
+The contributions of this chapter can be summarized as follows: A generic bridge between textual and projectional LWBs.
+Employing this bridge, developers can obtain a projectional language in JetBrains MPS from a contextfree grammar written in Rascal.
+A mechanism to generate projectional editors from a context-free grammar.
+This mechanism uses a set of pretty-printing heuristics that takes into account the production rules’ structure.
+A tool to import existing programs written in a textual language as projectional models of the generated language.

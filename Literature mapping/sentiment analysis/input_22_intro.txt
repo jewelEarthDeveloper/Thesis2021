@@ -1,0 +1,25 @@
+The complexity of modern, software-intensive systems continues to increase due to their rising number of features and functionalities.
+This trend exists in several domains, including automotive, robotics, and avionics.
+Model-based systems engineering (MBSE) methods are suitable to tackle the complexity of such systems, since they support engineers with different, yet consistent perspectives on a holistic model of the system and provide different layers of abstraction.
+Systems in the mentioned domains are often safety-critical since their malfunction might lead to damages or even loss of live.
+Hence, these systems have to be developed according to mandatory safety standards such as the IEC 61508 and the ISO 26262 in the automotive domain.
+These standards require safety analysis methods such as fault tree analysis (FTA) or failure mode and effects analysis (FMEA), which inherently include a model of the system as well.
+However, as of today, these safety analysis methods are typically not linked with MBSE methods and artifacts.
+Thus, without strict sequential processes, there is a great risk of inconsistency between the evolving system models and their safety analyses.
+Several existing approaches combine MBSE with safety analyses methods, e.g., Hierarchically Performed Hazard Origin and Propagation Studies (HiP-HOPS) [33], modularized component fault trees (CFTs) [22,23], and the Safe Component Model (SCM) [11].
+Extensive overviews of these model-based safety analysis (MBSA) methods are given by Aizpurua and Muxika [2], Sharvia et al. [39], and Lisagor et al. [25].
+The main benefits of these MBSA approaches are that the implications of changes in the system model on the system’s safety are directly visible and that they enable the divide and conquer paradigm, since the error propagation of each component is specified separately.
+Höfig et al. [15] present two case studies that show why these benefits are especially useful for complex industrial use cases.
+MBSA methods were introduced for various metamodels, e.g., hyper-graphs [13], MathWorks’ MATLAB/Simulink [3, 34], Architecture Analysis & Design Language (AADL) [29], EAST-ADL [35,45], and the universal modeling language (UML) [1].
+However, in our industrial experience, MBSE methods mainly use SysML [32] as metamodel.
+While a recent activity of the Object Management Group (OMG) to extend the SysML by a safety profile [7] is certainly beneficial, to the best of our knowledge this profile is not yet applied in the industry.
+Clegg et al. [9] use a similar profile to extend SysML with the ability to model fault trees and link basic event and failure modes to SysML blocks.
+The link between elements from safety analysis and system architecture improves a common understanding of the system and allows validation checks, especially on updates.
+However, the approach of Clegg et al. does not leverage the system architecture and the error propagation information contained within it.
+In [30], we present our MBSA approach that extends SysML with CFTs, we show how it supports safety experts when performing FTA and design FMEA, and we outline our design optimization approach with respect to safety.
+In [24], we extended our MBSA approach to support Hazard and Operability (HAZOP) studies, too.
+In [31], we presented our lessons learned from MBSA with SysML and CFTs.
+We showed how we extend SysML with CFTs.
+Our approach is not limited to the static system topology, e.g., represented in SysML internal block diagrams (IBDs), but also supports the architectural aspects of SysML activity diagrams by combining CFTs with call operations.
+Please note that in contrast to existing MBSA approaches, we do not propose a profile that extends the SysML, but leverage JetBrains’ Meta Programming System (MPS) to combine the languages of SysML and CFT in a prototypical tool.We discuss our conceptual considerations based on a set of design drivers and the suggestions of Kaiser et al. [23].
+In this paper, we significantly extend our work [31] by (1) combining it with our work [30] to support extending the methodology not only to support FTA but also FMEA and by (2) providing a detailed case study with an electronic power steering unit that provides valuable insights of applying MBSA with industrial models.

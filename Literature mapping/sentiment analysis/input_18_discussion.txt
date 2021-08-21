@@ -1,0 +1,33 @@
+The main goal of our approach is to avoid the syntax barrier at early stages of introductory programming, so that novices are not obstructed by accidents, while focusing their attention on program semantics.
+Javardise covers the syntax requirements of the first programming course taught at our institution.
+Despite informal experiments where a few users were asked to try the editor, no controlled experiments were carried out, neither the editor has yet been in used in classrooms.
+This section discusses the hypothetical benefits we aim at along with a forecast of drawbacks.
+Malformed Code.
+Those who teach lab classes know that a considerable number of times when they are asked for help is due to a purely syntactical error/typo.
+For instance, a missing semicolon (or an accidental one placed right after a control structure guard), unbalanced brackets, using illegal characters in identifiers, “reversed” assignment statement, and numerous creative forms of syntax guessing.
+Even for an expert, finding the cause of the problem might not be immediate, as they are obfuscated in the code (often not properly indented).
+These issues contribute to slowdown the pace of a lab class.
+On the other hand, while in a lab class a student may have the aid of a teaching assistant or a colleague, syntactical hurdles may constitute a harder barrier to progress when alone.
+As syntax is not part of the essential difficulty of learning how to program, we argue that the associated hurdles should be minimized in favor of concentrating the effort on the essence.
+Focus on Semantics.
+Part of the difficulty on learning programming, often described as “overwhelming”, might be due to having to learn simultaneously a programming model and how to instantiate it using a particular syntax.
+We believe that once a solid understanding of semantics is gained, learning a syntax becomes a minor issue.
+The less time spent on syntax hurdles, the more time is spared to dedicate to semantics.
+Switching to Conventional Editor.
+The fact that when using a structured editor the user is not typing every character of the source code may require an adaptation phase when switching to a conventional editor.
+This issue should be investigated.
+In an editor like Javardise, the code is being presented exactly as the actual source code, and hence, we hypothesize that users will likely get accustomed to the syntax.
+Nevertheless, it is worth noting that modern IDEs also perform various code insertions automatically and not every character is typed.
+Therefore, we do not expect major issues with respect to editor switching.
+Stepwise Acquaintance with Syntax.
+We argue that exposing novices to more syntax than necessary to teach fundamental concepts is counter-productive.
+Syntactic variations (“sugar”) at early stages may confuse the learner, since different variations of expressing the same thing (semantics) are presented.
+For instance, in a language like Java, there are five basic ways to express a variable incrementation.
+We believe that syntactical variations, such the possibility of using a for loop in place of a while, should be presented only when elementary constructs are well-understood (that is, intensely practiced).
+By this time, the learner is likely to better realize why such syntactic possibilities were invented, while not confusing the essence.
+An editor like Javardise, which supports syntax levels, is useful to this teaching strategy, as syntactical constructs may gradually be activated as learning progresses.
+Unsatisfactory Usability.
+We believe that the biggest threat to Javardise, as well as to structured editors in general, is the lack of usability that may be caused by the rigid mode of editing the source code.
+Without a pleasant and productive means to manipulate the source code, the previous hypothetical benefits and the overall goal of easing introductory programming become hindered.
+Hence, effective structured editors should require a serious investment on the usability of the interaction.
+We plan to conduct qualitative studies to improve the usability of Javardise, as well as controlled experiments to evaluate its effectiveness.

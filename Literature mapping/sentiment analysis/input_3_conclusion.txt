@@ -1,0 +1,9 @@
+In this paper we presented our framework for generic projectional editors for arbitrary EMF models.
+In contrast to syntax-based editors which are derived from the grammar of a modeling language and which persist the representation, e.g., text, instead of model files, our approach allows for persisting models including the preservation of inter-model references.
+The main benefit of persisting models instead of their representations, e.g., plain text, is a much easier integration in the existing EMF modeling ecosystem as existing tools and technologies for processing the obtained models can be used out of the box.
+In its current state, the framework allows developing customized textual editors for textual languages with minimal effort.
+While the context-free syntax of the language is specified by means of an intuitive declarative language, static semantics can be customized by implementing high-level code stubs.
+The feasibility of our approach has been demonstrated by a projectional editor for the textual modeling language ALF.
+Future work comprises the integration of other model representations including diagrams and tables and support for user-specific validation, code highlighting, hovering, etc.
+Concepts for language imports and compositions will be taken into consideration, as well.
+Furthermore, we plan to remove dependencies to the Xtext and Xtend implementations.

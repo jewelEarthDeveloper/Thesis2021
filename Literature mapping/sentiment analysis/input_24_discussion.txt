@@ -1,0 +1,31 @@
+5.4 Discussion
+Projecting Grammars as Language Structures The first goal and building block
+for this project is to recreate the structure of a language in two different LWBs.
+This goal was previously achieved and explained by Ingrid [17]. We wanted to try a
+different solution in which we do not directly integrate both platforms, but instead,
+we define an intermediate format to make the solution more general. Section 4.1
+describes the process for mapping a textual language definition into a projectional
+language definition. As shown in Sect. 5.1, the current approach works, yet some
+considerations must be taken into account to generate a proper language. We
+understand that the way we treat lexicals might be cumbersome since the complex
+structure’s mapping must be manually defined. We also think this could be solved
+by defining some pre-processing strategies to capture lexicals and generate them
+into the second platform.
+Editor Aspect: Language Usability The editor aspect of a language is essential
+because it is the user interface to the language. Nevertheless, implementing a good
+editor is cumbersome. As shown in Sect. 5.2, usability is one of the main differences
+between ad hoc and generated implementations. In the generated version, we
+applied heuristics from the literature (e.g., well-known formatting and pretty-
+printing approaches) to try to identify production rule patterns generically. However,
+these heuristics have limited power, and of course, they might not fit every language,
+especially if we compare them against custom implementations. Nonetheless, with
+the current approach, we show that it is possible to apply existing heuristics to create
+projectional editors based solely on the language’s grammar. Besides, the current
+approach considers the language’s structure to generate a projectional editor that, in
+some cases, might be more appealing than the reflective MPS editor.
+To improve the current approach, we could have implemented more heuristics
+or define a mechanism for customizing them. We might also require additional
+information other than the information contained in the grammar. Also, languages’
+coding style and user feedback are fundamental to improve the quality of generated
+editors. In other words, we need more information to implement the heuristics in a
+less rigid fashion and therefore improve the editor generation.

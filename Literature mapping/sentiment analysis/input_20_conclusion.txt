@@ -1,0 +1,11 @@
+MetaR exploited JetBrains MPS in many ways.
+The generation of code in a target language (the R language) simplified the implementation by removing the need to develop our own language runtime system for the DSL.
+The possibility to extend the IDE with custom tools/plugins served the requirements of the project very well.
+The Build Language provided a convenient way to package the software as MPS plugin and to manage its dependencies.
+The MPS Plugins Repository, along with its automatic dependency resolution among plugins, saved us from creating our own distribution website and spared our users from numerous tedious installation instructions.
+Above all, by coordinating and putting together the features offered by each aspect of the language definition, we achieved a homogeneous approach for many steps of the data analysis process.
+Graphical elements with scripting, auto-completion, high-level abstractions over data and instructions, language composition, automatic installation of dependencies for each individual statement, extensions to the environment, seamless integration with external technologies, and solutions to package and distribute the software all smoothly combined in MetaR to serve the purpose of the project.
+We were able to achieve everything we planned and beyond, and to create languages with a runtime support somehow unique in the DSL landscape.
+The main lesson learned from this experience is that biologists and clinicians can use the tools of bioinformatics and get closer to data scientists.
+And when different profiles can speak (almost) the same computational language, misunderstanding is reduced and the speed of a research project is greatly enhanced.
+In our data-rich age, MetaR has proved to be an educational bridge between these two worlds.

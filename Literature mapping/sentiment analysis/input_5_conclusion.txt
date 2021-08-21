@@ -1,0 +1,8 @@
+Online education and specifically the purely online systems could significantly benefit from well designed and developed adaptive VLE systems.
+Current education research lacks an integrated environment that will enable quick experimentation by multiple-domain users such as educators, data scientists, software developers.
+Our proposed solution takes advantage of domain-related software engineering research and applies it in the area of adaptive VLEs.
+The initial feedback by educators and data scientists was very positive.
+Especially, the elements of isolating the domain from the implementation and the quick turn-around time for different experimentations were noted.
+Especially, the language composability feature that is provided by MPS JetBrains is very powerful for future extensions of our framework towards a more advanced learning model, more automation, more application domains.
+Therefore, our plans consist of enhancing the current framework with more usability testing, more education-related models, student centred views that will enable them to personalise their learning path etc.
+Last but not least, we plan to apply it to other applications areas such as BT’s business analytics for customer churn, health applications with machine learning such as hospital readmission, health IoT applications, etc towards the development of a generic framework for adaptive systems.

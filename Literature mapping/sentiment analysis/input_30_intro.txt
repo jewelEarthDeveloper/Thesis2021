@@ -1,0 +1,19 @@
+As a medium for storing, transmitting, and interpreting information, text is as versatile as it is ubiquitous.
+Countless programs and interfaces operate and rely on text files, from the UNIX command line to nearly every programming language compiler.
+One particularly strong asset of text is its power to succinctly represent structured data in a way that is understandable to both humans and computers alike, as in CSV (comma-separated values) files, HTML (hypertext markup language) documents, and – the focus of this paper – programming language source files.
+Unfortunately, this flexibility comes with a price: manual editing of structured text can be tedious and error-prone.
+On a basic level, one problem with manipulating structured text is that to do so requires knowledge of and adherence to rigid, static systems such as parsing and type checking.
+A single missed comma in a CSV file or improperly annotated variable in program source code can cause a complete failure on the part of the computer to interpret the text as the author intended.
+In the case of performing a nontrivial manual transformation on a program, the problem is exacerbated even further: programmers must also worry about the runtime behavior of their code and reason about changes in semantics (or lack thereof) that might be a result of their transformations.
+Tools known as structure (or projectional) editors [9, 13, 24, 25] attempt to alleviate these difficulties by offering an interface that allows programmers to directly manipulate a projection of the underlying structure that is more faithful to the structure than is standard text.
+A major drawback of these systems is their reliance on non-standard file formats, and, as a result, their incompatibility with the large set of existing tools that operate on programs.
+One attempt to reconcile the flexibility of plain text with the power of projectional editing is Deuce [2, 8], a structure-aware code editor that operates on standard program source text, but augments the editing experience with direct manipulation capabilities for invoking relevant, automated program transformations.
+In Deuce, the underlying structure of the program is revealed to the user via a set of overlaid polygons, as depicted in Figure 1a.
+After structurally selecting various parts of the program by pressing the shift key, hovering, and clicking on the polygons that appear, a “Program Transformations” menu appears that is automatically populated with a set of relevant transformations for the selected polygons, as depicted in Figure 1b.
+Hovering over the output of a program transformation previews it in the code panel, and clicking on the output updates the program with the transformed code.
+While a good first step, Deuce falls short in several regards.
+In particular, it has two main limitations: 
+(Limitation A) Deuce only offers a relatively small number of ad-hoc program transformations; 
+and (Limitation B) the implementation of these transformations is tedious and noncompositional, requiring manual munging of abstract syntax trees annotated with low-level syntactic details such as whitespace.
+To address these limitations, we propose and present initial work on a vast expansion of the Deuce system – which we here call Deuce+ – with the goal of bringing expressive and extensible program transformations to the working programmer.
+ 

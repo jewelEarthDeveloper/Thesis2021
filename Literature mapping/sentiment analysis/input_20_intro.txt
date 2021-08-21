@@ -1,0 +1,6 @@
+Bioinformatics is an interdisciplinary field of study that combines biology with computer science to understand biological data.
+The analysis of these data is an important part of most modern clinical and genomic studies.
+However, while statistical and computational tools are available for statisticians and data scientists, providing them with both computational power and flexibility, they are often not suitable for biomedical researchers looking to perform data processing and simple analyses.
+Following a long track record of success in providing tools and services to support the conduct, management, and evaluation of research, the Informatics Core at the Clinical & Translational Science Center (CTSC)1 at Weill Cornell Medicine (WCM) has put effort and funds to create new computational methods to facilitate data analysis.
+For this purpose, the CTSC has developed MetaR [1, 2], a new kind of interactive tool providing high-level data abstraction, manipulation, and visualization.
+MetaR is composed of a set of data analysis languages built with the Language Workbench Technology [3] offered by JetBrains Meta Programming System (MPS) [4] to make data analysis easier for biologists and clinicians with minimal computational skills.

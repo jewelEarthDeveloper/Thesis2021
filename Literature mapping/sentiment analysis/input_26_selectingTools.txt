@@ -1,0 +1,23 @@
+This course uses a tool to support learning.
+However, immature or overly complex tools and technologies can demotivate students and, in some cases, even make them avoid meta-model-based projects.
+Students need stable tools with good documentation and easily understandable meta-languages.
+The tool has to be conceptually clear in its underlying platform.
+Finally, it must be usable for novices, as our students are inexperienced developers; they want to copy and paste program text.
+Currently, such a tool does not exist, and when the course started, the situation was even worse.
+Tools are not designed for teaching, and it is very challenging to develop a neat tool with industrial strength at a university.
+Moreover, at our university, we want to use a public-domain tool.
+So we need to compromise and select an existing tool.
+As MDD is very close to meta-modelling [3], in principle, the choice can be made related to MDD tools as well.
+The Eclipse infrastructure [9] around xText [5] is the first choice in this area, in particular connected to EMF [50].
+We also looked into Microsoft Studio [32] with its DSL package.
+Another candidate would be Rascal [28] among many university-based tools.
+In the evaluation of these tools, university-based tools usually are not stable enough and provide little documentation.
+Microsoft Studio provided good integration, documentation, and ease of use but had a somewhat limited selection of meta-languages.
+Therefore, with Microsoft Studio students had to work on a relatively low level of abstraction.
+Eclipse with xText had good applicability and also a rich set of meta-languages.
+However, the problem with Eclipse was its general stability and sparsity of documentation.
+The meta-languages did not fit together; they changed in short cycles, and consistency between different packages was a nightmare.
+Changes of plugins during the course were likely.
+MPS somewhat combined the advantages of Eclipse and Microsoft Visual Studio, being both integrated and high-level, stable, and user-friendly; see also [15].
+All of the other tools failed in being able to handle complete definitions as big languages, for example, SDL in structure, syntax, and semantics as described in [17] and implemented in [43].
+MPS can define major languages, as evidenced by the definition of Java [18] (called BaseLanguage) in MPS [39].2 Moreover, MPS has been extended and used in industrial projects [52].

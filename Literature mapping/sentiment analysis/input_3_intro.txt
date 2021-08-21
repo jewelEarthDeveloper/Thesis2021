@@ -1,0 +1,64 @@
+The Eclipse Modeling Framework (EMF) (Steinberg et al., 2009) constitutes a popular ecosystem for model-driven development.
+In the technological space of EMF, a wide variety of tools for modeldriven development have been implemented.
+EMF has established itself as a de facto standard for data models upon which many technologies and frameworks are based, including server solutions, persistence frameworks, UI frameworks, and support for transformations.
+Model editors which provide tool support for creating, modifying, analyzing, and displaying models, constitute key components of environments for model-driven development.
+Probably the first EMFbased editor that has been provided is the tree editor belonging to the EMF core.
+Since then, a number of frameworks for building model editors have been developed for different model representations.
+For example, frameworks such as GMF2 and Sirius3 (Madiot and Paganelli, 2015) support the development of diagram editors while EMF Parsley4 (Bettini, 2014) focuses on visualizations as trees, forms, or tables.
+While diagrams have been frequently used for representing models, human-readable textual syntax has become more and more popular recently.
+The term “human-readable” excludes textual representations such as XML that have been designed for data exchange.
+Rather, human-readable syntax for models resembles the textual syntax of programming languages.
+The trend towards human-readable syntax may be exemplified by recent work on the Action Language for Foundational UML (ALF) (OMG, 2017a).
+While the UML standard (OMG, 2017b) originally defined only the abstract syntax of models and their representation as diagrams, ALF provides a textual language for both structural and behavioral modeling of a subset of UML (Foundational UML or fUML (OMG, 2018)) that features foundational execution semantics.
+Textual editors may be divided roughly into two categories.
+Syntax-based editors (cf. Figure 1) treat the text as the primary artifact that is stored persistently.
+A command issued by the user results in the text being updated.
+Subsequently, the changes are propagated to the model – i.e., to the abstract syntax tree that is represented by the plain text.
+The model is maintained only transiently, during an editing session, and is used primarily for incremental syntactic and semantic analysis.
+In the technological space of EMF, among several tools for building syntax-based editors, e.g., EMFText5 (Heidenreich et al., 2011) for textual languages that can be easily extended and integrated with other languages, the framework Xtext6 (Bettini, 2016) is the most prominent one.
+The editors are generated from a grammar definition that refers to an underlying metamodel.
+Grammar rules in Xtext are based on the Extended Backus-Naur Form (EBNF) (Yue, 2014).
+Either the starting point is the grammar from which the metamodel is generated (concrete syntax first) or the grammar is specified for an existing metamodel (abstract syntax first) which has been built using any tool in the EMF context (e.g., the Ecore tree editor).
+The generated editor artifacts can be augmented with Xtend7 classes describing the custom scoping rules, validation constraints, hovering information, highlighting, etc.
+The (customized) editor plug-ins for the specific language may be used by arbitrary EMF-based projects.
+Syntax-based editors are flexible since they allow the modeler to issue arbitrary text-based commands.
+For the same reason, they are easy to learn (usually, the modeler is familiar with the operation of text editors).
+On the other hand, they suffer from the following shortcomings: 
+ There is a high risk of syntactic errors since the modeler may type arbitrary text.
+This may be problematic for beginners who are not familiar with the respective modeling language.
+ Tool integration may be hampered by storing models as text files.
+For example, models may be related by inter-model links, e.g., traceability links connecting models at different levels of abstraction or links between features and domain model elements in software product lines.
+Since text files do not provide for reliable identifiers of model elements, inter-model links may be easily corrupted.
+Projectional editors (cf. Figure 2) invert the syntax-based approach to model editing.
+Rather than the text (concrete syntax), the model (abstract syntax) is persisted.
+In the context of product line engineering, a great importance is attached to projectional editors, e.g., the PEoPL approach (Behringer et al., 2017) combines different representations.
+Commands issued by the modeler affect the model rather than the text.
+After the model has been updated, the changes are propagated to the text which is updated accordingly in turn.
+For experienced users, projectional editors may feel less natural and comfortable than syntax-based editors (Volter et al., 2014).
+On the other hand, projectional editors solve the problems mentioned above: 
+ A projectional editor guarantees syntactic correctness by offering only commands that perform correctness-preserving in-place model transformations.
+For example, a command for inserting some syntactic unit is allowed only at locations where this unit is legal and ensures syntactic correctness of the inserted syntactic unit.
+ A projectional editor facilitates tool integration by providing reliable means for identifying model elements.
+While line numbers in text files are subject to change, elements may be assigned universally unique identifiers (UUIDs) that are immutable.
+This paper fills a gap in the EMF tool landscape by providing a generic projectional editor for EMF models that is distinguished by the following key properties The projectional editor stores the abstract syntax of some model as an ordinary EMF model, enabling integration with any EMF-based tool for model transformations, code generation, etc.
+ The projectional editor is generic inasmuch as an EMF model may be instantiated from an arbitrary metamodel (defining the abstract syntax of some modeling language) that provides universally unique identifiers for objects.
+ So far, the projectional editor supports textual representations.
+However, its underlying design is extensible such that support for other representations (e.g., diagrams) may be added in the future.
+ Deviating from Figure 2, representations are persisted, as well – again as EMF models.
+This approach allows to persist representation-specific information such as layout of text or diagrams (which may be improved manually by the modeler).
+ The editor may be adapted to a specific modeling language by providing a declarative syntax definition which is used to map abstract to concrete syntax.
+No programming is required to this end.
+Projectional editors are not a new invention.
+Rather, they were devised several decades ago as components of integrated programming environments; see (Medina-Mora and Feiler, 1981; Habermann and Notkin, 1986; Bahlke and Snelting, 1986; Ballance et al., 1992; Klint, 1993) for some early approaches.
+In this context, they were called syntaxdirected editors.
+Currently, the Meta Programming System (MPS) 8 by JetBrains (Campagne, 2015) constitutes a contemporary framework for developing projectional editors – not just for text but also for other representations such as two-dimensional math notations, tables, or forms.
+MPS also provides support for language modularization as well as composition (Voelter, 2011).
+In (Ratiu et al., 2017), experiences with teaching MPS in industry are outlined.
+Recent research deals with support for incremental model transformations (Voelter et al., 2019).
+While this framework is powerful, it comes with a proprietary data model.
+Instead of an open ecosystem, MPS provides a closed language workbench that requires its users to commit to the MPS data model and tool set.
+For defining languages, MPS uses hierarchies of concepts and their implementations: While in the world of EMF, the abstract syntax of a language may be defined by metamodels using arbitrary editors (e.g., the standard Ecore tree editor but also graphical editors), in MPS one concept is defined textually 8https://www.jetbrains.com/mps/ for each type in a separate file – similar to defining Java classes.
+Furthermore, instead of specifying the concrete syntax similar to a grammar, each concept provides an additional text file to describe the notation of the respective element.
+For defining custom scoping, validation, building a type system, etc.
+also a special textual notation is used instead of providing artifacts in a common general-purpose language.
+

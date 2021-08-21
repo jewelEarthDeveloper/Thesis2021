@@ -1,0 +1,9 @@
+Our editor uses nested blocks to denote inclusion structures within the tree, see Figure 1.
+Colors become brighter to show deeper nesting and change to a new base color for each Smalltalk block.
+By laying out the blocks similar to text, we have similar space efficiency to textual languages, however as the nesting increases our rows get higher, such that inclusions remains clear.
+Similar to the Vim editor, we use a command mode for traversing the tree and issuing commands, and allow entering a separate input mode for typing names and literals.
+A selection mode allows users to mark complex selections.
+The commands are designed to be reusable: depending on the selected node the same command may perform a semantically similar operations, such as inserting a statement in a block, or adding an element to an array.
+Commands mirror aspects of their functionality if modified via shift, reducing the number of distinct shortcuts to remember.
+To allow for a natural editing flow, the input mode is contextaware: each node will recognize inputs that are not valid for its current context, but can be translated to a simple tree transformation.
+For example, typing “+” while inside a number will wrap the number in a binary expression, and typing another number while inside the binary message’s selector will move the new number to the second operand.

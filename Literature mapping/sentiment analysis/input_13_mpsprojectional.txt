@@ -1,0 +1,20 @@
+MPS features “projectional” editing, that is, developers are not editing simple text while providing inputs in MPS; on the contrary, their editing is bound to the abstract syntax tree (AST) inferred by the language definition.
+In other words, the DSL concepts defined through MPS and used as inputs “activate” specific branches of the AST, and consequently, the editing proceeds by following the available alternatives as per language definition.
+In this way, the code is always represented as an AST, conforming to the language by construction.
+Programs in MPS are represented as instances of concepts, called nodes [27].
+In this respect, it is possible to define how the different concepts of a language are visualized to the end user, and each projectional editor provides a representation of the AST with which the user interacts.
+For each set of concepts in GDF, we have defined editors by means of specific projection rules used to define the desired concrete syntax.
+These editors can be used by the game designer to define the gamification elements, mechanics, and dynamics.
+At the same time, we added extra editors to define specific game simulations and adaptations.
+Figure 14 shows the editor definition for the GameDeclaration concept.
+At the top level, it consists of a collection cell [− ... −] which aligns a sequence of additional cells.
+The sequence starts with the game name and its related id.
+It continues with the sequence of core elements as point concepts, actions, and rules.
+All these concepts are the key elements to define the points that each player can receive, the actions that lead to the accumulation of points, and the rules that define the overall game behavior.
+Actions (and Points) of a game can be defined at design time by a game designer using specific editors as the one illustrated in Fig. 15.
+An action of a game, as the point, is defined by a name and by a set or properties that characterize them.
+For example, an action can represent the interaction that a player does with the application together with information about the instance when it is executed, while a point represents a counter that is updated with a certain value every time a specific action is executed.
+As mentioned before, to execute the game actions done by the player, GDF leverages an open-source Gamification Engine component.
+This component embeds DROOLS, a state-of-the-art rule engine technology based on reactive computing models [28].
+For this reason, GDF expresses the rules of a game using the DroolsRule concept that regulates the game behavior.
+A game designer can use the editor depicted in Fig. 16 to specify when a certain rule is triggered and how the different points are accumulated (with the then part declaration).

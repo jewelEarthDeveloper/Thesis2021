@@ -1,0 +1,10 @@
+This article presented the current status of SLang development, with improvements done to the domain model, and a broader scope evaluation of SLang in a mocked practical scenario.
+The effort to prototype and probe SLang as a model-driven approach to improve survey processes started with the goal of improving survey data collection systems through better communication between IT personnel and survey domain experts and through the improvement of software artifacts reuse, as well as elimination of unnecessary rework.
+Questionnaire specification is the central point to achieving these goals.
+The usage of a model-driven approach proved a good strategy to maintain questionnaire specification centralized and to help generate artifacts that improved systems integration.
+Using the strategy of simulating a real survey scenario created an environment where stakeholders’ feedback was rich in ideas for improvements, showing that there is considerable potential in the adoption of a model-driven approach.
+Further work has been planned to further investigate and evaluate some points, before adopting SLang at an industrial scale.
+First, although SLang proved itself flexible enough for modeling complex questionnaires, usability evaluation is necessary to validate choices made in the concrete syntax and IDE approaches.
+Second, the evaluation stressed the potential benefits of combining a questionnaire presentation language with SLang.
+Third, survey IT infrastructure is diversified, and it is important to understand how far the usage of SLang can go.
+Further testing with code generation and transformations to integrate survey models with existing systems, such as survey metadata repository, survey data distribution, and publication systems, and data collection management systems, are necessary to better understand and evaluate SLang’s full potential.

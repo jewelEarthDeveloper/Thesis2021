@@ -1,0 +1,7 @@
+In this paper we have conducted a critical review of common approaches for producing graphical views from models, and then introduced a novel approach for producing transient graphical views using lazy model-to-text transformation.
+We have also presented the open-source Picto tool, which implements the proposed approach, and evaluated the efficiency benefits it delivers compared to batch model-to-text transformation.
+The proposed method has been shown to have a low upfront cost, to scale up linearly and to deliver substantial efficiency benefits when a modest number of views is accessed by users between changes in the underlying models ś which is often the case in practice.
+In terms of visualisation capabilities, being based on M2T transformation and browser-based rendering, Picto can reuse any JavaScript-based visualisation library and can also be extended through dedicated Eclipse extension points with support for additional 3rd party tools beyond Graphviz and PlantUML.
+Having said that, it is worth reiterating that Picto is not a replacement for graphical model editing frameworks such as Sirius but instead targets use-cases where read-only views are desirable/sufficient.
+Future work on Picto includes view-based model differencing, and developing a bespoke rule-based language for view generation which will provide first-class support for core Picto concepts (e.g.
+view format, layers, path) as opposed to piggy-backing on EGL’s parameters block (see lines 6-16 of Listing 7).

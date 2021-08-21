@@ -1,0 +1,47 @@
+7.2 MPS Features Supporting Our Work
+MPS is a key enabler for the development of FASTEN as we discuss in the following.
+Language Development Productivity.
+MPS enables highly efficient definition, extension and refactoring of languages.
+The time taken between an idea and its implementation as DSLs and subsequent creation of user-level models is very short (often only a few hours or days), which allows us to perform many iterations over a short timespan.
+This, in turn, enabled us to evolve the languages based on practitioner feedback and to experiment with new modeling concepts or their combination.
+In the end this stimulates co-creation of tooling hand-in-hand with domain experts or fellow researchers.
+Support for Modular, Extensible and Stackable DSLs.
+MPS’ mechanisms for language modularization proved to be essential for our project, because they allow independent creation of DSLs by different organizations.
+For each of the integrated tools we have implemented its input language as an MPS language.
+The extensions are "grown" as stacks of DSLs in a modular fashion with higher-level abstractions, similar to what mbeddr does for the C base language [37].
+DSLs addressing different aspects of safety critical systems’ development (i.e.
+requirements, architecture, design, safety engineering) are integrated with each other and seamless workflows beyond the boundaries of single disciplines are enabled.
+Notation Freedom.
+In FASTEN we heavily use combinations of notations: textual, diagrammatic, tree or tabular.
+MPS allows easy definition of editors and provides multiple notations for the same language concepts, drastically improving usability.
+We learned that domain-specific or even application-specific notations are key for tool adoption by domain experts, e.g., safety engineers [25].
+Sometimes this might even require replicating the look-and-feel of established tools in shape and color to ease adoption.
+Editor Automation and Auto-completion.
+MPS provides several means for increasing the automation of model authoring – context-sensitive auto-completion being the most important.
+This reduces to some extent the effort of learning new syntax of the verification tools – when auto-completion is used, many gotchas can be avoided.
+Syntax-driven Editing and In-editor Errors.
+The projectional editor of MPS guides the users to create meaningful models and prevents them up-front to make mistakes.
+With MPS it is easily possible to define extensible sets of context sensitive constraints and display errors in the editor when they are violated.
+Users get immediate feedback about errors and thereby many inconsistencies can be fixed right away, allowing domain experts to focus on essential things.
+Model Annotations.
+We have used nodes attributes to annotate design models with information of variables values (e.g. the values of counterexamples are projected in the IDE as illustrated in Figure 14).
+This proves to be very useful when users need to debug their models.
+7.3 Open Challenges with MPS-based Tooling Projectional Editing.
+While MPS’ projectional editing allows maintaining different, domain- and/or stakeholder-specific notations, the projectional editor comes with its own challenges.
+When used with the expectation of a classical text editor or graphical editor, the resulting editing experience might lead to a lot of frustration when editors are not designed with great care and significant effort.
+Specialized DSLs like the "grammar cells"[38] ease the creation of editors and partially increase their usability by offering a behavior closer to the textual editors.
+Despite this, the users still need to be aware that they are not working with a classical textual editor.
+IDE Errors Hard to Understand.
+There is a quite steep learning curve for nonprogrammers to get accustomed with MPS.
+Many errors of the IDE seem cryptical to domain experts.
+Several of these errors are not even meant to be seen by nonprogrammers and thereby they easily get confused.
+We consider these situations to be bugs in MPS.
+IDE Footprint.
+The sheer size and resource-consumption of the IDE also tends to hinder adoption.
+It is hard to argue why a >500 MB IDE is the right choice for working with small domain-specific artifacts that may sometimes look like simple text snippets.
+Developing a lightweight MPS-based IDEs is still an open challenge.
+Recently, there has been highly promising work done to deploy MPS on a server and access its models via web browsers in the modelix6 project.
+We plan to leverage on this in order to make our DSLs more accessible by occasional users and thereby make experimentation by domain experts easier.
+Deployment.
+While MPS does provide support for deployment of languages as plugins or standalone IDE, this support is still fragile and requires patching jars for advanced customizations.
+Furthermore, integration into CI pipelines requires handling of a significant technology stack (such as ant, maven, and gradle) – automation and maintenance of the builds remains challenging.

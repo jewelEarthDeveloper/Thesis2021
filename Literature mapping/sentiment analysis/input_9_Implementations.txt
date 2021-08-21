@@ -1,0 +1,20 @@
+SLang was prototyped using the MPS language workbench.
+This prototype provided the environment for experimenting and validating SLang as a model-driven approach, applied to the complex survey questionnaire domain.
+The validation process included two stages: real-world questionnaire specification using SLang and the usage of questionnaire model transformations applied in a software called SInterviewer used by real stakeholders to perform mocked interviews.
+In the first stage, two real-world questionnaire specifications were encoded in SLang, using this prototype implementation.
+This part of the experiments validated the expressiveness of SLang.
+Then, mock-up surveys were run, using the encoded questionnaires, on top of a survey environment, called SInterviewer.
+This section describes some aspects of SLang prototype implementation, important aspects of SInterviewer, and the results of the prototype validation process.
+The SLang prototype was built on top of JetBrains Meta Programming System (MPS).
+Five workbenches were first considered for the implementation of SLang: Spoofax, XText, Rascal, MetaEdit + and MPS.
+The decision to adopt MPS was influenced by the fact that only MPS had a projectional editor, that is, an editor that makes it possible to create, edit and interact with one or more ASTs, avoiding the need to use parser tools [8, 23].
+Another aspect that influenced this decision was a broad Android-based data collection infrastructure used at IBGE and the fact that MPS provides Java compatibility, hence providing means for model transformations outputting Java code.
+The process of prototyping SLang started with concepts mapping, which defined the AST creation rules and the SLang base structure.
+Then, the concrete syntax was enforced using the MPS editors.
+Finally, behavior and static semantics were added using the MPS Behavior, Constraint, and Type System aspects.
+Behavior aspects made possible, for example, to attribute default values to questionnaire model properties, and to create and manipulate child nodes and references using MPS concept constructors and MPS concept methods.
+Static semantics was established through MPS Constraint Aspects and Type System Aspects.
+Constraint aspects provided, among other things, control of where concepts are allowed, validation for properties values, answer options control.
+Type system aspects were used for semantic aspects that could not be modeled using MPS base concepts, behavior aspects, and constraint aspects.
+For example, preventing nodes with the same name to exist in a specific scope could not be done using concept structure or constraint aspects.
+Constraint and type systems aspects provided hooks used by MPS to implement context assistance and error reporting, in the final language IDE generated using MPS [2].

@@ -1,0 +1,22 @@
+It has been recognized that the systems of the future in several application contexts will contain in some form or another big data gathering and analysis. A huge amount of data can be collected from Information Technology (IT) and the Internet of Things (IoT) devices, creating the big data era.
+However, appropriate analysis and processing of these data is a difficult and complicated task that requires specialized expertise.
+Moreover, each application domain has its semantics and peculiarities in the interpretation of data making the problem even more difficult.
+Online education and its personalization are no exception.
+As an adaptive system application, it consists of three main stages: data collection, data processing and adaptation [1].
+In this domain context, the whole adaptive system application is called in the literature learning analytics [2].
+Data can be collected through several systems from Virtual Learning Environments (VLEs) to general IT systems with information for each student.
+These data collected are pieces of learning evidences in our context.
+However, the main IT systems utilized for online education are by far the VLEs.
+Blended learning approaches are mainly used to combine online systems with face-to-face teaching in educational institutions.
+Pure online education, on the other hand, relies solely on the VLE for the educator-student communication.
+Data for learning evidence consist of information collected from these VLEs from student grades to the number of accesses to resources.
+Utilizing these data to provide personalization and enhanced student experience is a promising area and especially for purely online education.
+In this article, we have developed an integrated framework (extending the work published in our previous conference paper [3]) to mainly assist educators that develop purely online courses utilizing learning analytics in a systematic and ‘‘domain-specific’’ way using domain-specific languages (DSLs) [4].
+Specifically, this framework consists of two main DSLs: AdaptiveVLE DSL and Classification Algorithms Framework (CAF) DSL.
+A range of data to be collected is given for configuration in the design of the AdaptiveVLE through the AdaptiveVLE DSL.
+Then data clearing has to be processed manually.
+Once the set of data to be used for the data processing is identified, the Classification Algorithms Framework (CAF) DSL [5] is utilized and students are categorized according to their achievement levels.
+According to this information, educators can alter the learning path for individual students to address their individual needs.
+There are two types of additional resources to support weak and strong students and the AdaptiveVLE DSL is utilized to alter the learning path accordingly.
+Also, in our proposed solution, additional external resources can be utilized to enrich the options available.
+This is one of the most effective and simplest forms of adaptation that was chosen as less intrusive to the student and as conforming to differentiation approaches [6].

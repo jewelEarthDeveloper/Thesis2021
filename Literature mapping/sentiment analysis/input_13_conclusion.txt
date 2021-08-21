@@ -1,0 +1,8 @@
+Gamification is increasingly gaining popularity as a tool to promote engagement in target human activities.
+In this respect, gameful applications development is facing growing complexity that requires adequate design and deployment support.
+In this chapter, we presented GDF, a framework for the design and deployment of gameful applications.
+In particular, GDF is made up of domain-specific languages allowing for stepwise refinement of application definitions, from higher levels of abstraction to implementation code to be run on a gamification engine.
+GDF has been engineered by using MPS due to three main reasons: the need to provide text-based DSLs, the availability of language extension mechanisms conveying consistency management between abstraction layers, and the provision of generators to automatically derive implementation code.
+GDF has also been validated against multiple case studies in diverse domains, notably education, smart mobility, and training in modelling.
+In this respect, MPS demonstrated powerful capabilities but also a steep learning curve that could be unacceptable for non-software engineers.
+In this respect, one of the main future research directions we are pursuing is the integration of simplified user interfaces, e.g., dashboards, to alleviate the complexity of game definitions for GDF users.

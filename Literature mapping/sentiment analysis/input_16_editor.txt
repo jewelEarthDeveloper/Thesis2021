@@ -1,0 +1,54 @@
+Gentleman is designed to be lightweight and thus uses a minimalist approach to avoid any extraneous content that would otherwise distract and slow-down the user.
+The base editor only comes with a single toolbar with a button to close the editor and a status bar.
+Additional buttons can be added in the configuration of the editor.
+We distinguish three usage scenarios of Gentleman: (1) definition, (2) edition, and (3) reading.
+In (1), the user defines the concepts of a model and the projections as presented in Section 2.
+In this scenario, the target user is a language engineer or GUI designer involved in the DSL definition.
+For greater flexibility and reuse, he defines projections separately from concepts, thus providing good separation of concern.
+This is especially the case when the concepts are defined in an Ecore metamodel.
+In (2), the user creates or edits an instance of the DSL.
+The editor presents editable fields to add values to the AST of the model.
+Figure 3 shows a snapshot in this scenario.
+The purpose of (3) is to simplify the projection for users to read the model rather than edit it.
+It is a special case of (2) where fields are made read-only and interactive actions are disabled.
+For example, widgets to add, remove components, and empty optional attributes are not displayed.
+The target users of (2) and (3) are the domain experts of the DSL.
+To give users more flexibility during the editing activity, they can spawn as many editors as needed.
+This way, they can edit different concepts each in a dedicated space or use different projections simultaneously.
+The editors are juxtaposed next to each other and can be positioned as the user wants.
+Users can attach a note to any part of the content of the editor.
+It is not stored as part of the AST of the projection but as part of the editor.
+Notes can be tagged in the form of anchors.
+Users can search for tags to quickly navigate to specific locations of the model.
+One use of notes is to add comments on a model.
+Import and export allow the user to preserve the current state of the model and editor or load a saved one.
+The storage medium is a JSON object representing the AST of the model and the projection configuration of each concept.
+It also stores configurations specific to the editor, like the toolbar configuration and comments.
+Recall that Gentleman is bootstrapped; therefore, it treats any instance being edited like a model.
+Internally, Gentleman does not distinguish between a model definition (a.k.a.
+metamodel), a projection definition (a.k.a.
+concrete syntax), or an instance.
+The export stores a reference to each concept and each projection.
+It is also possible to save the model in plain text with no formatting or projection by using the print functionnality.
+When the language engineer has defined a model and at least one projection for each concept, he can automatically synthesize a projectional editor for his DSL.
+One attractive feature of Gentleman is its ability to preview a projection during the editing process.
+This allows the designer to view the presentation of the projection associated with the concept and how it integrates with other projections.
+It is also possible to edit the previewed projection to see how the design responds to different values entered and improve the user experience.
+When the user interacts with a specific projection, a context in the status bar indicates the name and location of the current concept in terms of the structure of the model.
+At the top of Figure 2, we see that the currently active field corresponds to the name of a concret concept.
+The user can navigate through the model using the TAB key or mouse click.
+As a projectional editor, he can only modify editable projections.
+For example, in Figure 2, the user cannot remove the central topic; he can only set its name value or add/remove markers.
+During the interaction with a field, the user may request the accepted values that can be assigned to the field by hitting the common CTRL+Space key combination.
+The response depends on the state of the field and its concept: it pops a dialog showing information or a list of choices if an action is required.
+In Mindmaps, the marker attached to a main topic must have been defined as a central topic component.
+Therefore, at the level of the main topic, the context assistance lists the marker values defined at the central topic level.
+Requesting context assistance for the name of the main topic displays the attribute’s meta-information, including constraints if they were set.
+After the user edits a field, an orange, red, or green badge is displayed next to it.
+They indicate that a value was modified since it was last in focus, that a constraint of the concept is violated, or that it is valid, respectively.
+In Figure 3 a green badge is displayed over the text field to indicate that the value entered is valid.
+When a constraint is not satisfied (e.g., the value is not unique), an additional description is fed back to the user, in the form of a dialog if it is purely informational or a choice dialog if further actions can be taken.
+As explained in Section 1, the model is always structurally valid.
+However, the DSL may have semantical constraints, such as a maximum depth of sub-sub topics.
+Gentleman supports reporting semantical constraints violations through its API.
+  

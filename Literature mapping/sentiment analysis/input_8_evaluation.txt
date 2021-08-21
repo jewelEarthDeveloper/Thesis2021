@@ -1,0 +1,23 @@
+We evaluated CAF according to the Quality characteristics defined in paper [23] and using the feedback we got from BT data scientists and MPS language developers (30 in total).
+Several tasks from basic to advanced were set as part of a CAF workshop.
+The basic tasks involved using the language to choose and run a classification algorithm on a given data file.
+The advanced tasks included extending the language with more classification algorithms.
+The results from the two different perspectives were as follows: Data scientist perspective: The results from the data science perspective were as follows: Functional suitability: CAF scored very high according to its suitability for all the functionality required.
+The domain was well specified, and it included processing of the data using different classification algorithms.
+Usability: The feedback regarding the usability of the language was also quite good.
+The one-page interface that presents the results as well as the output in one page was very appreciated by the data scientists.
+It provided the option for quick experimentation of alternatives and in context.
+However, the appearance of the one-page interface could be further improved by integrating web technologies.
+Reliability: The language has precise semantics and the user is not ‘‘allowed’’ to make mistakes from the standard characteristics of the projectional editors.
+This was the most attractive feature to the users although it required some initial extra time of getting used to the editor.
+Productivity: The use of this language will result in increased productivity for the data-scientists as they will be able to implement a quick turn-around time and experiment with several classification algorithms.
+Also, the system-level approach is expected to assist the adoption of the algorithms in several contexts.
+Compatibility: The fact that java code is automatically generated from this language makes it very powerful for its deployment to application contexts.
+Expressiveness: The language is very expressive as it has been developed through numerous meetings with BT’s engineers and therefore extensive domain analysis has taken place.
+Language designer perspective: The results from the language designer perspective were as follows: Reusability: This language provides an excellent reusability element as it can be used as part of any system that requires data analysis.
+Its use within the education context proves the plug-and-play strong element of the language.
+Maintainability: The process of adding new algorithms is not easy and requires technical expertise to understand and maintain it.
+Appropriate interfacing needs to be developed to enable easy extensibility of the language.
+In Fig. 9 an Excel diagram depicts graphically the above results and shows that the average evaluation of the language is 8 out of 10 with strongest points the productivity, compatibility and expressiveness as is expected for domainspecific languages.
+Reusability has been scored excellent as this language is anticipated to be at the core of many adaptive systems applications.
+More evaluation and usage of the language inside BT’s extensive commercial application areas is planned.

@@ -1,0 +1,35 @@
+Internet of Things (IoT) [1] is a term that refers to the interconnection of a set of things through a network.
+These things are able to collect and exchange data with each other.
+Things could be physical devices, virtual services, or anything.
+Sensors and actuators are examples of the physical devices that could be connected to the IoT applications.
+There are many successful IoT applications that promise great potential in enhancing the daily live like smart home and smart cities.
+Although, IoT is a very promising area that could produce a new generation of software applications, the progress of the IoT development does not match the expected rate.
+CISCO provided a survey1 in 2017 showing that only 26 percent of the companies could complete its IoT initiatives to be successful projects, and 60 percent of companies believe that the implementation of IoT applications is more complex than expected.
+There are many reasons for the slow growth of IoT applications [2].
+Different technical knowledge levels are required to build an IoT application.
+The required knowledge is varied from the low level embedded development and network protocols to the high level user friendly UI design.
+Across those levels, IoT development teams should focus on security, scalability, and other non-functional requirements that are mandatory for any IoT application.
+As a result, more development time and special skills are required to build IoT Applications.
+In addition, there is a lack of adequate languages and tool support for IoT programming [3].
+Domain Specific Languages (DSL) are languages that provide high abstractions and optimizations for a specific domain.
+The problems in the given domain are represented more efficiently using the related DSL.
+A DSL for the IoT domain could contribute in solving some challenges of IoT development.
+The DSL will provide high abstractions related to the IoT domain like sensor, actuator, and observation concepts.
+Accordingly, the mapping between the business model of the IoT, held by the domain expert, and the technical model, held by the developer, becomes faster and more straightforward.
+As a result, the development time of the IoT applications will be reduced.
+The DSL handles the generation of the low level code that decreases the required knowledge and increases the automated part.
+The DSL also provides a special editor that facilitates the development process and ensures that output program is matching the domain constraints.
+Finally, the involvement of domain expert becomes easier as the program is written with his terms.
+The first phase for building a new DSL is the domain analysis phase which determines the concepts, relations, and constraints inside the concerned domain [4].
+This phase is considered as a core phase in DSL development since a wrong analysis will lead to an invalid DSL even with a correct implementation.
+On the other hand, the ontology provides a formal conceptualization for a given domain that determines the concepts and the relations of this domain [5].
+A lot of effort has been done to develop valid ontologies for IoT domain [6-7].
+Accordingly, building a DSL from these ontologies will generate a valid DSL and it will reduce the DSL development time.
+In addition, the DSL could utilize existing ontology reasoning algorithms to provide semantic  reasoning services for the IoT editor.
+Finally, the existing documentation of the ontologies will guide the IoT developer to correctly model his problem using the corresponding DSL.
+The main motivation of our work is to utilize the current standard IoT ontologies to build a DSL for IoT domain, this DSL benefits from the aforementioned advantages of ontology and DSL integration.
+This paper proposes OntIoT DSL that models part of the IoT domain.
+The structure of OntIoT is automatically generated from Semantic Sensor Network2 (SSN) ontology [8].
+The implementation approach of OntIoT is generic, it could be applied on any ontology or domain.
+Furthermore, OntIoT is based on projectional editing technique [9], which allows the language to be extended to support different editors and mixing among textual, tabular, and graphical notations.
+Moreover, the projectional editing technique allows OntIoT to support language extension and composition with other DSLs.

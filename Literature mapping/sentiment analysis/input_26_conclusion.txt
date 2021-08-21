@@ -1,0 +1,8 @@
+As language technology is complex, it is crucial to keep the incidental complexity of the tool used as low as possible.
+MPS might not be the best tool in this regard, but it can be used in a way that lets students grasp the essential concepts.
+This works out if the teaching setup is aligned with the features of MPS and introduces functionality step by step.
+This approach is aided very well with the stability and adequate documentation of MPS such that students get all the information they need.
+With this approach, students can understand the underlying concepts, and thereby they master the tool MPS.
+Still, there are some serious shortcomings of MPS with regard to teaching.
+Fixing them might even help the general applicability of MPS.
+The work on appropriate meta-languages is a significant part of this improvement process.

@@ -1,0 +1,15 @@
+ We presented a generic framework for building projectional multi-variant editors which are based on feature models for defining variability and support negative variability by annotating domain model elements with feature expressions.
+ Human-readable textual notation is employed at the user interface.
+ In particular, the notation provides for a clear separation between domain model elements and annotations, and offers a variety of commands for flexible filtering of variability information (Section 3).
+ Projectional multi-variant editors have not only been designed for model-driven engineering; they have also been realized with model-driven engineering.
+ Thus, projectional multi-variant editors constitute a complex use case for the application of modeldriven engineering.
+ As described in Section 4, we devised a notation for megamodeling which we ap plied to describe the internal architecture of projectional multi-variant editors.
+ Furthermore, Section 5 illustrates the complexity of the models employed internally by means of the mapping between domain models and feature models.
+ The work presented in this paper is still ongoing.
+ Future work will include support for defining partial or total feature configurations and configuring multi-variant domain models accordingly.
+ Here, ensuring well-formedness of configured domain models constitutes an important challenge which may be addressed along the lines of our previous work on FAMILE (Buchmann and Schwagerl, 2012).
+ Please  note that configuration of feature models and domain models is essential not only for application engineering but should be supported in domain engineering, as well.
+ In domain engineering, configuration support enables previews of configured domain models which may be visualized by coloring and eliding.
+ In  addition, such previews will be editable.
+ In this way, the projectional multi-variant editor will support automated management of annotations in a similar way as variation control systems (avoiding their view-update problems since each editing command always refers to the underlying multi-variant model).
+ 

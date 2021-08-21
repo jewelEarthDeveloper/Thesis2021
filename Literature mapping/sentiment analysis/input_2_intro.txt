@@ -1,0 +1,27 @@
+After having explained the context of our research (Section 1.1), we summarize the contribution of this paper (Section 1.2).
+ Finally, we provide an overview of the rest of this paper (Section 1.3).
+ 1.1 Context In model-driven software engineering (MDSE) (Volter et al., 2006), software systems are developed ¨ by creating high-level models which are analyzed, simulated, executed, or transformed into code.
+ In this context, models are structured artifacts which are instantiated from metamodels.
+ A metamodel defines the types of elements from which models are composed and the rules for their composition.
+ For metamodels, the Object Management Group (OMG) has defined the MOF standard (Meta Object Facility), a subset of which is implemented as Ecore in the Eclipse Modeling Framework (EMF) (Steinberg et al., 2009).
+ Models may be represented in a variety of different ways, including diagrams, trees, tables, or humanreadable text.
+ Different kinds of editors may be employed to create and modify models.
+ In the case of a textual representation, a syntax-based editor may be used which persists the text and derives the underlying model by an incremental parsing process.
+ In the EMF ecosystem, the Xtext1 framework is frequently used to generate syntax-based editors from language descriptions.
+ In contrast, projectional editors provide for commands operating directly on the model and project the model onto a suitable representation (Volter et al., ¨ 2014).
+ A projectional editor may ensure syntactic correctness of models and enjoys further advantages concerning tool integration.
+ In particular, since models are stored as instances of metamodels, unique identifiers may be assigned to model elements such that they may be referenced in a reliable way.
+ Software product line engineering (SPLE) (Pohl et al., 2005) is a discipline which is concerned with the systematic development of families of software systems from reusable assets.
+ To this end, common and discriminating features of family members are captured in a variability model, e.g., a feature model (Kang et al., 1990).
+ In domain engineering, a variability model is developed along with a set of reusable assets.
+ In application engineering, product variants are developed from reusable assets.
+ Product variants may be constructed in different ways.
+ In case of positive variability, they are composed from reusable modules.
+ In case of transformational variability, product variants are constructed by applying a sequence of transformations.
+ In case of negative variability, multi-variant artifacts are represented as superimpositions of annotated elements.
+ An annotation constitutes a presence condition over features.
+ A product variant is defined by a feature configuration, stating which features have to be included and excluded, respectively.
+ To construct a single-variant artifact, all elements are removed from a multi-variant artifact whose annotations evaluate to false.
+ Model-driven software product line engineering (MDSPLE) combines MDSE with SPLE.
+ Thus, SPLE is applied to models.
+ While most SPLE approaches focus on source code rather than models, a number of MDSPLE tools have been developed,e.g., FeatureMapper (Heidenreich et al., 2008), FAMILE (Buchmann and Schwagerl, 2012), and SuperMod ¨ (Schwagerl and Westfechtel, 2019) all of which are ¨ based on EMF.

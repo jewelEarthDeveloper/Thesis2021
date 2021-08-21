@@ -1,0 +1,48 @@
+3.2 Syntax of Textual and Projectional Languages.
+As mentioned before, a software language’s syntax is a set of rules that describe valid programs [2].
+Usually, it is divided into two, namely, concrete syntax and abstract syntax.
+In this subsection, we describe how different LWBs represent both types of syntaxes.
+In textual LWBs, a language’s concrete syntax is usually specified using ContextFree Grammars (CFGs), while in projectional LWBs, the concrete syntax is expressed as AST projections.
+Below we explain both approaches and highlight their main differences.
+To clarify the differences between textual and projectional LWBs, we will use Rascal and MPS.
+Table 1 shows a comparison of the notations used by these two platforms to define language’s syntax.
+Context-Free Grammars A CFG is a formalism for describing languages using recursive definitions of string categories.
+A CFG C is a quadruple: 
+C → (S, NT , T , P )
+in which S is the start symbol (S ∈ NT ), NT is a set of syntactic categories also known as nonterminals, T is a set of terminal symbols, and P are production rules that transform expressions of the form V → w. 
+V is a nonterminal (V ∈ NT ), and w could be zero or more nonterminal or terminal symbols (w ∈ (T ∪ NT )).
+For example, a CFG that describes the addition of natural numbers N is shown
+below:
+G = (Exp,{Exp, Number},{+} ∪ N,P)
+The production rules P are defined as follows:
+start → Exp (1)
+Exp → Number (2)
+Exp → Exp + Exp (3)
+Number → i(i ∈ N) (4)
+By applying the previous production rules, we can write the arithmetic expression
+a + b (where a, b ∈ N) as:
+start → Exp
+Exp → Exp + Exp
+Exp + Exp → a + Exp
+a + Exp → a + b
+a + b
+
+Once there are no more nonterminals (NT ), we cannot rewrite the expression a + b because there are no production rules that can be applied.
+We say that a program is syntactically valid if there is a derivation tree from the start symbol to the string that represents the program.
+For instance, the concrete and the abstract syntax of the language described above can be implemented in Rascal, as shown in Listings 1 and 3, respectively.
+The first one defines two nonterminals, namely, Exp and Nat.
+The Exp rule contains two productions, for literal numbers and addition.
+The Nat nonterminal defines natural numbers.
+AST Listing 3 defines an Algebraic Data Type (ADT) that captures the structure of the language with two constructors: nat(. . .) and add(...).
+The terminals of the expression grammar (i.e., Nat) are represented using built-in primitive types of Rascal (i.e., int).
+Syntax in Projectional LWBs In a projectional LWB, the syntax is also divided into its concrete and abstract representation.
+The concrete syntax corresponds to an editor definition, whereas the abstract syntax is defined in a concept hierarchy.
+Projectional editors do not share a standard formalism for defining abstract syntax; therefore, each platform provides its own formalism.
+MPS uses a node concept hierarchy [14].
+For instance, the AST representing a language for describing the addition of natural numbers is shown in Fig. 1. 
+The MPS implementation uses an Expression interface and two concepts, namely, Addition and Number.
+To represent integer numbers, we use the built-in integer data type.
+How the users will edit expressions of this kind is defined by an editor definition.
+However, MPS also offers a generic reflective editor, so that every concept in MPS comes with a default editor.
+A reflective editor is a projectional representation of an AST that developers can use out of the box.
+An example of an arithmetic expression program using the reflective editor is shown in Fig. 2. 

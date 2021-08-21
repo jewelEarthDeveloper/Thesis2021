@@ -1,0 +1,7 @@
+We presented our experiences in teaching MPS in two inherently different environments.
+Courses and trainings given in an industrial setting are aimed at experienced developers and business experts, are often adjusted for a particular business domain, and are designed around acquiring practical language implementation skills by the participants.
+The academic setting tends to give a broader yet less detailed overview of several language implementation techniques, with the goal that students grasp fundamental concepts and differences between approaches and tools.
+Attracting students to taking any form of training in the MPS technology has constantly been the biggest challenge.
+Numerous beginner-level questions on the MPS discussion forum indicate that a large number of professionals attempt to climb the steep learning curve on their own, which frequently leads to suboptimal solutions, shallow opinions, and a lot of frustration.
+It remains to see whether joint efforts from both industry and academia in teaching MPS would benefit all the stakeholders.
+Perhaps a first step already taken in this direction is the availability of teaching materials [3, 30] online.

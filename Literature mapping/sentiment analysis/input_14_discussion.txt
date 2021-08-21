@@ -1,0 +1,7 @@
+Language Wheel is apparently the first workbench that focuses on purely example-driven definition of languages.
+We find it particularly important to guide a language engineer by using language flavors, which can be thought of as (meta)schemata for language definition process.
+The current state of implementation of Language Wheel is in the very early phase.
+Many of the details of how various concerns of language definition can be defined using annotations remain to be elaborated.
+Foremost, this applies to typing rules and scopes of visibility.
+Identifying commonly used concepts (together with their associated annotation perspectives) that will constitute the standard library of Language Wheel is an interesting task in itself.
+Many of those annotation perspectives will require some notion of a generic definition to be instantiated when specifying a particular language; for example, quickfixes can be considered as generic transformations

@@ -1,0 +1,11 @@
+One significant goal for the integrated modeling tool was that the integration is not reduced to a technical combination of both languages UML and ALF but also comprises the user interface constituting a visual integration of different editors such that an easy and fluent usage is feasible.
+Although a pretty wide range of models are involved in the background processes, the user should get the feeling of editing one model instead of a collection of models where each of them represents a certain portion of the context.
+This section describes the foundations of the implementation with respect to the user interface.
+In order to facilitate an integrated user interface, an Eclipse view was created that provides the textual modifications of the ALF operations.
+While the class diagram is visible within the graphical editor which constitutes the main editor where the user edits the structure, the behavior is modified textually within the additional view.
+Xtext provides tool support to embed generated editors within SWT composites which is used for our tool to embed the text editor within the Eclipse view.
+The view contents depend on the user’s actions in the main editor.
+If the user clicks an operation or a derived property within the class diagram, the view is notified about the respective edit part and shows the embedded editor with the textual representation of the corresponding ALF operation.
+The complete ALF operation is now visible and can be edited as in case of a usual text editor; apart from behavioral modeling concerning the operation body, also the structural model elements related to the operation – i.e., the name, the visibility, the parameter list, and documentation – can be modified textually.
+The view provides a button for finishing and persisting the current modification of the respective ALF operation; when the button is clicked, the respective text file is saved, the parsing process of the ALF model is performed and eventually the ALF-to-UML transformation is induced such that the structural changes of the respective operation get visible within the class diagram.
+Thus, the integrated tool provides round-trip engineering with respect to structural elements of operations; all other structural model elements are edited within the diagram editor while behavior can only be edited textually.

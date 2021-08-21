@@ -1,0 +1,10 @@
+In this paper we described our work towards an open-source framework for blended graphical–textual UML modelling based on Eclipse, Papyrus and Xtext.
+The framework aims at advancing the state of the practice of blended UML modelling by providing support for: textual grammar customisability, flexible application of multiple stereotypes on UML base elements using textual languages, cross-profile modelling based on blended notations, on-the-fly changes propagation across notations, and cross-notation multi-view modelling.
+We ran two experiments to assess the potential impact of blended solutions on modelling effort, in terms of time.
+Different notations are more suitable for different modelling tasks and, besides previous experience of the modeller with one or the other, enforcing the use of a task-optimal notation can decrease modelling time.
+Overall, stakeholder’s free choice of notation does decrease modelling time and subjects used to a specific notation perform overall better using their preferred notation.
+Nevertheless, for specific modelling tasks, enforcing a task-optimal notation has a better impact on modelling time.
+To summarise, we can conclude that a balanced combination of freely chosen and fixed task-dependent notations may represent the optimal solution.
+The goodness of such a combination depends on two factors: modelling tasks to be performed and stakeholder’s preferences.
+For this reason, it is hard to identify a generic optimal combination.
+In any case, we could observe that blended capabilities bring improvements in the modelling activities and decreases modelling time.

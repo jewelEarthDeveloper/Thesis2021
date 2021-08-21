@@ -1,0 +1,32 @@
+Expectations on software functionality and quality are increasing at a fast pace.
+Additionally, the interconnected nature of software-intensive systems makes software grow exponentially in complexity.
+The combination of high functional and extra-functional demands with ever-growing complexity leads to large increases in development time and costs.
+To combat this threat, Model-Driven Engineering (MDE) has been adopted in industry as a powerful means to effectively tame complexity of software, systems and their development, as shown by empirical research , by using domain-specific abstractions described in Domain Specific Modelling Languages (DSML) .
+DSMLs allow domain experts, who may or may not be software experts, to develop complex functions in a more domain-focused and humancentric way than if using traditional programming languages.
+DSMLs formalise (for computer-based analysis and synthesis purposes) the communication language of engineers at the level of domain-specific concepts such as an engine and wheels for a car.
+These concepts may not exist in another domain.
+Moreover, DSMLs support more efficient integration of software with designs and implementations of other disciplines.
+In this paper, we focus on DSMLs based on the Unified Modeling Language (UML).
+UML is the de-facto standard in industry  and an ISO/IEC (19505-1:2012) standard.
+It is general-purpose, but it provides powerful profiling mechanisms to constrain and extend the language to achieve UML-based DSMLs (hereafter also called ’UML profiles’).
+Domain-specific modelling demands high level of customisation of MDE tools, typically involving combinations and extensions of DSMLs as well as customisations of the modelling tools for their respective development domains and contexts.
+In addition, tools are expected to provide multiple modelling means, e.g.
+textual and graphical, to satisfy the requirements set by development phases, different stakeholder roles, and application domains.
+Nevertheless, domain-specific modelling tools traditionally focus on one specific editing notation (such as text, diagrams, tables or forms).
+This limits human communication, especially across stakeholders with varying roles and expertise.
+Moreover, engineers may have different notation preferences; not supporting multiple notations negatively affects throughput of engineers.
+Besides the limits to communication, choosing one particular kind of notation has the drawback of limiting the pool of available tools to develop and manipulate models that may be needed.
+For example, choosing a graphical representation limits the usability of text manipulation tools such as text-based diff/merge, which is essential for team collaboration.
+When tools provide support for both graphical and textual modelling, it is mostly done in a mutual exclusive manner.
+Most off-the-shelf UML modelling tools, such as IBM Rational Software Architect  or Sparx Systems Enterprise Architect , focus on graphical editing features and do not allow seamless graphical–textual editing.
+This mutual exclusion suffices the needs of developing small scale applications with only very few stakeholder types.
+For systems with heterogeneous components and entailing different domain specific aspects and different types of stakeholders, mutual exclusion is too restrictive and void many of the MDE benefits.
+Therefore, modelling tools need to enable different stakeholders to work on overlapping parts of the models using different modelling notations (e.g., graphical and textual).
+Paper contribution.
+In this paper we describe our work towards a full-fledged framework able to provide seamless blended graphical–textual modelling for UML profiles.
+Differently from current practices, our framework is based on a lightweight form of blended modelling, where both graphical and textual editors operate on a common underlying model resource, rather than on separate persisting resources, thus heavily reducing the need for explicit synchronisation between the two.
+To maximise the accessibility of our solutions, we leverage opensource platforms and technologies only.
+We implemented a proof-of-concept framework, as well as designed and ran an experiment to assess potential benefits of blended multi-notation modelling as opposed to standard single-notation modelling.
+Note that the area of so called action languages, such as for instance the UML actions (as in ) or the VIDE1 action language, also for UML, has focused on how to integrate textual notations for description of algorithmic behaviours (i.e.
+defined by a limited and fixed sub-portion of the original metamodel or a new ad-hoc one) in graphical (structural) models.
+In our work, we focus on a broader and more complex problem, namely the provision of a fully blended modelling environment for any portion (partial or full) of a UML-profile, being it structural or behavioural (or both).

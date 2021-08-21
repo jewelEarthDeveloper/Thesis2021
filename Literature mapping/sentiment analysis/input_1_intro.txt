@@ -1,0 +1,6 @@
+Over the last three years, DATEV, a leading German payroll services provider, has been developing a domain-specific language (DSL) for expressing the calculation logic at the core of their payroll systems. The goal is to allow the business programmers to express and test the calculations and their evolution over time in a way that is completely independent of the technical infrastructure that is used to execute them in the data center.
+Business programmers are people who are experts in the intricacies of the payroll domain and its governing laws and regulations (LaR) – but not in software development – which leads to interesting tradeoffs in the design of the DSL.
+The specific set of challenges that motivated the development of the DSL are given in Sec. 3.2.
+Payroll might seem dull and not too complicated (“just a bunch of decisions and some math”).
+However, the need to work on data that changes over time, to follow the evolution of the LaR, and to keep the language understandable for non-expert programmers makes it interesting from a language design perspective.
+The need for execution independent of the deployment infrastructure in the data center and on other devices plus the required flexibility in terms of service granularity and packaging into user-facing applications add interesting non-functional challenges.

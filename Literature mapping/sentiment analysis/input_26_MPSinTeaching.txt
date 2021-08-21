@@ -1,0 +1,61 @@
+4 Using MPS Meta-Languages for Teaching.
+MPS has many meta-languages, and not all of them are useful for novices.
+Here, we look at how MPS handles the essential concepts introduced in Sect. 3.
+4.1 Concepts for Teaching Structure.
+Given the concepts for structure in the previous section, EMOF (essential MOF) is a clear candidate to fulfil all the requirements.
+Full MOF [38] could also be used, but it includes a lot of advanced concepts that are overkill for students.
+The structure meta-language of MPS provides all the needed constructs and some more that are not needed for students and that may disturb the understanding.
+MPS is missing an overview of the concepts of the language with their dependencies, as it is easily provided with EMOF class diagrams.
+Such an overview is helpful in case students start to work on an existing project or in general need to get an overall understanding of the concepts involved.
+Figure 3 shows how an MPS concept declaration covers the needed constructs in relation to an EMOF class diagram.
+MPS also allows defining enumerations.
+4.2 Concepts for Teaching Constraints.
+Constraints (sometimes called static semantics) are restrictions that are checked on the syntax tree after checking the restrictions of the syntax.
+The traditional method to specify constraints is OCL [56], which allows formulating (logical) expressions over the abstract syntax.
+This is not very domain-specific for the language definition.
+A better approach exists for the handling of name resolution in [29].
+The structure meta-language captures multiplicity and also allows to define lexical rules using constrained data types; see Fig. 4.
+MPS has a general meta-language for constraints covering general constraints including uniqueness and scoping.
+In this context, also the behavior meta-language is used.
+The general MPS idea of the constraints language relates to a syntax check, where an input that does not match the constraints is not included in the model.
+It is possible to define correctness in the sense of static semantics using the type system checking rules.
+In the course, the use of checking rules is recommended for general constraints instead of using the constraints meta-language.
+The type system meta-language gives a very high-level way to describe types and their connections using inference rules, subtyping rules, and checking rules as shown in Fig. 5.
+The most significant abstraction gap is in the handling of name resolution.
+MPS handles definitions using INamedConcept, but this is very rigid and cannot be defined after the structure is in place.
+References are defined as reference constraints and are code-level, not high-level.
+The same is valid for uniqueness.
+4.3 Concepts for Teaching Syntax.
+There are two main approaches for handling concrete syntax of a language: generation (pretty printer) and recognition (parser).
+Editors would typically do both sides.
+The editor meta-language of MPS allows the definition of projectional editors, i.e., editors built on the idea of model-view-controller (MVC).
+This means that the tool always knows about the elements of the specification, and therefore ambiguity is considered unimportant.
+However, as [21] argues, ambiguity might not be essential for the tool, but still for the user.
+A check of the ambiguity of the notation could be useful.
+handled in the course using separate tools (JavaCC).
+Still, the handling of lexical constraints can be used as an example of recognition; see Fig. 4.
+MPS editors support a two-way connection between the syntax and the corresponding structure, providing feedback from the syntax analysis in the form of syntax highlighting, error messages, code completion suggestions, etc.
+The projectional nature of MPS is well aligned with teaching graphical and textual projectional approaches.
+Even though MPS does not provide full graphical editors, the principles are clear enough as can be seen in Fig. 6.
+MPS does not allow much notational freedom for the user, so this has to be explained separately as well.
+The inspector view of MPS can be used as an example of user freedom, which is not visible in the main notation defined; see Fig. 7.
+MPS allows defining editors automatically from the structure as proposed in [22].
+This gives a quick win, even though the generated editors often have to be adapted.
+Providing high-quality editors in MPS is very advanced and well beyond the capacities of ordinary students.
+Here, a much higher level of abstraction would be needed, as shown in [5, 47, 55].
+In particular, the division of syntax between the inspector and the regular editor is puzzling for the students and disturbs their understanding.
+In the course, it is recommended to avoid using the inspector view when defining a textual representation.
+4.4 Tools and Technologies for Teaching Transformation.
+There are many tools available to express transformations, and MPS provides a very high abstraction level for transformations.
+MPS allows both template-driven and data-driven definitions.
+The meta-language generator allows the definition of model-to-model transformations, as shown in Fig. 8.
+In contrast, the meta-language textgen provides means for the definition of model-to-text transformations, as shown in Fig. 9.
+Model-to-model transformations are simple in MPS, while model-to-text is a bit less convenient.
+In particular, the description capabilities are too different between the two kinds of transformations.
+4.5 Tools and Technologies for Teaching Execution.
+MPS does not provide dedicated meta-languages to handle execution.
+There are some possibilities to define debuggers.
+Moreover, it is possible to define simulators using the underlying base language (Java).
+High-level descriptions of operational semantics as proposed in [33, 40, 44–46, 48] are missing.
+Besides, state transitions could be defined on a higher level using ASM [7] or QVT [36].
+In the course, the concepts of executions are introduced, and possible implementations in MPS are discussed.

@@ -1,0 +1,14 @@
+The integration of plaintext support in SpecEdit ensures that the benefits of projectional editing are maximized while guaranteeing the compatibility with legacy tools.
+The major advantages of the projectional approach and MPS are to be able to dissociate the model from the view and to have a high composability of the language definition modules.
+Merging the projectional approach with parsing nevertheless bears its limits.
+The concern is that each time the underlying structure of the language is modified both the projectional editor and the ANTLR modules are impacted.
+TLA+ however, is a mature language with a stable syntax, thus, the underlying abstract syntax is considered stable.
+Since the ANTLR grammar maps the parse-tree to the TLA+ Concepts, the Editors can be modified without creating conflicts with ANTLR modules.
+The projectional approach is not the most widespread approach in code editors nowadays.
+It however has the potential to play an important role in the future to map DSL definition to any syntax.
+This approach efficiently solves the difficulties of translating requirements into formal specifications.
+In the case of SpecEdit, the use of MPS as a backbone for the creation of a tool dedicated to TLA+ has proved particularly fruitful.
+Not only does MPS offer a complete customizable architecture, but also provides access to non-trivial mechanisms for advanced users.
+SpecEdit transcends the current duality of the syntax of TLA+ and promises improvements that will facilitate the daily work of systems engineers to bridge the gap between conceptual view and syntax.
+The transition from one tool to another is not an easy matter in daily professional life.
+The projectional editor, though self-sufficient, combined with a traditional parsing approach, addresses this concern in the specific context of TLA+ by providing a bridge between SpecEdit and the existing TLA+ tools.

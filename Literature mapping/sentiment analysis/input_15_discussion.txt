@@ -1,0 +1,26 @@
+We started with the FASTEN project by focusing solely on extensions of SMV in October 2017 and then we gradually extended to other verification engines.
+Bosch started their use in late 2018, and researchers from fortiss actively contributed to FASTEN since late 2019.
+We estimate the total language development effort to roughly 3 person years, split mainly across the three organizations.
+In addition to the language development, considerable effort was invested to come up with the present set of abstractions by continuously learning from our interactions with practitioners and the research community.
+FASTEN is still actively developed and subject to significant extensions.
+In the following, we present a discussion and summarize the lessons learned from developing and using FASTEN in our research and technology transfer projects.
+7.1 Discussion.
+Maturity.
+FASTEN is a research tool.
+Different functionalities are at various Technology Readiness Levels (TRLs) spanning from TRL4 (validated in a lab) to TRL6 (demonstrated in industrially relevant environment).
+FASTEN is currently not intended to be used in production.
+Our main audience are tool builders, tech leads, technology scouts and people responsible for processes, methods and tools who are looking for ways to improve on the status quo and address new challenges caused by the complexity increase of the products.
+Domain experts have the chance to test hands-on how different aspects of their systems could be modeled, tools builders get inspired about new tooling functions and how they can be integrated, and technology scouts get to know how DSLs can help increase the automation degree of the safety critical systems development.
+Extensibility.
+The FASTEN approach relies on development and integration of modeling languages, in a bottom-up fashion by using stacks of DSLs.
+The multitude of DSLs presented in this chapter (developed at Siemens, Bosch and Fortiss) show that it is feasible to create domain specific environments on top of FASTEN.
+As shown in Section 6, the FASTEN framework enables rapid prototyping for the integration of domain-specific languages with formal methods.
+Its modularity and extensibility allows to quickly connect other DSLs such as SysML.
+We could easily experiment with different language dialects for representing architecture and contracts.
+Tool-driven Research Transfer.
+The set of functionalities provided by FASTEN exceeds the state-of-practice technologies used in the industry: today’s practice is dominated by loosely coupled tool chains.
+Each aspect from FASTEN (requirements, architecture, design, safety analyses, safety argumentation, verification) is covered by one or more tools, each providing informal specification and modeling means (plain text for requirements, SysML for design or spreadsheets and plain text for safety analyses and argumentation).
+The loosely coupling of tools lead to information loss at the boundaries and introduce accidental complexity; their informal content is preventing automation.
+We have extensively used FASTEN for interacting with systems and safety tech leads to demonstrate advanced concepts related to model-driven engineering, modelbased safety engineering and formal methods.
+FASTEN allowed us to create demos and verify the usefulness of different modeling and specification approaches for concrete industrial problems.
+Being able to play with models and analyze them directly in the tool has shown to be extremely useful when presenting to respective business units and other stakeholders.

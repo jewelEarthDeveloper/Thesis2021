@@ -1,0 +1,17 @@
+We present below a summary of lessons learned based on our experience in teaching language engineering with MPS in industry and academia: L1.
+Low ceremony free courses attract the participants who only want to test the waters before fully committing to learning the technology and who would turn the technology down without trying otherwise.
+Going online has increased the reach of the courses by an order of magnitude.
+Paying attention to step-by-step guidance is crucial even at later stages, since the participants tend to skip unclear steps or forget things, if not repeated several times in different contexts.
+Teaching MPS in a wide context of other language engineering tools, such as language workbenches Eclipse Xtext, Spoofax, and Rascal, gives students a fuller picture of this area.
+Most importantly, by the time when MPS is introduced in the course, students have already seen what language implementation is comprised of and acquired some language engineering terminology.
+This enables concentrating on implementation techniques that are distinctive in MPS.
+Explaining projectional editing by discussing analogies among both nonprogramming and programming-related environments seems to facilitate perception of MPS projectional editor.
+An analogy with an equation editor in a word processor enables introducing object-oriented view on language concepts and the notions of concept aliases and side transformations.
+Explaining code generation with XML-based examples and XSL transformations allows the students to explore model-to-model transformations.
+Availability of (online) tools to run XSL transformations, textual representation of XML trees, and powerful mechanisms of XSLT facilitate students’ experience.
+Using MPS to extend an existing general-purpose language (e.g., MPS BaseLanguage) seems to interest students as they can see an immediate quasipractical use of the acquired language engineering skills.
+Covering at least the basics of domain engineering motivates the participants to learn the practicalities of the concrete tool.
+It will also help them imagine how the principles and tooling could be applied to their projects and their infrastructure.
+Language design concernsshould be explored as part of the initial discussions over nontrivial example projects.
+The pros and cons of the alternative approaches should be presented as well as their consequences to other parts of the project.
+ 

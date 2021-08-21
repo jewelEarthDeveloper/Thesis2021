@@ -1,0 +1,33 @@
+In this study, we aimed to learn practitioners’ perspectives towards the meta-modeling tools and conducted a survey among 103 practitioners from 24 different countries.
+The survey participants represent the different profiles of the population who differ in terms of the work industries, the problem domains, job positions, and years of experiences.
+Our survey investigates three important research questions, which essentially focus on the usage frequencies of the existing metamodeling tools, practitioners’ expectations from the meta-modeling tools, and any challenges that practitioners face with.
+According to the survey results, the top-used meta-modeling tools are Eclipse Sirius and GEMS (43%), which are followed by Metaedit+ (31%) and Xtext (29%).
+The meta-modeling tool features have been categorized in the survey as the language definition, editor services, model transformation/code-generation, language validation, and language composability, and each category here led to very interesting results in the survey.
+Concerning the language definition, while the diagrammatic (88%) and textual (75%) visualizations are highly popular among the participants, other types of visualizations (e.g., tabular) and hybrid visualization are rarely preferred.
+Many of the participants wish to define the language semantics using the translational semantics definition technique that can either be model-to-model or model-to-text.
+The interpretative semantics definition is neglected.
+The participants are also willing to communicate their language definitions via the importing/export facility and keep the record of the language definitions that can be managed in terms of versions.
+The participants’ main challenges on the language definition are the lack of support for training (e.g., tutorials, examples, videos, and support-desk) and the steep learning curve.
+Concerning the editor services, while 69% of the participants wish to use the free-form editing mode.
+The projectional editing mode for the hybrid modeling with multiple visualizations is not popular.
+The top features that are desired by the participants to be supported by the modeling editors are an error marker for semantical aspects (81%), document generation (77%), model re-use (75%), a model comparison (69%), and the automatic update of the models when meta-model changes (69%).
+The main challenge on the editor services is to do with the editor usability (e.g., the number of clicks needed for modeling and meta-modeling).
+Concerning the model transformation/code-generation, the participants wish to use a transformation technology with the error detection (72%) and syntax highlighting (53%) features.
+The challenges here include the lack of support for training and adapting the tools developed with the changing user requirements.
+Concerning the language validation, many participants (75%) are willing to define both semantic and structural validation rules for DSMLs and the top-desired tool feature for the language validation is the support for integration with the external analysis and validation tools (72%).
+The challenges here are to do with the real-time checking of the validation rules and complexity management.
+Concerning the language testing, many participants (78%) wish to test the language semantics.
+The challenges on the language testing are to do with the lack of support for specifying and executing test cases, model-based testing, and integrating with test automation tools.
+Concerning the language composability, most participants (84%) wish to define the language semantics via composition.
+The challenges include the difficulties in using the composed languages and performing composition with textual languages.
+We plan to validate the survey results via the international R&D projects that we are involved in.
+To this end, we will consider the PANORAMA project,5 which is labeled by the European Union’s EUREKA Cluster program ITEA (Information Technology for European Advancement).
+In PANORAMA, the Eclipse-based meta-modeling tools are being used to develop a scenario definition language for autonomous vehicles along with the supporting toolset (editor and code generator).
+So, we will survey and interview the practitioners who develop the language with some pre-determined list of questions that are derived from the survey results.
+Moreover, we will consider our Ph.D.
+students who use the Eclipse-based meta-modeling tools and Metaedit+ to develop DSMLs for different purposes (e.g., extending UML, designpattern based modeling, model-based testing, etc.) and validate the survey results.
+Lastly, we believe that the survey results will be highly useful for the tool vendors in determining the needs of practitioners from the meta-modeling tools.
+So, in the next release of their tools, the tool vendors may consider the missing features in their tools that are crucial for practitioners.
+Also, the survey results may be utilized by the practitioners who use or develop modeling languages.
+Indeed, practitioners may learn about the top-used meta-modeling tools for the domain of their interests and the important features of the metamodeling tools from the practitioners’ perspectives.
+So, practitioners may consider benefitting any particular meta-modeling tools for their domain and the particular features that they are interested in.

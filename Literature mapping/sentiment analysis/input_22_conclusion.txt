@@ -1,0 +1,8 @@
+The approach proposed in this work is, to the best of our knowledge, the first to explore the use of SysML together with component fault trees.
+We formulate a set of drivers from an industrial context that motivate the design decisions detailed in this work.
+Our contribution with this work is twofold: firstly, we propose a scheme to construct system fault trees for an FTA and support the FMEA by generating the structure tree, function network, and failure network from SysML internal block diagrams, which is close to schemes proposed for UML and CFTs.
+We introduce a deployment port to explicitly model the error propagation between hardware and software.
+Secondly, we propose a scheme to construct system fault trees from SysML activity diagrams, which is motivated by their usage in our industrial use cases.
+We introduce two industrial case studies: (i) a comparison of a manually created fault tree and a system fault generated from a SysML IBD of an electronic power steering system as well as (ii) a qualitative evaluation of the system fault tree generation from SysML activity diagrams of a boost recuperation system.
+We document lessons learned from applying the proposed schemes in these case studies.
+Lastly, we provide an outlook on remaining challenges to further raise the expressiveness of SysML models for use in model-based safety assessment and make use of dynamic aspects, e.g., as modeled in activity diagrams.

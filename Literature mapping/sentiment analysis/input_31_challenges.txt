@@ -1,0 +1,5 @@
+The top concerning challenge has been observed to be metamodeling tools’ steep learning curve required for defining the language syntax and semantics and the lack of support for training (e.g., tutorials, guidances, and examples on how to define the language syntax and semantics).
+One of those participants is especially concerned about learning the projectional editing with MPS.
+Some participants are concerned about the difficulties for keeping the language syntax and semantics complete and consistent as the new modeling elements are added — two participants herein are especially concerned about using the Eclipse-based meta-modeling tools.
+Also, a few other participants are concerned about the lack of support for (i) the integration with the version management tools (e.g., GIT and SVN) for versioning meta-models and (ii) the collaborative meta-modeling.
+Lastly, one participant stated to face with difficulties in using Enterprise Architect for defining the relationships between modeling elements.

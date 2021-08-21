@@ -1,0 +1,6 @@
+This chapter reports on a project at Zurich’s [11] life insurance branch in Germany.
+Zurich and itemis [3] started this project to shorten time-to-market by improving the product implementation process.
+We achieved this goal by migrating technical product descriptions from Microsoft Word to an MPS-based domain-specific language (DSL).
+To ease adoption, we leveraged MPS’ projectional editor by rendering the DSL very similar to the original Word documents.
+Originally, the Word documents were implemented in C by an external service provider.
+We superseded this process step by a generator from the DSL to C code, cutting down the turnaround time for each change from days or weeks to seconds.

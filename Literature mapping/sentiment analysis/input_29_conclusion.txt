@@ -1,0 +1,7 @@
+In this paper, we propose a DSL for IoT domain, called OntIoT, which is based on the SSN ontology.
+The approach, used to build OntIoT, is generic that could be applied to build a DSL from any ontology.
+OntIoT is based on projectional editing technique.
+Our ongoing research is to evaluate the proposed DSL in a real scenario.
+We plan to complete the mapping rules between OWL and DSL to cover the missing OWL constructs.
+Furthermore, we plan to utilize OWL reasoning algorithms to enrich the OntIoT editor with more semantic features.
+In addition, a graphical editor will be implemented for the proposed DSL.

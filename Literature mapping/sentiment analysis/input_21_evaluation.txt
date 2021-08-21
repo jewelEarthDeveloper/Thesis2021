@@ -1,0 +1,96 @@
+4 Evaluation and Lessons Learned.
+MPS proved to be a good choice for this project.
+Projectional editors combined the familiar look to the end-users with semantically structured models.
+In combination with language extensibility, the editors enable new ways of dealing with imported legacy code.
+Generators assured consistent output.
+We could mitigate MPS-related issues regarding editor and typesystem performance.
+We faced the biggest hurdles in the project with the import of the original code base.
+They were not specific to the MPS platform, but a mixture of generic legacy transformation and code-to-model challenges.
+The project’s total effort amounted to roughly 40 person months.
+4.1 Language Implementation.
+For both VADM and FuMo, projectional editors enabled a visual design very close to the original Word forms.
+Their implementation did not pose considerable challenges.
+MPS’ language composition features enabled clean language design without too many compromises for backward compatibility, as we could defer edge cases to special constructs not accessible to end-users, or even to plain C models.
+Standard MPS features like technical references with forward and backward navigation, Subversion integration, and plain text intermixed with model elements contributed tremendously to the final result.
+We experienced platform limitations in two areas: large editors tend to perform sluggishly, and we were not able to implement type inference as we planned.
+The table-heavy VADM editors posed the biggest editor performance issue.
+These editors barely interacted with the type-checking system, thus excluding it as potential performance issue.
+The original VADM was kept in few and large Word files.
+Thankfully, the top-level VADM structures provided semantic borders to break the documents into several root nodes.
+The resulting editors performed reasonably.
+Regarding the typesystem issue, we abandoned the idea of heavy type inference.
+It might be possible to implement, but we decided not to spend the required effort.
+The impact on the result was acceptable, as our end-users were familiar with typed languages.
+4.2 Import and Generation.
+Importing the original code was by far the most difficult part of the project.
+Even our original approach took way longer than anticipated (see Sect. 4.3), before we concluded it to be infeasible because of too long feedback loops.
+We eventually succeeded with the second approach (see Sect. 4.4), but again had to overcome unforeseen hurdles like running mainframe-targeted tests on a PC and semiautomatically analyzing test failures.
+We suspected most of these issues to be typical of automated application modernization projects; the team had only limited experience in this field.
+Using domain-specific languages presumably did not add huge additional effort to the fundamental problem.
+On the contrary, the flexibility of language composition and interactive pattern recognizers (see Sect. 4.2.4) opened up new possible ways to deal with application modernization issues.
+4.2.1 Import Source.
+We quickly concluded that we had to use the C code as base for the import: the C code was executed, so only this artifact was known to be correct.
+The IT department members knew a multitude of examples where the Word FuMo was outdated with respect to the implementation in C.
+Another argument was technical: Word is hard to read programmatically, especially as we would need to preserve formatting (to identify parameter references) and indentation (for control structures).
+Zurich used advanced Word features like tables and track changes; this would require a very solid library to reliably access the document’s contents.
+The original Word VADM/FuMos contained also a prose text description.
+In some cases, this description was copied into the C source code as comments; in these cases, we could import the description.
+For others, we had to copy them by hand from Word.
+As a one-off action, this would take an acceptable effort of a couple of days.
+4.2.2 Big Bang vs. Incremental Transformation.
+A big bang transformation processes the complete source at one point in time in its entirety.
+Before the transformation, only the source is used; afterwards, the complete source is discarded and the transformation outcome is the only usable artifact.
+With an incremental transformation approach, parts of the source are transformed step by step.
+The source artifacts are valid for non-transformed parts, whereas the outcome is the only valid artifact for already processed parts.
+We opted for a big bang approach to import for several reasons.
+The mbeddr C importer was responsible for importing the C source files into mbeddr C models.
+It had to resolve all references prior to import.
+The code base turned out to be highly coupled.
+There were no simple ways to cut the code base in independent sub-slices that would not reference each other.
+So we either had to import all at once or import overlapping sub-slices and merge them afterwards.
+We deemed merging to be much harder than an all-at-once import.
+Both the IT department and the external service provider kept working on the source code during the project.
+This implies that in an incremental transformation approach, the C source files might have changed between the import of different sub-slices—rendering any kind of merge even harder.
+Moreover, it would have been very hard to synchronize changes in the C source files to already imported mbeddr C models, let alone FuMo DSL code.
+Applying some parts of a change in already imported models, and other parts in the C source files, does not seem feasible either.
+The big bang approach implied we would never change imported models manually (besides development trials).
+All the improvements were applied to the original C source code.
+This provided some investment safeguard for Zurich: even if this project would have failed, they could still profit from the source code improvements.
+4.2.3 Cleaning Up Sources.
+The C source code had been developed over several decades.
+Naturally, it accumulated technical debt like different implementation styles or workarounds that have never been fixed.
+One particular area to clean up was memory management: the source code used three different APIs to allocate and free memory.
+Zurich, itemis, and the external service provider unified them to one API.
+This revealed memory management issues like use-after-free or duplicate memory usage.
+Analyzing and resolving these issues took considerable effort.
+The abovementioned cleanups are independent of targeting a DSL environment.
+More specifically to this target, we had to unify different ways to implement the same FuMo DSL construct in order to automatically recognize it.
+For example, the pseudo-code contained a foreach-loop concept.
+This can be implemented in C with a for loop and index variable, or a while loop and pointer arithmetic.
+If both patterns had been used a lot, we would recognize both.
+However, if it had been implemented mostly with a for loop and the source had contained only a handful of while-loop variants, we would rewrite the latter.
+4.2.4 Lifting from C to FuMo DSL.
+Lifting[8] describes the process of transforming rather low-level C code to semantically richer, more domain-specific language.
+Most of the concepts are very similar in C and FuMo DSL.
+A simple tree walker would process the C AST and create the corresponding FuMo DSL model.
+The tree walker would wrap any unrecognized element in an escape to C FuMo DSL concept.
+Through manual inspection and interviews with IT department staff, we identified typical patterns in the C sources and how they mapped to FuMo DSL.
+We were very keen on matching domain-specific patterns, like formulas typical to insurance math, mortality table lookups, or access to Zurich-specific subsystems.
+We implemented pattern recognizers to find these patterns during the C to FuMo DSL transformation.
+The tree walker incorporated the reliable (i.e., no false positives or negatives) recognizers.
+Less reliable recognizers were available as MPS intentions on the FuMo DSL.
+This combined the required manual assurance with easy application.
+It allowed continuous improvement both during our project and future development.
+Examples for pattern recognizers include foreach loops (see Fig. 7), VADM access, memory allocation, or pointer (de-)referencing.
+The logical inverse of pattern recognizers are FuMo DSL to C generators.
+We developed them alongside the pattern recognizers.
+4.2.5 Handling VADM Access.
+The actual VADM structures were expressed as C structs; importing them was straightforward.
+Importing their usage, however, was much more difficult.
+The runtime environment initialized one complete VADM structure (see Sect. 2.3.1).
+We spent serious effort to identify these access patterns and provide good abstractions in FuMo DSL.
+We did not want to expose the end-users to the intricacies of C pointer handling—they should be concerned about insurance business logic.
+We found quite a few cases where we could not reliably recognize, lift, and generate the correct pointer access scheme; especially performance-optimized loop handling turned out to be problematic.
+There were even too many of them to be treated as edge case with an escape to C.
+We resorted to explicit FuMo DSL constructs for pointer handling for existing cases: We created these concepts in the importer, but did not provide the end-user with a way to instantiate them.
+If future changes require performance optimizations, they need to be provided through support libraries.

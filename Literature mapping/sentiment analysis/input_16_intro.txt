@@ -1,0 +1,22 @@
+The practice of model-driven engineering (MDE) relies heavily on the use of models and domain-specific languages (DSL) [23] which offer, through appropriate notations and abstractions, expressive power focused on, and usually restricted to, a particular problem domain [21].
+Over the years, many tools have been created to support this activity, giving birth to a new category of tools labeled as language workbench [7].
+They support the efficient definition, reuse, and composition of languages and their IDEs [6].
+However, the current state of tooling has some limitations that slow down the adoption of MDE and its derived paradigms [11, 24].
+Many challenges revolve around the modeling languages [20] and the tools used in the process such as modeling editors.
+We identify two limitations of modeling editors: (1) the level of expressivity and flexibility induced by the tool and (2) a deficiency in terms of usability, making their usage difficult for domain experts and practitioners alike.
+Language workbenches offer a model editor that enables users to manipulate their models using the syntax of the DSL.
+Most editors are parser-based and can be classified into two categories.
+On the one hand, Free-form editors are typically used for textual DSL, like Xtext [4] and Spoofax [13].
+On the other hand, syntaxdirected editors are typically for graphical DSLs, like MetaEdit+ [17] and AToMPM [19].
+The difference between the two lies in their parsing technique as they both rely on a parser to build an abstract syntax tree (AST) with the given input and validate the syntax.
+A projectional editor, however, does not rely on parsers.
+As a user edits a program, the AST is modified directly.
+Projection rules are used to create a representation of the AST with which the user interacts, reflecting the resulting changes [22].
+Without a parser, it enables the support of notations that cannot be easily parsed, such as tables or mathematical formulas, and the composition of any language without introducing syntactic ambiguities.
+As demonstrated in [3], this is much harder to achieve with parser-based tools.
+The most promising projectional editor in the MDE community is currently Jetbrains MPS [5].
+However, it is a heavy-weight editor that cannot be easily integrated in other tools.
+In this paper, we present Gentleman, a lightweight web-based projectional editor generator, which aims to close the gap between models and domain experts.
+Gentleman allows the user to define a model and projections for its concepts, and use the generated editor to create the model instances.
+We demonstrate how to define a projectional editor for Mindmap modeling, covering model definition, text and table projection, multi-projection, and styling to showcase its main features.
+The tool demonstration is available online.

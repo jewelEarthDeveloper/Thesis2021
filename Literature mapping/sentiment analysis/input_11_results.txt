@@ -1,0 +1,44 @@
+4.2.1 Ecore metamodel visualisation.
+Figure 14 shows the measured generation times of the three approaches for the four selected Ecore metamodels.
+Our experiment simulates a scenario in which a user is accessing the generated views one by one, i.e., selecting the generated view for each EClass in the input metamodel, until all produced views have been accessed.
+The y-axis represents the accumulated generation time of the accessed views, while the xaxis indicates the number of views that have been accessed up to that point.
+The number of accessed views is irrelevant for the batch transformation approaches, as all views are generated upfront.
+Because of that, batch approaches are represented by horizontal lines indicating the time they took to generate all views of each model, with the single-thread variant in dotted red, and the multi-thread one in dashed green.
+As expected, the multi-threaded variant took less time to complete, providing savings of 82.7 to 84.7% compared to the single-threaded execution.
+On the other hand, the number of accessed views is very relevant for Picto, whose execution time is represented with a solid blue line.
+As the number of accessed views increases, so does Picto’s accumulated execution time (since views are generated and rendered lazily).
+For Picto, the y-axis value at the ł0 accessed viewsž point depicts the time it took to complete the upfront view tree computation phase (see Section 3.2.1).
+This time is almost negligible, as it only amounts to 22.3, 39.2, 62 and 302 milliseconds for the UML, CIM, eMoflonTTC17 and RevEngSirius metamodels, respectively23.
+Lastly, to improve presentation, the time it took Picto to generate each individual view has been averaged.
+Showing the real time would have made relevant the order in which the views are accessed, i.e., if those views that took more time to get computed are accessed earlier, then the Picto accumulated time would increase quicker at first, and vice versa.
+In any event, the generation times were fairly uniform across all EClass views of the metamodels, so this averaging only has a minor aesthetic impact.
+Of particular interest in the graphs of Figure 14 are the crossing points at which the Picto time meets with the batch transformation times.
+When that crossing happens, it means that the accumulated time it took Picto to generate the accessed views at that point has reached the time that took the crossed batch transformation to generate all views of the model.
+So, the greater the number of accessed views required to reach those crossing points, the more substantial benefit the lazy generation of views (i.e. Picto) is providing.
+In contrast, if the number of accessed views increases past the crossing point with certain batch transformation, then the final generation time of Picto would be greater.
+The first crossing point involves Picto and the multi-thread batch transformation times.
+This crossing happens at 40, 100, 177, and 758 accessed views (14 to 16% of the total number of views).
+These numbers show that, when considering the generation of all views, parallelising this generation contributes to a great reduction of the computation times.
+The second crossing takes place when Picto’s accumulated time reaches the execution time of the single-thread batch transformation.
+This crossing happens in all experiments when almost all the views have been generated.
+Precisely, it takes place when 235, 588, 1088, and 4972 views have been generated.
+The extra time that Picto requires to generate the remaining views (i.e.
+the ones that have not been accessed yet) is an overhead of its lazy M2T functionality, which is avoided when generating all views at once in the batch transformation.
+However, the measured overhead is very small, oscillating between 2 and 4% of the total generation time for Picto when compared with single-threaded batch figures.
+4.2.2 Component model visualisation.
+With respect to the (synthetic) component model visualisation scenario, Figure 15 includes the results for the two biggest models we generated.
+The first model, gencomps-12.9K, is 9.3 MiB in size, contains around 12.9K components (hence the name), and its visualisation included generating a total of 1221 views.
+As for the bigger gencomps-29K model, its numbers go up to 23.8 MiB in size, 29K component elements, and 6888 views.
+With respect to crossing points, Picto and the multi-thread batch execution crossed after accessing 158 and 883 views (∼12% of the total number of views for both cases) for the gencomps-12.9K and gencomps-29K models, while the crossing with the singlethread execution happens at 1081 and 6337 views (88% and 91% of the views, respectively).
+If we compare the results of both visualisation scenarios, we can see that the obtained times for the component models are consistent with those shown for Ecore metamodels.
+There is an increase in the total generation time in the case of the components scenario that we attribute to the larger size of these models, which translated into bigger view computing times.
+For instance, the eMoflonTTC17 metamodel and the gencomps-12.9K model visualisations contain a similar number of views, with 1090 and 1221 views, respectively.
+Nevertheless, the size of these models is 3.3 and 9.3 MiB which, summed to the difference of 121 total views between the visualisations, causes a noticeable difference in the single-thread and Picto total times (36.9 and 37.0 seconds for eMoflonTTC17 and 43.2 and 48.8 for gencomps-12.9K).
+For the multi-threaded batch execution, though, the times remained fairly similar for both models (6.0 and 6.3 seconds, respectively).
+These times suggest that the parallel execution of Ecore metamodels was not able to deplete all the computing resources offered by the 6-core/12-thread computer CPU, so there were some resources available to cope with the generation of 121 extra component views (that require more computation time) in a very close total time.
+A similar comparison can be carried out between the RevEngSirius metamodel and the gencomps-29K component model.
+4.2.3 Laptop Platform results.
+Lastly, Figure 16 shows the obtained times for the Ecore experiments when the generations were executed on a laptop.
+In that case, the obtained times were very similar for the Picto and single-thread executions to those of the desktop machine.
+On the other hand, the benefits of the multi-threaded version were not as significant, because the parallel execution in a 2-core/4-thread CPU could not provide the same performance as a more capable 6-core/12-thread CPU.
+In that case, and for the Ecore experiments depicted in Figure 16, the crossing between the multi-thread execution and Picto happened at 102, 253, 458 and 2192 accessed views (∼42% of the total views for all models), which indicates that, for lower-spec platforms, the use of Picto is even more beneficial.

@@ -1,0 +1,7 @@
+Projectional editing.
+Similar to the “semi-projectional” editing as explained in Section 3, hybrid editors augment text-based programs with additional information [20].
+MacGnome environment [29] had a special editing mode that allowed converting sections of code into plain text to perform editing; after that the sections were converted back to a structural representation.
+In Greenfoot [6], a program is represented as frames, which are created using text- and mouse-based operations [26]; expressions can be entered in a textual mode and it is possible to convert them on the fly into structured expressions [6].
+Barista [26] supports structure views that enable representing structural items in code in a visual way instead of textual.
+Graphite [32] allows incorporating custom highlyspecialized interactive code generation interfaces directly into textual editors (e.g., a visual color picker associated with a textual representation of an instance of class Color in Java).
+Many of these ideas can be reused in the implementation of the “semi-projectional” editor of Language Wheel.

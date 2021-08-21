@@ -1,0 +1,17 @@
+Fig. 7 shows the participants’ usage frequencies of the metamodeling tools.
+So, the top-used meta-modeling tools are Eclipse Sirius and GEMS (Generic Eclipse Modeling Environment) (43%).
+Those are followed by Metaedit+ (31%), and Xtext (29%).
+While some participants (18%) use the Microsoft DSL tools for meta-modeling, the rest of the meta-modeling tools are rarely used (if any).
+Note that 8% of the participants use their own meta-modeling tools that they build for their specific problems (i.e., in house solutions).
+Fig. 8 shows the correlations between the domains for which the participants develop/use DSMLs and their choice(s) of the metamodeling tools.
+So apparently, some of the meta-modeling tools such as ANTLR, GEMOC, EVA, Cameo, JastEMF, and Graphiti are essentially used for a few particular domains.
+While GME, Melange, and MPS are not among the frequently-used tools, those tools seem to be preferred for various domains.
+In almost all the domains, the top-used metamodeling tool is Metaedit+ - except the embedded domain where the top-used meta-modeling tool is GEMS.
+In Fig. 9, we give the correlations between the participants’ choice(s) of meta-modeling tools and their work countries.
+The tools that are used in the greatest number of countries are GEMS, Metaedit+, Sirius, and Xtext.
+GEMS is top-used in Turkey, followed by the Netherlands.
+The meta-modeling tools such as ANTLR, GEMOC, WebGME, Melange, JastEMF, Graphiti are each used in one or two countries.
+Also, some countries seem to use particular meta-modeling tools more than other tools.
+Indeed, USA’s top used tool is Microsoft DSL tools, Finland’s is Metaedit+, many European countries’ top-used tools are Eclipse-based tools (e.g., GEMS, Sirius, Xtext), and the Netherlands and Turkey’s is GEMS.
+Note that the Netherlands also use MPS quite a lot.
+Another interesting finding here is that many countries (i.e.,Belgium, Germany, Finland, France, Taiwan, The Netherlands, Turkey and USA) include some practitioners who essentially prefer to use in-house solutions for modeling/meta-modeling without using any of the existing meta-modeling tools.

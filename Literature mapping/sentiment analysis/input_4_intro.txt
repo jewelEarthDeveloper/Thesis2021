@@ -1,0 +1,19 @@
+The life cycle of an application is bound to changes of domain and technical requirements.
+Non functional requirements as scalability and availability may lead to a rewrite of the application as is for a new architecture or programming language.
+DevOps and Microservices-based Applications (MSA) appear to be an indivisible pair for organizations aiming at delivering applications and services at high velocity.
+The philosophy may be introduced in the company with adequate training, but only if certain technological, organizational and cultural prerequisites are present [4–6].
+If not, the prerequisites should be developed to guarantee adequate instruments to model and verify software systems and support developers all along the development process in order to deploy correct software.
+Microservices allow developers to break up monolithic applications (MA) in a set of small and independent services where each of them represents a single business capability and can be delivered and updated autonomously without any impact on other services and on their releases.
+In common practice, it is also expected that a single service can be developed and managed by a single team.
+Microservices recently demonstrated to be an effective architectural paradigm to cope with scalability in a number of domains, however, the paradigm still misses a conceptual model able to support engineers starting from the early phases of development.
+Several companies are evaluating pros and cons of a migrating to microservices.
+Model-driven software development  supports expressing domain requirements regarding contained data, function points, workflows, configurations, requirement tracking, test cases, etc.
+by appropriate domain specific languages.
+In this respect, this work discusses the provision of an model-driven approach for the automatic migration of monolithic applications to microservices.
+In particular, domain-specific languages (DSLs) allow the definition and deployment of microservices, while model transformations are exploited to automatize the migration and the containerization phases.
+The implementation of the migration framework is realised by means of JetBrains MPS (briefly, MPS).
+MPS is a meta-programming framework that can be exploited as modelling languages workbench, it is text-based, and provides projectional editors.
+The choice of MPS is due to the inherent characteristics of MSAs, which are by nature collections of small services that must interacts to satisfy the overall business goal.
+In this respect, graphical languages do not scale with the complexity of the MSAs.
+Moreover, MPS smoothly supports languages embedding, such that our definition of microservice mining, specification, and deployment phases for the migration that are easily implemented.
+As a validation of our approach, we have migrated a simple Java application in the corresponding Jolie microservices deployed inside the Docker container.

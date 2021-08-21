@@ -1,0 +1,18 @@
+In order to tackle the complexity of safety critical systems, increase trust and enable agile development we need semantically rich and deeply integrated models about different aspects of the system from requirements, design and safety engineering.
+Currently, the industry is using ad-hoc and loosely coupled tool chains, featuring informal models, and they cannot cope with today’s challenges.
+In this chapter we presented FASTEN, an extensible platform based on JetBrains MPS, developed and used by researchers from three organizations over the last three years, both from industry and academia.
+We presented a set of requirements DSLs that enable the transition from informal requirements to formal models, DSLs for the formal specification of architecture and system-level behavior, and DSLs for safety engineering and assurance.
+We successfully used the DSLs to model two industrial systems from the automotive domain.
+MPS is a key enabling technology for the FASTEN system.
+On tools building side, MPS empowered us to efficiently build extensible stacks of DSLs; to integrate independently developed modular DSLs; to provide most appropriate notations; to equip language constructs with rich and extensible sets of semantic rules; to implement advanced editing support for creating models; and, last but not least, to integrate external analyses tools and present the analyses results at the abstraction level of the DSL.
+On research and technology transfer side, MPS enabled us to experiment with adequate abstractions, to prototype new ideas in closed-loop interactions with domain experts or fellow researchers, as well as to cooperate beyond the borders of a single company.
+FASTEN is an open-source and open-innovation platform for research and technology transfer in the field of safety critical systems.
+Future Work.
+FASTEN can be easily extended with new DSLs in order to experiment with higher-level modeling abstractions.
+FASTEN is still under development both at the platform level as well as regarding the higher-level modeling languages.
+We are extending and fine-tuning the DSLs based on the feedback from domain experts such as requirements, system or safety engineers.
+We plan future work along three directions: enabling new modeling abstractions; integration of existing abstractions to enable higher-level workflows, and better integration of tooling.
+Examples for directions for modeling extensions are boilerplate patterns for the specification of timing/reliability aspects of requirements, integration of failure models and formal models for robustness analysis of the design, or enriching the semantics of safety argument structures to enable more automated checks.
+Furthermore, we plan to integrate model-based fault injection approaches similar to [4].
+Regarding directions for modeling integrations, we are looking at the integration of the modeling languages developed by Bosch with more functionality from FASTEN.Safe, especially the assurance case in GSN; or the integration of system models with the software or hardware aspects.
+Finally, examples of better integration of tooling in modeling workflows is to further improve the lifting of analysis results, to enhance the existing interaction with analysis engines and to integrate new engines.

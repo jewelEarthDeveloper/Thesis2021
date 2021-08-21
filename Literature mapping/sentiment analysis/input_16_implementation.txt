@@ -1,0 +1,11 @@
+Gentleman targets the web as its running platform and is implemented entirely in Javascript.
+The application runs client-side, enabling offline work.
+As with any web application, HTML and CSS are used to describe the content and its presentation.
+The tool can be easily integrated into any web page with the Gentleman script loaded in it.
+This can be achieved in one of two ways.
+The developer can decorate an HTML Tag with the attribute data-gentleman, such as <div data-gentleman></div>.
+Upon loading, every HTML element on the page found with this attribute will have a Gentleman instance attached to it with the editor rendered inside.
+Alternatively, the developer can create a Gentleman instance dynamically in Javascript using the instruction editor = Environment.createEditor() followed by editor.render() to render the editor on the page.
+This enables a web-based language workbench (like AToMPM or WebGME) to have multiple projectional editors within a single modeling editor.
+This is useful, for instance, to control and stylize the edition of attributes.
+Gentleman is an open-source project available on GitHub.

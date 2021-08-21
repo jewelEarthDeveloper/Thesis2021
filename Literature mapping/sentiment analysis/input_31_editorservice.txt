@@ -1,0 +1,34 @@
+As Fig. 14 shows, 69% of the participants prefer the meta-modeling tools that support the free-form editing exclusively, which promotes the persistent storage of the editable models.
+So, those participants essentially prefer to use any meta-modeling tool(s) that supports developing a language with just one visualization only (e.g., Xtext for textual and Sirius for diagrammatic).
+Another 21% of the participants prefer the meta-modeling tools that support developing a language with the projectional editing mode, which enables the models to be edited via different projections that each supports a different visualization (e.g., graphical, textual, and tabular).
+Those participants may actually use the MPS meta-modeling tool for creating different projections for their language.
+The rest of the participants (10%) do not seem to have a particular choice here and indicated to use the meta-modeling tools that support either of the editing modes depending on their language development requirements.
+Fig. 15 gives the correlations between the participants’ domain and the editing modes that the participants prefer.
+The participants from some domains (e.g., chip dev., robotic, web app., UI design, testing, telecommunications, and real-time operating systems) do not prefer any meta-modeling tools with the projectional editing support.
+On the other hand, the participants from the mobile and IOT domains do not prefer the free-form editing.
+Also, the medical device development, enterprise solutions, and document engineering domains include many more participants who prefer the projectional editing mode.
+Q12: The syntactic editor services that the participants prefer to use As Fig. 16 shows, reusing models is the top-popular syntactic editor service that has been selected by 75% of the participants.
+Indeed, with model reuse, practitioners may keep the models created in a repository and create new models by re-using the existing models in the repository with the least effort possible.
+Another highly preferred syntactic editor service is the comparison of models via a diff-like tool (69%), which may enable to detect and review the differences between models and even merge them.
+The other editor features that are also quite popular are the syntactic completion templates that provide incomplete models/code/graph to the users (58%) and the auto formatting, restructuring, aligning, and layouting of a model’s presentation (50%).
+Other syntactic features such as the customizable visual highlighting in models, navigation support (via, e.g., an outline view), and model folding to hide part of a model are considered by relatively fewer participants (30%–32%).
+Q13: The semantic editor services that the participants prefer to use Besides the modeling editor services that concern the syntax-related aspects, the modeling editors may offer services about the semantical aspects of languages.
+As Fig. 17 shows, the top-popular semantic editor services is the need for an error marker for highlighting a model element and any associated error messages (81%), which enables to detect the semantical errors (e.g., the violation of wellformedness rules) at modeling time.
+The automatic update of models upon any changes on the meta-model is the second top-popular semantic editor service (69%), which enables the modelers to detect any errors due to the semantical changes automatically.
+Also, the semantic completion for receiving automatic suggestions at modeling time and the refactoring of models without changing semantics (e.g., renaming and language-specific restructuring) are each desired by 60% of the participants.
+The UML support for reusing and extending the UML language syntax and semantics and the live translation between the model and generated code (i.e., displaying the model and code side-by-side) are also desired by half of the participants (52%–53%).
+The rest of the semantic editor services such as navigation to representations (i.e., the capability to see on which representations a given semantic element is used), advanced search (i.e., the capability to find the semantic elements with the advanced search criteria), co-evolution of metamodels together with models, and quick fixes are relatively less popular among the participants.
+Q14: The other editor services that the participants prefer to use Besides the syntax and semantics editor services discussed above, many other editor services may exist that are not given in the above questions’ lists.
+So, in this question, we provided a list of possible general editor services and let the participants type any other services that are not given in our list.
+As Fig. 18 shows, document generation (e.g., generating word, PDF, or XML files from models automatically) is the top-popular editor service herein, which is desired by 77% of the participants.
+Importing/exporting models for sharing models among collaborators and the version control system integration for managing the model versions are also the highly desired features for the modeling editors (72%–73%).
+68% of the participants are interested in the usability of the modeling editors, which is essentially concerned with the minimum number of clicks for modeling/meta-modeling.
+The editor services that are also quite popular and considered by approximately half of the participants are the traceability between different view models (e.g, checking the consistencies between structural and behavioral models) (60%), the IDE integration (i.e., the integration with development environments such as Eclipse and Visual Studio) (53%) and scalability (i.e., creating and storing large number of models) (48%).
+The rest of the features given in Fig. 18 are relatively less popular among the participants.
+Also, using the ‘‘other" option, one participant wishes for the offline access to the editor, where the changes can be reflected when connecting to the internet.
+Another participant wishes for sharing the meta-model with any users who can use the language freely.
+Q15: The challenges that the participants face with on developing/using editors The participants are most concerned about the usability of the editors they develop or use.
+One of those participants stated to face with some usability issues in using Eclipse Xtext/Xtend and MPS metamodeling tools for developing editors.
+The same participant is also concerned about Xtext’s support for scalability and traceability based on the OSLC2 linking.
+Also, some of the participants are concerned about editors’ lack of support for (i) model versioning, (ii) training (i.e., any learning materials to learn how to produce modeling editors), and (iii) integrating editors with other development technologies, such as .NET, to combine modeling and coding.
+Lastly, one participant is concerned about the support for web-based editors, and another one is concerned about the syntax coloring.

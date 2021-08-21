@@ -1,0 +1,42 @@
+We learned from the survey results that modeling (and thus metamodeling) is essentially the concerns of several different industries where practitioners work on large and complex problems that can better be managed with the advantages of modeling such as abstraction, enhanced communication, separation of concerns, early analysis of design decisions, and generating code from models.
+While the survey attracted the greatest number of participants from the defense/military & aviation industry, many other industries have been participated in the survey to indicate their perspectives towards the meta-modeling tools including IT & telecommunications, automotive & transportation, healthcare & biomedical, consumer electronics, finance, government, education, etc.
+Also, modeling (or meta-modeling) is considered by those industries for solving problems at various different domains that include embedded, automotive, control and automation systems, web, user interface design, medical device development, IOT, enterprise solutions, data analytics, railway systems, testing, robotic, mobile, chip development, document engineering, and real-time OSs.
+The survey results revealed that most of the practitioners from different industries use either of the five different meta-modeling tools which are Sirius, GEMS, Metaedit+, Xtext, and Microsoft DSL tools.
+Other meta-modeling tools such as ANTLR, ConceptBase, Melange, GEMOC, Graphiti, WebGME, Cameo, EVA, and JastEMF are rarely used.
+Among the top-five meta-modeling tools, Sirius, Xtext, and GEMS are all actually Eclipse-based tools that are based on the Eclipse Modeling Framework (EMF) and can be used as an Eclipse plug-in.
+It should also be noted that Xtext is the only meta-modeling tool among the top-five, which offers a textual visualization.
+Moreover, some countries seem to use particular meta-modeling tools.
+Indeed, USA prefer Microsoft DSL tools, Finland prefer Metaedit+, and most European countries prefer Eclipse-based tools and Metaedit+.
+Another lesson learned about the meta-modeling tools is that some participants (12%) seem to consider EMF (Eclipse Modeling Framework) as a meta-modeling tool.
+Indeed, those participants used the ‘‘other’’ free-text area of the corresponding survey answer and typed ‘‘EMF’’ for their meta-modeling tool.
+However, EMF is essentially not a meta-modeling tool but an Eclipse modeling project whose goal is to propose a modeling framework that can be used for building a modeling editor for a given data model [43].
+EMF is used by many popular Eclipse-based meta-modeling tools, including Xtext, Sirius, GEMS, Graphiti.
+So, these meta-modeling tools benefit the EMF utilities by enabling the users to develop textual/visual DSMLs with the EMF framework.
+Concerning the lessons about the language definitions, while most practitioners prefer either diagrammatical or textual visualizations for their DSML notations, developing/using DSMLs with hybrid visualization that promote the use of multiple visualizations in a synchronized manner is neglected.
+One of the underlying reasons is metamodeling tools’ lack of technology support for developing hybrid visualizations.
+Indeed, most meta-modeling tools support textual or diagrammatic visualizations exclusively.
+We also observed that practitioners wish to define the language semantics by means of translations into text (e.g., source-code) or model (e.g., formal process algebra) and most of them ignore the interpretative semantics definition techniques (e.g., denotational semantics).
+This might be due to the fact that the meta-modeling tools essentially provide transformation technologies for defining and executing the translational semantics.
+Defining the interpretative semantics for notations seems to be rather addressed by the researchers in academia.
+Also, collaborative meta-modeling seems to be highly important for many practitioners, who indicated in the survey that importing/exporting the language definitions and versioning the definitions in a repository for later re-use are among their top-interests for meta-modeling.
+Practitioners have been observed to be reluctant to develop/use DSMLs for hybrid modeling that could enable multiple stakeholders with different profiles to edit the same model using different visualizations.
+Indeed, as the survey results reveal, most practitioners are not interested in hybrid modeling and they essentially prefer the metamodeling tools with the free-editing mode rather than projectional editing which promotes the same model to be edited by different projections (i.e., each considering a different visualization).
+This could be attributed to the fact that most practitioners are unfamiliar with the projectional editing, Indeed, the MPS meta-modeling tool that supports the projectional editing seems to be rarely used.
+Another important lesson learned is about the model and metamodel re-usabilities.
+According to the survey results, re-usability is one of the biggest concerns for practitioners for both modeling and meta-modeling.
+Indeed, practitioners are highly interested in defining the language syntax and semantics by re-using the definitions of the existing languages that are kept in a repository (e.g., the UML diagram notations) without having to define the meta-models from scratch.
+Also, practitioners wish the modeling editors produced by the meta-modeling tools to enable re-using the existing models for creating new, extended models.
+Besides reusability, another important requirement for practitioners is observed to be the model and meta-model versioning that is concerned with keeping different states of the models and language definitions (i.e., syntax and semantics) in a repository for later access and management.
+Indeed, many practitioners wish the meta-modeling editors to be integrated with version control systems (e.g., GIT) and provide support for creating different versions of their models (or meta-models) that can even be compared and merged.
+Concerning the language validation, we learned that defining validation rules is highly important for practitioners most of whom wish the meta-modeling tools to enable defining both the semantical and structural validation rules.
+Practitioners also wish the meta-modeling tools to be integrated with some validation tools such as the formal verification and model simulation tools.
+By doing so, the validation rules can be defined and executed on the models specified in such a way that the models can be proved (i.e., formally verified) for the validation rules.
+We learned some lessons about the survey questions for understanding the challenges.
+Indeed, despite that each category of the survey includes a question for learning the challenges which the participants face with in that category, many participants omitted the challenge questions.
+We attribute this to the fact that the challenge questions are free-text and the participants have been prompt to type their own answers.
+Given also the feedback we got from the participants that the survey is quite longer than they expect, those participants seemed reluctant to separate further time to state their challenges.
+In the future, we will try to come up with a set of potential challenges and prompt the participants to choose among the pre-defined list of challenges.
+Lastly, while we asked the participants a set of questions for each category of requirements and received their responses, we did not actually focus on associating the participants’ meta-modeling tool choice(s) with their responses for the questions.
+This is firstly because the questions have been intended for learning practitioners’ expectations regardless of their tool preferences and thus presented to the participants accordingly.
+Also, most participants seem to have chosen multiple meta-modeling tools and therefore one may not accurately associate the responses with the tool usages.
+Therefore, we could not discuss in our paper some potentially interesting outcomes about the relationships between the meta-modeling tools and the question answers for different tool requirements (e.g., those who prefer web-access for meta-modeling actually use the tool(s) with web-access support).

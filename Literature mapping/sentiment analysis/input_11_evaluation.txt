@@ -1,0 +1,50 @@
+4 EVALUATION 
+To measure the benefits of the lazy view generation strategy implemented by Picto, we have carried out performance evaluation experiments where we compared view generation times of Picto to those of a batch M2T transformation that produces identical views17.
+The following sections describe the experiments and discuss the obtained results.
+4.1 Comparison Method 
+We start by describing the visualisation scenarios, the compared approaches, and the measuring platforms and methods used during the comparison.
+4.1.1 Visualisation scenarios.
+Two scenarios were used during this evaluation.
+The first one involved Ecore metamodels and generating views such as the one depicted in Figure 9.
+More specifically, one view was generated for each EClass in the input metamodel (considered the main one of the view).
+The view contains the EClass itself, as well as the EClasses it refers to through EReferences, and its supertypes.
+We used the BigQuery Github dataset18 to search for very large publicly available metamodels, from which we included the following four in the comparison: the UML2 metamodel; the Common Information Model (CIM)19, which is a standard for the definition of electrical networks; a metamodel used internally by the eMoflon solution of the 2017 Transformation Tool Contest (TTC17)20; a reverse-engineered metamodel of the Sirius codebase21 that has been used by the developers of the EcoreTools diagramming tool to carry out performance tests.
+The details of the selected metamodels are shown in Table 1.
+For instance, RevEngSirius.ecore is the largest of these metamodels, with a size of ∼4.7 MiB, and around 5.2K EClasses.
+The second scenario involves generating views from synthetic models conforming to a contrived (Simulink-like) component/connector metamodel.
+In this metamodel, each component has input and output ports, and can contain other nested components, which are interconnected between them and with the available ports to represent a modular system.
+For this visualisation, a view, like the 4.1.1 Visualisation scenarios.
+Two scenarios were used during this evaluation.
+The first one involved Ecore metamodels and generating views such as the one depicted in Figure 9.
+More specifically, one view was generated for each EClass in the input metamodel (considered the main one of the view).
+The view contains the EClass itself, as well as the EClasses it refers to through EReferences, and its supertypes.
+We used the BigQuery Github dataset18 to search for very large publicly available metamodels, from which we included the following four in the comparison: • the UML2 metamodel; • the Common Information Model (CIM)19, which is a standard for the definition of electrical networks; • a metamodel used internally by the eMoflon solution of the 2017 Transformation Tool Contest (TTC17)20; • a reverse-engineered metamodel of the Sirius codebase21 that has been used by the developers of the EcoreTools diagramming tool to carry out performance tests.
+The details of the selected metamodels are shown in Table 1.
+For instance, RevEngSirius.ecore is the largest of these metamodels, with a size of ∼4.7 MiB, and around 5.2K EClasses.
+The second scenario involves generating views from synthetic models conforming to a contrived (Simulink-like) component/connector metamodel.
+In this metamodel, each component has input and output ports, and can contain other nested components, which are interconnected between them and with the available ports to represent a modular system.
+For this visualisation, a view, like the  4.1.2 Compared approaches.
+We measured the time it took to generate the views for the scenarios described above both using Picto and with standalone batch M2T transformations.
+For the batch transformations, we used the same language as in Picto, this is, EGL (see Section 3.2).
+This ensures that what we are measuring is the impact of the lazy generation strategy we devised for this work, as opposed to more fundamental differences in the performance of two M2T transformation languages.
+Also, using EGL facilitated creating identical M2T transformations as those in Picto, with only minimal changes to make them work in batch/standalone mode.
+In the two visualisation scenarios, the M2T transformations generate DOT graphs that are then translated to SVG/HTML for inbrowser rendering through the Graphviz program.
+While Picto has facilities to do that transparently for the user (see Section 3.2.2), we need to provide the same in the batch M2T approaches.
+Therefore, after the M2T batch transformation concludes, a post-processing step is carried out to, starting from DOT, generate the SVG and HTML files that would be rendered in a browser.
+The time to perform this post-processing step is included in the results of the batch transformations.
+One of the advantages of using a batch transformation instead of Picto is the possibility of parallelising the generation of views in different system cores/threads.
+Therefore, we created two variants of the batch transformation approach: the first one uses sequential (single-threaded) execution, while the second one employs multithreaded computation via a parallel EGL execution engine22 for the M2T transformation and the Java 8 Streams API for the postprocessing phase.
+Summarising, three approaches were compared: Picto, a singlethreaded and a multi-threaded batch M2T transformation.
+4.1.3 Measuring platforms.
+The experiments were carried out on a desktop computer running Ubuntu on a 6-core, 12-thread AMD Ryzen 1600 CPU with 32GiB of ram and a PCIe NVM SSD.
+As this powerful hardware might not be typical of a developer workstation yet, we also ran the transformations in a lower-spec laptop featuring the same Ubuntu system and a 2-core, 4-thread Intel Core i5 7200U CPU, 16GiB of RAM, and again a PCIe NVM SSD.
+4.1.4 Measuring method.
+For the batch M2T transformations, we measured the time it took to run the transformations against the target models.
+On the other hand, Picto’s lazy computation strategy required some instrumentation for performing the measurements.
+We included relevant code in a fork of Picto’s implementation that forces the generation of each individual view just as if a user has selected it from the user interface, and gathers these measurements in a results file.
+For both types of approaches, generation times were measured 10 times, and then the results were averaged.
+To ensure that average figures were not disproportionately affected by outliers, we also calculated the standard deviation of these times.
+The coefficient of variation, this is, the ratio of the standard deviation to the mean, was not higher than 0.005 for the single-thread batch transformation, 0.127 for the multi-thread one, and 0.164 for the individual Picto views, which indicates a low spread in the obtained results.
+The higher dispersion of the Picto times can be due to their measurement inside an Eclipse instance, as opposed to the batch transformations’ execution that happened through a standard Java process.
+Also, to prevent any inconsistencies due to low CPU states during the initial measurements, we warmed up the measuring platforms by executing initial generations whose obtained times were discarded.
+ 

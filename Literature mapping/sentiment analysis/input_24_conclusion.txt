@@ -1,0 +1,23 @@
+In this chapter, we presented an approach to bridge the gap between textual and projectional LWB.
+We defined a mapping between textual grammars and projectional meta models; this mapping (Sect. 4) produces the structure and editor aspects of a projectional language.
+Moreover, our approach allows users to reuse textual programs by means of translating them to equivalent MPS models (Sect. 4.4).
+To validate our solution, we used as a case study a Rascal grammar of JavaScript (Sect. 5).
+Based on the grammar definition, we generated a projectional version of JavaScript.
+To verify the correct mapping of the generated language, we successfully imported existing valid textual JavaScript programs into MPS.
+In Sect. 6, we discussed some of the limitations of the current approach.
+Language evolution is a crucial aspect to look at in the future.
+Since the current approach assumes that the generation is done only once, we ignore the fact that the textual language and the projectional generated version might change.
+Then we consider that keeping track of these changes and transferring/applyingthese changes to the other is essential.
+If there are changes in the grammar after the projectional language generation, developers must regenerate the whole language, which may lead to losing information (if changes were made on the generated language).
+Similarly, this applies to programs written in such languages.
+We consider that a mechanism for maintaining both versions is worth investigating as future work to keep a bidirectional mapping.
+Language engineers can switch from one platform to another without losing information.
+Our approach offers support for a unidirectional mapping from textual to projectional.
+We believe that a bidirectional communication is required.
+Because depending on the language, one may benefit more from having a textual or a projectional version of the language.
+Therefore, to support both sides’ changes, we require a bridge to create a textual language from a projectional language.
+Moreover, to complete the circle, a way of keeping track and propagating changes in both worlds will be required.
+To avoid losing or reimplementing existing features.
+As we described in Sect. 5.4, the usability of generated editors is one of the critical aspects that should be addressed in future research.
+We found that we can generate editors with limited capabilities (that do not consider domain knowledge or existing formatters).
+Therefore, we consider as future work exploring artificial intelligence techniques (e.g., machine learning or programming by example) to improve the existing editor (in the style of [26]), maybe by identifying patterns in existing programs or commonalities in the grammar’s structure to guide or to customize the generation of the editor aspect.

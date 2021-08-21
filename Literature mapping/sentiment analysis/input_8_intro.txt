@@ -1,0 +1,21 @@
+I
+INTRODUCTION It is increasingly recognized that intelligent and adaptive systems are the systems of the future [1]
+The era of static software and systems development that were the same independent of the environment is coming to an end and all application areas would need to add some ‘‘intelligence’’ that will allow them to learn and adapt as they operate and collect data
+Furthermore, data collection and processing, commonly called data analytics, are going to be part of all systems and software in the modern big data era
+In order to add ‘‘intelligence’’ to systems the most commonly used algorithms are the classification algorithms
+The current practice followed by the data scientists is to use libraries for classification algorithms such as scikit-learn, etc
+that provide python implementation code for a wide range of algorithms
+Most of the times, the data scientists are using directly the scikit-learn interfaces in order to run the algorithms and get the results
+This is a detailed and not very user-friendly process
+There is a need to abstract the use of classification algorithms at a system-level and provide an interface that would be more user-friendly and achievable for the non-data scientist user
+This need has been recognized in environments such the weka library that provide a user-friendly web interface
+However, in both the above approaches, an integrated environment where the classification algorithms would be considered at the system-level and in application context is missing
+On the other hand, recent research in software and systems engineering focuses on domain modeling and providing tools for abstracting technical implementation details and leaving the domain expert-user to handle only domainrelated information
+Domain-specific languages (DSLs) are a powerful tool for customized solutions that provide abstract and domain-specific interfaces
+In this research, we used the JetBrains MPS DSL development environment in order to develop a Classification Algorithms Framework (CAF)
+This abstracted the detailed information normally required for using the classification algorithms by offering the user a one-page interface
+Last but not least, the developed CAF can be reused in other application domains through the language modularization offered by MPS
+This can be accomplished by developing a new domain language corresponding to the application, such as a language for interfacing with business managers, medical professionals, education professionals, etc
+and then using CAF in order to perform data analysis
+A background study on related work is presented in Section II
+Specifically, we start with the definition of intelligent systems, existing research on frameworks for classification algorithms and research for system-level descriptions of intelligent systems

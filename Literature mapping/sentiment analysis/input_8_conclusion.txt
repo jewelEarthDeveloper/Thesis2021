@@ -1,0 +1,7 @@
+There is a gap in AI research, specifically in providing AI in context and at the system-level.
+Most of the research in the AI area has been focusing on algorithmic improvements and their performance.
+However, AI will have to be adopted in several different application contexts from business processes to autonomous cars.
+Domain modeling is a rising area in software and systems engineering, and in this paper, we presented its application for providing AI in context.
+We developed a new domain-specific modeling language, using the JetBrains MPS development environment, to model a Classification Algorithms Framework (CAF); this has as its main target to enable data scientists and other domain experts to perform quick, system-level and in-context experimentation of several algorithms.
+Our future plans include applying CAF in several business-related application contexts within BT and other application areas.
+In the longer term, and on more ambitious grounds, we will continue development of the language by ‘‘blurring’’ the limit between the algorithms and the domain, enabling optimal algorithm adoption in context.

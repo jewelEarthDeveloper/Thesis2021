@@ -1,0 +1,6 @@
+Projectional editing Projectional editing is another research area which investigates the use of various concrete syntaxes for editing models by displaying the different concrete syntaxes as projections.
+JetBrains MPS and MelanEE  apply this approach.
+With projectional editing, the user edits the model through a syntax-specific view or editor, which itself updates the underlying abstract syntax model and these changes are automatically reflected in other views or editors for alternative concrete syntaxes.
+The main advantage is that the model can be projected in various concrete syntaxes depending on what the user prefers.
+However, it adds a considerable overhead for the DSML developer as the user actions (i.e., keyboard, trackpad and mouse events) have to be translated into change actions on the abstract syntax tree.
+For parser-based textual DSMLs (e.g., when using Xtext), a text editor in combination with a lexer/parser combination can be used.

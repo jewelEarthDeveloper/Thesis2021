@@ -1,0 +1,39 @@
+Programmers often write toString functions to help interpret and debug code involving custom data types.
+For example, for a type of values describing numeric intervals, the string "(-∞,10]" conveys the meaning “all numbers less than or equal to 10” more succinctly than the string "Interval(NegInf(), Before(10, True))", which might be a default serialization provided by the language.
+Custom toString functions are usually straightforward to write, but what if the programmer needs not only to display the value but also edit the value as well? One idea is for the programming environment to enrich default string representations with automatically-generated, type-directed GUI widgets.
+For example, given the default representation "Interval(NegInf(), Before(10, True))", the system might render a slider for “scrubbing” 10 to different values ([1], [2]) and a widget to select NegInf() and toggle it to After(0, False).
+Ideally, however, the domain-specific representation "(-∞,10]" would be editable, not just the default representation.
+Unfortunately, creating an editable domainspecific representation of values is considerably more difficult than writing toString functions for display.
+Our Approach: Tiny Structure Editors (TSE) We design a system, called TSE, that given a toString function for a custom data type, automatically generates tiny structure editors for manipulating values of that type.
+To do so, TSE instruments the execution of the toString function applied to a value, and then overlays UI widgets on top of appropriate locations in the output string (Figure 1).
+To determine these locations, TSE employs two key technical ideas: (a) a modified string concatenation operation that preserves information about substring locations and (b) runtime dependency tracing (based on Transparent ML [3]) to relate those substrings to parts of the input value.
+We implement TSE for a simple functional language with algebraic data types (ADTs), and we discuss the tiny structure editors that TSE produces.
+Potential Applications TSE is currently a prototype, proof-of-concept tool.
+However, we believe our approach would benefit a number of emerging techniques that allow programmers to specify code via direct manipulation of program values.
+Literals in a Structure Editor.
+In structure editors—such as the Cornell Program Synthesizer [4]—and block-based editors— such as Scratch [5]—tree transformations rather than raw text edits are used to manipulate data structures (such as abstract syntax trees).
+Liberated from raw text buffers, structure editors can use domain-specific representations for display.
+For example, the Barista [6] editor for Java offers rich, custom, type-specific views for mathematical and logical expressions in code.
+But display is easier than editing: for editing, Barista falls back to ordinary textual manipulation.
+Programming by Examples (PBE).
+Given input-output examples, these systems (e.g. [7], [8]) synthesize a small program.
+Sometimes many examples are required: Myth [8] requires 20 examples to synthesize binary tree insertion.
+Providing so many examples in text form can be cumbersome.
+Direct-Manipulation Programming.
+Several tools augment text-based coding with direct manipulation of output values.
+Bidirectional programming (BX) systems allow users to edit numbers ([9], [10], [11], [12]), strings ([13], [14], [11], [12]), or lists ([12]) in the output of a program to thereby change appropriate literals in the original code.
+Compared to these BX systems, output-directed programming (ODP) systems allow the user to make larger, structural changes to the program ([15], [16], [2], [17], [18]), performing refactorings or inserting chunks of new code.
+To date, ODP systems carefully implement bespoke, domain-specific interfaces to enable selection and manipulation of the output.
+Related Work Each of the programming interactions above would benefit from an easy way to create domain-specific interfaces for custom data types.
+How do users currently input and edit program values in such systems? Parse Functions.
+Programming is largely a text-based activity; entering values via text is thus a natural interface, but requires a parser.
+Custom parsers can be integrated with a language pre-processor like Template Haskell [19] or typed literal macros [20].
+But the difficulty of writing a parser may not be worth the gain in expressiveness over the language’s default value parser.
+Our approach provides a structure editor on a domain-specific representation of a value, without the labor of writing a parser.
+These approaches could be combined: a structure editor could offer an optional text interface for bulk input, although our prototype does not yet.
+Handcrafted GUIs.
+If interaction is important, the programmer may opt to manually craft a custom graphical user interface for their data type.
+Although this effort is justifiable for common types, e.g. colors or regular expressions [21], writing a custom UI may not be worth the trouble for one-off data types.
+String Tracing.
+Some previous systems ([13], [14]) trace string operations, enabling developers to directly edit HTML output and thereby modify appropriate literal strings in the source PHP or Javascript.
+TSE also relies on tracing, but uses a more generic mechanism [3], allowing TSE to track how substrings relate to any value of interest, rather than just string literals.

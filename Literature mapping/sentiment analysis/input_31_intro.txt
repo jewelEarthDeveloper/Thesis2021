@@ -1,0 +1,82 @@
+Models are considered as the abstract descriptions of any real systems and may exist in multiple forms that each address a different aspect of systems [1–4].
+Models are created for various purposes, including the facilitated communications among different stakeholders, analyzing the correctness and completeness of the abstract system descriptions, test-case generation, and code generation [5].
+With the abstract models, practitioners can better understand complex systems, have the chance of analyzing the possible design decisions before implementation, and obtain high-quality code that is guaranteed to satisfy the design decisions.
+As Selic suggests [2], for a model to be worthwhile, it needs to possess five important characteristics.
+(1) A model needs to be abstract by focussing on a particular problem of a system and suppressing the rest of the details; (2) a model needs also to be understandable so that one can easily grasp the complex descriptions that are modeled abstractly; (3) a model needs to represent a real system in an accurate way; (4) a model may also promote the predictiveness of a real system, as models can be used to predict the quality properties of systems before building them; and, (5) a model needs to be inexpensive and one should be able to create abstract models with the least cost and effort possible.
+Models can be created via modeling languages, which can either be general-purpose or domain-specific [6].
+While general-purpose modeling languages (e.g., UML [7]) offer high-level notation sets that can be used to specify any types of systems, domain-specific modeling languages (DSMLs) offer specialized notation sets on particular domains (e.g., AADL for the embedded domain [8]).
+Modeling languages are based on meta-models, which state the language concepts and the syntactic and semantic rules that the models specified with those language concepts need to satisfy [1,9,10].
+The language syntax describes the elements that can be used for creating models and the rules to be followed in using these elements.
+On the other hand, the language semantics describes the meaning of the language elements, which can be formulated using different techniques such as operational [11], denotational [12], axiomatic [13], and algebraic semantics [14].
+A meta-model for a modeling language can be defined using the meta-modeling tools (aka language workbenches) [15].
+With the metamodeling tools, one can specify the language definitions in terms of the language syntax and semantics, build a modeling editor according to the language definitions, and even generate tools for, e.g., model analysis and code generation purposes.
+As presented in Table 1, there are various meta-modeling tools that can be used for defining the language meta-models and automatically producing the necessary modeling tools (e.g., editors and model transformation tools which support the metamodel definitions).
+The existing meta-modeling tools may vary depending on their level of support for different kinds of requirements that are concerned with the language syntax and semantics definitions, editor services, model transformation, language extensibility, model analysis and validation, and being open-source or commercial.
+1.1. Motivation and goal.
+Software modeling is essentially considered by industry as highly crucial for developing large and complex software systems, given its support for such concepts as the abstraction, separation of concerns, and early analysability of design decisions.
+Thanks to the existence of meta-modeling tools, practitioners may even develop their own domain-specific modeling languages and create models that are specific to their domain problems and develop the necessary toolset for processing the models according to their specific modeling goals.
+However, it is not yet clear as to what extent the meta-modeling tools are adopted by practitioners in different industries; and, it is still difficult to understand practitioner’s expectations from the meta-modeling tools and any challenges that practitioners face with.
+As discussed in Section 2, the literature includes several attempts at understanding practitioners’ perspectives towards modeling.
+So, one can understand, e.g., (i) the existing modeling languages, their usage frequencies in industry, their weak and strong points, (ii) practitioners’ challenges on modeling and modeling languages, (iii) the practical application of modeling in particular domains, and (iv) the analysis and comparison of a set of modeling and meta-modeling tools.
+However, there is a gap in the existing literature to understand practitioners’ perspectives towards meta-modeling.
+Although there are many metamodeling tools available in the market (see Table 1), there is no study which explores the attitudes of practitioners and when, how and why meta-modeling is used with possible challenges.
+In this paper, the goal is to understand the practitioners’ preferences among different meta-modeling tools, their expectations, and any challenges faced with.
+To achieve this, we designed and conducted a practitioner survey.
+The survey results are expected to be useful for anyone who consider developing their own DSMLs in understanding the top-used meta-modeling tools for different domains.
+Also, the tool vendors could use the survey results in learning the expectations of practitioners from the meta-modeling tools and any challenges encountered.
+In our survey study, we addressed a number of important requirements for the meta-modeling tools and intended to learn practitioners perspectives towards the meta-modeling tools in terms of those requirements.
+To determine the meta-modeling tool requirements herein, we considered Erdweg et al.’s comprehensive feature model for the meta-modeling tools [16] and extended that with further categories of requirements that we deem important after a series of pilot studies conducted with the area experts.
+In the rest of this section, we discuss each category of requirements separately, which are concerned with the meta-modeling tools’ support for (i) language definitions (notation and semantics), (ii) modeling editors, (iii) model transformation, (iv) language validation, (v) language testing, and (vi) language composability.
+1.2. Categories for meta-modeling tool requirements 
+1.2.1. Language notation 
+The language notation is concerned with models’ appearances to users.
+Languages may support such visualizations as diagrammatic, textual, tabular, trees, matrix, map, and hybrid.
+The diagrammatic visualization enables the model elements to be specified using graphical symbols.
+The textual visualization enables the model elements to be specified in terms of texts (e.g., writing code with the programming languages).
+The tabular visualization enables the model elements to be specified using a table editor that can be displayed as a table and edited by simply specifying cell values.
+The matrix-style visualization enables the model elements to be specified and edited in two axes where each cell in the matrix essentially indicates the relationships of the elements in the two axes.
+The map visualization enables the model elements to be specified with their location data and the distances among the elements are of particular importance.
+Lastly, the hybrid visualization supports multiple visualizations (e.g., textual, graphical, and tabular) that can be used for editing the same model in a synchronized way.
+1.2.2. Language semantics 
+The language semantics can be categorized as interpretative or translational.
+The interpretative semantics promotes the execution of models without performing any translations into some intermediate formats.
+The translational semantics promotes the definition of the model translations into an intermediate format that can be executed.
+The translational semantics can be either model-to-text and model-tomodel.
+The model-to-text translation is to do with defining the language semantics in terms of the rules for the translations into some structured text notation such as source-code (e.g., Java, C, C++, and PhP).
+The model-to-model translation is to do with defining the language semantics in terms of the rules for the translation into a model with a different notation set (e.g., producing entity-relationship model from a UML class diagram).
+1.2.3. Editor services 
+The editor services are concerned with the capabilities of the modeling editors that users can create using the meta-modeling tools.
+The editing mode that the meta-modeling tools support can be categorized as free-form and projectional.
+In the free-form editing, users edit a textual or graphical model that is stored persistently, and a persistent model may then be transformed into an abstract representation that can further be transformed into an executable representation.
+In the projectional editing, users may edit any projections of the model’s abstract representation that is stored persistently and transformed into an executable representation.
+Each projection may be in different formats (e.g., graphical, textual, tabular, and matrix), and unlike the free-form editing, the projections that are edited by the users are not stored persistently.
+Also, Erdweg et al. proposed in [16] many different syntactic and semantic editor services that may be interesting to the users.
+The syntactic editor services include model highlighting, navigation support, folding models, syntactic completion templates, comparing models, and auto-formatting the model appearances.
+The semantic editor services include semantic completion templates, model refactoring, error markers, live translation between model and generated code, and quick fix of the errors.
+1.2.4. Model transformation/code-generation 
+Model transformation/code-generation is concerned with the transformation technologies that are supported by the meta-modeling tools and enable to develop code generators (or model transformers) for DSMLs which can be integrated into the modeling editors for transforming models.
+Model transformation/code-generation technologies may vary depending on the features that are supported for improving the development processes of the model transformers/code-generators.
+These features include the syntactic and semantic error detections while developing the model transformers/code-generators, code templates, refactoring, integration with external programs/files, AI-based model transformation, support for scalability, debugging facilities, code folding, etc.
+1.2.5. Language validation 
+The language validation is concerned with the meta-modeling tools’ support for defining validation rules for DSMLs.
+The validation rules for a DSML may then be executed via the modeling editor produced by the meta-modeling tool so as to validate models created via the editor.
+The validation rules can be categorized as the structural and semantic validation rules.
+The structural validation rules are concerned with the structural aspects of the language definitions, such as the multiplicities of the language elements and containment relationships between them.
+The semantic validation rules are concerned with the semantical aspects of the language definitions such as name/type analysis.
+The meta-modeling tools may further offer such features as the integration with some external validation tools (e.g., formal verification tools, theorem provers, and simulation tools, and testing tools), model animation, model debugging, and automated model validations according to the user-defined or pre-defined rules.
+1.2.6. Language testing 
+The language testing is concerned with testing different aspects of the language development, including the syntax & semantics definitions, editor services, code-generation, and the validation rules, with regard to any functional and quality requirements.
+The syntax and semantics testing is to do with checking for the language definition requirements.
+This may include checking if (i) the language metamodel consists of the expected modeling elements and relationships and (ii) the syntax and semantics rules have been defined correctly and completely.
+The editor testing is to do with checking if the editor meets such quality requirements as usability and performance.
+Also, the editor testing may include checking if the editor enables to create models in accordance with the language syntax and semantics.
+The code-generator testing is to do with checking if a code-generator developed via the meta-modeling tools performs the model transformation correctly (in accordance with the transformation algorithms) and meets the quality expectations.
+The validation rules testing is to do with checking if the user-defined or pre-defined validation rules can be defined in accordance with the language requirements and then used for validating models correctly in a way that also meets the language requirements.
+1.2.7. Language composability 
+The language composability is concerned with the meta-modeling tools’ support for extending an existing language with some new features or unifying the parts of multiple languages for developing a new language.
+Just like language testing, the language composability can be considered for different aspects of the language development.
+The language syntax and semantics may be composed of the syntax and semantics of any existing languages that are stored in a repository for later re-use.
+A modeling editor can be developed by composing multiple existing tools together such as the model versioning tool, collaboration tool, validation tool, and code-generation tool.
+The model transformation/code-generation tool may be developed by re-using some transformation templates, patterns, or the existing code.
+The validation rules can be defined by re-using and modifying the existing rules or composing multiple rules together under some conditions (e.g., logical connectives).
+ 

@@ -1,0 +1,19 @@
+CONCLUSION 
+Linear text is the most widely embraced means for writing down programs.
+But, we also know that in many contexts a picture is worth a thousand words.
+Developers know this, which is why ASCII diagrams accompany many programs in comments and why type-set documentation comes with elaborate diagrams and graphics.
+Developers and their support staff create these comments and documents because they accept the idea that code is a message to some future programmer who will have to understand and modify it.
+If we wish to combine the productivity of text-oriented programming with the power of pictures, we must extend our textual programming languages with graphical syntax.
+A fixed set of graphical syntaxes or static images do not suffice, however.
+We must equip developers with the expressive power to create interactive graphics for the problems that they are working on and integrate these graphical pieces of program directly into the code.
+Concisely put, turning comments into executable code is the only way to keep comments in sync with code.
+When a developer invests energy into interactive GUI code, this effort must pay off.
+Hence a developer should be able to exploit elements of the user-interface code in interactive-syntax extensions.
+Conversely, any investment into GUI elements for an interactive-syntax extension must carry over to the actual user-interface code for a software system.
+Finally, good developers build reusable abstractions.
+In this spirit, an interactive-syntax extension mechanism must come with the power to abstract over interactive-syntax extensions with an interactive-syntax extension.
+If this is available to developers, they may soon offer complete libraries of interactive-syntax building blocks.
+Our paper presents the design, implementation, and evaluation of the first interactive-syntax extensions mechanism that mostly satisfies all of these criteria.
+While the implementation is a prototype, it is robust enough to demonstrate the broad applicability of the idea with examples from algorithms, compilers, file systems, networking, as well as some narrow domains such as circuit simulation and game program development.
+In terms of linguistics, the prototype can already accommodate interactive syntax for visual data objects, complex patterns, sophisticated templates, and meta forms.
+We consider it a promising step towards a true synthesis of text and łmovingž pictures.

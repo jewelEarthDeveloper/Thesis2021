@@ -1,0 +1,17 @@
+Summary 
+We have described the development of a domain-specific language for payroll applications at DATEV.
+The DSL reduces complexity in terms of the core domain and infrastructure dependencies ( RQ1 ), increases quality by simplifying testing, immediate feedback, and a step-wise build process ( RQ2 ), is accessible to non-expert programmer end users ( RQ3 ) and integrates with existing architectures and build pipelines, while keeping deployment options flexible ( RQ4 ).
+This way, the language helps DATEV address core business challenges including keeping track with evolving law ( C1 ), the need to develop new and innovative products faster ( C2 ) and running those on a wide variety of platforms ( C3 ).
+While not everything was smooth sailing, the DSL is now in productive use.
+Conclusions At a more general level, all involved parties agree that the goals set out for the DSL-based development process have largely been reached, as far as we can tell after a few years of development and use.
+Both the business programmers and the infrastructure developers recognize the value of separating the domain and technical concerns.
+Business programmers have been overheard saying that “we really don’t care about the technical implementation in the data center” are happy that they can implement, test and deploy (!) new functionality reliably within a single sprint, something that was not feasible before.
+The infrastructure developers are also happy because they “don’t have to care about the complexity of payroll calculation”, and that they are able to ship cross-cutting optimizations in the generated code with relative ease.
+The simple migration from JEE to Spring also drove home this benefit.
+The Future Based on the positive experience with the DSL, it will be expanded in the future.
+Currently, around 15% of the overall domain functionality has been reimplemented with the DSL, and it will take a few more years to get to 100%.
+As of now, two major extension of the scope of the DSL are currently being adressed.
+The first is data transfer to external consumers (such as government agencies) where we are working on language features to specify the respective data mappings.
+The second extension is the creation of reports and lists, where the DSL will support query and aggregation of data.
+In addition, an MPS-based DSL is also being developed by a second department of DATEV, the one that provides the service of creating and optimizing the yearly tax declarations both for companies and individual citizens in Germany.
+That language also relies on KernelF at its core and shares a few foundational extensions such as dates and temporal types, but uses different domain-specific abstractions.

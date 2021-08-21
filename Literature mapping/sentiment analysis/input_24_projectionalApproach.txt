@@ -1,0 +1,137 @@
+4 Approach: Projecting Textual Languages.
+This section presents a mechanism for enabling textual languages usage in a projectional editor by generating a projectional language from a grammar.
+In other words, the current approach translates existing textual languages into equivalent projectional languages, including both structure and editor aspects.
+Then the translation of existing textual programs into equivalent models of a generated projectional language is discussed.
+We first show a general overview of the approach.
+Then we explain a generic mapping between CFGs and the structure of a projectional language.
+Afterward, we describe the derivation of a projectional editor from a grammar; we show how to derive the editor aspect for each generated concept in the language structure.
+Finally, we explain the translation of textual programs to projectional models that conform to a generated projectional language.
+Although the current approach is implemented using Rascal and MPS, its principles can be adopted in the context of other LWBs.
+4.1 Mapping Grammars to Concept Hierarchies.
+This section contains the description of the mapping between a grammar and the structure of a projectional editor.
+The current approach analyzes a CFG, namely, production rules, nonterminal, terminal, and lexical symbols.
+To illustrate each of the concepts of the mapping, we use the grammar for the Addition language shown in Listing 1.
+Nonterminal Symbols The counterpart of a nonterminal symbol in MPS is an interface.
+An interface is a programming concept that may define the public, shared structure of a set of objects (typically described by classes).
+In MPS, interfaces are represented as concepts, and their instances are called nodes.
+In the same way that interfaces may have multiple implementations (the classes), a nonterminal is “realized” by one or more productions.
+For instance, in Listing 1, there are two nonterminals, namely, Exp and Number.
+Thus, these two nonterminals map to two interfaces with the same name in the generated projectional language.
+The definition of the Exp interface in MPS is shown in Listing 4.
+Furthermore, one additional nonterminal that we have not mentioned is the start symbol.
+Structure concepts in MPS have a property named instance can be root.
+This attribute indicates whether the concept can be used to create an AST root node [14].
+In our mapping, we take the start symbol of the grammar, and create a concept in MPS.
+This concept will have the property instance can be root set to true.
+For instance, in Listing 5, we show an example using the expression language, assuming we have a start symbol Program with a single production, prog.
+Productions A nonterminal rule has one or more productions.
+As we mentioned before, a nonterminal in a CFG is mapped to an interface concept in MPS.
+Therefore, to keep the relationship between a nonterminal and their productions, we map each production as an MPS concept.
+Each concept must implement the interface of the nonterminal.
+Moreover, the AST symbols in the production rule are mapped to either the children or the properties field.
+When the symbol is a nonterminal, it is defined in the children field, and when the symbol is terminal or a lexical, it is mapped in the properties field.
+Note that symbols that are only relevant to concrete syntax, such as keywords and operator symbols, are not mapped here, since they are not part of the abstract syntax; they will be used to define the editor aspects (see below).
+For instance, addition (Listing 1) is a production rule of the nonterminal Exp.
+This production rule is mapped into an MPS concept that implements the Exp interface.
+The resulting concept in MPS is shown in Listing 6.
+Lexicals Lexicals define the terminals of a language and are typically defined by regular expressions.
+Rascal allows full context-free lexicals, but here, we assume that all lexicals fall in the category of regular languages that can be defined by regular expressions.
+To ease the mapping between Rascal lexicals and MPS concepts, we define a Rascal module that contains a set of default lexicals.
+These lexicals define the syntax of identifiers, string literals, and integer numbers.
+Developers can use these lexicals in their Rascal grammars, but it is also possible for users to include their lexicals.
+In this case, developers must describe the mapping to MPS manually.
+Each lexical is mapped to a concept, like any other nonterminal, and a constrained data type.
+To illustrate this, Listing 1 contains Nat’s definition, which consists of a single production, called digits.
+This production rule references Natural, which is one of the predefined lexicals (Listing 2).
+As a result, the lexical Nat is translated into a concept, called digits (Listing 7), and a constrained data type, called Natural (Listing 8).
+The digits concept has a single property of type Natural, a constrained data type capable of capturing natural numbers using the regular expressions engine of MPS.
+List of Symbols In CFG, it is possible to define a group of symbols of the same type, often expressed using Kleene’s star (*) and plus (+).
+Kleene’s operators (star and plus) are unary operators for concatenating several symbols of the same type.
+The first one denotes zero or more elements, and the second one denotes one or more elements in the list.
+The current approach detects both operators (Kleene’s star and plus) in productions.
+The operators are represented in MPS as children of a concept with cardinality zero-to-many (0..*) and one-to-many (1..*), respectively.
+For instance, let us add to the language shown in Listing 1 the following production: start syntax  Exp = ... | groupExp: Exp* exps; This production defines zero or more expressions (Exp).
+The resulting mapping of the production groupExp is shown in Listing 9.
+4.2 Mapping Grammars to Editor Aspects.
+This section presents the mapping between a grammar and the editor aspect in MPS.
+For creating the editor aspect of the language, we use the language’s layout symbols, namely, literal and reference symbols.
+In this context, a reference symbol is a pointer to a nonterminal symbol (which can be lexical or context-free).
+come with the language.
+Literals Literal symbols may be part of productions to improve the readability of code or disambiguate.
+They form an essential aspect of the concrete syntax and can be leveraged to obtain projectional editors.
+To create an editor, we first take each production rule; we look at each symbol and keep track of its order.
+It is essential to keep track of the order because it affects how the editor displays the elements.
+In this process, we consider two types of symbols, namely, literals and references.
+If the symbol is a literal, it is added to the node cell layout as a placeholder text.
+Moreover, this is used to define the syntax highlighting of the resulting editor.
+The literals are displayed with a different color to show the users that they are reserved words of the language.
+As a result, the current approach offers a binary coloring scheme: keywords are blue and the remaining symbols in black.
+Instead, if it is a nonterminal symbol, we create a reference.
+For example, the production rule that defines the addition between natural numbers has three symbols: lhs, +, and rhs.
+Following the approach, we first take the lhs symbol and create a reference to its type Exp; then, we take the literal, +, and copy it to the editor, and finally, we create a reference to the rhs symbol, which is also of type Exp.
+Listing 10 shows the generated editor for addition.
+This editor has two references, namely, lhs and rhs.
+Editors use references to access concept properties.
+For instance, in the editor, the reference lhs creates a link to the lhs children in the addition concept.
+Moreover, the editor, for addition, has a literal (+) in between the two references.
+The literal is shown as a placeholder text for users to write expressions like 5+6.
+List of Symbols The editor aspect for a list of symbols (zero-to-many and oneto-many) is based on creating a collection of cells.
+More concretely, each list of symbols is translated into an indent cell collection.
+Listing 11 shows the generated editor aspect for the groupExp production.
+4.3 Editor Improvement: AST Pruning.
+Having defined a mapping from CFGs to the editor aspect in projectional languages, we will improve the generated projectional editor.
+The editor can be improved by pruning the grammar to enhance IDE services (e.g., auto-completion).
+To prune the grammar, we eliminate chain rules (also known as unary rules) from the productions.
+To eliminate the chain rules, we first collect all the productions with a single parent and are referenced once in the grammar.
+Then, we merge the single reference with its parent.
+To illustrate this process, let’s consider the following production: A → A|b|c|d Long production rules are often split into smaller production rules for readability.
+For example, a language engineer can also write the previous production as: A → A|B B → b|c|d The second alternative impacts the language’s structure because it introduces a new nonterminal B.
+This new nonterminal is translated in the AST as an extra node.
+To illustrate the difference between both versions, Fig. 3 shows a tree view of the ASTs.
+From the right-most AST in Fig. 3, we observe that node B is referenced once in the language.
+Thus, production A → B represents a chain rule.
+This chain rule is translated to the end users as an extra keystroke to access the leaf nodes b, c, d via B.
+If we remove the chain rule, we avoid creating an extra node (B) before accessing the terminals (b, c, d) in the projectional editor.
+For example, if users want to create a node b, they can call auto-complete, and they will obtain two options, A or B.
+Based on the AST shown in Fig. 3, they select to create a node B.
+However, they have not reached b yet.
+Thus, they must press tab completion again, and then they get all the options of B: b, c, and d.
+In contrast, if we prune the chain rule, meaning we remove concept B, we can omit the second tab completion because all the options will be visible from the first tab completion.
+Removing chain rules from a grammar impacts both the structure and the editor of a projectional language since removing a concept means the editor of such concept is no longer needed.
+As a result, we enhance the user’s interaction with the projectional editor by removing the chain rules.
+4.4 Translating Textual Programs into Projectional. 
+Models We extend the approach to translating existing textual programs into projectional models.
+This extension’s motivation is that we want to offer a mechanism for importing existing textual programs into the generated projectional language.
+We did not consider a manual translation because it is cumbersome, and tools can automate it.
+To this aim, we applied the same approach proposed for generating languages.
+However, instead of only using a grammar as input, it takes both the program and the grammar.
+We use the grammar for creating a parser; then, the parser creates a parse tree of the program.
+Both Rascal and MPS offer support to write and read XML files, so we define an XML schema to serialize and deserialize parse trees as XML files.
+The former acts as an intermediate representation that supports the communication between platforms.
+The current approach is implemented in Rascal and MPS.
+However, it is possible to support other platforms by implementing the XML schema (Listing 12).
+In the textual world, the schema serializes the parse tree, while in the projectional world, the projectional LWB deserializes the XML and uses it to create the projectional model.
+The current approach uses the XML file as the input of an MPS plug-in.
+The plug-in traverses the XML tree and creates a model that conforms with the generated language.
+If the translation is correct, the generated model should be a valid instance of the generated projectional language.
+4.5 Architecture The approach to bridge textual and projectional LWBs contains five components: Rascal2XML, XML2MPS, XMLImporter, ImportLanguage, and ImportProgram.
+The solution has been implemented using Rascal MPL and Jetbrains MPS.
+We consider two different architectures for the implementation of the current approach.
+The first one was based on integrating Rascal directly into MPS, including Rascal as a Java library in MPS.
+This architecture allows us to call Rascal parsers directly from MPS.
+However, this approach does not allow reusability, and this integration should be repeated for any textual LWB.
+Instead, the second architecture uses an intermediate format to communicate between a textual LWB and MPS.
+In the following paragraphs, we describe each of the components of this architecture and how they interact with each other.
+All the code is available on a GitHub repository.1 Rascal2XML This module is written in Rascal, and it is responsible for generating an XML representation of Rascal grammars and existing textual programs.
+This module produces an XML file that is used as input for the module XML2MPS.
+XML2MPS This MPS project holds the logic for generating MPS language definitions and model instances.
+It is responsible for creating MPS concepts and interfaces from an XML file.
+Both ImportLanguage and ImportProgram use this library.
+ImportLanguage This is an MPS plug-in that enables the import of languages.
+It creates the user interface (GUI) for importing a textual language.
+The GUI displays a pop-up that takes the grammar (in XML format) as input, calls the XMLImporter, and produces a projectional language.
+ImportProgram This is an MPS plug-in that enables the import of programs.
+This plug-in takes as input an XML file that contains a program, and it produces a projectional model.
+To create the projectional model, this plug-in relies on the XML importer to read the XMLFile and in XML2MPS to create the MPS nodes.
+XMLImporter This is a Java library for traversing the tree-like content of the XML files.
+This is used to map textual languages to projectional languages and translate textual programs as projectional models.

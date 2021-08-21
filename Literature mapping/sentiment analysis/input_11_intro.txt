@@ -1,0 +1,9 @@
+Being able to produce graphical views of software and system models is often desirable in model-driven engineering settings.
+Such views are useful, for example, to explore reverse-engineered models [3, 12] from different viewpoints of interest, to visualise relationships between heterogeneous models, and to facilitate presentation of text-based models to a wider audience of stakeholders [13].
+Common approaches for producing graphical representations of models include (a) implementing a graphical editor using a framework such as Sirius, GMF, or Graphiti; (b) implementing a bespoke graphical viewer using frameworks such as Zest, GEF or JavaFX; and (c) using batch model-to-text transformation to generate textual artefacts (e.g.
+Graphviz graphs, HTML pages), which can be subsequently rendered in a web browser.
+In this paper, we discuss scenarios in which the model visualisation methods above are applicable, as well as their main strengths and weaknesses.
+We then present a novel Eclipse-based framework, called Picto, for producing transient views from models conforming to different metamodels and modelling technologies, by lazily transforming them into textual formats such as Graphviz, PlantUML, SVG and HTML, which are subsequently rendered in an embedded browser.
+We demonstrate the building blocks and capabilities of Picto through a running example and we showcase how it can be used to produce non-trivial views (e.g.
+class-diagramlike, tabular, sequence-diagram-like) from heterogeneous models.
+We also evaluate the performance and scalability benefits of the lazy transformation approach employed by Picto, compared to visualisation via batch model-to-text transformation.
