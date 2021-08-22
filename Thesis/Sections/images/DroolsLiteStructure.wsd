@@ -1,0 +1,215 @@
+@startuml 
+
+    class RulesFile
+        RulesFile : String name
+        RulesFile : ImportType[] imports
+        RulesFile : Global[] globals
+        RulesFile : Rule[] rules
+
+    class Fact
+        Fact : String className
+        Fact : String classLocation?
+
+    class Global
+        Global : String variableName
+        Global : String className
+
+
+
+    RulesFile *---left- "0..n" Fact
+    RulesFile *-right- "0..n" Global
+    RulesFile *-- "0..n" Rule
+
+
+    class Rule
+        Rule : String name
+        Rule : LHS lhs
+        Rule : RHS rhs
+        Rule : AttributeCollection attributes
+        
+    class RHS
+        RHS : BaseLanguage code
+        RHS : RuleVariable[] variables
+
+    Rule *--- "0..1" LHS
+    Rule *-- "0..1" RHS
+    Rule *-- "1..1" AttributeCollection
+
+    class AttributeCollection
+        AttributeCollection : NoLoopAttribute noLoop
+        AttributeCollection : SalienceAttribute salience
+
+    class NoLoopAttribute
+        NoLoopAttribute : Boolean value
+
+    class SalienceAttribute
+        SalienceAttribute : Integer value
+
+    AttributeCollection *-up- "0..1" NoLoopAttribute 
+    AttributeCollection *-up- "0..1" SalienceAttribute 
+
+
+    class LHS
+        LHS : ConditionalElement[] conditions
+
+    LHS *-- "0..n" ConditionalElement
+
+    class ConditionalElement
+        ConditionalElement : Pattern[] 
+        ConditionalElement : LogicalOperation operation
+
+    abstract LogicalOperation
+
+    ConditionalElement *-right- "0..1" LogicalOperation
+    
+    class AndLogicalOperation
+        AndLogicalOperation : ConditionalElement lhs
+        AndLogicalOperation : ConditionalElement rhs
+
+    class OrLogicalOperation
+        OrLogicalOperation : ConditionalElement lhs
+        OrLogicalOperation : ConditionalElement rhs
+
+    class NotLogicalOperation 
+        NotLogicalOperation : ConditionalElement condition
+
+    class ExistsLogicalOperation
+        ExistsLogicalOperation : ConditionalElement condition
+
+    LogicalOperation <|-- AndLogicalOperation
+    LogicalOperation <|-up- OrLogicalOperation
+    LogicalOperation <|-up- NotLogicalOperation 
+    LogicalOperation <|-- ExistsLogicalOperation
+
+
+    class Pattern  
+        Pattern : PatternBinding binding
+        Pattern : Constraint[] constraints
+        Pattern : ExpressionTree fromSelector
+
+    ConditionalElement *-left- "0..n" Pattern
+
+    class PatternBinding
+        PatternBinding : RuleVariable variable
+        PatternBinding : Fact type
+
+    Pattern *-left- "0..1" PatternBinding
+
+    class "RuleVariable" as ruleVariable1 
+   
+    PatternBinding *-left- "0..1" ruleVariable1
+    RHS ....  ruleVariable1
+
+    PatternBinding *..up... "1..1" Fact
+
+    abstract Constraint
+
+    Pattern *-- "0..n" Constraint
+
+    class ConstraintGroup
+        ConstraintGroup : Constraint[] constraints
+        ConstraintGroup : Connective connective
+
+    ConstraintGroup *-left- "1..2" Constraint
+	ConstraintGroup -left-|> Constraint
+    
+    enum Connective
+        Connective : And
+        Connective : Or
+
+    Connective -left-* "0..1" ConstraintGroup
+
+    class FieldConstraint
+        FieldConstraint : FieldName fieldName
+        FieldConstraint : Restriction restriction
+        FieldConstraint : RuleVariable variable
+
+
+    class "RuleVariable" as ruleVariable2 
+   
+    FieldConstraint *-- "0..1" ruleVariable2
+
+    class FieldName
+
+    FieldConstraint *-- "1..1" FieldName
+
+    abstract Restriction
+    
+    FieldConstraint *-- "1..1" Restriction
+
+    class SingleValueRestriction 
+        SingleValueRestriction : OperatorType operator
+        SingleValueRestriction : RestrictionValue value
+
+    enum OperatorType
+		OperatorType : GreaterThan
+		OperatorType : GreaterThanEqual
+		OperatorType : LessThan
+		OperatorType : LessThanEquals
+		OperatorType : Equals
+		OperatorType : NotEquals
+		OperatorType : Contains
+
+    SingleValueRestriction *-left- "1..1" OperatorType
+
+    abstract RestrictionValue
+
+    SingleValueRestriction *-- "1..1" RestrictionValue
+
+    abstract LiteralRestrictionValue
+
+    class NumericLiteral
+    class DateLiteral
+    class StringLiteral
+    class BooleanLiteral
+
+    LiteralRestrictionValue <|-up- NumericLiteral
+    LiteralRestrictionValue <|-up- DateLiteral
+    LiteralRestrictionValue <|-- StringLiteral
+    LiteralRestrictionValue <|-- BooleanLiteral
+
+    class VariableRestrictionValue
+    class ReturnValueRestrictionValue
+    class QualifiedIdentifierRestrictionValue
+    
+    VariableRestrictionValue -down-|> RestrictionValue
+    ruleVariable1 .... VariableRestrictionValue
+    ruleVariable2 .... VariableRestrictionValue
+
+    RestrictionValue <|-- LiteralRestrictionValue
+    RestrictionValue <|-- ReturnValueRestrictionValue
+    RestrictionValue <|-right- QualifiedIdentifierRestrictionValue
+
+    SetMembership --left[hidden]-- VariableRestrictionValue
+
+    class CompoundValueRestriction
+        CompoundValueRestriction : SetMembership membership
+
+    abstract SetMembership
+        SetMembership : RestrictionValue[] values
+
+    CompoundValueRestriction *-- "1..1" SetMembership
+    SetMembership *-- "0..n" RestrictionValue
+
+    class InSet
+
+    InSet -left-|> SetMembership
+
+    class MultiRestriction
+        MultiRestriction : Restriction[] restrictions
+        MultiRestriction : RestrictionGroup[] groups
+
+    MultiRestriction *-left- "0..n" Restriction
+
+    class RestrictionGroup
+        RestrictionGroup : Restriction[] restrictions
+
+    MultiRestriction *-left- "0..n" RestrictionGroup
+    RestrictionGroup *-- "0..n" Restriction
+
+    Restriction <|-- SingleValueRestriction
+    Restriction <|-- CompoundValueRestriction
+    Restriction <|-- MultiRestriction
+    
+	Constraint <|-- FieldConstraint
+@enduml

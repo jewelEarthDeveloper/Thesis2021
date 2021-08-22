@@ -13,51 +13,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd0f6795-7866-4d8c-b269-3f6c9e7ba8c5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Methods/Method_Prototype.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Methods/Method_Prototype.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/main.ist" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/main.ist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/main.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/main.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/main.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/main.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/preamble.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/preamble.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/Thesis/Sections/images/ReallySimpleRule/The Really Simple Rule Language.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$12.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$13.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$14.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$15.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$15.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$16.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$16.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$17.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$17.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$18.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$18.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$19$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$19.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$19.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$20.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$20.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$21.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$21.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$22.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$22.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$23$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$23$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$23.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$23.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$24.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$24.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$5$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$5$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/behavior/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/Selected_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/Selected_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/classes_gen/Rules/Excel2/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/models/Rules.Excel2.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/models/Rules.Excel2.behavior.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/models/Rules.Excel2.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/models/Rules.Excel2.editor.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen.caches/Rules/Excel2/behavior/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen.caches/Rules/Excel2/behavior/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen.caches/Rules/Excel2/editor/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen.caches/Rules/Excel2/editor/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen.caches/Rules/Excel2/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen.caches/Rules/Excel2/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/behavior/RuleCollection__BehaviorDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/behavior/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/Selected_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/Selected_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Rules.Excel2/source_gen/Rules/Excel2/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/Rules2.sandbox/models/Rules2.sandbox.demo.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/Rules2.sandbox/models/Rules2.sandbox.demo.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/Rules2.sandbox/models/Rules2.sandbox.uva.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/Rules2.sandbox/models/Rules2.sandbox.uva.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/Rules2.sandbox/source_gen.caches/Rules2/sandbox/demo/generated" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/Rules2.sandbox/source_gen.caches/Rules2/sandbox/demo/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/Rules2.sandbox/source_gen.caches/Rules2/sandbox/uva/generated" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/Rules2.sandbox/source_gen.caches/Rules2/sandbox/uva/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../thesis questionaire 1.tscproj/thesis questionaire 1.tscproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../thesis questionaire 1.tscproj/thesis questionaire 1.tscproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +40,7 @@
         <TabState>
           <option name="title" value="Console" />
           <tab>
-            <model ref="b7d032db-ad8e-4c68-931a-ef52e7a4f3f6/r:de805eb0-d3a1-4a80-87f6-26c98f257561(TempModuleb7d032db-ad8e-4c68-931a-ef52e7a4f3f6/ConsoleModel_377740370126800)">
+            <model ref="3396833e-ae96-427c-a51a-3bb0c5b77226/r:58734b9a-732e-4d26-a730-f37abf09889d(TempModule3396833e-ae96-427c-a51a-3bb0c5b77226/ConsoleModel_581457089229600)">
               <persistence version="9" />
               <languages>
                 <devkit ref="70d3d6da-af63-483d-a75f-9c8acf8de332(jetbrains.mps.console.devkit)" />
@@ -98,11 +60,11 @@
                   <concept id="757553790980850366" name="jetbrains.mps.console.base.structure.History" flags="ng" index="3balQm" />
                 </language>
               </registry>
-              <node concept="aymSD" id="5fBkDW68HBg">
-                <node concept="3balQm" id="5fBkDW68HBh" role="aymYE" />
-                <node concept="2Clz$F" id="5fBkDW68HBi" role="aymYO" />
-                <node concept="2_V_lH" id="5fBkDW68HBj" role="1PhJh3">
-                  <ref role="2_V_lI" node="5fBkDW68HBi" resolve="CommandHolder" />
+              <node concept="aymSD" id="1AeKxgTRMYa">
+                <node concept="3balQm" id="1AeKxgTRMYb" role="aymYE" />
+                <node concept="2Clz$F" id="1AeKxgTRMYc" role="aymYO" />
+                <node concept="2_V_lH" id="1AeKxgTRMYd" role="1PhJh3">
+                  <ref role="2_V_lI" node="1AeKxgTRMYc" resolve="CommandHolder" />
                 </node>
               </node>
             </model>
@@ -320,45 +282,43 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rule" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="attibutes" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="f24ba329-52af-4b48-9e31-eeb1585d17ab" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Rules2" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="90368668-0b06-4529-a25b-a5999072a9a0(Rules.Excel2)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:3f042c12-bc5e-412d-b0b7-c8892b43090a(Rules.Excel2.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules.Excel2/models/Rules.Excel2.editor.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="90368668-0b06-4529-a25b-a5999072a9a0(Rules.Excel2)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:7b5d54b1-c1c0-45a0-a350-76ab433cdd47(Rules.Excel2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules.Excel2/models/Rules.Excel2.structure.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -386,25 +346,15 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="90368668-0b06-4529-a25b-a5999072a9a0(Rules.Excel2)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="90368668-0b06-4529-a25b-a5999072a9a0(Rules.Excel2)" />
+              <option name="myItemId" value="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.structure.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:3f042c12-bc5e-412d-b0b7-c8892b43090a(Rules.Excel2.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules.Excel2/models/Rules.Excel2.editor.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="decisionTable" />
+              <option name="myItemId" value="fact" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -418,6 +368,86 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rule" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="global" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.editor.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <SELECTED>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f24ba329-52af-4b48-9e31-eeb1585d17ab" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </SELECTED>
         </subPane>
       </pane>
       <pane id="FileSystem" />
@@ -451,9 +481,10 @@
     </default_view_options>
   </component>
   <component name="WindowStateProjectService">
-    <state x="1007" y="-1368" key="#MPSPropertiesConfigurable" timestamp="1627112864878">
-      <screen x="-1568" y="-1440" width="5120" height="1400" />
+    <state x="1054" y="-1366" key="#MPSPropertiesConfigurable" timestamp="1629662840116">
+      <screen x="-1473" y="-1440" width="5025" height="1440" />
     </state>
+    <state x="1054" y="-1366" key="#MPSPropertiesConfigurable/0.0.1280.680/-1473.-1440.5025.1440@-1473.-1440.5025.1440" timestamp="1629662840116" />
     <state x="1007" y="-1368" key="#MPSPropertiesConfigurable/0.0.1280.680/-1568.-1440.5120.1400@-1568.-1440.5120.1400" timestamp="1627112864878" />
     <state x="-611" y="-990" key="#jetbrains.mps.ide.migration.MigrationAssistantWizard" timestamp="1627123576273">
       <screen x="-1568" y="-1440" width="5120" height="1400" />

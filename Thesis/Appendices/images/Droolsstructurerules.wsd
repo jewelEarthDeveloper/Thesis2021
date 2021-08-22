@@ -1,0 +1,96 @@
+@startuml
+class Rule
+Rule : String name
+Rule : LHS lhs
+Rule : RHS rhs
+Rule : AttributeCollection attributes
+Rule : RuleVariable[] ruleVars
+
+class LHS
+LHS : Pattern[] patterns
+LHS : Comment[] comments
+
+class RuleVariable
+RuleVariable : String name
+RuleVariable : Object value
+
+
+class RHS
+RHS : BaseLanguage code
+
+Rule *-- "0..1" LHS
+Rule *-- "0..1" RHS
+Rule *--- "1..1" AttributeCollection
+Rule *-- "0..1" RuleVariable
+
+class AttributeCollection
+AttributeCollection : NoLoopAttribute noLoop
+AttributeCollection : LockOnActiveAttribute lockOnActive
+AttributeCollection : SalienceAttribute salience
+AttributeCollection : AgendaGroupAttribute agendaGroup
+AttributeCollection : AutoFocusAttribute autoFocus
+AttributeCollection : RuleflowGroupAttribute ruleflowGroup
+AttributeCollection : ActivationGroupAttribute activation
+AttributeCollection : DialectAttribute dialect
+AttributeCollection : DateEffectiveAttribute dateEffective
+AttributeCollection : DateExpiresAttribute dateExpires
+AttributeCollection : EnabledAttribute enabled
+AttributeCollection : DurationAttribute duration
+
+class NoLoopAttribute
+NoLoopAttribute : Boolean value
+
+class LockOnActiveAttribute
+LockOnActiveAttribute : Boolean value
+
+class SalienceAttribute
+SalienceAttribute : Integer value
+
+class AgendaGroupAttribute
+AgendaGroupAttribute : String value
+
+class AutoFocusAttribute
+AutoFocusAttribute : Boolean value
+
+class RuleflowGroupAttribute
+RuleflowGroupAttribute : String value
+
+class ActivationGroupAttribute
+ActivationGroupAttribute : String value
+
+class DialectAttribute 
+DialectAttribute : Dialect dialect
+
+enum Dialect
+Dialect : Java
+Dialect : MVEL
+
+DialectAttribute *-- "1..1" Dialect
+
+class DateEffectiveAttribute
+DateEffectiveAttribute : String value
+
+class DateExpiresAttribute
+DateExpiresAttribute : String value
+
+class EnabledAttribute
+EnabledAttribute : Boolean value
+
+class DurationAttribute
+DurationAttribute : long value
+
+AttributeCollection *-- "0..1" NoLoopAttribute 
+AttributeCollection *--- "0..1" LockOnActiveAttribute 
+AttributeCollection *-- "0..1" SalienceAttribute 
+AttributeCollection *--- "0..1" AgendaGroupAttribute 
+AttributeCollection *-- "0..1" AutoFocusAttribute 
+AttributeCollection *--- "0..1" RuleflowGroupAttribute 
+AttributeCollection *-- "0..1" ActivationGroupAttribute 
+AttributeCollection *-- "0..1" DialectAttribute 
+AttributeCollection *--- "0..1" DateEffectiveAttribute 
+AttributeCollection *-- "0..1" DateExpiresAttribute 
+AttributeCollection *--- "0..1" EnabledAttribute 
+AttributeCollection *-- "0..1" DurationAttribute 
+
+
+@enduml

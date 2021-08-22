@@ -1,0 +1,209 @@
+@startuml 
+    class LHS
+        LHS : ConditionalElement[] conditions
+
+    LHS *-- "0..n" ConditionalElement
+
+    class ConditionalElement
+        ConditionalElement : Pattern[] 
+        ConditionalElement : LogicalOperation operation
+
+    abstract LogicalOperation
+
+    ConditionalElement *-right- "0..1" LogicalOperation
+    
+    class AndLogicalOperation
+        AndLogicalOperation : ConditionalElement lhs
+        AndLogicalOperation : ConditionalElement rhs
+
+    class OrLogicalOperation
+        OrLogicalOperation : ConditionalElement lhs
+        OrLogicalOperation : ConditionalElement rhs
+
+    class EvalLogicalOperation
+        EvalLogicalOperation : ExpressionTree expression
+
+    class NotLogicalOperation 
+        NotLogicalOperation : ConditionalElement condition
+
+    class ExistsLogicalOperation
+        ExistsLogicalOperation : ConditionalElement condition
+
+    class ForAllLogicalOperation
+        ForAllLogicalOperation : Pattern[] conditions
+
+    class AndLogicalOperation
+
+
+    LogicalOperation <|-- AndLogicalOperation
+    LogicalOperation <|--- OrLogicalOperation
+    LogicalOperation <|-- EvalLogicalOperation
+    LogicalOperation <|--- NotLogicalOperation 
+    LogicalOperation <|-- ExistsLogicalOperation
+    LogicalOperation <|--- ForAllLogicalOperation
+
+
+    class Pattern  
+        Pattern : PatternBinding binding
+        Pattern : Constraint[] constraints
+        Pattern : Accumulator accumulator
+        Pattern : Collector collector
+        Pattern : ExpressionTree fromSelector
+
+    ConditionalElement *---- "0..n" Pattern
+
+    class Accumulator
+        Accumulator : Pattern pattern
+        Accumulator : AccumulatorFunctionType functionType
+        Accumulator : ExpressionTree function
+        Accumulator : ExpressionTree initCode
+        Accumulator : ExpressionTree actionCode
+        Accumulator : ExpressionTree reverseCode
+        Accumulator : ExpressionTree resultCode
+   
+    Pattern *-right- "0..1" Accumulator
+    Accumulator *-- "1..1" Pattern
+
+    enum AccumulatorFunctionType
+        AccumulatorFunctionType : Average
+        AccumulatorFunctionType : Minimum
+        AccumulatorFunctionType : Maximum
+        AccumulatorFunctionType : Count
+        AccumulatorFunctionType : Sum
+        
+    Accumulator *-right- "0..1" AccumulatorFunctionType
+
+    class Collector
+        Collector : Pattern pattern
+
+    Pattern *-- "0..1" Collector
+    
+
+    class PatternBinding
+        PatternBinding : RuleVariable variable
+        PatternBinding : PatternType type
+
+    Pattern *-left- "0..1" PatternBinding
+
+    class RuleVariable <<ref parent rule>>
+   
+    PatternBinding *-- "0..1" RuleVariable
+
+    class PatternType <<ref imported libs>>
+
+    PatternBinding *-- "1..1" PatternType
+
+    abstract Constraint
+
+    Pattern *-- "0..n" Constraint
+
+    class ConstraintGroup
+        ConstraintGroup : Constraint[] constraints
+        ConstraintGroup : Connective connective
+
+    ConstraintGroup *-- "1..2" Constraint
+    
+    enum Connective
+        Connective : And
+        Connective : Or
+
+    ConstraintGroup *-- "0..1" Connective
+        
+    class InlineEval
+        InlineEval : BaseLanguage predicate
+
+    class FieldConstraint
+        FieldConstraint : FieldName fieldName
+        FieldConstraint : Restriction
+
+    class FieldName
+
+    FieldConstraint *-- "1..1" FieldName
+
+    abstract Restriction
+    
+    FieldConstraint *-- "1..1" Restriction
+
+    class SingleValueRestriction 
+        SingleValueRestriction : OperatorType operator
+        SingleValueRestriction : RestrictionValue value
+
+    enum OperatorType
+		OperatorType : GreaterThan
+		OperatorType : GreaterThanEqual
+		OperatorType : LessThan
+		OperatorType : LessThanEquals
+		OperatorType : Equals
+		OperatorType : NotEquals
+		OperatorType : Contains
+		OperatorType : NotContains
+		OperatorType : MemberOf
+		OperatorType : NotMemberOf
+		OperatorType : Matches
+		OperatorType : SoundsLike
+		OperatorType : StringStartsWith
+		OperatorType : StringEndsWith
+		OperatorType : StringLength
+
+    SingleValueRestriction *-- "1..1" OperatorType
+
+    abstract RestrictionValue
+
+    SingleValueRestriction *-- "1..1" RestrictionValue
+
+    abstract LiteralRestrictionValue
+
+    class NumericLiteral
+    class DateLiteral
+    class StringLiteral
+    class BooleanLiteral
+
+    LiteralRestrictionValue <|-- NumericLiteral
+    LiteralRestrictionValue <|--- DateLiteral
+    LiteralRestrictionValue <|-- StringLiteral
+    LiteralRestrictionValue <|--- BooleanLiteral
+
+    class VariableRestrictionValue
+    class ReturnValueRestrictionValue
+    class QualifiedIdentifierRestrictionValue
+
+    RestrictionValue <|-- LiteralRestrictionValue
+    RestrictionValue <|--- VariableRestrictionValue
+    RestrictionValue <|-- ReturnValueRestrictionValue
+    RestrictionValue <|--- QualifiedIdentifierRestrictionValue
+
+    class CompoundValueRestriction
+        CompoundValueRestriction : SetMembership membership
+
+    abstract SetMembership
+        SetMembership : RestrictionValue[] values
+
+    CompoundValueRestriction *-- "1..1" SetMembership
+    SetMembership *-- "0..n" RestrictionValue
+
+    class InSet
+    class OutSet
+
+    SetMembership <|-- InSet
+    SetMembership <|-- OutSet
+
+    class MultiRestriction
+        MultiRestriction : Restriction[] restrictions
+        MultiRestriction : RestrictionGroup[] groups
+
+    MultiRestriction *-- "0..n" Restriction
+
+    class RestrictionGroup
+        RestrictionGroup : Restriction[] restrictions
+
+    MultiRestriction *-- "0..n" RestrictionGroup
+    RestrictionGroup *-- "0..n" Restriction
+
+    Restriction <|-- SingleValueRestriction
+    Restriction <|-- CompoundValueRestriction
+    Restriction <|-- MultiRestriction
+    
+	Constraint <|-- ConstraintGroup
+	Constraint <|-- FieldConstraint
+	Constraint <|-- InlineEval
+@enduml

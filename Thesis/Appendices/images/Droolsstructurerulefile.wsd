@@ -1,0 +1,104 @@
+@startuml
+    class RulesFile
+        RulesFile : String name
+        RulesFile : Package package
+        RulesFile : Import[] imports
+        RulesFile : Global[] globals
+        RulesFile : Function[] functions
+        RulesFile : TypeDeclaration[] typeDeclaraions
+        RulesFile : Query[] queries
+        RulesFile : Rule[] rules
+        RulesFile : Comment[] comments
+
+
+    abstract Comment
+        Comment : String text
+
+    class SingleLineComment
+
+    class MultiLineComment
+
+    Comment <|-- SingleLineComment
+    Comment <|-- MultiLineComment
+    RulesFile *-right--- "0..n" Comment
+
+    class Package
+        Package : String namespace
+
+    class Import
+        Import : String className
+        Import : String classLocation?
+
+    class Global
+        Global : String variableName
+        Global : String className
+
+    class Function
+        Function : String name
+        Function : Type returnType
+        Function : String documentation
+        Function : FunctionParameter[] params
+        Function : RHS code
+
+    class FunctionParameter
+        FunctionParameter : Type Type
+        FunctionParameter : String name
+
+    Function *-- "0..n" FunctionParameter
+    Function *-- "1..1" RHS
+
+    class TypeDeclaration
+        TypeDeclaration : TypeDeclaration extends
+        TypeDeclaration : TypeProperty[] typeProperties
+        TypeDeclaration : MetaData[] metadata
+
+    class TypeProperty
+        TypeProperty : Type Type
+        TypeProperty : String name
+        TypeProperty : Metadata[] metadata
+
+    class MetaData
+        MetaData : name
+        MetaData : value
+
+    TypeDeclaration *-- "0..1" TypeDeclaration
+    TypeDeclaration *-- "0..n" TypeProperty
+    TypeDeclaration *-- "0..n" MetaData
+    TypeProperty *-- "0..n" MetaData
+
+    class Query
+        Query : String name
+        Query : QueryParameter[] params
+        Query : LHS query
+
+    class QueryParameter
+        QueryParameter : Type Type
+        QueryParameter : String name
+
+    Query *-- "0..n" QueryParameter
+    Query *-- "1..1" LHS
+
+    class Rule
+        Rule : LHS lhs
+        Rule : RHS rhs
+        Rule : AttributeCollection attributes
+
+    class LHS
+
+    class RHS
+
+    class AttributeCollection
+
+    Rule *-- "0..1" LHS
+    Rule *-- "0..1" RHS
+    Rule *--- "1..1" AttributeCollection
+
+    RulesFile *-- "1" Package
+    RulesFile *-- "0..n" Import
+    RulesFile *-- "0..n" Global
+    RulesFile *-- "0..n" Function
+    RulesFile *-- "0..n" TypeDeclaration
+    RulesFile *-- "0..n" Query
+    RulesFile *-- "0..n" Rule
+
+@enduml
