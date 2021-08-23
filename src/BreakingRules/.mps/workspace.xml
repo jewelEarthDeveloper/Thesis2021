@@ -13,11 +13,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd0f6795-7866-4d8c-b269-3f6c9e7ba8c5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Thesis/Appendices/DroolsConceptStructure.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Appendices/DroolsConceptStructure.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Methods/Method_Prototype.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Methods/Method_Prototype.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Thesis/main.ist" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/main.ist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Thesis/main.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/main.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/Rules2.sandbox/models/Rules2.sandbox.uva.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/Rules2.sandbox/models/Rules2.sandbox.uva.mps" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,19 +261,29 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="f24ba329-52af-4b48-9e31-eeb1585d17ab" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Rules2" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:03cbcdc4-5041-4fbf-9f16-e99392f59dec(Rules2.sandbox.uva) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/solutions/Rules2.sandbox/models/Rules2.sandbox.uva.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.structure.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rule" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="when" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -296,25 +305,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="when" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="selector" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.editor.mps]" />
+              <option name="myItemId" value="then" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -325,6 +316,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="f24ba329-52af-4b48-9e31-eeb1585d17ab" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Rules2" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -357,6 +352,14 @@
               <option name="myItemId" value="constraint" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="restriction" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="7692915210159380110" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -373,6 +376,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="rule" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="when" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -416,17 +423,19 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="condition" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
+              <option name="myItemId" value="selector" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
+              <option name="myItemId" value="constraint" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="restriction" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="literal" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -447,16 +456,6 @@
               <option name="myItemId" value="rule" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="then" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -464,15 +463,11 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.structure.mps]" />
+              <option name="myItemId" value="f24ba329-52af-4b48-9e31-eeb1585d17ab" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
-          <SELECTED>
+          <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Project" />
               <option name="myItemType" value="" />
@@ -502,7 +497,153 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="9086333424242394543" />
+              <option name="myItemId" value="restriction" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="operator" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rule" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="when" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="selector" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constraint" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rule" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="when" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="selector" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constraint" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="restriction" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.editor.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rule" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="when" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="selector" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <SELECTED>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f24ba329-52af-4b48-9e31-eeb1585d17ab" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Rules2" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:03cbcdc4-5041-4fbf-9f16-e99392f59dec(Rules2.sandbox.uva) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/solutions/Rules2.sandbox/models/Rules2.sandbox.uva.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="6045891867728189928" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </SELECTED>
@@ -533,7 +674,528 @@
   </component>
   <component name="UsagesViewTool">
     <version id="1" />
-    <tabs />
+    <tabs>
+      <tab>
+        <result_provider class_name="jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.UnionNode">
+          <child rpn="jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.FinderNode">
+            <generated_finder class_name="jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder" />
+          </child>
+        </result_provider>
+        <query>
+          <scope scope_class="jetbrains.mps.ide.findusages.model.scopes.ProjectScope" />
+          <holder holder_class="jetbrains.mps.ide.findusages.model.holders.NodeHolder">
+            <node ref="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure)/5163961811780455729" title="FactSelector" />
+          </holder>
+        </query>
+        <usage_view>
+          <tree_wrapper>
+            <view_options>
+              <options category_option="false" module_option="true" model_option="true" root_option="true" path_option="false" count_option="true" info_option="true" view_searched_nodes_option="true" group_searched_nodes_option="true" autoscroll_option="false" />
+            </view_options>
+            <contents caption="" excluded="false" isresult="false" results_section="false">
+              <role name="main root" />
+              <child caption="Searched nodes" excluded="false" isresult="false" results_section="false">
+                <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.SearchedNodesNodeData" />
+                <role name="searched nodes" />
+                <child caption="Searched nodes" excluded="false" isresult="false" results_section="false" category="Searched nodes" category_kind="Category">
+                  <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" />
+                  <role name="category:Category" />
+                  <child caption="Rules2" excluded="false" isresult="false" results_section="false" module_ref="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)">
+                    <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" />
+                    <role name="module" />
+                    <child caption="Rules2.structure" excluded="false" isresult="false" results_section="false">
+                      <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
+                      <role name="model" />
+                      <child caption="FactSelector" info="" excluded="false" isresult="true" results_section="false" nodePtr="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure)/5163961811780455729" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="target" />
+                      </child>
+                      <model uid="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure)" />
+                    </child>
+                  </child>
+                </child>
+              </child>
+              <child caption="Usages" excluded="false" isresult="false" results_section="true">
+                <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ResultsNodeData" />
+                <role name="results" />
+                <child caption="Node Usages" excluded="false" isresult="false" results_section="true" category="Node Usages" category_kind="Category">
+                  <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" />
+                  <role name="category:Category" />
+                  <child caption="Rules2" excluded="false" isresult="false" results_section="true" module_ref="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)">
+                    <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" />
+                    <role name="module" />
+                    <child caption="Rules2.structure" excluded="false" isresult="false" results_section="true">
+                      <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
+                      <role name="model" />
+                      <child caption="AbstractUnaryCondition" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure)/5163961811780455726" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="selector" info="(role: linkDeclaration in: AbstractUnaryCondition)" excluded="false" isresult="true" results_section="true" nodePtr="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure)/5163961811780455727">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="target" />
+                        </child>
+                      </child>
+                      <model uid="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure)" />
+                    </child>
+                    <child caption="Rules2.editor" excluded="false" isresult="false" results_section="true">
+                      <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
+                      <role name="model" />
+                      <child caption="ExistsCondition_SubstituteMenu" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor)/9086333424237758569" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="selector" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor)/9086333424237758770">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="node&lt;FactSelector&gt;" info="(role: type in: selector)" excluded="false" isresult="true" results_section="true" nodePtr="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor)/9086333424237758766">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                          <child caption="node&lt;FactSelector&gt;" info="(role: createdType in: node&lt;&gt;)" excluded="false" isresult="true" results_section="true" nodePtr="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor)/9086333424237759000">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                        </child>
+                      </child>
+                      <child caption="FactImportedRef_TransformationMenu" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor)/7692915210156403082" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="ifInstanceOf" info="(role: statement in: StatementList)" excluded="false" isresult="true" results_section="true" nodePtr="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor)/7692915210156411178">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="target" />
+                        </child>
+                        <child caption="FactSelector" info="(role: conceptArgument in: :)" excluded="false" isresult="true" results_section="true" nodePtr="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor)/7692915210156407798">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="target" />
+                        </child>
+                      </child>
+                      <child caption="FactSelector_Editor" info="" excluded="false" isresult="true" results_section="true" nodePtr="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor)/9086333424237700932" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="target" />
+                      </child>
+                      <model uid="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor)" />
+                    </child>
+                    <child caption="Rules2.constraints" excluded="false" isresult="false" results_section="true">
+                      <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
+                      <role name="model" />
+                      <child caption="FactProperty_Constraints" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:cd99c5ca-56d1-4bfb-b04f-f913c9184b5d(Rules2.constraints)/9086333424238153806" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="FactSelector" info="(role: conceptArgument in: concept)" excluded="false" isresult="true" results_section="true" nodePtr="r:cd99c5ca-56d1-4bfb-b04f-f913c9184b5d(Rules2.constraints)/9086333424238156441">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="target" />
+                        </child>
+                        <child caption="factSelector" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:cd99c5ca-56d1-4bfb-b04f-f913c9184b5d(Rules2.constraints)/9086333424241481433">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="node&lt;FactSelector&gt;" info="(role: type in: factSelector)" excluded="false" isresult="true" results_section="true" nodePtr="r:cd99c5ca-56d1-4bfb-b04f-f913c9184b5d(Rules2.constraints)/9086333424241481196">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                          <child caption="FactSelector" info="(role: conceptArgument in: concept)" excluded="false" isresult="true" results_section="true" nodePtr="r:cd99c5ca-56d1-4bfb-b04f-f913c9184b5d(Rules2.constraints)/9086333424241481438">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                        </child>
+                      </child>
+                      <model uid="r:cd99c5ca-56d1-4bfb-b04f-f913c9184b5d(Rules2.constraints)" />
+                    </child>
+                    <child caption="Rules2.behavior" excluded="false" isresult="false" results_section="true">
+                      <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
+                      <role name="model" />
+                      <child caption="RuleStatement_Behavior" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:6108e2d3-6753-4663-a9ea-b677a866de71(Rules2.behavior)/9086333424241908888" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="nthSelectorOfFact(node&lt;FactImportStatement&gt;,int):node&lt;FactSelector&gt;" info="(role: method in: RuleStatement_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:6108e2d3-6753-4663-a9ea-b677a866de71(Rules2.behavior)/4593171954177645636">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="node&lt;FactSelector&gt;" info="(role: returnType in: nthSelectorOfFact(node&lt;FactImportStatement&gt;,int):node&lt;FactSelector&gt;)" excluded="false" isresult="true" results_section="true" nodePtr="r:6108e2d3-6753-4663-a9ea-b677a866de71(Rules2.behavior)/4593171954177646581">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                          <child caption="selectors" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:6108e2d3-6753-4663-a9ea-b677a866de71(Rules2.behavior)/4593171954177680265">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="root to target" />
+                            <child caption="node&lt;FactSelector&gt;" info="(role: elementType in: sequence&lt;node&lt;FactSelector&gt;&gt;)" excluded="false" isresult="true" results_section="true" nodePtr="r:6108e2d3-6753-4663-a9ea-b677a866de71(Rules2.behavior)/4593171954177679946">
+                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                              <role name="target" />
+                            </child>
+                            <child caption="FactSelector" info="(role: conceptArgument in: concept)" excluded="false" isresult="true" results_section="true" nodePtr="r:6108e2d3-6753-4663-a9ea-b677a866de71(Rules2.behavior)/7021565346285543563">
+                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                              <role name="target" />
+                            </child>
+                          </child>
+                        </child>
+                        <child caption="nthSelectorOfProperty(node&lt;InstanceMethodDeclaration&gt;,int):node&lt;FactSelector&gt;" info="(role: method in: RuleStatement_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:6108e2d3-6753-4663-a9ea-b677a866de71(Rules2.behavior)/4593171954177907196">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="node&lt;FactSelector&gt;" info="(role: returnType in: nthSelectorOfProperty(node&lt;InstanceMethodDeclaration&gt;,int):node&lt;FactSelector&gt;)" excluded="false" isresult="true" results_section="true" nodePtr="r:6108e2d3-6753-4663-a9ea-b677a866de71(Rules2.behavior)/4593171954177908276">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                          <child caption="selectors" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:6108e2d3-6753-4663-a9ea-b677a866de71(Rules2.behavior)/4593171954177943233">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="root to target" />
+                            <child caption="node&lt;FactSelector&gt;" info="(role: elementType in: sequence&lt;node&lt;FactSelector&gt;&gt;)" excluded="false" isresult="true" results_section="true" nodePtr="r:6108e2d3-6753-4663-a9ea-b677a866de71(Rules2.behavior)/4593171954177943235">
+                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                              <role name="target" />
+                            </child>
+                            <child caption="FactSelector" info="(role: conceptArgument in: concept)" excluded="false" isresult="true" results_section="true" nodePtr="r:6108e2d3-6753-4663-a9ea-b677a866de71(Rules2.behavior)/7021565346285547483">
+                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                              <role name="target" />
+                            </child>
+                          </child>
+                        </child>
+                      </child>
+                      <child caption="RuleVariable_Behavior" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:6108e2d3-6753-4663-a9ea-b677a866de71(Rules2.behavior)/2325666238752451359" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="getMethods():sequence&lt;node&lt;InstanceMethodDeclaration&gt;&gt;" info="(role: method in: RuleVariable_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:6108e2d3-6753-4663-a9ea-b677a866de71(Rules2.behavior)/2325666238752451370">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="ifInstanceOf" info="(role: statement in: StatementList)" excluded="false" isresult="true" results_section="true" nodePtr="r:6108e2d3-6753-4663-a9ea-b677a866de71(Rules2.behavior)/2325666238752451560">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                        </child>
+                      </child>
+                      <child caption="VariableRestrictionValue_Behavior" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:6108e2d3-6753-4663-a9ea-b677a866de71(Rules2.behavior)/8035805630156312553" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="toString():String" info="(role: method in: VariableRestrictionValue_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:6108e2d3-6753-4663-a9ea-b677a866de71(Rules2.behavior)/8035805630156312564">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="FactSelector" info="(role: conceptArgument in: :)" excluded="false" isresult="true" results_section="true" nodePtr="r:6108e2d3-6753-4663-a9ea-b677a866de71(Rules2.behavior)/8035805630156319766">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                        </child>
+                      </child>
+                      <model uid="r:6108e2d3-6753-4663-a9ea-b677a866de71(Rules2.behavior)" />
+                    </child>
+                    <child caption="Rules2.intentions" excluded="false" isresult="false" results_section="true">
+                      <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
+                      <role name="model" />
+                      <child caption="addFromSelector" info="" excluded="false" isresult="true" results_section="true" nodePtr="r:fc8eb3b1-9b3c-4a54-8969-750af517f14c(Rules2.intentions)/2325666238753057114" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="target" />
+                      </child>
+                      <child caption="addVariableToSelector" info="" excluded="false" isresult="true" results_section="true" nodePtr="r:fc8eb3b1-9b3c-4a54-8969-750af517f14c(Rules2.intentions)/9086333424237936646" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="target" />
+                      </child>
+                      <model uid="r:fc8eb3b1-9b3c-4a54-8969-750af517f14c(Rules2.intentions)" />
+                    </child>
+                  </child>
+                  <child caption="Rules.Excel2" excluded="false" isresult="false" results_section="true" module_ref="90368668-0b06-4529-a25b-a5999072a9a0(Rules.Excel2)">
+                    <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" />
+                    <role name="module" />
+                    <child caption="Rules.Excel2.intentions" excluded="false" isresult="false" results_section="true">
+                      <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
+                      <role name="model" />
+                      <child caption="GridUtil" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/4305053639646528467" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="getSelectorFromLocation(EditorContext,node&lt;RuleCollection&gt;):node&lt;FactSelector&gt;" info="(role: member in: GridUtil)" excluded="false" isresult="false" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/4305053639648102993">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="selector" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/4305053639648189731">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="root to target" />
+                            <child caption="node&lt;FactSelector&gt;" info="(role: type in: selector)" excluded="false" isresult="true" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/4305053639648189410">
+                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                              <role name="target" />
+                            </child>
+                            <child caption="FactSelector" info="(role: conceptArgument in: concept)" excluded="false" isresult="true" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/4305053639648189740">
+                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                              <role name="target" />
+                            </child>
+                          </child>
+                          <child caption="node&lt;FactSelector&gt;" info="(role: returnType in: getSelectorFromLocation(EditorContext,node&lt;RuleCollection&gt;):node&lt;FactSelector&gt;)" excluded="false" isresult="true" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/4305053639648103425">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                        </child>
+                        <child caption="isExistingPropertyCell(EditorContext,node&lt;RuleCollection&gt;):boolean" info="(role: member in: GridUtil)" excluded="false" isresult="false" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/6100895867821613480">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="selector" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/6100895867821644540">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="root to target" />
+                            <child caption="node&lt;FactSelector&gt;" info="(role: type in: selector)" excluded="false" isresult="true" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/6100895867821644060">
+                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                              <role name="target" />
+                            </child>
+                          </child>
+                        </child>
+                      </child>
+                      <child caption="addFactToRule" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/7407138175576081789" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="selector" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/6536733596094555430">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="node&lt;FactSelector&gt;" info="(role: type in: selector)" excluded="false" isresult="true" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/6536733596094555069">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                        </child>
+                      </child>
+                      <child caption="addFieldConstraint" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/7407138175576120503" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="factSelector" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/4305053639648085543">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="node&lt;FactSelector&gt;" info="(role: type in: factSelector)" excluded="false" isresult="true" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/4305053639648085544">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                        </child>
+                        <child caption="selector" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/4305053639648223921">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="node&lt;FactSelector&gt;" info="(role: type in: selector)" excluded="false" isresult="true" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/4305053639648223795">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                          <child caption="set new" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/4305053639648223926">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                        </child>
+                      </child>
+                      <child caption="addNewSelectorOfFact" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/4305053639648498712" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="selector" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/4305053639648540800">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="node&lt;FactSelector&gt;" info="(role: type in: selector)" excluded="false" isresult="true" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/4305053639648540674">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                          <child caption="set new" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/4305053639648540805">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                        </child>
+                      </child>
+                      <child caption="removeFactFromRule" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/6100895867820166069" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="factSelector" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/6100895867821013295">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="node&lt;FactSelector&gt;" info="(role: type in: factSelector)" excluded="false" isresult="true" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/6100895867821013296">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                        </child>
+                      </child>
+                      <child caption="removePropertyFromSelector" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/6100895867821152236" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="selector" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/6100895867821931258">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="node&lt;FactSelector&gt;" info="(role: type in: selector)" excluded="false" isresult="true" results_section="true" nodePtr="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)/6100895867821931232">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                        </child>
+                      </child>
+                      <model uid="r:1f63b933-8ede-4bca-9a6e-1de36517d195(Rules.Excel2.intentions)" />
+                    </child>
+                    <child caption="Rules.Excel2.behavior" excluded="false" isresult="false" results_section="true">
+                      <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
+                      <role name="model" />
+                      <child caption="RuleCollection_Behavior" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/7021565346285139422" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="getDecisionTableCell(node&lt;RuleStatement&gt;,int):node&lt;&gt;" info="(role: method in: RuleCollection_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/8035805630165513475">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="FactSelector" info="(role: conceptArgument in: concept)" excluded="false" isresult="true" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/5959005299089758624">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                        </child>
+                        <child caption="getDecisionTableHeaders():sequence&lt;HeaderValue&gt;" info="(role: method in: RuleCollection_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/8035805630155444916">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="fs" info="(role: variable in: for)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6045891867725042500">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="root to target" />
+                            <child caption="node&lt;FactSelector&gt;" info="(role: type in: fs)" excluded="false" isresult="true" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6045891867725042504">
+                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                              <role name="target" />
+                            </child>
+                          </child>
+                          <child caption="FactSelector" info="(role: conceptArgument in: concept)" excluded="false" isresult="true" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6045891867725042517">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                          <child caption="headers" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/8035805630157269841">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="root to target" />
+                            <child caption="selectors" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/8035805630157269850">
+                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                              <role name="root to target" />
+                              <child caption="nlist&lt;FactSelector&gt;" info="(role: type in: selectors)" excluded="false" isresult="true" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/8035805630157269851">
+                                <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                                <role name="target" />
+                              </child>
+                              <child caption="FactSelector" info="(role: conceptArgument in: concept)" excluded="false" isresult="true" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/8035805630157269856">
+                                <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                                <role name="target" />
+                              </child>
+                            </child>
+                          </child>
+                        </child>
+                        <child caption="headers(node&lt;FactSelector&gt;):sequence&lt;HeaderValue&gt;" info="(role: method in: RuleCollection_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/8035805630156783176">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="selector" info="(role: parameter in: headers(node&lt;FactSelector&gt;):sequence&lt;HeaderValue&gt;)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/8035805630156791084">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="root to target" />
+                            <child caption="node&lt;FactSelector&gt;" info="(role: type in: selector)" excluded="false" isresult="true" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/8035805630156791083">
+                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                              <role name="target" />
+                            </child>
+                          </child>
+                        </child>
+                        <child caption="propCountForFact(node&lt;FactImportStatement&gt;):int" info="(role: method in: RuleCollection_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/7021565346285236566">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="FactSelector" info="(role: conceptArgument in: concept)" excluded="false" isresult="true" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/7021565346285266245">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                        </child>
+                        <child caption="propsFromFact(node&lt;FactImportStatement&gt;):sequence&lt;node&lt;InstanceMethodDeclaration&gt;&gt;" info="(role: method in: RuleCollection_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/7021565346285387800">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="FactSelector" info="(role: conceptArgument in: concept)" excluded="false" isresult="true" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/7021565346285418632">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                        </child>
+                        <child caption="cellWithPropertyWithoutRestiction(node&lt;RuleStatement&gt;,int,int):boolean" info="(role: method in: RuleCollection_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/4305053639644179394">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="selector" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/4305053639644380789">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="root to target" />
+                            <child caption="node&lt;FactSelector&gt;" info="(role: type in: selector)" excluded="false" isresult="true" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/4305053639644380610">
+                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                              <role name="target" />
+                            </child>
+                          </child>
+                        </child>
+                        <child caption="createSubstituteInfo(EditorContext,node&lt;RuleStatement&gt;,int,int):SubstituteInfo" info="(role: method in: RuleCollection_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596088037010">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="factSelector" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596088175728">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="root to target" />
+                            <child caption="node&lt;FactSelector&gt;" info="(role: type in: factSelector)" excluded="false" isresult="true" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596088174063">
+                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                              <role name="target" />
+                            </child>
+                          </child>
+                          <child caption="substituter" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596093152805">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="root to target" />
+                            <child caption="NodeSubstituter$anonymous" info="(role: cls in: anonymous class)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596093152809">
+                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                              <role name="root to target" />
+                              <child caption="substituteNode(node&lt;RuleVariable&gt;,node&lt;RuleVariable&gt;):node&lt;&gt;" info="(role: member in: NodeSubstituter$anonymous)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596093152811">
+                                <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                                <role name="root to target" />
+                                <child caption="selector" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/7021565346285701942">
+                                  <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                                  <role name="root to target" />
+                                  <child caption="node&lt;FactSelector&gt;" info="(role: type in: selector)" excluded="false" isresult="true" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/7021565346285701499">
+                                    <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                                    <role name="target" />
+                                  </child>
+                                  <child caption="set new" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/7021565346285701947">
+                                    <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                                    <role name="target" />
+                                  </child>
+                                </child>
+                              </child>
+                            </child>
+                          </child>
+                          <child caption="factSelector" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596093577856">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="root to target" />
+                            <child caption="node&lt;FactSelector&gt;" info="(role: type in: factSelector)" excluded="false" isresult="true" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596093577857">
+                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                              <role name="target" />
+                            </child>
+                          </child>
+                          <child caption="substituter" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596093577931">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="root to target" />
+                            <child caption="NodeSubstituter$anonymous" info="(role: cls in: anonymous class)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596093577935">
+                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                              <role name="root to target" />
+                              <child caption="substituteNode(node&lt;Restriction&gt;,node&lt;Restriction&gt;):node&lt;&gt;" info="(role: member in: NodeSubstituter$anonymous)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/6536733596093577937">
+                                <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                                <role name="root to target" />
+                                <child caption="selector" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/7021565346285878057">
+                                  <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                                  <role name="root to target" />
+                                  <child caption="node&lt;FactSelector&gt;" info="(role: type in: selector)" excluded="false" isresult="true" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/7021565346285877667">
+                                    <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                                    <role name="target" />
+                                  </child>
+                                  <child caption="set new" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)/7021565346285878062">
+                                    <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                                    <role name="target" />
+                                  </child>
+                                </child>
+                              </child>
+                            </child>
+                          </child>
+                        </child>
+                      </child>
+                      <model uid="r:5b97f236-18a1-4d75-950b-927699ddc5b6(Rules.Excel2.behavior)" />
+                    </child>
+                    <child caption="Rules.Excel2.editor" excluded="false" isresult="false" results_section="true">
+                      <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
+                      <role name="model" />
+                      <child caption="ec_decisionTable" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:3f042c12-bc5e-412d-b0b7-c8892b43090a(Rules.Excel2.editor)/8035805630161127797" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="ifInstanceOf" info="(role: statement in: StatementList)" excluded="false" isresult="true" results_section="true" nodePtr="r:3f042c12-bc5e-412d-b0b7-c8892b43090a(Rules.Excel2.editor)/5959005299089370800">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="target" />
+                        </child>
+                        <child caption="selector" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:3f042c12-bc5e-412d-b0b7-c8892b43090a(Rules.Excel2.editor)/5959005299089394305">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="node&lt;FactSelector&gt;" info="(role: type in: selector)" excluded="false" isresult="true" results_section="true" nodePtr="r:3f042c12-bc5e-412d-b0b7-c8892b43090a(Rules.Excel2.editor)/5959005299089394300">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                          <child caption="FactSelector" info="(role: conceptArgument in: concept)" excluded="false" isresult="true" results_section="true" nodePtr="r:3f042c12-bc5e-412d-b0b7-c8892b43090a(Rules.Excel2.editor)/5959005299089397733">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                        </child>
+                      </child>
+                      <model uid="r:3f042c12-bc5e-412d-b0b7-c8892b43090a(Rules.Excel2.editor)" />
+                    </child>
+                  </child>
+                </child>
+              </child>
+            </contents>
+          </tree_wrapper>
+        </usage_view>
+      </tab>
+    </tabs>
     <default_view_options>
       <options category_option="false" module_option="true" model_option="true" root_option="true" path_option="false" count_option="true" info_option="true" view_searched_nodes_option="true" group_searched_nodes_option="true" autoscroll_option="false" />
     </default_view_options>
