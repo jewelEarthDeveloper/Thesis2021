@@ -110,8 +110,11 @@ Secondly, our projections would have to be validated by developers with Drools e
 For this reason we needed to create a projectional language that was much closer to the Drools language.
 
 Our next Language, Drools-Lite, contains many more of the features of Drools.
-The preliminary design is shown in figure \ref{fig:DroolsLiteDiagram}.
-
+Our method of selecting the features was to implement the examples that are delivered with Drools (including the corrupt politician example shown in section \ref{section:WhatIsDrools}).
+We would implement just enough features to complete the examples.
+Whenever we had any queries about how to design the concepts we referred to our analysis of the Drools Language, shown in appendix \ref{appendix:DroolsConceptHierarchy}.
+The preliminary design we achieved using this method is shown in figure \ref{fig:DroolsLiteDiagram}.
+Later, there were a number of places we diverged a little or merged concepts where we thought it would simplify the code.
 
 \begin{figure}[htbp]
     \centering
@@ -119,3 +122,60 @@ The preliminary design is shown in figure \ref{fig:DroolsLiteDiagram}.
     \caption{Drools Lite Structure}
     \label{fig:DroolsLiteDiagram}
 \end{figure}
+
+\paragraph{Rule File} the rule file level statements contains Facts, Globals and Rules.
+It also contains semantically unimportant empty lines.
+
+\paragraph{Fact} a fact has a type property. 
+The type property is implemented using a ClassifierType from the MPS BaseLanguage.
+This allows the file to refer to BaseLanguage classes implemented in the same solution or to java JAR files.
+We created a smart reference object for this, to take advantage of built in MPS UI functionality.
+A smart reference is a node with a single reference of 1:1 cardinality.
+The editor builders know how to select which nodes in scope to display to the developer if one uses this object rather than directly referencing the node to which it refers.
+
+In the default editor we use a Read Only Model Access Cell to allow the user to select the type by it's name.
+However, once selected it displays the fully qualified name.
+
+\paragraph{FactProperty} In RSR we had FactProperties as children of Facts. 
+Now that our Facts refer to actual classes, via the Classifier Type, now our FactProperties have to reflect this.
+To do this, the Concept itself only has a reference to an InstanceMethodDeclaration, MPS BaseLanguage's definition of a Method signature.
+We scoped the concept to only show properties associated with a selected Fact.
+Drools interacts with Java objects as if they are Java Beans.
+To simulate this we limited the scope of the properties to just getters, i.e. methods that start with "get" or "is" and used a behavior to make sure they displayed without the "get" or "is" prefix.
+We also made a smart reference for this concept.
+
+Another option for achieving this is that we could have just wrapped the ClassifierType and referenced its related InstanceMethodDeclarations.
+We would have then had to limit the functionality of these items from the BaseLanguage.
+Whilst this allows the functionality we wished for, we feel our construction is a little more decoupled that we think properly reflects the structure of the language.
+Perhaps if we were to redo this we would have taken the other approach.
+
+\paragraph{Global} Our globals are very simple they have a name and they have a Type, taken from the Base Language.
+We have a smart reference, so that it can be used in rules.
+The reference extended Expression from the BaseLanguage.
+This is, so that we could use it in the Right hand side of the rules. 
+
+\paragraph{Rule} Our rules are made of three children, an Attribute collection, A Right hand side and a list of Conditions that make up the left hand side.
+We created a component to describe the rule editor, for reuse, as we imagined that we would wrap this in later projections.
+
+\paragraph{Rule Variables} although rule variables do not get created until a FactSelector or a FieldConstrain is used, it is worth mentioning them here, as implicitly they belong to a rule.
+A Rule variable only has a name and a type.
+We also create a smart reference for it, so it can be used elsewhere within the rule.
+Like the global, it extends Expression, to be useable in the Java code of the right hand side.
+
+\paragraph{RuleAttributes} Rule Attributes is a container to hold all of the attributes that are applicable to a rule.
+Initially, we have only implemented the No-Loop and Salience attributes.
+These Attributes can only be activated through two intentions we added to the Rule Concept.
+
+\paragraph{Right Hand Side}
+The right hand side of the rule is for the most part is Java Code.  
+To implement this, we made the right hand side of the rule a single StatementList.
+A StatementList, from the BaseLanguage, as a list of Statements, also from the BaseLanguage, that keeps track of, amongst other things, scope.
+
+There are a number of non-java, Drools specific items that have to go in the right hand side.
+Items that had to useable within the righthand side were global variables, rule variables and Drools specific functions.
+These all extend Expression, so that they can be seamlessly used.
+
+The Drools specific Methods that are required are Insert, InsertLogical, Modify, Delete and Halt.
+
+\paragraph{Left Hand Side} This is a collection of conditions.  
+These conditions all contain  [TODO: continue from here]
