@@ -1,7 +1,7 @@
 \section{Problem statement}
 
 Miller's Law\cite{miller1956magical} states that an average human can hold in his short-term memory 5-9 objects.
-This is often an argument for more succinct code.  
+This is often an argument for more succinct code.
 The argument being anything that is not immediately in the developers vision has to be stored in her memory.
 With it being impractical to reason about code that she cannot recall, then the fewer relevant items to her reasoning that are out of view the easier it is to reason about the code.
 
@@ -9,16 +9,16 @@ Our host organization, Khonraad Software Engineering, a subsidiary of Visma, pro
 Specifically, Khonraad facilitates the mental health care and coercion laws in the Netherlands - WVGGZ, WZD, and WTH - which provide agencies the ability to intervene in domestic violence, psychiatric disorders, and illnesses.
 
 Khonraad's system facilitates reporting and communication between municipalities, police, judiciary, lawyers, mental health care, and many social care institutions.
-The system has 15,000 users and is available 24/7. 
+The system has 15,000 users and is available 24/7.
 
 Configuration and administration use complex matrices of compliance mechanisms, access user rights and communication settings.
 The sensitivity of the personal data, being both medical and criminal, means security is of utmost importance.
 The security against data loss, preventing unlawful disclosure and guaranteeing availability, especially during crisis situations, is crucial.
-Demonstration of the correctness of the, often changing, configuration is a major concern in the company. 
+Demonstration of the correctness of the, often changing, configuration is a major concern in the company.
 
-This configuration is done in a business rule system, specifically JBoss Drools. 
+This configuration is done in a business rule system, specifically JBoss Drools.
 
-Drools is a language that shares an unfortunate characteristic with many other rules languages. 
+Drools is a language that shares an unfortunate characteristic with many other rules languages.
 It is verbose and can contain many rules that can interact with each other without obvious visual connection.
 As Forgy\cite{forgy1989rete} points out, for production systems in general, ``production systems have another property that makes them particularly attractive for constructing large programs: they do not require the programmer to specify in minute detail exactly how the various parts of the program will interact''.
 This property leads to very large and hard to reason about collections of implicitly connected rules.

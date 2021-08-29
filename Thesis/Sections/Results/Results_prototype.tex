@@ -2,16 +2,16 @@
 
 \subsection{Really Simple Rules}
 
-The Really Simple Rules, RSR acted as a training ground for our new projections.
+The Really Simple Rules, (RSR), acted as a training ground for our new projections.
 
 \subsubsection{Context aware colour scheme}
-After the default text projection, the first projection we made was giving the text a color scheme. 
-This form or augmentation in IDEs is probably the most basic that we see. 
+After the default text projection, the first projection we made was giving the text a color scheme.
+This form or augmentation in IDEs is probably the most basic that we see.
 Available in structured editors since the 1980s\cite{cowlishaw1987lexx}, syntax highlighting displays text in various colors and fonts according to the meaning of the terms.
 Syntax highlighting has been found to be useful for comprehension of code, as least for small code bases\cite{sarkar2015impact}.
 
 Developers at our host organization uses Eclipse or IntelliJ Community Editions to edit code, neither of which have syntax highlighting for Drools, thus the addition of this feature would immediately benefit them.
-However, Intellij IDEA, already provides this feature for Drools.
+However, IntelliJ IDEA, already provides this feature for Drools.
 In order to offer another visual augmentation that we considered should be useful we extended the color scheme to indicate whether the selection is looking for a positive or negative match.
 This is shown in figure \ref{fig:colorscheme}.
 
@@ -70,7 +70,7 @@ On top of this once the rules were filtered it would only show Facts and Fact pr
 In our implementation, shown in figure \ref{fig:filteringProjection}, we show three places where we use intentions to filter the code.
 The first is an intention on a Fact.
 The outcome of choosing this filter is shown on the righthand side of figure \ref{fig:filteringProjection}.
-The second intention is on a FactProperty. 
+The second intention is on a FactProperty.
 As the FactProperty is a child of a Fact and we enabled that children could also show intentions, we also see an intention to filter on the parent Fact type.
 The third highlighted intention is on a FactProperty Reference.
 It also shows an intention for a Fact Reference in the FactSelector that holds the FactProperty reference as a child.
@@ -108,7 +108,7 @@ This simple table has only the Name property and the when children of the rules 
 This is implemented using the table extension, in the MPS-Extension Plugin, created by Sascha Lißon.
 
 \subsubsection{Cross-Tab}
-Our next tabular projection is a cross-tab inspired by a decision table. 
+Our next tabular projection is a cross-tab inspired by a decision table.
 The idea for this is that the previous table does not give any visual queues as to how rules are related.
 With a Cross-tab one can easily see which rules are using the same Facts.
 
@@ -119,17 +119,17 @@ With a Cross-tab one can easily see which rules are using the same Facts.
     \label{fig:crosstabProjection1}
 \end{figure}
 
-Figure \ref{fig:crosstabProjection1} Shows our implementation of the cross tab.  
+Figure \ref{fig:crosstabProjection1} Shows our implementation of the cross tab.
 At the top we can see an immediate problem with a cross-tab, and that is, if we have the whole file included the table will be very sparse.
 Figure \ref{fig:crosstabProjection1} also has a close-up of a cell showing a rule using three FactSelectors that reference the same fact.
 The other close-up shows that all the details of the selected fact are available in the inspector.
 
-The sparse table would not be a problem if the columns are thin enough to keep the table in a single screen width.  
+The sparse table would not be a problem if the columns are thin enough to keep the table in a single screen width.
 
 Everything is editable in this table, including deleting the fact from the rule.
 Most of the editing was provided by default by either MPS or the table plugin.
 An extra editing feature we added to this table was the ability to delete a Fact from the file, and thus deleting all references to it from all the rules in the file, by deleting a Fact column column.
-The code shown in figure \ref{fig:tableFactDeletion}, shows how we can walk the trees in each rule to delete unary conditions and convert the non-deleted side of binary conditions into unary conditions. 
+The code shown in figure \ref{fig:tableFactDeletion}, shows how we can walk the trees in each rule to delete unary conditions and convert the non-deleted side of binary conditions into unary conditions.
 
 \begin{figure}[h]
     \centering
@@ -176,15 +176,15 @@ The text for the header cells are generated based on the current
     \label{fig:decisionTableProjection}
 \end{figure}
 
-Because this projection presents both the left and right hand side of the rules, we had to handle the Concept that spans both of these - the RuleVariable. 
+Because this projection presents both the left and right hand side of the rules, we had to handle the Concept that spans both of these - the RuleVariable.
 As the RuleVariable can be bound and used on the LHS as well as being used on the RHS, we had to find a way of representing this.
 This was achieved by allowing a variable name to be used in the cell that represented the Fact or FactProperty it represented.
 This lead to a happy visual design choice.
 With variables now being represented in the Cells, we could no longer represent the cell being selected with an 'X', as this could lead to confusion as to the meaning.
-Projectional editing does not require meaning to be communicated with Ascii text. 
+Projectional editing does not require meaning to be communicated with ASCII text.
 Thus we decided to represent selection with an image, and personal preference and a misspent youth lead us to the smiley face as that indicator.
 
-The rule names and Actions are editable through the default functionality of the MPS exentsion.
+The rule names and actions are editable through the default functionality of the MPS extension.
 Adding a selection criteria to a rule occurs through an intention attached to the associated cell, as is also the case for binding a variable.
 
 The major drawback of this design is that editing a rule with an as yet non-existent selection criteria became very clunky.
@@ -194,15 +194,14 @@ At this point the table would automatically adjust the column headings.
 
 \subsubsection{SpreadSheet-esque}
 
-The domain specific language for the finance world is the spreadsheet. 
+The domain specific language for the finance world is the spreadsheet.
 One study estimated that 90\% of computers had a spreadsheet on them\cite{bradley2009using}.
 It has been suggested that Dan Bricklin's VisiCalc is the reason for the success of PC's in The office.
 VisiCalc was succeeded by Lotus 1-2-3, which in turn was succeeded by Microsoft Excel as the dominant Spreadsheet program in the workplace.
 
 This level of familiarity to a paradigm lead us to try to design a projection that had the same look and feel of an Excel spreadsheet.
 This design can be seen in figure \ref{fig:SpreadsheetProjection}.
-
-
+To this end we created a design where the selection criteria could be directly edited in the cell.
 
 \begin{figure}[h]
     \centering
@@ -210,6 +209,21 @@ This design can be seen in figure \ref{fig:SpreadsheetProjection}.
     \caption{Spreadsheet-esque projection}
     \label{fig:SpreadsheetProjection}
 \end{figure}
+
+In this design each row is a rule, each column is for a variable or a property of a fact.
+If a property is selected then the selection criteria is in the appropriate cell.
+Unselected cells are indicated by a grey/beige color.
+The RHS of the rule appears in the "Actions" column.
+To add as yet unused facts or fact properties, or remove existing ones, can be achieved with intentions, as shown in figure \ref{fig:SpreadsheetIntentions}.
+
+\begin{figure}[h]
+    \centering
+    \fbox{\includegraphics[width=0.99\textwidth]{Sections/images/spreadsheetIntentions.png}}
+    \caption{Spreadsheet Intentions}
+    \label{fig:SpreadsheetIntentions}
+\end{figure}
+
+
 
 Here ends our experiments in the Drools-lite language.
 

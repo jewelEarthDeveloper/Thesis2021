@@ -12,7 +12,7 @@ If the thing is a business application, then its essential properties are its bu
 
 Simply put, business rules are the principles or regulations by which an organization carries out the tasks needed to achieve their goals.
 When properly defined these rules can be encoded into statements that defines or constrains some aspect of the business organizational behaviour.
-A rule consists of a condition and an action. 
+A rule consists of a condition and an action.
 When the condition is satisfied then the action is performed.
 More formally, business rules can be seen as the implication in the basic logical principle of Modus Ponens.
 
@@ -28,7 +28,7 @@ Once this desynchronization occurs, to know what the rules that govern the appli
 A rules engine is also known as a Business Rules Engine, a Business Rules Management System or a Production Rules System.
 The goal of a rules engine  is the abstraction of business rules into encoded and packaged logic that defines the tasks of an organization with the accompanying tools that evaluate and execute these rules.
 Simply put, they are where we evaluate our rules.
-Rules engines match rules against facts and infer conclusions. 
+Rules engines match rules against facts and infer conclusions.
 If we return to the Modus Ponens comparison:
 
 \begin{tabular}{c@{\,}l@{}} 
@@ -37,7 +37,7 @@ If we return to the Modus Ponens comparison:
 $\therefore$         & $q$ \\
 \end{tabular}
 
-If the premise $p$ holds. And the implication $p \to q$ holds then the conclusion $q$ holds. 
+If the premise $p$ holds and the implication $p \to q$ holds then the conclusion $q$ holds.
 In terms of a rule engine and business rules this could be seen as:
 \begin{enumerate}
     \item the rules engine gathers the data for the premise: $p$
@@ -45,7 +45,8 @@ In terms of a rule engine and business rules this could be seen as:
     \item it executes the conclusion: $q$
 \end{enumerate}
 
-Rules engines follow the recognize-act cycle.  First the match, i.e. are there any rules with a true condition, Next the do conflict resolution, to pick the most relevant of the matching rules, finally they act, which is to perform the actions described in the rule.
+Rules engines follow the recognize-act cycle.
+First the match, i.e. are there any rules with a true condition, Next the do conflict resolution, to pick the most relevant of the matching rules, finally they act, which is to perform the actions described in the rule.
 If no items are matched then the cycle is terminated, otherwise the first step is returned to.
 
 Rules Engines are declarative, focussing on the what of the rules not the the how of the execution.
@@ -54,8 +55,8 @@ Fowler\cite{Fowler_rulesEngine} describes rules engine as follows: `` ... provid
 Instead of the usual imperative model, which consists of commands in sequence with conditionals and loops, a rules engine is based on a Production Rule System.
 This is a set of production rules, each of which has a condition and an action ...''.
 
-Rule engines arose from the expert systems of the late 70s and early 80s. 
-Expert systems initially had three main techniques for knowledge representation: Rules, frames and logic\cite{jackson1986introduction}.  
+Rule engines arose from the expert systems of the late 70s and early 80s.
+Expert systems initially had three main techniques for knowledge representation: Rules, frames and logic\cite{jackson1986introduction}.
 "The granddaddy" of the expert systems, MYCIN, relied heavily on rules based knowledge representation\cite{shortliffe1974mycin}, rather than long inference chains.
 MYCIN was used to identify bacteria and recommend antibiotic prescriptions.
 MYCIN and its progenitor, DENDRAL, spawned a whole family of Clinical Decision Support Systems that pushed the rules engine technology until the early 1980's.
@@ -63,11 +64,11 @@ Research into rules engines died out in the 1980s as it fell out of fashion.
 
 Early in their existence, the rules engines hit a limiting factor because the matching algorithms they used suffered from the utility problem, i.e. the match cost increased linearly with the number of rules being examined/
 This problem was solved by Charles Forgy's efficient pattern matching Rete algorithm\cite{forgy1989rete}, and its successors.
-This algorithm works by modelling the rules as a network of nodes where each node type works as a filter. 
+This algorithm works by modelling the rules as a network of nodes where each node type works as a filter.
 A fact will be filtered through this network.
 The pre-calculation of this network is what provides the performance characteristics.
 
-The first popular rules engine was Office Production System from 1976. 
+The first popular rules engine was Office Production System from 1976 
 In 1981 OPS5 added the Rete algorithm.
 CLIPS in  ..
 JESS
@@ -75,7 +76,8 @@ Drools
 
 
 
-In general, rules engines are forward chaining.  This means to test if 
+In general, rules engines are forward chaining.
+This means to test if 
 [TODO: Explain forward chaining with logic symbols] 
 
 [TODO: ADD MORE HISTORY HERE]
@@ -118,7 +120,7 @@ logic.
 Rules can be changed without changing source
 code; thus, there is no need to recompile the
 application's code.
-Cost of production and maintenance decreases. 
+Cost of production and maintenance decreases.
 % end wip 
 
 

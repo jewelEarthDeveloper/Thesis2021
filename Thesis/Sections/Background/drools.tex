@@ -2,13 +2,13 @@
 
 JBoss Rules, or as it is more commonly known, Drools, is the leading opensource rules engine written in Java.
 In this paper when we use the name "Drool" we are referring to the "Drools Expert" which is the rule engine module of the Drools Suite.
-Drools started in 2001, but rose to prominence with it's 2005 2.0 release.  
+Drools started in 2001, but rose to prominence with it's 2005 2.0 release.
 It is an advanced inference engine using an enhanced version of the Rete algorithm, called Rete\-OO\cite{sottara2010configurable}, adapted to an object-oriented interface specifically for Java.
 Designed to accept pluggable language implementations, it can also work with Python and .Net.
 It is considered one of the most developed and supported rules platforms.
 
 For rules to be executed there are 4 major components as demonstrated in figure \ref{fig:Drools_components}.
-The production memory contains the rules.  
+The production memory contains the rules.
 This will not change during an analysis session.
 The rules are the focus of this thesis and therefore we will delve into much more detail later on these.
 
@@ -50,7 +50,7 @@ If a rule specifies to halt or there are no matching rules left on the agenda, w
 
 
 The component we will be focussing on in this paper is the rules.
-Rules are stored in a rules file, a text file, typically with a \.drl extension.  
+Rules are stored in a rules file, a text file, typically with a \.drl extension.
 During execution the rules do not change and are stored in production memory.
 For the sake of this paper we will skip past package, import, global, declare, function and query, which are also stored in the rule file.
 We will examine the anatomy of a rule.
@@ -71,7 +71,7 @@ The patterns apply to individual Facts rather than the group, thus can be seen a
 There are some more advanced features in the LHS, but for this paper, these are the features we will be looking at.
 
 Whilst the RHS can contain arbitrary code to be executed when a rule is fired, it's main purpose is to adjust the state of truth in the working memory.
-One can insert, modify, and retract facts in the working memory. 
+One can insert, modify, and retract facts in the working memory.
 modifying and retracting facts, must be done on fact variable references that have been created in the LHS.
 One can explicitly terminate the inference loop, with a halt command.
 
@@ -84,7 +84,8 @@ One can explicitly terminate the inference loop, with a halt command.
 
 
 \subsubsection{An explanatory example}
-An example of a DRL file can be seen in listing \ref{listing:drl_file}.  This has been extracted from the Drools sample code. 
+An example of a DRL file can be seen in listing \ref{listing:drl_file}.
+This has been extracted from the Drools sample code.
 
 \begin{lstlisting}[language={[drl]Drools}, caption=Example Drools file., captionpos=b, label=listing:drl_file]
     package org.drools.examples.honestpolitician

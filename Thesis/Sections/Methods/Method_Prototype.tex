@@ -16,7 +16,7 @@ By only having booleans we also limit the operations on the property.
 
 \paragraph{Rule} For the Rules Concept, we decided to only simulate the Left Hand Side, or "When" conditions", of a Drools Rule.
 We believed this would be enough to provide us with interesting projections, and did not want to over complicate this first approach.
-An RSR Rule consists of a collection of conditions. 
+An RSR Rule consists of a collection of conditions.
 Should all those conditions return true then the rule is selected.
 
 \paragraph{Condition} A condition operates on one or more FactSelectors.
@@ -64,7 +64,8 @@ In order to answer this we needed to simulate a large file.
 To do this we had to enter a large number of rules.
 As this becomes tedious we added a number of editing aids including substitute menus to speed up the entry of conditions, as shown in figure \ref{fig:RSRSubstituteMenu}.
 This image, shows that before I had to select an ExistsCondition concept, and thereafter select the Fact for the condition.
-After adding the substitute menu, I could immediate select the Fact I wanted and it would then automatically be wrapped with an ExistsCondition node. I could immediatly select the Fact and the 
+After adding the substitute menu, I could immediate select the Fact I wanted and it would then automatically be wrapped with an ExistsCondition node.
+I could immediatly select the Fact and the 
 
 \begin{figure}[h]
     \centering
@@ -126,7 +127,7 @@ Later, there were a number of places we diverged a little or merged or decoupled
 \paragraph{Rule File} the rule file level statements contains Facts, Globals and Rules.
 It also contains semantically unimportant empty lines.
 
-\paragraph{Fact} a fact has a type property. 
+\paragraph{Fact} a fact has a type property.
 The type property is implemented using a ClassifierType from the MPS BaseLanguage.
 This allows the file to refer to BaseLanguage classes implemented in the same solution or to java JAR files.
 We created a smart reference object for this, to take advantage of built in MPS UI functionality.
@@ -136,7 +137,7 @@ The editor builders know how to select which nodes in scope to display to the de
 In the default editor we use a Read Only Model Access Cell to allow the user to select the type by it's name.
 However, once selected it displays the fully qualified name.
 
-\paragraph{FactProperty} In RSR we had FactProperties as children of Facts. 
+\paragraph{FactProperty} In RSR we had FactProperties as children of Facts.
 Now that our Facts refer to actual classes, via the Classifier Type, now our FactProperties have to reflect this.
 To do this, the Concept itself only has a reference to an InstanceMethodDeclaration, MPS BaseLanguage's definition of a Method signature.
 We scoped the concept to only show properties associated with a selected Fact.
@@ -152,7 +153,7 @@ Perhaps if we were to redo this we would have taken the other approach.
 \paragraph{Global} Our globals are very simple they have a name and they have a Type, taken from the Base Language.
 We have a smart reference, so that it can be used in rules.
 The reference extended Expression from the BaseLanguage.
-This is, so that we could use it in the Right hand side of the rules. 
+This is, so that we could use it in the Right hand side of the rules.
 
 \paragraph{Rule} Our rules are made of three children, an Attribute collection, A Right hand side and a list of Conditions that make up the left hand side.
 We created a component to describe the rule editor, for reuse, as we imagined that we would wrap this in later projections.
@@ -163,7 +164,7 @@ We also create a smart reference for it, so it can be used elsewhere within the 
 Like the global, it extends Expression, to be useable in the Java code of the right hand side.
 
 \paragraph{Right Hand Side}
-The right hand side of the rule is for the most part is Java Code.  
+The right hand side of the rule is for the most part is Java Code.
 To implement this, we made the right hand side of the rule a single StatementList.
 A StatementList, from the BaseLanguage, as a list of Statements, also from the BaseLanguage, that keeps track of, amongst other things, scope.
 
@@ -191,8 +192,8 @@ Initially, we have only implemented the No-Loop and Salience attributes.
 These Attributes can only be activated through two intentions we added to the Rule Concept.
 We can see, on line 2 in figure \ref{fig:Rule}, an example of the salience attribute added to a rule on line 2.
 
-\emph{Some things to note about figure \ref{fig:Rule}.  
-We added line numbers to this figure to make it easier to talk about. 
+\emph{Some things to note about figure \ref{fig:Rule}.
+We added line numbers to this figure to make it easier to talk about.
 The keywords \texttt{rule} on line 1, \texttt{when} on line 3, \texttt{then} on line 6, and \texttt{end} on line 8 have no meaning in the abstract syntax.
 They are added to give the developer the same look and feel as a standard Drools file.}
 
@@ -203,8 +204,9 @@ They are added to give the developer the same look and feel as a standard Drools
     \label{fig:Rule}
 \end{figure}
 
-\paragraph{Left Hand Side} This is a collection of conditions.  
-There are four types of conditions. And, Or, Not and Exists.
+\paragraph{Left Hand Side} This is a collection of conditions.
+There are four types of conditions.
+And, Or, Not and Exists.
 And, OR, and Not have one or two children who are also conditions.
 Exists contains a FactSelector.
 
