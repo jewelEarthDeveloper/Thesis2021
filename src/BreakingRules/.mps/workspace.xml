@@ -13,9 +13,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd0f6795-7866-4d8c-b269-3f6c9e7ba8c5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.vscode/spellright.dict" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vscode/spellright.dict" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Appendices/DroolsConceptStructure.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Appendices/DroolsConceptStructure.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Appendices/QualityAssesmentChecklistAppendix.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Appendices/QualityAssesmentChecklistAppendix.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Appendices/Quality_Assesment_Results.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Appendices/Quality_Assesment_Results.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Appendices/QuestionnaireText.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Appendices/QuestionnaireText.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Appendices/SystematicReviewLog.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Appendices/SystematicReviewLog.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Background.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Background.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Background/RulesEngines.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Background/RulesEngines.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Background/WhatIsMPS.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Background/WhatIsMPS.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Background/WhatIsProjectionalEditing.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Background/WhatIsProjectionalEditing.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Background/drools.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Background/drools.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Discussion.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Discussion.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Methods/Method_Prototype.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Methods/Method_Prototype.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Methods/Method_Survey.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Methods/Method_Survey.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Methods/Method_SystematicReview.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Methods/Method_SystematicReview.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Results/Results_SystematicReview.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Results/Results_SystematicReview.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Results/Results_prototype.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Results/Results_prototype.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/abstract_page.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/abstract_page.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/acknowledgements_page.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/acknowledgements_page.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/main.bib" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/main.bib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Thesis/main.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/main.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/Rules2.sandbox/models/Rules2.sandbox.uva.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/Rules2.sandbox/models/Rules2.sandbox.uva.mps" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -987,10 +1007,10 @@
       <screen x="-1475" y="-1440" width="5027" height="1440" />
     </state>
     <state x="-617" y="-1046" key="jetbrains.mps.ide.blame.dialog.BlameDialog/0.0.1280.680/-1475.-1440.5027.1440@-1475.-1440.5027.1440" timestamp="1627046106021" />
-    <state x="482" y="-967" key="jetbrains.mps.ide.editor.actions.HintsDialog" timestamp="1630217007151">
+    <state x="482" y="-967" key="jetbrains.mps.ide.editor.actions.HintsDialog" timestamp="1630253955017">
       <screen x="-1473" y="-1440" width="5025" height="1440" />
     </state>
-    <state x="482" y="-967" key="jetbrains.mps.ide.editor.actions.HintsDialog/0.0.1280.680/-1473.-1440.5025.1440@-1473.-1440.5025.1440" timestamp="1630217007151" />
+    <state x="482" y="-967" key="jetbrains.mps.ide.editor.actions.HintsDialog/0.0.1280.680/-1473.-1440.5025.1440@-1473.-1440.5025.1440" timestamp="1630253955017" />
     <state x="2062" y="-901" key="jetbrains.mps.ide.editor.actions.HintsDialog/0.0.1280.680/-1475.-1440.5027.1440@-1475.-1440.5027.1440" timestamp="1627631605468" />
     <state x="901" y="255" key="jetbrains.mps.ide.editor.actions.HintsDialog/0.0.1280.680/-1475.-1440.5027.1440@0.0.1280.680" timestamp="1627634927336" />
     <state x="424" y="-980" key="jetbrains.mps.ide.editor.actions.HintsDialog/0.0.1280.680/-1568.-1440.5120.1400@-1568.-1440.5120.1400" timestamp="1628700385495" />

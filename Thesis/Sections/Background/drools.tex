@@ -1,7 +1,7 @@
 \subsection{What is Drools?}\label{section:WhatIsDrools}
 
 JBoss Rules, or as it is more commonly known, Drools, is the leading opensource rules engine written in Java.
-In this paper when we use the name "Drool" we are referring to the "Drools Expert" which is the rule engine module of the Drools Suite.
+In this paper when we use the name ``Drool'' we are referring to the ``Drools Expert'' which is the rule engine module of the Drools Suite.
 Drools started in 2001, but rose to prominence with it's 2005 2.0 release.
 It is an advanced inference engine using an enhanced version of the Rete algorithm, called Rete\-OO\cite{sottara2010configurable}, adapted to an object-oriented interface specifically for Java.
 Designed to accept pluggable language implementations, it can also work with Python and .Net.
@@ -84,7 +84,7 @@ One can explicitly terminate the inference loop, with a halt command.
 
 
 \subsubsection{An explanatory example}
-An example of a DRL file can be seen in listing \ref{listing:drl_file}.
+An example of a drl file can be seen in listing \ref{listing:drl_file}.
 This has been extracted from the Drools sample code.
 
 \begin{lstlisting}[language={[drl]Drools}, caption=Example Drools file., captionpos=b, label=listing:drl_file]
@@ -93,7 +93,7 @@ This has been extracted from the Drools sample code.
     import org.drools.examples.honestpolitician.Politician;
     import org.drools.examples.honest politician.Hope;
      
-    rule "We have an honest Politician"
+    rule ``We have an honest Politician''
         salience 10
         when
             exists( Politician( honest == true ) )
@@ -101,27 +101,27 @@ This has been extracted from the Drools sample code.
             insertLogical( new Hope() );
     end
     
-    rule "Hope Lives"
+    rule ``Hope Lives''
         salience 10
         when
             exists( Hope() )
         then
-            System.out.println("Hurrah!!! Democracy Lives");
+            System.out.println(``Hurrah!!! Democracy Lives'');
     end
     
-    rule "Hope is Dead"
+    rule ``Hope is Dead''
         when
             not( Hope() )
         then
-            System.out.println( "We are all Doomed!!! Democracy is Dead" );
+            System.out.println( ``We are all Doomed!!! Democracy is Dead'' );
     end
     
-    rule "Corrupt the Honest"
+    rule ``Corrupt the Honest''
         when
             $p : Politician( honest == true )   
             exists( Hope() )
         then
-            System.out.println( "I'm an evil corporation and I have corrupted " + $p.getName() );
+            System.out.println( ``I'm an evil corporation and I have corrupted `` + $p.getName() );
             modify( $p ) { 
                 setHonest( false ) 
             }

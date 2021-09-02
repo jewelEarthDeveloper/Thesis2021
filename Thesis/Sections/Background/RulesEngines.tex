@@ -11,7 +11,7 @@ If the thing is a business application, then its essential properties are its bu
 
 
 Simply put, business rules are the principles or regulations by which an organization carries out the tasks needed to achieve their goals.
-When properly defined these rules can be encoded into statements that defines or constrains some aspect of the business organizational behaviour.
+When properly defined these rules can be encoded into statements that defines or constrains some aspect of the business organizational behavior.
 A rule consists of a condition and an action.
 When the condition is satisfied then the action is performed.
 More formally, business rules can be seen as the implication in the basic logical principle of Modus Ponens.
@@ -57,7 +57,7 @@ This is a set of production rules, each of which has a condition and an action .
 
 Rule engines arose from the expert systems of the late 70s and early 80s.
 Expert systems initially had three main techniques for knowledge representation: Rules, frames and logic\cite{jackson1986introduction}.
-"The granddaddy" of the expert systems, MYCIN, relied heavily on rules based knowledge representation\cite{shortliffe1974mycin}, rather than long inference chains.
+``The granddaddy'' of the expert systems, MYCIN, relied heavily on rules based knowledge representation\cite{shortliffe1974mycin}, rather than long inference chains.
 MYCIN was used to identify bacteria and recommend antibiotic prescriptions.
 MYCIN and its progenitor, DENDRAL, spawned a whole family of Clinical Decision Support Systems that pushed the rules engine technology until the early 1980's.
 Research into rules engines died out in the 1980s as it fell out of fashion.
@@ -91,11 +91,11 @@ Some of the more commonly used ones are shown in table \ref{table:RuleEngines}
             \hline
             Product                      &                             & Developer    & licence type   \\
             \hline
-            CLIPS                        & \cite{CLIPSProductPage}     & NASA         & open source    \\ 
-            Drools                       & \cite{DroolsProductPage}    & JBoss/RedHat & open source    \\ 
-            BizTalk Business Rule Engine & \cite{BiztalkProductPage}   & Microsoft    & proprietary    \\ 
-            WebSphere ILOG JRules        & \cite{JRulesProductPage}    & IBM          & proprietary    \\ 
-            OpenRules                    & \cite{OpenRulesProductPage} & OpenRules    & open source    \\ 
+            CLIPS                        &\cite{CLIPSProductPage}      & NASA         & open source    \\ 
+            Drools                       &\cite{DroolsProductPage}     & JBoss/RedHat & open source    \\ 
+            BizTalk Business Rule Engine &\cite{BiztalkProductPage}    & Microsoft    & proprietary    \\ 
+            WebSphere ILOG JRules        &\cite{JRulesProductPage}     & IBM          & proprietary    \\ 
+            OpenRules                    &\cite{OpenRulesProductPage}  & OpenRules    & open source    \\ 
             \hline
         \end{tabular}
     \end{center}
@@ -110,22 +110,7 @@ Some of the advantages of using a rules engine include:
     \item Rules can be human readable
 \end{itemize}
 
-% wip
-Rules that represent policies are easily
-communicated and understood.
-Rules retain a higher level of independence than
-conventional programming languages.
-Rules separate knowledge from its implementation
-logic.
-Rules can be changed without changing source
-code; thus, there is no need to recompile the
-application's code.
-Cost of production and maintenance decreases.
-% end wip 
-
-
 In summary a rules engine, is the executor of a rules based program, consisting of discreet declarative rules which model a part of the business domain.
-
 
 \input{Sections/Background/drools}
 

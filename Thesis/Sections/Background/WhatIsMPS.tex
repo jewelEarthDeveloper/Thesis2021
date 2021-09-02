@@ -1,6 +1,6 @@
 \section{What is MPS?}
 
-Language workbenches (LWB) are a tool to help language engineers create languages, particularly Domain Specific Languages (DSL).
+Language workbenches (LWB) are a tool to help language engineers create languages, particularly domain specific languages (DSL).
 The term LWB was popularized in a 2005 article by Martin Fowler\cite{Fowler_lwb}.
 
 Meta Programming System (MPS) is an opensource LWB that assists in the creation of Projectional languages.
@@ -15,7 +15,7 @@ The following is an overview of how MPS implements the ideal of a projectional l
     \item Abstract syntax
     \begin{itemize}
         \item Structure
-        \item Behaviours
+        \item Behaviors
         \item Constraints
         \item Type system
     \end{itemize}
@@ -36,11 +36,11 @@ MPS defines the different aspects of the language definitions with declarative D
 \subsection{Abstract syntax: Structure}
 Structure is what determines the abstract syntax of a language.
 The most important item available in a Structure Aspect is the Concept.
-Instances of concepts are called nodes and it is with these that the programmers construct their programs, i.e. their Abstract Syntax Trees.
+Instances of concepts are called nodes and it is with these that the programmers construct their programs, i.e. their Abstract Syntax Trees (AST).
 
 In principle a concept is a contains three types of things:
 \begin{enumerate}
-    \item properties: these primatives are integer, boolean, string, or enum items and could be seen as leaf values.
+    \item properties: these primitives are integer, boolean, string, or enum items and could be seen as leaf values.
     \item children: these are other concepts, or collections of them, and could be seen as sub trees.
     \item references: these are relationships with other nodes in the AST. These turn the tree into a graph.
 \end{enumerate}
@@ -48,7 +48,7 @@ In principle a concept is a contains three types of things:
 Concepts follow some object orientated (OO) traits, such as being able to subtype, being abstract, and implementing interfaces.
 At least one rootable concept needs to be defined in order to be able to create a program.
 
-Other items available in the Structure Aspect are the Interface Concept, the Enumeration, the Constrained Data Type, and the Primative Datatype.
+Other items available in the Structure Aspect are the Interface Concept, the Enumeration, the Constrained Data Type, and the Primitive Datatype.
 \footnote{At time of writing we are unaware as to whether Data Type and Datatype are semantically different or if it is a style choice.}
 
 Thus, the structure aspect defined how the AST can be structured.
@@ -101,7 +101,7 @@ Figure \ref{fig:constraint_example} shows an example of a scope restraint that o
  
 
 \subsection{Abstract syntax: Type system}
-The Typesystem aspect and the constraints aspect together represent the static semantics of the language.
+The TypeSystem aspect and the constraints aspect together represent the static semantics of the language.
 This aspect is for the computation and evaluation of types of variables, expressions and statements.
 
 Rules that are available to calculate and enforce the type system include inference, subtyping, comparison and substitute type rules.
@@ -125,7 +125,7 @@ A concept can have multiple editors, thus offering multiple views on it.
 The editor aspect is also where you can redefine what options will be presented to developers, through substitute menus.
 Transformations can be defined, so that when a certain option is input by the developer, the existing AST is transformed to match the meaning of the choice.
 
-Behaviour of interactions can be defined, such as what will happen to the AST when a particular key press or editor action occurs at a particular location.
+Behavior of interactions can be defined, such as what will happen to the AST when a particular key press or editor action occurs at a particular location.
 
 Figure \ref{fig:editor_example} shows a component with one projection for the concept shown in figure \ref{fig:concept_example}.
 \begin{figure}[h]
