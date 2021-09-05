@@ -1,9 +1,10 @@
-\subsection{What is projectional editing?}\label{section:WhatIsPE}
+\subsection{What is Projectional Editing?}
+\label{section:WhatIsPE}
 
-Traditionally programmers write code with text editors, or integrated development environments (IDE), which adjust the concrete syntax and allows a parser to create the abstract syntax tree.
+Traditionally programmers write code with text editors or integrated development environments (IDE), which adjust the concrete syntax and allows a parser to create the abstract syntax tree.
 A projectional editor, Inverts this relationship, as a developer edits the abstract syntax tree and allows the IDE to project the concrete syntax.
 
-\subsubsection{parser based editing}
+\subsubsection{Parser Based Editing}
 
 
 In a traditional, parser-based, development workflow, a program is defined using text and can be edited with a text editor.
@@ -23,7 +24,7 @@ Modern IDEs, in the background, also parse the code it is displaying to create a
 This assistance is appreciated, because without IDE help learning the concrete syntax of large languages is error prone and exploratory programming is laborious if one has to wait until compilation to discover mistakes.
 
 
-\subsubsection{projectional definition}
+\subsubsection{Projectional Definition}
 
 In the projectional editing paradigm the program is represented by a semantic model that can only be read and edited with projectional editing tools.
 A projectional editor does not parse any text.
@@ -42,7 +43,7 @@ It also may be any other notation that can represent the semantic meaning of the
 Projections are not just the notation, but also how the user interacts with the projection.
 In this sense the definition of the projections and the IDE/UI overlap.
 
-\subsection{What is it not[TODO: write this section]}
+\subsection{What is it Not?[TODO: write this section]}
 
 UML 
 MDE
@@ -54,7 +55,7 @@ Most confusing of all Projectional Editing the  of projecting an editor from an 
 The reason we call this confusing is that as well as the name being the same, one of the leading products for this product line technique is called PEoPL, developed in MPS.
 This product is a projectional Editor (the paradigm) for product lines projectional editing (the methodology).
 
-\subsubsection{How projectional editing works}
+\subsubsection{How Projectional Editing Works}
 
 As shown in figure \ref{fig:projectionalEditing_loop}, a projectional editor has a model or an AST.
 It renders a presentation of the model as a projection.
@@ -107,7 +108,7 @@ Projectional editing generalizes this approach to projecting any notation define
 
 
 
-\subsection{Examples of projectional editing}
+\subsection{Examples of Projectional Editing}
 
 Table \ref{table:projectional_languages} gives an incomplete and inconsistent history of projectional languages.
 
@@ -243,7 +244,7 @@ Cedalion's
 
 
 
-\subsubsection{What advantages does projectional editing bring?}
+\subsubsection{What Advantages Does Projectional Editing Bring?}
 
 Projectional editing gives advantages both to the language engineer and the program developers.
 There is a lot of crossover and repetition between papers written on the subject of projectional editing as to the advantages it brings.
@@ -268,7 +269,7 @@ Rather than attributing advantages in line to their citations, a helpful referen
             \hline
         \end{tabular}
     \end{center}
-    \caption{Papers describing advantages.}
+    \caption{Papers describing advantages}
     \label{table:Projectional_Advantages}
 \end{table}
 
@@ -353,7 +354,7 @@ If there is a semantic change then the language engineer can write a migration i
 Data can be added to nodes that can augment the AST.
 This has shown to be useful for documentation, requirements traceability and product line feature dependencies.
 
-\subsubsection{What are the disadvantages of projectional editing?}
+\subsubsection{What are the Disadvantages of Projectional Editing?}
 Whilst there are fewer papers proclaiming the disadvantages of projectional editing, we repeated the approach of the previous section.
 Thus, we have synthesised the disadvantages from papers in the following sections and listed citations for these ideas in the table \ref{table:Projectional_Disadvantages}
 
@@ -376,7 +377,7 @@ We consider that those who do not find projectional editing useful do not write 
             \hline
         \end{tabular}
     \end{center}
-    \caption{Papers describing projectional editing disadvantages.}
+    \caption{Papers describing projectional editing disadvantages}
     \label{table:Projectional_Disadvantages}
 \end{table}
 
