@@ -1,0 +1,28 @@
+sentiment: positive
+Document text: I really appreciate the effort put into the visualizations, it all looks like very interesting and helpful work.
+sentiment: mixed
+Document text: I consider that creating and maintaining knowledge bases are very interesting research topics, and therefore I appreciate all efforts made in this area. Personally, I think that Drools syntax is simple enough (if you have background in programming languages) to develop any knowledge base. However, the graphical projections of the first part of the survey could be very interesting for users without a strong programming background but with the need for a knowledge-based system (e.g. clinicians, biologists, economists, etc.). Furthermore, the projections from the last part of the questionnare can be really useful for all of us to debug rules and ensure that they will trigger if and only if the desired set of conditions are met.  
+sentiment: mixed
+Document text: It a good.idea to clarify the nesting rules process. Sometimes when you nest rules you need to check all the previous conditions and this make a lot.of.confusion and waste of time. Another interesting oarameter can be: IF I uodated or not a mn event. When an event has been analyzed is not yet updated so to make further analysis you must take in account of it if further similar events sill atrive to the kb.
+sentiment: negative
+Document text: In all the rules, the students were not matched to the faculty or the course. Therefore both faculty and course are irrelevant facts.rules always operate over all the students regardless.
+sentiment: positive
+Document text: This is very interesting research work, and I would strongly urge you to get in touch with the Drools community (both dev and users) as described here https://drools.org/learn/dmn.html to share your work --if you want/can.  Separately of that, I would strongly recommend you take a look at the DMN standard; particularly given it provide a notation which can benefit a lot of this projectional editing (not only DMN decision table, all DMN decision logic notations) AND especially if you would consider experimenting projectional editing of FEEL. I mention because that would have an impact not only on the Drools DMN Engine (part of Drools) but being DMN an OMG standard, your effort there would also compound for the whole Decision Management communities (e.g.: beyond Drools).  full disclosure I am a Drools developer, I hope you will get in touch! Very interesting concepts here!!  (and good luck with your dissertations of course :) )
+sentiment: mixed
+Document text: As a developer, it’s nice to visualise graphs and the rete network representation, but that could be confusing for business users, besides I don’t think it could capture all the complexity involved in solving conflicts, so the alternative debug methods shown  here seem valid. Truth tables are easy to understand, even of they are long. Decision tables are less useful if the rules are well coded.  A common problem is to deal with priorities/different weights for rules and actions, reducing its usage is considered a best practice and I think this could somewhat help there.
+sentiment: positive
+Document text: I guess that you are investigating a more friendly approach to rule writing. I'm surprised that you just focused on DRL, whereas Drools offers a powerful option that it's supposed to be more appealing for non programmers: DMN.
+sentiment: positive
+Document text: This is a nice assessment/survey. All the best for the thesis. 
+sentiment: mixed
+Document text: Single-letter variable names are horrible for reading code you didn't write! 😱    Also, there's no good reason to still be using a fixed-width font (which is less legible) in a table.
+sentiment: mixed
+Document text: Even of I don't find useful this visual approach, I think that these ideas could help less expirienced programmers or domain experts not used to code. Anyway in my experience there are a lot of situations where you need to write very complex rules that would be difficult if not impossible at all to test and visualize as conditional tables
+sentiment: negative
+Document text: As mentioned in the first question drools editors may be targeted at developer or business/end user audiences. Even a typical developer doesn't always understand how an inference engine works as most are used to procedural logic. Additional tooling to help aid with simulating how the engine will behave with different data inputs is very useful, as well as alternative views to allow for more focus on the domain and attributes. 
+sentiment: positive
+Document text: In general I would prefer a RETE diagram to explain the execution of the rules and the filters.. the alternative tables proposed here were confusing as well as the circuit diagram which was close to a RETE tree but not really.. that adds confusion 
+sentiment: mixed
+Document text: I had problems with the logic of some rules (if I understood them correctly) and meaning of some variables.
+sentiment: positive
+Document text: Thanks for the research, it looks really promising. I'd suggest you to take a look at DMN's decision tables which might be easier to understand in the case provided. With the DMN Decision Table VSCode plugin a user could have a graphical representation of the logic. 

@@ -122,9 +122,172 @@ To remove some bias in the questionnaires we changed question order, order of pr
 When a question is effected by this, then this will also be displayed.
 
 \subsubsection{Question 1, 2 and 3: First Impressions}
-This question shows the subject an example of projectional editing, as an animated GIF, along with an explanation.
-Then she is asked her first reaction.
-Figure \ref{} shows the results
+
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/stackedbar_Q1.png}}
+    \caption{Question 1 - first impressions}
+    \label{fig:stackedbar_Q1}
+\end{figure}
+
+This question shows the subject an example of projectional editing a Drools file alongside a table projection, as an animated GIF, along with an explanation.
+Then she is asked her first reaction. The chart in figure \ref{fig:stackedbar_Q1} shows the outcomes.
+
+We see far more positive than negative answers here.
+Those who had a positive or negative responses were directed to answer the open questions ``Q2. How would this coding style be useful to your interactions with Drools?'' and ``Q3. What do you find negative with this style of coding?'' respectively.
+Figure \ref{fig:wordclouds} show a not very useful, but funky looking visualization of the subjects responses.
+
+\begin{figure}[H]
+    \begin{subfigure}{.60\textwidth}
+      \centering
+      \includegraphics[width=.95\linewidth]{Sections/images/positive_wordcloud.png}
+      \caption{positive}
+      \label{fig:wfig1}
+    \end{subfigure}%
+    \begin{subfigure}{.40\textwidth}
+      \centering
+      \includegraphics[width=.95\linewidth]{Sections/images/negative_wordcloud.png}
+      \caption{negative}
+      \label{fig:wfig2}
+    \end{subfigure}
+    \caption{Initial thoughts}
+    \label{fig:wordclouds}
+\end{figure}
+
+An observation that can be taken is that the novice and the academics (where there is a lot of crossover), found the initial presentation more positive than the experienced practitioners.
+It should be noted that these are groups with a size of 10 and 5, so their statistical use is not very high.
+A trend however can be seen from experts finding
+
+As can be seen in this question an consistent with the other questions, whether a person is a current or a past user of drools makes not have a significant impact on their responses.
+
+Amongst the positive comments it appears the the subjects had all picked up on many of the advantages that projectional editing brings.
+The ones that got the most mentions, using other words, were exploratory coding, correctness by construction, and multiple viewpoints.
+It was also noted, with the projections shown, that development could be quicker and easier to check.
+
+Amongst the, very few, negative comments, they discussed the failures of no/low code solutions, that the view was confusing and they felt it added unnecessary overhead.
+
+\pagebreak
+\subsubsection{Question 4 and 5: Interpret Projection}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/stackedbar_Q2.png}}
+    \caption{Question 5 - interpret projection}
+    \label{fig:stackedbar_Q2}
+\end{figure}
+
+This question asks the subject to describe the meaning of the projection and then describe how hard it was to do that.
+Very few people described it well.
+There was a distinct difference between the participants belief that they understood the ruleset between the projections presented.
+The participants believed they understood the spread sheet style projection better then the decision table projection.
+
+There was not a notable difference between rulesets presented and whether they were presented text first or the projection first.
+
+There was one extreme response, which was negative.
+This came from an expert practitioner who saw the text version before seeing the projection.
 
 
+\subsubsection{Question 6 and 7: Interpret Text}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/stackedbar_Q3.png}}
+    \caption{Question 7 - interpret text}
+    \label{fig:stackedbar_Q3}
+\end{figure}
+
+This question asks the subject to interpret a rule set that is presented in a Drools style text projection.
+The purpose of this question was three fold.
+First, to calibrate how well the subject really understood drools.
+Second, for a comparison with with a later projection.
+Finally, to calibrate whether and how much easier the text was than the projection to those used to seeing the text version.
+
+Unfortunately, we assume due to the questionnaire design, there was a large number of non-respondents to this question. 
+12 of the 30 respondents did not answer this question.
+All 12 of these were from the 16 that were presented the text projection before the tabular projections.
+
+Reporting on 18 responses has a lot less validity.
+With that in mind we do see that there a greater belief in the participants that they understood the meaning of the text projections better than they did the tabular projections.
+
+\subsubsection{Question 8: Compare Projections}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/stackedbar_Q4.png}}
+    \caption{Question 8 - compare projections}
+    \label{fig:stackedbar_Q4}
+\end{figure}
+
+This question asked the participant to compare the two tabular projections.  
+This question was to calibrate whether one projection was considerably worse than the other and whether that would affect the comparison with text.
+
+In these results the total does not matter, it is only which projection type and which rule type which can have a meaningful effect.
+The results show that the spreadsheet style projection is considered much more understandable than the decision table style projection.
+There was also a slightly negative effect of rule set 1 over rule set 2, which surprised us, because we considered rule set 1 to be simpler.
+
+\subsubsection{Question 9: Compare Projection to Text}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/stackedbar_Q5.png}}
+    \caption{Question 9 - compare projections with text}
+    \label{fig:stackedbar_Q5}
+\end{figure}
+
+This question asked our subjects to compare a tabular projection with the text projection.
+There was one participant that chose not to answer this question.
+
+This result was pretty definitive.
+The subjects, independent of any other factors, found very much that the textual projections were more understandable than the tabular projections.
+
+\subsubsection{Question 10: Truth Table Validation}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/stackedbar_Q6.png}}
+    \caption{Question 10 - truth table}
+    \label{fig:stackedbar_Q6}
+\end{figure}
+
+This question presented the subject with a wireframe of a truth table.
+
+The results given were dichotomous.
+Every subject had a positive or negative view of the projection.
+0 of the 30 subjects gave a neutral result.
+This was an unlikely result.
+
+There was a very positive view of this projection.
+Experts found this view particularly good.
+Academics offered the most negative view of this projection.
+
+Whilst the positive side was highly positive than the, the negatives views were also higher than normal. 
+
+\subsubsection{Question 11: Circuit Diagram Validation}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/stackedbar_Q7.png}}
+    \caption{Question 11 - circuit diagram}
+    \label{fig:stackedbar_Q7}
+\end{figure}
+
+This question presented the subject with a wireframe of a circuit diagram.
+
+The view of the circuit diagram was pretty evenly distributed between positive and neutral or negative views.
+
+\subsubsection{Question 15: Closing remarks}
+
+Our last question asks for any last comments.
+16 participants decided to add some words.
+
+We ran sentiment analysis on these 16 comments.
+9 were considered positive, 6 mixed and 1 negative.
+Figure \ref{fig:Q15_wordcloud} shows a funky little word cloud, because why not! [TODO: rewrite when sober]
+
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/Q15_wordcloud.png}}
+    \caption{Question 15 - responses}
+    \label{fig:Q15_wordcloud}
+\end{figure}
 
