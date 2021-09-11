@@ -213,8 +213,7 @@ This is table \ref{table:Projectional_Advantages}.
 \end{table}
 
  
-\paragraph{Exploratory programming}
-As with their progenitors, syntax-directed editors, modern projectional editors help guide a developer unfamiliar with a language.
+\paragraph{Exploratory programming} As with their progenitors, syntax-directed editors, modern projectional editors help guide a developer unfamiliar with a language.
 With their rigid syntax and predefined layout, the editors only allow editing within specific cells of the editor.
 This template style means that the developer does not have to worry about the significance of spacing or indentation.
 Minutiae of syntactic adornments, such as statement ending semi-colons or enclosing matched brackets, are also not interfering with her exploration of the language space.
@@ -225,8 +224,7 @@ Thus, it is easier for the developer to explore what the language allows her to 
 Intelligent code completion does not have to be limited to single nodes.
 Inserting whole subtrees allows the developer to explore the larger structures of the language.
 
-\paragraph{Correctness-by-construction}
-A projectional editor prevents her from writing syntactically incorrect code by controlling the interaction between the developer and the AST.
+\paragraph{Correctness-by-construction} A projectional editor prevents her from writing syntactically incorrect code by controlling the interaction between the developer and the AST.
 The whole class of syntactical errors is made impossible, with the developer relieved to think about special characters and layout.
 Typing and scoping errors are removed by only allowing validly typed and scoped options for the developer.
 
@@ -234,8 +232,7 @@ The developer can only select statements that are legal in the context of the lo
 Code does not have to be disambiguated, as this happens at the time of entry by the developer.
 If multiple items share the same notation in the editor, the developer chooses the relevant item, thus resolving the ambiguity to what she means rather than what the parser thinks she means.
 
-\paragraph{Rich notation}
-Constraints associated with textual parsing do not affect the choice of created projections. 
+\paragraph{Rich notation} Constraints associated with textual parsing do not affect the choice of created projections. 
 This freedom opens up diverse otherwise tricky or impossible to parse notations.
 Examples include tabular, mathematical expressions and symbols, diagrams, trees, images, forms, prose, sub- and superscript.
 Any visual form or shape that can map onto the AST can represent the program in an editor.
@@ -247,12 +244,10 @@ When writing a DSL for the Mathematics domain, the domain experts can interact w
 Of course, the projections can also be projections of text.
 Textual projections are often the appropriate projection type if the developer interacting with the language's domain expertise is parser-based languages.
 
-\paragraph{Mixed notation}
-As no parsing is required and ambiguity is not an issue for the underlying AST, it is straightforward to combine different forms of rich notation.
+\paragraph{Mixed notation} As no parsing is required and ambiguity is not an issue for the underlying AST, it is straightforward to combine different forms of rich notation.
 With all notations working on the same editor infrastructure, embedding mathematic symbols within textual projections, within tables within graphical representations is a simple coding pattern.
 
-\paragraph{Multiple views}
-With the AST being the stored artefact rather than the notation, projectional editing allows the language engineer to define multiple views on the same model optimised for different tasks.
+\paragraph{Multiple views} With the AST being the stored artefact rather than the notation, projectional editing allows the language engineer to define multiple views on the same model optimised for different tasks.
 In Software architecture, one presents different views to different stakeholders based on their interests.
 Similarly, projectional editing can present experts with various domain expertise views on the model that reflect their needs.
 A developer can switch between different node projections within a larger projection to find the one that best suits their current task.
@@ -260,8 +255,7 @@ A developer can switch between different node projections within a larger projec
 Because the architecture of a projectional editor follows the principles of model-view-controller, it is possible to have multiple simultaneous views of the model.
 These multiple views allow the developer to update a projection optimised for writing and immediately see its effect in a projection optimised for understanding.
 
-\paragraph{Language composition}
-Parser-based languages can support some modularization and composition, but a projectional editor allows easy and extensive modular language extension and composition.
+\paragraph{Language composition} Parser-based languages can support some modularization and composition, but a projectional editor allows easy and extensive modular language extension and composition.
 This ability results from the disambiguation of the nodes of an AST at the time of entry.
 If two items with the same syntax are available at the same place, then the user will choose the one they require, and therefore the node has an explicitly chosen meaning.
 
@@ -271,8 +265,7 @@ Because of the lack of ambiguity, every node referencing the concept that define
 Language composition can involve extending an existing language or embedding other languages in a host language without modifying its definition.
 The ease of composition and extensions allows building more significant languages out of smaller modules.
 
-\paragraph{IDE functionality}
-Developers in mature languages are used to the functionality of mature IDEs.
+\paragraph{IDE functionality} Developers in mature languages are used to the functionality of mature IDEs.
 These functionalities include syntax highlighting, intelligent code completion or suggestion, and static analysis for errors and validation.
 As projectional languages store the AST rather than the concrete syntax, they require an IDE to edit.
 Because of this, when a language engineer designs the language, she also has to design the IDE.
@@ -283,15 +276,13 @@ Knowing its context makes it much simpler to suggest intelligent code completion
 
 Always having a complete AST makes it much easier to validate scope, typing and other hard to implement code validators.
 
-\paragraph{Language evolution}
-Parsing complicates the evolution of languages. 
+\paragraph{Language evolution} Parsing complicates the evolution of languages. 
 For example, adding a new reserved word is difficult without breaking existing code.
 Extending a language with new capabilities and syntax in projectional editing is simple.
 If the change is syntactic, then the language engineer has to update an editor.
 If there is a semantic change, then the language engineer can write a migration in the language to transform a node of one concept to a different type, and the developer would have to run that migration on their code.
 
-\paragraph{Ancillary data}
-Data added to nodes can augment the AST.
+\paragraph{Ancillary data} Data added to nodes can augment the AST.
 This data is useful for tasks such as documentation, requirements traceability and product line feature dependencies.
 
 \subsubsection{What are the Disadvantages of Projectional Editing?}
@@ -321,13 +312,11 @@ Our best guess is that those who do not find projectional editing useful do not 
     \label{table:Projectional_Disadvantages}
 \end{table}
 
-\paragraph{Lack of adoption}
-The ideas that proceeded projectional editing - the structured or syntax-directed editor - have been around since the early 1970s yet have failed to be adopted widely.
+\paragraph{Lack of adoption} The ideas that proceeded projectional editing - the structured or syntax-directed editor - have been around since the early 1970s yet have failed to be adopted widely.
 This argument is a bit of a tautological one, as the low adoption is perhaps an outcome of the other disadvantages of projectional editing.
 However, low adoption can lead to a self-reinforcing process, where lack of adoption prevents further adoption.
 
-\paragraph{Inconvenient or unnatural editing}
-Early attempts at projectional editing presented an inconvenient and unnatural user experience when coding.
+\paragraph{Inconvenient or unnatural editing} Early attempts at projectional editing presented an inconvenient and unnatural user experience when coding.
 These usability challenges, exemplified by the tedious manner of entering code as per the tree's order, compare poorly to parser-based languages.
 
 This lousy reputation continues, despite massive improvements in projectional editors.
@@ -337,18 +326,15 @@ Modern projectional editors, when using a textual projection, face an ``uncanny 
 Whilst trying to simulate a text editor, the developers start to expect all of the functionality of the text-based IDEs.
 This expectation is a particularly weak spot, especially regarding granularity and restrictions of cursor movement, insertion, deletion, selection, copy and paste, and other interactions with the text.
 
-\paragraph{Ambiguous syntax}
-One of the selling points of projectional editing, especially concerning language composition, is that there can be no ambiguous syntax.
+\paragraph{Ambiguous syntax} One of the selling points of projectional editing, especially concerning language composition, is that there can be no ambiguous syntax.
 While this may be true for the AST, it is not so for the developer who reads this code on the screen.
 If one combined Drools and Basic rather than Java, the developer might become confused about which language the ``Then'' keyword refers to when she read it.
 Thus writing ambiguity is replaced by reading ambiguity.
 
-\paragraph{Inflexibility}
-A developer using a projectional editor has no flexibility in code layout. They may feel they require this for enhanced readability.
+\paragraph{Inflexibility} A developer using a projectional editor has no flexibility in code layout. They may feel they require this for enhanced readability.
 The flexibility of the layout is entirely in the hands of the language engineer when she determines the projection rules.
 
-\paragraph{Integration with the text based world}
-Projectional editors do not store the definition of the program in the form of a plain-text implementation in the concrete syntax.
+\paragraph{Integration with the text based world} Projectional editors do not store the definition of the program in the form of a plain-text implementation in the concrete syntax.
 Instead, the AST is stored and serialized in a format that is not human readable, such as XML.
 
 This different format of program storage leads to an issue with integration with the text-based ecosystem.
@@ -360,14 +346,12 @@ However, as code-bases often span multiple programming languages and tools, the 
 Textual source code can be shared simply by email or on websites. 
 This sharing, however, is not easy with projectional code.
 
-\paragraph{Learning curve}
-For the language engineer, the necessity to develop an editor with a good user experience is much harder work than defining a grammar for a parsed language.
+\paragraph{Learning curve} For the language engineer, the necessity to develop an editor with a good user experience is much harder work than defining a grammar for a parsed language.
 The learning curve for the language engineer is significant, as, by default, she has to think also of the IDE development.
 
 For the developer, especially one with an extensive text-based experience, the different editing style takes some getting used to.
 
-\paragraph{Vendor lock-in}
-The nature of projectional editing is that what one edits is a projection of the AST, and therefore an IDE is needed to do the projecting and language definition.
+\paragraph{Vendor lock-in} The nature of projectional editing is that what one edits is a projection of the AST, and therefore an IDE is needed to do the projecting and language definition.
 Organisations thinking of going the projectional route for their DSLs may fear being locked into a specific concept implementation.
 To be able to use previously developed languages would require using the same toolset.
 Changing to a different toolset for language design would require a significant re-skilling effort.
