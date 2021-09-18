@@ -1,43 +1,44 @@
-\section{Method: Systematic Review}\label{section:Method_systematic_review}
+\section{Method: Systematic Review}
+\label{section:Method_systematic_review}
 
 To answer the first Research Question, ``what is the current state of Projectional Editing?'', we conducted a systematic literature review.
 Hereafter, we describe the method we undertook.
 
-To carry out this review we followed Kitchenham's\cite{Kitchenham_2015} advice on systematic review protocol validation, (see appendix \ref{appendix:protocolValidation} for the exact checklist we used).
+To carry out this review, we followed Kitchenham's\cite{Kitchenham_2015} advice on systematic review protocol validation (see appendix \ref{appendix:protocolValidation} for the exact checklist we used).
 
 \subsection{Motivation}
 The motivation that preceded this research was a requirement to understand if projectional editing was an idea that was worth investigating.
-Through our background research we saw an interest in the precursors to projectional editing in the late 70's through to the mid 80's.
-This seemed to be abandoned until the mid 90's following Charles Simonyi's treaties on Intentional programming.
-This did not lead to a swell in academic research as his companies product, Intentional Domain Workbench was a closed commercial product.
-There seemed to be a burst of academic interest after the release of JetBrain's OpenSource Meta Programming System (MPS) in the late 2000's.
+Our background research showed an interest in the precursors to projectional editing in the late '70s through to the mid-'80s.
+Outside of academia, interest arose in the mid-'90s following Charles Simonyi's treaties on Intentional programming.
+However, Simonyi's call to arms did not lead to a swell in academic research as his companies product, Intentional Domain Workbench, was a closed commercial product.
+Conversely, after JetBrain's OpenSource Meta Programming System (MPS) release, in the late 2000s, there was a flurry of papers on the subject.
 
 Is there a need for a study of this topic? 
-We believe, at least in the microcosm of this master's project it is helpful to know whether we are researching in an area that is dying of vibrant.
+We believe, at least in the microcosm of this master's project, it is helpful to know whether we are researching in an area that is dying of vibrant.
 
-For the wider community, there does not seem to be any systematic reviews specifically about projectional editing, let alone recently.
-This study is not extending any previous Systematic Review as, although there were literature surveys and mapping studies covering some adjacent fields, no SLRs were found.
-Thus we believe it may be useful for those in the language engineering research community to bring together all current research in the area of projectional editing in one place.
+There does not seem to be any recent systematic reviews specifically about projectional editing.
+This study is not extending any previous systematic review.
+Although there exist literature surveys and mapping studies in some adjacent fields, we found no SLRs.
+Thus we believe it may be helpful for those in the language engineering research community to bring together all current research about projectional editing in one place.
 
 \subsection{Research Question}
-This paper we only have one research question to synthesize the findings of scientific papers towards.
-This is ``What is the current state of Projectional Editing?''
+In this paper, we only have one research question to synthesize the findings of scientific papers, which is ``What is the current state of Projectional Editing?''
+We have broken this question into three sub-questions.
 
-This question for us can be broke down into:
 \begin{itemize}
-    \item \textbf{Sub Question 1} ``Is there current research in the area of projectional editing?''
-    \item \textbf{Sub Question 2} ``What tools are currently being used for research?''
+    \item \textbf{Sub Question 1} ``Is there any current research in the area of projectional editing?''
+    \item \textbf{Sub Question 2} ``Which tools are currently being used for research?''
     \item \textbf{Sub Question 3} ``What is the sentiment in papers currently discussing projectional editing?''
 \end{itemize}
 
 
 \subsection{Search Strategy}
 
-The search process is automated as SLRs require a high level of completeness, which cannot be effectively achieved manually.
+The search process is automated as SLRs require a high level of completeness, which one cannot effectively achieve manually.
 Our first major decision was whether to engage in creating a quasi-gold standard as advised by Zhang\cite{Zhang_2011}.
 Zhang noted that the ad-hoc nature of search strategies in SLRs has limitations.
 We executed a preliminary ad-hoc search to try and ascertain the extent of the research space.
-Upon satisfying ourselves that it was small enough, we rejected the Quasi-Gold standard as overkill for our requirements.
+After satisfying that the research space was small enough, we decided against using the Quasi-Gold standard, which was overkill for our requirements.
 
 The search terms we landed on were as follows:
 {\obeylines\obeyspaces
@@ -47,15 +48,16 @@ The search terms we landed on were as follows:
     ``PROJECTIONAL EDITOR'' 
 }}
 
-This is to be adjusted to fit the query syntax of the various search engines.
+We adjusted these search terms to fit the query syntax of the various search engines.
 
-As most Research Search engines offer the option of date ranges, and to save the effort of excluding later we also used the date range to eliminate unnecessary paper at the automated search stage.
-Our research question we are specifically looking at the current state of projectional editing.
-A design decision of many research search engines is that date ranges can often only be defined in whole years.
-When designing our search strategy, it was near the beginning of 2021, and thus we feared that this would be too small a search space, thus we set our date range to be from the beginning of 2020 to present.
-For the sake of reproducibility, it is advised to remove any papers after 31st July 2021.
+As most research search engines offer date ranges, we also used the date range to eliminate unnecessary papers at the automated search stage to save the effort of excluding them later.
+In our research question, we are specifically looking at the current state of projectional editing.
+A restriction of many research search engines is that they define date ranges in whole years.
+When designing our search strategy, it was near the beginning of 2021, and thus we feared that this would be too small a search space. 
+Thus, we set our date range to be from the beginning of 2020 to the present.
+For the sake of reproducibility, we advise the removal of any papers after 31st July 2021.
 
-The Search Engines used are shown in table \ref{table:searchEngines}.
+We show the search engines we used in table \ref{table:searchEngines}.
 
 \begin{table}[H]
     \begin{center}         
@@ -80,37 +82,37 @@ The Search Engines used are shown in table \ref{table:searchEngines}.
 \end{table}
 
 Once we have filtered the automated search through the criteria of the selection stage, we will use that as our starting set for snowballing.
-Our filtering will be done before the quality of the papers has been assessed, as we feel that excluding papers on quality of primary study issues may artificially limit the network of potential papers.
+We will do all our filtering before we do any quality assessments, as we feel that excluding papers from snowballing based on the quality of the primary study would artificially limit the network of potential papers.
 Our snowballing procedure shall follow the advice of Wohin\cite{Wohlin_2014}.
-This is the idea of using the reference lists from our start set and applying the same selection criteria to these.
+Snowballing is a technique for finding related papers by using the reference lists in our starting set and applying the same selection criteria.
 
-Where possible we will get the forward snowballing papers from the ``cited by'' functionality of Google Scholar.
-Because of the range of the search being to present, all papers that cite the target paper will fall within our criteria.
-For backward snowballing we will manually filter the bibliography section of the selected papers, selecting any paper published in 2020 or 2021
+Where possible, we will get the forward snowballing papers from the ``cited by'' functionality of Google Scholar.
+Because of the range of the search being ``to present'', all papers that cite the target paper will fall within our criteria.
+For backward snowballing, we will manually filter the bibliography section of the selected papers, selecting any paper published in 2020 or 2021
 
-After gathering all the papers from the forward and backward snowballing we will again apply the selection criteria.
-This process will iterate recursively until no new papers are found.
-All of the papers not excluded in each iteration will be the basis for the quality of primary studies filtering stage.
+After gathering all the papers from the forward and backwards snowballing, we will apply the selection criteria again.
+The snowballing process will recursively iterate until there are no new papers.
+The papers accepted in each iteration will form the basis for the following stage - the quality assessment of the primary studies.
 
-After the final iteration, as a final step the selected papers will have a deeper scan.
-This is to verify our initial scan that the papers met our inclusion criteria, before moving on to the quality assessment.
+After the final iteration, as a final step, the selected papers will have a deeper scan.
+This deep scan is to verify that our initial scan that the papers met our inclusion criteria before moving on to the quality assessment.
 
 \subsection{Study Selection}
 
 The inclusion criteria are:
 \begin{itemize}
-       \item Studies are about or mention projectional editing or one of it's synonyms
-       \item It is published in during the period 2020\-2021
+       \item Studies are about or mention projectional editing or one of its synonyms.
+       \item The study published date is in the period 2020-2021.
 \end{itemize}
 
 The exclusion criteria are:
 \begin{itemize}
-       \item Books and grey literature
-       \item not English
-       \item no full text available
-       \item papers with serious issues with grammar or vocabulary
-       \item not a previously selected paper
-       \item not a paper about a previously reported on study
+       \item Books and grey literature.
+       \item Not in English.
+       \item Full text unavailable.
+       \item Papers with severe issues with grammar or vocabulary.
+       \item A duplicated paper.
+       \item The primary study is in a previously selected paper.
 \end{itemize}
 
 If multiple papers look at the same study with different approaches, then the data will be aggregated in the synthesis stage.
@@ -121,31 +123,30 @@ We will follow Kitchenham's suggestions to overcome such bias:
        \item Test-retest 
        \begin{itemize}
               \item We will assess the papers once (on title abstract and keywords) against the inclusion and exclusion criteria.
-              \item Save all the suggested results
-              \item Assess the papers again three days later in a different order to the first  
+              \item Save all the suggested results.
+              \item Assess the papers again three days later in a different order to the first.  
        \end{itemize}
        \item If there are disagreements, we will use Cohen's Kappa agreement statistic\cite{Cohen_1960} to see if the process needs to be refined.
 \end{itemize} 
 
-If our searches appear to be too large for a lone researcher, we will turn to text mining.
-We will be cautious to use this.
-O'Mara-Eves et al.'s systematic review of text mining in systematic reviews\cite{OMara-Eves_2015}, recommends that this can be used for prioritization, but finds that for exclusion screening, although promising, it is not yet proven.
+If our searches appear too large for a lone researcher, we will turn to text mining.
+We will be cautious about using this.
+O'Mara-Eves et al.'s systematic review of text mining in systematic reviews\cite{OMara-Eves_2015} recommends using this for prioritization but finds that for exclusion screening, although promising, it is not yet proven.
 
 An SLR is interested in studies rather than papers.
 There is a many-to-many relation between papers and studies.
 We will review the selected papers to note when this has happened in our results to make sure studies do not get over or undercounted.
 
 \subsection{Quality of Primary Studies}
-To discover explanatory reasons for why there may be differences in study results, and to weigh how valuable specific studies are, we will assess the quality of the selected studies.
+To discover explanatory reasons for why there may be differences in study results and to weigh how valuable specific studies are, we will assess the quality of the selected studies.
 
-To try and avoid a Results Section bias we will be operating a results-blind quality assessment.
-Study quality will be based on the methods section of the papers only.
-This bias is threatened because results are summarized in the abstract.
-The study quality will not be measured until after the selection process is complete, though it will, in part be carried out before the selection re-test.
-list of papers will be randomly sorted before assessing for quality.
+To try and avoid a ``Results Section bias'' we will be operating a results-blind quality assessment.
+We base our study quality on the methods section of the papers only.
+However, this bias is still a threat because the abstract, which we will read, summarises the results.
+The study quality will not be measured until after the selection process is complete, though it will, in part, occur before the selection re-test process.
 
-For EBM studies there are some well-known hierarchies of evidence for study quality thresholds such as the CRD Hierarchy of Evidence\cite{Cochrane_2019}.
-Kitchenham in, Procedures for Performing Systematic Reviews\cite{Kitchenham_2004_2}, suggests the hierarchy shown in table \ref{table:hierarchy}
+In evidence-based medicine, there is a well-known hierarchy of evidence quality for consideration in systematic literature review studies - the CRD Hierarchy of Evidence\cite{Cochrane_2019}.
+Kitchenham\cite{Kitchenham_2004_2}, suggests the hierarchy specifically for software engineering research, shown in table \ref{table:hierarchy}
 
 \begin{table}[H]
     \begin{center}   
@@ -156,24 +157,24 @@ Kitchenham in, Procedures for Performing Systematic Reviews\cite{Kitchenham_2004
             Rank     & Description                                                                                         \\
             \hline
             \hline
-            1        & Evidence obtained from at least one properly designed randomized controlled trial                   \\ 
+            1        & Evidence obtained from at least one properly designed randomized controlled trial.                  \\ 
             \hline  
             2        & Evidence obtained from well-designed pseudo-randomized controlled trials                            \\
-                     & (i.e. non-random allocation to treatment)                                                           \\
+                     & (i.e. non-random allocation to treatment).                                                          \\
             \hline  
             3-1      & Evidence obtained from comparative studies with concurrent controls and allocation not randomized,  \\
-                     & cohort studies, case-control studies or interrupted time series with a control group                \\
+                     & cohort studies, case-control studies or interrupted time series with a control group.               \\
             \hline  
             3-2      & Evidence obtained from comparative studies with historical control, two or more single-arm studies, \\
-                     & or interrupted time series without a parallel control group                                         \\
+                     & or interrupted time series without a parallel control group.                                        \\
             \hline  
-            4-1      & Evidence obtained from a randomized experiment performed in an artificial setting                   \\
+            4-1      & Evidence obtained from a randomized experiment performed in an artificial setting.                  \\
             \hline  
-            4-2      & Evidence obtained from case series, either post-test or pre-test/post-test                          \\
+            4-2      & Evidence obtained from case series, either post-test or pre-test/post-test.                         \\
             \hline  
-            4-3      & Evidence obtained from a quasi-random experiment performed in an artificial setting                 \\
+            4-3      & Evidence obtained from a quasi-random experiment performed in an artificial setting.                \\
             \hline  
-            5        & Evidence obtained from expert opinion based on theory or consensus                                  \\
+            5        & Evidence obtained from expert opinion based on theory or consensus.                                 \\
             \hline  
         \end{tabular}}
     \end{center}
@@ -181,64 +182,62 @@ Kitchenham in, Procedures for Performing Systematic Reviews\cite{Kitchenham_2004
     \label{table:hierarchy}
 \end{table}
 
-These different types of study have different quality assessment criteria.
-As the nature of our research questions is not likely to attract randomized or pseudo-randomized controlled trials or experiments, our quality assessment checklists are created with comparative studies and case series in mind.
-To assess the strength of each primary study we used the checklists shown in appendix \ref{appendix:QualityAssesmentChecklist}.
-The checklists were based on a subset of the questions suggested in Keele's guidelines on SLRs\cite{keele2007guidelines}, which in turn extracted questions from previous mostly medical systematic reviews.
-Where necessary the selected questions were modified for software engineering.
 
-These checklists are addressed toward general research.
-In Software Engineering many studies that fall under what Gregor\cite{gregor2006nature}, in ``A Taxonomy of Theory Types in Information Systems Research'' calls ``Type V: Theory for Design and Action''.
+These checklists address general scientific research.
+In software engineering, many studies that fall under what Gregor\cite{gregor2006nature}, in ``A Taxonomy of Theory Types in Information Systems Research'' calls ``Type V: Theory for Design and Action''.
+These types of studies are also known as Action Design Research (ADR).
+
 The checklists do not address this type of research well.
-On investigation into how others SLRs conduct quality assessment we did not find a solution to this issue.
-Therefore we will continue with the checklists as in the appendix, using the checklists for Case Study for Type V research papers.
-We will take this into account before dismissing results of this type on basis of their quality score.
+On investigating how other SLRs conduct a quality assessment of ADR studies, we did not find a solution.
+Therefore we will continue with the checklists shown in the appendix, using the checklists meant for Case Studies for the ADR research papers.
+We will take this into account before dismissing results of this type based on their quality score.
 
-As this study will be carried out by a lone researcher, there is no need to have a process for disagreements.
-To check on the bias, several papers will be randomly selected and assessed using the checklist by the academic and the daily supervisors.
-Should there be a high disagreement the design of the checklist will be revisited.
+As a lone researcher will carry out this study, there is no need to have a process for disagreements between researchers.
 
-The quality checklist is trying to weed out the biases of selection, performance, detection, and exclusion, as well as other threats to the validity of the studies under test.
+We use the quality assessment checklist to weed out the biases of selection, performance, detection, exclusion, and other threats to the validity of the studies under test.
 Validity issues can occur during the design, operation, analysis, or conclusion of an empirical study.
 
 \subsection{Data Extraction}
 \label{section:dataExtraction}
 No data extraction will be necessary for the first sub-question,  ``Is there current research in the area of projectional editing?''.
-The fact of the existence of papers that have been verified to be primary studies either into projectional editing theory or practical use of it will be enough to answer the question.
+The existence of papers with verified primary studies either into projectional editing theory or its practical use will be enough to answer the question.
 
-For the question of ``What tools are currently being used for research?'', we shall note each tool discussed specifically with regards to the study being carried out.
+For the question of ``What tools are currently being used for research?'', we shall note each tool discussed mentioned explicitly in the study.
 
-Finally, for the sentiment we shall pass each paragraph of the introduction, the discussion and the conclusion through a sentiment analyser and, if the paragraph is pertinent to projectional editing, we will not it's sentiment score.
+Finally, for the sentiment, we shall pass each paragraph of the introduction, the discussion, the conclusion, and any other sections that mention projectional editing or tools through a sentiment analyser, noting its sentiment score.
 The sentiment analysis tool we shall use is Microsoft Azure Cognitive Services Text Analytics.
-The code to carry out this task is shown in listing \ref{listing:text_analytics}
+We show the code to carry out this task in listing \ref{listing:text_analytics}.
 
-\begin{lstlisting}[language=Python, caption=Text Analytics code., captionpos=b, label=listing:text_analytics, breaklines=true]
+We will gather this data in tables with the categories shown in table \ref{table:Data_Extraction_Form}.
 
-    from azure.core.credentials import AzureKeyCredential
-    from azure.ai.textanalytics import TextAnalyticsClient
-    
-    endpoint = "REPLACE_WITH_CORRECT_ENDPOINT"
-    key = "REPLACE_WITH_CORRECT_KEY"
-    
-    text_analytics_client = TextAnalyticsClient(endpoint=endpoint, credential=AzureKeyCredential(key))
-    
-    inputfiles = [[ARRAY_OF_FILES_TO_BE_ANALYSED]]
-    
-    with open('/content/sample_data/sentiment/output_all.txt','a') as outf:
-      for sections in inputfiles:
-        for section in sections:
-          print("Section: {}".format(section),file=outf)
-          f = open('/content/sample_data/sentiment/'+section)
-          content = f.readlines()
-          # for brevity an optimization to deal with 10 document limit is removed
-          if len(content) != 0:
-            result = text_analytics_client.analyze_sentiment(content, show_opinion_mining=True)
-            docs = [doc for doc in result if not doc.is_error]
-            for idx, doc in enumerate(docs):
-              print("sentiment: {}".format(doc.sentiment),file=outf)
-              print("Document text: {}".format(content[idx]),file=outf)
-\end{lstlisting}
+\noindent\begin{minipage}{\textwidth}
+    \begin{lstlisting}[language=Python, caption=Text Analytics code., captionpos=b, label=listing:text_analytics, breaklines=true]
 
+        from azure.core.credentials import AzureKeyCredential
+        from azure.ai.textanalytics import TextAnalyticsClient
+        
+        endpoint = "REPLACE_WITH_CORRECT_ENDPOINT"
+        key = "REPLACE_WITH_CORRECT_KEY"
+        
+        text_analytics_client = TextAnalyticsClient(endpoint=endpoint, credential=AzureKeyCredential(key))
+        
+        inputfiles = [[ARRAY_OF_FILES_TO_BE_ANALYSED]]
+        
+        with open('/content/sample_data/sentiment/output_all.txt','a') as outf:
+        for sections in inputfiles:
+            for section in sections:
+            print("Section: {}".format(section),file=outf)
+            f = open('/content/sample_data/sentiment/'+section)
+            content = f.readlines()
+            # for brevity an optimization to deal with 10 document limit is removed
+            if len(content) != 0:
+                result = text_analytics_client.analyze_sentiment(content, show_opinion_mining=True)
+                docs = [doc for doc in result if not doc.is_error]
+                for idx, doc in enumerate(docs):
+                print("sentiment: {}".format(doc.sentiment),file=outf)
+                print("Document text: {}".format(content[idx]),file=outf)
+    \end{lstlisting}
+\end{minipage}
 
 \begin{table}[H]
 	\centering
@@ -262,10 +261,10 @@ The code to carry out this task is shown in listing \ref{listing:text_analytics}
 
 \subsection{Data Aggregation and Synthesis}
 As explained by Kitchenham\cite{kitchenham2015evidence}, in software engineering, primary studies will tend to be too heterogeneous for any statistical analysis.
-Synthesizing outcomes from multiple methods will be difficult.
+Synthesizing outcomes from multiple methods will be complex.
 Thus our synthesis will take a narrative approach.
 
-Narrative synthesis is telling a story of the who, how, and why of the success or otherwise of the research.
-For ADR research, focus will be on what will help or hinder the adoption of the implementations.
-It will also examine how reliable the results are and relationships between the studies.
+Narrative synthesis tells a story of the who, how, and why of the success or otherwise of the research.
+For ADR research, the focus will be on what will help or hinder the adoption of the implementations.
+It will also examine how reliable the results are and the relationships between the studies.
 

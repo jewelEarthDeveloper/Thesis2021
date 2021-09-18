@@ -58,8 +58,7 @@ Concepts follow some object orientated (OO) traits, such as subtype, being abstr
 One of these Concepts must be a root node. 
 Otherwise, there is nowhere for a program to start.
 
-Other items available in the Structure Aspect are the Interface Concept, the Enumeration, the Constrained Data Type, and the Primitive Datatype.
-\footnote{At the time of writing, we are unaware as to whether Data Type and Datatype are semantically different or if it is a style choice.}
+Other items available in the Structure Aspect are the Interface Concept, the Enumeration, the Constrained Data Type, and the Primitive Datatype.\footnote{At the time of writing, we are unaware as to whether Data Type and Datatype are semantically different or if the different naming is a style choice.}
 
 Thus, the structure aspect defines how the AST can be structured.
 
@@ -74,10 +73,10 @@ Figure \ref{fig:concept_example} shows a concept with three children that implem
  
 
 \subsection{Abstract Syntax: Behaviors}
-\footnote{When referring to its use in the MPS workbench, consistent with their use, we use the American spelling - Behavior.}
 OO design usually bundles together data and methods that can act on that data.
 Concepts are analogous to the data part of this equation.
-Behavior fills the role of the methods in the OO analogy, defining the functionality called from instantiated nodes and static methods called from the Concept.
+Behavior\footnote{When referring to its use in the MPS workbench, consistent with their use, we use the American spelling - Behavior.}
+fills the role of the methods in the OO analogy, defining the functionality called from instantiated nodes and static methods called from the Concept.
 The Constructor is a specialised method in a Behavior, filling the same role as a constructor in OO.
 
 The methods have public, private, or protected visibility.
@@ -85,7 +84,7 @@ If the Concept to which the behavior refers is abstract, the behavior itself can
 Abstraction, variable visibility and inheritance allow a sort of polymorphism.
 If a virtual method is declared, then it can be called polymorphically.
 
-Figure \ref{fig:behavior_example} shows a constructor added to a Concept to initialize its children.
+Figure \ref{fig:behavior_example} shows a constructor added to a Concept to initialise its children.
 It has a method to allow other nodes to interrogate the condition of it having attributes.
 
 \begin{figure}[h]
@@ -95,14 +94,12 @@ It has a method to allow other nodes to interrogate the condition of it having a
     \label{fig:behavior_example}
 \end{figure}
  
-
 \subsection{Abstract Syntax: Constraints}
-The constraints aspect adds further structural constraints to concepts.
-These constraints are especially used to define scope.
-Other constraints including allowing if a node can be a child, a parent, or an ancestor of this node.
-the constraints aspect also allows preventing badly formed properties, children or references.
+A Constraints aspect adds further structural restrictions to a Concept.
+Constraints primarily define scope by controlling if another node can be a child, a parent, or an ancestor of this node.
+A Constraint can also prevent badly formed properties, children or references.
 
-Figure \ref{fig:constraint_example} shows an example of a scope restraint that only allows local variables that are declared within the same rule or global variables declared in the same file.
+Figure \ref{fig:constraint_example} shows an example of a scope restraint that only allows local variables declared within the same rule or global variables declared in the same file.
 
 \begin{figure}[h]
     \centering
@@ -128,8 +125,8 @@ Figure \ref{fig:typesystem_example} shows an inference rule that ensures that th
  
 
 \subsection{Concrete Syntax: Editors}
-Editors define the notation of the nodes.
-In effect, it is the user interface of the language, how the AST is projected to the developer.
+Editor aspects define the notation of the nodes.
+In effect, it is the user interface of the language, projecting the AST to the developer.
 An editor is a swing panel that renders a tree of editor cells.
 A concept can have multiple editors, thus offering multiple views on it.
 

@@ -13,8 +13,7 @@ A projectional editor, Inverts this relationship, as a developer edits the abstr
 
 \subsubsection{Parser Based Editing}
 
-In a traditional parser-based development workflow, a program is defined using text and edited with a text editor.
-Because it is text-based, the notation of the language is limited to text.
+A program is defined using text and edited with a text editor in a traditional parser-based development workflow.
 A grammar is a definition of a programming language's formal syntactical rules or concrete syntax.
 One derives the lexer and parser from the grammar.
 The lexer will turn text passed into a text buffer into tokens.
@@ -65,7 +64,7 @@ Here we will not be looking at tools that build code from UML or other MBSE or M
 Another area mistakenly grouped with projectional editing is Low-code software development environments.
 These, however, are only tangentially related.
 
-Most confusing is projectional editing when used to refer to a methodology of product line differentiation in code bases.
+Most confusing is ``projectional editing'' when referring to a methodology of product line differentiation in code bases.
 In addition to having the same name, one of the top products for this product line technique is called PEoPL.
 PEoPL uses MPS for development.
 Thus, this product is a projectional editor (the paradigm) for product line projectional editing (the methodology).
@@ -92,16 +91,16 @@ The AST is stored independently of the concrete syntax, often using a database, 
 Rules of the meta-model, such as type systems or scoping rules, must also be described.
 
 Projectional editors avoid the grammars and parsers that define the concrete and abstract syntax in a traditional text-based language.
-In text-based languages, the concrete is transformed to the abstract with parsing.
+In text-based languages, parsing transforms the concrete into the abstract.
 In projectional editing, the abstract is transformed to concrete using a projection engine that uses projection rules.
 
-Editors combine the projection rules and the gestures or actions that will create a change request to the AST.
+Editors combine the projection rules and the gestures or actions to create a change request to the AST.
 They are analogous to a concrete syntax.
 
-One of the actions can be typing text. 
+One of these actions can be typing text. 
 However, every string is recognized when entered.
 Thus, there is no tokenizing.
-Text enters into the templates defined by the editor and a newly derived projection displays the adjusted underlying AST to the developer.
+Text enters into the templates defined by the editor, and a newly derived projection displays the adjusted underlying AST to the developer.
 
 The projection uses graphical elements to represent the representation.
 Although often appearing textual, each of the text elements are references to nodes in the AST.
@@ -135,7 +134,7 @@ They worked by providing templates for each abstract computational unit of the l
 First, one would choose the concept and then fill out the placeholders.
 
 These tools were not good at editing textual notations, which led to a poor user experience.
-When they attempted to fix this, for example, in the Synthesizer Generator, they reintroduced parsing to parts, which took away many of the advantages of direct editing of the AST.
+When they attempted to fix this, for example, in the Synthesizer Generator, they reintroduced parsing to parts, which took away many advantages of the AST's direct editing.
 
 In the late '90s and early '00s, the first forays into commercializing a more generalized version of structured editors, the projectional editors, began.
 First, Intentional Domain Workbench, inspired by Charles Simonyi's 1995 essay ``The Death of Computer Languages, The Birth of Intentional Programming''\cite{simonyi1995death} the IDW was the product of the company Simonyi founded in 2002, Intentional Software. 
@@ -158,12 +157,12 @@ Whole Platform\cite{WholePlatformProductPage} is a projectional language workben
 Cedalion\cite{lorenz2011cedalion} provides another projectional IDE, specializing in internal DSLs.
 
 
-More recently there have been some interesting products that intersect the projectional domain.
+More recently, there have been some new products that intersect the projectional domain.
 Deuce\cite{hempel2018deuce} and Gentleman\cite{lafontant2020gentleman_SLR} are two recent projection editors that have recently emerged from academia.
 The final two mentions in our incomplete history are a little out of left-field. 
 Google's Blockly\cite{Blockly_ProductPage} is a tool for making structural editor languages, but only in a block format.
-This can create languages similar in style to the scratch language. 
-Blueprint visual scripting, a part of the Unreal Engine, is a visual programming languages for building concepts such as levels or game assets.
+Blockly can create languages similar in style to the scratch language. 
+Blueprint visual scripting, a part of the Unreal Engine, is a visual programming language for building concepts such as levels or game assets.
 Examples of Blockly and Blueprint can be seen in figures \ref{fig:blockly} and \ref{fig:Blueprint} respectively.
 
 \begin{figure}[H]
@@ -187,7 +186,7 @@ Examples of Blockly and Blueprint can be seen in figures \ref{fig:blockly} and \
 \label{section:projectional_advantages}
 
 Projectional editing gives advantages both to the language engineer and the program developers.
-There is a lot of crossover and repetition between papers written on projectional editing as to the advantages it brings.
+There is a lot of crossover and repetition between papers written on projectional editing regarding the advantages it brings.
 To that end, what follows is a synthesis of several papers as to the advantages that projectional editing claims.
 Rather than attributing each advantage to each paper, we have made a reference table of papers proclaiming said advantage.
 This is table \ref{table:Projectional_Advantages}.
@@ -252,14 +251,14 @@ With all notations working on the same editor infrastructure, embedding mathemat
 \paragraph{Multiple views} With the AST being the stored artefact rather than the notation, projectional editing allows the language engineer to define multiple views on the same model optimised for different tasks.
 In Software architecture, one presents different views to different stakeholders based on their interests.
 Similarly, projectional editing can present experts with various domain expertise views on the model that reflect their needs.
-A developer can switch between different node projections within a larger projection to find the one that best suits their current task.
+A developer can switch between node projections within a larger projection to find the one that best suits their current task.
 
 Because the architecture of a projectional editor follows the principles of model-view-controller, it is possible to have multiple simultaneous views of the model.
 These multiple views allow the developer to update a projection optimised for writing and immediately see its effect in a projection optimised for understanding.
 
 \paragraph{Language composition} Parser-based languages can support some modularization and composition, but a projectional editor allows easy and extensive modular language extension and composition.
 This ability results from the disambiguation of the nodes of an AST at the time of entry.
-If two items with the same syntax are available at the same place, then the user will choose the one they require, and therefore the node has an explicitly chosen meaning.
+If two items with the same syntax are available at the same place, the user will choose the one they require, and therefore the node has an explicitly chosen meaning.
 
 The composition of independently developed languages does not suffer from the syntactic or keyword clashes they would in two grammar defined languages.
 Because of the lack of ambiguity, every node referencing the concept that defines it, these languages, when put together, will not have structural or syntactic issues.
@@ -285,7 +284,7 @@ If the change is syntactic, then the language engineer has to update an editor.
 If there is a semantic change, then the language engineer can write a migration in the language to transform a node of one concept to a different type, and the developer would have to run that migration on their code.
 
 \paragraph{Ancillary data} Data added to nodes can augment the AST.
-This data is useful for tasks such as documentation, requirements traceability and product line feature dependencies.
+This data is helpful for tasks such as documentation, requirements traceability and product line feature dependencies.
 
 \subsection{What are the Disadvantages of Projectional Editing?}
 \label{section:projectional_disadvantages}
@@ -328,7 +327,7 @@ Whilst there is no debate that projectional editing feels different, some questi
 
 Modern projectional editors, when using a textual projection, face an ``uncanny valley'' issue.
 Whilst trying to simulate a text editor, the developers start to expect all of the functionality of the text-based IDEs.
-This expectation is a particularly weak spot, especially regarding granularity and restrictions of cursor movement, insertion, deletion, selection, copy and paste, and other interactions with the text.
+This expectation is an especially weak trait regarding granularity and restrictions of cursor movement, insertion, deletion, selection, copy and paste, and other interactions with the text.
 
 \paragraph{Ambiguous syntax} One of the selling points of projectional editing, especially concerning language composition, is that there can be no ambiguous syntax.
 While this may be true for the AST, it is not so for the developer who reads this code on the screen.
@@ -339,7 +338,7 @@ Thus writing ambiguity is replaced by reading ambiguity.
 The flexibility of the layout is entirely in the hands of the language engineer when she determines the projection rules.
 
 \paragraph{Integration with the text based world} Projectional editors do not store the definition of the program in the form of a plain-text implementation in the concrete syntax.
-Instead, the AST is stored and serialized in a format that is not human readable, such as XML.
+Instead, the AST is stored and serialized in a non-human readable format, such as XML.
 
 This different format of program storage leads to an issue with integration with the text-based ecosystem.
 This ecosystem is extensive, as text-based coding has been popular since the 60s.
@@ -356,6 +355,6 @@ The learning curve for the language engineer is significant, as, by default, she
 For the developer, especially one with an extensive text-based experience, the different editing style takes some getting used to.
 
 \paragraph{Vendor lock-in} The nature of projectional editing is that what one edits is a projection of the AST, and therefore an IDE is needed to do the projecting and language definition.
-Organisations thinking of going the projectional route for their DSLs may fear being locked into a specific concept implementation.
+The fear of getting locked into a specific concept implementation can negatively impact evaluations of projectional editing by organisations.
 To be able to use previously developed languages would require using the same toolset.
 Changing to a different toolset for language design would require a significant re-skilling effort.
