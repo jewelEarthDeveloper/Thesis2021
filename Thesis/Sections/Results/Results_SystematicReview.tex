@@ -233,22 +233,34 @@ As MPS dominates the sentences accounting for 17 (61\%) of the 28 papers and 205
 
 \subsubsection{A Narrative Synthesis}
 Our synthesis of the papers that appear in table \ref{table:paper_key} will be short.
-We will avoid rehashing the advantages and disadvantages of projectional editing, as discussed in sections \ref{section:projectional_advantages} and \ref{section:projectional_disadvantages}.
+We will avoid rehashing the advantages and disadvantages of projectional editing, which come up again, but are thoroughly discussed in sections \ref{section:projectional_advantages} and \ref{section:projectional_disadvantages}.
 
 There is much focus in these papers on models, and model driven development.
 Some mention is made of a shift towards textual modelling languages.
 However, others point out that the suitable level of abstraction is not always found in text.
+One paper suggested that text is preferred by developers and graphical projections by maintainers/domain experts, though without source.
 
 When authors have used solutions other than MPS, they complain about issues such as MPS being heavy-weight, with a lot of overhead.
 However, these authors then spend a great deal of time theorising about how to fix issues that are fixed by default in the implementation of MPS.
-The projects they describe are not in industrial use.
-These authors think that projectional editing is probably best suited to helping novices learn a language. 
+These issues include synchronizing between various views and how grammars deal with notations.
 
 There is a fair bit of mention of ``semi-projectional'' approach, where there is parsing at the leaf level.
 This is mainly from those who don't use MPS, but also some who do.
-This, it seems, is a reaction to the difficulty in simulating the text language experience in a projectional editor.
+This, it seems, is a reaction to the difficulty in simulating the text language experience in a projectional editor and echo's the approach the Synthesizer Generator adopted when facing this problem in the 80s.
 
-Those authors who use MPS are mostly either discussing products developed for use in an industrial setting or discussing how best to teach projectional editing.
+The projects they describe are not in industrial use.
+These authors suggest that projectional editing is probably best suited to helping novices learn a language. 
+
+Those authors who use MPS are mostly either discussing products developed for use in an industrial setting or discussing how best to teach projectional editing to a wider audience.
 When MPS is used it is often seen as a key enabler.
+Two of the properties that are mentioned as the biggest pre's are the ease of composition and multiple views.
 
-The
+The users of MPS agree that simulating the experience of the text editor user in the projectional environment is still very hard, though there are new plugins some making that somewhat easier.
+However, the largest carrion call amongst the MPS users is for a web based interface.
+
+The steep learning curve is another issue.
+Several papers offer solutions to this, such as example driven development, gamification, grammar to MPS plug-ins and something called a ``language wheel''.
+
+In general, researchers using MPS have a few gripes with usability, but seem to be very positive.
+With a coincidental word use one paper, not using MPS, said that when dealing with graphical models some problems become intractable, whereas another paper, when describing the decision to use MPS explained that it was because it presented a tractable level of complexity. 
+

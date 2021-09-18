@@ -1,14 +1,6 @@
 \section{Discussion - Systematic Literature Review}
 We now examine threats to the construct, the internal and external validity of our systematic literature review, its reliability, and areas of improvement.
 
-\begin{itemize}
-    \item survey selection
-    \item quality assessment
-    \item data extraction
-    \item search phrase choice
-    \item that sentiment analysis is invalid for scientific papers
-    \item azure sentiment analysis is not calibrated for scientific papers
-\end{itemize}
  
 \subsection{Threats to Validity}  
 As discussed in their tertiary study of SLRs da Silva et al.\cite{DaSilvaFabioQ.B2011Syos}, one of the main problems of SLRs in Software engineering is a focus on practice and not experimentation.
@@ -24,7 +16,7 @@ Regarding construct validity, i.e. whether our research questions match the rese
 Whilst no measurement system is perfect, some are much further from perfect than others.
 
 For the construct to be valid we need to present the best available evidence.
-The nature and modernity of the Projectional Editing might mean that there is plenty of good evidence available in Grey literature and Industrial Articles. 
+The nature and modernity of the Projectional Editing might mean that there is plenty of good evidence available in grey literature and Industrial Articles. 
 This under representation of actual, but non-academic studies could lead to a false positive or negative for some of the questions, leading to errors in recommendations.
 
 There maybe things that influence the best evidence such as who is funding the study. 
@@ -33,37 +25,61 @@ Is a researcher working or consulting at a Projectional Editing product supplier
 Are some projectional editors being ignored because of the preference for English papers only?
 The focus on English language papers might be biased against projectional editors aimed at non-English speaking markets.
 
+The use of the sentiment analysis tool may have been inappropriate.
+The way that scientific papers are written may not lend themselves to sentiment analysis in general or the Azure sentiment analysis service in particular.
 
 \subsubsection{Internal Validity}
 Internal validity, or the causal relationships, does one factor cause an effect or are both factors influenced by something unseen.
-On the surface this seems like it would not affect and SLR.
 
+An incomplete search term may have lead to selection bias.  
+By using ``projectional editing'' and ``projectional editor'' we may have leaned into one small corner of this field, where one tool uses this term whilst others use another to describe a similar approach.
+Other tools or projects could use different terms, such as ``Language orientated programming'' or more antiquated terms like ``Structured programming'' or ``syntax directed editing''.
 
-Selection bias - ``projectional editing''
+One causal relationship that could very well have influenced the outcome was the publishing of the book, ``Domain-Specific Languages in Practice with JetBrains MPS'' right at the end of our selection period.
+Of the 11 papers published in this book, 7 made it into our final paper selection.
+As this book is about using MPS, then this skews the data towards MPS.
+
+We also had an error with the identification of primary studies. 
+Initially we took the word of the paper when it said it had done a case study, but often times, that just meant trying the code out on a current problem, rather than a case study in the academic sense.
+
+A final threat to internal validity was that the conclusions were not evaluated by an expert in either Drools or Projectional editing who could evaluate their value to the field.
 
 \subsubsection{External Validity}
 External validity is the ability to generalize the findings.
 
+The prevalence of the Action Design research methodology in Software engineering is often a reason that the results are impossible to generalise.
+The ``primary study'' data in these cases are often just the source code.
+
+One threat to validity that this is a good representation of the field is our restricted time span.
+However, as the scope of the question was to examine the current state, we still feel that this restriction is necessary and informative.
+
 \subsubsection{Reliability}
 Reliability is how the data and the analysis is dependant on specific researchers.
 Here we are presented with a very credible threat in that this research was carried out by a single researcher.
+Under particular threat of single researchers bias were the quality assessments. 
 
 Whilst measures were put in place to try and mitigate this, the reliance on a single person's judgement of the underlying studies, leaves the door to bias wide open.
-Another threat is the use of thematic review and narrative review. 
-Both of these can be subjective and therefore difficult to reproduce.
+Another threat is the use of narrative review. 
+This can be subjective and therefore difficult to reproduce.
 
-In a replication the papers may be met in a different order leading to different predominant themes. 
-A big thread to reliability was the [TO DO - ].  
-This meant that the selection by title and subsequent selection by abstract were so long winded that these took place over multiple days. 
-Thus there is an impact of bias in time of day and time in the session that might effect whether a title that could be considered marginal would be in or out.
+As mentioned in the results, we were not happy with any of the paper quality assessments for ADR studies.
+Using an inappropriate quality assessment tool, was instrumental in the almost complete failure of the quality assessments.
 
 
 \subsubsection{Repeatability vs Reproducibility}
 Greenhalgh et al.\cite{GreenhalghTrisha2005Eaeo} in their review of where papers come from in systematic reviews found that 24\% of papers come from "personal knowledge or personal contact".
-for the sake of reproducibility we decided not to hunt down relevant papers from knowledgeable people in the field, as this would require anyone trying to reproduce this study to ask the same people at the same knowledge level as us.
+For the sake of reproducibility we decided not to hunt down relevant papers from knowledgeable people in the field, as this would require anyone trying to reproduce this study to ask the same people at the same knowledge level as us.
 This would be impossible as the only person we know who could help us with this is our academic advisor, and he (in our future and your present) will have read this paper, changing his knowledge base forever.
-by making this chase we risk missing out a quarter of our completeness.
+By making this choice we risk missing out a quarter of our completeness.
 
 \subsubsection{Method Improvement}
+An area we would definitely improve is the sentiment analysis.
+Our technique was flawed.
+To avoid the risk of bias through us cherry picking paragraphs, we were very coarse grained in our input selection criteria.
+For all papers we chose the introduction, the conclusion and then any section that discussed anything to do with projectional editing.
 
+The problem with this is that sometimes the sections would run for paragraphs, with only one or two being about projectional editing.
+Often times, especially with papers involving MPS, the paper was focused on a problem and using MPS to solve it.
+Thus the introductions and conclusions would occasionally barely mention projectional editing.
 
+If we were to do this again, we would take a much more fine grained approach as we feel the cherry picking risk is less important than the noise from unrelated text.
