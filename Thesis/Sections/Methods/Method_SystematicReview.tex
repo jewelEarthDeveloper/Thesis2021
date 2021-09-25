@@ -26,6 +26,7 @@ In this paper, we only have one research question to synthesize the findings of 
 We have broken this question into three sub-questions.
 
 \begin{itemize}
+    \setlength\itemsep{0em}
     \item \textbf{Sub Question 1} ``Is there any current research in the area of projectional editing?''
     \item \textbf{Sub Question 2} ``Which tools are currently being used for research?''
     \item \textbf{Sub Question 3} ``What is the sentiment in papers currently discussing projectional editing?''
@@ -41,12 +42,11 @@ We executed a preliminary ad-hoc search to try and ascertain the extent of the r
 After satisfying that the research space was small enough, we decided against using the Quasi-Gold standard, which was overkill for our requirements.
 
 The search terms we landed on were as follows:
-{\obeylines\obeyspaces
-\texttt{
-    ``PROJECTIONAL EDITING'' 
-       OR 
-    ``PROJECTIONAL EDITOR'' 
-}}
+\begin{lstlisting}
+     ``PROJECTIONAL EDITING'' 
+      OR 
+     ``PROJECTIONAL EDITOR'' 
+\end{lstlisting}
 
 We adjusted these search terms to fit the query syntax of the various search engines.
 
@@ -84,7 +84,7 @@ We show the search engines we used in table \ref{table:searchEngines}.
 Once we have filtered the automated search through the criteria of the selection stage, we will use that as our starting set for snowballing.
 We will do all our filtering before we do any quality assessments, as we feel that excluding papers from snowballing based on the quality of the primary study would artificially limit the network of potential papers.
 Our snowballing procedure shall follow the advice of Wohin\cite{Wohlin_2014}.
-Snowballing is a technique for finding related papers by using the reference lists in our starting set and applying the same selection criteria.
+Snowballing is a technique for finding related papers using the reference lists in our starting set and applying the same selection criteria.
 
 Where possible, we will get the forward snowballing papers from the ``cited by'' functionality of Google Scholar.
 Because of the range of the search being ``to present'', all papers that cite the target paper will fall within our criteria.
@@ -101,32 +101,36 @@ This deep scan is to verify that our initial scan that the papers met our inclus
 
 The inclusion criteria are:
 \begin{itemize}
-       \item Studies are about or mention projectional editing or one of its synonyms.
-       \item The study published date is in the period 2020-2021.
+    \setlength\itemsep{0em}
+    \item Studies are about or mention projectional editing or one of its synonyms.
+    \item The study published date is in the period 2020-2021.
 \end{itemize}
 
 The exclusion criteria are:
 \begin{itemize}
-       \item Books and grey literature.
-       \item Not in English.
-       \item Full text unavailable.
-       \item Papers with severe issues with grammar or vocabulary.
-       \item A duplicated paper.
-       \item The primary study is in a previously selected paper.
+    \setlength\itemsep{0em}
+    \item Books and grey literature.
+    \item Not in English.
+    \item Full text unavailable.
+    \item Papers with severe issues with grammar or vocabulary.
+    \item A duplicated paper.
+    \item The primary study is in a previously selected paper.
 \end{itemize}
 
-If multiple papers look at the same study with different approaches, then the data will be aggregated in the synthesis stage.
+If multiple papers look at the same study with different approaches, We aggregate the data during the synthesis stage.
 
 As a lone researcher, we must be aware of bias in positively including relevant papers and excluding irrelevant papers.
 We will follow Kitchenham's suggestions to overcome such bias:
 \begin{itemize}
-       \item Test-retest 
-       \begin{itemize}
-              \item We will assess the papers once (on title abstract and keywords) against the inclusion and exclusion criteria.
-              \item Save all the suggested results.
-              \item Assess the papers again three days later in a different order to the first.  
-       \end{itemize}
-       \item If there are disagreements, we will use Cohen's Kappa agreement statistic\cite{Cohen_1960} to see if the process needs to be refined.
+    \setlength\itemsep{0em}
+    \item Test-retest 
+    \begin{itemize}
+        \setlength\itemsep{0em}
+        \item We will assess the papers once (on title abstract and keywords) against the inclusion and exclusion criteria.
+        \item Save all the suggested results.
+        \item Assess the papers again three days later in a different order to the first.  
+    \end{itemize}
+    \item If there are disagreements, we will use Cohen's Kappa agreement statistic\cite{Cohen_1960} to see if the process needs to be refined.
 \end{itemize} 
 
 If our searches appear too large for a lone researcher, we will turn to text mining.
@@ -146,7 +150,7 @@ However, this bias is still a threat because the abstract, which we will read, s
 The study quality will not be measured until after the selection process is complete, though it will, in part, occur before the selection re-test process.
 
 In evidence-based medicine, there is a well-known hierarchy of evidence quality for consideration in systematic literature review studies - the CRD Hierarchy of Evidence\cite{Cochrane_2019}.
-Kitchenham\cite{Kitchenham_2004_2}, suggests the hierarchy specifically for software engineering research, shown in table \ref{table:hierarchy}
+Kitchenham\cite{Kitchenham_2004_2}, suggests the hierarchy specifically for software engineering research, shown in table \ref{table:hierarchy}.
 
 \begin{table}[H]
     \begin{center}   
@@ -181,7 +185,6 @@ Kitchenham\cite{Kitchenham_2004_2}, suggests the hierarchy specifically for soft
     \caption{Study design hierarchy for software engineering}
     \label{table:hierarchy}
 \end{table}
-
 
 These checklists address general scientific research.
 In software engineering, many studies that fall under what Gregor\cite{gregor2006nature}, in ``A Taxonomy of Theory Types in Information Systems Research'' calls ``Type V: Theory for Design and Action''.

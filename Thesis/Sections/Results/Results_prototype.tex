@@ -27,8 +27,8 @@ ExistConditions and IsPredicates have their content colored green.
 We did not test whether this improved understanding.
 
 \subsubsection{Summary Projection}
-Our next projection allows developers to have a quick overview of rules and complexity of those rules.
-Figure \ref{fig:summaryProjection} shows that the developers are able to get an overview of both the number of rules and the number of facts in each of the rules.
+Our next projection allows developers to have a quick overview of Rules and complexity of those Rules.
+Figure \ref{fig:summaryProjection} shows that the developers are able to get an overview of both the number of Rules and the number of Facts in each of the Rules.
 
 \begin{figure}[h]
     \centering
@@ -37,28 +37,28 @@ Figure \ref{fig:summaryProjection} shows that the developers are able to get an 
     \label{fig:summaryProjection}
 \end{figure}
 
-The building of this rule only required adjusting two editors.
-The rule count and fact count were added to the File editor using Read Only Model Access, to just count the descendants of the file that are rules and facts.
-The rule editor was adjusted to only show the title of the rule and, again using the model access, the count of the descendants of the rule that were facts.
+The building of this Rule only required adjusting two editors.
+The Rule count and fact count were added to the File editor using Read Only Model Access, to just count the descendants of the file that are Rules and Facts.
+The Rule editor was adjusted to only show the title of the Rule and, again using the model access, the count of the descendants of the Rule that were Facts.
 
-Whilst, this may look like a report, that any language workbench could create, the file name and all of the names of the rules are, in fact, still editable in this projection.
+Whilst, this may look like a report, that any language workbench could create, the file name and all of the names of the Rules are, in Fact, still editable in this projection.
 
 \subsubsection{Filtering}
-The nature of business rules lends them to some projectional options that would not make sense with other programming styles.
-because of the small, independent nature of the rules filtering in particular lends itself to the business rules style.
+The nature of business Rules lends them to some projectional options that would not make sense with other programming styles.
+Because of the small, independent nature of the rules filtering in particular lends itself to the business rules style.
 When looking at how to understand large files, we sought other domains than programming that handle large volumes of items.
 The domain of data has a long history of handling large volumes.
 Amongst their two most used tools for exploration are Sorting and Filtering.
-On top of the semantic meaning of the ordering of the rules, we also did not imagine a good use case for sorting rules.
+On top of the semantic meaning of the ordering of the Rules, we also did not imagine a good use case for sorting Rules.
 Thus de decided to implement a filtering projection.
 
 Whilst filtering has been used in other places in the coding pipeline, such as in deciding on what code completion to present\cite{hou2010towards}, and version control visualization\cite{yoon2013visualization}, we were unable to find any research on applying filtering directly to code files.
 Thus, we think what we present here is an original implementation.
 
-When thinking about how business rules are related, one of the first things we look at is rules that examine the same facts or fact properties.
+When thinking about how business rules are related, one of the first things we look at is Rules that examine the same Facts or FactProperties.
 Thus these seemed the most obvious items to filter on.
-We created a projection where if the developer filtered by a Fact or a Fact Property, then the projection would only filter out all rules that did not contain the item.
-On top of this once the rules were filtered it would only show Facts and Fact properties that were used by those rules.
+We created a projection where if the developer filtered by a Fact or a FactProperty, then the projection would only filter out all rules that did not contain the item.
+On top of this once the rules were filtered it would only show Facts and FactProperties that were used by those rules.
 
 \begin{figure}[h]
     \centering
@@ -121,12 +121,12 @@ With a cross-tab one can easily see which rules are using the same Facts.
 
 Figure \ref{fig:crosstabProjection1} Shows our implementation of the cross tab.
 At the top we can see an immediate problem with a cross-tab, and that is, if we have the whole file included the table will be very sparse.
-Figure \ref{fig:crosstabProjection1} also has a close-up of a cell showing a rule using three FactSelectors that reference the same fact.
-The other close-up shows that all the details of the selected fact are available in the inspector.
+Figure \ref{fig:crosstabProjection1} also has a close-up of a cell showing a rule using three FactSelectors that reference the same Fact.
+The other close-up shows that all the details of the selected Fact are available in the inspector.
 
 The sparse table would not be a problem if the columns are thin enough to keep the table in a single screen width.
 
-Everything is editable in this table, including deleting the fact from the rule.
+Everything is editable in this table, including deleting the Fact from the rule.
 Most of the editing was provided by default by either MPS or the table plugin.
 An extra editing feature we added to this table was the ability to delete a Fact from the file, and thus deleting all references to it from all the rules in the file, by deleting a Fact column column.
 The code shown in figure \ref{fig:tableFactDeletion}, shows how we can walk the trees in each rule to delete unary conditions and convert the non-deleted side of binary conditions into unary conditions.
@@ -134,7 +134,7 @@ The code shown in figure \ref{fig:tableFactDeletion}, shows how we can walk the 
 \begin{figure}[h]
     \centering
     \fbox{\includegraphics[width=0.99\textwidth]{Sections/images/tableDeleteCode.png}}
-    \caption{Table fact deletion code}
+    \caption{Table Fact deletion code}
     \label{fig:tableFactDeletion}
 \end{figure}
 
@@ -148,8 +148,8 @@ These are the projections that we will present to experienced Drools developers 
 
 Of the learnings from the RSR language, one we felt needed to be fixed to aid understanding was the sparseness of the tables.
 By implementing the principle of maximising cohesion, we discovered we could reduce the sparseness issue.
-Thus, as a precursor to our projections, we extended Drools-Lite with a new language that contained one structural item, the Rule Collection.
-The rule collection sits at the file level and holds a collection of rule statements.
+Thus, as a precursor to our projections, we extended Drools-Lite with a new language that contained one structural item, the RuleCollection.
+The RuleCollection sits at the file level and holds a collection of rule statements.
 The idea behind this is that rules that are related can be placed in the rule group so that it is easier to examine them together.
 This language also had a default editor, and intentions to move rules in and out of groups.
 
@@ -163,9 +163,9 @@ The RSR language taught us that sparseness in tables is exacerbated through wast
 In the crosstab table, horizontal scrolling was necessary in part due to the column widths.
 The columns were wide as the name of the Fact was displayed horizontally.
 
-The Drools-Lite language allows for much longer selection criteria on Fact Properties, so we had to design the display with this in mind.
+The Drools-Lite language allows for much longer selection criteria on FactProperties, so we had to design the display with this in mind.
 This screen real estate needed to be saved, as our decision table required a column to show the consequences of the selections, which in itself would be a wide column.
-Our solution to this was to develop a vertically orientated header cell and use indentation to indicate if the cell is referring to just the Fact or a Fact and Fact Property combination.
+Our solution to this was to develop a vertically orientated header cell and use indentation to indicate if the cell is referring to just the Fact or a Fact and FactProperty combination.
 The text for the header cells are generated based on the current
 
 
@@ -178,14 +178,14 @@ The text for the header cells are generated based on the current
 
 Because this projection presents both the left and right hand side of the rules, we had to handle the Concept that spans both of these - the RuleVariable.
 As the RuleVariable can be bound and used on the LHS as well as being used on the RHS, we had to find a way of representing this.
-This was achieved by allowing a variable name to be used in the cell that represented the Fact or FactProperty it represented.
+This was achieved by allowing a RuleVariable name to be used in the cell that represented the Fact or FactProperty it represented.
 This lead to a happy visual design choice.
-With variables now being represented in the cells, we could no longer represent the cell being selected with an 'X', as this could lead to confusion as to the meaning.
+With RuleVariables now being represented in the cells, we could no longer represent the cell being selected with an 'X', as this could lead to confusion as to the meaning.
 Projectional editing does not require meaning to be communicated with ASCII text.
 Thus we decided to represent selection with an image, and personal preference and a misspent youth lead us to the smiley face as that indicator.
 
 The rule names and actions are editable through the default functionality of the MPS extension.
-Adding a selection criteria to a rule occurs through an intention attached to the associated cell, as is also the case for binding a variable.
+Adding a selection criteria to a rule occurs through an intention attached to the associated cell, as is also the case for binding a RuleVariable.
 
 The major drawback of this design is that editing a rule with an as yet non-existent selection criteria became very clunky.
 If the rule we wished to edit already existed in the table we had to use an intention to extract it from the group change the criteria and place it back in.
@@ -211,11 +211,11 @@ To this end we created a design where the selection criteria could be directly e
     \label{fig:SpreadsheetProjection}
 \end{figure}
 
-In this design each row is a rule, each column is for a variable or a property of a fact.
+In this design each row is a rule, each column is for a RuleVariable or a property of a Fact.
 If a property is selected then the selection criteria is in the appropriate cell.
 Unselected cells are indicated by a grey/beige color.
 The RHS of the rule appears in the Actions column.
-To add as yet unused facts or fact properties, or remove existing ones, can be achieved with intentions, as shown in figure \ref{fig:SpreadsheetIntentions}.
+To add as yet unused Facts or FactProperties, or remove existing ones, can be achieved with intentions, as shown in figure \ref{fig:SpreadsheetIntentions}.
 
 This Design also allowed us to have more than one selector for the same FactProperty, this being important for our host organizations code.
 This is demonstrated in the figure \ref{fig:TwoProperties}.
@@ -262,7 +262,7 @@ Because of the combinatorial explosive nature of truth tables, with 2\textsupers
 
 
 Figure \ref{fig:TruthTableProjection} shows how we designed this to look.
-The user experience would be that the rule is selected and the developer presses the up and down arrow keys to step through the different true (highlighted in green) and false (highlighted in red) fact selections that result in a true outcome.
+The user experience would be that the rule is selected and the developer presses the up and down arrow keys to step through the different true (highlighted in green) and false (highlighted in red) Fact selections that result in a true outcome.
 
 We presented this design to our experts through the questionnaire to be validated.
 
@@ -280,7 +280,7 @@ In our design, shown in figure \ref{fig:CircuitDiagramProjection} the input wire
     \label{fig:CircuitDiagramProjection}
 \end{figure}
 
-The user experience is that once the rule is selected, the developer, by pressing the up and down arrow keys, can step through the different fact selections (highlighted in yellow) and shown in the circuit diagram, thus showing how the facts relate to each other.
+The user experience is that once the rule is selected, the developer, by pressing the up and down arrow keys, can step through the different Fact selections (highlighted in yellow) and shown in the circuit diagram, thus showing how the Facts relate to each other.
 
 This design is also presented in the questionnaire for validation.
 

@@ -1,6 +1,6 @@
 \subsection{What is Drools?}\label{section:WhatIsDrools}
 
-JBoss Rules, or more commonly known, Drools, is the leading opensource rules engine written in Java.
+JBoss Rules, or more commonly known, Drools, is Java's leading opensource rules engine.
 In this paper, when we use the name ``Drools'' we are referring to the ``Drools Expert'' which is the rule engine module of the Drools Suite.
 Drools started in 2001 but rose to prominence with its 2005 2.0 release.
 It is an advanced inference engine using an enhanced version of the Rete algorithm, called Rete\-OO\cite{sottara2010configurable}, adapted to an object-oriented interface specifically for Java.
@@ -20,6 +20,7 @@ The rules are the focus of this thesis, and therefore, we will delve into much m
 
 In Forgy's\cite{forgy1989rete} overview of a rete algorithm, the following steps occur.
 \begin{enumerate}
+    \setlength\itemsep{0em}
     \item Match: Evaluate the LHSs of the productions to determine which are satisfied given the current contents of working memory.
     \item Conflict resolution: Select one production with a satisfied LHS; halt the interpreter if no productions have satisfied LHSs.
     \item Act: Perform the actions in the RHS of the selected production.
@@ -29,14 +30,14 @@ In Forgy's\cite{forgy1989rete} overview of a rete algorithm, the following steps
 Figure \ref{fig:Drools_inference_loop} show more detail of how these components interact within Drools to infer a conclusion.
 First, Drools asserts facts in the working memory.
 The working memory contains the current state of the facts, which triggers the inference engine.
-Using the aforementioned Rete-OO algorithm, the pattern matcher will examine the working memory and a representation of the rules from the production memory to determine which rules are true.
+Using the aforementioned Rete-OO algorithm, the pattern matcher will examine both the working memory and a representation of the rules from the production memory to determine which rules are true.
 Drools will then put the rules that match on the agenda.
 It can be the case that many rules are concurrently true for the same fact assertion.
 These rules conflict.
 A conflict resolution strategy will decide which rule will fire in which order from the agenda.
 The first rule on the agenda will fire.
 If the rule modifies, retracts or asserts a fact, then the inference loop begins again.
-We have inferred our conclusion if a rule specifies to halt or there are no matching rules left on the agenda.
+We have inferred our conclusion if either a rule specifies to halt or no matching rules remain on the agenda.
 
 \begin{figure}[h]
     \centering
@@ -135,26 +136,31 @@ It then corrupts her and gloats in a message.
 Finally, it prints a message of despair.
 The code in Listing \ref{listing:drl_file} does the following: 
 \begin{enumerate}[topsep=2pt,itemsep=2pt,partopsep=2pt, parsep=2pt]
+    \setlength\itemsep{0em}
     \item On line 1, the package statement identifies the rule file.
     \item On lines 3 and 4, the import statements describe which facts are available for use.
     \item The ``We have an honest Politician'' rule on line 6 does the following:
     \begin{enumerate}[topsep=2pt,itemsep=2pt,partopsep=2pt, parsep=2pt]
+        \setlength\itemsep{0em}
         \item On line 7, using the salience attribute, the rule is set to be run before other rules with a lower salience.
         \item On line 10, the rule checks working memory for Politician facts with the honest property equal to true.
-        \item On line 12, if found, then a Hope fact is inserted into the working memory.
+        \item On line 12, if found, a Hope fact is inserted into the working memory.
     \end{enumerate}
     \item The ``Hope Lives'' rule on line 15 does the following:
     \begin{enumerate}[topsep=2pt,itemsep=2pt,partopsep=2pt, parsep=2pt]
+        \setlength\itemsep{0em}
         \item Line 18 check if any Hope facts exist.
         \item On line 20, if found, it prints a message.
     \end{enumerate}
     \item The ``Hope is Dead'' rule on line 23 does the following:
     \begin{enumerate}[topsep=2pt,itemsep=2pt,partopsep=2pt, parsep=2pt]
+        \setlength\itemsep{0em}
         \item On line 25, it checks that no Hope facts exist.
         \item On line 27, if it finds no facts, then it prints a message.  
     \end{enumerate}
     \item the ``Corrupt the Honest'' rule on line 30 does the following:
     \begin{enumerate}[topsep=2pt,itemsep=2pt,partopsep=2pt, parsep=2pt]
+        \setlength\itemsep{0em}
         \item Line 32 checks for any Politician facts with the honest property equal to true and sets them to the variable \$p.
         \item Line 33 checks if any Hope facts exist.
         \item If both Hope and Politician facts are found, on line 35, it prints a message including the \$p variables name.

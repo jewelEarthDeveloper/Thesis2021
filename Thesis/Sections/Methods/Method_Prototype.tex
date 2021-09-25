@@ -28,8 +28,8 @@ AndCondition and OrCondition conditions evaluate two FactSelectors.
 \paragraph{FactSelector} A FactSelector consists of a reference to a Fact and a collection of Predicates.
 If the Fact exists and all the predicates evaluate to true, then the FactSelector evaluates to true.
 
-\paragraph{Predicate} The predicate is an operation on a FactProperty, to which the concept has a reference.
-As the FactProperty represents a boolean value, the only predicate operations are ``Is'' and ``Not''.
+\paragraph{Predicate} The predicate is an operation on a FactProperty, to which the Concept has a reference.
+Because FactProperty represents a boolean value, the only predicate operations are ``Is'' and ``Not''.
 
 Figure \ref{fig:RSRDiagram} shows the Concept hierarch for this straightforward implementation.
 
@@ -42,7 +42,7 @@ Figure \ref{fig:RSRDiagram} shows the Concept hierarch for this straightforward 
 
 We realised this design in MPS.
 As the aim is to attempt different projections, we did not initially optimise for editing.
-The structure is as shown in figure \ref{fig:RSRStructure} , and the editors including those shown in figure \ref{fig:RSREditors}.
+The structure is as shown in figure \ref{fig:RSRStructure}, and the editors, including those shown in figure \ref{fig:RSREditors}.
 
 \begin{figure}
     \centering
@@ -70,15 +70,15 @@ After adding the substitute menu, We could immediately select the Fact we wanted
 
 \begin{figure}[h]
     \centering
-    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/RSRSubstituteMenu.png}}
+    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/RSRSubstituteMenu.png}} 
     \caption{RSR substitute menu}
     \label{fig:RSRSubstituteMenu}
 \end{figure}
 
 We also added some intentions to invert incorrectly added conditions.
 
-Finally, we added a constraint to scope the fact properties in predicates to the Fact chosen in the FactSelector.
-This scope constraint made it much easier to select properties in the predicates as indicated in figure \ref{fig:RSRConstraint}.
+Finally, we added a Constraint to scope the fact properties in predicates to the Fact chosen in the FactSelector.
+This scope Constraint made it much easier to select properties in the predicates as indicated in figure \ref{fig:RSRConstraint}.
 
 The figure shows that before adding the scoping constraint, it showed a list with dozens of potential FactProperties, that represented all the FactProperties in the Model.
 After adding the constraint, it only shows the two properties associates with the Fact from the FactSelector.
@@ -120,7 +120,7 @@ We would implement just enough features to complete the examples.
 Whenever we had any queries about how to design the Concepts, we referred to our analysis of the Drools Language, shown in appendix \ref{appendix:DroolsConceptHierarchy}.
 We show the preliminary design we achieved using this method in figure \ref{fig:DroolsLiteDiagram}.
 Later, there were some places we diverged a little from our design.
-We merged or decoupled our Concepts when we thought it would simplify the code.
+We merged and decoupled our Concepts when we thought it would simplify the code.
 
 \begin{figure}[htbp]
     \centering
@@ -134,7 +134,7 @@ It also contains semantically unimportant empty lines.
 
 \paragraph{Fact} A Fact has a type property.
 We implement the type property using a ClassifierType from the MPS BaseLanguage.
-This implementation allows the file to refer to BaseLanguage classes implemented in the same solution or to java JAR files.
+This implementation allows the File to refer to BaseLanguage classes implemented in the same solution and Java JAR files.
 We created a smart reference Concept for this to take advantage of built-in MPS UI functionality.
 A smart reference is a node with a single reference of 1:1 cardinality.
 The editor builders know how to select which nodes in scope to display to the developer if one uses this object rather than directly referencing the node to which it refers.
@@ -168,13 +168,15 @@ A RuleVariable has only a name and a type.
 We also create a smart reference for it so that it can be used elsewhere within the rule.
 Like the Global, it extends BaseLanguage's Expression to be available in the Java code of the Right-hand side.
 
-\paragraph{Right-Hand Side} The right hand side of the rule is for the most part is Java code.
-To implement this, we made the right hand side of the rule a single StatementList.
-A StatementList, from the BaseLanguage, as a list of Statements, also from the BaseLanguage, that keeps track of, amongst other things, scope.
+\paragraph{Right-Hand Side} The right-hand side of the rule, for the most part, is Java code.
+To implement this, we made the right-hand side of the rule a single StatementList.
+A StatementList is a list of Statements, both from the BaseLanguage.
+We chose these because they keep track of, amongst other things, scope.
 
-There are a number of non-java, Drools specific items that have to go in the right hand side.
-Items that had to useable within the righthand side were global variables, rule variables and Drools specific functions.
-These all extend Expression, so that they can be seamlessly used.
+There are some non-Java, Drools specific items that are available to the right-hand side.
+Items that had to be useable within the right-hand side were Globals, RuleVariables and Drools specific functions.
+These all extend Expression from the BaseLanguage.
+This extension allows seamless integration with the Java code.
 
 The Drools specific Methods that are required are Insert, InsertLogical, Modify, Delete and Halt.
 
@@ -185,19 +187,19 @@ The Drools specific Methods that are required are Insert, InsertLogical, Modify,
     \label{fig:RHS}
 \end{figure}
 
-Figure \ref{fig:RHS} shows some of the features discussed for the right hand side as shown in our default projection.
-The right hand side is represented by the text shown between the \texttt{then} keyword and the \texttt{end} keyword.
-In the figure one can see examples of plain Java code, such as assigning to the variable \texttt{program} and the \texttt{foreach} loop.
-We can also see that Drools-Lite rule variable \texttt{\$s} is inserted into the Java statements.
+Figure \ref{fig:RHS} shows some of the features discussed for the right-hand side as shown in our default projection.
+The right-hand side is the text shown between the \texttt{then} keyword and the \texttt{end} keyword.
+In the figure, one can see examples of plain Java code, such as assigning to the variable \texttt{program} and the \texttt{foreach} loop.
+We can also see that Drools-Lite RuleVariable \texttt{\$s} is in the Java statements.
 We have also highlighted the drools specific methods placed in the code, in this case \texttt{\textbf{modify}} and \texttt{\textbf{insert}}   
 
-\paragraph{RuleAttributes} Rule Attributes is a container to hold all of the attributes that are applicable to a rule.
-Initially, we have only implemented the No-Loop and Salience attributes.
-These attributes can only be activated through two intentions we added to the Rule Concept.
+\paragraph{RuleAttributes} Rule Attributes is a container to hold all of the attributes that apply to a rule.
+Initially, we have only implemented the No-Loop and Salience Attributes.
+A developer activates these Attributes using two intentions we added to the Rule Concept.
 We can see, on line 2 in figure \ref{fig:Rule}, an example of the salience attribute added to a rule on line 2.
-\footnote{In \ref{fig:Rule}, we added line numbers to this figure to make it easier to talk about.
+\footnote{In figure \ref{fig:Rule}, we added line numbers to this figure to make it easier to talk about.
 The keywords \texttt{rule} on line 1, \texttt{when} on line 3, \texttt{then} on line 6, and \texttt{end} on line 8 have no meaning in the abstract syntax.
-They are added to give the developer the same look and feel as a standard Drools file.}
+We added them to give the developer the same look and feel as a standard Drools file.}
 
 \begin{figure}[h]
     \centering
@@ -206,19 +208,19 @@ They are added to give the developer the same look and feel as a standard Drools
     \label{fig:Rule}
 \end{figure}
 
-\paragraph{Left Hand Side} This is a collection of conditions.
+\paragraph{Left-Hand Side} This is a collection of conditions.
 There are four types of conditions.
-And, Or, Not and Exists.
-And, OR, and Not have one or two children who are also conditions.
-Exists contains a FactSelector.
+AndCondition, OrCondition, NotCondition and ExistsCondition.
+AndCondition, OrCondition, and NotCondition have one or two children who are also conditions.
+The ExistsCondition contains a FactSelector.
 
-We added dynamic braces, to only show braces around a condition if it is a child of another condition.
-This adds visual clarity, without adding unnecessary clutter.
-we also added some intentions to make it easy to switch between Exists and Not conditions.
+We added dynamic braces to only show braces around a Condition if a child of another Condition.
+These braces add visual clarity without adding unnecessary clutter.
+We also added some intentions to make it easy to switch between ExistsCondition and NotCondition.
 
 On line 4 in figure \ref{fig:Rule}, the whole line represents an Exists Condition.
-Line 5 shows an OR condition with containing an Exists and a Not Condition.
-The default editor, through an intention, can make the Exists condition explicit with an \texttt{exists} keyword.
+Line 5 shows an OrCondition containing an ExistsCondition and a NotCondition.
+The default editor, through an intention, can make the ExistsCondition explicit with an \texttt{exists} keyword.
 However, the standard practice with Drools developers is to make this implicit, so this is how we show it here.
 
 \paragraph{FactSelector} This always has a reference to a fact.
@@ -227,23 +229,23 @@ These facts are \texttt{Program} in line 4 of figure \ref{fig:Rule}, and \texttt
 Optionally, the FactSelector can be bound to a variable.
 In figure \ref{fig:Rule} line 5 the FactSelector referencing the \texttt{Student} Fact is bound to the \texttt{\$s} variable.
 
-The FactSelector also contains a list of constraints on FactProperties, that all must return true in order for the FactSelector to return true.
+The FactSelector also contains a list of constraints on FactProperties, that all must return true for the FactSelector to return true.
 
 \paragraph{Constraints} We have three types of constraints.
-And and Or constraints contain other constraints.
+AndConstraint and OrConstraint contain other constraints.
 The FieldConstraints places restrictions on FactProperties.
 
 \paragraph{FieldConstraints} A FieldConstraint refers to a FactProperty and can be bound to a variable.
 It also has a restriction applied to that FactProperty.
-Using a substitute menu we wrapped the FactProperty smart reference.
-This automatically creates the FieldConstraint from a FactProperty selection by the developer.
+Using a substitute menu, we wrapped the FactProperty smart reference.
+This substitution automatically creates the FieldConstraint from the FactProperty selection by the developer.
 
-There are several types of Restriction and several types of values that they can restrict.
+There are several types of Restrictions and several types of values that they can restrict.
 
-\paragraph{RestrictionValues} Restriction values that a property can be compared with are as follows.
-Literal Restrictions: These are Integer, Float, String, DateTime and Boolean.
-Variable Restrictions: these can be global variables, rule variables referring to facts, from the FactSelector, or variables from other FieldConstraints.
-Return Value: this is for comparing to anything that can be expressed as an expression, which includes referring to constants or values behind qualified identifiers.
+\paragraph{RestrictionValues} The RestrictionValues that a property can be compared with are as follows.
+LiteralRestrictions: These are Integer, Float, String, DateTime and Boolean.
+VariableRestrictions: These can be global variables, RuleVariables referring to Facts from the FactSelector, or RuleVariables from other FieldConstraints.
+ReturnValue: This compares to anything expressed as an expression, which includes referring to constants or values behind qualified identifiers.
 
 In figure \ref{fig:Rule} on line 4 we have the return values \texttt{Faculty.Law} and \texttt{Faculty.FNWI}.
 on line 5 the literal values \texttt{7} and \texttt{8}.
@@ -261,12 +263,12 @@ Thus, we have described the pertinent implementation details of the Drools-Lite 
 \subsection{Wireframes}
 
 There are some potential projections we have conceived for which there is not sufficient time to implement.
-We would like for these to be assessed and thus would like them to appear as real as possible to the assessors.
+We want others to assess these and thus would like them to appear as realistic as possible to the assessors.
 
-Our solution to this conundrum, is to develop these presentations in a wireframing tool.
-The Wireframe tool we choose was Axure\cite{Axure_ProductPage}.
-We chose thus as we had previous experience of the product.
+Our solution to this conundrum is to develop these presentations in a wireframing tool.
+The Wireframe tool we chose was Axure\cite{Axure_ProductPage}.
+We chose this because we had previous experience with the product.
 Also, it is available to students for free.
 
 After much discussion, we settled on two possible projectional programming aids: Truth table and circuit diagram.
-We will discuss these in more details in the results section.
+We will discuss these in more detail in the results section.

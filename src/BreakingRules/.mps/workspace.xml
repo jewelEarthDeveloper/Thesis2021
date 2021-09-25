@@ -13,29 +13,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd0f6795-7866-4d8c-b269-3f6c9e7ba8c5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../.vscode/spellright.dict" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vscode/spellright.dict" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Thesis/Appendices/DroolsConceptStructure.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Appendices/DroolsConceptStructure.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Thesis/Appendices/QualityAssesmentChecklistAppendix.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Appendices/QualityAssesmentChecklistAppendix.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Thesis/Appendices/Quality_Assesment_Results.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Appendices/Quality_Assesment_Results.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Thesis/Appendices/QuestionnaireText.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Appendices/QuestionnaireText.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Thesis/Appendices/SystematicReviewLog.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Appendices/SystematicReviewLog.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Background.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Background.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Background/RulesEngines.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Background/RulesEngines.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Background/WhatIsMPS.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Background/WhatIsMPS.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Background/WhatIsProjectionalEditing.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Background/WhatIsProjectionalEditing.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Background/drools.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Background/drools.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Discussion.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Discussion.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Conclusion.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Conclusion.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Implications.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Implications/FutureWork.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Implications/ImplicationsToPractice.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Implications/ImplicationsToResearch.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Introduction/MotivatingExample.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Introduction/MotivatingExample.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Introduction/ResearchQuestions.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Introduction/ResearchQuestions.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Introduction/ThesisOutline.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Introduction/ThesisOutline.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Methods/Method_Prototype.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Methods/Method_Prototype.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Methods/Method_Survey.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Methods/Method_Survey.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Methods/Method_SystematicReview.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Methods/Method_SystematicReview.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Results/Results_SystematicReview.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Results/Results_SystematicReview.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/Results/Results_prototype.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/Results/Results_prototype.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/abstract_page.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/abstract_page.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Thesis/Sections/acknowledgements_page.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/Sections/acknowledgements_page.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Thesis/main.bib" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/main.bib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/main.ist" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/main.ist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Thesis/main.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/main.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Thesis/main.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../Thesis/main.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/Rules2.sandbox/models/Rules2.sandbox.uva.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/Rules2.sandbox/models/Rules2.sandbox.uva.mps" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +51,7 @@
         <TabState>
           <option name="title" value="Console" />
           <tab>
-            <model ref="ce126dd1-5f8b-4ccf-92de-0b17c3b94fd3/r:050ca4a6-1fdd-44d0-957b-a7b5fc6fa7a7(TempModulece126dd1-5f8b-4ccf-92de-0b17c3b94fd3/ConsoleModel_166126253771900)">
+            <model ref="369fc23f-6ede-4b91-bc25-25d979ce0329/r:2379fbaf-5c24-4b08-a411-abdec86f98f0(TempModule369fc23f-6ede-4b91-bc25-25d979ce0329/ConsoleModel_291861697893800)">
               <persistence version="9" />
               <languages>
                 <devkit ref="70d3d6da-af63-483d-a75f-9c8acf8de332(jetbrains.mps.console.devkit)" />
@@ -76,11 +71,11 @@
                   <concept id="757553790980850366" name="jetbrains.mps.console.base.structure.History" flags="ng" index="3balQm" />
                 </language>
               </registry>
-              <node concept="aymSD" id="joymAfXiUv">
-                <node concept="3balQm" id="joymAfXiUw" role="aymYE" />
-                <node concept="2Clz$F" id="joymAfXiUx" role="aymYO" />
-                <node concept="2_V_lH" id="joymAfXiUy" role="1PhJh3">
-                  <ref role="2_V_lI" node="joymAfXiUx" resolve="CommandHolder" />
+              <node concept="aymSD" id="33DjnxxRENN">
+                <node concept="3balQm" id="33DjnxxRENO" role="aymYE" />
+                <node concept="2Clz$F" id="33DjnxxRENP" role="aymYO" />
+                <node concept="2_V_lH" id="33DjnxxRENQ" role="1PhJh3">
+                  <ref role="2_V_lI" node="33DjnxxRENP" resolve="CommandHolder" />
                 </node>
               </node>
             </model>
@@ -272,9 +267,48 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
-      <pane id="FileSystem" />
       <pane id="ProjectPane">
         <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.editor.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rule" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="when" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="selector" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Project" />
@@ -288,8 +322,118 @@
               <option name="myItemId" value="Rules2" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:03cbcdc4-5041-4fbf-9f16-e99392f59dec(Rules2.sandbox.uva) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/solutions/Rules2.sandbox/models/Rules2.sandbox.uva.mps]" />
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.editor.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rule" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="when" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rule" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f24ba329-52af-4b48-9e31-eeb1585d17ab" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rule" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="when" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="selector" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constraint" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fact" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -317,74 +461,6 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="90368668-0b06-4529-a25b-a5999072a9a0(Rules.Excel2)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:7b5d54b1-c1c0-45a0-a350-76ab433cdd47(Rules.Excel2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules.Excel2/models/Rules.Excel2.structure.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="f24ba329-52af-4b48-9e31-eeb1585d17ab" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="90368668-0b06-4529-a25b-a5999072a9a0(Rules.Excel2)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="all models" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="90368668-0b06-4529-a25b-a5999072a9a0(Rules.Excel2)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="f24ba329-52af-4b48-9e31-eeb1585d17ab" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Rules2" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <SELECTED>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="f24ba329-52af-4b48-9e31-eeb1585d17ab" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -396,13 +472,100 @@
               <option name="myItemId" value="r:03cbcdc4-5041-4fbf-9f16-e99392f59dec(Rules2.sandbox.uva) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/solutions/Rules2.sandbox/models/Rules2.sandbox.uva.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="6045891867728181456" />
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.editor.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rule" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="when" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="condition" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:6890ded4-5d55-4318-b349-239eeb33f2d6(Rules2.structure) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rule" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="when" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="17e7b90a-aaca-44c7-aaaa-8155bb498bd7(Rules2)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:4585f9eb-bc55-4596-9029-281d1ab3f18a(Rules2.editor) in IdeaFile[path: C:/Repos/Thesis2021/src/BreakingRules/languages/Rules2/models/Rules2.editor.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rule" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <SELECTED>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="90368668-0b06-4529-a25b-a5999072a9a0(Rules.Excel2)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </SELECTED>
         </subPane>
       </pane>
+      <pane id="FileSystem" />
     </panes>
   </component>
   <component name="ProjectViewState">

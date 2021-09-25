@@ -37,9 +37,10 @@ Returning to the Modus Ponens comparison:
 $\therefore$         & $q$ \\
 \end{tabular}
 
-If the premise $p$ holds and the implication $p \to q$ holds then the conclusion $q$ holds.
-In terms of a rule engine and business rules this could be seen as:
+If the premise $p$ holds and the implication $p \to q$ holds, then the conclusion $q$ holds.
+In terms of a rule engine and business rules, this would be:
 \begin{enumerate}
+    \setlength\itemsep{0em}
     \item the rules engine gathers the data for the premise: $p$
     \item it examines the business rules as the implications: $p \to q$
     \item it executes the conclusion: $q$
@@ -53,13 +54,14 @@ Then back to the matching step.
 If they make no more matches, they terminate the cycle.
 
 Rules Engines are declarative, focussing on the what of the rules, not the how of the execution.
-Date\cite{date2000not} describes a rules engine role as ``to specify business process declaratively, via business rules and get the system to compile those rules in to the necessary procedural (and executable) code.''
+Date\cite{date2000not} describes a rules engine role as ``to specify business process declaratively, via business rules and get the system to compile those rules into the necessary procedural (and executable) code.''
 Fowler\cite{Fowler_rulesEngine} describes a rules engine as follows: `` ... providing an alternative computational model.
 Instead of the usual imperative model, which consists of commands in sequence with conditionals and loops, a rules engine is based on a Production Rule System.
 This is a set of production rules, each of which has a condition and an action ...''.
 
 Some of the advantages of using a rules engine include:
 \begin{itemize}
+    \setlength\itemsep{0em}
     \item The separation of knowledge from its implementation logic.
     \item The externalization of business logic.
     \item Rules can be human-readable.
@@ -105,7 +107,4 @@ We show some of the more commonly used ones in table \ref{table:RuleEngines}.
 \end{table}
 
 \input{Sections/Background/drools}
-
-
-
 
