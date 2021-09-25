@@ -25,10 +25,16 @@
     \input{Sections/Method}
     \input{Sections/Results}
     \input{Sections/Discussion}
+    \input{Sections/RelatedWork}
     \input{Sections/Conclusion}
 
     \printbibliography[heading=bibintoc,notkeyword={SLR}] 
+    \begingroup
+    \renewcommand{\cleardoublepage}{}
+    \renewcommand{\clearpage}{}
     \printbibliography[title={Systematic Review Bibliography},keyword={SLR}] 
+    \endgroup
+    
 
     \appendix
     \input{Appendices/ProtocolValidationChecklist}
