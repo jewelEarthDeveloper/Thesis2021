@@ -1,9 +1,6 @@
 \input{preamble}
 \input{document_variables}
 
-
-\makeglossaries
-
 \begin{document}
     \pagenumbering{roman}
     \frontmatter 
@@ -14,8 +11,12 @@
     \input{Sections/acknowledgements_page}
     \tableofcontents 
     \listoffigures 
-    \listoftables 
-    
+    \begingroup
+    \renewcommand{\cleardoublepage}{}
+    \renewcommand{\clearpage}{}
+    \listoftables
+    \endgroup
+     
     \mainmatter 
     
     \pagestyle{thesis}

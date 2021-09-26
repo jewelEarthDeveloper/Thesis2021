@@ -1,85 +1,97 @@
-\section{Method: Survey}\label{section:Method_survey}
-The validity of the the Prototype was tested using a survey.
-If a survey is not well designed then it could lead to invalid or irrelevant outcomes.
-As well as describing the design and procedure of the survey, we also outline any threats to its validity in this chapter.
-Our choice of survey technique is a Questionnaire.
+\section{Method: Survey}
+\label{section:Method_survey}
+
+We tested the validity of the prototype using a survey.
+If a survey is not well designed, then it could lead to invalid or irrelevant outcomes.
+This chapter describes the design and procedure of the survey.
+Additionally, it outlines any threats to its validity in this chapter.
+Our choice of survey technique is a questionnaire.
 
 \subsection{Questionnaire Design}
-The questionnaire can be found in appendix \ref{Appendix:Questionaire_text}.
-To design the survey of our prototype, we followed a number of rules derived from the works of Bryman\cite{bryman2016social} and de Vaus\cite{de2013surveys}.
+To design the survey of our prototype, we followed the following rules derived from the works of Bryman\cite{bryman2016social} and de Vaus\cite{de2013surveys}.
 
-As advised, first we devised a clear introduction to describe the research.
+\begin{itemize}    
+    \setlength\itemsep{0em}
+    \item \emph{Introduction} 
+        We devised a clear introduction to describe the research.
+    \item \emph{Existing work} 
+        We considered existing questions.
+        With regards to projectional editing, we requested the original questionnaires from three papers\cite{meacham2020adaptivevle,berger2016efficiency, voelter2014towards} about tools developed using projectional editing.
+        Unfortunately, none of the original questions was available for assessment.
+    \item \emph{Question in mind} 
+        When formulating the questions, we had the specific research question, ``Which projections can help developers get appropriate feedback about rules?'' in mind.
+    \item \emph{Succinct} 
+        The pool of Drools users that we were personally in contact with was tiny.
+        Thus we had to rely on responses from strangers.
+        For this reason, we tried to make the questionnaire as quick to finish as possible.
+        This constraint meant we looked particularly hard at removing questions that did not help us to our research goal.
+    \item \emph{Pilot} 
+        We piloted the questionnaire with both ourselves and our industrial supervisor. 
+        The result of this pilot led to more explanative text before the questions.
+    \item \emph{Clarity} 
+        The instructions to each of the questions were tested for clarity by a non-technical third party.
+        We took care to rework questions that were long, ambiguous, general or leading not to be so.
+        We also took care to remove jargon, negative wording, and questions that asked about more than one thing.
+    \item \emph{Closed questions} 
+        The only open questions were ones from which we wished to extract sentiment.
+        To avoid binary questions, where appropriate, we applied a Likert scale\cite{likert1932technique}.
+    \item \emph{Single page questions} 
+        Thanks to the UI of Survey Monkey, no questions spanned multiple pages.
+    \item \emph{Important questions first} 
+        We started with the research-based questions, leaving the socio-demographic questions, such as skill level, to the end.
+\end{itemize}
 
-We considered existing questions.
-With regards to projectional editing, we requested the original questionnaires from three papers\cite{meacham2020adaptivevle,berger2016efficiency, voelter2014towards} pertaining to tools developed using projectional editing.
-From these questionnaires we found [X] that we considered and decided against using any of them.
+Appendix \ref{Appendix:Questionaire_text} shows the questionnaire we designed following these principles.
 
-When formulating the questions we had the specific research question ``Which projections can help developers to get appropriate feedback about rules?'' in mind.
-
-The pool of Drools users that we were personally in contact with was incredibly small.
-Thus we had to rely on responses from strangers.
-For this reason, we tried to make the questionnaire as quick to finish as possible.
-This meant we looked particularly hard at removing questions that did not help us to our research goal.
-
-We piloted the questionnaire with both ourselves and our industrial supervisor.
-
-The instructions to each of the questions were tested for clarity, by a non-technical third party.
-
-The only open question was one for which we wished to extract sentiment.
-Rather than having yes/no questions, where appropriate we applied a Likert scale\cite{likert1932technique}.
-
-The design of survey monkey layout makes sure that questions do not span pages.
-
-The socio-demographic questions (skill level and experience) were left to the end and research based questions were toward at the beginning.
-
-We took care to rework questions that were long, ambiguous, general, or leading to not be so.
-We also took care to remove jargon, negative wording, and questions that asked about more than one thing.
 
 \subsection{Participants}
 
 The requirement for participants is that they have at least a little experience with using Drools.
-It was our hope to get a statistically significant number of participants.
+We hoped to get a statistically significant number of participants.
 
 \subsection{Validity}
-Non-response bias\cite{armstrong1977estimating} will be addressed by making the questionnaire short and easy to answer.
-Because of the nature of the participant selection for this survey, it will be difficult to address the bias of self selection caused by voluntary response.
+We addressed the non-response bias\cite{armstrong1977estimating} by making the questionnaire short and easy to answer.
+Because of the nature of the participant selection for this survey, it will be challenging to address the self-selection bias caused by the voluntary nature of the response.
 
 Common method bias, i.e. ``variance that is attributable to the measurement method rather than to the construct the measures represent''\cite{podsakoff2003common} can be responsible for 25\% or more of variable relational influence.
-As we are only conducting a single survey, we won't be able to do much to prevent this, however we will take the following small precautions.
-Testing the survey to remove question ambiguity, mood influences, and length issues.
-Mixing the survey order of questions will be used to mitigate the issues caused by similarity of items, proximity of items, and location of items.
-We will mitigate survey administration biases by administering some of these questionnaires manually and some online.
-We will make sure that there are no right or wrong answers and aim toward fact based questions.
-We will vary the scales of our Likert scales and the types of questions.
+As we are only conducting a single survey, we will not be able to prevent this. 
+However, we took the following small precautions.
+We tested the survey to remove question ambiguity, mood influences, and length issues.
+We mixed the order of questions in the survey to mitigate the issues caused by the similarity, proximity, and location of items.
+We varied the scales and order of our Likert scales.
 
-The main statistical methods to address this bias, i.e. ``Harman's single factor test''\cite{podsakoff2003common} and the``marker variable''\cite{lindell2001accounting} were found to be lacking in grounding\cite{gorrell2011countering}.
-Marker variable is considered appropriate if used with caution.
-With the size of our expected returns, it may not be possible to gain a statistically significant outcome.
+The main statistical methods to address common method bias, i.e. ``Harman's single factor test''\cite{podsakoff2003common} and the``marker variable''\cite{lindell2001accounting} have been found to be lacking in grounding\cite{gorrell2011countering}.
+The marker variable approach is appropriate if used with caution.
+However, it may not be possible to gain a statistically significant outcome with our expected response size.
 
 \subsection{Pre-test}
-The first attempt at the survey was sent to our industrial supervisor, who has experience with Drools.
-We used this to remove ambiguously worded or leading questions and test that the length was truly between 5-10 minutes.
-This lead to the following changes:
-[TODO: add changes after we have tested]
+We sent our first pass of the survey to our industrial supervisor, who has experience with Drools.
+With this pre-test, we hoped to remove ambiguously worded or leading questions.
+Additionally, we wanted to confirm that the questionnaire took around 10 minutes to complete.
 
+As a result of this pre-test, we updated much of the explanatory text.
 
 \subsection{Sampling}
-As within our own professional network we only had acquaintance with (6?) Drools developers, we had to expand our reach to those we did not personally know.
+Within our professional network, we only had a connection with very few Drools developers.
+We also considered that having acquaintances answer the questionnaire could introduce some biases we could not account for.
+Thus we had to expand our sampling reach.
 
-Our approach was first search StackOverflow for question askers and answerers on the subject of Drools.
-Our preference was to find email addresses, failing that twitter contacts.
-This proved to be quite limited, especially in attempting to get contact details, 13 email addresses and 6 twitter addresses.
+Our first approach was to search StackOverflow for question askers and answerers on the subject of Drools.
+Our preference was to find email addresses, failing that Twitter contacts.
+Unfortunately, this proved quite limited.
+We only managed to harvest 13 email addresses, and six Twitter handles.
 
-Our next approach was to trawl our LinkedIn connections for anyone with drools as a proclaimed skill.
-Whilst we had no one in our direct contacts, at one level of separation we found 204 connections.
-From these we could extract 54 email addresses and 40 twitter addresses, with only a small crossover with the addresses harvested from StackOverflow.
+Our following approach was to interrogate our LinkedIn connections for anyone who claimed Drools as one of their marketable skills.
+At two degrees of separation in our LinkedIn network, we found 204 candidates with Drools skills listed.
+From these, we harvested 54 email addresses, and 40 Twitter handles.
 
-We chose not to expand to third level contacts, as we thought this would be harder to sell as to why they should feel comfortable answering us.
+We chose not to expand our search to three degrees of separation.
+At two degrees of separation, we share a relationship with the same person.
+We thought it would be harder to take advantage of the social pressure to answer when we do not have that shared relationship.
 
 \subsection{Procedure}
 
 The questions, as described in appendix \ref{Appendix:Questionaire_text}, were turned into a survey using the Survey Monkey service.
+We also show screenshots of one version of the questionnaire in appendix \ref{Appendix:Questionaire_text}.
 
-To encourage response, especially amongst only tangentially known participants, we crafted a short introduction email, using techniques designed to enhance response as discussed by amongst others Cialdini\cite{goldstein2008yes}.
-
-These were sent to our list of drools using strangers and we sat back and awaited response.
+To encourage response, we crafted a short introduction email, heavily relying on techniques designed to enhance response as discussed by  Cialdini\cite{goldstein2008yes}.
