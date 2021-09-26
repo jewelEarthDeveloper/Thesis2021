@@ -1,66 +1,67 @@
-\chapter{Conclusion}\label{chapter:Conclusion}
+\chapter{Conclusion}
+\label{chapter:Conclusion}
 
-In this master's project we dove into the current state of projectional editing and presented and had verified a number of projections for the purpose of improving the understanding of Business Rules.
-We conducted a systematic literature review (SLR), creates prototypes and conducted a survey of the impact they may have.
-Through the SLR we examined the current state of projectional editing, finding it dominated by a single product.
-We implemented the Drools language in MPS and through our prototypes we demonstrated some of the possibilities projectional editing can bring.
+In this master's project, we dove into the current state of projectional editing and presented and verified some projections to improve the understanding of Business Rules.
+We conducted a systematic literature review (SLR), created prototypes, and surveyed the impact they may have.
+We examined the current state of projectional editing through the SLR, finding it dominated by a single product.
+We implemented the Drools language in MPS, and through our prototypes, we demonstrated some of the possibilities projectional editing can bring.
 The results of our survey failed to confirm that these projections would bring the benefits we had hypothesised.
 
-In this paper we described our work with first translating the Drools DSL into a projectional language followed by our explorations of projections.
-We discussed the advantages and disadvantages of the different projections we created and analysed experienced developers reactions to them.
+In this paper, we described our work by first translating the Drools DSL into a projectional language, then exploring projections.
+We discussed the advantages and disadvantages of the different projections we created and analysed experienced developers' reactions to them.
 
-In this last section of this paper will return to the initial questions we were trying to answer from section \ref{section:Research_Questions}.
-We will summarise the findings of our research and the contributions our work had made.
-Finally we will discuss items that were out of scope for this project, but would give future research opportunities.
+This last section of this paper will return to the initial questions we were trying to answer from section \ref{section:Research_Questions}.
+We will summarise the findings of our research and the contributions our work has made.
+Finally, we will discuss items out of scope for this project but would give future research opportunities.
 
 \section{Research Summary}
-Our main research question, ``How can projectional editors and DSLs be combined to address feedback mechanisms for developers in the context of reasoning about rules in a rule-based business engine?'', motivated us to explore the field of projectional editing in this project.
-This drove us to investigate if this field was worth investigating and, if so, how we can use existing tools to answer this.
+Our primary research question, ``How can projectional editors and DSLs be combined to address feedback mechanisms for developers in the context of reasoning about rules in a rule-based business engine?'', motivated us to explore the field of projectional editing in this project.
+This question led us to investigate if this field was worth investigating and, if so, how we can use existing tools to answer this.
 
 \subsubsection{Research Question 1: ``What is the current state of language workbenches supporting projectional editing?''}
-In this paper we presented an SLR which looked into the current state of projectional editing.
-This SLR found that currently LWBs for projectional editing is a very narrow field, dominated by one product, JetBrains MPS.
+In this paper, we presented an SLR that looked into the current state of projectional editing.
+This SLR found that LWBs for projectional editing are currently a very narrow field, dominated by one product, JetBrains MPS.
 Studies using products other than MPS spend time and effort discussing how to solve issues already solved in MPS.
-Studies using MPS tend to be focused on products for industrial use or how to use MPS as a tool to teach Meta-Programming.
-One area MPS is a little behind is the need for a web based development environment, both for the Language engineer, but especially for the developer.
+Studies using MPS tend to focus on industrial products or how to use MPS as a tool to teach Meta-Programming.
+MPS is a little behind in developing a web-based environment, both for the language engineer and the developer.
 
 A monoculture can be a risk.
 Whilst there are many advantages to projectional editing, having only one successful product and supplier feels a little unhealthy.
-On the other hand, the number of users of the tool is growing, as evidenced by the papers representing new projects in multiple industries, from hardware, through automotive industry, to Finance.
+On the other hand, the number of users of the tool is growing, as evidenced by the papers representing new projects in multiple industries, from hardware, through the automotive industry, to Finance.
 
 To conclude, the state of the projectional editing market, whilst niche, is maturing but with a current product monoculture.
 
 \subsubsection{Research Question 2: ``Which projections can help developers get appropriate feedback about rules?''}
 
-In our research we were able to develop a number of projections.  
-This success was in large part facilitated by the flexibility and extensibility of the MPS tool which presented the ability to develop and extend DSLs very efficiently.
+In our research, we were able to develop some projections.  
+This success was in large part facilitated by the flexibility and extensibility of the MPS tool, which presented the ability to develop and extend DSLs very efficiently.
 
-We presented two of the projections to experienced Drools users, along with two wireframes of more exotic solutions.
-There was a distinct preference between the projections we presented, with the spreadsheet like table being more understandable than our decision table.
-Both of our presentations significantly underperformed in terms of understanding to the textual projection.
+We presented two of our projections to experienced Drools users, along with two wireframes of more exotic solutions.
+There was a distinct preference between the projections we presented, with the spreadsheet-like table being more understandable than our decision table.
+Both of our presentations significantly underperformed in terms of understanding the textual projection.
 
-Whilst we were not able to show an advantage of our projections in our study, there was distinct interest in our approach, and recognition of the advantages it may bring.
+While we could not show an advantage of our projections in our study, there was distinct interest in our approach and recognition of the advantages it may bring.
 
 \section{Summary of Contributions}
 
 We think that this masters project offers the following contributions:
 \begin{itemize}
-    \item \emph{The Projectional Editing Status Quo} in our SLR we provide an overview of the current state of research in the field of Projectional Editing
+    \item \emph{The Projectional Editing Status Quo} in our SLR, we provide an overview of the current state of research in the field of Projectional Editing
     \item \emph{An alternative Base Language} with a little extra work, the Drools-Lite language can be used as an alternative base language for model-to-model transformations in MPS.
     \item \emph{A new way to enter rules} our implementation allows Drools developers a more compact manner to enter rules.
 \end{itemize}
 
 \section{Further work}
 
-Drools-lite is open for future extension, both for matching the feature sets of the full Drools language and adding extra projectional capabilities.
-Projections we would particularly like to see how we could take advantage of include graphical mappings of rule interactions as well as live test output.
+Drools-lite is open for future extension, both for matching the feature sets of the complete Drools language and adding extra projectional capabilities.
+Projections we would particularly like to see how we could take advantage of include graphical mappings of rule interactions and live test output.
 
-Understanding business rules could be helped by guarantees of completeness.
+Guarantees of completeness could help understanding business rules.
 We would be interested to see how we could apply the formal specifications developed within FASTEN\cite{ratiu2019fasten} to some of our potential projections.
 
-Whilst a survey was informative, we would also like to run an experiment with our projections, to have more than just opinions.
+While a survey was informative, we would also like to run an experiment using our projections.
 
 Finally, a question that has occurred to us both in the literature review and the survey was - how much of the opinions about projectional editing are a consequence of a history of textual language use?
-We also briefly worked on a projectional implementation of the pedagogical gradual language Hedy\cite{hermans2020hedy}.
-Being able to compare the results of those with no experience of programming to use of projectional and text based languages could point to the influence of experience in choice.
-This will have to wait until there is a web-based implementation of MPS, as the installation of an application on school machines is impractical.
+We briefly worked on a projectional implementation of the gradual pedagogical language Hedy\cite{hermans2020hedy}.
+Comparing the results of those with no experience of programming to the use of projectional and text-based languages could point to the influence of experience in choice.
+This experiment will have to wait until there is a web-based implementation of MPS, as installing an application on school machines is impractical.
