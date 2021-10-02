@@ -5,27 +5,34 @@
 In this section, we will describe what a rules engine is and a little of its history.
 
 The Aristotelian doctrine of essentialism declares that a thing has essential properties and properties that are accidental.
-If one takes away accidental properties, then the thing remains the thing.
-If one takes away essential properties, the thing is no longer the thing.
-If the thing is a business application, then its essential properties are its business rules.
+If one takes away the accidental properties of a thing, then the thing remains the thing.
+In contrast, if one takes away the thing's essential properties, the thing is no longer the thing.
+If the ``thing'' we refer to is a business application, its essential properties are its business rules.
 
 Simply put, business rules are the principles or regulations by which an organization carries out the tasks needed to achieve its goals.
 When adequately defined, it is possible to encode these rules into statements that define or constrain some business organizational behaviour.
 A rule consists of a condition and an action.
 When the condition is satisfied, then the action is performed.
-More formally, business rules are the implication in the logical principle of Modus Ponens.
+More formally, business rules follow the logical principle of Modus Ponens.
 
 When described like this, one could imagine this as just the ``if-then'' logic frequently used in traditional programming.
 One would not be wrong. 
-However, in traditional programming, representing all the combinatorial outcomes can become complex.
-In the typical application architecture, developers tend to distribute rules throughout the source code or database.
-Each additional rule leads to more fragility.
+However, representing all the combinatorial outcomes of an extensive collection of rules in traditional programming can become complex.
+Each additional rule adds to the fragility.
+Additionally, developers tend to distribute rules throughout the source code or database of the application.
 
 We find descriptions of these rules in the design documentation or user manuals.
 However, as applications evolve, documentation gets out of sync with the codebase.
 Once desynchronization occurs, to know the rules governing the application, one has to navigate the codebase and decode the rules from often scattered locations.
 
 A rules engine is also known as a Business Rules Engine, a Business Rules Management System or a Production Rules System.
+
+Rules Engines are declarative, focussing on the what of the rules, not the how of the execution.
+Date\cite{date2000not} describes a rules engine role as ``to specify business process declaratively, via business rules and get the system to compile those rules into the necessary procedural (and executable) code.''
+Fowler\cite{Fowler_rulesEngine} describes a rules engine as follows: `` ... providing an alternative computational model.
+Instead of the usual imperative model, which consists of commands in sequence with conditionals and loops, a rules engine is based on a Production Rule System.
+This is a set of production rules, each of which has a condition and an action ...''.
+
 The goal of a rules engine is to abstract business rules into encoded and packaged logic that defines the tasks of an organization with the accompanying tools that evaluate and execute these rules.
 Simply put, they are where we evaluate our rules.
 Rules engines match rules against facts and infer conclusions.
@@ -53,12 +60,6 @@ They then perform the actions described in the rule.
 Then back to the matching step.
 If they make no more matches, they terminate the cycle.
 
-Rules Engines are declarative, focussing on the what of the rules, not the how of the execution.
-Date\cite{date2000not} describes a rules engine role as ``to specify business process declaratively, via business rules and get the system to compile those rules into the necessary procedural (and executable) code.''
-Fowler\cite{Fowler_rulesEngine} describes a rules engine as follows: `` ... providing an alternative computational model.
-Instead of the usual imperative model, which consists of commands in sequence with conditionals and loops, a rules engine is based on a Production Rule System.
-This is a set of production rules, each of which has a condition and an action ...''.
-
 Some of the advantages of using a rules engine include:
 \begin{itemize}
     \setlength\itemsep{0em}
@@ -69,6 +70,7 @@ Some of the advantages of using a rules engine include:
 
 In summary, a rules engine is the executor of a rules-based program, consisting of discreet declarative rules which model a part of the business domain.
 
+\subsection{An incomplete history of rules engines}
 
 Rule engines arose from the expert systems of the late 70s and early 80s.
 Expert systems initially had three primary techniques for knowledge representation: Rules, frames and logic\cite{jackson1986introduction}.
