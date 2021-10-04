@@ -229,30 +229,32 @@ Intelligent code completion does not have to be limited to single nodes.
 Inserting whole subtrees allows the developer to explore the larger structures of the language.
 
 \paragraph{Correctness-by-construction} A projectional editor prevents her from writing syntactically incorrect code by controlling the interaction between the developer and the AST.
-The whole class of syntactical errors is made impossible, with the developer relieved to think about special characters and layout.
-Typing and scoping errors are removed by only allowing validly typed and scoped options for the developer.
+The whole class of syntactical errors is made impossible, with the developer relieved of having to think about special characters and layout.
 
+Typing and scoping errors are removed by only allowing validly typed and scoped options for the developer.
 The developer can only select statements that are legal in the context of the location within the AST.
+
 Code does not have to be disambiguated, as this happens at the time of entry by the developer.
 If multiple items share the same notation in the editor, the developer chooses the relevant item, thus resolving the ambiguity to what she means rather than what the parser thinks she means.
 
 \paragraph{Rich notation} Constraints associated with textual parsing do not affect the choice of created projections. 
-This freedom opens up diverse otherwise tricky or impossible to parse notations.
+This freedom allows otherwise tricky or impossible to parse notations.
 Examples include tabular, mathematical expressions and symbols, diagrams, trees, images, forms, prose, sub- and superscript.
 Any visual form or shape that can map onto the AST can represent the program in an editor.
 
 With these notations, one can better reflect the semantics of the program domain, which should aid comprehension.
 Mathematics has a rich history of use of notation.
-When writing a DSL for the Mathematics domain, the domain experts can interact with it in the centuries-old language of their domain.
+When writing a DSL for the mathematics domain, the domain experts can interact with it in the centuries-old language of their domain.
 
 Of course, the projections can also be projections of text.
-Textual projections are often the appropriate projection type if the developer interacting with the language's domain expertise is parser-based languages.
+Textual projections are often the appropriate projection type.
+This is especially true if the domain expertise of the developer is parser-based languages.
 
 \paragraph{Mixed notation} As no parsing is required and ambiguity is not an issue for the underlying AST, it is straightforward to combine different forms of rich notation.
 With all notations working on the same editor infrastructure, embedding mathematic symbols within textual projections, within tables within graphical representations is a simple coding pattern.
 
 \paragraph{Multiple views} With the AST being the stored artefact rather than the notation, projectional editing allows the language engineer to define multiple views on the same model optimised for different tasks.
-In Software architecture, one presents different views to different stakeholders based on their interests.
+In the practice of software architecture, one presents different views to different stakeholders based on their interests.
 Similarly, projectional editing can present experts with various domain expertise views on the model that reflect their needs.
 A developer can switch between node projections within an enclosing larger projection to find the one that best suits their current task.
 
@@ -308,9 +310,9 @@ Our best guess is that those who do not find projectional editing beneficial do 
             Unnatural user experience  & 11 &\cite{vysoky2018ingrid,voelter2015towards,voelter2014towards,voelter2012mbeddr,voelter2014projecting,berger2016efficiency,voelter2016efficient,voelter2010embedded,voelter2010language2,schindler2016language,voelter2014supporting} \\
             Ambiguous syntax           & 1 &\cite{guttormsen2017consistent} \\
             Inflexibility              & 2 &\cite{voelter2014towards,voelter2014supporting} \\
-            lack of integration with text ecosystem & 5 &\cite{voelter2012mbeddr,voelter2014towards,voelter2012mbeddr,voelter2014projecting,voelter2014supporting} \\
+            Lack of integration with text ecosystem & 5 &\cite{voelter2012mbeddr,voelter2014towards,voelter2012mbeddr,voelter2014projecting,voelter2014supporting} \\
             Learning curve             & 5 &\cite{voelter2010language2,pech2013jetbrains,voelter2012mbeddr,voelter2014towards,voelter2015using,prinz2021teaching} \\
-            Vendor lock\-in            & 2 &\cite{voelter2010embedded,voelter2010language2,tomassetti2020reflections} \\
+            Vendor lock-in             & 2 &\cite{voelter2010embedded,voelter2010language2,tomassetti2020reflections} \\
             \hline
         \end{tabular}
     \end{center}
@@ -333,8 +335,9 @@ Whilst trying to simulate a text editor, the developers start to expect all of t
 This expectation is an especially weak trait regarding granularity and restrictions of cursor movement, insertion, deletion, selection, copy and paste, and other interactions with the text.
 
 \paragraph{Ambiguous syntax} One of the selling points of projectional editing, especially concerning language composition, is that there can be no ambiguous syntax.
-While this may be true for the AST, it is not so for the developer who reads this code on the screen.
-If one combined Drools and Basic rather than Java, the developer might become confused about which language the ``Then'' keyword refers to when she read it.
+While there is no ambiguity in the code, there can be ambiguity in the mind of the reader.
+This occurs as exactly the same notation can projected from different nodes.
+For example, if one combined Drools with Basic, the developer might become confused about which language the ``\texttt{Then}'' keyword was coming from.
 Thus writing ambiguity is replaced by reading ambiguity.
 
 \paragraph{Inflexibility} A developer using a projectional editor has no flexibility in code layout. They may feel they require this for enhanced readability.
@@ -345,7 +348,7 @@ Instead, the AST is stored and serialised in a non-human readable format, such a
 
 This different format of program storage leads to an issue with integration with the text-based ecosystem.
 This ecosystem is extensive, as text-based coding has been popular since the 60s.
-Two notable examples are text diffing, especially where branch merging is concerned and code sharing.
+Two notable examples are code sharing and text diffing for branch merging.
 The diffing issue within projectional editing tools is solved.
 However, as code-bases often span multiple programming languages and tools, the difficulty of integrating projectional diffing into the software development workflows is still a real problem.
 

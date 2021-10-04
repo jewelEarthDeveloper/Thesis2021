@@ -54,7 +54,7 @@ In terms of a rule engine and business rules, this would be:
 \end{enumerate}
 
 Rules engines follow the recognize-act cycle.
-First, the match, i.e. are there any rules with a true condition?
+First, the match, i.e., are there any rules with a true condition?
 Next, they carry out conflict resolution, pick the most relevant matching rules.
 They then perform the actions described in the rule.
 Then back to the matching step.
@@ -79,7 +79,7 @@ MYCIN was used to identify bacteria and recommend antibiotic prescriptions.
 MYCIN and its progenitor, DENDRAL, spawned a whole family of Clinical Decision Support Systems that pushed the rules engine technology until the early 1980s.
 Research into rules engines died out in the 1980s as it fell out of fashion.
 
-Early in their existence, the rules engines hit a limiting factor because the matching algorithms they used suffered from the utility problem, i.e. the match cost increased linearly with the number of examined rules.
+Early in their existence, the rules engines hit a limiting factor because the matching algorithms they used suffered from the utility problem, i.e., the match cost increased linearly with the number of examined rules.
 Charles Forgy's efficient pattern matching Rete algorithm\cite{forgy1989rete} and its successors solved this problem.
 This algorithm works by modelling the rules as a network of nodes where each node type works as a filter.
 A fact flows through the filters of this network.

@@ -2,27 +2,25 @@
 \label{section:Method_systematic_review}
 
 To answer the first Research Question, ``what is the current state of Projectional Editing?'', we conducted a systematic literature review.
-Hereafter, we describe the method we undertook.
-
-To carry out this review, we followed Kitchenham's\cite{Kitchenham_2015} advice on systematic review protocol validation (see appendix \ref{appendix:protocolValidation} for the exact checklist we used).
+Hereafter, we describe the method we undertook. To carry out this review, we followed Kitchenham's\cite{Kitchenham_2015} advice on systematic review protocol validation.
 
 \subsection{Motivation}
 The motivation that preceded this research was a requirement to understand if projectional editing was an idea that was worth investigating.
 Our background research showed an interest in the precursors to projectional editing in the late '70s through to the mid-'80s.
 Outside of academia, interest arose in the mid-'90s following Charles Simonyi's treaties on Intentional programming.
-However, Simonyi's call to arms did not lead to a swell in academic research as his companies product, Intentional Domain Workbench, was a closed commercial product.
-Conversely, after JetBrain's OpenSource Meta Programming System (MPS) release, in the late 2000s, there was a flurry of papers on the subject.
+However, Simonyi's call to arms did not lead to a swell in academic research as his company's product, Intentional Domain Workbench, was a closed commercial product.
+Conversely, after JetBrain's opensource Meta Programming System (MPS) release, in the late 2000s, there was a flurry of papers on the subject.
 
 Is there a need for a study of this topic? 
-We believe, at least in the microcosm of this master's project, it is helpful to know whether we are researching in an area that is dying of vibrant.
+We believe, at least in the microcosm of this master's project, it is helpful to know whether we are researching in an area that is dying or vibrant.
 
-There does not seem to be any recent systematic reviews specifically about projectional editing.
-This study is not extending any previous systematic review.
+There does not seem to be any recent SLRs specifically about projectional editing.
+This study is not extending any previously conducted SLR.
 Although there exist literature surveys and mapping studies in some adjacent fields, we found no SLRs.
-Thus we believe it may be helpful for those in the language engineering research community to bring together all current research about projectional editing in one place.
+Thus, we believe it may be helpful for those in the language engineering research community to bring together all current research about projectional editing in one place.
 
 \subsection{Research Question}
-In this paper, we only have one research question to synthesize the findings of scientific papers, which is ``What is the current state of Projectional Editing?''
+In this paper, we try to answer the question “What is the current state of Projectional Editing?” with an SLR. We have broken this question into three sub-questions.
 We have broken this question into three sub-questions.
 
 \begin{itemize}
@@ -53,7 +51,8 @@ We adjusted these search terms to fit the query syntax of the various search eng
 As most research search engines offer date ranges, we also used the date range to eliminate unnecessary papers at the automated search stage to save the effort of excluding them later.
 In our research question, we are specifically looking at the current state of projectional editing.
 A restriction of many research search engines is that they define date ranges in whole years.
-When designing our search strategy, it was near the beginning of 2021, and thus we feared that this would be too small a search space. 
+When designing our search strategy, it was near the beginning of 2021.
+We concluded that only including papers from 2021 would be too small a search space. 
 Thus, we set our date range to be from the beginning of 2020 to the present.
 For the sake of reproducibility, we advise the removal of any papers after 31st July 2021.
 
@@ -94,8 +93,8 @@ After gathering all the papers from the forward and backwards snowballing, we wi
 The snowballing process will recursively iterate until there are no new papers.
 The papers accepted in each iteration will form the basis for the following stage - the quality assessment of the primary studies.
 
-After the final iteration, as a final step, the selected papers will have a deeper scan.
-This deep scan is to verify that our initial scan that the papers met our inclusion criteria before moving on to the quality assessment.
+After the final iteration, as a final step, the selected papers will have a deeper scan. 
+This deep scan is to verify that the papers selected in our initial scan all meet our inclusion criteria before moving on to the quality assessment.
 
 \subsection{Study Selection}
 
@@ -130,12 +129,12 @@ We will follow Kitchenham's suggestions to overcome such bias:
         \item Save all the suggested results.
         \item Assess the papers again three days later in a different order to the first.  
     \end{itemize}
-    \item If there are disagreements, we will use Cohen's Kappa agreement statistic\cite{Cohen_1960} to see if the process needs to be refined.
+    \item If there are disagreements, we will use Cohen's\cite{Cohen_1960} Kappa agreement statistic to see if the process needs to be refined.
 \end{itemize} 
 
 If our searches appear too large for a lone researcher, we will turn to text mining.
 We will be cautious about using this.
-O'Mara-Eves et al.'s systematic review of text mining in systematic reviews\cite{OMara-Eves_2015} recommends using this for prioritization but finds that for exclusion screening, although promising, it is not yet proven.
+O'Mara-Eves et al.'s\cite{OMara-Eves_2015} systematic review of text mining in systematic reviews recommends using this for prioritization but finds that for exclusion screening, although promising, it is not yet proven.
 
 An SLR is interested in studies rather than papers.
 There is a many-to-many relation between papers and studies.
@@ -149,56 +148,21 @@ We base our study quality on the methods section of the papers only.
 However, this bias is still a threat because the abstract, which we will read, summarises the results.
 The study quality will not be measured until after the selection process is complete, though it will, in part, occur before the selection re-test process.
 
-In evidence-based medicine, there is a well-known hierarchy of evidence quality for consideration in systematic literature review studies - the CRD Hierarchy of Evidence\cite{Cochrane_2019}.
-Kitchenham\cite{Kitchenham_2004_2}, suggests the hierarchy specifically for software engineering research, shown in table \ref{table:hierarchy}.
-
-\begin{table}[H]
-    \begin{center}   
-    \resizebox{\textwidth}{!}{%
-      
-        \begin{tabular}{|l||l|}
-            \hline
-            Rank     & Description                                                                                         \\
-            \hline
-            \hline
-            1        & Evidence obtained from at least one properly designed randomized controlled trial.                  \\ 
-            \hline  
-            2        & Evidence obtained from well-designed pseudo-randomized controlled trials                            \\
-                     & (i.e. non-random allocation to treatment).                                                          \\
-            \hline  
-            3-1      & Evidence obtained from comparative studies with concurrent controls and allocation not randomized,  \\
-                     & cohort studies, case-control studies or interrupted time series with a control group.               \\
-            \hline  
-            3-2      & Evidence obtained from comparative studies with historical control, two or more single-arm studies, \\
-                     & or interrupted time series without a parallel control group.                                        \\
-            \hline  
-            4-1      & Evidence obtained from a randomized experiment performed in an artificial setting.                  \\
-            \hline  
-            4-2      & Evidence obtained from case series, either post-test or pre-test/post-test.                         \\
-            \hline  
-            4-3      & Evidence obtained from a quasi-random experiment performed in an artificial setting.                \\
-            \hline  
-            5        & Evidence obtained from expert opinion based on theory or consensus.                                 \\
-            \hline  
-        \end{tabular}}
-    \end{center}
-    \caption{Study design hierarchy for software engineering}
-    \label{table:hierarchy}
-\end{table}
-
+To conduct the quality assessments we will use checklists from the Center for Evidence-Based Management, which can be found in Appendix \ref{appendix:QualityAssesmentChecklist}.
 These checklists address general scientific research.
-In software engineering, many studies that fall under what Gregor\cite{gregor2006nature}, in ``A Taxonomy of Theory Types in Information Systems Research'' calls ``Type V: Theory for Design and Action''.
+
+In software engineering, many studies fall under what Gregor\cite{gregor2006nature}, in ``A Taxonomy of Theory Types in Information Systems Research'' calls ``Type V: Theory for Design and Action''.
 These types of studies are also known as Action Design Research (ADR).
 
 The checklists do not address this type of research well.
 On investigating how other SLRs conduct a quality assessment of ADR studies, we did not find a solution.
-Therefore we will continue with the checklists shown in the appendix, using the checklists meant for Case Studies for the ADR research papers.
+Therefore, we will continue with the checklists shown in the appendix, using the checklists meant for Case Studies for the ADR research papers.
 We will take this into account before dismissing results of this type based on their quality score.
 
 As a lone researcher will carry out this study, there is no need to have a process for disagreements between researchers.
 
 We use the quality assessment checklist to weed out the biases of selection, performance, detection, exclusion, and other threats to the validity of the studies under test.
-Validity issues can occur during the design, operation, analysis, or conclusion of an empirical study.
+
 
 \subsection{Data Extraction}
 \label{section:dataExtraction}
@@ -251,9 +215,9 @@ We will gather this data in tables with the categories shown in table \ref{table
         1 & Study ID            & Unique identifier for the study                      &        \\ \hline
         2 & Title of Study      & The paper name                                       &        \\ \hline
         3 & Year of Publication & Will be either 2020 or 2021                          &        \\ \hline
-        4 & Author(s) Names     & Including affiliation                                &        \\ \hline
+        4 & Author(s) Names     &                                                      &        \\ \hline
         5 & Source of Study     & Name Of Online Database/ Digital Library             &        \\ \hline
-        6 & Type of Study       & Publication/Conference/Workshop/Symposium            &        \\ \hline
+        6 & Type of Study       & Experiment/Case Study/Survey/ADR            &        \\ \hline
         7 & Name of Venue       & Journal/Conference in which study has been published &        \\ \hline
         8 & Tools in Study      & A list of the tools used                             & RQ 1.2 \\ \hline
         9 & Sentiment           & The sentiment scores from appropriate paragraphs     & RQ 1.3 \\ \hline		
