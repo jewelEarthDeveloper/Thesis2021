@@ -7,7 +7,7 @@ Fowler\cite{Fowler_lwb} popularised the term LWB in a 2005 article.
 Meta Programming System (MPS) is an open-source LWB that assists in the creation of projectional languages.
 It started in 2003 by JetBrains and was introduced to the world in Sergey Dmitriev's 2004 Paper ``Language Orientated Programming: the Next Programming Paradigm''\cite{dmitriev2004language}.
 
-As discussed in section \ref{section:WhatIsPE}, When creating a projectional language, one has to define the language and how one interacts with it.
+As discussed in section \ref{section:WhatIsPE}, when creating a projectional language, one must define the language and how one interacts with it.
 In MPS, the language engineer defines languages, including their interactions.
 Developers create programs using these languages.
 The language engineer can extend languages.
@@ -63,9 +63,10 @@ Concepts follow some object orientated (OO) traits, such as subtype, being abstr
 One of these Concepts must be a root node. 
 Otherwise, there is nowhere for a program to start.
 
-Other items available in the Structure Aspect are the Interface Concept, the Enumeration, the Constrained Data Type, and the Primitive Datatype.\footnote{At the time of writing, we are unaware as to whether Data Type and Datatype are semantically different or if the different naming is a style choice.}
+Other items available in the Structure Aspect are the Interface Concept, the Enumeration, the Constrained Data Type, and the Primitive Datatype.
+\footnote{At the time of writing, we are unaware whether Data Type and Datatype are semantically different or if the different naming is a style choice.}
 
-Thus, the structure aspect defines how the AST can be structured.
+Thus, the Structure aspect defines how the AST can be structured.
 
 Figure \ref{fig:concept_example} shows a concept with three children that implements two interfaces.
 
@@ -85,7 +86,7 @@ fills the role of the methods in the OO analogy, defining the functionality call
 The Constructor is a specialised method in a Behavior, filling the same role as a constructor in OO.
 
 The methods have public, private, or protected visibility.
-If the Concept to which the behavior refers is abstract, the behavior itself can contain abstract methods.
+If the Concept to which the Behavior refers is abstract, the Behavior itself can contain abstract methods.
 Abstraction, variable visibility and inheritance allow a sort of polymorphism.
 If a virtual method is declared, then it can be called polymorphically.
 

@@ -1,15 +1,15 @@
 \subsection{What is Projectional Editing?}
 \label{section:WhatIsPE}
 
-When talking about projectional editing, we are mostly talking in the domain of Meta-programming.
+When talking about projectional editing, we are mostly talking in the domain of metaprogramming.
 Usually, when we talk about software development, it is the programmer or developer who creates the program and the user who uses it. 
 In metaprogramming, we are in the domain of the development of languages.
 Here the term ``developer'' could refer to both the creator and the user.
 We will distinguish these two roles in this paper by referring to the creators of the languages as ``language engineers''.
-Thus, when we refer to ``developers'' in this paper, we mean users of the language that is the product of the metaprogramming. 
+Thus, when we refer to ``developers'' in this paper, we mean users of the language that is the product of metaprogramming. 
 
 Traditionally developers write code with text editors or integrated development environments (IDE), which adjust the concrete syntax and allows a parser to create the abstract syntax tree.
-A projectional editor, inverts this relationship, as a developer edits the abstract syntax tree and allows the IDE to project the concrete syntax.
+A projectional editor inverts this relationship, as a developer edits the abstract syntax tree and allows the IDE to project the concrete syntax.
 
 \subsubsection{Parser Based Editing}
 
@@ -20,14 +20,14 @@ The lexer will turn the text, via a text buffer, into tokens.
 A parser then validates that these tokens, the words of the language, are syntactically correct.
 The parser then constructs a concrete syntax tree and an abstract syntax tree (AST).
 
-An AST is a tree structure that represents the semantic meaning of the source code, stripped of all the syntactic details.
+An AST is a structure that represents the semantic meaning of the source code, stripped of all the syntactic details.
 The parser will carry out some of the name resolutions needed to ensure that the tree represents the references expressed within the source code.
 These references turn the tree into a graph.
 
 Compilers use the AST to do subsequent processing, such as linking, transformation, analysis, and type checking.
-Modern IDEs, in the background, also parse the code it is displaying to create an AST that is uses to offer relevant coding assistance.
-This assistance is useful.
-Without help from the IDE, learning the concrete syntax of non-trivial languages is error prone.
+Modern IDEs, in the background, also parse the code it is displaying to create an AST that it uses to offer relevant coding assistance.
+This assistance is valuable.
+Without help from the IDE, learning the concrete syntax of non-trivial languages is error-prone.
 Exploratory programming is laborious if one must wait until compilation to discover mistakes.
 
 \subsubsection{Projectional Definition}
@@ -84,7 +84,7 @@ Every user editing action maps directly to a change in the AST.
     \label{fig:projectionalEditing_loop}
 \end{figure}
 
-To perform the above, two things have to be defined by language engineers: The meta-model and the editor.
+To perform the above two things have to be defined by language engineers: The meta-model and the editor.
 
 The meta-model, analogous to the abstract syntax, describes the node concepts and connections used to build the hierarchical structure that is the AST.
 This hierarchy can have references to nodes in other branches, so it is a graph although named a tree.
@@ -131,7 +131,7 @@ Here follows an incomplete and inconsistent history of projectional languages.
 In the '70s and early '80s, researchers created several applications for research into the realm of structured editors.
 Some examples were: MENTOR\cite{donzeau1980programming}, Incremental Programming Environment\cite{medina1981incremental}, GANDALF\cite{NotkinDavid1985TGp}, Cornell Program Synthesizer\cite{teitelbaum1981cornell}, and Synthesizer Generator\cite{reps2012synthesizer}.
 These language-based program editors could force syntactically correct programs. 
-This is achieved through the explicit knowledge of the language. 
+This syntactic guidance is achieved through the explicit knowledge of the language. 
 These were the precursors to the modern projectional editors. 
 They worked by providing templates for each abstract computational unit of the language.
 First, one would choose the concept and then fill out the placeholders.
@@ -140,12 +140,13 @@ These tools were not good at editing textual notations, which led to a poor user
 When they attempted to fix the poor user experience, for example, in the Synthesizer Generator, they reintroduced parsing to parts of the editor, which took away many advantages of the AST's direct editing.
 
 In the late '90s and early '00s, the first forays into commercialising a more generalised version of structured editors, the projectional editors, began.
-First, Intentional Domain Workbench, inspired by Charles Simonyi's 1995 essay ``The Death of Computer Languages, The Birth of Intentional Programming''\cite{simonyi1995death} the IDW was the product of the company Simonyi founded in 2002, Intentional Software. 
+The first of these was Intentional Domain Workbench (IDW), inspired by Charles Simonyi's 1995 essay ``The Death of Computer Languages, The Birth of Intentional Programming''\cite{simonyi1995death}.
+IDW was the product of the company Simonyi founded in 2002 - Intentional Software. 
 The Intentional Programming paradigm spotlighted the projectional editing domain, taking it out of the universities and into practice.
-Unfortunately, as it was a closed sourced and expensive product not many papers were written about it.
+Unfortunately, as it was a closed sourced and expensive product, not many papers were written about it.
 Ultimately, in 2017 as part of an ``acquihire'', Microsoft bought Intentional Software for its employees and let the product die.
 
-Inspired by a call to action for language orientated programming\cite{dmitriev2004language} JetBrains embarked in 2004 on a mission to build a product to fulfil that ideal.  
+Inspired by a call to action for language orientated programming\cite{dmitriev2004language}, JetBrains embarked in 2004 on a mission to build a product to fulfil that ideal.  
 Meta Programming System (MPS) was the outcome of that journey.   
 Language engineers created the languages mbeddr, PEoPL, and Realaxy using the MPS platform.  
 It currently has an active community of developers and projects both in academia and in the commercial world. 
@@ -166,7 +167,7 @@ The final two mentions in our incomplete history are a little out of left-field.
 Google's Blockly\cite{Blockly_ProductPage} is a tool for making structural editor languages, but only in a block format.
 Blockly can create languages similar in style to the scratch language. 
 Blueprint visual scripting, a part of the Unreal Engine, is a visual programming language for building concepts such as levels or game assets.
-Examples of Blockly and Blueprint can be seen in figures \ref{fig:blockly} and \ref{fig:Blueprint} respectively.
+Examples of Blockly and Blueprint can be seen in figures \ref{fig:blockly} and \ref{fig:Blueprint}, respectively.
 
 \begin{figure}[H]
     \begin{subfigure}{.50\textwidth}
@@ -191,8 +192,7 @@ Examples of Blockly and Blueprint can be seen in figures \ref{fig:blockly} and \
 Projectional editing gives advantages both to the language engineer and the program developers.
 There is a lot of crossover and repetition between papers written on projectional editing regarding its advantages.
 To that end, what follows is a synthesis of several papers as to the advantages that projectional editing claims.
-Rather than attributing each advantage to each paper, we have made a reference table of papers proclaiming said advantage.
-This is table \ref{table:Projectional_Advantages}.
+Rather than attributing each advantage to each paper, we have made a reference table, table \ref{table:Projectional_Advantages}, of papers proclaiming said advantage.
 
 \begin{table}[h]
     \begin{center}
@@ -248,7 +248,7 @@ When writing a DSL for the mathematics domain, the domain experts can interact w
 
 Of course, the projections can also be projections of text.
 Textual projections are often the appropriate projection type.
-This is especially true if the domain expertise of the developer is parser-based languages.
+This suitability is especially true if the domain expertise of the developer is parser-based languages.
 
 \paragraph{Mixed notation} As no parsing is required and ambiguity is not an issue for the underlying AST, it is straightforward to combine different forms of rich notation.
 With all notations working on the same editor infrastructure, embedding mathematic symbols within textual projections, within tables within graphical representations is a simple coding pattern.
@@ -335,8 +335,8 @@ Whilst trying to simulate a text editor, the developers start to expect all of t
 This expectation is an especially weak trait regarding granularity and restrictions of cursor movement, insertion, deletion, selection, copy and paste, and other interactions with the text.
 
 \paragraph{Ambiguous syntax} One of the selling points of projectional editing, especially concerning language composition, is that there can be no ambiguous syntax.
-While there is no ambiguity in the code, there can be ambiguity in the mind of the reader.
-This occurs as exactly the same notation can projected from different nodes.
+While there is no ambiguity in the code, there can be ambiguity in the reader's mind.
+This ambiguity occurs as the same notation can be projected from different nodes.
 For example, if one combined Drools with Basic, the developer might become confused about which language the ``\texttt{Then}'' keyword was coming from.
 Consequently, writing ambiguity is replaced by reading ambiguity.
 

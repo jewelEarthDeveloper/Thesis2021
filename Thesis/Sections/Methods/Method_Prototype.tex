@@ -44,7 +44,7 @@ Figure \ref{fig:RSRDiagram} shows the Concept hierarch for this straightforward 
 
 We realised this design in MPS.
 As the aim is to attempt different projections, we did not initially optimise for editing.
-The structure is as shown in figure \ref{fig:RSRStructure}, and the editors, including those shown in figure \ref{fig:RSREditors}.
+The Structure is as shown in figure \ref{fig:RSRStructure}, and the editors, including those shown in figure \ref{fig:RSREditors}.
 
 \begin{figure}
     \centering
@@ -64,7 +64,7 @@ The structure is as shown in figure \ref{fig:RSRStructure}, and the editors, inc
 
 Part of our research question is using projections for reasoning about large files.
 To answer this, we needed to simulate a large file.
-To do this, we had to enter a many \texttt{Rules}.
+To do this, we had to enter many \texttt{Rules}.
 As this becomes tedious, we added some editing aids, including substitute menus, to speed up the entry of Conditions, as shown in figure \ref{fig:RSRSubstituteMenu}.
 
 This image shows that we originally had to select an \texttt{ExistsCondition} Concept and select the \texttt{Fact} for the Condition.
@@ -80,7 +80,7 @@ After adding the substitute menu, we could immediately select the \texttt{Fact} 
 We also added some intentions to invert incorrectly added Conditions.
 
 Finally, we added a Constraint to scope the \texttt{FactProperties} in \texttt{Predicates} to the \texttt{Fact} chosen in the \texttt{FactSelector}.
-This scope Constraint made it much easier to select \texttt{FactProperties} in the \texttt{Predicates} as indicated in figure \ref{fig:RSRConstraint}.
+This scope Constraint made it much easier to select \texttt{FactProperties} in the \texttt{Predicates}, as indicated in figure \ref{fig:RSRConstraint}.
 
 The figure shows that before adding the scoping constraint, it showed a list with dozens of potential \texttt{FactProperties}, that represented all the \texttt{FactProperties} in the model.
 After adding the constraint, it only shows the two \texttt{FactProperties} associated with the \texttt{Fact} from the \texttt{FactSelector}.
@@ -119,7 +119,7 @@ For this reason, we needed to create a projectional language that was much close
 Our following Language, Drools-Lite, contains many more of the features of Drools.
 Our method of selecting the features involved implementing the examples delivered with Drools (including the corrupt politician example shown in section \ref{section:WhatIsDrools}).
 We would implement just enough features to complete the examples.
-Whenever we had any queries about how to design the Concepts, we referred to our analysis of the Drools Language, shown in appendix \ref{appendix:DroolsConceptHierarchy}.
+Whenever we had any queries about designing Concepts, we referred to our analysis of the Drools Language, shown in appendix \ref{appendix:DroolsConceptHierarchy}.
 We show the preliminary design we achieved using this method in figure \ref{fig:DroolsLiteDiagram}.
 Later, there were some places we diverged a little from our design.
 We merged and decoupled our Concepts when we thought it would simplify the code.
@@ -136,11 +136,11 @@ It also contains semantically unimportant empty lines.
 
 \paragraph{Fact} A \texttt{Fact} has a \texttt{type} property.
 We implement the \texttt{type} property using a \texttt{ClassifierType} from the MPS BaseLanguage.
-This implementation allows the \texttt{RuleFile} to refer to BaseLanguage classes implemented in the same solution, as well as from Java JAR files.
+This implementation allows the \texttt{RuleFile} to refer to BaseLanguage classes implemented in the same solution and from Java JAR files.
 
 We created a smart reference Concept for this to take advantage of built-in MPS UI functionality.
 A smart reference is a node with a single reference of 1:1 cardinality.
-The editor builders know how to select which nodes are in scope to display to the developer if one uses this object rather than directly referencing the node to which it refers.
+The editor builders know how to select which nodes are in scope to display to the developer if one uses this object rather than directly referencing the node it refers to.
 
 \paragraph{FactProperty} In RSR, we had \texttt{FactProperties} as children of \texttt{Facts}.
 Now that our \texttt{Facts} refer to actual classes (\texttt{ClassifierType}), our \texttt{FactProperties} should reflect this.
@@ -148,7 +148,7 @@ To do this, the Concept itself only references an \texttt{InstanceMethodDeclarat
 We scoped the Concept to only show properties associated with a selected \texttt{Fact}.
 
 Drools interacts with Java objects as if they are Java Beans.
-To simulate this, we limited the scope of the properties to just getters, i.e., methods that start with ``get'' or ``is'' and used a Behavior to make sure they displayed without the ``get'' or ``is'' prefix.
+To simulate this, we limited the scope of the properties to just getters, i.e., methods that start with ``get'' or ``is'', and used a Behavior to make sure they are displayed without the ``get'' or ``is'' prefix.
 We also made a smart reference for this Concept.
 
 Another option for achieving this is to have wrapped the \texttt{ClassifierType} and referenced its related \texttt{InstanceMethodDeclarations}.
@@ -162,7 +162,7 @@ We added a smart reference so that \texttt{Rules} can easily use them.
 The reference extended \texttt{Expression} from the BaseLanguage.
 This extension is so that we could use it in the Java code of the Right-hand side.
 
-\paragraph{\texttt{Rule}} Our \texttt{Rules} have three children: an \texttt{AttributeCollection}, a Right-hand Side and a list of Conditions that make up the Left-hand side.
+\paragraph{\texttt{Rule}} Our \texttt{Rules} have three children: an \texttt{AttributeCollection}, a Right-hand side and a list of Conditions that make up the Left-hand side.
 We created a component to describe the \texttt{Rule} editor for reuse, as we imagined that we would wrap this in other projections.
 
 \paragraph{\texttt{RuleVariables}} The \texttt{Fact} of a \texttt{FactSelector} and the \texttt{FactProperty} of a \texttt{FieldConstraint} are bound to \texttt{RuleVariables}.
@@ -171,7 +171,7 @@ A \texttt{RuleVariable} has only a \texttt{name} and a \texttt{type}.
 We also create a smart reference for it so that it can be used elsewhere within the rule.
 Like the \texttt{Global}, it extends BaseLanguage's \texttt{Expression} to be available in the Java code of the Right-hand side.
 
-\paragraph{Right-hand Side} The right-hand side of the rule, for the most part, is Java code.
+\paragraph{Right-hand side} The right-hand side of the rule, for the most part, is Java code.
 To implement this, we made the right-hand side of the rule a single \texttt{StatementList}.
 A \texttt{StatementList} is a list of \texttt{Statements}, both from the BaseLanguage.
 We chose these because they keep track of, amongst other things, scope.
@@ -190,16 +190,16 @@ The Drools specific Methods that are required are \texttt{Insert}, \texttt{Inser
     \label{fig:RHS}
 \end{figure}
 
-Figure \ref{fig:RHS} shows some of the features discussed for the right-hand side as shown in our default projection.
+Figure \ref{fig:RHS} shows some of the features discussed for the right-hand side, as shown in our default projection.
 The right-hand side is the text shown between the \texttt{then} keyword and the \texttt{end} keyword.
-In the figure, one can see examples of plain Java code, such as assigning to the variable \texttt{program} and the \texttt{foreach} loop.
+The figure shows examples of plain Java code, such as assigning to the variable \texttt{program} and the \texttt{foreach} loop.
 We can also see that Drools-Lite \texttt{RuleVariable} \texttt{\$s} is in the Java statements.
 We have also highlighted the Drools specific methods placed in the code, in this case \texttt{\textbf{modify}} and \texttt{\textbf{insert}}   
 
 \paragraph{\texttt{AttributeCollection}} the \texttt{AttributeCollection} is a container to hold all the attributes that apply to a rule.
 Initially, we have only implemented the \texttt{NoLoopAttribute} and \texttt{SalienceAttribute}.
 A developer activates these attributes using two intentions we added to the \texttt{Rule} Concept.
-We can see, on line 2 in figure \ref{fig:Rule}, an example of the \texttt{SalienceAttribute} added to a rule on line 2.
+On line 2 in figure \ref{fig:Rule}, we can see an example of the \texttt{SalienceAttribute} added to a rule on line 2.
 \footnote{In figure \ref{fig:Rule}, we added line numbers to this figure to make it easier to talk about.
 The keywords \texttt{rule} on line 1, \texttt{when} on line 3, \texttt{then} on line 6, and \texttt{end} on line 8 have no meaning in the abstract syntax.
 We added them to give the developer the same look and feel as a standard Drools file.}
@@ -211,7 +211,7 @@ We added them to give the developer the same look and feel as a standard Drools 
     \label{fig:Rule}
 \end{figure}
 
-\paragraph{Left-Hand Side} This is a collection of conditions.
+\paragraph{Left-hand side} This is a collection of conditions.
 There are four types of conditions.
 \texttt{AndCondition}, \texttt{OrCondition}, \texttt{NotCondition} and \texttt{ExistsCondition}.
 \texttt{AndCondition}, \texttt{OrCondition}, and \texttt{NotCondition} have one or two children who are also conditions.
@@ -227,10 +227,10 @@ The default editor, through an intention, can make the \texttt{ExistsCondition} 
 However, the standard practice with Drools developers is to make this implicit, so this is how we show it here.
 
 \paragraph{\texttt{FactSelector}} This always has a reference to a \texttt{Fact}.
-These \texttt{Facts} are \texttt{Program} in line 4 of figure \ref{fig:Rule}, and \texttt{Student} and \texttt{Result} from line 5.
+These \texttt{Facts} are \texttt{Program} in line 4 of figure \ref{fig:Rule} and \texttt{Student} and \texttt{Result} from line 5.
 
 Optionally, the \texttt{FactSelector} can be bound to a variable.
-In figure \ref{fig:Rule} line 5 the \texttt{FactSelector} referencing the \texttt{Student} \texttt{Fact} is bound to the \texttt{\$s} \texttt{RuleVariable}.
+In figure \ref{fig:Rule}, line 5, the \texttt{FactSelector} referencing the \texttt{Student} \texttt{Fact} is bound to the \texttt{\$s} \texttt{RuleVariable}.
 
 The \texttt{FactSelector} also contains a list of constraints on \texttt{FactProperties}, all of which must return true for the \texttt{FactSelector} to return \texttt{true}.
 
@@ -253,8 +253,8 @@ There are several types of restrictions and several types of values that they ca
     \item \texttt{ReturnValue}: This compares to anything expressed as an \texttt{Expression}, which includes referring to constants or values behind qualified identifiers.
 \end{itemize}
 
-In figure \ref{fig:Rule} on line 4 we have the return values \texttt{Faculty.Law} and \texttt{Faculty.FNWI}.
-On line 5 the literal values \texttt{7} and \texttt{8}.
+In figure \ref{fig:Rule}, on line 4, we have the return values \texttt{Faculty.Law} and \texttt{Faculty.FNWI}.
+On line 5, the literal values \texttt{7} and \texttt{8}.
 
 \paragraph{Restrictions} A \texttt{SingleValueRestriction} compares a \texttt{FactProperty} against a value.
 A \texttt{MultiRestriction} compares a \texttt{FactProperty} against multiple values, not necessarily using the same comparison for each value.
@@ -264,7 +264,7 @@ In figure \ref{fig:Rule} on line 4 a \texttt{SetMembership} restriction is shown
 Line 5 in the first \texttt{FactSelector} there is the \texttt{SingleValue} restriction \texttt{ avg >= 8}.
 The second \texttt{FactSelector} shows a \texttt{MultiRestrictions} \texttt{grade <= 7 \&\& > 8}.
 
-Thusly, we have described the pertinent implementation details of the Drools-Lite language.
+Thus, we have described the pertinent implementation details of the Drools-Lite language.
 
 \subsection{Wireframes}
 
