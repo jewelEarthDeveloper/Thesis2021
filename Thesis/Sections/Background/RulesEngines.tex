@@ -4,7 +4,7 @@
 
 In this section, we will describe what a rules engine is and a little of its history.
 
-The Aristotelian doctrine of essentialism declares that a thing has essential properties and properties that are accidental.
+The Aristotelian doctrine of essentialism, to paraphrase Quine\cite{quine1953three}, declares that a thing has essential properties and properties that are accidental.
 If one takes away the accidental properties of a thing, then the thing remains the thing.
 In contrast, if one takes away the thing's essential properties, the thing is no longer the thing.
 If the ``thing'' we refer to is a business application, its essential properties are its business rules.
@@ -18,7 +18,8 @@ More formally, business rules follow the logical principle of Modus Ponens.
 When described like this, one could imagine this as just the ``if-then'' logic frequently used in traditional programming.
 One would not be wrong. 
 However, representing all the combinatorial outcomes of an extensive collection of rules in traditional programming can become complex.
-Each additional rule adds to the fragility.
+Each additional rule, in this traditional style, increases complexity and decreases maintainability.
+In essence it adds to the fragility of the code base.
 Additionally, developers tend to distribute rules throughout the source code or database of the application.
 
 We find descriptions of these rules in the design documentation or user manuals.
@@ -70,7 +71,7 @@ Some of the advantages of using a rules engine include:
 
 In summary, a rules engine is the executor of a rules-based program, consisting of discreet declarative rules which model a part of the business domain.
 
-\subsection{An incomplete history of rules engines}
+\subsection{A short history of the rules engine}
 
 Rule engines arose from the expert systems of the late 70s and early 80s.
 Expert systems initially had three primary techniques for knowledge representation: Rules, frames and logic\cite{jackson1986introduction}.

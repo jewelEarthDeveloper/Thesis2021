@@ -1,0 +1,22 @@
+@startuml
+
+digraph G {
+	{rank=same; Root;}
+	{rank=same; "Node A" "Node B";}
+	{rank=same; "Node C" "Node D";}
+	{rank=same; "Node E" "Node F" "Node G";}
+
+    Root -> "Node A" [arrowhead=none]
+    Root -> "Node B" [arrowhead=none]
+
+    "Node B" -> "Node C" [arrowhead=none]
+    "Node C" -> "Node A" [style=dashed]
+    "Node B" -> "Node D" [arrowhead=none]
+
+    "Node C" -> "Node E" [arrowhead=none]
+    "Node D" -> "Node F" [arrowhead=none]
+    "Node D" -> "Node G" [arrowhead=none]
+    "Node E" -> "Node F" [dir=back,style=dashed, minlen=2]
+
+} 
+@enduml
