@@ -1,26 +1,222 @@
-\input{preamble}
-\input{document_variables}
+\documentclass[a4paper,10pt,titlepage]{report}
+
+\usepackage{xspace}
+\usepackage{xargs}  
+\usepackage[pdftex,dvipsnames]{xcolor}
+
+\usepackage[font=bf,]{caption}
+\usepackage{subcaption}
+\input{glyphtounicode}
+
+\usepackage{lastpage}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{paralist}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{titlepic}
+\usepackage{vhistory}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage[backend=biber, style=ieee,citestyle=numeric-comp]{biblatex}
+\usepackage[colorinlistoftodos, prependcaption]{todonotes}
+\usepackage{placeins}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage[hidelinks]{hyperref}
+\usepackage[acronym,nogroupskip,nohypertypes={acronym},toc,section=chapter]{glossaries}
+\usepackage{amssymb}
+\usepackage{verbatim}
+\usepackage{cmap}
+
+\input{glyphtounicode}
+
+\pdfglyphtounicode{f_f}{FB00}
+\pdfglyphtounicode{f_f_i}{FB03}
+\pdfglyphtounicode{f_f_l}{FB04}
+\pdfglyphtounicode{f_i}{FB01}
+
+\pdfgentounicode=1
+
+\usepackage[titletoc]{appendix}
+\usepackage{tcolorbox}
+\usepackage{listings}
+
+% MY STUFF
+\usepackage{float}
+\usepackage{epigraph}
+\usepackage{colortbl}
+\usepackage{lscape} 
+\usepackage{pifont}
+\usepackage{array}
+\usepackage{fixltx2e}
+\usepackage{subcaption}
+\usepackage{mwe}
+\usepackage{fourier}
+\usepackage[scaled=0.75]{FiraMono}
+
+\DeclareUnicodeCharacter{0301}{\'{e}}
+
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+
+\lstset{morekeywords={},showstringspaces=false,basicstyle=\ttfamily,keywordstyle=\bfseries}
+
+\definecolor{commentGreen}{RGB}{128,127,41}
+\definecolor{stringGreen}{RGB}{0,127,38}
+\definecolor{keywordRed}{RGB}{151,0,11}
+\definecolor{typePurple}{RGB}{128,3,82}
+\definecolor{variableBlue}{RGB}{0,0,255}
+\definecolor{annotationRed}{RGB}{198,4,38}
+\definecolor{annotationBlue}{RGB}{32,21,223}
+
+\lstdefinelanguage[drl]{Drools}{
+    sensitive=true,
+    keywordsprefix=\$,
+    alsoletter={:, },
+    morekeywords=[2]{long,int,boolean,double,float,enum},
+    morekeywords=[3]{package,import,declare,end,extends,from,insert,modify,not,new,no loop,query,retract,rule,salience,then,this,when, eval},
+    morekeywords=[4]{after,before,during,over window:length,over window:time,overlaps},
+    morekeywords=[5]{{no loop},over window:length,over window:time},
+    morecomment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    moredelim=[s][\color{annotationRed}\itshape]{@}{)},
+    moredelim=[s][\color{annotationBlue}\itshape]{@[}{]},
+    morestring=[b]",
+    morestring=[d]',
+%%% default style
+    basicstyle=\footnotesize\ttfamily,
+    numbers=left,
+    stepnumber=1,
+    showstringspaces=false,
+    tabsize=1,
+    breaklines=true,
+    breakatwhitespace=false,
+    commentstyle=\color{commentGreen}\itshape,
+    keywordstyle=\color{keywordRed}\bfseries,
+    keywordstyle=[1]\color{variableBlue}\itshape,
+    keywordstyle=[2]\color{typePurple}\bfseries,
+    keywordstyle=[3]\color{keywordRed}\bfseries,
+    keywordstyle=[4]\color{keywordRed}\bfseries,
+    keywordstyle=[5]\color{stringGreen}\bfseries,
+    stringstyle=\color{stringGreen}
+}[comments,keywords,strings]
+
+%
+
+\newcommand{\ie}{\emph{i.e.},\xspace}
+\newcommand{\eg}{\emph{e.g.},\xspace}
+\newcommand{\etc}{\emph{etc.}\xspace}
+\newcommand{\etal}{\emph{et al.}\xspace}
+
+\newcommand{\sig}{\gls{sig}}
+\newcommand{\sigs}{\glspl{sig}}
+
+\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1, inline]{#2}}
+\newcommandx{\discussion}[2][1=]{\todo[linecolor=red,backgroundcolor=green!25,bordercolor=red,inline,#1]{#2}}
+
+\newcommandx{\improvement}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+
+\newcommandx{\reminder}[2][1=]{\todo[linecolor=yellow,backgroundcolor=yellow!25,bordercolor=yellow,#1]{#2}}
+
+\newcommandx{\lessprio}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+\newcommandx{\todocontent}[2][1=]{\todo[author=\textbf{Planned content},backgroundcolor=Goldenrod!25,bordercolor=Goldenrod,inline,#1]{#2}}
+
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\definecolor{ryel}{HTML}{fcd116}
+\definecolor{rred}{HTML}{ce1126}
+\definecolor{rblu}{HTML}{0a3eb9}
+
+\newcommand{\email}[1]{\ttfamily\href{mailto:#1}{#1}}
+
+\newcommand{\uvacoverfoot}{%
+	\vfill
+	\begin{center}
+		\begin{tabular}{r|l}
+			\multirow{3}{*}{\includegraphics[height=48pt]{uva.pdf}}
+			&\textsc{\Large Universiteit van Amsterdam}\\
+			&\textsc{Faculteit der Natuurwetenschappen, Wiskunde en Informatica}\\
+			&\textsc{Master Software Engineering}\\
+			&\url{http://www.software-engineering-amsterdam.nl}
+		\end{tabular}
+	\end{center}
+}
+
+\renewcommand{\maketitle}{
+	\thispagestyle{empty}
+	\enlargethispage{30pt}
+	\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+	\setcounter{page}{0}
+	\vspace{60pt}
+	\begin{center}
+		{\Huge\bfseries Projecting Rules: Improving Comprehension of Business Rules with Projectional Editing \par}
+		
+		\vspace{44pt}
+		{\Large\bfseries Paul \textsc{Spencer} \par}
+		\email{paul.spencer@student.uva.nl}\\
+		\vspace{11pt}
+		November 30, 2021, \pageref{LastPage} pages
+	\end{center}
+	\vfill
+	\begin{tabular}{ll}
+		\textbf{Academic supervisor:} 	& Dr. Clemens \textsc{Grelck}, \email{c.grelck@uva.nl} \\
+		\textbf{Daily supervisor:} & Toine \textsc{Khonraad}\\
+		\textbf{Host organisation:} & Khonraad / Visma, \url{https://www.visma.com/}
+	\end{tabular}
+	\uvacoverfoot
+	\newpage
+	\setcounter{footnote}{0}
+	\renewcommand{\thefootnote}{\arabic{footnote}}
+	\setlength{\parskip}{0pt}
+}
+  
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+
+
+\newcounter{findingctr}
+
+\newenvironment{finding}{
+	\refstepcounter{findingctr}
+	\begin{tcolorbox}
+	\textbf{Finding \thefindingctr:}
+}{\end{tcolorbox}} 
+
+\setlist{noitemsep,topsep=4pt,parsep=1pt,partopsep=4pt}
+
+
+\lstset{
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	frame=single,
+	language=Java,
+	keywordstyle=\bf,
+	tabsize=2
+}
+
+\setlength\extrarowheight{2pt}
+
+\bibliography{main}
 
 \begin{document}
-    \pagenumbering{roman}
-    \frontmatter 
-    \pagestyle{plain} 
-    \input{Sections/title_page}
-    \input{Sections/declaration_page}
+    \maketitle
     \input{Sections/abstract_page}
-    \input{Sections/acknowledgements_page}
-    \tableofcontents 
-    \listoffigures 
-    \begingroup
-    \renewcommand{\cleardoublepage}{}
-    \renewcommand{\clearpage}{}
-    \listoftables
-    \endgroup
-     
-    \mainmatter 
-    
-    \pagestyle{thesis}
-    
+    \tableofcontents
     \input{Sections/Introduction}
     \input{Sections/Background}
     \input{Sections/Method}
@@ -28,6 +224,7 @@
     \input{Sections/Discussion}
     \input{Sections/RelatedWork}
     \input{Sections/Conclusion}
+    \input{Sections/acknowledgements_page}
 
     \printbibliography[heading=bibintoc,notkeyword={SLR}] 
     \begingroup
@@ -35,7 +232,7 @@
     \renewcommand{\clearpage}{}
     \printbibliography[title={Systematic Review Bibliography},keyword={SLR}] 
     \endgroup
-    
+
     \appendix
     \input{Appendices/SystematicReviewLog}    
     \input{Appendices/QualityAssesmentChecklistAppendix}
@@ -43,4 +240,4 @@
     \input{Appendices/DataExtractionResults}
     \input{Appendices/DroolsConceptStructure}
     \input{Appendices/QuestionnaireText}
-\end{document}   
+\end{document} 
