@@ -1,8 +1,8 @@
 \section{Results: Action Design Research}\label{section:Results_ADR}
 
-\subsection{Really Simple Rules}
+\subsection{Really Simple Drools}
 
-The Really Simple Rules Language (RSR) acted as a training ground for our new projections.
+The Really Simple Drools Language (RSD) acted as a training ground for our new projections.
 
 \subsubsection{Context-Aware Color Scheme}
 After the default text projection, the first projection we made was giving the text a colour scheme.
@@ -10,32 +10,32 @@ This form or augmentation in IDEs is probably the most basic that we see.
 Available in structured editors since the 1980s\cite{cowlishaw1987lexx}, syntax highlighting displays text in various colours and fonts according to the meaning of the terms.
 Syntax highlighting is helpful for the comprehension of code, as least for small code bases\cite{sarkar2015impact}.
 
-Developers at our host organisation use Eclipse or IntelliJ Community Editions to edit code, neither of which has syntax highlighting for Drools. Thus, the addition of this feature would immediately benefit them.
-However, IntelliJ IDEA, the paid version, already provides this feature for Drools.
-We extended the colour scheme to indicate whether the selection is looking for a positive or negative match to offer another visual augmentation that we considered valuable.
-Figure \ref{fig:colorscheme} shows this projection.
-
-\begin{figure}[h]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.99\textwidth]{Sections/images/coloredTextProjection.png}}
     \caption{Context aware color scheme}
     \label{fig:colorscheme}
 \end{figure}
 
+Developers at our host organisation use Eclipse or IntelliJ Community Editions to edit code, neither of which has syntax highlighting for Drools. Thus, the addition of this feature would immediately benefit them.
+However, IntelliJ IDEA, the paid version, already provides this feature for Drools.
+We extended the colour scheme to indicate whether the selection is looking for a positive or negative match to offer another visual augmentation that we considered valuable.
+Figure \ref{fig:colorscheme} shows this projection.
+
 \texttt{Facts} contained by \texttt{NotConditions} and \texttt{FactProperties} that are part of a \texttt{NotPredicate} appear highlighted in Red.
 \texttt{ExistConditions} and \texttt{IsPredicates} have their content coloured green.
 We did not test whether this improved understanding.
 
-\subsubsection{Summary Projection}
-Our next projection allows developers to have a quick overview of the \texttt{Rules} and complexity of those \texttt{Rules}.
-Figure \ref{fig:summaryProjection} shows that the developers can get an overview of both the number of \texttt{Rules} and the number of \texttt{Facts} in each of the \texttt{Rules}.
-
-\begin{figure}[h]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.75\textwidth]{Sections/images/summaryProjection.png}}
     \caption{Summary projection}
     \label{fig:summaryProjection}
 \end{figure}
+
+\subsubsection{Summary Projection}
+Our next projection allows developers to have a quick overview of the \texttt{Rules} and complexity of those \texttt{Rules}.
+Figure \ref{fig:summaryProjection} shows that the developers can get an overview of both the number of \texttt{Rules} and the number of \texttt{Facts} in each of the \texttt{Rules}.
 
 The building of this projection only required adjusting two editors.
 The \texttt{Rule} count and \texttt{Fact} count were added to the \texttt{Fil}e editor using Read-Only Model Access to count the descendants of the \texttt{File} that are \texttt{Rules} and \texttt{Facts}.
@@ -61,7 +61,7 @@ Thus, these seemed the obvious items to filter.
 We created a projection where if the developer filtered by a \texttt{Fact} or a \texttt{FactProperty}, the projection would filter out all rules that did not contain the item.
 Once the rules were filtered, the projection only shows \texttt{Facts} and \texttt{FactProperties} used by those \texttt{Rules}.
 
-\begin{figure}[h]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.99\textwidth]{Sections/images/filteringProjection.png}}
     \caption{Filtering projection}
@@ -76,8 +76,8 @@ As the \texttt{FactProperty} is a child of a \texttt{Fact}, we see both intentio
 The third highlighted intention is on a \texttt{FactProperty} Reference.
 It also shows an intention associated with a \texttt{FactReference} in the \texttt{FactSelector} that holds the \texttt{FactPropertyReference} as a child.
 
-One of our guidelines was, as much as possible, to build our projections as separate languages, non-invasively extending RSR.
-In our first approach at the filtering, we failed on this count by invasively adding properties to \texttt{Fact} and \texttt{FactProperty} Concepts of the RSR to determine whether they were visible.
+One of our guidelines was, as much as possible, to build our projections as separate languages, non-invasively extending RSD.
+In our first approach at the filtering, we failed on this count by invasively adding properties to \texttt{Fact} and \texttt{FactProperty} Concepts of the RSD to determine whether they were visible.
 
 Our following approach created subclasses of \texttt{Fact}, \texttt{FactProperty} and \texttt{File}.
 This approach, however, requires running a macro on the code file to migrate \texttt{Facts}, \texttt{FactProperties} and \texttt{Files} to \texttt{FilteredFacts}, \texttt{FilteredFactProperties}, and \texttt{FilteredFiles}.
@@ -99,12 +99,13 @@ Creating a table was our first non-parseable projection.
 We choose the table projection based on the observations of Miller\cite{miller1956magical} about the number of items people can retain in their memory.
 This observation leads us to conclude that the fewer essential items that are off the screen and, therefore, in the developers' memory, the better.
 
-\begin{figure}[h]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.99\textwidth]{Sections/images/tableProjection1.png}}
     \caption{Table projection}
     \label{fig:tableProjection1}
 \end{figure}
+
 Figure \ref{fig:tableProjection1} shows our rudimentary first table.
 This simple table has only the \texttt{name} property and the \texttt{when} children of the \texttt{Rules} in the \texttt{File}.
 We implemented this projection using the tables extension in the MPS-Extension plug-in, created by Sascha Lißon.
@@ -114,7 +115,7 @@ Our next tabular projection is a cross-tab inspired by a decision table.
 The idea behind this projection is that the previous table does not give any visual queues as to how \texttt{Rules} are related.
 With a cross-tab, one can easily see which \texttt{Rules} are using the same \texttt{Facts}.
 
-\begin{figure}[h]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.99\textwidth]{Sections/images/crosstabProjection1.png}}
     \caption{Cross-tab projection}
@@ -128,19 +129,19 @@ The other close-up shows that all the details of the selected \texttt{Fact} are 
 
 The sparse table will not be a problem if the columns are thin enough to keep the table in a single screen's width.
 
-Everything is editable in this table, including deleting a \texttt{Fact} from a \texttt{Rule}.
-The table plug-in and MPS enabled most of the editing in the projection by default.
-An extra editing feature we added to this table was the ability to delete a \texttt{Fact} from the \texttt{File} by deleting a \texttt{Fact} column, and in the process also deleting all references to the \texttt{Fact} from all the \texttt{Rules} in the \texttt{File}.
-The code shown in figure \ref{fig:tableFactDeletion} shows how we can walk the trees in each \texttt{Rule} to delete unary conditions and convert the non-deleted side of binary conditions into unary conditions to allow this \texttt{Fact} deletion.
-
-\begin{figure}[h]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.99\textwidth]{Sections/images/tableDeleteCode.png}}
     \caption{Table Fact deletion code}
     \label{fig:tableFactDeletion}
 \end{figure}
 
-Here we end our experiments in the RSR language.
+Everything is editable in this table, including deleting a \texttt{Fact} from a \texttt{Rule}.
+The table plug-in and MPS enabled most of the editing in the projection by default.
+An extra editing feature we added to this table was the ability to delete a \texttt{Fact} from the \texttt{File} by deleting a \texttt{Fact} column, and in the process also deleting all references to the \texttt{Fact} from all the \texttt{Rules} in the \texttt{File}.
+The code shown in figure \ref{fig:tableFactDeletion} shows how we can walk the trees in each \texttt{Rule} to delete unary conditions and convert the non-deleted side of binary conditions into unary conditions to allow this \texttt{Fact} deletion.
+
+Here we end our experiments in the RSD language.
 
 \subsection{Drools-Lite}
 
@@ -148,7 +149,7 @@ Our subsequent experiments were with projections with the Drools-Lite language.
 As described in section \ref{section:DroolsLite}, Drools-Lite is an implementation that is much closer to the complete Drools language.
 This realism will allow us to create projections that we can present to experienced Drools developers for evaluation.
 
-Of the learnings from the RSR language, one we felt needed fixing to improve understanding was the sparseness of the tables.
+Of the learnings from the RSD language, one we felt needed fixing to improve understanding was the sparseness of the tables.
 By implementing the principle of maximising cohesion, we discovered we could reduce the sparseness issue.
 Therefore, as a precursor to our projections, we extended Drools-Lite with a new language that contained one structural item, the \texttt{RuleCollection}.
 The \texttt{RuleCollection} is a child of the \texttt{File} and holds a collection of \texttt{Rules}.
@@ -160,20 +161,20 @@ This language also added an editor for the \texttt{RuleCollection} and intention
 As the Drools language is analogous to a series of if-then statements, then perhaps its best visual equivalent is the decision table.
 Decision tables are a ``powerful aid in programming, documentation, and in effective man-to-man and man-to-machine communications''\cite{pooch1974translation}.
 
-We designed our table, shown in figure \ref{fig:decisionTableProjection}, to include some of the lessons learned from the RSR cross-tab that shown in figure \ref{fig:crosstabProjection1}.
-The RSR language taught us that wasting visual real estate exacerbates sparseness issues in tables.
-In the cross-tab table, horizontal scrolling is necessary, in part due to the column widths.
-The columns were wide because the name of the \texttt{Fact} was displayed horizontally.
-
-The Drools-Lite language allows for much longer selection criteria on \texttt{FactProperties}, which would lead to much wider columns.
-Our solution was to develop a vertically orientated header cell and to use indentation to indicate if the cell is referring to just the \texttt{Fact} or a \texttt{Fact} and \texttt{FactProperty} combination.
-
-\begin{figure}[h]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.99\textwidth]{Sections/images/decisionTableProjection.png}}
     \caption{Decision table projection}
     \label{fig:decisionTableProjection}
 \end{figure}
+
+We designed our table, shown in figure \ref{fig:decisionTableProjection}, to include some of the lessons learned from the RSD cross-tab that shown in figure \ref{fig:crosstabProjection1}.
+The RSD language taught us that wasting visual real estate exacerbates sparseness issues in tables.
+In the cross-tab table, horizontal scrolling is necessary, in part due to the column widths.
+The columns were wide because the name of the \texttt{Fact} was displayed horizontally.
+
+The Drools-Lite language allows for much longer selection criteria on \texttt{FactProperties}, which would lead to much wider columns.
+Our solution was to develop a vertically orientated header cell and to use indentation to indicate if the cell is referring to just the \texttt{Fact} or a \texttt{Fact} and \texttt{FactProperty} combination.
 
 Because this projection presents both the left and right-hand side of the rules, we had to handle the Concept that spans both - the \texttt{RuleVariable}.
 We had to find a way to represent a \texttt{RuleVariable} that can be bound and used on the LHS and used on the RHS.
@@ -200,25 +201,16 @@ One study estimated that 90\% of computers had a spreadsheet on them\cite{bradle
 Dan Bricklin's VisiCalc drove personal computers into the office.
 VisiCalc was succeeded by Lotus 1-2-3, which Microsoft Excel then succeeded as the dominant spreadsheet program in the workplace.
 
-This level of familiarity with a paradigm led us to design a projection that had the look and feel of an Excel spreadsheet.
-We show this design in figure \ref{fig:SpreadsheetProjection}.
-To this end, we created a design where the selection criteria could be directly edited in the cell, as highlighted in the figure.
-
-\begin{figure}[h]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.99\textwidth]{Sections/images/SpreadsheetProjection.png}}
     \caption{Spreadsheet projection}
     \label{fig:SpreadsheetProjection}
 \end{figure}
 
-Each row is a \texttt{Rule} in this design, and each column is for a \texttt{RuleVariable} or a \texttt{FactProperty}.
-If a property is selected, then the selection criterion is in the appropriate cell.
-A grey/beige colour indicates unselected cells.
-The RHS of the \texttt{Rule} appears in the actions column.
-Adding as yet unused \texttt{Facts} or \texttt{FactProperties}, or removing existing ones, can be achieved with intentions, as shown in figure \ref{fig:SpreadsheetIntentions}.
-
-This design also allowed us to have more than one selector for the same \texttt{FactProperty}, essential for our host organisation's code.
-We demonstrate this in figure \ref{fig:TwoProperties}.
+This level of familiarity with a paradigm led us to design a projection that had the look and feel of an Excel spreadsheet.
+We show this design in figure \ref{fig:SpreadsheetProjection}.
+To this end, we created a design where the selection criteria could be directly edited in the cell, as highlighted in the figure.
 
 \begin{figure}
     \centering
@@ -235,6 +227,15 @@ We demonstrate this in figure \ref{fig:TwoProperties}.
         \label{fig:TwoProperties}
     \end{minipage}
 \end{figure}
+
+Each row is a \texttt{Rule} in this design, and each column is for a \texttt{RuleVariable} or a \texttt{FactProperty}.
+If a property is selected, then the selection criterion is in the appropriate cell.
+A grey/beige colour indicates unselected cells.
+The RHS of the \texttt{Rule} appears in the actions column.
+Adding as yet unused \texttt{Facts} or \texttt{FactProperties}, or removing existing ones, can be achieved with intentions, as shown in figure \ref{fig:SpreadsheetIntentions}.
+
+This design also allowed us to have more than one selector for the same \texttt{FactProperty}, essential for our host organisation's code.
+We demonstrate this in figure \ref{fig:TwoProperties}.
 
 Experts examined this design in the questionnaire.
 
@@ -253,7 +254,7 @@ Wittgenstein popularised the truth table in the Tractatus Logico-Philosophicus\c
 They are so widely used in mathematics and computer science that we do not need to explain their use further.
 Because of the combinatorial explosive nature of truth tables, with 2\textsuperscript{n} possible combinations, we would limit the display to a max of 6 \texttt{FactSelectors} and only show the paths that lead to the RHS execution.
 
-\begin{figure}[h]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.80\textwidth]{Sections/images/truthtable.png}}
     \caption{Truth table projection}
@@ -269,16 +270,16 @@ We presented this design to our experts to be validated.
 In our final projection design, we wanted to present a part of projectional editing that we had heretofore only made minimal use of.
 That is the use of manipulatable graphics that can change the AST.
 
-We chose a logic circuit. 
-The logic circuit represents a boolean operation as NOT, OR, XOR and AND Gates, with their inputs and outputs being inputs to other gates.
-In our design, shown in figure \ref{fig:CircuitDiagramProjection}, the input wires to the gates are the \texttt{Facts} or \texttt{FactProperties} referenced in the LHS.
-
-\begin{figure}[h]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.80\textwidth]{Sections/images/CircuitDiagram.png}}
     \caption{Circuit diagram projection}
     \label{fig:CircuitDiagramProjection}
 \end{figure}
+
+We chose a logic circuit. 
+The logic circuit represents a boolean operation as NOT, OR, XOR and AND Gates, with their inputs and outputs being inputs to other gates.
+In our design, shown in figure \ref{fig:CircuitDiagramProjection}, the input wires to the gates are the \texttt{Facts} or \texttt{FactProperties} referenced in the LHS.
 
 The user experience is that once the \texttt{Rule} is selected, the developer, by pressing the up and down arrow keys, can step through the different \texttt{FactSelectors} (highlighted in yellow) and shown in the circuit diagram, thus showing how the \texttt{Facts} relate to each other.
 

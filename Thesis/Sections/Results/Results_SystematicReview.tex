@@ -12,19 +12,18 @@ Therefore, what follows should be considered the results of a quasi-SLR, with th
 \subsection{Papers Selected}
 We logged the details of what we describe in this section in appendix \ref{Appendix:SLRLog}.
 
+\begin{figure}
+    \centering
+    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/search_sankey-1.png}}
+    \caption{Search results}
+    \label{fig:search_results}
+\end{figure}
+
 Figure \ref{fig:search_results} shows the results of the five iterations that the search went through.
 Out of 173 results, we had 50 papers that initially seemed to pass our inclusion and exclusion criteria from our initial search.
 From the initial 50, we added 18 papers from a possible 109 in our first iteration of forward and backwards snowballing.
 The next snowballing iteration returned three papers that matched our criteria.
 The third round of snowballing had no papers matching our criteria and thus terminated this stage of selection.
-
-\begin{figure}[htbp]
-    \centering
-    \fbox{\includegraphics[width=0.75\textwidth]{Sections/images/search_sankey.png}}
-    \caption{Search results}
-    \label{fig:search_results}
-\end{figure}
-
 
 Our final selection iteration involved a deeper scan of the remaining 71 papers.
 In this stage, we rejected 12 papers that were not primary research and one paper which reported on an already represented study.
@@ -36,20 +35,14 @@ This final selection filter left us with 31 papers before the quality assessment
 As a curio, we reappropriated Zhang's\cite{Zhang_2011} ideas of sensitivity and precision and applied them to the search engines rather than search strings.
 We calculate the values for sensitivity and precision of the search engines as follows:
 \[
-        sensitivity = \frac{\#\;retrieved\;relevant\;studies}{all\;relevant\;studies} \;100\%
+        sensitivity = \frac{\#\;retrieved\;relevant\;studies}{\#\;all\;relevant\;studies} \;100\%
 \]
 
 \[
         precision = \frac{\#\;retrieved\;relevant\;studies}{\#\;studies\;retrieved} \;100\%
 \]
 
-Table \ref{table:sensitivity_precision} show that Google Scholar had the highest sensitivity, returning 22 of the 31 chosen studies.
-This sensitivity came at the cost of a considerable proportion of false positives.
-Microsoft Academic and SpringerLink were the joint-most precise, with half of their search results ending up in the final roster.
-With the second-highest count of documents, the second-highest sensitivity, and joint highest precision, SpringerLink would appear to be the best all-around search engine for this field.
-However, these figures are skewed by several of their articles coming from a single collection specifically about projectional editing.
-
-\begin{table}[h]
+\begin{table}
     \begin{center}
         \begin{tabular}{ | l | c | c | c | c |} 
             \hline
@@ -75,6 +68,11 @@ However, these figures are skewed by several of their articles coming from a sin
     \label{table:sensitivity_precision}
 \end{table}
 
+Table \ref{table:sensitivity_precision} show that Google Scholar had the highest sensitivity, returning 22 of the 31 chosen studies.
+This sensitivity came at the cost of a considerable proportion of false positives.
+Microsoft Academic and SpringerLink were the joint-most precise, with half of their search results ending up in the final roster.
+With the second-highest count of documents, the second-highest sensitivity, and joint highest precision, SpringerLink would appear to be the best all-around search engine for this field.
+However, these figures are skewed by several of their articles coming from a single collection specifically about projectional editing.
 
 \subsection{Quality Assessment}
 Using the quality assessment checklists developed by Crombie et al.\cite{crombie1997pocket}, shown in appendix \ref{appendix:QualityAssesmentChecklist}, we examined the remaining 31 papers, which on the surface represented 37 primary studies.
@@ -102,20 +100,38 @@ After considering this disconnect, we found two significant threats to the valid
 The first being that a single researcher with no previous experience executed the QA stage.
 The second is that either case study checklists are inappropriate for ADR studies or that ADR studies are inappropriate for SLRs.
 
-
 \subsection{Analysis}
-After Identifying the primary studies, we extracted data.
-Appendix \ref{appendix:DataExtraction} shows the extracted data.
-Figure \ref{fig:study_types} shows that most of the primary studies in our review were ADR studies.
 
-\begin{figure}[h]
+\begin{figure}
     \centering
-    \fbox{\includegraphics[width=0.45\textwidth]{Sections/images/pie_study_type2.png}}
+    \fbox{\includegraphics[width=0.45\textwidth]{Sections/images/pie_study_type3.png}}
     \caption{Study types}
     \label{fig:study_types}
 \end{figure}
 
+After Identifying the primary studies, we extracted data.
+Appendix \ref{appendix:DataExtraction} shows the extracted data.
+Figure \ref{fig:study_types} shows that most of the primary studies in our review were ADR studies.
+
 \subsubsection{Tools Used}
+
+\begin{figure}
+    \centering
+    \fbox{\begin{minipage}{0.5\textwidth}
+            \centering
+            \includegraphics[width=0.85\textwidth]{Sections/images/pie_projectional_publicvsresearch3.png}
+            \caption{Public vs research}
+            \label{fig:public_vs_research}
+        \end{minipage}\hfill
+        \begin{minipage}{0.5\textwidth}
+            \centering
+            \includegraphics[width=0.85\textwidth]{Sections/images/pie_projectional_publicprograms3.png} 
+            \caption{Publicly available programs}
+            \label{fig:public_programs}
+        \end{minipage}
+    }
+\end{figure}
+
 We split the studies to see which were to do with purely research projects and which were researching using already publicly available commercial or open-source products.
 To calculate this, we removed one primary study, a survey, as it covered many tools and options, but none of which was in-depth.
 The chart in figure \ref{fig:public_vs_research} shows that over 80\% of the projects were studying already existing publicly available options.
@@ -123,68 +139,25 @@ The chart in figure \ref{fig:public_vs_research} shows that over 80\% of the pro
 Of the publicly available software studies, we wanted to know which software attracted the most academic interest.
 Figure \ref{fig:public_programs} shows that 74\% of the studies into projectional editing that used a publicly available product used JetBrains MPS.
 
-\begin{figure}
-    \centering
-    \fbox{\begin{minipage}{0.5\textwidth}
-            \centering
-            \includegraphics[width=0.85\textwidth]{Sections/images/pie_projectional_publicvsresearch2.png}
-            \caption{Public vs research}
-            \label{fig:public_vs_research}
-        \end{minipage}\hfill
-        \begin{minipage}{0.5\textwidth}
-            \centering
-            \includegraphics[width=0.85\textwidth]{Sections/images/pie_projectional_publicprograms2.png} 
-            \caption{Publicly available programs}
-            \label{fig:public_programs}
-        \end{minipage}
-    }
-\end{figure}
-
 During this analysis, we discovered that two of the papers we had initially categorised as primary studies were, in fact, proposals, and thus we removed them from our analysis.
 
 \subsubsection{Sentiment}
 
-In this study, we included all 29 papers.
-We tagged each section from those papers that talked about projectional editing.
-We then broke each section into sentences and ran those sentences through a sentiment analyser as described in section \ref{section:dataExtraction}.
-We show the outcome of this sentiment analysis in figure \ref{fig:sentiment_analysis}. 
-The charts show the relationship between the positive, neutral, and negative sentiment outcomes.
-On the y-axis, we have an Id for the papers examined. 
-We show the keys linking the Ids to the paper names in table \ref{table:paper_key}.
-
-The charts in the first column of figure \ref{fig:sentiment_analysis} show the absolute number of sentences analysed per paper partitioned by whether they returned negative, neutral, or positive sentiment results.
-The charts in the second column show these as percentages so that the papers are comparable.
-In the charts in the third column, we removed the neutral scores and calculated the percentage positive to negative.
-The final chart column is an aid to make it easier to scan whether papers trended positive or negative.
-If we found the papers to be equally positive and negative, we classified them as neutral.
-
-Over the 29 papers, we scanned a total of 3003 sentences.
-Four hundred thirty-five were analysed as being positive, 1953 neutral and 615 negative.
-Hence, 14\% were positive, and 16\% were negative.
-
-10 of the 29 papers were more positive than negative when discussing projectional editing, 16 more negative and three equally negative and positive.
-
-In figure \ref{fig:sentiment_analysis2}, we attempt to separate out sentiment by product category.  
-These categories being Research projects, MPS, and all the other used products.
-We ignored the survey paper in this one as it covered all these types.
-
-MPS dominates the sentences accounting for 17 (61\%) of the 28 papers and 2051 (73\%) of the 2791 sentences analysed.
-
-\begin{figure}[h]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/sentiment_analysis2.png}}
     \caption{Sentiment analysis by product}
     \label{fig:sentiment_analysis2}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/sentiment_analysis3.png}}
     \caption{Sentiment analysis}
     \label{fig:sentiment_analysis}
 \end{figure}
  
-\begin{table}[H]
+\begin{table}
     \begin{center}
         \begin{tabular}{ |c  c|l | } 
             \hline
@@ -235,7 +208,32 @@ MPS dominates the sentences accounting for 17 (61\%) of the 28 papers and 2051 (
     \label{table:paper_key}
 \end{table}
 
-\newpage
+In this study, we included all 29 papers.
+We tagged each section from those papers that talked about projectional editing.
+We then broke each section into sentences and ran those sentences through a sentiment analyser as described in section \ref{section:dataExtraction}.
+We show the outcome of this sentiment analysis in figure \ref{fig:sentiment_analysis}. 
+The charts show the relationship between the positive, neutral, and negative sentiment outcomes.
+On the y-axis, we have an Id for the papers examined. 
+We show the keys linking the Ids to the paper names in table \ref{table:paper_key}.
+
+The charts in the first column of figure \ref{fig:sentiment_analysis} show the absolute number of sentences analysed per paper partitioned by whether they returned negative, neutral, or positive sentiment results.
+The charts in the second column show these as percentages so that the papers are comparable.
+In the charts in the third column, we removed the neutral scores and calculated the percentage positive to negative.
+The final chart column is an aid to make it easier to scan whether papers trended positive or negative.
+If we found the papers to be equally positive and negative, we classified them as neutral.
+
+Over the 29 papers, we scanned a total of 3003 sentences.
+Four hundred thirty-five were analysed as being positive, 1953 neutral and 615 negative.
+Hence, 14\% were positive, and 16\% were negative.
+
+10 of the 29 papers were more positive than negative when discussing projectional editing, 16 more negative and three equally negative and positive.
+
+In figure \ref{fig:sentiment_analysis2}, we attempt to separate out sentiment by product category.  
+These categories being Research projects, MPS, and all the other used products.
+We ignored the survey paper in this one as it covered all these types.
+
+MPS dominates the sentences accounting for 17 (61\%) of the 28 papers and 2051 (73\%) of the 2791 sentences analysed.
+
 \subsubsection{A Narrative Synthesis}
 Our synthesis of the papers that appear in table \ref{table:paper_key} will be short.
 We will avoid rehashing the advantages and disadvantages of projectional editing, which come up again as we discussed these thoroughly in sections \ref{section:projectional_advantages} and \ref{section:projectional_disadvantages}.

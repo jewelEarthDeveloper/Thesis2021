@@ -60,7 +60,10 @@
 \usepackage{mwe}
 \usepackage{fourier}
 \usepackage[scaled=0.75]{FiraMono}
+\usepackage{titlesec} 
 
+\titleformat{\chapter}[display]{\normalfont\bfseries\Huge}{\thechapter}{10pt}{}
+\setcounter{secnumdepth}{3}
 \DeclareUnicodeCharacter{0301}{\'{e}}
 
 \newcommand{\cmark}{\ding{51}}
@@ -73,7 +76,7 @@
 \definecolor{keywordRed}{RGB}{151,0,11}
 \definecolor{typePurple}{RGB}{128,3,82}
 \definecolor{variableBlue}{RGB}{0,0,255}
-\definecolor{annotationRed}{RGB}{198,4,38}
+\definecolor{annotationRed}{RGB}{198,4,38}  
 \definecolor{annotationBlue}{RGB}{32,21,223}
 
 \lstdefinelanguage[drl]{Drools}{
@@ -91,7 +94,7 @@
     morestring=[b]",
     morestring=[d]',
 %%% default style
-    basicstyle=\footnotesize\ttfamily,
+    basicstyle=\ttfamily,
     numbers=left,
     stepnumber=1,
     showstringspaces=false,
@@ -216,6 +219,7 @@
 \begin{document}
     \maketitle
     \input{Sections/abstract_page}
+    \input{Sections/acknowledgements_page}
     \tableofcontents
     \input{Sections/Introduction}
     \input{Sections/Background}
@@ -224,7 +228,6 @@
     \input{Sections/Discussion}
     \input{Sections/RelatedWork}
     \input{Sections/Conclusion}
-    \input{Sections/acknowledgements_page}
 
     \printbibliography[heading=bibintoc,notkeyword={SLR}] 
     \begingroup
@@ -233,11 +236,12 @@
     \printbibliography[title={Systematic Review Bibliography},keyword={SLR}] 
     \endgroup
 
-    \appendix
-    \input{Appendices/SystematicReviewLog}    
-    \input{Appendices/QualityAssesmentChecklistAppendix}
-    \input{Appendices/Quality_Assesment_Results}
-    \input{Appendices/DataExtractionResults}
-    \input{Appendices/DroolsConceptStructure}
-    \input{Appendices/QuestionnaireText}
+    \begin{appendices}
+        \input{Appendices/SystematicReviewLog}    
+        \input{Appendices/QualityAssesmentChecklistAppendix}
+        \input{Appendices/Quality_Assesment_Results}
+        \input{Appendices/DataExtractionResults}
+        \input{Appendices/DroolsConceptStructure}
+        \input{Appendices/QuestionnaireText}
+    \end{appendices}
 \end{document} 

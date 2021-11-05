@@ -57,9 +57,7 @@ We concluded that only including papers from 2021 would be too small a search sp
 Therefore, we set our date range to be from the beginning of 2020 to the present.
 For the sake of reproducibility, we advise the removal of any papers after 31st July 2021.
 
-We show the search engines we used in table \ref{table:searchEngines}.
-
-\begin{table}[H]
+\begin{table}
     \begin{center}         
         \begin{tabular}{|l||l|}
             \hline
@@ -80,6 +78,8 @@ We show the search engines we used in table \ref{table:searchEngines}.
     \caption{Search engines used}
     \label{table:searchEngines}
 \end{table}
+
+We show the search engines we used in table \ref{table:searchEngines}.
 
 Once we have filtered the automated search through the criteria of the selection stage, we will use that as our starting set for snowballing.
 We will do all our filtering before we do any quality assessments, as we feel that excluding papers from snowballing based on the quality of the primary study would artificially limit the network of potential papers.
@@ -172,42 +172,40 @@ The existence of papers with verified primary studies either into projectional e
 
 For the question of ``What tools are currently being used for research?'' we shall note each tool discussed mentioned explicitly in the study.
 
+\noindent\begin{minipage}{\textwidth}
+    \begin{lstlisting}[language=Python, numbers=left, caption=Text Analytics code, captionpos=b, label=listing:text_analytics, breaklines=true]
+
+    from azure.core.credentials import AzureKeyCredential
+    from azure.ai.textanalytics import TextAnalyticsClient
+    
+    endpoint = "REPLACE_WITH_CORRECT_ENDPOINT"
+    key = "REPLACE_WITH_CORRECT_KEY"
+    
+    text_analytics_client = TextAnalyticsClient(endpoint=endpoint, credential=AzureKeyCredential(key))
+    
+    inputfiles = [[ARRAY_OF_FILES_TO_BE_ANALYSED]]
+    
+    with open('/content/sample_data/sentiment/output_all.txt','a') as outf:
+    for sections in inputfiles:
+        for section in sections:
+        print("Section: {}".format(section),file=outf)
+        f = open('/content/sample_data/sentiment/'+section)
+        content = f.readlines()
+        # for brevity an optimization to deal with 10 document limit is removed
+        if len(content) != 0:
+            result = text_analytics_client.analyze_sentiment(content, show_opinion_mining=True)
+            docs = [doc for doc in result if not doc.is_error]
+            for idx, doc in enumerate(docs):
+            print("sentiment: {}".format(doc.sentiment),file=outf)
+            print("Document text: {}".format(content[idx]),file=outf)
+    \end{lstlisting}
+\end{minipage}
+
 Finally, for the sentiment, we shall pass each paragraph of the introduction, the discussion, the conclusion, and any other sections that mention projectional editing or tools through a sentiment analyser, noting its sentiment score.
 The sentiment analysis tool we shall use is Microsoft Azure Cognitive Services Text Analytics.
 We show the code to carry out this task in listing \ref{listing:text_analytics}.
 
-We will gather this data in tables with the categories shown in table \ref{table:Data_Extraction_Form}.
-
-\noindent\begin{minipage}{\textwidth}
-    \begin{lstlisting}[language=Python, caption=Text Analytics code., captionpos=b, label=listing:text_analytics, breaklines=true]
-
-        from azure.core.credentials import AzureKeyCredential
-        from azure.ai.textanalytics import TextAnalyticsClient
-        
-        endpoint = "REPLACE_WITH_CORRECT_ENDPOINT"
-        key = "REPLACE_WITH_CORRECT_KEY"
-        
-        text_analytics_client = TextAnalyticsClient(endpoint=endpoint, credential=AzureKeyCredential(key))
-        
-        inputfiles = [[ARRAY_OF_FILES_TO_BE_ANALYSED]]
-        
-        with open('/content/sample_data/sentiment/output_all.txt','a') as outf:
-        for sections in inputfiles:
-            for section in sections:
-            print("Section: {}".format(section),file=outf)
-            f = open('/content/sample_data/sentiment/'+section)
-            content = f.readlines()
-            # for brevity an optimization to deal with 10 document limit is removed
-            if len(content) != 0:
-                result = text_analytics_client.analyze_sentiment(content, show_opinion_mining=True)
-                docs = [doc for doc in result if not doc.is_error]
-                for idx, doc in enumerate(docs):
-                print("sentiment: {}".format(doc.sentiment),file=outf)
-                print("Document text: {}".format(content[idx]),file=outf)
-    \end{lstlisting}
-\end{minipage}
-
-\begin{table}[H]
+\begin{table}
 	\centering
 	\begin{tabular}{|c | l | l | c |} 
 		\hline
@@ -226,6 +224,8 @@ We will gather this data in tables with the categories shown in table \ref{table
 	\caption{Data extraction form}
     \label{table:Data_Extraction_Form}
 \end{table}
+
+We will gather this data in tables with the categories shown in table \ref{table:Data_Extraction_Form}.
 
 \subsection{Data Aggregation and Synthesis}
 Kitchenham\cite{kitchenham2015evidence} explained that primary studies would tend to be too heterogeneous for any statistical analysis in software engineering. 

@@ -43,36 +43,36 @@ Responses came from around the world.
 Figure \ref{fig:Survey_locations} shows that the respondents' location was concentrated in Europe, the exceptions being the USA, Israel, and Singapore.
 Italy and the Netherlands provided the most significant number of responses, with 7 and 5 respectively.
 
-\begin{figure}[H]
+\begin{figure}
     \centering
-    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/survey_participants.png}}
+    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/survey_participants-1.png}}
     \caption{Survey participants}
     \label{fig:Survey_participants}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/survey_locations.png}}
     \caption{Survey locations}
     \label{fig:Survey_locations}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}
     \begin{subfigure}{.33\textwidth}
       \centering
-      \includegraphics[width=.95\linewidth]{Sections/images/pie_experiencer2.png}
+      \includegraphics[width=.95\linewidth]{Sections/images/pie_experiencer4.png}
       \caption{SE experience}
       \label{fig:sfig1}
     \end{subfigure}%
     \begin{subfigure}{.33\textwidth}
       \centering
-      \includegraphics[width=.95\linewidth]{Sections/images/pie_droolsExperience2.png}
+      \includegraphics[width=.95\linewidth]{Sections/images/pie_droolsExperience4.png}
       \caption{Drools experience}
       \label{fig:sfig2}
     \end{subfigure}
     \begin{subfigure}{.33\textwidth}
         \centering
-        \includegraphics[width=.95\linewidth]{Sections/images/pie_recentusage2.png}
+        \includegraphics[width=.95\linewidth]{Sections/images/pie_recentusage4.png}
         \caption{Recent use}
         \label{fig:sfig3}
       \end{subfigure}
@@ -85,6 +85,13 @@ As can be seen in \ref{fig:sfig1}, most of our subjects have over ten years of p
 17\% of our recipients had a low experience of Drools, and 30\% were very experienced, as shown in figure \ref{fig:sfig2}.
 Figure \ref{fig:sfig3} shows that 40\% of our recipients had used Drools in this current year, and 30\% had not used it in the last five years.
 
+\begin{figure}
+    \centering
+    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/EditorUseage.png}}
+    \caption{Editors used}
+    \label{fig:editorUsage}
+\end{figure}
+
 Half of our subjects reported only ever using one editor for Drools, with the slight majority of those only using Eclipse.
 Eclipse also had the most instances of reporting of having been used.
 Out of the 55 instances of editors reported as being used, 20 of those were Eclipse.
@@ -92,13 +99,6 @@ There was a surprising diversity of tools used.
 The purpose of this section was to calibrate responses against exposure to IDEs with greater Drools Support.
 The wide diversity of editor usage and high incidence of multiple editor usage means that these answers are not suitable for use in the sub-categorisation of responses. 
 We show the distribution of usage in figure \ref{fig:editorUsage}.
-
-\begin{figure}[h]
-    \centering
-    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/EditorUseage.png}}
-    \caption{Editors used}
-    \label{fig:editorUsage}
-\end{figure}
 
 \subsection{Question Analysis}
 
@@ -153,14 +153,14 @@ Ergo, our decision rule is, if our z is less than -1.96, or greater than 1.96, w
 \pagebreak
 \subsubsection{Question 1, 2 and 3: First Impressions}
 
-\begin{figure}[h]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/stackedbar_Q1.png}}
     \caption{Question 1 - first impressions}
     \label{fig:stackedbar_Q1}
 \end{figure}
 
-\begin{table}[h]
+\begin{table}
     \begin{center}
         \begin{tabular}{ |l ||r |r |r | r|l | } 
             \hline
@@ -187,12 +187,7 @@ Eyeballing the chart, we observe that the novice and the academics, where there 
 Table \ref{table:mannwhitneyQ1} shows a significant difference between the academics and the practitioners' first reaction to seeing the projectional editing example.
 Here, the academics have a far more positive view of the example than the practitioners.
 
-In general, we see an overwhelmingly positive response.
-There were five times as many positive (21) than negative (4) responses.
-Survey Monkey directed those who had a positive or negative response to answer the open questions ``Q2. How would this coding style be useful to your interactions with Drools?'' and ``Q3. What do you find negative with this style of coding?'' respectively.
-Figure \ref{fig:wordclouds} shows a visualisation of the subject's responses.
-
-\begin{figure}[H]
+\begin{figure}
     \begin{subfigure}{.60\textwidth}
       \centering
       \includegraphics[width=.95\linewidth]{Sections/images/positive_wordcloud.png}
@@ -209,6 +204,11 @@ Figure \ref{fig:wordclouds} shows a visualisation of the subject's responses.
     \label{fig:wordclouds}
 \end{figure}
 
+In general, we see an overwhelmingly positive response.
+There were five times as many positive (21) than negative (4) responses.
+Survey Monkey directed those who had a positive or negative response to answer the open questions ``Q2. How would this coding style be useful to your interactions with Drools?'' and ``Q3. What do you find negative with this style of coding?'' respectively.
+Figure \ref{fig:wordclouds} shows a visualisation of the subject's responses.
+
 Amongst the positive comments, it appears the subjects had picked up on many of the advantages that projectional editing brings.
 The ones that got the most mentions, using other words, were exploratory coding, correctness by construction, and multiple viewpoints.
 Subjects also noted that, with the projections shown, development could be quicker and easier to check.
@@ -217,14 +217,14 @@ Among the very few negative comments, they discussed the failures of no/low code
 
 \subsubsection{Question 4 and 5: Interpret Projection}
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/stackedbar_Q2.png}}
     \caption{Question 5 - interpret projection}
     \label{fig:stackedbar_Q2}
 \end{figure}
 
-\begin{table}[H]
+\begin{table}
     \begin{center}
         \begin{tabular}{ |l ||r |r |r | r|l | } 
             \hline
@@ -263,14 +263,14 @@ The ratio of those evaluating it as easy to those thinking it was hard to unders
 
 \subsubsection{Question 6 and 7: Interpret Text}
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/stackedbar_Q3.png}}
     \caption{Question 7 - interpret text}
     \label{fig:stackedbar_Q3}
 \end{figure}
 
-\begin{table}[H]
+\begin{table}
     \begin{center}
         \begin{tabular}{ |l ||r |r |r | r|l | } 
             \hline
@@ -313,14 +313,14 @@ The 4 participants responding from the group presented text first were too low t
 \pagebreak
 \subsubsection{Question 8: Compare Projections}
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/stackedbar_Q4a.png}}
     \caption{Question 8 - compare projections}
     \label{fig:stackedbar_Q4}
 \end{figure}
 
-\begin{table}[H]
+\begin{table}
     \begin{center}
         \begin{tabular}{ |l ||r |r |r | r|l | } 
             \hline
@@ -347,14 +347,14 @@ This result correlates well with the difference in understanding found previousl
 
 \subsubsection{Question 9: Compare Projection to Text}
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/stackedbar_Q5.png}}
     \caption{Question 9 - compare projections with text}
     \label{fig:stackedbar_Q5}
 \end{figure}
 
-\begin{table}[H]
+\begin{table}
     \begin{center}
         \begin{tabular}{ |l ||r |r |r | r|l | } 
             \hline
@@ -387,14 +387,14 @@ Table \ref{table:mannwhitneyQ5} shows this was independent of any other factors.
 
 \subsubsection{Question 10: Truth Table Validation}
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/stackedbar_Q6.png}}
     \caption{Question 10 - truth table}
     \label{fig:stackedbar_Q6}
 \end{figure}
 
-\begin{table}[H]
+\begin{table}
     \begin{center}
         \begin{tabular}{ |l ||r |r |r | r|l | } 
             \hline
@@ -428,14 +428,14 @@ However, when the figures are examined under Mann-Whitney, as seen in table \ref
 
 \subsubsection{Question 11: Circuit Diagram Validation}
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/stackedbar_Q7.png}}
     \caption{Question 11 - circuit diagram}
     \label{fig:stackedbar_Q7}
 \end{figure}
 
-\begin{table}[H]
+\begin{table}
     \begin{center}
         \begin{tabular}{ |l ||r |r |r | r|l | } 
             \hline
@@ -468,6 +468,13 @@ Sixteen participants decided to add some words.
 We ran sentiment analysis on these 16 comments, using the same service and similar code as we used in our SLR research, as described in section \ref{section:dataExtraction}.
 Nine were positive, six mixed and one negative.
 
+\begin{figure}
+    \centering
+    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/Q15_wordcloud.png}}
+    \caption{Question 15 - responses}
+    \label{fig:Q15_wordcloud}
+\end{figure}
+
 Figure \ref{fig:Q15_wordcloud} shows another word cloud visualisation.
 
 The word that pops out, DMN, here is indicative of a few comments.
@@ -478,13 +485,6 @@ The feeling was that the projections would give more advantages to non-developer
 
 There were some hints as to how to improve our projections or other projections to try.
 Others suggested that the projections cannot capture some of the complexity of the rules that exist.
-
-\begin{figure}[H]
-    \centering
-    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/Q15_wordcloud.png}}
-    \caption{Question 15 - responses}
-    \label{fig:Q15_wordcloud}
-\end{figure}
 
 \subsection{Summary Analysis}
 

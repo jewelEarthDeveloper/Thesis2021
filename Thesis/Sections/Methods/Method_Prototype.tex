@@ -4,22 +4,22 @@
 Even though Drools is a relatively small DSL, we did not need to implement all the functionality to answer our questions.
 For this reason, we created smaller versions of the language.
 
-\subsection{Really Simple Rules Language}
+\subsection{Really Simple Drools Language}
 As we were new to DSL design and MPS, we first would create a simple approximation of the Drools language to create our first projections.
-We called this language ``Really Simple Rules'' (RSR).
+We called this language ``Really Simple Drools'' (RSD).
 
-\paragraph{File} RSR, Like Drools itself, has a \texttt{File} as its root node.
+\paragraph{File} RSD, Like Drools itself, has a \texttt{File} as its root node.
 The \texttt{File} only contains \texttt{Facts} and \texttt{Rules}.
 
 \paragraph{\texttt{Fact} and \texttt{FactProperty}} In Drools, a \texttt{Fact} represents a Java Bean with its child properties, which can also have their child properties, ad infinitum.
-In RSR, we limited properties to allow only boolean values.
+In RSD, we limited properties to allow only boolean values.
 We decided this because fact selection is a predicate and thus can only return a boolean.
 By only allowing booleans, we also simplify the operations allowed on the property.
 
 \paragraph{\texttt{Rule}} We only simulated the Left-hand side, or the ``\texttt{when}'' conditions, of a Drools Rule for the \texttt{Rule} Concept.
 We believed this would provide us with compelling options for projections and did not want to overcomplicate this first approach.
 
-An RSR Rule consists of a collection of conditions.
+An RSD Rule consists of a collection of conditions.
 Should all those conditions return \texttt{true}, then the \texttt{Rule} is selected.
 
 \paragraph{Condition} A condition operates on one or more \texttt{FactSelectors}.
@@ -33,89 +33,96 @@ If the \texttt{Fact} exists and all the \texttt{Predicates} evaluate to \texttt{
 \paragraph{\texttt{Predicate}} The \texttt{Predicate} is an operation on a \texttt{FactProperty}, to which the Concept has a reference.
 Because \texttt{FactProperty} represents a boolean value, the only predicate operations are ``\texttt{Is}'' and ``\texttt{Not}''.
 
-Figure \ref{fig:RSRDiagram} shows the Concept hierarch for this straightforward implementation.
-
-\begin{figure}[h]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/ReallySimpleRuleLanguage.png}}
-    \caption{RSR concept hierarchy}
-    \label{fig:RSRDiagram}
+    \caption{RSD concept hierarchy}
+    \label{fig:RSDDiagram}
 \end{figure}
 
-We realised this design in MPS.
-As the aim is to attempt different projections, we did not initially optimise for editing.
-The Structure is as shown in figure \ref{fig:RSRStructure}, and the editors, including those shown in figure \ref{fig:RSREditors}.
+Figure \ref{fig:RSDDiagram} shows the Concept hierarch for this straightforward implementation.
 
 \begin{figure}
     \centering
     \begin{minipage}{0.30\textwidth}
         \centering
         \includegraphics[width=0.9\textwidth]{Sections/images/RSRStructrure.png}
-        \caption{RSR}
-        \label{fig:RSRStructure}
+        \caption{RSD}
+        \label{fig:RSDStructure}
     \end{minipage}\hfill
     \begin{minipage}{0.70\textwidth}
         \centering
         \includegraphics[width=0.9\textwidth]{Sections/images/RSREditors.png} 
         \caption{Editors}
-        \label{fig:RSREditors}
+        \label{fig:RSDEditors}
     \end{minipage}
+\end{figure}
+
+We realised this design in MPS.
+As the aim is to attempt different projections, we did not initially optimise for editing.
+The Structure is as shown in figure \ref{fig:RSDStructure}, and the editors, including those shown in figure \ref{fig:RSDEditors}.
+
+\begin{figure}
+    \centering
+    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/RSRSubstituteMenu.png}} 
+    \caption{RSD substitute menu}
+    \label{fig:RSDSubstituteMenu}
 \end{figure}
 
 Part of our research question is using projections for reasoning about large files.
 To answer this, we needed to simulate a large file.
 To do this, we had to enter many \texttt{Rules}.
-As this becomes tedious, we added some editing aids, including substitute menus, to speed up the entry of Conditions, as shown in figure \ref{fig:RSRSubstituteMenu}.
+As this becomes tedious, we added some editing aids, including substitute menus, to speed up the entry of Conditions, as shown in figure \ref{fig:RSDSubstituteMenu}.
 
 This image shows that we originally had to select an \texttt{ExistsCondition} Concept and select the \texttt{Fact} for the Condition.
 After adding the substitute menu, we could immediately select the \texttt{Fact} we wanted, and the \texttt{ExistsCondition} would automatically wrap it with an \texttt{ExistsCondition} node.
 
-\begin{figure}[h]
-    \centering
-    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/RSRSubstituteMenu.png}} 
-    \caption{RSR substitute menu}
-    \label{fig:RSRSubstituteMenu}
-\end{figure}
-
 We also added some intentions to invert incorrectly added Conditions.
 
+\begin{figure}
+    \centering
+    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/RSRConstraint.png}}
+    \caption{RSD scoping constraint}
+    \label{fig:RSDConstraint}
+\end{figure}
+
 Finally, we added a Constraint to scope the \texttt{FactProperties} in \texttt{Predicates} to the \texttt{Fact} chosen in the \texttt{FactSelector}.
-This scope Constraint made it much easier to select \texttt{FactProperties} in the \texttt{Predicates}, as indicated in figure \ref{fig:RSRConstraint}.
+This scope Constraint made it much easier to select \texttt{FactProperties} in the \texttt{Predicates}, as indicated in figure \ref{fig:RSDConstraint}.
 
 The figure shows that before adding the scoping constraint, it showed a list with dozens of potential \texttt{FactProperties}, that represented all the \texttt{FactProperties} in the model.
 After adding the constraint, it only shows the two \texttt{FactProperties} associated with the \texttt{Fact} from the \texttt{FactSelector}.
 
-\begin{figure}[h]
-    \centering
-    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/RSRConstraint.png}}
-    \caption{RSR scoping constraint}
-    \label{fig:RSRConstraint}
-\end{figure}
+Thus, we have described the entire implementation of the Really Simple Drools Language.
 
-Thus, we have described the entire implementation of the Really Simple Rules Language.
+\begin{figure}
+    \centering
+    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/RSRProgram.png}}
+    \caption{RSD program}
+    \label{fig:RSDProgram}
+\end{figure}
 
 After implementing the language, we wrote a program with many rules.
 This program on which we will experiment with the different projections.
-Figure \ref{fig:RSRProgram} shows an example of our default Drools-like text projection.
-
-\begin{figure}[h]
-    \centering
-    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/RSRProgram.png}}
-    \caption{RSR program}
-    \label{fig:RSRProgram}
-\end{figure}
+Figure \ref{fig:RSDProgram} shows an example of our default Drools-like text projection.
 
 We discuss the alternative projections in the results section \ref{section:Results_ADR}.
 
 \subsection{Drools-Lite Language}
 \label{section:DroolsLite}
 
-The RSR was useful as an initial language. 
+The RSD was useful as an initial language. 
 However, it suffered from two significant issues.
 Firstly, its limitations as a language were so substantial that it could not handle many necessary scenarios.
-Secondly, our projections would be validated by developers with Drools experience, and RSR would be too alien to them.
+Secondly, our projections would be validated by developers with Drools experience, and RSD would be too alien to them.
 For this reason, we needed to create a projectional language that was much closer to the Drools language.
 
+\begin{figure}
+    \centering
+    \fbox{\includegraphics[width=0.85\textwidth]{Sections/images/DroolsLiteStructure.png}}
+    \caption{Drools-Lite structure}
+    \label{fig:DroolsLiteDiagram}
+\end{figure}
+ 
 Our following Language, Drools-Lite, contains many more of the features of Drools.
 Our method of selecting the features involved implementing the examples delivered with Drools (including the corrupt politician example shown in section \ref{section:WhatIsDrools}).
 We would implement just enough features to complete the examples.
@@ -124,13 +131,6 @@ We show the preliminary design we achieved using this method in figure \ref{fig:
 Later, there were some places we diverged a little from our design.
 We merged and decoupled our Concepts when we thought it would simplify the code.
 
-\begin{figure}[htbp]
-    \centering
-    \fbox{\includegraphics[width=0.85\textwidth]{Sections/images/DroolsLiteStructure.png}}
-    \caption{Drools-Lite structure}
-    \label{fig:DroolsLiteDiagram}
-\end{figure}
- 
 \paragraph{\texttt{RuleFile}} The \texttt{RuleFile} level statements contain \texttt{Facts}, \texttt{Globals} and \texttt{Rules}.
 It also contains semantically unimportant empty lines.
 
@@ -142,7 +142,7 @@ We created a smart reference Concept for this to take advantage of built-in MPS 
 A smart reference is a node with a single reference of 1:1 cardinality.
 The editor builders know how to select which nodes are in scope to display to the developer if one uses this object rather than directly referencing the node it refers to.
 
-\paragraph{FactProperty} In RSR, we had \texttt{FactProperties} as children of \texttt{Facts}.
+\paragraph{FactProperty} In RSD, we had \texttt{FactProperties} as children of \texttt{Facts}.
 Now that our \texttt{Facts} refer to actual classes (\texttt{ClassifierType}), our \texttt{FactProperties} should reflect this.
 To do this, the Concept itself only references an \texttt{InstanceMethodDeclaration}, the MPS BaseLanguage's definition of a method signature.
 We scoped the Concept to only show properties associated with a selected \texttt{Fact}.
@@ -183,7 +183,7 @@ This extension allows seamless integration with the Java code.
 
 The Drools specific Methods that are required are \texttt{Insert}, \texttt{InsertLogical}, \texttt{Modify}, \texttt{Delete} and \texttt{Halt}.
 
-\begin{figure}[!h]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.70\textwidth]{Sections/images/RHS.png}}
     \caption{RHS}
@@ -196,6 +196,13 @@ The figure shows examples of plain Java code, such as assigning to the variable 
 We can also see that Drools-Lite \texttt{RuleVariable} \texttt{\$s} is in the Java statements.
 We have also highlighted the Drools specific methods placed in the code, in this case \texttt{\textbf{modify}} and \texttt{\textbf{insert}}   
 
+\begin{figure}
+    \centering
+    \fbox{\includegraphics[width=0.85\textwidth]{Sections/images/Rule.png}}
+    \caption{Rule}
+    \label{fig:Rule}
+\end{figure}
+
 \paragraph{\texttt{AttributeCollection}} the \texttt{AttributeCollection} is a container to hold all the attributes that apply to a rule.
 Initially, we have only implemented the \texttt{NoLoopAttribute} and \texttt{SalienceAttribute}.
 A developer activates these attributes using two intentions we added to the \texttt{Rule} Concept.
@@ -203,13 +210,6 @@ On line 2 in figure \ref{fig:Rule}, we can see an example of the \texttt{Salienc
 \footnote{In figure \ref{fig:Rule}, we added line numbers to this figure to make it easier to talk about.
 The keywords \texttt{rule} on line 1, \texttt{when} on line 3, \texttt{then} on line 6, and \texttt{end} on line 8 have no meaning in the abstract syntax.
 We added them to give the developer the same look and feel as a standard Drools file.}
-
-\begin{figure}[h]
-    \centering
-    \fbox{\includegraphics[width=0.85\textwidth]{Sections/images/Rule.png}}
-    \caption{Rule}
-    \label{fig:Rule}
-\end{figure}
 
 \paragraph{Left-hand side} This is a collection of conditions.
 There are four types of conditions.

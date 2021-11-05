@@ -72,19 +72,26 @@ Hence, this product is a projectional editor (the paradigm) for product line pro
 
 \subsubsection{How Projectional Editing Works}
 
-As shown in figure \ref{fig:projectionalEditing_loop}, a projectional editor has a model or an AST.
-It renders a presentation of the model as a projection.
-The developer performs actions on the projection.
-Every user editing action maps directly to a change in the AST.
-
-\begin{figure}[h]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.38\textwidth]{Sections/images/projections.png}}
     \caption{Projectional editing loop}
     \label{fig:projectionalEditing_loop}
 \end{figure}
 
+As shown in figure \ref{fig:projectionalEditing_loop}, a projectional editor has a model or an AST.
+It renders a presentation of the model as a projection.
+The developer performs actions on the projection.
+Every user editing action maps directly to a change in the AST.
+
 To perform the above two things have to be defined by language engineers: The meta-model and the editor.
+
+\begin{figure}
+    \centering
+    \fbox{\includegraphics[width=0.45\textwidth]{Sections/images/ast.png}}
+    \caption{Conceptual AST}
+    \label{fig:ast}
+\end{figure}
 
 The meta-model, analogous to the abstract syntax, describes the node concepts and connections used to build the hierarchical structure that is the AST.
 This hierarchy can have references to nodes in other branches, so it is a graph although named a tree. 
@@ -93,14 +100,6 @@ Each AST must have a root node.
 The nodes, represented by the ovals, can have child nodes.
 The child relationship is represented by the downward unbroken edges.
 Nodes can also reference other nodes in the AST, here represented by the dashed edges with arrows showing the direction of the reference.
-
-\begin{figure}[h]
-    \centering
-    \fbox{\includegraphics[width=0.35\textwidth]{Sections/images/ast.png}}
-    \caption{Conceptual AST}
-    \label{fig:ast}
-\end{figure}
-
 
 The AST is stored independently of the concrete syntax, often using a database, XML or a proprietary file format.
 Rules of the meta-model, such as type systems or scoping rules, must also be described.
@@ -174,6 +173,19 @@ These included M\'as, a web-based projectional editor, which is no longer with u
 Whole Platform\cite{WholePlatformProductPage} is a projectional language workbench plug-n for Eclipse.
 Cedalion\cite{lorenz2011cedalion} provides another projectional IDE, specialising in internal DSLs.
 
+\begin{figure}
+    \subfloat[Blockly]{
+        \includegraphics[clip,width=0.95\columnwidth]{Sections/images/blockly-2.png}
+        \label{fig:blockly}
+    }
+    
+    \subfloat[Blueprint]{
+        \includegraphics[clip,width=0.95\columnwidth]{Sections/images/blueprint-2.png}
+        \label{fig:Blueprint}
+    }
+    \caption{Unconventional projectional editors}
+    \label{fig:leftfield}
+\end{figure}
 
 More recently, there have been some new products that intersect the projectional domain.
 Deuce\cite{hempel2018deuce} and Gentleman\cite{lafontant2020gentleman_SLR} are two recent projection editors that have recently emerged from academia.
@@ -183,32 +195,10 @@ Blockly can create languages similar in style to the scratch language.
 Blueprint visual scripting, a part of the Unreal Engine, is a visual programming language for building concepts such as levels or game assets.
 Examples of Blockly and Blueprint can be seen in figures \ref{fig:blockly} and \ref{fig:Blueprint}, respectively.
 
-\begin{figure}[H]
-    \begin{subfigure}{.50\textwidth}
-      \centering
-      \includegraphics[width=.95\linewidth]{Sections/images/blockly.png}
-      \caption{Blockly}
-      \label{fig:blockly}
-    \end{subfigure}%
-    \begin{subfigure}{.50\textwidth}
-      \centering
-      \includegraphics[width=.95\linewidth]{Sections/images/blueprint.png}
-      \caption{Blueprint}
-      \label{fig:Blueprint}
-    \end{subfigure}
-    \caption{Unconventional projectional editors}
-    \label{fig:leftfield}
-\end{figure}
-
 \subsection{What Advantages Does Projectional Editing Bring?}
 \label{section:projectional_advantages}
 
-Projectional editing gives advantages both to the language engineer and the program developers.
-There is a lot of crossover and repetition between papers written on projectional editing regarding its advantages.
-To that end, what follows is a synthesis of several papers as to the advantages that projectional editing claims, in no particular order.
-Rather than attributing each advantage to each paper, we have made a reference table, table \ref{table:Projectional_Advantages}, of papers proclaiming said advantage.
-
-\begin{table}[h]
+\begin{table}
     \begin{center}
         \begin{tabular}{ |l | c | l | } 
             \hline
@@ -230,6 +220,10 @@ Rather than attributing each advantage to each paper, we have made a reference t
     \label{table:Projectional_Advantages}
 \end{table}
 
+Projectional editing gives advantages both to the language engineer and the program developers.
+There is a lot of crossover and repetition between papers written on projectional editing regarding its advantages.
+To that end, what follows is a synthesis of several papers as to the advantages that projectional editing claims, in no particular order.
+Rather than attributing each advantage to each paper, we have made a reference table, table \ref{table:Projectional_Advantages}, of papers proclaiming said advantage.
  
 \paragraph{Exploratory programming} As with their progenitors, syntax-directed editors, modern projectional editors help guide a developer unfamiliar with a language.
 With their rigid syntax and predefined layout, the editors only allow editing within specific cells of the editor.
@@ -307,13 +301,7 @@ This data is helpful for tasks such as documentation, requirements traceability 
 \subsection{What are the Disadvantages of Projectional Editing?}
 \label{section:projectional_disadvantages}
 
-Whilst fewer papers proclaim the disadvantages of projectional editing, we repeated the approach of the previous section.
-Thus, we have synthesised the disadvantages from papers in the following sections and listed citations for these ideas in table \ref{table:Projectional_Disadvantages}.
-
-We do not consider that the dearth of disadvantages discussed as evidence of projectional editing's superiority.
-Our best guess is that those who do not find projectional editing beneficial do not write papers about it.
-
-\begin{table}[h]
+\begin{table}
     \begin{center}
         \begin{tabular}{ |l | c | l | } 
             \hline
@@ -332,6 +320,12 @@ Our best guess is that those who do not find projectional editing beneficial do 
     \caption{Papers describing projectional editing disadvantages}
     \label{table:Projectional_Disadvantages}
 \end{table}
+
+Whilst fewer papers proclaim the disadvantages of projectional editing, we repeated the approach of the previous section.
+Thus, we have synthesised the disadvantages from papers in the following sections and listed citations for these ideas in table \ref{table:Projectional_Disadvantages}.
+
+We do not consider that the dearth of disadvantages discussed as evidence of projectional editing's superiority.
+Our best guess is that those who do not find projectional editing beneficial do not write papers about it.
 
 \paragraph{Lack of adoption} The ideas that proceeded projectional editing - the structured or syntax-directed editor - have been around since the early 1970s yet have failed to be adopted widely.
 This argument is a bit of a tautological one, as the low adoption is perhaps an outcome of the other disadvantages of projectional editing.

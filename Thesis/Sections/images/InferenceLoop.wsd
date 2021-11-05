@@ -1,13 +1,12 @@
 @startuml
-
-@startuml
 	skinparam linetype polyline 
-
+    skinparam ActivityFontSize 16
+    skinparam ArrowFontSize 16
 
 	partition "Working Memory" {
-        === F1 === --> "assert fact" as assert
-        === F1 === --> "modify fact" as modify
-        === F1 === --> "retract fact" as retract
+        === F1 === --> "Assert fact" as assert
+        === F1 === --> "Modify fact" as modify
+        === F1 === --> "Retract fact" as retract
         assert --> === F2 ===
         modify --> === F2 ===
         retract --> === F2 ===
@@ -38,9 +37,5 @@
     else
         --up->[No] (*)
     endif
-
-    
-    
-
 
 @enduml

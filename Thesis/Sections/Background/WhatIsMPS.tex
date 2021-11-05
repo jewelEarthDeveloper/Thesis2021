@@ -68,15 +68,14 @@ Other items available in the Structure Aspect are the Interface Concept, the Enu
 
 Thus, the Structure aspect defines how the AST can be structured.
 
-Figure \ref{fig:concept_example} shows a concept with three children that implements two interfaces.
-
-\begin{figure}[h]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.75\textwidth]{Sections/images/concept_example.png}}
     \caption{Concept example}
     \label{fig:concept_example}
 \end{figure}
  
+Figure \ref{fig:concept_example} shows a concept with three children that implements two interfaces.
 
 \subsection{Abstract Syntax: Behaviors}
 OO design usually bundles together data and methods that can act on that data.
@@ -90,29 +89,29 @@ If the Concept to which the Behavior refers is abstract, the Behavior itself can
 Abstraction, variable visibility and inheritance allow a sort of polymorphism.
 If a virtual method is declared, then it can be called polymorphically.
 
-Figure \ref{fig:behavior_example} shows a constructor added to a Concept to initialise its children.
-It has a method to allow other nodes to interrogate the condition of it having attributes.
-
-\begin{figure}[h]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.75\textwidth]{Sections/images/behavior_example.png}}
     \caption{Behavior example}
     \label{fig:behavior_example}
 \end{figure}
+
+Figure \ref{fig:behavior_example} shows a constructor added to a Concept to initialise its children.
+It has a method to allow other nodes to interrogate the condition of it having attributes.
  
 \subsection{Abstract Syntax: Constraints}
 A Constraints aspect adds further structural restrictions to a Concept.
 Constraints primarily define scope by controlling if another node can be a child, a parent, or an ancestor of this node.
 A Constraint can also prevent badly formed properties, children or references.
 
-Figure \ref{fig:constraint_example} shows an example of a scope restraint that only allows local variables declared within the same rule or global variables declared in the same file.
-
-\begin{figure}[h]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/constraint_example.png}}
     \caption{Constraint example}
     \label{fig:constraint_example}
 \end{figure}
+
+Figure \ref{fig:constraint_example} shows an example of a scope restraint that only allows local variables declared within the same rule or global variables declared in the same file.
  
 \subsection{Abstract Syntax: Type System}
 The Typesystem aspect and the constraints aspect together represent the static semantics of the language.
@@ -120,15 +119,14 @@ This aspect is for the computation and evaluation of types of variables, express
 
 Rules that are available to calculate and enforce the type system include inference, subtyping, comparison and substitute type rules.
 
-Figure \ref{fig:typesystem_example} shows an inference rule that ensures that the calculated type of the import statement matched that of its child called type.
-
-\begin{figure}[h]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.75\textwidth]{Sections/images/typesystem_example.png}}
     \caption{Typesystem example}
     \label{fig:typesystem_example}
 \end{figure}
- 
+
+Figure \ref{fig:typesystem_example} shows an inference rule that ensures that the calculated type of the import statement matched that of its child called type.
 
 \subsection{Concrete Syntax: Editors}
 Editor aspects define the notation of the nodes.
@@ -141,26 +139,27 @@ The choice the developer makes transforms the existing AST.
 
 Additionally, the behaviour of interactions can be defined, such as what will happen to the AST when a particular keypress or editor action occurs at a particular location.
 
-Figure \ref{fig:editor_example} shows a component with a projection for the Concept shown in figure \ref{fig:concept_example}.
-
-\begin{figure}[h]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.65\textwidth]{Sections/images/editor_example.png}}
     \caption{Editor example}
     \label{fig:editor_example}
 \end{figure}
+
+Figure \ref{fig:editor_example} shows a component with a projection for the Concept shown in figure \ref{fig:concept_example}.
  
 \subsection{Concrete Syntax: Intentions}
-In projectional editing, the IDE is a part of the concrete syntax.
-Intentions make context-aware suggestions for automatic changes to the program to the developer.
-Figure \ref{fig:intention_example} shows an intention that allows the developer to add, remove or edit a property based on its current value.
 
-\begin{figure}[h]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.75\textwidth]{Sections/images/intention_example.png}}
     \caption{Intention example}
     \label{fig:intention_example}
 \end{figure}
+
+In projectional editing, the IDE is a part of the concrete syntax.
+Intentions make context-aware suggestions for automatic changes to the program to the developer.
+Figure \ref{fig:intention_example} shows an intention that allows the developer to add, remove or edit a property based on its current value.
 
 \subsection{Generators: Model-to-Text}
 Whilst designing a language is nice, it has to be able to do something. 

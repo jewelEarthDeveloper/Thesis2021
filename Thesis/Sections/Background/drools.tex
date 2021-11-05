@@ -7,16 +7,17 @@ It is an advanced inference engine using an enhanced version of the Rete algorit
 Designed to accept pluggable language implementations, it can also work with Python and .Net.
 It is considered one of the most developed and supported rules platforms.
 
-To execute rules, Drools has four major components, as demonstrated in figure \ref{fig:Drools_components}.
-The production memory contains the rules, and this will not change during an analysis session.
-The rules are the focus of this thesis, and therefore, we will delve into much more detail later on these.
-
-\begin{figure}[h]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.55\textwidth]{Sections/images/components.png}}
     \caption{Drools components}
     \label{fig:Drools_components}
 \end{figure}
+
+To execute rules, Drools has four major components, as demonstrated in figure \ref{fig:Drools_components}.
+The production memory contains the rules, and this will not change during an analysis session.
+The rules are the focus of this thesis, and therefore, we will delve into much more detail later on these.
+
 
 In Forgy's\cite{forgy1989rete} overview of a rete algorithm, the following steps occur.
 \begin{enumerate}
@@ -26,6 +27,13 @@ In Forgy's\cite{forgy1989rete} overview of a rete algorithm, the following steps
     \item Act: Perform the actions in the RHS of the selected production.
     \item Re-evaluate: Go To 1.
 \end{enumerate}
+
+\begin{figure}
+    \centering
+    \fbox{\includegraphics[width=0.70\textwidth]{Sections/images/InferenceLoop.png}}
+    \caption{Drools inference loop}
+    \label{fig:Drools_inference_loop}
+\end{figure}
 
 Figure \ref{fig:Drools_inference_loop} shows more detail of how these components interact within Drools to infer a conclusion.
 First, Drools asserts facts in the working memory.
@@ -38,13 +46,6 @@ A conflict resolution strategy will decide which rule will fire in which order f
 The first rule on the agenda will fire.
 If the rule modifies, retracts or asserts a fact, then the inference loop begins again.
 We have inferred our conclusion if either a rule specifies to halt or no matching rules remain on the agenda.
-
-\begin{figure}[h]
-    \centering
-    \fbox{\includegraphics[width=0.55\textwidth]{Sections/images/InferenceLoop-1.png}}
-    \caption{Drools inference loop}
-    \label{fig:Drools_inference_loop}
-\end{figure}
 
 The component we will be focussing on in this paper is the rules.
 A rules file containing the rules is a text file, typically with a .drl extension.
@@ -77,7 +78,7 @@ One can insert, modify, and retract facts in the working memory.
 Modifying and retracting facts must be done on fact variable references bound in the LHS.
 One can explicitly terminate the inference loop with a halt command.
 
-\begin{figure}[h]
+\begin{figure}
     \centering
     \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/DroolsRule2.png}}
     \caption{Drools rule breakdown}
@@ -88,45 +89,45 @@ One can explicitly terminate the inference loop with a halt command.
 Listing \ref{listing:drl_file} shows an example of a .drl file taken from the Drools sample code.
 
 \noindent\begin{minipage}{\textwidth}
-    \begin{lstlisting}[language={[drl]Drools}, caption=Example Drools file., captionpos=b, label=listing:drl_file]
-        package org.drools.examples.honestpolitician
+    \begin{lstlisting}[language={[drl]Drools}, caption=Example Drools file, captionpos=b, label=listing:drl_file]
+    package org.drools.examples.honestpolitician
+
+    import org.drools.examples.honestpolitician.Politician;
+    import org.drools.examples.honest politician.Hope;
     
-        import org.drools.examples.honestpolitician.Politician;
-        import org.drools.examples.honest politician.Hope;
-        
-        rule "We have an honest Politician"
-            salience 10
-            when
-                exists( Politician( honest == true ) )
-            then
-                insertLogical( new Hope() );
-        end
-        
-        rule "Hope Lives"
-            salience 10
-            when
-                exists( Hope() )
-            then
-                System.out.println( "Hurrah!!! Democracy Lives" );
-        end
-        
-        rule "Hope is Dead"
-            when
-                not( Hope() )
-            then
-                System.out.println( "We are all Doomed!!! Democracy is Dead" );
-        end
-        
-        rule "Corrupt the Honest"
-            when
-                $p : Politician( honest == true )   
-                exists( Hope() )
-            then
-                System.out.println( "I'm an evil corporation and I have corrupted " + $p.getName() );
-                modify( $p ) { 
-                    setHonest( false ) 
-                }
-        end
+    rule "We have an honest Politician"
+        salience 10
+        when
+            exists( Politician( honest == true ) )
+        then
+            insertLogical( new Hope() );
+    end
+    
+    rule "Hope Lives"
+        salience 10
+        when
+            exists( Hope() )
+        then
+            System.out.println( "Hurrah!!! Democracy Lives" );
+    end
+    
+    rule "Hope is Dead"
+        when
+            not( Hope() )
+        then
+            System.out.println( "We are all Doomed!!! Democracy is Dead" );
+    end
+    
+    rule "Corrupt the Honest"
+        when
+            $p : Politician( honest == true )   
+            exists( Hope() )
+        then
+            System.out.println( "I'm an evil corporation and I have corrupted " + $p.getName() );
+            modify( $p ) { 
+                setHonest( false ) 
+            }
+    end
     \end{lstlisting}
 \end{minipage}
 
@@ -144,27 +145,27 @@ The code in Listing \ref{listing:drl_file} does the following:
     \begin{enumerate}[topsep=2pt,itemsep=2pt,partopsep=2pt, parsep=2pt]
         \setlength\itemsep{0em}
         \item On line 7, using the \texttt{salience} attribute, the rule is set to be run before other rules with a lower \texttt{salience}.
-        \item On line 10, the rule checks working memory for \texttt{Politician} facts with the \texttt{honest} property equal to \texttt{true}.
-        \item On line 12, if found, a \texttt{Hope} fact is inserted into the working memory.
+        \item On line 9, the rule checks working memory for \texttt{Politician} facts with the \texttt{honest} property equal to \texttt{true}.
+        \item On line 11, if found, a \texttt{Hope} fact is inserted into the working memory.
     \end{enumerate}
-    \item The ``Hope Lives'' rule on line 15 does the following:
+    \item The ``Hope Lives'' rule on line 14 does the following:
     \begin{enumerate}[topsep=2pt,itemsep=2pt,partopsep=2pt, parsep=2pt]
         \setlength\itemsep{0em}
-        \item Line 18 check if any \texttt{Hope} facts exist.
-        \item On line 20, if found, it prints a message.
+        \item Line 17 check if any \texttt{Hope} facts exist.
+        \item On line 19, if found, it prints a message.
     \end{enumerate}
-    \item The ``Hope is Dead'' rule on line 23 does the following:
+    \item The ``Hope is Dead'' rule on line 22 does the following:
     \begin{enumerate}[topsep=2pt,itemsep=2pt,partopsep=2pt, parsep=2pt]
         \setlength\itemsep{0em}
-        \item On line 25, it checks that no \texttt{Hope} facts exist.
-        \item On line 27, if it finds no facts, then it prints a message.  
+        \item On line 24, it checks that no \texttt{Hope} facts exist.
+        \item On line 26, if it finds no facts, then it prints a message.  
     \end{enumerate}
-    \item the ``Corrupt the Honest'' rule on line 30 does the following:
+    \item The ``Corrupt the Honest'' rule on line 29 does the following:
     \begin{enumerate}[topsep=2pt,itemsep=2pt,partopsep=2pt, parsep=2pt]
         \setlength\itemsep{0em}
-        \item Line 32 checks for any \texttt{Politician} facts with the \texttt{honest} property equal to \texttt{true} and sets them to the variable \texttt{\$p}.
-        \item Line 33 checks if any \texttt{Hope} facts exist.
-        \item If both \texttt{Hope} and \texttt{Politician} facts are found, on line 35, it prints a message including the \texttt{\$p} variables name.
-        \item On lines 36 to 38, it modifies the fact in working memory bound to the variable \texttt{\$p} to change its \texttt{honest} property.
+        \item Line 31 checks for any \texttt{Politician} facts with the \texttt{honest} property equal to \texttt{true} and sets them to the variable \texttt{\$p}.
+        \item Line 32 checks if any \texttt{Hope} facts exist.
+        \item If both \texttt{Hope} and \texttt{Politician} facts are found, on line 34, it prints a message including the \texttt{\$p} variables name.
+        \item On lines 35 to 37, it modifies the fact in working memory bound to the variable \texttt{\$p} to change its \texttt{honest} property.
     \end{enumerate}
 \end{enumerate}
