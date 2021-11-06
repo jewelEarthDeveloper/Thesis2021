@@ -1,7 +1,7 @@
 \subsection{What is Drools?}\label{section:WhatIsDrools}
 
 JBoss Rules, or as it is more commonly known, Drools, is Java's leading opensource rules engine.
-In this paper, when we use the name ``Drools'', we are referring to the ``Drools Expert'', which is the rule engine module of the Drools Suite.
+When we use the name ``Drools'', we are referring to the ``Drools Expert'', which is the rule engine module of the Drools Suite.
 Drools started in 2001 but rose to prominence with its 2005 2.0 release.
 It is an advanced inference engine using an enhanced version of the Rete algorithm, called Rete\-OO\cite{sottara2010configurable}, adapted to an object-oriented interface specifically for Java.
 Designed to accept pluggable language implementations, it can also work with Python and .Net.
@@ -47,12 +47,12 @@ The first rule on the agenda will fire.
 If the rule modifies, retracts or asserts a fact, then the inference loop begins again.
 We have inferred our conclusion if either a rule specifies to halt or no matching rules remain on the agenda.
 
-The component we will be focussing on in this paper is the rules.
+The component we will be focussing on in is the rules.
 A rules file containing the rules is a text file, typically with a .drl extension.
 The rules do not change during execution.
 Drools stores the rules in the production memory.
 
-This paper will ignore the rule file components \texttt{package}, \texttt{import}, \texttt{global}, \texttt{declare}, \texttt{function}, and \texttt{query}.
+We will ignore the rule file components \texttt{package}, \texttt{import}, \texttt{global}, \texttt{declare}, \texttt{function}, and \texttt{query}.
 
 We will now examine the anatomy of a rule.
 A rule consists of 3 parts: attributes, conditions, and consequences.
@@ -70,9 +70,9 @@ The patterns apply to individual facts rather than the group, thus can be seen a
 Variables can be bound to facts that match these patterns for use later in the LHS or for updating the working memory on the RHS.
 
 Drools offers more options for the LHS.
-We have limited the scope of this paper to the features described thus far.
+We have limited the our scope to the features described thus far.
 
-The RHS can contain arbitrary code that will execute when a rule is selected.
+The RHS can contain arbitrary Java code that will execute when a rule is selected.
 However, its primary purpose is to adjust the state of truth in the working memory.
 One can insert, modify, and retract facts in the working memory.
 Modifying and retracting facts must be done on fact variable references bound in the LHS.
