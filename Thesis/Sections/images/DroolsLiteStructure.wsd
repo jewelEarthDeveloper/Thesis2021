@@ -1,4 +1,7 @@
 @startuml 
+    skinparam ClassFontSize 18
+    skinparam ClassAttributeFontSize 18
+    skinparam ArrowFontSize 20
 
     class RulesFile
         RulesFile : String name
@@ -35,9 +38,7 @@
         SalienceAttribute : Integer value
 
     AttributeCollection *-- "0..1" NoLoopAttribute 
-    AttributeCollection *-- "0..1" SalienceAttribute 
-
-
+    SalienceAttribute --* "1..0" AttributeCollection
 
     class RHS
         RHS : BaseLanguage code

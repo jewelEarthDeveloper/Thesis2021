@@ -1,4 +1,8 @@
 @startuml "The Really Simple Rule Language"
+    skinparam ClassFontSize 16
+    skinparam ClassAttributeFontSize 16
+    skinparam ArrowFontSize 20
+ 
     class File
         File : String name
         File : Fact[] facts

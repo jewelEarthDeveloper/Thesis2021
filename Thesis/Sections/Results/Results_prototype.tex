@@ -61,12 +61,12 @@ Thus, these seemed the obvious items to filter.
 We created a projection where if the developer filtered by a \texttt{Fact} or a \texttt{FactProperty}, the projection would filter out all rules that did not contain the item.
 Once the rules were filtered, the projection only shows \texttt{Facts} and \texttt{FactProperties} used by those \texttt{Rules}.
 
-\begin{figure}
+\begin{sidewaysfigure}
     \centering
     \fbox{\includegraphics[width=0.99\textwidth]{Sections/images/filteringProjection.png}}
     \caption{Filtering projection}
     \label{fig:filteringProjection}
-\end{figure}
+\end{sidewaysfigure}
 
 In our implementation, shown in figure \ref{fig:filteringProjection}, we show three places where we use intentions to filter the code.
 The first is an intention associated with a \texttt{Fact}.
@@ -99,12 +99,12 @@ Creating a table was our first non-parseable projection.
 We choose the table projection based on the observations of Miller\cite{miller1956magical} about the number of items people can retain in their memory.
 This observation leads us to conclude that the fewer essential items that are off the screen and, therefore, in the developers' memory, the better.
 
-\begin{figure}
+\begin{sidewaysfigure}
     \centering
     \fbox{\includegraphics[width=0.99\textwidth]{Sections/images/tableProjection1.png}}
     \caption{Table projection}
     \label{fig:tableProjection1}
-\end{figure}
+\end{sidewaysfigure}
 
 Figure \ref{fig:tableProjection1} shows our rudimentary first table.
 This simple table has only the \texttt{name} property and the \texttt{when} children of the \texttt{Rules} in the \texttt{File}.
@@ -115,12 +115,12 @@ Our next tabular projection is a cross-tab inspired by a decision table.
 The idea behind this projection is that the previous table does not give any visual queues as to how \texttt{Rules} are related.
 With a cross-tab, one can easily see which \texttt{Rules} are using the same \texttt{Facts}.
 
-\begin{figure}
+\begin{sidewaysfigure}
     \centering
     \fbox{\includegraphics[width=0.99\textwidth]{Sections/images/crosstabProjection1.png}}
     \caption{Cross-tab projection}
     \label{fig:crosstabProjection1}
-\end{figure}
+\end{sidewaysfigure}
 
 Figure \ref{fig:crosstabProjection1} shows our implementation of the cross-tab.
 At the top, we can see an immediate problem with a cross-tab, and that is if we have the whole \texttt{File} included, the table will be very sparse.
@@ -129,12 +129,12 @@ The other close-up shows that all the details of the selected \texttt{Fact} are 
 
 The sparse table will not be a problem if the columns are thin enough to keep the table in a single screen's width.
 
-\begin{figure}
+\begin{sidewaysfigure}
     \centering
     \fbox{\includegraphics[width=0.99\textwidth]{Sections/images/tableDeleteCode.png}}
     \caption{Table Fact deletion code}
     \label{fig:tableFactDeletion}
-\end{figure}
+\end{sidewaysfigure}
 
 Everything is editable in this table, including deleting a \texttt{Fact} from a \texttt{Rule}.
 The table plug-in and MPS enabled most of the editing in the projection by default.
@@ -201,32 +201,47 @@ One study estimated that 90\% of computers had a spreadsheet on them\cite{bradle
 Dan Bricklin's VisiCalc drove personal computers into the office.
 VisiCalc was succeeded by Lotus 1-2-3, which Microsoft Excel then succeeded as the dominant spreadsheet program in the workplace.
 
-\begin{figure}
+\begin{sidewaysfigure}
     \centering
     \fbox{\includegraphics[width=0.99\textwidth]{Sections/images/SpreadsheetProjection.png}}
     \caption{Spreadsheet projection}
     \label{fig:SpreadsheetProjection}
-\end{figure}
+\end{sidewaysfigure}
 
 This level of familiarity with a paradigm led us to design a projection that had the look and feel of an Excel spreadsheet.
 We show this design in figure \ref{fig:SpreadsheetProjection}.
 To this end, we created a design where the selection criteria could be directly edited in the cell, as highlighted in the figure.
 
+% \begin{figure}
+%     \centering
+%     \begin{minipage}{0.35\textwidth}
+%         \centering
+%         \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/spreadsheetIntentions.png}}
+%         \caption{Intention}
+%         \label{fig:SpreadsheetIntentions}
+%     \end{minipage}\hfill
+%     \begin{minipage}{0.65\textwidth}
+%         \centering
+%         \includegraphics[width=0.95\textwidth]{Sections/images/spreadsheetTwoProperties.png} 
+%         \caption{Two of same property}
+%         \label{fig:TwoProperties}
+%     \end{minipage}
+% \end{figure}
+
 \begin{figure}
     \centering
-    \begin{minipage}{0.35\textwidth}
-        \centering
-        \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/spreadsheetIntentions.png}}
-        \caption{Intention}
-        \label{fig:SpreadsheetIntentions}
-    \end{minipage}\hfill
-    \begin{minipage}{0.65\textwidth}
-        \centering
-        \includegraphics[width=0.95\textwidth]{Sections/images/spreadsheetTwoProperties.png} 
-        \caption{Two of same property}
-        \label{fig:TwoProperties}
-    \end{minipage}
+    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/spreadsheetIntentions.png}}
+    \caption{Intention}
+    \label{fig:SpreadsheetIntentions}
 \end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.95\textwidth]{Sections/images/spreadsheetTwoProperties.png} 
+    \caption{Two of same property}
+    \label{fig:TwoProperties}
+\end{figure}
+
 
 Each row is a \texttt{Rule} in this design, and each column is for a \texttt{RuleVariable} or a \texttt{FactProperty}.
 If a property is selected, then the selection criterion is in the appropriate cell.
