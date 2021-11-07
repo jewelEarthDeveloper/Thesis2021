@@ -1,7 +1,7 @@
 @startuml 
-    skinparam ClassFontSize 18
-    skinparam ClassAttributeFontSize 18
-    skinparam ArrowFontSize 20
+    skinparam ClassFontSize 22
+    skinparam ClassAttributeFontSize 22
+    skinparam ArrowFontSize 24
 
     class RulesFile
         RulesFile : String name

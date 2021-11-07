@@ -33,6 +33,8 @@ If the \texttt{Fact} exists and all the \texttt{Predicates} evaluate to \texttt{
 \paragraph{\texttt{Predicate}} The \texttt{Predicate} is an operation on a \texttt{FactProperty}, to which the Concept has a reference.
 Because \texttt{FactProperty} represents a boolean value, the only predicate operations are ``\texttt{Is}'' and ``\texttt{Not}''.
 
+Figure \ref{fig:RSDDiagram} shows the Concept hierarch for this straightforward implementation.
+
 \begin{figure}
     \centering
     \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/ReallySimpleRuleLanguage3.png}}
@@ -40,7 +42,9 @@ Because \texttt{FactProperty} represents a boolean value, the only predicate ope
     \label{fig:RSDDiagram}
 \end{figure}
 
-Figure \ref{fig:RSDDiagram} shows the Concept hierarch for this straightforward implementation.
+We realised this design in MPS.
+As the aim is to attempt different projections, we did not initially optimise for editing.
+The Structure is as shown in figure \ref{fig:RSDStructure}, and the editors, including those shown in figure \ref{fig:RSDEditors}.
 
 \begin{figure}
     \centering
@@ -56,9 +60,10 @@ Figure \ref{fig:RSDDiagram} shows the Concept hierarch for this straightforward 
     \label{fig:RSDEditors}
 \end{figure}
 
-We realised this design in MPS.
-As the aim is to attempt different projections, we did not initially optimise for editing.
-The Structure is as shown in figure \ref{fig:RSDStructure}, and the editors, including those shown in figure \ref{fig:RSDEditors}.
+Part of our research question is using projections for reasoning about large files.
+To answer this, we needed to simulate a large file.
+To do this, we had to enter many \texttt{Rules}.
+As this becomes tedious, we added some editing aids, including substitute menus, to speed up the entry of Conditions, as shown in figure \ref{fig:RSDSubstituteMenu}.
 
 \begin{figure}
     \centering
@@ -67,15 +72,13 @@ The Structure is as shown in figure \ref{fig:RSDStructure}, and the editors, inc
     \label{fig:RSDSubstituteMenu}
 \end{figure}
 
-Part of our research question is using projections for reasoning about large files.
-To answer this, we needed to simulate a large file.
-To do this, we had to enter many \texttt{Rules}.
-As this becomes tedious, we added some editing aids, including substitute menus, to speed up the entry of Conditions, as shown in figure \ref{fig:RSDSubstituteMenu}.
-
 This image shows that we originally had to select an \texttt{ExistsCondition} Concept and select the \texttt{Fact} for the Condition.
 After adding the substitute menu, we could immediately select the \texttt{Fact} we wanted, and the \texttt{ExistsCondition} would automatically wrap it with an \texttt{ExistsCondition} node.
 
 We also added some intentions to invert incorrectly added Conditions.
+
+Finally, we added a Constraint to scope the \texttt{FactProperties} in \texttt{Predicates} to the \texttt{Fact} chosen in the \texttt{FactSelector}.
+This scope Constraint made it much easier to select \texttt{FactProperties} in the \texttt{Predicates}, as indicated in figure \ref{fig:RSDConstraint}.
 
 \begin{figure}
     \centering
@@ -84,13 +87,14 @@ We also added some intentions to invert incorrectly added Conditions.
     \label{fig:RSDConstraint}
 \end{figure}
 
-Finally, we added a Constraint to scope the \texttt{FactProperties} in \texttt{Predicates} to the \texttt{Fact} chosen in the \texttt{FactSelector}.
-This scope Constraint made it much easier to select \texttt{FactProperties} in the \texttt{Predicates}, as indicated in figure \ref{fig:RSDConstraint}.
-
 The figure shows that before adding the scoping constraint, it showed a list with dozens of potential \texttt{FactProperties}, that represented all the \texttt{FactProperties} in the model.
 After adding the constraint, it only shows the two \texttt{FactProperties} associated with the \texttt{Fact} from the \texttt{FactSelector}.
 
 Thus, we have described the entire implementation of the Really Simple Drools Language.
+
+After implementing the language, we wrote a program with many rules.
+This program on which we will experiment with the different projections.
+Figure \ref{fig:RSDProgram} shows an example of our default Drools-like text projection.
 
 \begin{figure}
     \centering
@@ -98,10 +102,6 @@ Thus, we have described the entire implementation of the Really Simple Drools La
     \caption{RSD program}
     \label{fig:RSDProgram}
 \end{figure}
-
-After implementing the language, we wrote a program with many rules.
-This program on which we will experiment with the different projections.
-Figure \ref{fig:RSDProgram} shows an example of our default Drools-like text projection.
 
 We discuss the alternative projections in the results section \ref{section:adr_results}.
 

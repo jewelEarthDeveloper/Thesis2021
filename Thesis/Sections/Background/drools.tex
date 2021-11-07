@@ -7,17 +7,16 @@ It is an advanced inference engine using an enhanced version of the Rete algorit
 Designed to accept pluggable language implementations, it can also work with Python and .Net.
 It is considered one of the most developed and supported rules platforms.
 
+To execute rules, Drools has four major components, as demonstrated in figure \ref{fig:Drools_components}.
+The production memory contains the rules, and this will not change during an analysis session.
+The rules are the focus of this thesis, and therefore, we will delve into much more detail later on these.
+
 \begin{figure}
     \centering
     \fbox{\includegraphics[width=0.55\textwidth]{Sections/images/components.png}}
     \caption{Drools components}
     \label{fig:Drools_components}
 \end{figure}
-
-To execute rules, Drools has four major components, as demonstrated in figure \ref{fig:Drools_components}.
-The production memory contains the rules, and this will not change during an analysis session.
-The rules are the focus of this thesis, and therefore, we will delve into much more detail later on these.
-
 
 In Forgy's\cite{forgy1989rete} overview of a rete algorithm, the following steps occur.
 \begin{enumerate}
@@ -27,13 +26,6 @@ In Forgy's\cite{forgy1989rete} overview of a rete algorithm, the following steps
     \item Act: Perform the actions in the RHS of the selected production.
     \item Re-evaluate: Go To 1.
 \end{enumerate}
-
-\begin{figure}
-    \centering
-    \fbox{\includegraphics[width=0.70\textwidth]{Sections/images/InferenceLoop.png}}
-    \caption{Drools inference loop}
-    \label{fig:Drools_inference_loop}
-\end{figure}
 
 Figure \ref{fig:Drools_inference_loop} shows more detail of how these components interact within Drools to infer a conclusion.
 First, Drools asserts facts in the working memory.
@@ -46,6 +38,13 @@ A conflict resolution strategy will decide which rule will fire in which order f
 The first rule on the agenda will fire.
 If the rule modifies, retracts or asserts a fact, then the inference loop begins again.
 We have inferred our conclusion if either a rule specifies to halt or no matching rules remain on the agenda.
+
+\begin{figure}
+    \centering
+    \fbox{\includegraphics[width=0.70\textwidth]{Sections/images/InferenceLoop.png}}
+    \caption{Drools inference loop}
+    \label{fig:Drools_inference_loop}
+\end{figure}
 
 The component we will be focussing on in is the rules.
 A rules file containing the rules is a text file, typically with a .drl extension.

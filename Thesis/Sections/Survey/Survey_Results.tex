@@ -10,7 +10,7 @@ In these two websites, the users do not typically list their contact details.
 Some investigation was required.
 From the initial selection, we harvested email addresses and, failing that, Twitter handles.
 
-A few days into our survey, we read a paper describing the use of academic papers as a source of a population of expertise.
+Following on to this, we determined that academic papers could be a good source of a population of expertise.
 We used Google Scholar to look up Drools papers from the previous two years.
 After skimming the papers to ensure that they were explicitly about or using the Drools language, we harvested email addresses from them.
 
@@ -43,6 +43,11 @@ Responses came from around the world.
 Figure \ref{fig:Survey_locations} shows that the respondents' location was concentrated in Europe, the exceptions being the USA, Israel, and Singapore.
 Italy and the Netherlands provided the most significant number of responses, with 7 and 5 respectively.
 
+The experience of our subjects was relatively high.
+As can be seen in \ref{fig:sfig1}, most of our subjects have over ten years of programming experience.
+17\% of our recipients had a low experience of Drools, and 30\% were very experienced, as shown in figure \ref{fig:sfig2}.
+Figure \ref{fig:sfig3} shows that 40\% of our recipients had used Drools in this current year, and 30\% had not used it in the last five years.
+
 \begin{figure}
     \centering
     \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/survey_participants-2.png}}
@@ -73,18 +78,6 @@ Italy and the Netherlands provided the most significant number of responses, wit
     \label{fig:subject_experience}
 \end{figure}
 
-The experience of our subjects was relatively high.
-As can be seen in \ref{fig:sfig1}, most of our subjects have over ten years of programming experience.
-17\% of our recipients had a low experience of Drools, and 30\% were very experienced, as shown in figure \ref{fig:sfig2}.
-Figure \ref{fig:sfig3} shows that 40\% of our recipients had used Drools in this current year, and 30\% had not used it in the last five years.
-
-\begin{figure}
-    \centering
-    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/EditorUseage.png}}
-    \caption{Editors used}
-    \label{fig:editorUsage}
-\end{figure}
-
 Half of our subjects reported only ever using one editor for Drools, with the slight majority of those only using Eclipse.
 Eclipse also had the most instances of reporting of having been used.
 Out of the 55 instances of editors reported as being used, 20 of those were Eclipse.
@@ -92,6 +85,13 @@ There was a surprising diversity of tools used.
 The purpose of this section was to calibrate responses against exposure to IDEs with greater Drools Support.
 The wide diversity of editor usage and high incidence of multiple editor usage means that these answers are not suitable for use in the sub-categorisation of responses. 
 We show the distribution of usage in figure \ref{fig:editorUsage}.
+
+\begin{figure}
+    \centering
+    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/EditorUseage.png}}
+    \caption{Editors used}
+    \label{fig:editorUsage}
+\end{figure}
 
 \subsection{Question Analysis}
 
@@ -143,34 +143,29 @@ Thus, we have an ``area in body'' of 0.9750, which correlates in the Z Table to 
 Ergo, our decision rule is, if our z is less than -1.96, or greater than 1.96, we reject our null hypothesis.
 \footnote{We carried out the calculations using the Mann-Whitney U Test calculator at \url{https://www.socscistatistics.com/tests/mannwhitney/default2.aspx}}
 
-\pagebreak
 \subsubsection{Question 1, 2 and 3: First Impressions}
 
-\begin{figure}
+\noindent\begin{minipage}{\linewidth}
     \centering
     \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/stackedbar_Q1_2.png}}
-    \caption{Question 1 - first impressions}
+    \captionof{figure}{Question 1 - first impressions}
     \label{fig:stackedbar_Q1}
-\end{figure} 
-
-\begin{table} 
-    \begin{center}
-        \begin{tabular}{ |l ||r |r |r | r|l | } 
-            \hline
-            Group Comparison                 & Critical U & U-value & z-Score  & p-value & Hypothesis         \\
-            \hline
-            \hline
-            Academic vs Practitioner         & 55         & 54.5    & -1.97974 & 0.0477  & \textbf{H\textsubscript{1}}  \\ 
-            \hline
-            Expert vs Senior                 & 37         & 55      & 0.93413  & 0.35238 & H\textsubscript{0} \\ 
-            \hline
-            Current vs Past                  & 61         & 91      & 0.6985   & 0.48392 & H\textsubscript{0} \\ 
-            \hline
-        \end{tabular}
-    \end{center}
-    \caption{Mann-Whitney test question 1 - first impressions}
+    
+    \begin{tabular}{ |l ||r |r |r | r|l | } 
+        \hline
+        Group Comparison                 & Critical U & U-value & z-Score  & p-value & Hypothesis         \\
+        \hline
+        \hline
+        Academic vs Practitioner         & 55         & 54.5    & -1.97974 & 0.0477  & \textbf{H\textsubscript{1}}  \\ 
+        \hline
+        Expert vs Senior                 & 37         & 55      & 0.93413  & 0.35238 & H\textsubscript{0} \\ 
+        \hline
+        Current vs Past                  & 61         & 91      & 0.6985   & 0.48392 & H\textsubscript{0} \\ 
+        \hline
+    \end{tabular}
+    \captionof{table}{Mann-Whitney test question 1 - first impressions}
     \label{table:mannwhitneyQ1}
-\end{table}
+\end{minipage} 
 
 This question shows the subject an example of projectional editing a Drools file alongside a table projection, as an animated GIF, along with an explanation.
 Then she is asked her first reaction. 
@@ -179,6 +174,11 @@ Eyeballing the chart, we observe that the novice and the academics, where there 
 
 Table \ref{table:mannwhitneyQ1} shows a significant difference between the academics and the practitioners' first reaction to seeing the projectional editing example.
 Here, the academics have a far more positive view of the example than the practitioners.
+
+In general, we see an overwhelmingly positive response.
+There were five times as many positive (21) than negative (4) responses.
+Survey Monkey directed those who had a positive or negative response to answer the open questions ``Q2. How would this coding style be useful to your interactions with Drools?'' and ``Q3. What do you find negative with this style of coding?'' respectively.
+Figure \ref{fig:wordclouds} shows a visualisation of the subject's responses.
 
 \begin{figure}
     \begin{subfigure}{.60\textwidth}
@@ -197,11 +197,6 @@ Here, the academics have a far more positive view of the example than the practi
     \label{fig:wordclouds}
 \end{figure}
 
-In general, we see an overwhelmingly positive response.
-There were five times as many positive (21) than negative (4) responses.
-Survey Monkey directed those who had a positive or negative response to answer the open questions ``Q2. How would this coding style be useful to your interactions with Drools?'' and ``Q3. What do you find negative with this style of coding?'' respectively.
-Figure \ref{fig:wordclouds} shows a visualisation of the subject's responses.
-
 Amongst the positive comments, it appears the subjects had picked up on many of the advantages that projectional editing brings.
 The ones that got the most mentions, using other words, were exploratory coding, correctness by construction, and multiple viewpoints.
 Subjects also noted that, with the projections shown, development could be quicker and easier to check.
@@ -210,37 +205,34 @@ Among the very few negative comments, they discussed the failures of no/low code
 
 \subsubsection{Question 4 and 5: Interpret Projection}
 
-\begin{figure}
+
+\noindent\begin{minipage}{\linewidth}
     \centering
     \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/stackedbar_Q2_2.png}}
-    \caption{Question 5 - interpret projection}
+    \captionof{figure}{Question 5 - interpret projection}
     \label{fig:stackedbar_Q2}
-\end{figure}
-
-\begin{table}
-    \begin{center}
-        \begin{tabular}{ |l ||r |r |r | r|l | } 
-            \hline
-            Group Comparison                 & Critical U & U-value & z-Score  & p-value & Hypothesis         \\
-            \hline
-            \hline
-            Academic vs Practitioner         & 55        & 77      &  0.98987  & 0.32218 & H\textsubscript{0} \\ 
-            \hline
-            Expert vs Senior                 & 37        & 61.5    &  0.56614  & 0.56868 & H\textsubscript{0} \\ 
-            \hline
-            Current vs Past                  & 61        & 82.5    &  1.05833  & 0.28914 & H\textsubscript{0} \\ 
-            \hline
-            Decision Table vs Spreadsheet    & 55        & 61      &  2.2225   & 0.02642 & \textbf{H\textsubscript{1}}  \\ 
-            \hline
-            Ruleset 1 vs Ruleset 2           & 61        & 92      &  0.65617  & 0.50926 & H\textsubscript{0} \\ 
-            \hline
-            Projection first vs Text first   & 64        & 97      &  0.60277  & 0.5485  & H\textsubscript{0} \\ 
-            \hline
-        \end{tabular}
-    \end{center}
-    \caption{Mann-Whitney test question 5 - interpret projection}
+    
+    \begin{tabular}{ |l ||r |r |r | r|l | } 
+        \hline
+        Group Comparison                 & Critical U & U-value & z-Score  & p-value & Hypothesis         \\
+        \hline
+        \hline
+        Academic vs Practitioner         & 55        & 77      &  0.98987  & 0.32218 & H\textsubscript{0} \\ 
+        \hline
+        Expert vs Senior                 & 37        & 61.5    &  0.56614  & 0.56868 & H\textsubscript{0} \\ 
+        \hline
+        Current vs Past                  & 61        & 82.5    &  1.05833  & 0.28914 & H\textsubscript{0} \\ 
+        \hline
+        Decision Table vs Spreadsheet    & 55        & 61      &  2.2225   & 0.02642 & \textbf{H\textsubscript{1}}  \\ 
+        \hline
+        Ruleset 1 vs Ruleset 2           & 61        & 92      &  0.65617  & 0.50926 & H\textsubscript{0} \\ 
+        \hline
+        Projection first vs Text first   & 64        & 97      &  0.60277  & 0.5485  & H\textsubscript{0} \\ 
+        \hline
+    \end{tabular}
+    \captionof{table}{Mann-Whitney test question 5 - interpret projection}
     \label{table:mannwhitneyQ2}
-\end{table}
+\end{minipage} 
 
 This question asks the subject to describe the meaning of the projection and then describe how hard it was to do that.
 Few people described the meaning of the projection well.
@@ -255,34 +247,30 @@ Otherwise, no other grouping differed significantly from the general population.
 The ratio of those evaluating it as easy to those thinking it was hard to understand the projection was ~2:1, 14 to 6.
 
 \subsubsection{Question 6 and 7: Interpret Text}
-
-\begin{figure}
+\noindent\begin{minipage}{\linewidth}
     \centering
     \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/stackedbar_Q3_2.png}}
-    \caption{Question 7 - interpret text}
+    \captionof{figure}{Question 7 - interpret text}
     \label{fig:stackedbar_Q3}
-\end{figure}
-
-\begin{table}
-    \begin{center}
-        \begin{tabular}{ |l ||r |r |r | r|l | } 
-            \hline
-            Group Comparison                 & Critical U & U-value & z-Score  & p-value & Hypothesis         \\
-            \hline
-            \hline
-            Academic vs Practitioner         & 17         & 34      &  0.48869 & 0.62414 & H\textsubscript{0} \\ 
-            \hline
-            Expert vs Senior                 & 8          & 20.5    &  -0.3873 & 0.69654 & H\textsubscript{0} \\ 
-            \hline
-            Current vs Past                  & 12         & 31.5    &  -0.04929& 0.96012 & H\textsubscript{0} \\ 
-            \hline
-            Ruleset 1 vs Ruleset 2           & 17         & 24.5    &  -1.36868& 0.17068 & H\textsubscript{0} \\ 
-            \hline
-        \end{tabular}
-    \end{center}
-    \caption{Mann-Whitney test question 7 - interpret text}
+    
+    \begin{tabular}{ |l ||r |r |r | r|l | } 
+        \hline
+        Group Comparison                 & Critical U & U-value & z-Score  & p-value & Hypothesis         \\
+        \hline
+        \hline
+        Academic vs Practitioner         & 17         & 34      &  0.48869 & 0.62414 & H\textsubscript{0} \\ 
+        \hline
+        Expert vs Senior                 & 8          & 20.5    &  -0.3873 & 0.69654 & H\textsubscript{0} \\ 
+        \hline
+        Current vs Past                  & 12         & 31.5    &  -0.04929& 0.96012 & H\textsubscript{0} \\ 
+        \hline
+        Ruleset 1 vs Ruleset 2           & 17         & 24.5    &  -1.36868& 0.17068 & H\textsubscript{0} \\ 
+        \hline
+    \end{tabular}
+    \captionof{table}{Mann-Whitney test question 7 - interpret text}
     \label{table:mannwhitneyQ3}
-\end{table}
+\end{minipage} 
+
 
 This question asks the subject to interpret a rule set presented in a Drools style text projection.
 The purpose of this question was threefold.
@@ -303,30 +291,24 @@ The Mann-Whitney table does not show any significant differences in any of the g
 We cannot report the difference between those presented with the text projection first or the tabular projection first.
 The 4 participants responding from the group presented text first were too low to give a meaningful score.
 
-\pagebreak
 \subsubsection{Question 8: Compare Projections}
-
-\begin{figure}
+\noindent\begin{minipage}{\linewidth}
     \centering
     \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/stackedbar_Q4_2a.png}}
-    \caption{Question 8 - compare projections}
+    \captionof{figure}{Question 8 - compare projections}
     \label{fig:stackedbar_Q4}
-\end{figure}
-
-\begin{table}
-    \begin{center}
-        \begin{tabular}{ |l ||r |r |r | r|l | } 
-            \hline
-            Group Comparison                 & Critical U & U-value & z-Score  & p-value & Hypothesis         \\
-            \hline
-            \hline
-            Decision Table vs Spreadsheet    & 61         & 45      &  -2.64584& 0.00804 & \textbf{H\textsubscript{1}} \\ 
-            \hline
-        \end{tabular}
-    \end{center}
-    \caption{Mann-Whitney test question 8 - compare projections}
+    
+    \begin{tabular}{ |l ||r |r |r | r|l | } 
+        \hline
+        Group Comparison                 & Critical U & U-value & z-Score  & p-value & Hypothesis         \\
+        \hline
+        \hline
+        Decision Table vs Spreadsheet    & 61         & 45      &  -2.64584& 0.00804 & \textbf{H\textsubscript{1}} \\ 
+        \hline
+    \end{tabular}
+    \captionof{table}{Mann-Whitney test question 8 - compare projections}
     \label{table:mannwhitneyQ4}
-\end{table}
+\end{minipage} 
 
 This question asked the participant to compare the two tabular projections.  
 This question was to calibrate whether one projection was considerably worse than the other and whether that would affect the comparison with text.
@@ -339,36 +321,31 @@ This result correlates well with the difference in understanding found previousl
 
 
 \subsubsection{Question 9: Compare Projection to Text}
-
-\begin{figure}
+\noindent\begin{minipage}{\linewidth}
     \centering
     \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/stackedbar_Q5_2.png}}
-    \caption{Question 9 - compare projections with text}
+    \captionof{figure}{Question 9 - compare projections with text}
     \label{fig:stackedbar_Q5}
-\end{figure}
-
-\begin{table}
-    \begin{center}
-        \begin{tabular}{ |l ||r |r |r | r|l | } 
-            \hline
-            Group Comparison                 & Critical U & U-value & z-Score  & p-value & Hypothesis         \\
-            \hline
-            \hline
-            Academic vs Practitioner         & 52         & 85.5    & -0.41295 & 0.6818  & H\textsubscript{0} \\ 
-            \hline
-            Expert vs Senior                 & 34         & 67.5    & 0.02981  & 0.97606 & H\textsubscript{0} \\ 
-            \hline
-            Current vs Past                  & 55         & 88      & 0.47194  & 0.63836 & H\textsubscript{0} \\ 
-            \hline
-            Decision Table vs Spreadsheet    & 55         & 89.5    & -0.40452 & 0.68916 & H\textsubscript{0} \\ 
-            \hline
-            Ruleset 1 vs Ruleset 2           & 55         & 94.5    & -0.17979 & 0.85716 & H\textsubscript{0} \\ 
-            \hline
-        \end{tabular}
-    \end{center}
-    \caption{Mann-Whitney test question 9 - compare projections with text}
+    
+    \begin{tabular}{ |l ||r |r |r | r|l | } 
+        \hline
+        Group Comparison                 & Critical U & U-value & z-Score  & p-value & Hypothesis         \\
+        \hline
+        \hline
+        Academic vs Practitioner         & 52         & 85.5    & -0.41295 & 0.6818  & H\textsubscript{0} \\ 
+        \hline
+        Expert vs Senior                 & 34         & 67.5    & 0.02981  & 0.97606 & H\textsubscript{0} \\ 
+        \hline
+        Current vs Past                  & 55         & 88      & 0.47194  & 0.63836 & H\textsubscript{0} \\ 
+        \hline
+        Decision Table vs Spreadsheet    & 55         & 89.5    & -0.40452 & 0.68916 & H\textsubscript{0} \\ 
+        \hline
+        Ruleset 1 vs Ruleset 2           & 55         & 94.5    & -0.17979 & 0.85716 & H\textsubscript{0} \\ 
+        \hline
+    \end{tabular}
+    \captionof{table}{Mann-Whitney test question 9 - compare projections with text}
     \label{table:mannwhitneyQ5}
-\end{table}
+\end{minipage} 
 
 This question asked our subjects to compare a tabular projection with the text projection.
 There was one participant that chose not to answer this question.
@@ -379,34 +356,29 @@ The ratio of harder to easier to understand was 3:2, with 12 subjects finding th
 Table \ref{table:mannwhitneyQ5} shows this was independent of any other factors.
 
 \subsubsection{Question 10: Truth Table Validation}
-
-\begin{figure}
+\noindent\begin{minipage}{\linewidth}
     \centering
     \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/stackedbar_Q6_2.png}}
-    \caption{Question 10 - truth table}
+    \captionof{figure}{Question 10 - truth table}
     \label{fig:stackedbar_Q6}
-\end{figure}
 
-\begin{table}
-    \begin{center}
-        \begin{tabular}{ |l ||r |r |r | r|l | } 
-            \hline
-            Group Comparison                   & Critical U & U-value & z-Score  & p-value & Hypothesis         \\
-            \hline
-            \hline
-            Academic vs Practitioner           &  55        & 65      & 1.5178   & 0.12852 & H\textsubscript{0} \\ 
-            \hline
-            Expert vs Senior                   &  37        & 64      & -0.4246  & 0.67448 & H\textsubscript{0} \\ 
-            \hline
-            Current vs Past                    &  61        & 93      & -0.61383 & 0.54186 & H\textsubscript{0} \\ 
-            \hline
-            Truth table first vs Circuit first &  64        & 108.5   & -0.12471 & 0.90448 & H\textsubscript{0} \\ 
-            \hline
-        \end{tabular}
-    \end{center}
-    \caption{Mann-Whitney test question 10 - truth table}
+    \begin{tabular}{ |l ||r |r |r | r|l | } 
+        \hline
+        Group Comparison                   & Critical U & U-value & z-Score  & p-value & Hypothesis         \\
+        \hline
+        \hline
+        Academic vs Practitioner           &  55        & 65      & 1.5178   & 0.12852 & H\textsubscript{0} \\ 
+        \hline
+        Expert vs Senior                   &  37        & 64      & -0.4246  & 0.67448 & H\textsubscript{0} \\ 
+        \hline
+        Current vs Past                    &  61        & 93      & -0.61383 & 0.54186 & H\textsubscript{0} \\ 
+        \hline
+        Truth table first vs Circuit first &  64        & 108.5   & -0.12471 & 0.90448 & H\textsubscript{0} \\ 
+        \hline
+    \end{tabular}
+    \captionof{table}{Mann-Whitney test question 10 - truth table}
     \label{table:mannwhitneyQ6}
-\end{table}
+\end{minipage} 
 
 This question presented the subject with a wireframe of a truth table and asked if it would help them understand rules.
 
@@ -420,34 +392,29 @@ On the first view of the chart in figure \ref{fig:stackedbar_Q6}, it seems that 
 However, when the figures are examined under Mann-Whitney, as seen in table \ref{table:mannwhitneyQ6}, these differences were not statistically significant.
 
 \subsubsection{Question 11: Circuit Diagram Validation}
-
-\begin{figure}
+\noindent\begin{minipage}{\linewidth}
     \centering
     \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/stackedbar_Q7_2.png}}
-    \caption{Question 11 - circuit diagram}
+    \captionof{figure}{Question 11 - circuit diagram}
     \label{fig:stackedbar_Q7}
-\end{figure}
-
-\begin{table}
-    \begin{center}
-        \begin{tabular}{ |l ||r |r |r | r|l | } 
-            \hline
-            Group Comparison                   & Critical U & U-value & z-Score  & p-value & Hypothesis         \\
-            \hline
-            \hline
-            Academic vs Practitioner           & 55         & 83      & -0.7259  & 0.4654  & H\textsubscript{0} \\ 
-            \hline
-            Expert vs Senior                   & 37         & 58.5    & -0.73598 & 0.4593  & H\textsubscript{0} \\ 
-            \hline
-            Current vs Past                    & 61         & 83      & -1.03717 & 0.29834 & H\textsubscript{0} \\ 
-            \hline
-            Truth table first vs Circuit first & 64         & 110     & -0.06236 & 0.95216 & H\textsubscript{0} \\ 
-            \hline
-        \end{tabular}
-    \end{center}
-    \caption{Mann-Whitney test question 11 - circuit diagram}
+    
+    \begin{tabular}{ |l ||r |r |r | r|l | } 
+        \hline
+        Group Comparison                   & Critical U & U-value & z-Score  & p-value & Hypothesis         \\
+        \hline
+        \hline
+        Academic vs Practitioner           & 55         & 83      & -0.7259  & 0.4654  & H\textsubscript{0} \\ 
+        \hline
+        Expert vs Senior                   & 37         & 58.5    & -0.73598 & 0.4593  & H\textsubscript{0} \\ 
+        \hline
+        Current vs Past                    & 61         & 83      & -1.03717 & 0.29834 & H\textsubscript{0} \\ 
+        \hline
+        Truth table first vs Circuit first & 64         & 110     & -0.06236 & 0.95216 & H\textsubscript{0} \\ 
+        \hline
+    \end{tabular}
+    \captionof{table}{Mann-Whitney test question 11 - circuit diagram}
     \label{table:mannwhitneyQ7}
-\end{table}
+\end{minipage} 
 
 This question presented the subject with a wireframe of a circuit diagram and asked if it would help them with understanding.
 
@@ -461,14 +428,14 @@ Sixteen participants decided to add some words.
 We ran sentiment analysis on these 16 comments, using the same service and similar code as we used in our SLR research, as described in section \ref{section:dataExtraction}.
 Nine were positive, six mixed and one negative.
 
+Figure \ref{fig:Q15_wordcloud} shows another word cloud visualisation.
+
 \begin{figure}
     \centering
     \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/Q15_wordcloud.png}}
     \caption{Question 15 - responses}
     \label{fig:Q15_wordcloud}
 \end{figure}
-
-Figure \ref{fig:Q15_wordcloud} shows another word cloud visualisation.
 
 The word that pops out, DMN, here is indicative of a few comments.
 DMN is a tool for working with Drools as a non-developer.

@@ -72,6 +72,11 @@ Hence, this product is a projectional editor (the paradigm) for product line pro
 
 \subsubsection{How Projectional Editing Works}
 
+As shown in figure \ref{fig:projectionalEditing_loop}, a projectional editor has a model or an AST.
+It renders a presentation of the model as a projection.
+The developer performs actions on the projection.
+Every user editing action maps directly to a change in the AST.
+
 \begin{figure}
     \centering
     \fbox{\includegraphics[width=0.38\textwidth]{Sections/images/projections.png}}
@@ -79,19 +84,7 @@ Hence, this product is a projectional editor (the paradigm) for product line pro
     \label{fig:projectionalEditing_loop}
 \end{figure}
 
-As shown in figure \ref{fig:projectionalEditing_loop}, a projectional editor has a model or an AST.
-It renders a presentation of the model as a projection.
-The developer performs actions on the projection.
-Every user editing action maps directly to a change in the AST.
-
-To perform the above two things have to be defined by language engineers: The meta-model and the editor.
-
-\begin{figure}
-    \centering
-    \fbox{\includegraphics[width=0.45\textwidth]{Sections/images/ast.png}}
-    \caption{Conceptual AST}
-    \label{fig:ast}
-\end{figure}
+To perform the above two items have to be defined by language engineers: The meta-model and the editor.
 
 The meta-model, analogous to the abstract syntax, describes the node concepts and connections used to build the hierarchical structure that is the AST.
 This hierarchy can have references to nodes in other branches, so it is a graph although named a tree. 
@@ -100,6 +93,13 @@ Each AST must have a root node.
 The nodes, represented by the ovals, can have child nodes.
 The child relationship is represented by the downward solid edges.
 Nodes can also reference other nodes in the AST, here represented by the dashed edges with arrows showing the direction of the reference.
+
+\begin{figure}
+    \centering
+    \fbox{\includegraphics[width=0.45\textwidth]{Sections/images/ast.png}}
+    \caption{Conceptual AST}
+    \label{fig:ast}
+\end{figure}
 
 The AST is stored independently of the concrete syntax, often using a database, XML or a proprietary file format.
 Rules of the meta-model, such as type systems or scoping rules, must also be described.
@@ -173,6 +173,14 @@ These included M\'as, a web-based projectional editor, which is no longer with u
 Whole Platform\cite{WholePlatformProductPage} is a projectional language workbench plug-in for Eclipse.
 Cedalion\cite{lorenz2011cedalion} provides another projectional IDE, specialising in internal DSLs.
 
+More recently, there have been some new products that intersect the projectional domain.
+Deuce\cite{hempel2018deuce} and Gentleman\cite{lafontant2020gentleman_SLR} are two recent projection editors that have recently emerged from academia.
+The final two mentions in our incomplete history are a little out of left-field. 
+Google's Blockly\cite{Blockly_ProductPage} is a tool for making structural editor languages, but only in a block format.
+Blockly can create languages similar in style to the scratch language. 
+Blueprint visual scripting, a part of the Unreal Engine, is a visual programming language for building concepts such as levels or game assets.
+Examples of Blockly and Blueprint can be seen in figures \ref{fig:blockly} and \ref{fig:Blueprint}, respectively.
+
 \begin{figure}
     \subfloat[Blockly]{
         \includegraphics[clip,width=0.95\columnwidth]{Sections/images/blockly-2.png}
@@ -186,14 +194,6 @@ Cedalion\cite{lorenz2011cedalion} provides another projectional IDE, specialisin
     \caption{Unconventional projectional editors}
     \label{fig:leftfield}
 \end{figure}
-
-More recently, there have been some new products that intersect the projectional domain.
-Deuce\cite{hempel2018deuce} and Gentleman\cite{lafontant2020gentleman_SLR} are two recent projection editors that have recently emerged from academia.
-The final two mentions in our incomplete history are a little out of left-field. 
-Google's Blockly\cite{Blockly_ProductPage} is a tool for making structural editor languages, but only in a block format.
-Blockly can create languages similar in style to the scratch language. 
-Blueprint visual scripting, a part of the Unreal Engine, is a visual programming language for building concepts such as levels or game assets.
-Examples of Blockly and Blueprint can be seen in figures \ref{fig:blockly} and \ref{fig:Blueprint}, respectively.
 
 \subsection{What Advantages Does Projectional Editing Bring?}
 \label{section:projectional_advantages}
@@ -351,7 +351,7 @@ Consequently, writing ambiguity is replaced by reading ambiguity.
 The flexibility of the layout is entirely in the hands of the language engineer when she determines the projection rules.
 
 \paragraph{Integration with the text-based world} Projectional editors do not store the definition of the program in the form of a plain-text implementation in the concrete syntax.
-Instead, the AST is stored and serialised in a non-human readable format, such as XML.
+Instead, the AST is stored and serialised in a format optimised for the computer rather than the human reader.
 
 This different format of program storage leads to an issue with integration with the text-based ecosystem.
 This ecosystem is extensive, as text-based coding has been popular since the 60s.
