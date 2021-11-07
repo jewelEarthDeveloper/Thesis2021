@@ -1,12 +1,15 @@
 \section{Problem Statement}
 \label{section:problem_statement}
 
+The problem we examine here is that Drools rules files are difficult to reason about when they become long.
+The approach we look at for solving this is to implement different ways of presenting the code through ``projectional editing''.
+
 Rules engines are a place for gathering and executing the rules of a business application.
 We elaborate on this in section \ref{section:what_is_a_rules_engine}.
 Drools is one of the leading rules engines.
 
 Drools, the language, shares an unfortunate characteristic with many other rules languages, such as those described in section \ref{section:rules_engine_history}.
-Namely, It is verbose and can contain many rules that can interact without an apparent visual connection.
+Namely, it is verbose and can contain many rules that can interact without an apparent visual connection.
 As Forgy\cite{forgy1989rete} points out, for rules languages in general, ``[they] have another property that makes them particularly attractive for constructing large programs: they do not require the developer to specify in minute detail exactly how the various parts of the program will interact''.
 This property leads to very large and difficult to reason about collections of implicitly connected rules.
 
