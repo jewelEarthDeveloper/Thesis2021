@@ -1,12 +1,17 @@
 \chapter{Conclusion}
 \label{chapter:Conclusion}
 
-In this master's project, we dove into the current state of projectional editing and presented and verified some projections to improve the understanding of Business Rules.
-We conducted a systematic literature review (SLR), created prototypes, and surveyed the impact they may have.
-We examined the current state of projectional editing through the SLR, finding it dominated by a single product.
-We implemented the Drools language in MPS, and through our prototypes, we demonstrated some of the possibilities projectional editing can bring.
-The results of our survey failed to confirm that these projections would bring the benefits we had originally expected.
-Whilst this may be a correct result, also we believe this may be a consequence of the developers' current experience text making the text feel more natural than the projections.
+Although Drools rules are simple in isolation they become difficult to reason about in aggregate.
+The goal of our work was to research if projectional editing could be successfully applied to alleviating this problem.
+To address this, we dove into the current state of projectional editing.
+We created, presented, and verified some projections to improve the understanding of Drools rules.
+We achieved this by conducted a systematic literature review (SLR), creating prototypes, and surveying the impact they may have.
+
+We examined the current state of projectional editing through an SLR, finding it dominated by a single product.
+We implemented limited versions of the Drools language in MPS, and through our prototypes, we demonstrated some of the possibilities projectional editing can bring.
+
+Our survey failed to confirm that these projections would bring the benefits we had originally expected.
+Whilst this may be a correct result, alternatively we believe this could be a consequence of the responding developers' current experience of text based development, leading to the text projection feeling more natural than the tabular projections.
 It may also be that the projections do not allow the level of complexity that text does.
 Finally, perhaps, a short survey was not the best way to introduce a whole new paradigm to people.  
 
@@ -18,10 +23,10 @@ We will summarise the findings of our research and the contributions our work ha
 Finally, we will discuss items out of scope for this project but would give future research opportunities.
 
 \section{Research Summary}
-Our primary research question, ``How can projectional editors and DSLs be combined to address feedback mechanisms for developers in the context of reasoning about rules in a rule-based business engine?'' motivated us to explore the field of projectional editing in this project.
+Our primary research question, ``Is projectional editing a viable and effective solution to issues developers have with reasoning about Drools business rules?'' motivated us to explore the field of projectional editing in this project.
 This question led us to investigate if this field was worth investigating and, if so, how we can use existing tools to answer this.
 
-\subsubsection{Research Question 1: ``What is the current state of language workbenches supporting projectional editing?''}
+\subsection{Research Question 1: ``What is the current state of language workbenches supporting projectional editing?''}
 We presented an SLR that investigated the current state of projectional editing.
 This SLR found that LWBs for projectional editing are currently a very narrow field, dominated by one product, JetBrains MPS.
 Studies using products other than MPS spend time and effort discussing how to solve issues already solved in MPS.
@@ -34,14 +39,22 @@ On the other hand, the number of users of the tool is growing, as evidenced by t
 
 To conclude, the state of the projectional editing market, whilst niche, is maturing but with a current product monoculture.
 
-\subsubsection{Research Question 2: ``Which projections can help developers get appropriate feedback about rules?''}
+\subsection{Research Question 2: ``Which projections can we create to help developers get appropriate feedback about rules?''}
 
 In our research, we were able to develop some projections.  
 This success was in large part facilitated by the flexibility and extensibility of the MPS tool, which presented the ability to develop and extend DSLs very efficiently.
 
+We built two reduced implementations of Drools on top of which we created seven projections of varying levels of complexity and usefulness.
+The projections we built within the Drools-lite language were capable of implementing large and complex rule sets with many features that not only aid understanding but also development.
+Our research led us to two particular editing styles, the decision table and the Spreadsheet-like table.
+
+We can conclude that the tooling is sufficient to create projections that can make large and complex rule sets easier to interact with and, at least for us, understand.
+
+\subsection{Research Question 3: ``Do projections of Drools business rules lead to greater understanding of those rules?''}
+
 We presented two projections to experienced Drools users, along with two wireframes of more exotic solutions.
 There was a distinct preference between the projections we presented, with the spreadsheet-like table being more understandable than our decision table.
-Both of our presentations significantly underperformed in terms of understanding the textual projection.
+Both of our tabular projections were significantly less understandable to the survey subjects than the textual projection.
 
 This performance difference could be because a textual presentation is inherently better than tabular or graphical ones.
 However, we speculate that the prior experience, both with textual languages in general and Drools in particular, coloured the results.
@@ -60,7 +73,7 @@ We think that this masters project offers the following contributions:
 
 \section{Future work}
 
-Drools-lite is open for future extension, both for matching the feature sets of the complete Drools language and adding extra projectional capabilities.
+Drools-Lite is open for future extension, both for matching the feature sets of the complete Drools language and adding extra projectional capabilities.
 Projections we would particularly like to take advantage of include graphical mappings of rule interactions and live test output.
 
 Guarantees of completeness could help understanding business rules.

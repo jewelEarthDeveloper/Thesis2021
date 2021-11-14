@@ -2,7 +2,7 @@
 \label{section:problem_statement}
 
 The problem we examine here is that Drools rules files are difficult to reason about when they become long.
-The approach we look at for solving this is to implement different ways of presenting the code through ``projectional editing''.
+The approach we look at for solving this is through implementing different ways of presenting the code using ``projectional editing''.
 
 Rules engines are a place for gathering and executing the rules of a business application.
 We elaborate on this in section \ref{section:what_is_a_rules_engine}.
@@ -14,14 +14,14 @@ As Forgy\cite{forgy1989rete} points out, for rules languages in general, ``[they
 This property leads to very large and difficult to reason about collections of implicitly connected rules.
 
 We found that reasoning over a small number of rules is already surprisingly hard.
-Our host organisation, Khonraad, (see section \ref{section:problem_context} for more details), has many rules and, thus, reasoning about them is particularly challenging.
+Our host organisation, Khonraad, a provider of mission critical cloud software to the municipalities of the Netherlands, has many rules and, thus, reasoning about them is particularly challenging.
 
 One approach to tackle comprehensibility could be to consider Miller's Law\cite{miller1956magical}.
 This law states that an average human can hold in his short-term memory 5-9 objects, which is often an argument for succinct code.
 The argument is that the developer must store anything that is not immediately in her vision in her memory.
 With it being impractical to reason about code that she cannot recall, the fewer relevant items to her reasoning that are out of view, the easier it is to reason about the code.
 
-Through both the experience of the host supervisor and in conversation with the developers at Khonraad, we have observed the difficulty developers have to try to reason about and edit collections of Drools files.
+Through both the experience of the host supervisor and in conversation with the developers at Khonraad, we have observed the difficulty developers have to try to reason about and edit large collections of Drools rules.
 We hypothesise that when we present developers with different views on their code, they can better understand it.
 The problem we wish to solve - how to improve the ability to reason about sizeable collections of Drools rules - we believe lends itself to the technique of projectional editing.
 
@@ -29,9 +29,8 @@ Projectional editing, is a technology implementation that allows users to direct
 We explain projectional editing in detail in section \ref{section:WhatIsPE}.
 By using projections to improve feedback whilst coding, we believe that this can reduce the representation impedance mismatch that hampers the developer's reasoning.
 
-Our intention is not to override the language engineers who have spent many years developing this language and its ecosystem.
-In contrast, it is to augment the current developer experience.
 To reason about a large code base of rules engine code effectively, perhaps a different presentation of that code is needed.
-This presentation should allow a more precise organisation whilst remaining interactive.
-Thus, the problem considered in this thesis is how best to present a developer a large sets of rules that she is able to edit. 
+The presentations we create should allow a more precise organisation of the code whilst remaining interactive.
+
+
 
