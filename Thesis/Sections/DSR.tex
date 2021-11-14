@@ -1,8 +1,26 @@
 \chapter{Design Science Research}
 \label{chapter:DSR}
 
+In this chapter, to answer the question ``Which projections can we create to help developers get appropriate feedback about rules?'', we undertook a design science research (DSR) approach.
+In section \ref{section:dsr_method} we describe the method of this DSR.
+Section \ref{section:dsr_results} examines the outcomes of our research.
+Finally, in section \ref{section:dsr_discussion} we discuss the threats to validity of our approach.
+
 \input{Sections/DSR/DSR_Method}
 
 \input{Sections/DSR/DSR_Results}
 
 \input{Sections/DSR/DSR_Discussion}
+
+\section{Summary}
+In this chapter, we presented a description of the details of the DSR that we conducted.
+We pursued two languages.
+In our pilot study we implemented the Really Simple Drools language, and a number of projections on top of this.
+Once we had established the usefulness of this approach, we created the language Drools-Lite which was a language that would be recognisable to experienced Drools developers.
+
+Of the projections we created, the most capable were the Spreadsheet-like and Decision table like projections.
+These both succeeded in massively reducing the screen real estate required.
+Other advantages included being able to group related rules and being able to visually scan which rules used the same facts and properties.
+
+Rules with complex nested conditions could not be shown in the tabular projections, however this was mitigated by the ability to mix notations.
+Rules too complicated for the tabular projections could be shown with textual projections in the same file.

@@ -2,11 +2,13 @@
 \label{section:dsr_method}
 
 Even though Drools is a relatively small DSL, we did not need to implement all the functionality to answer our questions.
-For this reason, we created smaller versions of the language.
+For this reason, we first created a pilot study language to asses the possibilities of projectional solutions to our question.
+We finally created a larger, but incomplete versions of Drools, in which we could create projections that would be recognisable to experienced Drools users.
 
 \subsection{Really Simple Drools Language}
-As we were new to DSL design and MPS, we first would create a simple approximation of the Drools language to create our first projections.
+In our pilot study language we created a simple approximation of the Drools language with which to create our first projections.
 We called this language ``Really Simple Drools'' (RSD).
+We describe this pilot study language here, as it contains many of the projections we considered for our research question.
 
 \paragraph{File} RSD, like Drools itself, has a \texttt{File} as its root node.
 The \texttt{File} only contains \texttt{Facts} and \texttt{Rules}.
@@ -55,7 +57,7 @@ The Structure is as shown in figure \ref{fig:RSDStructure}, and the editors, inc
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.9\textwidth]{Sections/images/RSREditors.png} 
+    \includegraphics[width=0.80\textwidth]{Sections/images/RSREditors_P.png} 
     \caption{Editors}
     \label{fig:RSDEditors}
 \end{figure}
@@ -67,7 +69,7 @@ As this becomes tedious, we added some editing aids, including substitute menus,
 
 \begin{figure}
     \centering
-    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/RSRSubstituteMenu.png}} 
+    \fbox{\includegraphics[width=0.80\textwidth]{Sections/images/RSRSubstituteMenu_P.png}} 
     \caption{RSD substitute menu}
     \label{fig:RSDSubstituteMenu}
 \end{figure}
@@ -82,7 +84,7 @@ This scope Constraint made it much easier to select \texttt{FactProperties} in t
 
 \begin{figure}
     \centering
-    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/RSRConstraint.png}}
+    \fbox{\includegraphics[width=0.80\textwidth]{Sections/images/RSRConstraint_P.png}}
     \caption{RSD scoping constraint}
     \label{fig:RSDConstraint}
 \end{figure}
@@ -98,7 +100,7 @@ Figure \ref{fig:RSDProgram} shows an example of our default Drools-like text pro
 
 \begin{figure}
     \centering
-    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/RSRProgram.png}}
+    \fbox{\includegraphics[width=0.80\textwidth]{Sections/images/RSRProgram_P.png}}
     \caption{RSD program}
     \label{fig:RSDProgram}
 \end{figure}
