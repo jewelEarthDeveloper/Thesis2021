@@ -182,23 +182,30 @@ Blueprint visual scripting, a part of the Unreal Engine, is a visual programming
 Examples of Blockly and Blueprint can be seen in figures \ref{fig:blockly} and \ref{fig:Blueprint}, respectively.
 
 \begin{figure}
-    \subfloat[Blockly]{
-        \includegraphics[clip,width=0.95\columnwidth]{Sections/images/blockly-2.png}
-        \label{fig:blockly}
-    }
-    
-    \subfloat[Blueprint]{
-        \includegraphics[clip,width=0.95\columnwidth]{Sections/images/blueprint-2.png}
-        \label{fig:Blueprint}
-    }
-    \caption{Unconventional projectional editors}
+    \begin{center}
+        \subfloat[Blockly]{
+            \includegraphics[clip,width=0.95\columnwidth]{Sections/images/blockly-2.png}
+            \label{fig:blockly}
+        }
+        
+        \subfloat[Blueprint]{
+            \includegraphics[clip,width=0.95\columnwidth]{Sections/images/blueprint-2.png}
+            \label{fig:Blueprint}
+        }
+        \caption{Unconventional projectional editors}
     \label{fig:leftfield}
+    \end{center}
 \end{figure}
 
 \subsection{What Advantages Does Projectional Editing Bring?}
 \label{section:projectional_advantages}
 
-\begin{table}
+Projectional editing gives advantages both to the language engineer and the program developers.
+There is a lot of crossover and repetition between papers written on projectional editing regarding its advantages.
+To that end, what follows is a synthesis of several papers as to the advantages that projectional editing claims, in no particular order.
+Rather than attributing each advantage to each paper, we have made a reference table, table \ref{table:Projectional_Advantages}, of papers proclaiming said advantage.
+ 
+\begin{table}[h]
     \begin{center}
         \begin{tabular}{ |l | c | l | } 
             \hline
@@ -220,11 +227,6 @@ Examples of Blockly and Blueprint can be seen in figures \ref{fig:blockly} and \
     \label{table:Projectional_Advantages}
 \end{table}
 
-Projectional editing gives advantages both to the language engineer and the program developers.
-There is a lot of crossover and repetition between papers written on projectional editing regarding its advantages.
-To that end, what follows is a synthesis of several papers as to the advantages that projectional editing claims, in no particular order.
-Rather than attributing each advantage to each paper, we have made a reference table, table \ref{table:Projectional_Advantages}, of papers proclaiming said advantage.
- 
 \paragraph{Exploratory programming} As with their progenitors, syntax-directed editors, modern projectional editors help guide a developer unfamiliar with a language.
 With their rigid syntax and predefined layout, the editors only allow editing within specific cells of the editor.
 This template style means that the developer does not have to worry about the significance of spacing or indentation.
@@ -298,10 +300,14 @@ If there is a semantic change, then the language engineer can write a migration 
 \paragraph{Ancillary data} Data added to nodes can augment the AST.
 This data is helpful for tasks such as documentation, requirements traceability and product line feature dependencies.
 
+\newpage
 \subsection{What are the Disadvantages of Projectional Editing?}
 \label{section:projectional_disadvantages}
 
-\begin{table}
+Whilst fewer papers proclaim the disadvantages of projectional editing, we repeated the approach of the previous section.
+Thus, we have synthesised the disadvantages from papers in the following sections and listed citations for these ideas in table \ref{table:Projectional_Disadvantages}.
+
+\begin{table}[h]
     \begin{center}
         \begin{tabular}{ |l | c | l | } 
             \hline
@@ -320,9 +326,6 @@ This data is helpful for tasks such as documentation, requirements traceability 
     \caption{Papers describing projectional editing disadvantages}
     \label{table:Projectional_Disadvantages}
 \end{table}
-
-Whilst fewer papers proclaim the disadvantages of projectional editing, we repeated the approach of the previous section.
-Thus, we have synthesised the disadvantages from papers in the following sections and listed citations for these ideas in table \ref{table:Projectional_Disadvantages}.
 
 We do not consider that the dearth of disadvantages discussed as evidence of projectional editing's superiority.
 Our best guess is that those who do not find projectional editing beneficial do not write papers about it.

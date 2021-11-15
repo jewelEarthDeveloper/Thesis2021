@@ -46,20 +46,35 @@ Figure \ref{fig:RSDDiagram} shows the Concept hierarch for this straightforward 
 
 We realised this design in MPS.
 As the aim is to attempt different projections, we did not initially optimise for editing.
-The Structure is as shown in figure \ref{fig:RSDStructure}, and the editors, including those shown in figure \ref{fig:RSDEditors}.
+The Structure is as shown in figure \ref{fig:RSDStructure}.
+We have here translated our Conceptual design of the RSD into MPS Concepts.
+There is an almost one to one relationship with our concept hierarchy diagram.
+The one difference is that the references in the concept hierarchy diagram, represented by the dashed red lines, are represented in our MPS Structure by SmartRef Concepts.
 
-\begin{figure}
+\begin{figure}[h]
     \centering
-    \includegraphics[width=0.9\textwidth]{Sections/images/RSRStructrure.png}
+    \fbox{\includegraphics[width=0.40\textwidth]{Sections/images/RSRStructrure.png}}
     \caption{RSD}
     \label{fig:RSDStructure}
 \end{figure}
 
+The definition of the editors are shown in figure \ref{fig:RSDEditors} on the following page.
+The result of the editors can be seen in figure \ref{fig:RSDProgram}, on the page thereafter, which shows an example of our default Drools-like text projection.
+
+
 \begin{figure}
     \centering
-    \includegraphics[width=0.80\textwidth]{Sections/images/RSREditors_P.png} 
+    \fbox{\includegraphics[width=0.66\textwidth]{Sections/images/RSREditors_P.png}}
     \caption{Editors}
     \label{fig:RSDEditors}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \fbox{\includegraphics[width=0.66\textwidth]{Sections/images/RSRProgram_P.png}}
+    \caption{RSD program}
+    \label{fig:RSDProgram}
 \end{figure}
 
 Part of our research question is using projections for reasoning about large files.
@@ -69,7 +84,7 @@ As this becomes tedious, we added some editing aids, including substitute menus,
 
 \begin{figure}
     \centering
-    \fbox{\includegraphics[width=0.80\textwidth]{Sections/images/RSRSubstituteMenu_P.png}} 
+    \fbox{\includegraphics[width=0.66\textwidth]{Sections/images/RSRSubstituteMenu_P.png}} 
     \caption{RSD substitute menu}
     \label{fig:RSDSubstituteMenu}
 \end{figure}
@@ -84,7 +99,7 @@ This scope Constraint made it much easier to select \texttt{FactProperties} in t
 
 \begin{figure}
     \centering
-    \fbox{\includegraphics[width=0.80\textwidth]{Sections/images/RSRConstraint_P.png}}
+    \fbox{\includegraphics[width=0.66\textwidth]{Sections/images/RSRConstraint_P.png}}
     \caption{RSD scoping constraint}
     \label{fig:RSDConstraint}
 \end{figure}
@@ -96,17 +111,10 @@ Thus, we have described the entire implementation of the Really Simple Drools La
 
 After implementing the language, we wrote a program with many rules.
 This program on which we will experiment with the different projections.
-Figure \ref{fig:RSDProgram} shows an example of our default Drools-like text projection.
-
-\begin{figure}
-    \centering
-    \fbox{\includegraphics[width=0.80\textwidth]{Sections/images/RSRProgram_P.png}}
-    \caption{RSD program}
-    \label{fig:RSDProgram}
-\end{figure}
 
 We discuss the alternative projections in the results section \ref{section:dsr_results}.
 
+\newpage
 \subsection{Drools-Lite Language}
 \label{section:DroolsLite}
 

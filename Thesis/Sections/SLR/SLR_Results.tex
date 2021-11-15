@@ -12,7 +12,7 @@ Therefore, what follows should be considered the results of a quasi-SLR, with th
 \subsection{Papers Selected}
 We logged the details of what we describe in this section in appendix \ref{Appendix:SLRLog}.
 
-Figure \ref{fig:search_results} shows the results of the five iterations that the search went through.
+Figure \ref{fig:search_results}, on the following page, shows the results of the five iterations that the search went through.
 Out of 173 results, we had 50 papers that provisionally seemed to pass our inclusion and exclusion criteria from our initial search.
 From the initial 50, we added 18 papers from a possible 109 in our first iteration of forward and backwards snowballing.
 The next snowballing iteration returned three papers that matched our criteria.
@@ -42,7 +42,13 @@ We calculate the values for sensitivity and precision of the search engines as f
         precision = \frac{\#\;retrieved\;relevant\;studies}{\#\;studies\;retrieved} \;100\%
 \]
 
-\begin{table}
+Table \ref{table:sensitivity_precision} show that Google Scholar had the highest sensitivity, returning 22 of the 31 chosen studies.
+This sensitivity came at the cost of a considerable proportion of false positives.
+Microsoft Academic and SpringerLink were the joint-most precise, with half of their search results ending up in the final roster.
+With the second-highest count of documents, the second-highest sensitivity, and joint highest precision, SpringerLink would appear to be the best all-around search engine for this field.
+However, these figures are skewed by several of their articles coming from a single collection specifically about projectional editing.
+
+\begin{table}[h]
     \begin{center}
         \begin{tabular}{ | l | c | c | c | c |} 
             \hline
@@ -67,12 +73,6 @@ We calculate the values for sensitivity and precision of the search engines as f
     \caption{Search engine sensitivity and precision}
     \label{table:sensitivity_precision}
 \end{table}
-
-Table \ref{table:sensitivity_precision} show that Google Scholar had the highest sensitivity, returning 22 of the 31 chosen studies.
-This sensitivity came at the cost of a considerable proportion of false positives.
-Microsoft Academic and SpringerLink were the joint-most precise, with half of their search results ending up in the final roster.
-With the second-highest count of documents, the second-highest sensitivity, and joint highest precision, SpringerLink would appear to be the best all-around search engine for this field.
-However, these figures are skewed by several of their articles coming from a single collection specifically about projectional editing.
 
 \subsection{Quality Assessment}
 Using the quality assessment checklists developed by Crombie et al.\cite{crombie1997pocket}, shown in appendix \ref{appendix:QualityAssesmentChecklist}, we examined the remaining 31 papers, which on the surface represented 37 primary studies.
@@ -106,7 +106,7 @@ After Identifying the primary studies, we extracted data.
 Appendix \ref{appendix:DataExtraction} shows the extracted data.
 Figure \ref{fig:study_types} shows that most of the primary studies in our review were DSR studies.
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \fbox{\includegraphics[width=0.45\textwidth]{Sections/images/pie_study_type4.png}}
     \caption{Study types}
@@ -122,7 +122,7 @@ The chart in figure \ref{fig:public_vs_research} shows that over 80\% of the pro
 Of the publicly available software studies, we wanted to know which software attracted the most academic interest.
 Figure \ref{fig:public_programs} shows that 74\% of the studies into projectional editing that used a publicly available product used JetBrains MPS.
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \fbox{\begin{minipage}{0.5\textwidth}
             \centering
@@ -146,10 +146,10 @@ During this analysis, we discovered that two of the papers we had initially cate
 In this study, we included all 29 papers.
 We tagged each section from those papers that talked about projectional editing.
 We then broke each section into sentences and ran those sentences through a sentiment analyser as described in section \ref{section:dataExtraction}.
-We show the outcome of this sentiment analysis in figure \ref{fig:sentiment_analysis}. 
+We show the outcome of this sentiment analysis in figure \ref{fig:sentiment_analysis}, on the following page. 
 The charts show the relationship between the positive, neutral, and negative sentiment outcomes.
 On the y-axis, we have an Id for the papers examined. 
-We show the keys linking the Ids to the paper names in table \ref{table:paper_key}.
+We show the keys linking the Ids to the paper names in table \ref{table:paper_key}, on the page following the charts.
 
 \begin{figure}
     \centering
@@ -225,7 +225,7 @@ In figure \ref{fig:sentiment_analysis2}, we attempt to separate out sentiment by
 These categories being Research projects, MPS, and all the other used products.
 We ignored the survey paper in this one as it covered all these types.
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/sentiment_analysis2_2.png}}
     \caption{Sentiment analysis by product}

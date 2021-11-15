@@ -57,7 +57,9 @@ We concluded that only including papers from 2021 would be too small a search sp
 Therefore, we set our date range to be from the beginning of 2020 to the present.
 For the sake of reproducibility, we advise the removal of any papers after 31st July 2021.
 
-\begin{table}
+We show the search engines we used in table \ref{table:searchEngines}.
+
+\begin{table}[h]
     \begin{center}         
         \begin{tabular}{|l||l|}
             \hline
@@ -78,8 +80,6 @@ For the sake of reproducibility, we advise the removal of any papers after 31st 
     \caption{Search engines used}
     \label{table:searchEngines}
 \end{table}
-
-We show the search engines we used in table \ref{table:searchEngines}.
 
 Once we have filtered the automated search through the criteria of the selection stage, we will use that as our starting set for snowballing.
 We will do all our filtering before we do any quality assessments, as we feel that excluding papers from snowballing based on the quality of the primary study would artificially limit the network of potential papers.
@@ -176,7 +176,11 @@ The existence of papers with verified primary studies either into projectional e
 
 For the question of ``What tools are currently being used for research?'' we shall note each tool discussed mentioned explicitly in the study.
 
-\noindent\begin{minipage}{\textwidth}
+Finally, for the sentiment, we shall pass each paragraph of the introduction, the discussion, the conclusion, and any other sections that mention projectional editing or tools through a sentiment analyser, noting its sentiment score.
+The sentiment analysis tool we shall use is Microsoft Azure Cognitive Services Text Analytics.
+We show the code to carry out this task in listing \ref{listing:text_analytics}.
+
+\noindent\begin{minipage}[h]{\textwidth}
     \begin{lstlisting}[language=Python, numbers=left, caption=Text Analytics code, captionpos=b, label=listing:text_analytics, breaklines=true]
 
     from azure.core.credentials import AzureKeyCredential
@@ -205,11 +209,9 @@ For the question of ``What tools are currently being used for research?'' we sha
     \end{lstlisting}
 \end{minipage}
 
-Finally, for the sentiment, we shall pass each paragraph of the introduction, the discussion, the conclusion, and any other sections that mention projectional editing or tools through a sentiment analyser, noting its sentiment score.
-The sentiment analysis tool we shall use is Microsoft Azure Cognitive Services Text Analytics.
-We show the code to carry out this task in listing \ref{listing:text_analytics}.
+We will gather this data in tables with the categories shown in table \ref{table:Data_Extraction_Form}.
 
-\begin{table}
+\begin{table}[h]
 	\centering
 	\begin{tabular}{|c | l | l | c |} 
 		\hline
@@ -228,8 +230,6 @@ We show the code to carry out this task in listing \ref{listing:text_analytics}.
 	\caption{Data extraction form}
     \label{table:Data_Extraction_Form}
 \end{table}
-
-We will gather this data in tables with the categories shown in table \ref{table:Data_Extraction_Form}.
 
 \subsection{Data Aggregation and Synthesis}
 Kitchenham\cite{kitchenham2015evidence} explained that primary studies would tend to be too heterogeneous for any statistical analysis in software engineering. 

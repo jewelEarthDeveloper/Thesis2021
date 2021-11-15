@@ -53,12 +53,19 @@ Drools stores the rules in the production memory.
 
 We will ignore the rule file components \texttt{package}, \texttt{import}, \texttt{global}, \texttt{declare}, \texttt{function}, and \texttt{query}.
 
-We will now examine the anatomy of a rule.
+We will now examine the anatomy of a rule, as shown in figure \ref{fig:Drools_Rule_Breakdown}.
 A rule consists of 3 parts: attributes, conditions, and consequences.
 Attributes are optional hints to the inference engine as to how to examine a rule.
 The conditional, ``\texttt{when}'', or left-hand side (LHS) of the rule statement is a block of conditions that must, in the aggregate, return true for the asserted fact. 
 If true, then the rule is placed on the agenda.
 The actions, consequences, ``\texttt{then}'', or right-hand side (RHS) of the rule statement contains actions to be executed when the rule is selected.
+
+\begin{figure}
+    \centering
+    \fbox{\includegraphics[width=0.80\textwidth]{Sections/images/DroolsRule2.png}}
+    \caption{Drools rule breakdown}
+    \label{fig:Drools_Rule_Breakdown}
+\end{figure}
 
 The LHS is a predicate statement made up of some patterns.
 The patterns evaluate facts from the working memory.
@@ -77,12 +84,6 @@ One can insert, modify, and retract facts in the working memory.
 Modifying and retracting facts must be done on fact variable references bound in the LHS.
 One can explicitly terminate the inference loop with a halt command.
 
-\begin{figure}
-    \centering
-    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/DroolsRule2.png}}
-    \caption{Drools rule breakdown}
-    \label{fig:Drools_Rule_Breakdown}
-\end{figure}
 
 \subsubsection{An Explanatory Example}
 Listing \ref{listing:drl_file} shows an example of a .drl file taken from the Drools sample code.
