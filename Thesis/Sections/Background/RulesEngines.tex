@@ -88,7 +88,12 @@ This algorithm works by modelling the rules as a network of nodes where each nod
 A fact flows through the filters of this network.
 The pre-calculation of this network is what provides the performance characteristics.
 
-\begin{table}
+The first popular rules engine was Office Production System (OPS) from 1976.
+In 1981 OPS5 added the Rete algorithm.
+Currently, there are a few rules engines in use.
+We show some of the more commonly used ones in table \ref{table:RuleEngines}.
+
+\begin{table}[h]
     \begin{center}
         \begin{tabular}{ |l c |l|l| } 
             \hline
@@ -106,10 +111,24 @@ The pre-calculation of this network is what provides the performance characteris
     \label{table:RuleEngines}
 \end{table}
 
-The first popular rules engine was Office Production System (OPS) from 1976.
-In 1981 OPS5 added the Rete algorithm.
-Currently, there are a few rules engines in use.
-We show some of the more commonly used ones in table \ref{table:RuleEngines}.
+CLIPS is a very widely used expert system tool. 
+Inspired by OPS, it was originally released in 1986 by NASA. 
+It uses a mixture of rules and objects, written in C, to model human expertise.
+
+We describe Drools in detail in section \ref{section:WhatIsDrools}, so we will skip that description here.
+
+BizTalk, is Microsoft's middleware offering, for the .Net environment. 
+Amongst it's features is a Business Rule engine using Forgy's Rete algorithm.
+It has a simple graphical tool for exploring and building rules and policies, which is what they call their collections of rules.
+Microsoft is attempting to migrate customers from BizTalk to Azure App Service Hybrid Connections, which does not Rete bases rules engine.
+
+ILOG is a cross platform Business Rules Management System now owned by IBM and rebranded as IBM Operational Decision Management.
+Rules are collected as policies in the rules repository.
+It is now part of IBMs Websphere platform, and still actively updated.
+
+OpenRules is an opensource Business Rules and Decision Management System. 
+It is currently maintained by OpenRules, Inc. who offer paid support, training and consulting services.
+It allows input of rules files using spreadsheets such as Excel and Google Sheets.
 
 \input{Sections/Background/drools}
 

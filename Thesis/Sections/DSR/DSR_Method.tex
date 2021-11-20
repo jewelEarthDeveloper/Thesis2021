@@ -10,7 +10,7 @@ In our pilot study language we created a simple approximation of the Drools lang
 We called this language ``Really Simple Drools'' (RSD).
 We describe this pilot study language here, as it contains many of the projections we considered for our research question.
 
-\paragraph{File} RSD, like Drools itself, has a \texttt{File} as its root node.
+\paragraph{\texttt{File}} RSD, like Drools itself, has a \texttt{File} as its root node.
 The \texttt{File} only contains \texttt{FactDeclaration} nodes and \texttt{Rule} nodes.
 
 \paragraph{\texttt{FactDeclaration} and \texttt{FactProperty}} In Drools, a \texttt{FactDeclaration} represents a Java Bean with its child properties, which can also have their child properties, ad infinitum.
@@ -25,11 +25,11 @@ An RSD Rule consists of a collection of conditions.
 Should all those conditions return \texttt{true}, then the \texttt{Rule} is selected.
 
 \paragraph{\texttt{AbstractCondition}} A condition operates on one or more \texttt{FactSelectors}.
-There are four condition types \texttt{ExistsCondition}, \texttt{NotCondition}, \texttt{AndCondition}, and \texttt{OrCondition}.
+There are four condition types \linebreak\texttt{ExistsCondition}, \texttt{NotCondition}, \texttt{AndCondition}, and \texttt{OrCondition}.
 \texttt{ExistsCondition} and \texttt{NotCondition} are unary conditions and evaluate one \texttt{FactSelector}.
-\texttt{AndCondition} and \texttt{OrCondition} conditions evaluate two \texttt{FactSelectors}.
+\texttt{AndCondition} and \texttt{OrCondition} conditions evaluate two \linebreak\texttt{FactSelectors}.
 
-\paragraph{\texttt{FactSelector}} A \texttt{FactSelector} consists of a reference to a \texttt{FactDeclaration} and a collection of \texttt{AbstractPredicates}.
+\paragraph{\texttt{FactSelector}} A \texttt{FactSelector} consists of a reference to a \texttt{FactDeclaration} and a collection of \linebreak\texttt{AbstractPredicates}.
 If the fact exists and all the predicates evaluate to \texttt{true}, then the \texttt{FactSelector} evaluates to \texttt{true}.
 
 \paragraph{\texttt{AbstractPredicate}} The predicate is an operation on a \texttt{FactProperty}, to which the Concept has a reference.
@@ -95,7 +95,7 @@ This projection is of the root AST a \texttt{File} node called ``DossierSleutelb
 It has 4 \texttt{FactDeclaration} children and 3 \texttt{Rule} children.
 The \texttt{FactDeclaration} nodes called ``Dossier'', ``Episode'', and ``Milestone'' each have 2 child \texttt{FactProperty} children, whilst ``DroolsContext'' has none.
 
-The \texttt{Rule} node ``0'' has 2 \texttt{ExistsCondition} nodes containing \texttt{FactSelector} node children with \texttt{FactDeclarationSmartRef} nodes referencing the \texttt{FactDeclaration} nodes ``Dossier'' and ``DroolsContext''.
+The \texttt{Rule} node ``0'' has 2 \texttt{ExistsCondition} nodes containing \texttt{FactSelector} node children with \linebreak\texttt{FactDeclarationSmartRef} nodes referencing the \texttt{FactDeclaration} nodes ``Dossier'' and ``DroolsContext''.
 
 The \texttt{Rule} node ``[WVGGZ/CM] start CM Procedure'' points to the ``Dossier'' \texttt{FactDeclaration}, as well as having 2 predicates.
 The first predicate is an \texttt{IsPredicate} with a \texttt{FactPropertySmartRef} node pointing to the ``isWvGGZ'' \texttt{FactProperty}.
@@ -126,17 +126,17 @@ As this becomes tedious, we added some editing aids, including substitute menus,
     \label{fig:RSDSubstituteMenu}
 \end{figure}
 
-This image shows that we originally had to select an \texttt{ExistsCondition} Concept and select the \texttt{FactDeclaration} for the Condition.
+This image shows that we originally had to select an \texttt{ExistsCondition} Concept and select the \linebreak\texttt{FactDeclaration} for the Condition.
 After adding the substitute menu, we could immediately select the \texttt{FactDeclaration} we wanted, and the \texttt{ExistsCondition} would automatically wrap it with an \texttt{ExistsCondition} node.
 
 The code to do this is shown in the section "wrap substitute menu".
-What is does is when it encounters the possibility to input an \texttt{ExistsCondition} in a menu, it replaces it with the default menu for the \texttt{FactDeclarationSmartRef}.
+What is does is when it encounters the possibility to input an \texttt{ExistsCondition} in a menu, it replaces it with the default menu for the \linebreak\texttt{FactDeclarationSmartRef}.
 MPS handles SmartRefs in menus by showing all the possible reference items available.
 When the user picks the reference item this code will then create a new \texttt{ExistsCondition} with a new \texttt{FactSelector} containing the chosen \texttt{FactDeclarationSmartRef}, to insert at that point in the AST.
 This saves several keystrokes, as otherwise we manually first had to insert a \texttt{ExistsCondition} followed by a \texttt{FactSelector} before filling the fact child.
 
 Finally, we added a Constraint to scope the \texttt{FactProperties} in \texttt{Predicates} to the \texttt{FactDeclarationSmartRef} chosen in the \texttt{FactSelector}.
-This scope Constraint made it much easier to select \texttt{FactProperties} in the \texttt{Predicates}, as indicated in figure \ref{fig:RSDConstraint}.
+This scope Constraint made it much easier to select \texttt{FactProperties} in the \linebreak\texttt{Predicates}, as indicated in figure \ref{fig:RSDConstraint}.
 
 \begin{figure}
     \centering
@@ -145,7 +145,7 @@ This scope Constraint made it much easier to select \texttt{FactProperties} in t
     \label{fig:RSDConstraint}
 \end{figure}
 
-The figure shows that before adding the scoping constraint, it showed a list with dozens of potential \texttt{FactProperties}, that represented all the \texttt{FactProperties} in the model.
+The figure shows that before adding the scoping constraint, it showed a list with dozens of potential \texttt{FactProperties}, that represented all the \linebreak\texttt{FactProperties} in the model.
 After adding the constraint, it only shows the two \texttt{FactProperties} associated with the \texttt{FactDeclaration} referenced in the \texttt{FactSelector}.
 This is achieved in the code in the scope method.
 This first finds the relevant \texttt{FactDeclaration} in the from the \texttt{FactSelector} we are at in our current location in the AST.
@@ -179,7 +179,7 @@ Our following Language, Drools-Lite, contains many more of the features of Drool
 Our method of selecting the features involved implementing the examples delivered with Drools (including the corrupt politician example shown in section \ref{section:WhatIsDrools}).
 We would implement just enough features to complete the examples.
 Whenever we had any queries about designing Concepts, we referred to our analysis of the Drools Language, shown in appendix \ref{appendix:DroolsConceptHierarchy}.
-We show the preliminary design we achieved using this method in figure \ref{fig:DroolsLiteDiagram}.
+We show the preliminary design we achieved using this method in figure \ref{fig:DroolsLiteDiagram} on page \pageref{fig:DroolsLiteDiagram}.
 Later, there were some places we diverged a little from our design.
 We merged and decoupled our Concepts when we thought it would simplify the code.
 
@@ -196,14 +196,14 @@ The editor builders know how to select which nodes are in scope to display to th
 
 \paragraph{FactProperty} In RSD, we had \texttt{FactProperties} as children of \texttt{Facts}.
 Now that our \texttt{Facts} refer to actual classes (\texttt{ClassifierType}), our \texttt{FactProperties} should reflect this.
-To do this, the Concept itself only references an \texttt{InstanceMethodDeclaration}, the MPS BaseLanguage's definition of a method signature.
+To do this, the Concept itself only references an \linebreak\texttt{InstanceMethodDeclaration}, the MPS BaseLanguage's definition of a method signature.
 We scoped the Concept to only show properties associated with a selected \texttt{Fact}.
 
 Drools interacts with Java objects as if they are Java Beans.
 To simulate this, we limited the scope of the properties to just getters, i.e., methods that start with ``get'' or ``is'', and used a Behavior to make sure they are displayed without the ``get'' or ``is'' prefix.
 We also made a smart reference for this Concept.
 
-Another option for achieving this is to have wrapped the \texttt{ClassifierType} and referenced its related \texttt{InstanceMethodDeclarations}.
+Another option for achieving this is to have wrapped the \texttt{ClassifierType} and referenced its related \linebreak\texttt{InstanceMethodDeclarations}.
 We would have then had to limit the functionality of these items from the BaseLanguage.
 Whilst this allows the functionality we wished for, we feel our construction offers decoupling and that, we think, correctly reflects the structure of the language.
 Perhaps if we were to redo this, we would have taken the other approach.
@@ -217,7 +217,7 @@ This extension is so that we could use it in the Java code of the Right-hand sid
 \paragraph{\texttt{Rule}} Our \texttt{Rules} have three children: an \texttt{AttributeCollection}, a Right-hand side and a list of Conditions that make up the Left-hand side.
 We created a component to describe the \texttt{Rule} editor for reuse, as we imagined that we would wrap this in other projections.
 
-\paragraph{\texttt{RuleVariables}} The \texttt{Fact} of a \texttt{FactSelector} and the \texttt{FactProperty} of a \texttt{FieldConstraint} are bound to \texttt{RuleVariables}.
+\paragraph{\texttt{RuleVariables}} The \texttt{Fact} of a \texttt{FactSelector} and the \texttt{FactProperty} of a \texttt{FieldConstraint} are bound to \linebreak\texttt{RuleVariables}.
 \texttt{RuleVariables} are scoped to a \texttt{Rule}.
 A \texttt{RuleVariable} has only a \texttt{name} and a \texttt{type}.
 We also create a smart reference for it so that it can be used elsewhere within the rule.
@@ -265,7 +265,7 @@ We added them to give the developer the same look and feel as a standard Drools 
 
 \paragraph{Left-hand side} This is a collection of conditions.
 There are four types of conditions.
-\texttt{AndCondition}, \texttt{OrCondition}, \texttt{NotCondition} and \texttt{ExistsCondition}.
+\texttt{AndCondition}, \linebreak\texttt{OrCondition}, \texttt{NotCondition} and \texttt{ExistsCondition}.
 \texttt{AndCondition}, \texttt{OrCondition}, and \texttt{NotCondition} have one or two children who are also conditions.
 The \texttt{ExistsCondition} contains a \texttt{FactSelector}.
 
@@ -275,7 +275,7 @@ We also added some intentions to make it easy to switch between \texttt{ExistsCo
 
 On line 4 in figure \ref{fig:Rule}, the whole line represents an \texttt{ExistsCondition}.
 Line 5 shows an \texttt{OrCondition} containing an \texttt{ExistsCondition} and a \texttt{NotCondition}.
-The default editor, through an intention, can make the \texttt{ExistsCondition} explicit with an \texttt{exists} keyword.
+The default editor, through an intention, can make the \linebreak\texttt{ExistsCondition} explicit with an \texttt{exists} keyword.
 However, the standard practice with Drools developers is to make this implicit, so this is how we show it here.
 
 \paragraph{\texttt{FactSelector}} This always has a reference to a \texttt{Fact}.

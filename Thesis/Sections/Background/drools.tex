@@ -53,10 +53,10 @@ Drools stores the rules in the production memory.
 
 We will ignore the rule file components \texttt{package}, \texttt{import}, \texttt{global}, \texttt{declare}, \texttt{function}, and \texttt{query}.
 
-We will now examine the anatomy of a rule, as shown in figure \ref{fig:Drools_Rule_Breakdown}.
+We will now examine the anatomy of a rule, as shown in figure \ref{fig:Drools_Rule_Breakdown} on the following page.
 A rule consists of 3 parts: attributes, conditions, and consequences.
 Attributes are optional hints to the inference engine as to how to examine a rule.
-The conditional, ``\texttt{when}'', or left-hand side (LHS) of the rule statement is a block of conditions that must, in the aggregate, return true for the asserted fact. 
+The conditional, ``\texttt{when}'', or left-hand side (LHS) of the rule statement is a block of conditions which are subject to logical conjunctions. 
 If true, then the rule is placed on the agenda.
 The actions, consequences, ``\texttt{then}'', or right-hand side (RHS) of the rule statement contains actions to be executed when the rule is selected.
 
@@ -70,7 +70,7 @@ The actions, consequences, ``\texttt{then}'', or right-hand side (RHS) of the ru
 The LHS is a predicate statement made up of some patterns.
 The patterns evaluate facts from the working memory.
 The pattern can match against the existence of facts or facts with matching property conditions.
-Connectives, such as \texttt{not}, \texttt{and}, and \texttt{or} can combine patterns.
+Logical operators, such as \texttt{not}, \texttt{and}, and \texttt{or} can combine patterns.
 The patterns apply to individual facts rather than the group, thus can be seen as first-order predicates.
 
 Variables can be bound to facts that match these patterns for use later in the LHS or for updating the working memory on the RHS.

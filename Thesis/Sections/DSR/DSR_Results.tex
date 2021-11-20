@@ -82,7 +82,7 @@ One of our guidelines was, as much as possible, to build our projections as sepa
 In our first approach at the filtering, we failed on this count by invasively adding properties to \texttt{Fact} and \texttt{FactProperty} Concepts of the RSD to determine whether they were visible.
 
 Our following approach created subclasses of \texttt{Fact}, \texttt{FactProperty} and \texttt{File}.
-This approach, however, requires running a macro on the code file to migrate \texttt{Facts}, \texttt{FactProperties} and \texttt{Files} to \texttt{FilteredFacts}, \texttt{FilteredFactProperties}, and \texttt{FilteredFiles}.
+This approach, however, requires running a macro on the code file to migrate \texttt{Facts}, \texttt{FactProperties} and \texttt{Files} to \texttt{FilteredFacts}, \linebreak\texttt{FilteredFactProperties}, and \texttt{FilteredFiles}.
 This migration means that the \texttt{FilteredFile} could now only be used by languages that extend our new filtered language.
 
 Our final approach was to add a \texttt{Filter} Concept, reference the filtered nodes, and have the editors make the visibility calculations based on this singleton node.
@@ -210,7 +210,7 @@ For arbitrary reasons, we chose a smiley face as that indicator.
 
 The \texttt{Rule} names and actions are editable through the default functionality of the MPS extension.
 We use intentions to add the selection of a \texttt{Fact} or \texttt{FactProperty} to a \texttt{Rule}.
-We also use intentions for binding \texttt{RuleVariables}.
+We also use intentions for binding \linebreak\texttt{RuleVariables}.
 
 The major drawback of this design is that editing a rule with an as yet non-existent selection criteria became very clunky.
 If the \texttt{Rule} we wished to edit already existed in the table, we had to use an intention to extract it from the group, change the criteria and place it back in.
@@ -273,7 +273,7 @@ We decided to produce a truth-table wireframe example as we had had personal exp
 The truth table seemed apt for the LHS of the Drools rule as, in essence, it is a boolean function.
 Wittgenstein popularised the truth table in the Tractatus Logico-Philosophicus\cite{wittgenstein2013tractatus}.
 They are so widely used in mathematics and computer science that we do not need to explain their use further.
-Because of the combinatorial explosive nature of truth tables, with 2\textsuperscript{n} possible combinations, we would limit the display to a max of 6 \texttt{FactSelectors} and only show the paths that lead to the RHS execution.
+Because of the combinatorial explosive nature of truth tables, with 2\textsuperscript{n} possible combinations, we would limit the display to a max of 6 \linebreak\texttt{FactSelectors} and only show the paths that lead to the RHS execution.
 
 Figure \ref{fig:TruthTableProjection} shows how we designed this to look.
 The user experience would be that the \texttt{Rule} is selected, and the developer presses the up and down arrow keys to step through the different true (highlighted in green) and false (highlighted in red) \texttt{FactSelectors} that result in the \texttt{Rule}'s selection.
