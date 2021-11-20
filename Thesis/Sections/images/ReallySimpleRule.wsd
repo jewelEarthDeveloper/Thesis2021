@@ -66,19 +66,29 @@
 
     AbstractBinaryCondition <|-- OrCondition
 
-    abstract class Predicate
-        Predicate : FactProperty property
+    abstract class AbstractPredicate
+        AbstractPredicate : FactProperty property
 
-    FactSelector "1" --- "0..n" Predicate
-    FactProperty .... Predicate
+    FactSelector "1" --- "0..n" AbstractPredicate
+    FactProperty .... AbstractPredicate
     
     class IsPredicate
     
-    Predicate <|-- IsPredicate
+    AbstractPredicate <|-- IsPredicate
 
     class NotPredicate
 
-    Predicate <|-- NotPredicate
+    AbstractPredicate <|-- NotPredicate
+
+    class AndPredicate
+        AndPredicate : FactProperty rightProperty
+
+    AbstractPredicate <|-- AndPredicate
+
+    class OrPredicate
+        OrPredicate : FactProperty rightProperty
+
+    AbstractPredicate <|-- OrPredicate
     
     
         
