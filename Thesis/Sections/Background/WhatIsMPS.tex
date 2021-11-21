@@ -69,6 +69,16 @@ Other items available in the Structure Aspect are the Interface Concept, the Enu
 Thus, the Structure aspect defines how the AST can be structured.
 
 Figure \ref{fig:concept_example} shows a concept with three children that implements two interfaces.
+The first line names the concept and which concept it extends.
+By default all concepts extend \texttt{BaseConcept}.
+The next two lines shows the interfaces it implements.
+This concept is not rootable, and therefore cannot be instantiated as a file in a solution.
+the alias and short description override what will be shown in menus instead of \texttt{RuleStatement} and its fully qualitfied name.
+This concept has no custom properties or references.
+It has three children.
+The attributes child contains one and only one RuleAttributes Concept.
+Outcomes also contains only one child concept, this one of type StatementList.
+The conditions child has a collection of abstract conditions
 
 \begin{figure}[h]
     \centering
@@ -91,13 +101,14 @@ If a virtual method is declared, then it can be called polymorphically.
 Figure \ref{fig:behavior_example} shows a constructor added to a Concept to initialise its children.
 It has a method to allow other nodes to interrogate the condition of it having attributes.
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \fbox{\includegraphics[width=0.66\textwidth]{Sections/images/behavior_example_P.png}}
     \caption{Behavior example}
     \label{fig:behavior_example}
 \end{figure}
 
+\newpage
 \subsection{Abstract Syntax: Constraints}
 A Constraints aspect adds further structural restrictions to a Concept.
 Constraints primarily define scope by controlling if another node can be a child, a parent, or an ancestor of this node.
@@ -105,7 +116,7 @@ A Constraint can also prevent badly formed properties, children or references.
 
 Figure \ref{fig:constraint_example} shows an example of a scope restraint that only allows local variables declared within the same rule or global variables declared in the same file.
  
-\begin{figure}
+\begin{figure}[h]
     \centering
     \fbox{\includegraphics[width=0.66\textwidth]{Sections/images/constraint_example_P.png}}
     \caption{Constraint example}
@@ -120,7 +131,7 @@ Rules that are available to calculate and enforce the type system include infere
 
 Figure \ref{fig:typesystem_example} shows an inference rule that ensures that the calculated type of the import statement matched that of its child called type.
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \fbox{\includegraphics[width=0.66\textwidth]{Sections/images/typesystem_example_P.png}}
     \caption{Type system example}

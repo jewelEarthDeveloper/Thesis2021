@@ -18,13 +18,16 @@ A grammar is a definition of a programming language's formal syntactical rules o
 One derives the lexer and parser from the grammar.
 The lexer will turn the text, via a text buffer, into tokens. 
 A parser then validates that these tokens, the words of the language, are syntactically correct.
-The parser then constructs a concrete syntax tree and an abstract syntax tree (AST).
+The parser will often then construct a concrete syntax tree and an abstract syntax tree (AST), though not necessarily both.
+
+A concrete syntax tree is the output of a text parsed complying with syntax of the grammar.
+It contains many tokens and keywords necessary to be unambiguously parseable that are without any semantic meaning.
 
 An AST is a structure that represents the semantic meaning of the source code, stripped of all the syntactic details.
 The parser will carry out some of the name resolutions needed to ensure that the tree represents the references expressed within the source code.
 These references turn the tree into a graph.
 
-Compilers use the AST to do subsequent processing, such as linking, transformation, analysis, and type checking.
+Compilers use the AST to do subsequent processing, such as transformation, linking, code generation, analysis, and type checking.
 Modern IDEs, in the background, also parse the code it is displaying to create an AST that it uses to offer relevant coding assistance.
 This assistance is valuable.
 Without help from the IDE, learning the concrete syntax of non-trivial languages is demanding.
@@ -203,7 +206,7 @@ Examples of Blockly and Blueprint can be seen in figures \ref{fig:blockly} and \
 Projectional editing gives advantages both to the language engineer and the program developers.
 There is a lot of crossover and repetition between papers written on projectional editing regarding its advantages.
 To that end, what follows is a synthesis of several papers as to the advantages that projectional editing claims, in no particular order.
-Rather than attributing each advantage to each paper, we have made a reference table, table \ref{table:Projectional_Advantages}, of papers proclaiming said advantage.
+Rather than attributing each advantage to each paper, we have made a reference table, table \ref{table:Projectional_Advantages}, of papers proclaiming said advantage. 
  
 \begin{table}[h]
     \begin{center}
