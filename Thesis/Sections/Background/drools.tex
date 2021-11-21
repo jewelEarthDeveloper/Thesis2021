@@ -9,7 +9,8 @@ It is considered one of the most developed and supported rules platforms.
 
 To execute rules, Drools has four major components, as demonstrated in figure \ref{fig:Drools_components}.
 The production memory contains the rules, and this will not change during an analysis session.
-The rules are the focus of this thesis, and therefore, we will delve into much more detail later on these.
+The rules are the focus of this thesis. 
+Thus, we will examine these in more detail later.
 
 \begin{figure}
     \centering
@@ -36,7 +37,7 @@ It can be the case that many rules are concurrently true for the same fact asser
 These rules conflict.
 A conflict resolution strategy will decide which rule will fire in which order from the agenda.
 The first rule on the agenda will fire.
-If the rule modifies, retracts or asserts a fact, then the inference loop begins again.
+If the rule modifies, retracts, or asserts a fact, then the inference loop begins again.
 We have inferred our conclusion if either a rule specifies to halt or no matching rules remain on the agenda.
 
 \begin{figure}
@@ -76,7 +77,7 @@ The patterns apply to individual facts rather than the group, thus can be seen a
 Variables can be bound to facts that match these patterns for use later in the LHS or for updating the working memory on the RHS.
 
 Drools offers more options for the LHS.
-We have limited the our scope to the features described thus far.
+We have limited our scope to the features described thus far.
 
 The RHS can contain arbitrary Java code that will execute when a rule is selected.
 However, its primary purpose is to adjust the state of truth in the working memory.
