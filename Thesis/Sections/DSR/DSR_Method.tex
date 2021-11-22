@@ -2,13 +2,13 @@
 \label{section:dsr_method}
 
 Even though Drools is a relatively small DSL, we did not need to implement all the functionality to answer our questions.
-For this reason, we first created a pilot study language to asses the possibilities of projectional solutions to our question.
+For this reason, we first created a pilot study language to assess the possibilities of projectional solutions to our question.
 We finally created a larger, but incomplete versions of Drools, in which we could create projections that would be recognisable to experienced Drools users.
 
 \subsection{Really Simple Drools Language}
 In our pilot study language we created a simple approximation of the Drools language with which to create our first projections.
 We called this language ``Really Simple Drools'' (RSD).
-We describe this pilot study language here, as it contains many of the projections we considered for our research question.
+We describe this pilot study language here, as it contains many of the projections that we considered for our research question.
 
 \paragraph{\texttt{File}} RSD, like Drools itself, has a \texttt{File} as its root node.
 The \texttt{File} only contains \texttt{FactDeclaration} nodes and \texttt{Rule} nodes.
@@ -67,19 +67,19 @@ Thereafter is another empty line followed by a vertical listing of the \text{Rul
 The next editor shown is the editor of the \texttt{FactDeclaration} Concept.
 Each \texttt{FactDeclaration} will be shown on a single line starting with the word ``fact'' followed by its name, then, between parentheses, a horizontal, comma separated list of its \texttt{FactProperty} property children.
 
-The subsequent editor describe the \texttt{Rule} Concept. 
+The subsequent editor describes the \texttt{Rule} Concept. 
 The layout it describes is similar to that of a Drools rule, with the first line being ``rule'' followed by the rule name in inverted commas.
 There is a hardcoded indented ``when'', followed by a further indented vertical list of the condition children.
-This is then followed, at appropriate levels of indentation, by three hard coded lines, of ``then'', a comment as a place holder for the right hand side of a normal Drools rule, and ``end''.
+This is then followed, at appropriate levels of indentation, by three hard coded lines of ``then'', a comment as a place holder for the right-hand side of a normal Drools rule, and ``end''.
 
-Next we show one of the \texttt{AbstractCondition} Concepts, in the case the \texttt{AndCondition}.
+Next, we show one of the \texttt{AbstractCondition} Concepts, in the case the \texttt{AndCondition}.
 This displays the two \texttt{FactSelector} children separated by ``and'' and surrounded by parentheses.
 
-The editor for the \texttt{FactSelector} Concept displays the fact child which is a \texttt{FactDeclarationSmartRef}, for which we do not show it's editor here, but in this case shows the name of the \texttt{FactSelector} that it is referencing.
-This is then followed by a horizontal, comma separated list of the \texttt{AbstractPredicate} nodes stored in the predicates children.
+The editor for the \texttt{FactSelector} Concept displays the fact child, which is a \texttt{FactDeclarationSmartRef}, for which we do not show it's editor here, but in this case shows the name of the \texttt{FactSelector} that it is referencing.
+This is then followed by a horizontal, comma separated list of the \texttt{AbstractPredicate} nodes stored in the predicate's children.
 
 The final editor we show is an example of an \texttt{AbstractPredicate}, specifically an \texttt{OrPredicate}, which shows the two properties separated by a ``||'' symbol.
-The properties are \texttt{FactPropertySmartRef} nodes and they will just display the name of the \texttt{FactProperty} to which they point.
+The properties are \texttt{FactPropertySmartRef} nodes, and they will just display the name of the \texttt{FactProperty} to which they point.
 
 \begin{figure}
     \centering
@@ -102,8 +102,8 @@ The first predicate is an \texttt{IsPredicate} with a \texttt{FactPropertySmartR
 The other predicate is a \texttt{NotPredicate} node pointing to the ``hasRunningEpisode'' \texttt{FactProperty}.
 
 The final \texttt{Rule} node has a complex nesting of \texttt{AbstractCondition} nodes.
-The first is an \texttt{OrCondition} which contains an \texttt{ExistsCondition} in its left hand side and an \texttt{AndCondition} on the right.
-The right hand side node contains an \texttt{ExistsCondition} node on both the left and right sides. 
+The first is an \texttt{OrCondition} which contains an \texttt{ExistsCondition} in its left-hand side and an \texttt{AndCondition} on the right.
+The right-hand side node contains an \texttt{ExistsCondition} node on both the left and right sides. 
 
 \begin{figure}[h]
     \centering

@@ -5,7 +5,7 @@
 
 The Really Simple Drools Language (RSD) acted as a training ground for our new projections.
 
-\subsubsection{Context-Aware Color Scheme}
+\subsubsection{Context-Aware Colour Scheme}
 After the default text projection, the first projection we made was giving the text a colour scheme.
 This form or augmentation in IDEs is probably the most basic that we see.
 Available in structured editors since the 1980s\cite{cowlishaw1987lexx}, syntax highlighting displays text in various colours and fonts according to the meaning of the terms.
@@ -19,7 +19,7 @@ Figure \ref{fig:colorscheme} shows this projection.
 \begin{figure}[h]
     \centering
     \fbox{\includegraphics[width=0.66\textwidth]{Sections/images/coloredTextProjection_P.png}}
-    \caption{Context aware color scheme}
+    \caption{Context aware colour scheme}
     \label{fig:colorscheme}
 \end{figure}
 
@@ -98,7 +98,7 @@ However, we feel that so long as there is a clear indication that a filter is ap
 
 \subsubsection{Table}
 Thus far, our projections have been textual ones that other non-projectional language workbenches could implement.
-Creating a table was our first non-parseable projection.
+Creating a table was our first non-parsable projection.
 
 We choose the table projection based on the observations of Miller\cite{miller1956magical} about the number of items people can retain in their memory.
 This observation leads us to conclude that the fewer essential items that are off the screen and, therefore, in the developers' memory, the better.
@@ -114,31 +114,31 @@ We implemented this projection using the tables extension in the MPS-Extension p
     \label{fig:tableProjection1}
 \end{sidewaysfigure}
 
-\subsubsection{Cross-tab}
-Our next tabular projection is a cross-tab inspired by a decision table.
-Figure \ref{fig:crosstabProjection1}, on page \pageref{fig:crosstabProjection1}, shows our implementation of the cross-tab.
+\subsubsection{Crosstab}
+Our next tabular projection is a crosstab inspired by a decision table.
+Figure \ref{fig:crosstabProjection1}, on page \pageref{fig:crosstabProjection1}, shows our implementation of the crosstab.
 Because of the large amount of screen real estate that this projection uses we only present a truncated view of the table.
 
-The reason behind this projection is that the previous table does not give any visual queues as to how \texttt{Rules} are related.
-With a cross-tab, one can easily see which rules contain the same facts.
+The reason behind this projection is that the previous table does not give any visual cues as to how \texttt{Rules} are related.
+With a crosstab, one can easily see which rules contain the same facts.
 
-The rows of the cross-tab represent the rules, with the name in the left most column.
-The columns represents the facts.
+The rows of the crosstab represent the rules, with the name in the left most column.
+The columns represent the facts.
 
 The cells give indicator of which fact is used in which rule.
-If a rule requires a fact then it is indicated with a number preceded by a hash symbol.
+If a rule requires a fact, then it is indicated with a number preceded by a hash symbol.
 The number represents the ordinal order of when the facts appearance in the conditions.
-Thus the first occurrence of a fact is represented by ``\#1''.
+Thus, the first occurrence of a fact is represented by ``\#1''.
 If there are multiple occurrences of a fact within a rule, then multiple numbers will appear in the same cell.
 
-In the figure there is a close-up shows that all the details of the selected fact are available in the inspector panel of the projection.
+In the figure there is a close-up that shows that all the details of the selected fact are available in the inspector panel of the projection.
 
-At the top, we can see an immediate problem with a cross-tab, and that is if we have the whole \texttt{File} included, the table will be very sparse.
+At the top, we can see an immediate problem with a crosstab, and that is if we have the whole \texttt{File} included, the table will be very sparse.
 
 \begin{sidewaysfigure}
     \centering
     \fbox{\includegraphics[width=0.99\textwidth]{Sections/images/crosstabProjection1.png}}
-    \caption{Cross-tab projection}
+    \caption{Crosstab projection}
     \label{fig:crosstabProjection1}
 \end{sidewaysfigure}
 
@@ -147,10 +147,10 @@ The table plug-in and MPS enabled most of the editing in the projection by defau
 An extra editing feature we added to this table was the ability to delete a \texttt{FactDeclaration} and all the related \texttt{FactDeclarationSmartRef} from all the \texttt{Rule} nodes in the \texttt{File} by deleting a fact column.
 The code shown in figure \ref{fig:tableFactDeletion}, on page \pageref{fig:tableFactDeletion}, shows how we can walk the trees in each \texttt{Rule} to delete unary conditions and convert the non-deleted side of binary conditions into unary conditions to allow this \texttt{Fact} deletion.
 
-From the ``on delete'' section of the vertical section, we loop through all of the rules to remove the references and rearrange the conditions in the AST.
+From the ``on delete'' section of the vertical section, we loop through all the rules to remove the references and rearrange the conditions in the AST.
 This uses a recursive ``pruneCondition'' method to walk the tree to detach selectors containing referenced to the fact.
 If it is a unary selector, then the selector is removed.
-If it is a binary selector and both children are removed then the selector is removed.
+If it is a binary selector and both children are removed, then the selector is removed.
 If just one selector of the binary selector is removed, then the one that remains is pulled up the tree to replace it.
 
 Once all the \texttt{FactDeclarationSmartRef} have been removed then the \texttt{FactDeclaration} that the column represents is removed.
@@ -185,9 +185,9 @@ This language also added an editor for the \texttt{RuleCollection} and intention
 As the Drools language is analogous to a series of if-then statements, then perhaps its best visual equivalent is the decision table.
 Decision tables are a ``powerful aid in programming, documentation, and in effective man-to-man and man-to-machine communications''\cite{pooch1974translation}.
 
-We designed our table, shown in figure \ref{fig:decisionTableProjection}, to include some of the lessons learned from the RSD cross-tab that shown in figure \ref{fig:crosstabProjection1}.
+We designed our table, shown in figure \ref{fig:decisionTableProjection}, to include some of the lessons learned from the RSD crosstab that shown in figure \ref{fig:crosstabProjection1}.
 The RSD language taught us that wasting visual real estate exacerbates sparseness issues in tables.
-In the cross-tab table, horizontal scrolling is necessary, in part due to the column widths.
+In the crosstab table, horizontal scrolling is necessary, in part due to the column widths.
 The columns were wide because the name of the \texttt{Fact} was displayed horizontally.
 
 \begin{figure}[h]
@@ -204,7 +204,7 @@ Because this projection presents both the left and right-hand side of the rules,
 We had to find a way to represent a \texttt{RuleVariable} that can be bound and used on the LHS and used on the RHS.
 We achieved this by referencing a \texttt{RuleVariable} name in the cell representing the \texttt{Fact} or \texttt{FactProperty} to which it is bound.
 With \texttt{RuleVariables} now being represented in the cells, we could no longer represent the cell being selected with an ``X'', as this could be confused with a \texttt{RuleVariable} name.
-Projectional editing does not require communication of meaning through parseable ASCII text.
+Projectional editing does not require communication of meaning through parsable ASCII text.
 Thus, we decided to represent \texttt{Fact} selection with an image.
 For arbitrary reasons, we chose a smiley face as that indicator.
 
@@ -212,7 +212,7 @@ The \texttt{Rule} names and actions are editable through the default functionali
 We use intentions to add the selection of a \texttt{Fact} or \texttt{FactProperty} to a \texttt{Rule}.
 We also use intentions for binding \linebreak\texttt{RuleVariables}.
 
-The major drawback of this design is that editing a rule with an as yet non-existent selection criteria became very clunky.
+The major drawback of this design is that editing a rule with a yet non-existent selection criteria became very clunky.
 If the \texttt{Rule} we wished to edit already existed in the table, we had to use an intention to extract it from the group, change the criteria and place it back in.
 At this point, the table would automatically adjust the column headings.
 
@@ -232,7 +232,7 @@ To this end, we created a design where the selection criteria could be directly 
 Each row is a \texttt{Rule} in this design, and each column is for a \texttt{RuleVariable} or a \texttt{FactProperty}.
 If a property is selected, then the selection criterion is in the appropriate cell.
 A grey/beige colour indicates unselected cells.
-The RHS of the \texttt{Rule} appears in the actions column.
+The RHS of the \texttt{Rule} appears in the action's column.
 Adding as yet unused \texttt{Facts} or \texttt{FactProperties}, or removing existing ones, can be achieved with intentions, as shown in figure \ref{fig:SpreadsheetIntentions}, on page \pageref{fig:SpreadsheetIntentions}.
 
 \begin{figure}[h]
