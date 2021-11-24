@@ -33,8 +33,7 @@ First, Drools asserts facts in the working memory.
 The working memory contains the current state of the facts, which triggers the inference engine.
 Using the Rete-OO algorithm, the pattern matcher will examine both the working memory and a representation of the rules from the production memory to determine which rules are true.
 Drools will then put the rules that match on the agenda.
-It can be the case that many rules are concurrently true for the same fact assertion.
-These rules conflict.
+It can be the case that many rules are concurrently true for the same fact assertion - these rules conflict.
 A conflict resolution strategy will decide which rule will fire in which order from the agenda.
 The first rule on the agenda will fire.
 If the rule modifies, retracts, or asserts a fact, then the inference loop begins again.
@@ -47,7 +46,7 @@ We have inferred our conclusion if either a rule specifies to halt or no matchin
     \label{fig:Drools_inference_loop}
 \end{figure}
 
-The component we will be focussing on in is the rules.
+The component we will be focussing on is the rules.
 A rules file containing the rules is a text file, typically with a .drl extension.
 The rules do not change during execution.
 Drools stores the rules in the production memory.
@@ -57,7 +56,7 @@ We will ignore the rule file components \texttt{package}, \texttt{import}, \text
 We will now examine the anatomy of a rule, as shown in figure \ref{fig:Drools_Rule_Breakdown} on the following page.
 A rule consists of 3 parts: attributes, conditions, and consequences.
 Attributes are optional hints to the inference engine as to how to examine a rule.
-The conditional, ``\texttt{when}'', or left-hand side (LHS) of the rule statement is a block of conditions which are subject to logical conjunctions. 
+The conditional, ``\texttt{when}'', or left-hand side (LHS) of the rule statement is a block of conditions subject to logical conjunctions. 
 If true, then the rule is placed on the agenda.
 The actions, consequences, ``\texttt{then}'', or right-hand side (RHS) of the rule statement contains actions to be executed when the rule is selected.
 

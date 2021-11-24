@@ -3,37 +3,37 @@
 
 Even though Drools is a relatively small DSL, we did not need to implement all the functionality to answer our questions.
 For this reason, we first created a pilot study language to assess the possibilities of projectional solutions to our question.
-We finally created a larger, but incomplete versions of Drools, in which we could create projections that would be recognisable to experienced Drools users.
+We finally created a larger but incomplete version of Drools, in which we could create projections that would be recognisable to experienced Drools users.
 
 \subsection{Really Simple Drools Language}
-In our pilot study language we created a simple approximation of the Drools language with which to create our first projections.
+In our pilot study, we created a simple approximation of the Drools language to create our first projections. 
 We called this language ``Really Simple Drools'' (RSD).
 We describe this pilot study language here, as it contains many of the projections that we considered for our research question.
 
-\paragraph{\texttt{File}} RSD, like Drools itself, has a \texttt{File} as its root node.
-The \texttt{File} only contains \texttt{FactDeclaration} nodes and \texttt{Rule} nodes.
+\paragraph{\texttt{File}} RSD, like Drools itself, has a \texttt{File} Concept as its root node.
+The \texttt{File} Concept only contains \texttt{FactDeclaration} nodes and \texttt{Rule} nodes.
 
-\paragraph{\texttt{FactDeclaration} and \texttt{FactProperty}} In Drools, a \texttt{FactDeclaration} represents a Java Bean with its child properties, which can also have their child properties, ad infinitum.
+\paragraph{\texttt{FactDeclaration} and \texttt{FactProperty}} In Drools, a \texttt{FactDeclaration} Concept represents a Java Bean with its child properties, which can also have their child properties, ad infinitum.
 In RSD, we limited properties to allow only boolean values.
 We decided this because fact selection is a predicate and thus can only return a boolean.
-By only allowing booleans, we also simplify the operations allowed on the \texttt{FactProperty}.
+By only allowing boolean values, we also simplify the operations allowed on a \texttt{FactProperty} node.
 
-\paragraph{\texttt{Rule}} We only simulated the Left-hand side, or the ``\texttt{when}'' conditions, of a Drools Rule for the \texttt{Rule} Concept.
+\paragraph{\texttt{Rule}} We only simulated the Left-hand side, or the ``when'' conditions, of a Drools Rule for the \texttt{Rule} Concept.
 We believed this would provide us with compelling options for projections and did not want to overcomplicate this pilot project.
 
 An RSD Rule consists of a collection of conditions.
-Should all those conditions return \texttt{true}, then the \texttt{Rule} is selected.
+Should all those conditions return ``true'', then the \texttt{Rule} node is selected.
 
-\paragraph{\texttt{AbstractCondition}} A condition operates on one or more \texttt{FactSelectors}.
-There are four condition types \linebreak\texttt{ExistsCondition}, \texttt{NotCondition}, \texttt{AndCondition}, and \texttt{OrCondition}.
-\texttt{ExistsCondition} and \texttt{NotCondition} are unary conditions and evaluate one \texttt{FactSelector}.
-\texttt{AndCondition} and \texttt{OrCondition} conditions evaluate two \linebreak\texttt{FactSelectors}.
+\paragraph{\texttt{AbstractCondition}} A condition operates on one or more \texttt{FactSelectors} nodes.
+There are four condition Concepts - \texttt{ExistsCondition}, \texttt{NotCondition}, \texttt{AndCondition}, and \texttt{OrCondition}.
+The \texttt{ExistsCondition} and \texttt{NotCondition} Concepts are unary conditions and evaluate one \texttt{FactSelector} node.
+The \texttt{AndCondition} and \texttt{OrCondition} Concepts evaluate two \texttt{FactSelector} nodes.
 
-\paragraph{\texttt{FactSelector}} A \texttt{FactSelector} consists of a reference to a \texttt{FactDeclaration} and a collection of \linebreak\texttt{AbstractPredicates}.
+\paragraph{\texttt{FactSelector}} A \texttt{FactSelector} Concept consists of a reference to a \texttt{FactDeclaration} node and a collection of \texttt{AbstractPredicate} nodes.
 If the fact exists and all the predicates evaluate to \texttt{true}, then the \texttt{FactSelector} evaluates to \texttt{true}.
 
-\paragraph{\texttt{AbstractPredicate}} The predicate is an operation on a \texttt{FactProperty}, to which the Concept has a reference.
-Because \texttt{FactProperty} represents a boolean value, the only predicate operations are ``And'', ``Or'', ``Is'', and ``Not''.
+\paragraph{\texttt{AbstractPredicate}} The predicate is an operation on a \texttt{FactProperty} node, to which the Concept has a reference.
+Because \texttt{FactProperty} nodes represent a boolean value, the only predicate operations are ``And'', ``Or'', ``Is'', and ``Not''.
 
 Figure \ref{fig:RSDDiagram} shows the Concept hierarch for this straightforward implementation.
 
@@ -59,27 +59,27 @@ The one difference is that the references in the concept hierarchy diagram, repr
 \end{figure}
 
 The definition of the editors are shown in figure \ref{fig:RSDEditors} on the following page.
-The first editor describes the \texttt{File}. 
+The first editor describes the \texttt{File} Concept. 
 It show that the first line will have the text ``rule file name: '', followed by the name of the file.
-Following and empty line, there is a vertical listing of the \texttt{FactDeclaration} nodes stored in the ``facts'' child of the \texttt{File}.
+Following and empty line, there is a vertical listing of the \texttt{FactDeclaration} nodes stored in the ``facts'' child of the \texttt{File} node.
 Thereafter is another empty line followed by a vertical listing of the \text{Rule} nodes stored in the ``rules'' child.
 
 The next editor shown is the editor of the \texttt{FactDeclaration} Concept.
-Each \texttt{FactDeclaration} will be shown on a single line starting with the word ``fact'' followed by its name, then, between parentheses, a horizontal, comma separated list of its \texttt{FactProperty} property children.
+Each \texttt{FactDeclaration} node will be shown on a single line starting with the word ``fact'' followed by its name, then, between parentheses, a horizontal, comma separated list of its child \texttt{FactProperty} nodes.
 
 The subsequent editor describes the \texttt{Rule} Concept. 
-The layout it describes is similar to that of a Drools rule, with the first line being ``rule'' followed by the rule name in inverted commas.
-There is a hardcoded indented ``when'', followed by a further indented vertical list of the condition children.
+The layout it describes is similar to that of a Drools rule, with the first line being ``rule'' followed by the \texttt{Rule} node name in inverted commas.
+There is a hardcoded indented ``when'', followed by a further indented vertical list of the condition children, which are \texttt{AbstractCondition} nodes.
 This is then followed, at appropriate levels of indentation, by three hard coded lines of ``then'', a comment as a place holder for the right-hand side of a normal Drools rule, and ``end''.
 
-Next, we show one of the \texttt{AbstractCondition} Concepts, in the case the \texttt{AndCondition}.
-This displays the two \texttt{FactSelector} children separated by ``and'' and surrounded by parentheses.
+Next, we show one of the \texttt{AbstractCondition} Concepts, in the case the \texttt{AndCondition} Concept.
+This displays the two \texttt{FactSelector} child nodes separated by ``and'' and surrounded by parentheses.
 
-The editor for the \texttt{FactSelector} Concept displays the fact child, which is a \texttt{FactDeclarationSmartRef}, for which we do not show it's editor here, but in this case shows the name of the \texttt{FactSelector} that it is referencing.
+The editor for the \texttt{FactSelector} Concept displays the fact child, which is a \texttt{FactDeclarationSmartRef} node, for which we do not show it's editor here, but in this case shows the name of the \texttt{FactSelector} node that it is referencing.
 This is then followed by a horizontal, comma separated list of the \texttt{AbstractPredicate} nodes stored in the predicate's children.
 
-The final editor we show is an example of an \texttt{AbstractPredicate}, specifically an \texttt{OrPredicate}, which shows the two properties separated by a ``||'' symbol.
-The properties are \texttt{FactPropertySmartRef} nodes, and they will just display the name of the \texttt{FactProperty} to which they point.
+The final editor we show is an example of an \texttt{AbstractPredicate} Concept, specifically an \texttt{OrPredicate} Concept, which shows the two properties separated by a ``||'' symbol.
+The properties are \texttt{FactPropertySmartRef} nodes, and they will just display the name of the \texttt{FactProperty} node to which they point.
 
 \begin{figure}
     \centering
@@ -91,18 +91,18 @@ The properties are \texttt{FactPropertySmartRef} nodes, and they will just displ
 \newpage
 
 The result of the editors can be seen in figure \ref{fig:RSDProgram}, which shows an example of our default Drools-like text projection. 
-This projection is of the root AST a \texttt{File} node called ``DossierSleutelbos''.
-It has 4 \texttt{FactDeclaration} children and 3 \texttt{Rule} children.
-The \texttt{FactDeclaration} nodes called ``Dossier'', ``Episode'', and ``Milestone'' each have 2 child \texttt{FactProperty} children, whilst ``DroolsContext'' has none.
+This projection is of the root AST of a \texttt{File} node called ``DossierSleutelbos''.
+It has 4 \texttt{FactDeclaration} child nodes and 3 \texttt{Rule} child nodes.
+The \texttt{FactDeclaration} nodes called ``Dossier'', ``Episode'', and ``Milestone'' each have 2 child \texttt{FactProperty} nodes, whilst ``DroolsContext'' has none.
 
 The \texttt{Rule} node ``0'' has 2 \texttt{ExistsCondition} nodes containing \texttt{FactSelector} node children with \linebreak\texttt{FactDeclarationSmartRef} nodes referencing the \texttt{FactDeclaration} nodes ``Dossier'' and ``DroolsContext''.
 
-The \texttt{Rule} node ``[WVGGZ/CM] start CM Procedure'' points to the ``Dossier'' \texttt{FactDeclaration}, as well as having 2 predicates.
-The first predicate is an \texttt{IsPredicate} with a \texttt{FactPropertySmartRef} node pointing to the ``isWvGGZ'' \texttt{FactProperty}.
-The other predicate is a \texttt{NotPredicate} node pointing to the ``hasRunningEpisode'' \texttt{FactProperty}.
+The \texttt{Rule} node ``[WVGGZ/CM] start CM Procedure'' points to the ``Dossier'' \texttt{FactDeclaration} node, as well as having 2 predicates.
+The first predicate is an \texttt{IsPredicate} node with a \texttt{FactPropertySmartRef} node pointing to the ``isWvGGZ'' \texttt{FactProperty} node.
+The other predicate is a \texttt{NotPredicate} node pointing to the ``hasRunningEpisode'' \texttt{FactProperty} node.
 
 The final \texttt{Rule} node has a complex nesting of \texttt{AbstractCondition} nodes.
-The first is an \texttt{OrCondition} which contains an \texttt{ExistsCondition} in its left-hand side and an \texttt{AndCondition} on the right.
+The first is an \texttt{OrCondition} node which contains an \texttt{ExistsCondition} node in its left-hand side and an \texttt{AndCondition} node on the right.
 The right-hand side node contains an \texttt{ExistsCondition} node on both the left and right sides. 
 
 \begin{figure}[h]
@@ -126,17 +126,17 @@ As this becomes tedious, we added some editing aids, including substitute menus,
     \label{fig:RSDSubstituteMenu}
 \end{figure}
 
-This image shows that we originally had to select an \texttt{ExistsCondition} Concept and select the \linebreak\texttt{FactDeclaration} for the Condition.
-After adding the substitute menu, we could immediately select the \texttt{FactDeclaration} we wanted, and the \texttt{ExistsCondition} would automatically wrap it with an \texttt{ExistsCondition} node.
+This image shows that we originally had to select an \texttt{ExistsCondition} Concept and select the \linebreak\texttt{FactDeclaration} node for the Condition.
+After adding the substitute menu, we could immediately select the \texttt{FactDeclaration} node we wanted, and it would automatically wrap it with an \texttt{ExistsCondition} node.
 
-The code to do this is shown in the section "wrap substitute menu".
-What is does is when it encounters the possibility to input an \texttt{ExistsCondition} in a menu, it replaces it with the default menu for the \linebreak\texttt{FactDeclarationSmartRef}.
+The code to do this is shown in the section ``wrap substitute menu''.
+What is does is when it encounters the possibility to input an \texttt{ExistsCondition} node in a menu, it replaces it with the default menu for the \linebreak\texttt{FactDeclarationSmartRef} Concept.
 MPS handles SmartRefs in menus by showing all the possible reference items available.
-When the user picks the reference item this code will then create a new \texttt{ExistsCondition} with a new \texttt{FactSelector} containing the chosen \texttt{FactDeclarationSmartRef}, to insert at that point in the AST.
-This saves several keystrokes, as otherwise we manually first had to insert a \texttt{ExistsCondition} followed by a \texttt{FactSelector} before filling the fact child.
+When the user picks the reference item this code will then create a new \texttt{ExistsCondition} node with a new \texttt{FactSelector} node containing the chosen \texttt{FactDeclarationSmartRef} node, to insert at that point in the AST.
+This saves several keystrokes, as otherwise we manually first had to insert a \texttt{ExistsCondition} node followed by a \texttt{FactSelector} node before filling the \texttt{FactDeclaration} child.
 
-Finally, we added a Constraint to scope the \texttt{FactProperties} in \texttt{Predicates} to the \texttt{FactDeclarationSmartRef} chosen in the \texttt{FactSelector}.
-This scope Constraint made it much easier to select \texttt{FactProperties} in the \linebreak\texttt{Predicates}, as indicated in figure \ref{fig:RSDConstraint}.
+Finally, we added a Constraint to scope the \texttt{FactProperty} references in \texttt{Predicate} Concept to the \texttt{FactDeclaration} reference chosen in the \texttt{FactSelector} node.
+This scope Constraint made it much easier to select \texttt{FactProperty} nodes in a \linebreak\texttt{Predicate} node, as indicated in figure \ref{fig:RSDConstraint}.
 
 \begin{figure}
     \centering
@@ -145,11 +145,11 @@ This scope Constraint made it much easier to select \texttt{FactProperties} in t
     \label{fig:RSDConstraint}
 \end{figure}
 
-The figure shows that before adding the scoping constraint, it showed a list with dozens of potential \texttt{FactProperties}, that represented all the \linebreak\texttt{FactProperties} in the model.
-After adding the constraint, it only shows the two \texttt{FactProperties} associated with the \texttt{FactDeclaration} referenced in the \texttt{FactSelector}.
+The figure shows that before adding the scoping constraint, it showed a list with dozens of potential \texttt{FactProperty} nodes, that represented all the \linebreak\texttt{FactProperty} nodes in the model.
+After adding the constraint, it only shows the two \texttt{FactProperty} references associated with the \texttt{FactDeclaration} referenced in the \texttt{FactSelector}.
 This is achieved in the code in the scope method.
-This first finds the relevant \texttt{FactDeclaration} in the from the \texttt{FactSelector} we are at in our current location in the AST.
-from this it returns a list of properties as a \texttt{Scope}.
+This first finds the relevant \texttt{FactDeclaration} node from the \texttt{FactSelector} node we are at in the AST.
+From this it returns a list of properties as a \texttt{Scope}.
 
 Thus, we have described the entire implementation of the Really Simple Drools Language.
 
@@ -183,10 +183,10 @@ We show the preliminary design we achieved using this method in figure \ref{fig:
 Later, there were some places we diverged a little from our design.
 We merged and decoupled our Concepts when we thought it would simplify the code.
 
-\paragraph{\texttt{RuleFile}} The \texttt{RuleFile} level statements contain \texttt{Facts}, \texttt{Globals} and \texttt{Rules}.
+\paragraph{\texttt{RuleFile}} The \texttt{RuleFile} level statements contain \texttt{FactDeclaration} nodes, \texttt{Global} nodes and \texttt{Rule} nodes.
 It also contains semantically unimportant empty lines.
 
-\paragraph{Fact} A \texttt{Fact} has a \texttt{type} property.
+\paragraph{FactDeclaration} A \texttt{FactDeclaration} has a \texttt{type} property.
 We implement the \texttt{type} property using a \texttt{ClassifierType} from the MPS BaseLanguage.
 This implementation allows the \texttt{RuleFile} to refer to BaseLanguage classes implemented in the same solution and from Java JAR files.
 
@@ -194,10 +194,10 @@ We created a smart reference Concept for this to take advantage of built-in MPS 
 A smart reference is a node with a single reference of 1:1 cardinality.
 The editor builders know how to select which nodes are in scope to display to the developer if one uses this object rather than directly referencing the node it refers to.
 
-\paragraph{FactProperty} In RSD, we had \texttt{FactProperties} as children of \texttt{Facts}.
-Now that our \texttt{Facts} refer to actual classes (\texttt{ClassifierType}), our \texttt{FactProperties} should reflect this.
+\paragraph{FactProperty} In RSD, we had \texttt{FactProperty} nodes as children of \texttt{Facts}.
+Now that our \texttt{FactDeclaration} nodes refer to actual classes (\texttt{ClassifierType}), our \texttt{FactProperty} Concept should reflect this.
 To do this, the Concept itself only references an \linebreak\texttt{InstanceMethodDeclaration}, the MPS BaseLanguage's definition of a method signature.
-We scoped the Concept to only show properties associated with a selected \texttt{Fact}.
+We scoped the Concept to only show properties associated with a selected \texttt{FactDeclaration}.
 
 Drools interacts with Java objects as if they are Java Beans.
 To simulate this, we limited the scope of the properties to just getters, i.e., methods that start with ``get'' or ``is'', and used a Behavior to make sure they are displayed without the ``get'' or ``is'' prefix.
@@ -208,28 +208,28 @@ We would have then had to limit the functionality of these items from the BaseLa
 Whilst this allows the functionality we wished for, we feel our construction offers decoupling and that, we think, correctly reflects the structure of the language.
 Perhaps if we were to redo this, we would have taken the other approach.
 
-\paragraph{\texttt{Global}} Our \texttt{Globals} are very simple.
+\paragraph{\texttt{Global}} Our \texttt{Global} Concepts are very simple.
 They have a \texttt{name} and a BaseLanguage \texttt{Type}.
-We added a smart reference so that \texttt{Rules} can easily use them.
+We added a smart reference so that \texttt{Rule}s can easily use them.
 The reference extended \texttt{Expression} from the BaseLanguage.
 This extension is so that we could use it in the Java code of the Right-hand side.
 
-\paragraph{\texttt{Rule}} Our \texttt{Rules} have three children: an \texttt{AttributeCollection}, a Right-hand side and a list of Conditions that make up the Left-hand side.
+\paragraph{\texttt{Rule}} Our \texttt{Rule}s have three children: an \texttt{AttributeCollection}, a Right-hand side and a list of Conditions that make up the Left-hand side.
 We created a component to describe the \texttt{Rule} editor for reuse, as we imagined that we would wrap this in other projections.
 
-\paragraph{\texttt{RuleVariables}} The \texttt{Fact} of a \texttt{FactSelector} and the \texttt{FactProperty} of a \texttt{FieldConstraint} are bound to \linebreak\texttt{RuleVariables}.
+\paragraph{\texttt{RuleVariables}} The \texttt{FactDeclaration} reference of a \texttt{FactSelector} and the \texttt{FactProperty} reference of a \texttt{FieldConstraint} are bound to \texttt{RuleVariable} nodes.
 \texttt{RuleVariables} are scoped to a \texttt{Rule}.
 A \texttt{RuleVariable} has only a \texttt{name} and a \texttt{type}.
-We also create a smart reference for it so that it can be used elsewhere within the rule.
+We also create a smart reference for it so that it can be used elsewhere within the \texttt{Rule}.
 Like the \texttt{Global}, it extends BaseLanguage's \texttt{Expression} to be available in the Java code of the Right-hand side.
 
-\paragraph{Right-hand side} The right-hand side of the rule, for the most part, is Java code.
-To implement this, we made the right-hand side of the rule a single \texttt{StatementList}.
+\paragraph{Right-hand side} The right-hand side of the \texttt{Rule}, for the most part, is Java code.
+To implement this, we made the right-hand side of the \texttt{Rule} a single \texttt{StatementList}.
 A \texttt{StatementList} is a list of \texttt{Statements}, both from the BaseLanguage.
 We chose these because they keep track of, amongst other things, scope.
 
 There are some non-Java, Drools specific items that are available to the right-hand side.
-Items that had to be useable within the right-hand side were \texttt{Globals}, \texttt{RuleVariables} and Drools specific functions.
+Items that had to be useable within the right-hand side were \texttt{Global} references, \texttt{RuleVariable} references and Drools specific functions.
 These all extend \texttt{Expression} from the BaseLanguage.
 This extension allows seamless integration with the Java code.
 
@@ -255,12 +255,12 @@ We have also highlighted the Drools specific methods placed in the code, in this
     \label{fig:Rule}
 \end{figure}
 
-\paragraph{\texttt{AttributeCollection}} the \texttt{AttributeCollection} is a container to hold all the attributes that apply to a rule.
+\paragraph{\texttt{AttributeCollection}} the \texttt{AttributeCollection} is a container to hold all the attributes that apply to a \texttt{Rule}.
 Initially, we have only implemented the \texttt{NoLoopAttribute} and \texttt{SalienceAttribute}.
 A developer activates these attributes using two intentions we added to the \texttt{Rule} Concept.
-On line 2 in figure \ref{fig:Rule}, we can see an example of the \texttt{SalienceAttribute} added to a rule on line 2.
+On line 2 in figure \ref{fig:Rule}, we can see an example of the \texttt{SalienceAttribute} added to a \texttt{Rule} on line 2.
 \footnote{In figure \ref{fig:Rule}, we added line numbers to this figure to make it easier to talk about.
-The keywords \texttt{rule} on line 1, \texttt{when} on line 3, \texttt{then} on line 6, and \texttt{end} on line 8 have no meaning in the abstract syntax.
+The keywords ``rule'' on line 1, ``when'' on line 3, ``then'' on line 6, and ``end'' on line 8 have no meaning in the abstract syntax.
 We added them to give the developer the same look and feel as a standard Drools file.}
 
 \paragraph{Left-hand side} This is a collection of conditions.
@@ -278,17 +278,17 @@ Line 5 shows an \texttt{OrCondition} containing an \texttt{ExistsCondition} and 
 The default editor, through an intention, can make the \linebreak\texttt{ExistsCondition} explicit with an \texttt{exists} keyword.
 However, the standard practice with Drools developers is to make this implicit, so this is how we show it here.
 
-\paragraph{\texttt{FactSelector}} This always has a reference to a \texttt{Fact}.
-These \texttt{Facts} are \texttt{Program} in line 4 of figure \ref{fig:Rule} and \texttt{Student} and \texttt{Result} from line 5.
+\paragraph{\texttt{FactSelector}} This always has a reference to a \texttt{FactDeclaration}.
+These \texttt{Fact} nodes are named ``Program'' in line 4 of figure \ref{fig:Rule} and ``Student'' and ``Result'' from line 5.
 
 Optionally, the \texttt{FactSelector} can be bound to a variable.
-In figure \ref{fig:Rule}, line 5, the \texttt{FactSelector} referencing the \texttt{Student} \texttt{Fact} is bound to the \texttt{\$s} \texttt{RuleVariable}.
+In figure \ref{fig:Rule}, line 5, the \texttt{FactSelector} referencing the \texttt{Student} \texttt{FactDeclaration} reference is bound to the \texttt{\$s} \texttt{RuleVariable}.
 
-The \texttt{FactSelector} also contains a list of constraints on \texttt{FactProperties}, all of which must return true for the \texttt{FactSelector} to return \texttt{true}.
+The \texttt{FactSelector} also contains a list of constraints on \texttt{FactProperty} references, all of which must return true for the \texttt{FactSelector} to return \texttt{true}.
 
 \paragraph{Constraints} We have three types of constraints.
 \texttt{AndConstraint} and \texttt{OrConstraint} contain other constraints.
-The \texttt{FieldConstraints} places restrictions on \texttt{FactProperties}.
+The \texttt{FieldConstraints} places restrictions on \texttt{FactProperty} references.
 
 \paragraph{FieldConstraints} A \texttt{FieldConstraint} refers to a \texttt{FactProperty} and can be bound to a variable.
 It also has a restriction applied to that \texttt{FactProperty}.
@@ -301,7 +301,7 @@ There are several types of restrictions and several types of values that they ca
 \begin{itemize}    
     \setlength\itemsep{0em}
     \item \texttt{LiteralRestrictions}: These are \texttt{Integer}, \texttt{Float}, \texttt{String}, \texttt{DateTime} and \texttt{Boolean}.
-    \item \texttt{VariableRestrictions}: These can be \texttt{Globals}, \texttt{RuleVariables} referring to \texttt{Facts} from the \texttt{FactSelector}, or \texttt{RuleVariables} from other \texttt{FieldConstraints}.
+    \item \texttt{VariableRestrictions}: These can be \texttt{Global} references, \texttt{RuleVariable} references referring to \texttt{FactDeclaration} references from the \texttt{FactSelector}, or \texttt{RuleVariables} from other \texttt{FieldConstraints}.
     \item \texttt{ReturnValue}: This compares to anything expressed as an \texttt{Expression}, which includes referring to constants or values behind qualified identifiers.
 \end{itemize}
 
