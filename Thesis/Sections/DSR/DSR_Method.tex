@@ -6,7 +6,7 @@ For this reason, we first created a pilot study language to assess the possibili
 We finally created a larger but incomplete version of Drools, in which we could create projections that would be recognisable to experienced Drools users.
 
 \subsection{Really Simple Drools Language}
-In our pilot study, we created a simple approximation of the Drools language to create our first projections. 
+Our pilot study created a simple approximation of the Drools language to create our first projections. 
 We called this language ``Really Simple Drools'' (RSD).
 We describe this pilot study language here, as it contains many of the projections that we considered for our research question.
 
@@ -58,25 +58,26 @@ The one difference is that the references in the concept hierarchy diagram, repr
     \label{fig:RSDStructure}
 \end{figure}
 
-The definition of the editors are shown in figure \ref{fig:RSDEditors} on the following page.
+We show the definitions of the editors in figure \ref{fig:RSDEditors} on the following page. 
 The first editor describes the \texttt{File} Concept. 
-It show that the first line will have the text ``rule file name: '', followed by the name of the file.
-Following and empty line, there is a vertical listing of the \texttt{FactDeclaration} nodes stored in the ``facts'' child of the \texttt{File} node.
+It shows that the first line will have the text ``rule file name: '' followed by the file's name.
+Following an empty line, there is a vertical listing of the \texttt{FactDeclaration} nodes stored in the ``facts'' child of the \texttt{File} node.
 Thereafter is another empty line followed by a vertical listing of the \text{Rule} nodes stored in the ``rules'' child.
 
 The next editor shown is the editor of the \texttt{FactDeclaration} Concept.
-Each \texttt{FactDeclaration} node will be shown on a single line starting with the word ``fact'' followed by its name, then, between parentheses, a horizontal, comma separated list of its child \texttt{FactProperty} nodes.
+Each \texttt{FactDeclaration} node will be shown on a single line starting with the word ``fact'' followed by its name.
+Then, between parentheses, a horizontal, comma-separated list of its child \texttt{FactProperty} nodes.
 
 The subsequent editor describes the \texttt{Rule} Concept. 
 The layout it describes is similar to that of a Drools rule, with the first line being ``rule'' followed by the \texttt{Rule} node name in inverted commas.
 There is a hardcoded indented ``when'', followed by a further indented vertical list of the condition children, which are \texttt{AbstractCondition} nodes.
-This is then followed, at appropriate levels of indentation, by three hard coded lines of ``then'', a comment as a place holder for the right-hand side of a normal Drools rule, and ``end''.
+At appropriate indentation levels, the conditions are followed by three hardcoded lines of ``then'', a comment as a place holder for the right-hand side of a standard Drools rule, and ``end''.
 
-Next, we show one of the \texttt{AbstractCondition} Concepts, in the case the \texttt{AndCondition} Concept.
-This displays the two \texttt{FactSelector} child nodes separated by ``and'' and surrounded by parentheses.
+Next, we show one of the \texttt{AbstractCondition} Concepts, in this case, the \texttt{AndCondition} Concept.
+This Concept editor displays the two \texttt{FactSelector} child nodes separated by ``and'' and surrounded by parentheses.
 
-The editor for the \texttt{FactSelector} Concept displays the fact child, which is a \texttt{FactDeclarationSmartRef} node, for which we do not show it's editor here, but in this case shows the name of the \texttt{FactSelector} node that it is referencing.
-This is then followed by a horizontal, comma separated list of the \texttt{AbstractPredicate} nodes stored in the predicate's children.
+The editor for the \texttt{FactSelector} Concept displays the fact child, which is a \texttt{FactDeclarationSmartRef} node, for which we do not show its editor here, but in this case, shows the name of the \texttt{FactSelector} node that it is referencing.
+The name is followed by a horizontal, comma-separated list of the \texttt{AbstractPredicate} nodes stored in the predicate's children, encased in parentheses.
 
 The final editor we show is an example of an \texttt{AbstractPredicate} Concept, specifically an \texttt{OrPredicate} Concept, which shows the two properties separated by a ``||'' symbol.
 The properties are \texttt{FactPropertySmartRef} nodes, and they will just display the name of the \texttt{FactProperty} node to which they point.
@@ -90,19 +91,19 @@ The properties are \texttt{FactPropertySmartRef} nodes, and they will just displ
 
 \newpage
 
-The result of the editors can be seen in figure \ref{fig:RSDProgram}, which shows an example of our default Drools-like text projection. 
+We show the result of the editors in figure \ref{fig:RSDProgram}, which shows an example of our default Drools-like text projection. 
 This projection is of the root AST of a \texttt{File} node called ``DossierSleutelbos''.
 It has 4 \texttt{FactDeclaration} child nodes and 3 \texttt{Rule} child nodes.
-The \texttt{FactDeclaration} nodes called ``Dossier'', ``Episode'', and ``Milestone'' each have 2 child \texttt{FactProperty} nodes, whilst ``DroolsContext'' has none.
+The \texttt{FactDeclaration} nodes called ``Dossier'', ``Episode'', and ``Milestone'' each have two child \texttt{FactProperty} nodes, whilst ``DroolsContext'' has none.
 
 The \texttt{Rule} node ``0'' has 2 \texttt{ExistsCondition} nodes containing \texttt{FactSelector} node children with \texttt{FactDeclarationSmartRef} nodes referencing the \texttt{FactDeclaration} nodes ``Dossier'' and ``DroolsContext''.
 
-The \texttt{Rule} node ``[WVGGZ/CM] start CM Procedure'' points to the ``Dossier'' \texttt{FactDeclaration} node, as well as having 2 predicates.
+The \texttt{Rule} node ``[WVGGZ/CM] start CM Procedure'' points to the ``Dossier'' \texttt{FactDeclaration} node, as well as having two predicates.
 The first predicate is an \texttt{IsPredicate} node with a \texttt{FactPropertySmartRef} node pointing to the ``isWvGGZ'' \texttt{FactProperty} node.
 The other predicate is a \texttt{NotPredicate} node pointing to the ``hasRunningEpisode'' \texttt{FactProperty} node.
 
 The final \texttt{Rule} node has a complex nesting of \texttt{AbstractCondition} nodes.
-The first is an \texttt{OrCondition} node which contains an \texttt{ExistsCondition} node in its left-hand side and an \texttt{AndCondition} node on the right.
+The first is an \texttt{OrCondition} node containing an \texttt{ExistsCondition} node on its left-hand side and an \texttt{AndCondition} node on the right.
 The right-hand side node contains an \texttt{ExistsCondition} node on both the left and right sides. 
 
 \begin{figure}[h]
@@ -129,11 +130,11 @@ As this becomes tedious, we added some editing aids, including substitute menus,
 This image shows that we originally had to select an \texttt{ExistsCondition} Concept and select the \texttt{FactDeclaration} node for the Condition.
 After adding the substitute menu, we could immediately select the \texttt{FactDeclaration} node we wanted, and it would automatically wrap it with an \texttt{ExistsCondition} node.
 
-The code to do this is shown in the section ``wrap substitute menu''.
-What is does is when it encounters the possibility to input an \texttt{ExistsCondition} node in a menu, it replaces it with the default menu for the \texttt{FactDeclarationSmartRef} Concept.
+We show the code to do this in the section ``wrap substitute menu''.
+What it does is when it encounters the possibility to input an \texttt{ExistsCondition} node in a menu, it replaces it with the default menu for the \texttt{FactDeclarationSmartRef} Concept.
 MPS handles SmartRefs in menus by showing all the possible reference items available.
-When the user picks the reference item this code will then create a new \texttt{ExistsCondition} node with a new \texttt{FactSelector} node containing the chosen \texttt{FactDeclarationSmartRef} node, to insert at that point in the AST.
-This saves several keystrokes, as otherwise we manually first had to insert a \texttt{ExistsCondition} node followed by a \texttt{FactSelector} node before filling the \texttt{FactDeclaration} child.
+When the user picks the reference item, this code will create a new \texttt{ExistsCondition} node with a new \texttt{FactSelector} node containing the chosen \texttt{FactDeclarationSmartRef} node to insert at that point in the AST.
+This substitute menu saves several keystrokes, as otherwise, we manually first had to insert an \texttt{ExistsCondition} node followed by a \texttt{FactSelector} node before filling the \texttt{FactDeclaration} child.
 
 Finally, we added a Constraint to scope the \texttt{FactProperty} references in \texttt{Predicate} Concept to the \texttt{FactDeclaration} reference chosen in the \texttt{FactSelector} node.
 This scope Constraint made it much easier to select \texttt{FactProperty} nodes in a \texttt{Predicate} node, as indicated in figure \ref{fig:RSDConstraint}.
@@ -145,11 +146,11 @@ This scope Constraint made it much easier to select \texttt{FactProperty} nodes 
     \label{fig:RSDConstraint}
 \end{figure}
 
-The figure shows that before adding the scoping constraint, it showed a list with dozens of potential \texttt{FactProperty} nodes, that represented all the \texttt{FactProperty} nodes in the model.
+The figure shows that before adding the scoping constraint, it showed a list with dozens of potential \texttt{FactProperty} nodes representing all the \texttt{FactProperty} nodes in the model.
 After adding the constraint, it only shows the two \texttt{FactProperty} references associated with the \texttt{FactDeclaration} referenced in the \texttt{FactSelector}.
-This is achieved in the code in the scope method.
-This first finds the relevant \texttt{FactDeclaration} node from the \texttt{FactSelector} node we are at in the AST.
-From this it returns a list of properties as a \texttt{Scope}.
+We achieve this scoping in the code in the scope method.
+The code first finds the relevant \texttt{FactDeclaration} node from the \texttt{FactSelector} node we are at in the AST.
+From this, it returns a list of properties as a \texttt{Scope}.
 
 Thus, we have described the entire implementation of the Really Simple Drools Language.
 
