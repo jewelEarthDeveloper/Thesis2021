@@ -29,7 +29,7 @@ We did not test whether this improved understanding.
 
 \subsubsection{Summary Projection}
 
-Our next projection allows developers to have a quick overview of the \texttt{Rule} nodes and complexity of those nodes.
+Our next projection allows developers to have a quick overview of the \texttt{Rule} nodes and the complexity of those nodes.
 Figure \ref{fig:summaryProjection} shows that the developers can get an overview of both the number of \texttt{Rule} nodes and the number of \texttt{FactDeclaration} references in each of the \texttt{Rule} nodes.
 
 \begin{figure}
@@ -55,13 +55,13 @@ Because of the independent nature of the rules, filtering lends itself to the bu
 The semantic meaning of the order of business rules means we did not find a good use case for sorting rules.
 So, we decided to implement a filtering projection.
 
-Whilst use of filtering occurs in other places in the coding pipeline, such as deciding on what code completion to present\cite{hou2010towards} and version control visualisation\cite{yoon2013visualization}, we were unable to find any research on applying filtering directly to code files.
+Whilst filtering occurs in other places in the coding pipeline, such as deciding on what code completion to present\cite{hou2010towards} and version control visualisation\cite{yoon2013visualization}, we were unable to find any research on applying filtering directly to code files.
 Consequently, we think what we present here is an original idea.
 
 \texttt{Rule} nodes that use the same \texttt{FactDeclaration} references or \texttt{FactProperty} references are likely to be related.
 Thus, these seemed the obvious items to filter.
 We created a projection where if the developer filtered by a \texttt{FactDeclaration} or a \texttt{FactProperty}, the projection would filter out all \texttt{Rule} nodes that did not contain references to the nodes.
-Once the \texttt{Rule} nodes were filtered, the projection only shows \texttt{FactDeclaration} nodes and \texttt{FactProperty} nodes referenced by those \texttt{Rule} nodes.
+Once the \texttt{Rule} nodes were filtered, the projection only shows \texttt{FactDeclaration} nodes and \texttt{FactProperty} nodes that are referenced by those \texttt{Rule} nodes.
 
 In our implementation, shown in figure \ref{fig:filteringProjection} on the following page, we show three places where we use intentions to filter the code.
 The first is an intention associated with a \texttt{FactDeclaration} node.
@@ -103,7 +103,7 @@ Creating a table was our first non-parsable projection.
 We choose the table projection based on the observations of Miller\cite{miller1956magical} about the number of items people can retain in their memory.
 This observation leads us to conclude that the fewer essential items that are off the screen and, therefore, in the developers' memory, the better.
 
-Figure \ref{fig:tableProjection1} on the next page, shows our rudimentary first table.
+Figure \ref{fig:tableProjection1} on the next page shows our rudimentary first table.
 This simple table has only the ``name'' property and the ``when'' children of the \texttt{Rule} nodes in the \texttt{File} node.
 We implemented this projection using the tables extension in the MPS-Extension plug-in, created by Sascha Lißon.
 
@@ -117,23 +117,24 @@ We implemented this projection using the tables extension in the MPS-Extension p
 \subsubsection{Crosstab}
 Our next tabular projection is a crosstab inspired by a decision table.
 Figure \ref{fig:crosstabProjection1}, on page \pageref{fig:crosstabProjection1}, shows our implementation of the crosstab.
-Because of the large amount of screen real estate that this projection uses we only present a truncated view of the table.
+Because of the large amount of screen real estate that this projection uses, we only present a truncated view of the table.
 
 The reason behind this projection is that the previous table does not give any visual cues as to how \texttt{Rule} nodes are related.
 With a crosstab, one can easily see which rules contain the same facts.
 
-The rows of the crosstab represent the rules, with the name in the left most column.
+The rows of the crosstab represent the rules, with the name in the left-most column.
 The columns represent the facts.
 
-The cells give indicator of which fact is used in which rule.
-If a rule requires a fact, then it is indicated with a number preceded by a hash symbol.
-The number represents the ordinal order of when the facts appearance in the conditions.
+The cells show the facts used in each rule.
+A number preceded by a hash symbol indicates if a rile requires a fact.
+The number represents the ordinal order of when the facts appear in the conditions.
 Thus, the first occurrence of a fact is represented by ``\#1''.
-If there are multiple occurrences of a fact within a rule, then multiple numbers will appear in the same cell.
+If there are multiple occurrences of a fact within a rule, multiple numbers will appear in the same cell.
 
-In the figure there is a close-up that shows that all the details of the selected fact are available in the inspector panel of the projection.
+In the figure, a close-up shows that all the details of the selected fact are available in the inspector panel.
 
-At the top, we can see an immediate problem with a crosstab, and that is if we have the whole \texttt{File} node included, the table will be very sparse.
+At the top, we can see an immediate problem with a crosstab
+If we have the whole \texttt{File} node represented, then the table will be very sparse.
 
 \begin{sidewaysfigure}
     \centering
@@ -144,17 +145,17 @@ At the top, we can see an immediate problem with a crosstab, and that is if we h
 
 Everything is editable in this table, including deleting a \texttt{FactDeclarationSmartRef} from a \texttt{Rule} node.
 The table plug-in and MPS enabled most of the editing in the projection by default.
-An extra editing feature we added to this table was the ability to delete a \texttt{FactDeclaration} nodes and all the related references from all the \texttt{Rule} nodes in the \texttt{File} node by deleting a fact column.
+An extra editing feature we added to this table was the ability to delete a \texttt{FactDeclaration} node and all the related references from all the \texttt{Rule} nodes in the \texttt{File} node by deleting a fact column.
 The code shown in figure \ref{fig:tableFactDeletion}, on page \pageref{fig:tableFactDeletion}, shows how we can walk the trees in each \texttt{Rule} to delete unary conditions and convert the non-deleted side of binary conditions into unary conditions to allow this \texttt{FactDeclaration} reference deletion.
 
 From the ``on delete'' section of the vertical section, we loop through all the \texttt{Rule} nodes to remove the references and rearrange the conditions in the AST.
-This uses a recursive ``pruneCondition'' method to walk the tree to detach selectors containing referenced to the fact.
-If it is a unary selector, then the selector is removed.
-If it is a binary selector and both children are removed, then the selector is removed.
-If just one selector of the binary selector is removed, then the one that remains is pulled up the tree to replace it.
+This projection calls a recursive ``pruneCondition'' method to walk the tree to detach \texttt{FactSelector} nodes containing references to the \texttt{FactDeclaration}.
+If it is a unary \texttt{AbstractCondition}, then it detaches the condition, thus removing the contained \texttt{FactSelector}.
+Upon removal of both children of a binary \texttt{AbstractCondition}, then the condition is removed.
+Upon removing one child from the binary condition, the remaining replaces the parent binary condition.
 
-Once all the \texttt{FactDeclaration} references have been removed then the \texttt{FactDeclaration} node that the column represents is removed.
-Now that the AST has been updated the projection will re-display itself.
+After removing all the \texttt{FactDeclaration} references, the code removes the \texttt{FactDeclaration}  node that the column represents.
+Now that there is an updated AST, the projection will re-display itself. 
 
 \begin{sidewaysfigure}
     \centering
@@ -175,17 +176,18 @@ This realism will allow us to create projections that we can present to experien
 
 Of the learnings from the RSD language, one we felt needed fixing to improve understanding was the sparseness of the tables.
 By implementing the principle of maximising cohesion, we discovered we could reduce the sparseness issue.
-Therefore, as a precursor to our projections, we extended Drools-Lite with a new language that contained one structural item, the \texttt{RuleCollection} Concept.
+Therefore, as a precursor to our projections, we extended Drools-Lite with a new language that contained one structural item - the \texttt{RuleCollection} Concept.
 A \texttt{RuleCollection} node is a child of the \texttt{File} Concept and holds a collection of \texttt{Rule} nodes.
-The idea behind this is that related \texttt{Rule} nodes can be placed in the \texttt{RuleCollection} node to make it easier to examine them together.
-This language also added an editor for the \texttt{RuleCollection} Concept and intentions to move rules in and out of groups.
+This idea is that related \texttt{Rule} nodes can be placed in the \texttt{RuleCollection}  node to make it easier to examine them together.
+This language naturally also added an editor for the \texttt{RuleCollection} Concept.
+Additionally, we added intentions to move \texttt{Rule} nodes in and out of groups.
 
 \subsubsection{Decision Table}
 
 As the Drools language is analogous to a series of if-then statements, then perhaps its best visual equivalent is the decision table.
 Decision tables are a ``powerful aid in programming, documentation, and in effective man-to-man and man-to-machine communications''\cite{pooch1974translation}.
 
-We designed our table, shown in figure \ref{fig:decisionTableProjection}, to include some of the lessons learned from the RSD crosstab that shown in figure \ref{fig:crosstabProjection1}.
+We designed our table, shown in figure \ref{fig:decisionTableProjection}, to include some of the lessons learned from the RSD crosstab shown in figure \ref{fig:crosstabProjection1}.
 The RSD language taught us that wasting visual real estate exacerbates sparseness issues in tables.
 In the crosstab table, horizontal scrolling is necessary, in part due to the column widths.
 The columns were wide because the name of the \texttt{FactDeclaration} node was displayed horizontally.
@@ -198,7 +200,7 @@ The columns were wide because the name of the \texttt{FactDeclaration} node was 
 \end{figure}
 
 The Drools-Lite language allows for much longer selection criteria on \texttt{FactProperty} references, which would lead to much wider columns.
-Our solution was to develop a vertically orientated header cell and to use indentation to indicate if the cell is referring to just the \texttt{FactDeclaration} node or a \texttt{FactDeclaration} and \texttt{FactProperty} node combination.
+Our solution was to develop a vertically orientated header cell and use indentation to indicate if the cell is referring to just the \texttt{FactDeclaration} node or a \texttt{FactDeclaration} and \texttt{FactProperty} node combination.
 
 Because this projection presents both the left and right-hand side of the rules, we had to handle the Concept that spans both - the \texttt{RuleVariable} Concept.
 We had to find a way to represent a \texttt{RuleVariable} node that can be bound and used on the LHS and used on the RHS.
@@ -212,7 +214,7 @@ The \texttt{Rule} node's names and actions are editable through the default func
 We use intentions to add the selection of a \texttt{FactDeclaration} node or \texttt{FactProperty} reference to a \texttt{Rule} node.
 We also use intentions for binding \texttt{RuleVariables}.
 
-The major drawback of this design is that editing a \texttt{Rule} node with a yet non-existent selection criteria became very clunky.
+The major drawback of this design is that editing a \texttt{Rule} node with yet non-existent selection criteria became very clunky.
 If the \texttt{Rule} node we wished to edit already existed in the table, we had to use an intention to extract it from the group, change the criteria and place it back in.
 At this point, the table would automatically adjust the column headings.
 
@@ -232,7 +234,7 @@ To this end, we created a design where the selection criteria could be directly 
 Each row is a \texttt{Rule} node in this design, and each column is for a \texttt{RuleVariable} node or a \texttt{FactProperty} reference.
 If a property is selected, then the selection criterion is in the appropriate cell.
 A grey/beige colour indicates unselected cells.
-The RHS of the \texttt{Rule} node appears in the action column.
+The RHS of the \texttt{Rule} node appears in the Action column.
 Adding as yet unused \texttt{FactDeclaration} references or \texttt{FactProperty} references, or removing existing ones, can be achieved with intentions, as shown in figure \ref{fig:SpreadsheetIntentions}, on page \pageref{fig:SpreadsheetIntentions}.
 
 \begin{figure}[h]
