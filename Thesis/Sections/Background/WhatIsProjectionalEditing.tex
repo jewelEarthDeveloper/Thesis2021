@@ -82,9 +82,18 @@ Every user editing action maps directly to a change in the AST.
 
 \begin{figure}
     \centering
-    \fbox{\includegraphics[width=0.38\textwidth]{Sections/images/projections.png}}
-    \caption{Projectional editing loop}
-    \label{fig:projectionalEditing_loop}
+    \begin{minipage}[b][][b]{.45\textwidth}
+      \centering
+      \includegraphics[width=.80\linewidth]{Sections/images/projections.png}
+      \captionof{figure}{Projectional editing loop}
+      \label{fig:projectionalEditing_loop}
+    \end{minipage}%
+    \begin{minipage}[b][][b]{.55\textwidth}
+      \centering
+      \includegraphics[width=.95\linewidth]{Sections/images/ast.png}
+      \captionof{figure}{Conceptual AST}
+      \label{fig:ast}
+    \end{minipage}
 \end{figure}
 
 To perform the above two items have to be defined by language engineers: The meta-model and the editor.
@@ -96,13 +105,6 @@ Each AST must have a root node.
 The nodes, represented by the ovals, can have child nodes.
 The child relationship is represented by the downward solid edges.
 Nodes can also reference other nodes in the AST, here represented by the dashed edges with arrows showing the direction of the reference.
-
-\begin{figure}
-    \centering
-    \fbox{\includegraphics[width=0.45\textwidth]{Sections/images/ast.png}}
-    \caption{Conceptual AST}
-    \label{fig:ast}
-\end{figure}
 
 The AST is stored independently of the concrete syntax, often using a database, XML, or a proprietary file format.
 Rules of the meta-model, such as type systems or scoping rules, must also be described.
@@ -184,7 +186,7 @@ Blockly can create languages similar in style to the scratch language.
 Blueprint visual scripting, a part of the Unreal Engine, is a visual programming language for building concepts such as levels or game assets.
 Examples of Blockly and Blueprint can be seen in figures \ref{fig:blockly} and \ref{fig:Blueprint}, respectively.
 
-\begin{figure}
+\begin{figure}[h]
     \begin{center}
         \subfloat[Blockly]{
             \includegraphics[clip,width=0.95\columnwidth]{Sections/images/blockly-2.png}

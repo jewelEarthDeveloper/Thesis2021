@@ -12,7 +12,7 @@ The production memory contains the rules, and this will not change during an ana
 The rules are the focus of this thesis. 
 Thus, we will examine these in more detail later.
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \fbox{\includegraphics[width=0.55\textwidth]{Sections/images/components.png}}
     \caption{Drools components}
@@ -39,7 +39,7 @@ The first rule on the agenda will fire.
 If the rule modifies, retracts, or asserts a fact, then the inference loop begins again.
 We have inferred our conclusion if either a rule specifies to halt or no matching rules remain on the agenda.
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \fbox{\includegraphics[width=0.70\textwidth]{Sections/images/InferenceLoop.png}}
     \caption{Drools inference loop}
@@ -51,16 +51,18 @@ A rules file containing the rules is a text file, typically with a .drl extensio
 The rules do not change during execution.
 Drools stores the rules in the production memory.
 
+\newpage 
+
 We will ignore the rule file components \texttt{package}, \texttt{import}, \texttt{global}, \texttt{declare}, \texttt{function}, and \texttt{query}.
 
 We will now examine the anatomy of a rule, as shown in figure \ref{fig:Drools_Rule_Breakdown} on the following page.
 A rule consists of 3 parts: attributes, conditions, and consequences.
 Attributes are optional hints to the inference engine as to how to examine a rule.
-The conditional, ``\texttt{when}'', or left-hand side (LHS) of the rule statement is a block of conditions subject to logical conjunctions. 
+The conditional, ``when'', or left-hand side (LHS) of the rule statement is a block of conditions subject to logical conjunctions. 
 If true, then the rule is placed on the agenda.
-The actions, consequences, ``\texttt{then}'', or right-hand side (RHS) of the rule statement contains actions to be executed when the rule is selected.
+The actions, consequences, ``then'', or right-hand side (RHS) of the rule statement contains actions to be executed when the rule is selected.
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \fbox{\includegraphics[width=0.80\textwidth]{Sections/images/DroolsRule2.png}}
     \caption{Drools rule breakdown}

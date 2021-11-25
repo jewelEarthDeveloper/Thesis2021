@@ -10,8 +10,10 @@ Our pilot study created a simple approximation of the Drools language to create 
 We called this language ``Really Simple Drools'' (RSD).
 We describe this pilot study language here, as it contains many of the projections that we considered for our research question.
 
+\subsubsection{Concepts}
+
 \paragraph{\texttt{File}} RSD, like Drools itself, has a \texttt{File} Concept as its root node.
-The \texttt{File} Concept only contains \texttt{FactDeclaration} nodes and \texttt{Rule} nodes.
+The \texttt{File} Concept only contains \linebreak\texttt{FactDeclaration} nodes and \texttt{Rule} nodes.
 
 \paragraph{\texttt{FactDeclaration} and \texttt{FactProperty}} In Drools, a \texttt{FactDeclaration} Concept represents a Java Bean with its child properties, which can also have their child properties, ad infinitum.
 In RSD, we limited properties to allow only boolean values.
@@ -25,7 +27,7 @@ An RSD Rule consists of a collection of conditions.
 Should all those conditions return ``true'', then the \texttt{Rule} node is selected.
 
 \paragraph{\texttt{AbstractCondition}} A condition operates on one or more \texttt{FactSelectors} nodes.
-There are four condition Concepts - \texttt{ExistsCondition}, \texttt{NotCondition}, \texttt{AndCondition}, and \texttt{OrCondition}.
+There are four condition Concepts - \texttt{ExistsCondition}, \linebreak\texttt{NotCondition}, \texttt{AndCondition}, and \texttt{OrCondition}.
 The \texttt{ExistsCondition} and \texttt{NotCondition} Concepts are unary conditions and evaluate one \texttt{FactSelector} node.
 The \texttt{AndCondition} and \texttt{OrCondition} Concepts evaluate two \texttt{FactSelector} nodes.
 
@@ -35,18 +37,9 @@ If the fact exists and all the predicates evaluate to \texttt{true}, then the \t
 \paragraph{\texttt{AbstractPredicate}} The predicate is an operation on a \texttt{FactProperty} node, to which the Concept has a reference.
 Because \texttt{FactProperty} nodes represent a boolean value, the only predicate operations are ``And'', ``Or'', ``Is'', and ``Not''.
 
-Figure \ref{fig:RSDDiagram} shows the Concept hierarch for this straightforward implementation.
-
-\begin{figure}
-    \centering
-    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/ReallySimpleRuleLanguage4.png}}
-    \caption{RSD concept hierarchy}
-    \label{fig:RSDDiagram}
-\end{figure}
-
 We realised this design in MPS.
 As the aim was to attempt different projections, we did not initially optimise for editing.
-The Structure is as shown in figure \ref{fig:RSDStructure}.
+The Structure is as shown in figure \ref{fig:RSDStructure} on page \pageref{fig:RSDStructure}.
 We have here translated our Conceptual design of the RSD into MPS Concepts.
 There is an almost one to one relationship with our concept hierarchy diagram.
 The one difference is that the references in the concept hierarchy diagram, represented by the dashed red lines, are represented in our MPS Structure by SmartRef Concepts \texttt{FactDeclarationSmartRef} and \texttt{FactPropertySmartRef}.
@@ -58,7 +51,26 @@ The one difference is that the references in the concept hierarchy diagram, repr
     \label{fig:RSDStructure}
 \end{figure}
 
-We show the definitions of the editors in figure \ref{fig:RSDEditors} on the following page. 
+Figure \ref{fig:RSDDiagram} on page \pageref{fig:RSDDiagram} shows the Concept hierarchy for this straightforward implementation.
+
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width=0.95\textwidth]{Sections/images/ReallySimpleRuleLanguage4.png}}
+    \caption{RSD concept hierarchy}
+    \label{fig:RSDDiagram}
+\end{figure}
+
+We realised this design in MPS.
+As the aim was to attempt different projections, we did not initially optimise for editing.
+The Structure is as shown in figure \ref{fig:RSDStructure} on page \pageref{fig:RSDStructure}.
+We have here translated our Conceptual design of the RSD into MPS Concepts.
+There is an almost one to one relationship with our concept hierarchy diagram.
+The one difference is that the references in the concept hierarchy diagram, represented by the dashed red lines, are represented in our MPS Structure by SmartRef Concepts \texttt{FactDeclarationSmartRef} and \texttt{FactPropertySmartRef}.
+
+
+\subsubsection{Editors}
+
+We show the definitions of the editors in figure \ref{fig:RSDEditors} on page \pageref{fig:RSDEditors}. 
 The first editor describes the \texttt{File} Concept. 
 It shows that the first line will have the text ``rule file name: '' followed by the file's name.
 Following an empty line, there is a vertical listing of the \texttt{FactDeclaration} nodes stored in the ``facts'' child of the \texttt{File} node.
@@ -70,7 +82,7 @@ Then, between parentheses, a horizontal, comma-separated list of its child \text
 
 The subsequent editor describes the \texttt{Rule} Concept. 
 The layout it describes is similar to that of a Drools rule, with the first line being ``rule'' followed by the \texttt{Rule} node name in inverted commas.
-There is a hardcoded indented ``when'', followed by a further indented vertical list of the condition children, which are \texttt{AbstractCondition} nodes.
+There is a hardcoded indented ``when'', followed by a further indented vertical list of the condition children, which are \linebreak\texttt{AbstractCondition} nodes.
 At appropriate indentation levels, the conditions precede three hardcoded lines of ``then'', a place holder for the right-hand side of a standard Drools rule, and ``end''.
 
 Next, we show one of the \texttt{AbstractCondition} Concepts, in this case, the \texttt{AndCondition} Concept.
@@ -82,21 +94,20 @@ The name precedes a horizontal, comma-separated list of the \texttt{AbstractPred
 The final editor we show is an example of an \texttt{AbstractPredicate} Concept, specifically an \texttt{OrPredicate} Concept, which shows the two properties separated by a ``||'' symbol.
 The properties are \texttt{FactPropertySmartRef} nodes, and they will just display the name of the \texttt{FactProperty} node to which they point.
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \fbox{\includegraphics[width=0.66\textwidth]{Sections/images/RSREditors_P2.png}}
     \caption{Editors}
     \label{fig:RSDEditors}
 \end{figure}
 
-\newpage
-
+\subsubsection{The Language}
 We show the result of the editors in figure \ref{fig:RSDProgram}, which shows an example of our default Drools-like text projection. 
 This projection is of the root AST of a \texttt{File} node called ``DossierSleutelbos''.
 It has 4 \texttt{FactDeclaration} child nodes and 3 \texttt{Rule} child nodes.
 The \texttt{FactDeclaration} nodes called ``Dossier'', ``Episode'', and ``Milestone'' each have two child \texttt{FactProperty} nodes, whilst ``DroolsContext'' has none.
 
-The \texttt{Rule} node ``0'' has 2 \texttt{ExistsCondition} nodes containing \texttt{FactSelector} node children with \texttt{FactDeclarationSmartRef} nodes referencing the \texttt{FactDeclaration} nodes ``Dossier'' and ``DroolsContext''.
+The \texttt{Rule} node ``0'' has 2 \texttt{ExistsCondition} nodes containing \texttt{FactSelector} node children with \linebreak\texttt{FactDeclarationSmartRef} nodes referencing the \texttt{FactDeclaration} nodes ``Dossier'' and ``DroolsContext''.
 
 The \texttt{Rule} node ``[WVGGZ/CM] start CM Procedure'' points to the ``Dossier'' \texttt{FactDeclaration} node, as well as having two predicates.
 The first predicate is an \texttt{IsPredicate} node with a \texttt{FactPropertySmartRef} node pointing to the ``isWvGGZ'' \texttt{FactProperty} node.
@@ -127,26 +138,26 @@ As this becomes tedious, we added some editing aids, including substitute menus,
     \label{fig:RSDSubstituteMenu}
 \end{figure}
 
-This image shows that we originally had to select an \texttt{ExistsCondition} Concept and select the \texttt{FactDeclaration} node for the Condition.
+This image shows that we originally had to select an \texttt{ExistsCondition} Concept and select the \linebreak\texttt{FactDeclaration} node for the Condition.
 After adding the substitute menu, we could immediately select the \texttt{FactDeclaration} node we wanted, and it would automatically wrap it with an \texttt{ExistsCondition} node.
 
 We show the code to do this in the section ``wrap substitute menu''.
-What it does is when it encounters the possibility to input an \texttt{ExistsCondition} node in a menu, it replaces it with the default menu for the \texttt{FactDeclarationSmartRef} Concept.
+What it does is when it encounters the possibility to input an \texttt{ExistsCondition} node in a menu, it replaces it with the default menu for the \linebreak\texttt{FactDeclarationSmartRef} Concept.
 MPS handles SmartRefs in menus by showing all the possible reference items available.
 When the user picks the reference item, this code will create a new \texttt{ExistsCondition} node with a new \texttt{FactSelector} node containing the chosen \texttt{FactDeclarationSmartRef} node to insert at that point in the AST.
 This substitute menu saves several keystrokes, as otherwise, we manually first had to insert an \texttt{ExistsCondition} node followed by a \texttt{FactSelector} node before filling the \texttt{FactDeclaration} child.
 
-Finally, we added a Constraint to scope the \texttt{FactProperty} references in \texttt{Predicate} Concept to the \texttt{FactDeclaration} reference chosen in the \texttt{FactSelector} node.
+Finally, we added a Constraint to scope the \texttt{FactProperty} references in \texttt{Predicate} Concept to the \linebreak\texttt{FactDeclaration} reference chosen in the \texttt{FactSelector} node.
 This scope Constraint made it much easier to select \texttt{FactProperty} nodes in a \texttt{Predicate} node, as indicated in figure \ref{fig:RSDConstraint}.
 
-\begin{figure}
+\begin{figure}[htbp]
     \centering
     \fbox{\includegraphics[width=0.66\textwidth]{Sections/images/RSRConstraint_P.png}}
     \caption{RSD scoping constraint}
     \label{fig:RSDConstraint}
 \end{figure}
 
-The figure shows that before adding the scoping constraint, it showed a list with dozens of potential \texttt{FactProperty} nodes representing all the \texttt{FactProperty} nodes in the model.
+The figure shows that before adding the scoping constraint, it showed a list with dozens of potential \linebreak\texttt{FactProperty} nodes representing all the \texttt{FactProperty} nodes in the model.
 After adding the constraint, it only shows the two \texttt{FactProperty} references associated with the \texttt{FactDeclaration} referenced in the \texttt{FactSelector}.
 We achieve this scoping in the code in the scope method.
 The code first finds the relevant \texttt{FactDeclaration} node from the \texttt{FactSelector} node we are at in the AST.
@@ -170,7 +181,7 @@ Secondly, developers with Drools experience will validate our projections.
 Thus, as RSD would be too alien to them, it could not be used. 
 For this reason, we needed to create a projectional language that was much closer to the Drools language.
 
-\begin{figure}
+\begin{figure}[htbp]
     \centering
     \fbox{\includegraphics[width=0.90\textwidth]{Sections/images/DroolsLiteStructure.png}}
     \caption{Drools-Lite structure}
@@ -184,6 +195,8 @@ Whenever we had any queries about designing Concepts, we referred to our analysi
 We show the preliminary design we achieved using this method in figure \ref{fig:DroolsLiteDiagram} on page \pageref{fig:DroolsLiteDiagram}.
 Later, there were some places we diverged a little from our design.
 We merged and decoupled our Concepts when we thought it would simplify the code.
+
+\subsubsection{Concepts}
 
 \paragraph{\texttt{RuleFile}} The \texttt{RuleFile} Concept contains \texttt{FactDeclaration} nodes, \texttt{Global} nodes and \texttt{Rule} nodes.
 It also contains semantically unimportant empty lines.
@@ -237,7 +250,7 @@ This extension allows seamless integration with the Java code.
 
 The \texttt{Insert}, \texttt{InsertLogical}, \texttt{Modify}, \texttt{Delete} and \texttt{Halt} Concepts represent the Drools specific required methods.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \fbox{\includegraphics[width=0.70\textwidth]{Sections/images/RHS.png}}
     \caption{RHS}
@@ -251,7 +264,7 @@ We can also see that Drools-Lite \texttt{RuleVariable} node ``\$s'' is in the Ja
 We have also highlighted the Drools specific methods placed in the code.
 In this case, the \texttt{\textbf{modify}} and \texttt{\textbf{insert}} methods.   
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \fbox{\includegraphics[width=0.85\textwidth]{Sections/images/Rule.png}}
     \caption{Rule}

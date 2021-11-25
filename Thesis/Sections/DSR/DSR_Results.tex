@@ -94,8 +94,6 @@ This projection fails this rule by hiding some of the meaning of the code.
 This projection has no way of containing the whole code whilst a filter is applied.
 However, we feel that so long as there is a clear indication that a filter is applied, then we see this as a tool in a similar vein to the code collapsing functionality found in most modern-day editors.
 
-\newpage
-
 \subsubsection{Table}
 Thus far, our projections have been textual ones that other non-projectional language workbenches could implement.
 Creating a table was our first non-parsable projection.
@@ -103,7 +101,7 @@ Creating a table was our first non-parsable projection.
 We choose the table projection based on the observations of Miller\cite{miller1956magical} about the number of items people can retain in their memory.
 This observation leads us to conclude that the fewer essential items that are off the screen and, therefore, in the developers' memory, the better.
 
-Figure \ref{fig:tableProjection1} on the next page shows our rudimentary first table.
+Figure \ref{fig:tableProjection1} on page \pageref{fig:tableProjection1} shows our rudimentary first table.
 This simple table has only the ``name'' property and the ``when'' children of the \texttt{Rule} nodes in the \texttt{File} node.
 We implemented this projection using the tables extension in the MPS-Extension plug-in, created by Sascha Lißon.
 
@@ -239,7 +237,7 @@ Adding as yet unused \texttt{FactDeclaration} references or \texttt{FactProperty
 
 \begin{figure}[h]
     \centering
-    \fbox{\includegraphics[width=0.66\textwidth]{Sections/images/spreadsheetIntentions.png}}
+    \fbox{\includegraphics[width=0.55\textwidth]{Sections/images/spreadsheetIntentions.png}}
     \caption{Intention}
     \label{fig:SpreadsheetIntentions}
 \end{figure}
@@ -257,12 +255,14 @@ We demonstrate this in figure \ref{fig:TwoProperties}.
 Experts examined this design in the questionnaire. 
 Here we end our experiments in the Drools-Lite language.
 
-\begin{sidewaysfigure}
+\begin{sidewaysfigure}[htbp]
     \centering
     \fbox{\includegraphics[width=0.99\textwidth]{Sections/images/SpreadsheetProjection.png}}
     \caption{Spreadsheet projection}
     \label{fig:SpreadsheetProjection}
 \end{sidewaysfigure}
+
+\newpage
 
 \subsection{Wireframe}
 
