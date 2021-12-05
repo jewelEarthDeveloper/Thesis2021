@@ -1,14 +1,15 @@
 \section{Problem Statement}
 \label{section:problem_statement}
 
-The problem we examine here is that Drools rules files are difficult to reason about when they become long.
-The approach we look at for solving this is through implementing different ways of presenting the code using ``projectional editing''.
-
 Rules engines are a place for gathering and executing the rules of a business application.
-We elaborate on this in Section \ref{section:what_is_a_rules_engine}.
-Drools is one of the leading rules engines.
+Rules contain premises and implications.
+If the premise of the rules are met then the implications are executed.
+A rules engine decides which of the rules to execute.
 
-Drools, the language, shares an unfortunate characteristic with many other rules languages, such as those described in Section \ref{section:rules_engine_history}.
+Drools is one of the leading rules engines.
+Drools implements the rules engine paradigm using a version of the Rete algorithm.
+The rules are written in a declarative DSL, which will be the subject of this project.
+The language, shares an unfortunate characteristic with other rules languages.
 Namely, it is verbose and can contain many rules that can interact without an apparent visual connection.
 As Forgy\cite{forgy1989rete} points out, for rules languages in general, ``[they] have another property that makes them particularly attractive for constructing large programs: they do not require the developer to specify in minute detail exactly how the various parts of the program will interact''.
 This property leads to very large and difficult to reason about collections of implicitly connected rules.
@@ -26,8 +27,13 @@ We hypothesise that when we present developers with different views on their cod
 The problem we wish to solve - how to improve the ability to reason about sizeable collections of Drools rules - we believe lends itself to the technique of projectional editing.
 
 Projectional editing is a technology implementation that allows users to directly edit the abstract syntax tree through representations of the tree called projections.
-We explain projectional editing in detail in Section \ref{section:WhatIsPE}.
-By using projections to improve feedback whilst coding, we believe that this can reduce the representation impedance mismatch that hampers the developer's reasoning.
+This requires no parsing. 
+The lack of parsing means that code can be represented without the restrictions of having to be textual.
+This property means that code can be edited using unparsable notations, such as mathematical, tabular or graphical notations. 
+
+Language Engineers can use language workbenches (LWB) to design languages.
+JetBrains MPS is a LWB to create projectional languages, in their own IDE.
+By using projections, developed in MPS, to improve feedback whilst coding, we believe that this can reduce the representation impedance mismatch that hampers the developer's reasoning.
 
 To reason about a large code base of rules engine code effectively, perhaps a different presentation of that code is needed.
 The presentations we create should allow a more precise organisation of the code whilst remaining interactive.
