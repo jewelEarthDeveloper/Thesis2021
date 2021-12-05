@@ -3,13 +3,13 @@
 
 \subsection{Really Simple Drools}
 
-The Really Simple Drools Language (RSD) acted as a training ground for our new projections.
+The Really Simple Drools Language (RSD) pilot language gave us a training ground for our new projections.
 
 \subsubsection{Context-Aware Colour Scheme}
 After the default text projection, the first projection we made was giving the text a colour scheme.
-This form or augmentation in IDEs is probably the most basic that we see.
+This form of augmentation in IDEs is probably the most basic that we see.
 Available in structured editors since the 1980s\cite{cowlishaw1987lexx}, syntax highlighting displays text in various colours and fonts according to the meaning of the terms.
-Syntax highlighting is helpful for the comprehension of code, as least for small code bases\cite{sarkar2015impact}.
+Syntax highlighting is helpful for the comprehension of code, at least for small code bases\cite{sarkar2015impact}.
 
 Developers at our host organisation use Eclipse or IntelliJ Community Editions to edit code, neither of which has syntax highlighting for Drools. Thus, the addition of this feature would immediately benefit them.
 However, IntelliJ IDEA, the paid version, already provides this feature for Drools.
@@ -67,7 +67,7 @@ In our implementation, shown in figure \ref{fig:filteringProjection} on the foll
 The first is an intention associated with a \texttt{FactDeclaration} node.
 We show the outcome of choosing this filter on the righthand side of figure \ref{fig:filteringProjection}.
 The second intention is on a \texttt{FactProperty} node.
-As the \texttt{FactProperty} node is a child of a \texttt{FactDeclaration} node, we see both intentions.
+As the \texttt{FactProperty} node is a child of a \texttt{FactDeclaration} node, we see this intention and the previously described one.
 The third highlighted intention is on a \texttt{FactProperty} reference.
 It also shows an intention associated with a \texttt{FactDeclaration} reference in the \texttt{FactSelector} node that holds the \texttt{FactPropertyReference} as a child.
 
@@ -82,7 +82,7 @@ One of our guidelines was, as much as possible, to build our projections as sepa
 In our first approach at the filtering, we failed on this count by invasively adding properties to the \texttt{FactDeclaration} and \texttt{FactProperty} Concepts of the RSD to determine whether they were visible.
 
 Our following approach created subclasses of the \texttt{FactDeclaration}, \texttt{FactProperty} and \texttt{File} Concepts.
-This approach, however, requires running a macro on the code file to migrate \texttt{FactDeclaration}, \texttt{FactProperty} and \texttt{Files} nodes to \texttt{FilteredFact}, \texttt{FilteredFactProperty}, and \texttt{FilteredFile} nodes.
+This approach, however, requires running a macro on the code file to migrate \texttt{FactDeclaration}, \texttt{FactProperty} and \texttt{File} nodes to \texttt{FilteredFact}, \texttt{FilteredFactProperty}, and \texttt{FilteredFile} nodes.
 This migration means that the \texttt{FilteredFile} could now only be used by languages that extend our new filtered language.
 
 Our final approach was to add a \texttt{Filter} Concept, reference the filtered nodes, and have the editors make the visibility calculations based on this singleton node.
@@ -98,7 +98,7 @@ However, we feel that so long as there is a clear indication that a filter is ap
 Thus far, our projections have been textual ones that other non-projectional language workbenches could implement.
 Creating a table was our first non-parsable projection.
 
-We choose the table projection based on the observations of Miller\cite{miller1956magical} about the number of items people can retain in their memory.
+We chose the table projection based on the observations of Miller\cite{miller1956magical} about the number of items people can retain in their memory.
 This observation leads us to conclude that the fewer essential items that are off the screen and, therefore, in the developers' memory, the better.
 
 Figure \ref{fig:tableProjection1} on page \pageref{fig:tableProjection1} shows our rudimentary first table.
@@ -124,14 +124,14 @@ The rows of the crosstab represent the rules, with the name in the left-most col
 The columns represent the facts.
 
 The cells show the facts used in each rule.
-A number preceded by a hash symbol indicates if a rile requires a fact.
+A number preceded by a hash symbol indicates if a rule requires a fact.
 The number represents the ordinal order of when the facts appear in the conditions.
 Thus, the first occurrence of a fact is represented by ``\#1''.
 If there are multiple occurrences of a fact within a rule, multiple numbers will appear in the same cell.
 
 In the figure, a close-up shows that all the details of the selected fact are available in the inspector panel.
 
-At the top, we can see an immediate problem with a crosstab
+At the top, we can see an immediate problem with a crosstab.
 If we have the whole \texttt{File} node represented, then the table will be very sparse.
 
 \begin{sidewaysfigure}
@@ -147,10 +147,10 @@ An extra editing feature we added to this table was the ability to delete a \tex
 The code shown in figure \ref{fig:tableFactDeletion}, on page \pageref{fig:tableFactDeletion}, shows how we can walk the trees in each \texttt{Rule} to delete unary conditions and convert the non-deleted side of binary conditions into unary conditions to allow this \texttt{FactDeclaration} reference deletion.
 
 From the ``on delete'' section of the vertical section, we loop through all the \texttt{Rule} nodes to remove the references and rearrange the conditions in the AST.
-This projection calls a recursive ``pruneCondition'' method to walk the tree to detach \texttt{FactSelector} nodes containing references to the \texttt{FactDeclaration}.
+This projection calls a recursive ``pruneCondition'' method to walk the tree to detach \texttt{FactSelector} nodes containing references to the deleted \texttt{FactDeclaration}.
 If it is a unary \texttt{AbstractCondition}, then it detaches the condition, thus removing the contained \texttt{FactSelector}.
 Upon removal of both children of a binary \texttt{AbstractCondition}, then the condition is removed.
-Upon removing one child from the binary condition, the remaining replaces the parent binary condition.
+Upon removing one child from the binary condition, the remaining child replaces the parent binary condition.
 
 After removing all the \texttt{FactDeclaration} references, the code removes the \texttt{FactDeclaration}  node that the column represents.
 Now that there is an updated AST, the projection will re-display itself. 
@@ -214,7 +214,7 @@ We also use intentions for binding \texttt{RuleVariables}.
 
 The major drawback of this design is that editing a \texttt{Rule} node with yet non-existent selection criteria became very clunky.
 If the \texttt{Rule} node we wished to edit already existed in the table, we had to use an intention to extract it from the group, change the criteria and place it back in.
-At this point, the table would automatically adjust the column headings.
+Then, the table would automatically adjust the column headings.
 
 Experts examined this design in the questionnaire.
 
@@ -226,14 +226,14 @@ Dan Bricklin's VisiCalc drove personal computers into the office.
 VisiCalc was succeeded by Lotus 1-2-3, which Microsoft Excel then succeeded as the dominant spreadsheet program in the workplace.
 
 This level of familiarity with a paradigm led us to design a projection that had the look and feel of an Excel spreadsheet.
-We show this design in figure \ref{fig:SpreadsheetProjection}.
+We show this design in figure \ref{fig:SpreadsheetProjection} on page \pageref{fig:SpreadsheetProjection}.
 To this end, we created a design where the selection criteria could be directly edited in the cell, as highlighted in the figure.
 
 Each row is a \texttt{Rule} node in this design, and each column is for a \texttt{RuleVariable} node or a \texttt{FactProperty} reference.
 If a property is selected, then the selection criterion is in the appropriate cell.
 A grey/beige colour indicates unselected cells.
 The RHS of the \texttt{Rule} node appears in the Action column.
-Adding as yet unused \texttt{FactDeclaration} references or \texttt{FactProperty} references, or removing existing ones, can be achieved with intentions, as shown in figure \ref{fig:SpreadsheetIntentions}, on page \pageref{fig:SpreadsheetIntentions}.
+Adding as yet unused \texttt{FactDeclaration} references or \texttt{FactProperty} references, or removing existing ones, can be achieved with intentions, as shown in figure \ref{fig:SpreadsheetIntentions}.
 
 \begin{figure}[h]
     \centering

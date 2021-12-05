@@ -11,6 +11,9 @@ To execute rules, Drools has four major components, as demonstrated in figure \r
 The production memory contains the rules, and this will not change during an analysis session.
 The rules are the focus of this thesis. 
 Thus, we will examine these in more detail later.
+The working memory contains the facts.
+A pattern matcher will match facts against rules and place them on the agenda.
+The agenda executes the rules and, if necessary, updates the facts in the working memory.
 
 \begin{figure}[h]
     \centering
@@ -24,7 +27,7 @@ In Forgy's\cite{forgy1989rete} overview of a rete algorithm, the following steps
     \setlength\itemsep{0em}
     \item Match: Evaluate the Left-hand sides (LHS) of the productions to determine which are satisfied given the current contents of working memory.
     \item Conflict resolution: Select one production with a satisfied LHS; halt the interpreter if no productions have satisfied LHSs.
-    \item Act: Perform the actions in the RHS of the selected production.
+    \item Act: Perform the actions in the Right-hand side (RHS) of the selected production.
     \item Re-evaluate: Go To 1.
 \end{enumerate}
 
@@ -53,7 +56,8 @@ Drools stores the rules in the production memory.
 
 \newpage 
 
-We will ignore the rule file components \texttt{package}, \texttt{import}, \texttt{global}, \texttt{declare}, \texttt{function}, and \texttt{query}.
+We will not examine the rule file components \texttt{package}, \texttt{import}, \texttt{global}, \texttt{declare}, \texttt{function}, and \texttt{query}.
+Explaining these components are not core to understanding how rules work.
 
 We will now examine the anatomy of a rule, as shown in figure \ref{fig:Drools_Rule_Breakdown} on the following page.
 A rule consists of 3 parts: attributes, conditions, and consequences.
@@ -64,7 +68,7 @@ The actions, consequences, ``then'', or right-hand side (RHS) of the rule statem
 
 \begin{figure}[h]
     \centering
-    \fbox{\includegraphics[width=0.80\textwidth]{Sections/images/DroolsRule2.png}}
+    \fbox{\includegraphics[width=0.74\textwidth]{Sections/images/DroolsRule2.png}}
     \caption{Drools rule breakdown}
     \label{fig:Drools_Rule_Breakdown}
 \end{figure}

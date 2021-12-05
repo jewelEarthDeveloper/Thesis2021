@@ -27,19 +27,19 @@ An RSD Rule consists of a collection of conditions.
 Should all those conditions return ``true'', then the \texttt{Rule} node is selected.
 
 \paragraph{\texttt{AbstractCondition}} A condition operates on one or more \texttt{FactSelectors} nodes.
-There are four condition Concepts - \texttt{ExistsCondition}, \linebreak\texttt{NotCondition}, \texttt{AndCondition}, and \texttt{OrCondition}.
+There are four condition Concepts - \linebreak\texttt{ExistsCondition}, \texttt{NotCondition}, \texttt{AndCondition}, and \texttt{OrCondition}.
 The \texttt{ExistsCondition} and \texttt{NotCondition} Concepts are unary conditions and evaluate one \texttt{FactSelector} node.
 The \texttt{AndCondition} and \texttt{OrCondition} Concepts evaluate two \texttt{FactSelector} nodes.
 
 \paragraph{\texttt{FactSelector}} A \texttt{FactSelector} Concept consists of a reference to a \texttt{FactDeclaration} node and a collection of \texttt{AbstractPredicate} nodes.
-If the fact exists and all the predicates evaluate to \texttt{true}, then the \texttt{FactSelector} evaluates to \texttt{true}.
+If the \texttt{FactDeclaration} node exists and all the predicates evaluate to \texttt{true}, then the \texttt{FactSelector} evaluates to \texttt{true}.
 
 \paragraph{\texttt{AbstractPredicate}} The predicate is an operation on a \texttt{FactProperty} node, to which the Concept has a reference.
 Because \texttt{FactProperty} nodes represent a boolean value, the only predicate operations are ``And'', ``Or'', ``Is'', and ``Not''.
 
 We realised this design in MPS.
 As the aim was to attempt different projections, we did not initially optimise for editing.
-The Structure is as shown in figure \ref{fig:RSDStructure} on page \pageref{fig:RSDStructure}.
+The Structure is as shown in figure \ref{fig:RSDStructure}.
 We have here translated our Conceptual design of the RSD into MPS Concepts.
 There is an almost one to one relationship with our concept hierarchy diagram.
 The one difference is that the references in the concept hierarchy diagram, represented by the dashed red lines, are represented in our MPS Structure by SmartRef Concepts \texttt{FactDeclarationSmartRef} and \texttt{FactPropertySmartRef}.
@@ -74,7 +74,14 @@ We show the definitions of the editors in figure \ref{fig:RSDEditors} on page \p
 The first editor describes the \texttt{File} Concept. 
 It shows that the first line will have the text ``rule file name: '' followed by the file's name.
 Following an empty line, there is a vertical listing of the \texttt{FactDeclaration} nodes stored in the ``facts'' child of the \texttt{File} node.
-Thereafter is another empty line followed by a vertical listing of the \text{Rule} nodes stored in the ``rules'' child.
+Thereafter is another empty line followed by a vertical listing of the \texttt{Rule} nodes stored in the ``rules'' child.
+
+\begin{figure}[htbp]
+    \centering
+    \fbox{\includegraphics[width=0.66\textwidth]{Sections/images/RSREditors_P2.png}}
+    \caption{Editors}
+    \label{fig:RSDEditors}
+\end{figure}
 
 The next editor shown is the editor of the \texttt{FactDeclaration} Concept.
 Each \texttt{FactDeclaration} node will be shown on a single line starting with the word ``fact'' followed by its name.
@@ -93,13 +100,6 @@ The name precedes a horizontal, comma-separated list of the \texttt{AbstractPred
 
 The final editor we show is an example of an \texttt{AbstractPredicate} Concept, specifically an \texttt{OrPredicate} Concept, which shows the two properties separated by a ``||'' symbol.
 The properties are \texttt{FactPropertySmartRef} nodes, and they will just display the name of the \texttt{FactProperty} node to which they point.
-
-\begin{figure}[h]
-    \centering
-    \fbox{\includegraphics[width=0.66\textwidth]{Sections/images/RSREditors_P2.png}}
-    \caption{Editors}
-    \label{fig:RSDEditors}
-\end{figure}
 
 \subsubsection{The Language}
 We show the result of the editors in figure \ref{fig:RSDProgram}, which shows an example of our default Drools-like text projection. 
@@ -125,11 +125,11 @@ The right-hand side node contains an \texttt{ExistsCondition} node on both the l
 \end{figure}
 
 \newpage
-
+\subsubsection{Editing aids}
 Part of our research question is using projections for reasoning about large files.
 To answer this, we needed to simulate a large file.
 To do this, we had to enter many \texttt{Rule} nodes.
-As this becomes tedious, we added some editing aids, including substitute menus, to speed up the entry of Conditions, as shown in figure \ref{fig:RSDSubstituteMenu}.
+As this becomes tedious, we added some editing aids, including substitute menus, to speed up the entry of Conditions, as shown in figure \ref{fig:RSDSubstituteMenu} on page \pageref{fig:RSDSubstituteMenu}.
 
 \begin{figure}[h]
     \centering
@@ -148,14 +148,7 @@ When the user picks the reference item, this code will create a new \texttt{Exis
 This substitute menu saves several keystrokes, as otherwise, we manually first had to insert an \texttt{ExistsCondition} node followed by a \texttt{FactSelector} node before filling the \texttt{FactDeclaration} child.
 
 Finally, we added a Constraint to scope the \texttt{FactProperty} references in \texttt{Predicate} Concept to the \linebreak\texttt{FactDeclaration} reference chosen in the \texttt{FactSelector} node.
-This scope Constraint made it much easier to select \texttt{FactProperty} nodes in a \texttt{Predicate} node, as indicated in figure \ref{fig:RSDConstraint}.
-
-\begin{figure}[htbp]
-    \centering
-    \fbox{\includegraphics[width=0.66\textwidth]{Sections/images/RSRConstraint_P.png}}
-    \caption{RSD scoping constraint}
-    \label{fig:RSDConstraint}
-\end{figure}
+This scope Constraint made it much easier to select \texttt{FactProperty} nodes in a \texttt{Predicate} node, as indicated in figure \ref{fig:RSDConstraint}, on page \pageref{fig:RSDConstraint}.
 
 The figure shows that before adding the scoping constraint, it showed a list with dozens of potential \linebreak\texttt{FactProperty} nodes representing all the \texttt{FactProperty} nodes in the model.
 After adding the constraint, it only shows the two \texttt{FactProperty} references associated with the \texttt{FactDeclaration} referenced in the \texttt{FactSelector}.
@@ -170,15 +163,22 @@ This program on which we will experiment with the different projections.
 
 We discuss the alternative projections in the results section \ref{section:dsr_results}.
 
+\begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[width=0.66\textwidth]{Sections/images/RSRConstraint_P.png}}
+    \caption{RSD scoping constraint}
+    \label{fig:RSDConstraint}
+\end{figure}
+
 \newpage
 \subsection{Drools-Lite Language}
 \label{section:DroolsLite}
 
-The RSD was useful as an initial language. 
+The RSD served as a useful pilot to demonstrate that different projections could be useful. 
 However, it suffered from two significant issues.
 Firstly, its limitations as a language were so substantial that it could not handle many necessary scenarios.
 Secondly, developers with Drools experience will validate our projections. 
-Thus, as RSD would be too alien to them, it could not be used. 
+Thus, as RSD would be too alien to them, it would be impractical to use for validation. 
 For this reason, we needed to create a projectional language that was much closer to the Drools language.
 
 \begin{figure}[htbp]
@@ -240,7 +240,7 @@ Like the \texttt{Global} Concept, it extends BaseLanguage's \texttt{Expression} 
 
 \paragraph{Right-hand side} The right-hand side of the \texttt{Rule}, for the most part, is Java code.
 To implement this, we made the right-hand side of the \texttt{Rule} Concept a single \texttt{StatementList} node.
-A \texttt{StatementList} Concept is a list of \texttt{Statements} nodes, both from the BaseLanguage.
+A \texttt{StatementList} Concept is a list of \texttt{Statement} nodes, both from the BaseLanguage.
 We chose these because they keep track of, amongst other things, the scope of variables among the statements.
 
 There are some non-Java, Drools specific items that are available to the right-hand side.

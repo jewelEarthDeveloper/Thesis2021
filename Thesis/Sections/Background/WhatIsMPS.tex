@@ -76,9 +76,9 @@ This concept is not rootable, and therefore cannot be instantiated as a file in 
 the alias and short description override what will be shown in menus instead of \texttt{RuleStatement} and its fully qualified name.
 This concept has no custom properties or references.
 It has three children.
-The attributes child contains one and only one RuleAttributes Concept.
-Outcomes also contains only one child concept, this one of type StatementList.
-The conditions child has a collection of abstract conditions
+The attributes child contains one and only one \texttt{RuleAttribute} node.
+Outcomes also contains only one child node, this one of type \texttt{StatementList}.
+The conditions child has a collection of \texttt{AbstractCondition} nodes.
 
 \begin{figure}[h]
     \centering
@@ -129,7 +129,7 @@ This aspect is for the computation and evaluation of types of variables, express
 
 Rules that are available to calculate and enforce the type system include inference, subtyping, comparison and substitute type rules.
 
-Figure \ref{fig:typesystem_example} shows an inference rule that ensures that the calculated type of the import statement matched that of its child called type.
+Figure \ref{fig:typesystem_example} shows an inference rule that ensures that the calculated type of the import statement matched that of its child ``type''.
 
 \begin{figure}[h]
     \centering
@@ -142,7 +142,7 @@ Figure \ref{fig:typesystem_example} shows an inference rule that ensures that th
 Editor aspects define the notation of the nodes.
 In effect, it is the user interface of the language, projecting the AST to the developer.
 An editor is a swing panel that renders a tree of editor cells.
-A concept can have multiple editors, thus offering multiple views on it.
+A Concept can have multiple editors, thus offering multiple views on it.
 
 The definition of the options available to the developers through menus also happens within the Editor Aspect. 
 The choice the developer makes transforms the existing AST.

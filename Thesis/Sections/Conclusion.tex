@@ -18,15 +18,25 @@ Finally, perhaps, a short survey was not the best way to introduce a whole new p
 We described our work by first translating the Drools DSL into a projectional language, then exploring projections.
 We discussed the advantages and disadvantages of the different projections we created and analysed experienced developers' reactions to them.
 
-This last section will return to the initial questions we were trying to answer from section \ref{section:Research_Questions}. 
+This last section will return to the research questions we were trying to answer as described in section \ref{section:Research_Questions}. 
 We will summarise the findings of our research and the contributions our work has made.
-Finally, we will discuss items out of scope for this project but would give future research opportunities.
+Finally, we will discuss subjects that, though out of scope for this project, could lead to future research opportunities.
 
 \section{Research Summary}
 Our primary research question, ``Is projectional editing a viable and effective solution to issues developers have with reasoning about Drools business rules?'' motivated us to explore the field of projectional editing in this project.
-This question led us to investigate if this field was worth investigating and, if so, how we can use existing tools to answer this.
+This question led us to examine if this field was worth investigating and, if so, how we can use existing tools to answer this.
 
 \subsection{Research Question 1: ``What is the current state of language workbenches supporting projectional editing?''}
+We presented an SLR that investigated the current state of projectional editing. 
+Our findings were that:
+\begin{itemize}
+    \setlength\itemsep{0em}
+    \item LWBs for projectional editing are currently a very narrow field, dominated by one product, JetBrains MPS. 
+    \item Studies using products other than MPS spend time and effort discussing how to solve issues already solved in MPS. 
+    \item Studies using MPS tend to focus on industrial products or how to use MPS as a tool to teach metaprogramming. 
+    \item MPS is a little behind in developing a web-based environment, both for the language engineer and the developer.
+\end{itemize}
+
 We presented an SLR that investigated the current state of projectional editing.
 This SLR found that LWBs for projectional editing are currently a very narrow field, dominated by one product, JetBrains MPS.
 Studies using products other than MPS spend time and effort discussing how to solve issues already solved in MPS.
@@ -84,4 +94,4 @@ While a survey was informative, we would also like to run an experiment using ou
 Finally, a question that has occurred to us both in the literature review and the survey was - how much of the opinions about projectional editing are a consequence of a history of textual language use?
 We briefly worked on a projectional implementation of the gradual pedagogical language Hedy\cite{hermans2020hedy}.
 Comparing the results of those with no programming experience to the use of projectional and text-based languages could point to the influence of experience in choice.
-This experiment will have to wait until a web-based implementation of MPS is implemented, as installing an application on school machines is impractical.
+This experiment, probably best performed in schools where Hedy is used, would have to wait until a web-based implementation of MPS is implemented, as installing an application on school machines is impractical.
