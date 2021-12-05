@@ -39,7 +39,7 @@ Because \texttt{FactProperty} nodes represent a boolean value, the only predicat
 
 We realised this design in MPS.
 As the aim was to attempt different projections, we did not initially optimise for editing.
-The Structure is as shown in figure \ref{fig:RSDStructure}.
+The Structure is as shown in Figure \ref{fig:RSDStructure}.
 We have here translated our Conceptual design of the RSD into MPS Concepts.
 There is an almost one to one relationship with our concept hierarchy diagram.
 The one difference is that the references in the concept hierarchy diagram, represented by the dashed red lines, are represented in our MPS Structure by SmartRef Concepts \texttt{FactDeclarationSmartRef} and \texttt{FactPropertySmartRef}.
@@ -62,7 +62,7 @@ Figure \ref{fig:RSDDiagram} on page \pageref{fig:RSDDiagram} shows the Concept h
 
 We realised this design in MPS.
 As the aim was to attempt different projections, we did not initially optimise for editing.
-The Structure is as shown in figure \ref{fig:RSDStructure} on page \pageref{fig:RSDStructure}.
+The Structure is as shown in Figure \ref{fig:RSDStructure} on page \pageref{fig:RSDStructure}.
 We have here translated our Conceptual design of the RSD into MPS Concepts.
 There is an almost one to one relationship with our concept hierarchy diagram.
 The one difference is that the references in the concept hierarchy diagram, represented by the dashed red lines, are represented in our MPS Structure by SmartRef Concepts \texttt{FactDeclarationSmartRef} and \texttt{FactPropertySmartRef}.
@@ -70,7 +70,7 @@ The one difference is that the references in the concept hierarchy diagram, repr
 
 \subsubsection{Editors}
 
-We show the definitions of the editors in figure \ref{fig:RSDEditors} on page \pageref{fig:RSDEditors}. 
+We show the definitions of the editors in Figure \ref{fig:RSDEditors} on page \pageref{fig:RSDEditors}. 
 The first editor describes the \texttt{File} Concept. 
 It shows that the first line will have the text ``rule file name: '' followed by the file's name.
 Following an empty line, there is a vertical listing of the \texttt{FactDeclaration} nodes stored in the ``facts'' child of the \texttt{File} node.
@@ -102,7 +102,7 @@ The final editor we show is an example of an \texttt{AbstractPredicate} Concept,
 The properties are \texttt{FactPropertySmartRef} nodes, and they will just display the name of the \texttt{FactProperty} node to which they point.
 
 \subsubsection{The Language}
-We show the result of the editors in figure \ref{fig:RSDProgram}, which shows an example of our default Drools-like text projection. 
+We show the result of the editors in Figure \ref{fig:RSDProgram}, which shows an example of our default Drools-like text projection. 
 This projection is of the root AST of a \texttt{File} node called ``DossierSleutelbos''.
 It has 4 \texttt{FactDeclaration} child nodes and 3 \texttt{Rule} child nodes.
 The \texttt{FactDeclaration} nodes called ``Dossier'', ``Episode'', and ``Milestone'' each have two child \texttt{FactProperty} nodes, whilst ``DroolsContext'' has none.
@@ -129,7 +129,7 @@ The right-hand side node contains an \texttt{ExistsCondition} node on both the l
 Part of our research question is using projections for reasoning about large files.
 To answer this, we needed to simulate a large file.
 To do this, we had to enter many \texttt{Rule} nodes.
-As this becomes tedious, we added some editing aids, including substitute menus, to speed up the entry of Conditions, as shown in figure \ref{fig:RSDSubstituteMenu} on page \pageref{fig:RSDSubstituteMenu}.
+As this becomes tedious, we added some editing aids, including substitute menus, to speed up the entry of Conditions, as shown in Figure \ref{fig:RSDSubstituteMenu} on page \pageref{fig:RSDSubstituteMenu}.
 
 \begin{figure}[h]
     \centering
@@ -148,7 +148,7 @@ When the user picks the reference item, this code will create a new \texttt{Exis
 This substitute menu saves several keystrokes, as otherwise, we manually first had to insert an \texttt{ExistsCondition} node followed by a \texttt{FactSelector} node before filling the \texttt{FactDeclaration} child.
 
 Finally, we added a Constraint to scope the \texttt{FactProperty} references in \texttt{Predicate} Concept to the \linebreak\texttt{FactDeclaration} reference chosen in the \texttt{FactSelector} node.
-This scope Constraint made it much easier to select \texttt{FactProperty} nodes in a \texttt{Predicate} node, as indicated in figure \ref{fig:RSDConstraint}, on page \pageref{fig:RSDConstraint}.
+This scope Constraint made it much easier to select \texttt{FactProperty} nodes in a \texttt{Predicate} node, as indicated in Figure \ref{fig:RSDConstraint}, on page \pageref{fig:RSDConstraint}.
 
 The figure shows that before adding the scoping constraint, it showed a list with dozens of potential \linebreak\texttt{FactProperty} nodes representing all the \texttt{FactProperty} nodes in the model.
 After adding the constraint, it only shows the two \texttt{FactProperty} references associated with the \texttt{FactDeclaration} referenced in the \texttt{FactSelector}.
@@ -161,7 +161,7 @@ Thus, we have described the entire implementation of the Really Simple Drools La
 After implementing the language, we wrote a program with many rules.
 This program on which we will experiment with the different projections.
 
-We discuss the alternative projections in the results section \ref{section:dsr_results}.
+We discuss the alternative projections in the results Section \ref{section:dsr_results}.
 
 \begin{figure}[H]
     \centering
@@ -189,10 +189,10 @@ For this reason, we needed to create a projectional language that was much close
 \end{figure}
  
 Our following Language, Drools-Lite, contains many more of the features of Drools.
-Our method of selecting the features involved implementing the examples delivered with Drools (including the corrupt politician example shown in section \ref{section:WhatIsDrools}).
+Our method of selecting the features involved implementing the examples delivered with Drools (including the corrupt politician example shown in Section \ref{section:WhatIsDrools}).
 We would implement just enough features to complete the examples.
-Whenever we had any queries about designing Concepts, we referred to our analysis of the Drools Language, shown in appendix \ref{appendix:DroolsConceptHierarchy}.
-We show the preliminary design we achieved using this method in figure \ref{fig:DroolsLiteDiagram} on page \pageref{fig:DroolsLiteDiagram}.
+Whenever we had any queries about designing Concepts, we referred to our analysis of the Drools Language, shown in Appendix \ref{appendix:DroolsConceptHierarchy}.
+We show the preliminary design we achieved using this method in Figure \ref{fig:DroolsLiteDiagram} on page \pageref{fig:DroolsLiteDiagram}.
 Later, there were some places we diverged a little from our design.
 We merged and decoupled our Concepts when we thought it would simplify the code.
 
@@ -274,8 +274,8 @@ In this case, the \texttt{\textbf{modify}} and \texttt{\textbf{insert}} methods.
 \paragraph{\texttt{AttributeCollection}} The \texttt{AttributeCollection} Concept is a container to hold all the attributes that apply to a \texttt{Rule} node.
 Initially, we have only implemented the \texttt{NoLoopAttribute} and \texttt{SalienceAttribute} Concepts.
 A developer activates these attributes using two intentions we added to the \texttt{Rule} Concept.
-On line 2 in figure \ref{fig:Rule}, we can see an example of a \texttt{SalienceAttribute} node added to a \texttt{Rule} on line 2.
-\footnote{In figure \ref{fig:Rule}, we added line numbers to this figure to make it easier to talk about.
+On line 2 in Figure \ref{fig:Rule}, we can see an example of a \texttt{SalienceAttribute} node added to a \texttt{Rule} on line 2.
+\footnote{In Figure \ref{fig:Rule}, we added line numbers to this figure to make it easier to talk about.
 The keywords ``rule'' on line 1, ``when'' on line 3, ``then'' on line 6, and ``end'' on line 8 have no meaning in the abstract syntax.
 We added them to give the developer the same look and feel as a standard Drools file.}
 
@@ -289,16 +289,16 @@ We added dynamic braces to only show braces around a Condition if it is another 
 These braces add visual clarity without adding unnecessary clutter.
 We also added some intentions to make it easy to switch between \texttt{ExistsCondition} and \texttt{NotCondition} nodes.
 
-On line 4 in figure \ref{fig:Rule}, the whole line represents an \texttt{ExistsCondition} node.
+On line 4 in Figure \ref{fig:Rule}, the whole line represents an \texttt{ExistsCondition} node.
 Line 5 shows an \texttt{OrCondition} node containing an \texttt{ExistsCondition} node and a \texttt{NotCondition} node.
 The default editor, through an intention, can make the \texttt{ExistsCondition} visibly explicit with an ``exists'' keyword.
 However, the standard practice with Drools developers is to make this implicit, so this is how we show it here.
 
 \paragraph{\texttt{FactSelector}} This always has a reference to a \texttt{FactDeclaration} node.
-These are references to the \texttt{FactDeclaration} nodes named ``Program'' in line 4 of figure \ref{fig:Rule} and ``Student'' and ``Result'' from line 5.
+These are references to the \texttt{FactDeclaration} nodes named ``Program'' in line 4 of Figure \ref{fig:Rule} and ``Student'' and ``Result'' from line 5.
 
 Optionally, the \texttt{FactSelector} node can be bound to a variable.
-In figure \ref{fig:Rule}, line 5, the \texttt{FactSelector} node referencing the \texttt{FactDeclaration} named ``Student'' is bound to the \texttt{RuleVariable} node named ``\$s''.
+In Figure \ref{fig:Rule}, line 5, the \texttt{FactSelector} node referencing the \texttt{FactDeclaration} named ``Student'' is bound to the \texttt{RuleVariable} node named ``\$s''.
 
 The \texttt{FactSelector} Concept also contains a list of constraints on \texttt{FactProperty} references, all of which must return true for a \texttt{FactSelector} node to return true.
 
@@ -321,14 +321,14 @@ There are several types of restrictions and several types of values that they ca
     \item \texttt{ReturnValue}: This compares to anything expressed as an \texttt{Expression}, which includes referring to constants or values behind qualified identifiers.
 \end{itemize}
 
-In figure \ref{fig:Rule}, on line 4, we have the return values ``Faculty.Law'' and ``Faculty.FNWI''.
+In Figure \ref{fig:Rule}, on line 4, we have the return values ``Faculty.Law'' and ``Faculty.FNWI''.
 On line 5, the literal values ``7'' and ``8''.
 
 \paragraph{Restrictions} A \texttt{SingleValueRestriction} Concept compares a \texttt{FactProperty} node against a value.
 A \texttt{MultiRestriction} Concept compares a \texttt{FactProperty} node against multiple values, not necessarily using the same comparison for each value.
 A \texttt{SetMembership} restriction Concept checks if a \texttt{FactProperty} node is a member or not a member of a group.
 
-In figure \ref{fig:Rule} on line 4 a \texttt{SetMembership} restriction node is shown with the ``in ( Faculty.Law, Faculty.FNWI )'' text.
+In Figure \ref{fig:Rule} on line 4 a \texttt{SetMembership} restriction node is shown with the ``in ( Faculty.Law, Faculty.FNWI )'' text.
 Line 5 in the first \texttt{FactSelector} node is the \texttt{SingleValue} restriction node represented by ``avg >= 8''.
 The second \texttt{FactSelector} node shows a \texttt{MultiRestriction} node using ``grade <= 7 \&\& > 8''.
 

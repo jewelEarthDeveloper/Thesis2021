@@ -63,9 +63,9 @@ Thus, these seemed the obvious items to filter.
 We created a projection where if the developer filtered by a \texttt{FactDeclaration} or a \texttt{FactProperty}, the projection would filter out all \texttt{Rule} nodes that did not contain references to the nodes.
 Once the \texttt{Rule} nodes were filtered, the projection only shows \texttt{FactDeclaration} nodes and \texttt{FactProperty} nodes that are referenced by those \texttt{Rule} nodes.
 
-In our implementation, shown in figure \ref{fig:filteringProjection} on the following page, we show three places where we use intentions to filter the code.
+In our implementation, shown in Figure \ref{fig:filteringProjection} on the following page, we show three places where we use intentions to filter the code.
 The first is an intention associated with a \texttt{FactDeclaration} node.
-We show the outcome of choosing this filter on the righthand side of figure \ref{fig:filteringProjection}.
+We show the outcome of choosing this filter on the righthand side of Figure \ref{fig:filteringProjection}.
 The second intention is on a \texttt{FactProperty} node.
 As the \texttt{FactProperty} node is a child of a \texttt{FactDeclaration} node, we see this intention and the previously described one.
 The third highlighted intention is on a \texttt{FactProperty} reference.
@@ -144,7 +144,7 @@ If we have the whole \texttt{File} node represented, then the table will be very
 Everything is editable in this table, including deleting a \texttt{FactDeclarationSmartRef} from a \texttt{Rule} node.
 The table plug-in and MPS enabled most of the editing in the projection by default.
 An extra editing feature we added to this table was the ability to delete a \texttt{FactDeclaration} node and all the related references from all the \texttt{Rule} nodes in the \texttt{File} node by deleting a fact column.
-The code shown in figure \ref{fig:tableFactDeletion}, on page \pageref{fig:tableFactDeletion}, shows how we can walk the trees in each \texttt{Rule} to delete unary conditions and convert the non-deleted side of binary conditions into unary conditions to allow this \texttt{FactDeclaration} reference deletion.
+The code shown in Figure \ref{fig:tableFactDeletion}, on page \pageref{fig:tableFactDeletion}, shows how we can walk the trees in each \texttt{Rule} to delete unary conditions and convert the non-deleted side of binary conditions into unary conditions to allow this \texttt{FactDeclaration} reference deletion.
 
 From the ``on delete'' section of the vertical section, we loop through all the \texttt{Rule} nodes to remove the references and rearrange the conditions in the AST.
 This projection calls a recursive ``pruneCondition'' method to walk the tree to detach \texttt{FactSelector} nodes containing references to the deleted \texttt{FactDeclaration}.
@@ -169,7 +169,7 @@ Here we end our experiments in the RSD language.
 \subsection{Drools-Lite}
 
 Our subsequent experiments were with projections with the Drools-Lite language.
-As described in section \ref{section:DroolsLite}, Drools-Lite is an implementation that is much closer to the complete Drools language.
+As described in Section \ref{section:DroolsLite}, Drools-Lite is an implementation that is much closer to the complete Drools language.
 This realism will allow us to create projections that we can present to experienced Drools developers for evaluation.
 
 Of the learnings from the RSD language, one we felt needed fixing to improve understanding was the sparseness of the tables.
@@ -185,7 +185,7 @@ Additionally, we added intentions to move \texttt{Rule} nodes in and out of grou
 As the Drools language is analogous to a series of if-then statements, then perhaps its best visual equivalent is the decision table.
 Decision tables are a ``powerful aid in programming, documentation, and in effective man-to-man and man-to-machine communications''\cite{pooch1974translation}.
 
-We designed our table, shown in figure \ref{fig:decisionTableProjection}, to include some of the lessons learned from the RSD crosstab shown in figure \ref{fig:crosstabProjection1}.
+We designed our table, shown in Figure \ref{fig:decisionTableProjection}, to include some of the lessons learned from the RSD crosstab shown in Figure \ref{fig:crosstabProjection1}.
 The RSD language taught us that wasting visual real estate exacerbates sparseness issues in tables.
 In the crosstab table, horizontal scrolling is necessary, in part due to the column widths.
 The columns were wide because the name of the \texttt{FactDeclaration} node was displayed horizontally.
@@ -226,14 +226,14 @@ Dan Bricklin's VisiCalc drove personal computers into the office.
 VisiCalc was succeeded by Lotus 1-2-3, which Microsoft Excel then succeeded as the dominant spreadsheet program in the workplace.
 
 This level of familiarity with a paradigm led us to design a projection that had the look and feel of an Excel spreadsheet.
-We show this design in figure \ref{fig:SpreadsheetProjection} on page \pageref{fig:SpreadsheetProjection}.
+We show this design in Figure \ref{fig:SpreadsheetProjection} on page \pageref{fig:SpreadsheetProjection}.
 To this end, we created a design where the selection criteria could be directly edited in the cell, as highlighted in the figure.
 
 Each row is a \texttt{Rule} node in this design, and each column is for a \texttt{RuleVariable} node or a \texttt{FactProperty} reference.
 If a property is selected, then the selection criterion is in the appropriate cell.
 A grey/beige colour indicates unselected cells.
 The RHS of the \texttt{Rule} node appears in the Action column.
-Adding as yet unused \texttt{FactDeclaration} references or \texttt{FactProperty} references, or removing existing ones, can be achieved with intentions, as shown in figure \ref{fig:SpreadsheetIntentions}.
+Adding as yet unused \texttt{FactDeclaration} references or \texttt{FactProperty} references, or removing existing ones, can be achieved with intentions, as shown in Figure \ref{fig:SpreadsheetIntentions}.
 
 \begin{figure}[h]
     \centering
@@ -243,7 +243,7 @@ Adding as yet unused \texttt{FactDeclaration} references or \texttt{FactProperty
 \end{figure}
 
 This design also allowed us to have more than one selector for the same \texttt{FactProperty} reference, essential for our host organisation's code.
-We demonstrate this in figure \ref{fig:TwoProperties}.
+We demonstrate this in Figure \ref{fig:TwoProperties}.
 
 \begin{figure}[h]
     \centering
@@ -295,7 +295,7 @@ That is the use of manipulatable graphics that can change the AST.
 
 We chose a logic circuit. 
 The logic circuit represents a boolean operation as NOT, OR, XOR and AND Gates, with their inputs and outputs being inputs to other gates.
-In our design, shown in figure \ref{fig:CircuitDiagramProjection}, the input wires to the gates are the \texttt{FactDeclaration} nodes or \texttt{FactProperty} nodes referenced in the LHS.
+In our design, shown in Figure \ref{fig:CircuitDiagramProjection}, the input wires to the gates are the \texttt{FactDeclaration} nodes or \texttt{FactProperty} nodes referenced in the LHS.
 
 \begin{figure}[h]
     \centering
